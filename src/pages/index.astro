@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { getAllPoems, getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const poems = getAllPoemsMeta();
 const filters = getFilterOptions(poems);
 const total = poems.length;
@@ -391,7 +393,7 @@ const featuredPoolFinal = featuredPool.length > 0
     </div>
 
     <div class="hero-cta">
-      <a href="/browse" class="btn">Browse the collection</a>
+      <a href={`${base}/browse`} class="btn">Browse the collection</a>
       <button class="btn-ghost" id="random-btn">Random poem →</button>
     </div>
   </div>
@@ -403,25 +405,25 @@ const featuredPoolFinal = featuredPool.length > 0
 </section>
 
 <div class="stats">
-  <a href="/browse?filter=themes" class="stat">
+  <a href={`${base}/browse?filter=themes`} class="stat">
     <span class="stat-num">{themeCount}</span>
     <span class="stat-label">Themes</span>
   </a>
-  <a href="/browse?filter=moods" class="stat">
+  <a href={`${base}/browse?filter=moods`} class="stat">
     <span class="stat-num">{moodCount}</span>
     <span class="stat-label">Moods</span>
   </a>
-  <a href="/browse?filter=forms" class="stat">
+  <a href={`${base}/browse?filter=forms`} class="stat">
     <span class="stat-num">{formCount}</span>
     <span class="stat-label">Forms</span>
   </a>
-  <a href="/browse" class="stat">
+  <a href={`${base}/browse`} class="stat">
     <span class="stat-num">{total}</span>
     <span class="stat-label">Poems</span>
   </a>
 </div>
 
-<script define:vars={{ searchIndex, featuredPool: featuredPoolFinal }}>
+<script define:vars={{ searchIndex, featuredPool: featuredPoolFinal, base }}>
 
   // ── HTML sanitiser — prevents <> in search queries breaking the layout ─────
   function escapeHtml(str) {
@@ -441,13 +443,10 @@ const featuredPoolFinal = featuredPool.length > 0
   }
 
   // ── Featured poem ──────────────────────────────────────────────────────────
-  // Pool is pre-filtered server-side: < 60 words AND < 15 non-blank lines.
-  // Shuffle on load so every visit starts at a different poem.
   const pool = featuredPool.slice().sort(() => Math.random() - 0.5);
   let idx = 0;
 
   function renderFeatured(poem) {
-    // Strip heading lines, trim blank edges, preserve stanza breaks
     const lines = poem.content.split('\n').filter(l => !l.startsWith('#'));
     while (lines.length && !lines[0].trim()) lines.shift();
     while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
@@ -456,11 +455,11 @@ const featuredPoolFinal = featuredPool.length > 0
     ).join('');
 
     const tagHtml = poem.tags.slice(0, 3).map(t =>
-      `<a href="/browse?tag=${encodeURIComponent(t)}" class="tag">${escapeHtml(t)}</a>`
+      `<a href="${base}/browse?tag=${encodeURIComponent(t)}" class="tag">${escapeHtml(t)}</a>`
     ).join('');
 
     document.getElementById('featured').innerHTML = `
-      <a href="/poem/${poem.slug}" class="featured-title">${escapeHtml(poem.title)}</a>
+      <a href="${base}/poem/${poem.slug}" class="featured-title">${escapeHtml(poem.title)}</a>
       <div class="featured-body">${bodyHtml}</div>
       <div class="featured-footer">
         ${tagHtml}
@@ -470,7 +469,6 @@ const featuredPoolFinal = featuredPool.length > 0
     document.getElementById('next-poem-btn').addEventListener('click', nextPoem);
   }
 
-  // Always moves forward in the shuffled pool — never repeats the current poem
   function nextPoem() {
     idx = (idx + 1) % pool.length;
     renderFeatured(pool[idx]);
@@ -480,7 +478,7 @@ const featuredPoolFinal = featuredPool.length > 0
 
   document.getElementById('random-btn').addEventListener('click', () => {
     const rand = pool[Math.floor(Math.random() * pool.length)];
-    window.location.href = `/poem/${rand.slug}`;
+    window.location.href = `${base}/poem/${rand.slug}`;
   });
 
   // ── Search ─────────────────────────────────────────────────────────────────
@@ -495,8 +493,8 @@ const featuredPoolFinal = featuredPool.length > 0
       return p.title.toLowerCase().includes(q)
         || p.tags.some(t    => t.toLowerCase().includes(q))
         || p.themes.some(t  => t.toLowerCase().includes(q))
-        || p.mood.some(m    => m.toLowerCase().includes(q))   // fixed: array
-        || p.form.some(f    => f.toLowerCase().includes(q))   // fixed: array
+        || p.mood.some(m    => m.toLowerCase().includes(q))
+        || p.form.some(f    => f.toLowerCase().includes(q))
         || (p.preview && p.preview.toLowerCase().includes(q));
     }).slice(0, 7);
 
@@ -504,10 +502,9 @@ const featuredPoolFinal = featuredPool.length > 0
       results.innerHTML = `<div class="search-empty">No poems found for "${escapeHtml(q)}"</div>`;
     } else {
       results.innerHTML = matches.map(p => {
-        // Build meta from arrays — fixed from original string assumption
         const meta = [...p.mood, ...p.form, ...p.themes.slice(0, 2)]
           .filter(Boolean).join(' · ');
-        return `<a href="/poem/${p.slug}" class="search-result-item">
+        return `<a href="${base}/poem/${p.slug}" class="search-result-item">
           <span class="sri-title">${highlight(p.title, q)}</span>
           ${meta ? `<span class="sri-meta">${escapeHtml(meta)}</span>` : ''}
         </a>`;
@@ -516,7 +513,6 @@ const featuredPoolFinal = featuredPool.length > 0
     results.classList.add('open');
   });
 
-  // Close on outside click or Tab
   document.addEventListener('click', e => {
     if (!e.target.closest('.search-wrap')) results.classList.remove('open');
   });
