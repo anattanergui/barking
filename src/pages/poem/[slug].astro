@@ -2,6 +2,8 @@
 import Base from '../../layouts/Base.astro';
 import { getAllPoems, getPoemBySlug, slugify } from '../../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 export async function getStaticPaths() {
   const poems = getAllPoems();
   return poems.map((p, i) => ({
@@ -184,7 +186,7 @@ const relatedPoems = related
 
 <div class="poem-layout">
   <article class="poem-col">
-    <a href="/browse" class="back">← Collection</a>
+    <a href={`${base}/browse`} class="back">← Collection</a>
     <h1 class="poem-title">{title}</h1>
     <div class="poem-body" set:html={bodyHtml} />
   </article>
@@ -195,7 +197,7 @@ const relatedPoems = related
         <span class="s-label">Mood</span>
         <div class="s-tags">
           {mood.map(m => (
-            <a href={`/browse?mood=${encodeURIComponent(m)}`} class="tag">{m}</a>
+            <a href={`${base}/browse?mood=${encodeURIComponent(m)}`} class="tag">{m}</a>
           ))}
         </div>
       </>
@@ -206,7 +208,7 @@ const relatedPoems = related
         <span class="s-label">Form</span>
         <div class="s-tags">
           {form.map(f => (
-            <a href={`/browse?form=${encodeURIComponent(f)}`} class="tag">{f}</a>
+            <a href={`${base}/browse?form=${encodeURIComponent(f)}`} class="tag">{f}</a>
           ))}
         </div>
       </>
@@ -224,7 +226,7 @@ const relatedPoems = related
         <span class="s-label">Themes</span>
         <div class="s-tags">
           {themes.map(t => (
-            <a href={`/browse?theme=${encodeURIComponent(t)}`} class="tag">{t}</a>
+            <a href={`${base}/browse?theme=${encodeURIComponent(t)}`} class="tag">{t}</a>
           ))}
         </div>
       </>
@@ -235,7 +237,7 @@ const relatedPoems = related
         <span class="s-label">Tags</span>
         <div class="s-tags">
           {tags.map(t => (
-            <a href={`/browse?tag=${encodeURIComponent(t)}`} class="tag">{t}</a>
+            <a href={`${base}/browse?tag=${encodeURIComponent(t)}`} class="tag">{t}</a>
           ))}
         </div>
       </>
@@ -247,7 +249,7 @@ const relatedPoems = related
         <ul class="related-list">
           {relatedPoems.map(r => (
             <li class="related-item">
-              <a href={`/poem/${r.slug}`}>{r.title}</a>
+              <a href={`${base}/poem/${r.slug}`}>{r.title}</a>
             </li>
           ))}
         </ul>
@@ -258,14 +260,14 @@ const relatedPoems = related
     {(prevPoem || nextPoem) && (
       <nav class="nav-poem" aria-label="Adjacent poems">
         {prevPoem
-          ? <a href={`/poem/${prevPoem.slug}`} class="nav-prev">
+          ? <a href={`${base}/poem/${prevPoem.slug}`} class="nav-prev">
               <span class="nav-label">← Previous</span>
               <span class="nav-title">{prevPoem.title}</span>
             </a>
           : <span />
         }
         {nextPoem &&
-          <a href={`/poem/${nextPoem.slug}`} class="nav-next">
+          <a href={`${base}/poem/${nextPoem.slug}`} class="nav-next">
             <span class="nav-label">Next →</span>
             <span class="nav-title">{nextPoem.title}</span>
           </a>
