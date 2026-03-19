@@ -1,0 +1,277 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getAllPoems, getPoemBySlug, slugify } from '../../lib/poems.js';
+
+export async function getStaticPaths() {
+  const poems = getAllPoems();
+  return poems.map((p, i) => ({
+    params: { slug: p.slug },
+    props: {
+      poem: p,
+      // Pass neighbours at build time — no second getAllPoems() call at runtime
+      prevPoem: poems[i - 1] ?? null,
+      nextPoem: poems[i + 1] ?? null,
+      allPoems: poems,
+    },
+  }));
+}
+
+const { poem, prevPoem, nextPoem, allPoems } = Astro.props;
+const { title, mood, form, themes, tags, related, content, wordCount } = poem;
+
+// Build a richer description for SEO / OG using available metadata
+const metaParts = [
+  mood.length  > 0 ? mood.join(', ')   : null,
+  form.length  > 0 ? form.join(', ')   : null,
+  themes.length > 0 ? themes.join(', ') : null,
+].filter(Boolean);
+const description = metaParts.length
+  ? `${title} — ${metaParts.join(' · ')}`
+  : `${title} — a poem`;
+
+// Convert markdown line breaks to HTML stanzas
+const stanzas = content.split(/\n{2,}/);
+const bodyHtml = stanzas
+  .map(s => s.split('\n').filter(l => !l.startsWith('#')).join('\n'))
+  .filter(s => s.trim())
+  .map(s => `<p>${s.replace(/\n/g, '<br>')}</p>`)
+  .join('\n');
+
+// Resolve related slugs (frontmatter may store titles rather than slugs)
+const relatedPoems = related
+  .map(r => allPoems.find(p => p.slug === slugify(r) || p.title === r))
+  .filter(Boolean)
+  .slice(0, 6);
+---
+<Base {title} {description}>
+<style>
+  .poem-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    min-height: calc(100vh - var(--nav-h));
+  }
+
+  /* Reading column */
+  .poem-col {
+    padding: 5rem 6rem;
+    max-width: 680px;
+  }
+
+  .back {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    margin-bottom: 3.5rem;
+    transition: color 0.2s;
+  }
+  .back:hover { color: var(--ink); }
+
+  .poem-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 4rem;
+  }
+
+  /* Scoped poem body — avoids :global and !important */
+  .poem-body {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.05rem;
+    line-height: 2.3;
+    font-weight: 400;
+  }
+  .poem-body :global(p) {
+    margin-bottom: 1.5rem;
+  }
+  .poem-body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    border-left: 1px solid var(--rule);
+    padding: 5rem 2rem 5rem 2.5rem;
+    background: var(--paper-warm);
+    position: sticky;
+    top: var(--nav-h);
+    height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+
+  .s-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+  .s-value {
+    font-size: 0.85rem;
+    color: var(--ink);
+    margin-bottom: 2rem;
+  }
+
+  .s-tags {
+    display: flex; flex-wrap: wrap; gap: 0.35rem;
+    margin-bottom: 2rem;
+  }
+
+  .related-list { list-style: none; margin-bottom: 2rem; }
+  .related-item { border-bottom: 1px solid var(--rule); }
+  .related-item:first-child { border-top: 1px solid var(--rule); }
+  .related-item a {
+    display: block;
+    padding: 0.6rem 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: color 0.15s, padding-left 0.15s;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .related-item a:hover { color: var(--accent); padding-left: 0.4rem; }
+
+  /* Prev / next navigation */
+  .nav-poem {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    gap: 1rem;
+  }
+  .nav-poem a {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+    max-width: 45%;
+  }
+  .nav-poem a:hover { color: var(--ink); }
+  .nav-poem .nav-next { text-align: right; margin-left: auto; }
+  .nav-poem .nav-label {
+    display: block;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+    opacity: 0.6;
+  }
+  .nav-poem .nav-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0;
+    text-transform: none;
+    display: block;
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .poem-layout { grid-template-columns: 1fr; }
+    .sidebar { position: static; height: auto; border-left: none; border-top: 1px solid var(--rule); }
+    .poem-col { padding: 3rem 1.5rem; }
+  }
+</style>
+
+<div class="poem-layout">
+  <article class="poem-col">
+    <a href="/browse" class="back">← Collection</a>
+    <h1 class="poem-title">{title}</h1>
+    <div class="poem-body" set:html={bodyHtml} />
+  </article>
+
+  <aside class="sidebar">
+    {mood.length > 0 && (
+      <>
+        <span class="s-label">Mood</span>
+        <div class="s-tags">
+          {mood.map(m => (
+            <a href={`/browse?mood=${encodeURIComponent(m)}`} class="tag">{m}</a>
+          ))}
+        </div>
+      </>
+    )}
+
+    {form.length > 0 && (
+      <>
+        <span class="s-label">Form</span>
+        <div class="s-tags">
+          {form.map(f => (
+            <a href={`/browse?form=${encodeURIComponent(f)}`} class="tag">{f}</a>
+          ))}
+        </div>
+      </>
+    )}
+
+    {wordCount > 0 && (
+      <>
+        <span class="s-label">Words</span>
+        <div class="s-value">{wordCount}</div>
+      </>
+    )}
+
+    {themes.length > 0 && (
+      <>
+        <span class="s-label">Themes</span>
+        <div class="s-tags">
+          {themes.map(t => (
+            <a href={`/browse?theme=${encodeURIComponent(t)}`} class="tag">{t}</a>
+          ))}
+        </div>
+      </>
+    )}
+
+    {tags.length > 0 && (
+      <>
+        <span class="s-label">Tags</span>
+        <div class="s-tags">
+          {tags.map(t => (
+            <a href={`/browse?tag=${encodeURIComponent(t)}`} class="tag">{t}</a>
+          ))}
+        </div>
+      </>
+    )}
+
+    {relatedPoems.length > 0 && (
+      <>
+        <span class="s-label" style="margin-top:1rem; display:block;">Related poems</span>
+        <ul class="related-list">
+          {relatedPoems.map(r => (
+            <li class="related-item">
+              <a href={`/poem/${r.slug}`}>{r.title}</a>
+            </li>
+          ))}
+        </ul>
+      </>
+    )}
+
+    <!-- Prev / next navigation -->
+    {(prevPoem || nextPoem) && (
+      <nav class="nav-poem" aria-label="Adjacent poems">
+        {prevPoem
+          ? <a href={`/poem/${prevPoem.slug}`} class="nav-prev">
+              <span class="nav-label">← Previous</span>
+              <span class="nav-title">{prevPoem.title}</span>
+            </a>
+          : <span />
+        }
+        {nextPoem &&
+          <a href={`/poem/${nextPoem.slug}`} class="nav-next">
+            <span class="nav-label">Next →</span>
+            <span class="nav-title">{nextPoem.title}</span>
+          </a>
+        }
+      </nav>
+    )}
+  </aside>
+</div>
+</Base>

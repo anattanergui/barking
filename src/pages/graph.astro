@@ -1,0 +1,920 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoems } from '../lib/poems.js';
+
+const poems = getAllPoems();
+
+// ── Nodes: all fields including new style + energy ────────────────────────────
+const nodes = poems.map(p => ({
+  id:      p.slug,
+  label:   p.title,
+  themes:  p.themes  || [],
+  mood:    p.mood    || [],
+  tags:    p.tags    || [],
+  form:    p.form    || [],
+  style:   p.style   || [],
+  energy:  p.energy  || [],
+  related: p.related || [],
+  preview: p.preview || '',
+}));
+
+// ── Edges: shared values across all fields, max 10 per node ──────────────────
+const FIELDS = ['themes','mood','tags','form','style','energy'];
+const edgeMap = new Map();
+const degree  = new Map(nodes.map(n => [n.id, 0]));
+
+function addEdge(slugA, slugB, field, value) {
+  if ((degree.get(slugA)||0) >= 10 || (degree.get(slugB)||0) >= 10) return;
+  const key = [slugA, slugB].sort().join('||');
+  if (!edgeMap.has(key)) {
+    edgeMap.set(key, { source: slugA, target: slugB, fields: new Set(), values: [] });
+    degree.set(slugA, (degree.get(slugA)||0) + 1);
+    degree.set(slugB, (degree.get(slugB)||0) + 1);
+  }
+  const e = edgeMap.get(key);
+  e.fields.add(field);
+  e.values.push(value);
+}
+
+for (let i = 0; i < nodes.length; i++) {
+  const a = nodes[i];
+  for (let j = i + 1; j < nodes.length; j++) {
+    const b = nodes[j];
+    FIELDS.forEach(f => {
+      (a[f] || []).forEach(v => {
+        if ((b[f] || []).includes(v)) addEdge(a.id, b.id, f, v);
+      });
+    });
+  }
+  // related links always honoured
+  (a.related || []).forEach(ref => {
+    const target = nodes.find(n =>
+      n.id === ref ||
+      n.label.toLowerCase() === ref.toLowerCase() ||
+      n.id === ref.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+    );
+    if (target && target.id !== a.id) addEdge(a.id, target.id, 'related', ref);
+  });
+}
+
+const edges = [...edgeMap.values()].map(e => ({
+  source: e.source, target: e.target,
+  fields: [...e.fields], values: e.values,
+}));
+
+// ── Hub index: for each field+value, list poems that have it ─────────────────
+// No frequency filter — show everything.
+const hubIndex = {};
+const ALL_FIELDS = [...FIELDS, 'related'];
+
+nodes.forEach(n => {
+  FIELDS.forEach(f => {
+    (n[f] || []).forEach(v => {
+      const key = `${f}::${v}`;
+      if (!hubIndex[key]) hubIndex[key] = { field: f, value: v, poems: [] };
+      hubIndex[key].poems.push(n.id);
+    });
+  });
+});
+
+// Group hubs by field, sorted alphabetically within each field
+const hubsByField = {};
+FIELDS.forEach(f => { hubsByField[f] = []; });
+Object.values(hubIndex).forEach(h => {
+  if (h.poems.length >= 1 && hubsByField[h.field]) {
+    hubsByField[h.field].push(h);
+  }
+});
+FIELDS.forEach(f => {
+  hubsByField[f].sort((a, b) => a.value.localeCompare(b.value));
+});
+
+const graphData = JSON.stringify({ nodes, edges, hubsByField });
+---
+
+<Base title="Graph — Barking">
+<style>
+  /* ── Layout ──────────────────────────────────────────────────────────────── */
+  .graph-page {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: calc(100vh - var(--nav-h, 56px));
+    overflow: hidden;
+  }
+
+  /* ── Sidebar ─────────────────────────────────────────────────────────────── */
+  .sidebar {
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .sidebar-head {
+    padding: 1.6rem 1.4rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .sidebar-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin: 0 0 0.15rem;
+    line-height: 1;
+  }
+  .sidebar-sub {
+    font-size: 0.57rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── Mode tabs ───────────────────────────────────────────────────────────── */
+  .mode-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .mode-tab {
+    flex: 1;
+    padding: 0.7rem 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s;
+  }
+  .mode-tab:hover  { color: var(--ink); }
+  .mode-tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ── Panels ──────────────────────────────────────────────────────────────── */
+  .sidebar-panel {
+    flex: 1;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+  }
+  .sidebar-panel.active { display: flex; }
+
+  /* ── Accordion (hub panel) ───────────────────────────────────────────────── */
+  .accordion-item {
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+
+  .accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    transition: color 0.15s, background 0.15s;
+  }
+  .accordion-trigger:hover { color: var(--ink); background: var(--stat-hover); }
+  .accordion-trigger.open  { color: var(--ink); }
+
+  .accordion-trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .field-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .fd-themes  { background: #7c9e87; }
+  .fd-mood    { background: #a07080; }
+  .fd-tags    { background: #7088a0; }
+  .fd-form    { background: #a09060; }
+  .fd-style   { background: #9070a0; }
+  .fd-energy  { background: #a08050; }
+
+  .accordion-arrow {
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+    color: var(--muted);
+  }
+  .accordion-trigger.open .accordion-arrow { transform: rotate(180deg); }
+
+  .accordion-body {
+    display: none;
+    flex-direction: column;
+    padding: 0.3rem 0 0.5rem;
+    background: var(--bg-panel);
+  }
+  .accordion-body.open { display: flex; }
+
+  /* Search within accordion */
+  .accordion-search {
+    margin: 0.4rem 1rem 0.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .accordion-search:focus { border-color: var(--muted); }
+  .accordion-search::placeholder { color: var(--muted); opacity: 0.6; }
+
+  .value-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+
+  .value-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.32rem 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: left;
+    transition: background 0.1s, color 0.1s;
+  }
+  .value-btn:hover  { background: var(--stat-hover); color: var(--ink); }
+  .value-btn.active { background: var(--stat-hover); color: var(--ink); font-weight: 500; }
+
+  .value-count {
+    font-size: 0.62rem;
+    color: var(--rule);
+    flex-shrink: 0;
+  }
+
+  /* ── Local panel ─────────────────────────────────────────────────────────── */
+  .local-panel-inner {
+    padding: 1rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .local-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .poem-search {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  .poem-search:focus { border-color: var(--muted); }
+  .poem-search::placeholder { color: var(--muted); }
+
+  .poem-results { display: flex; flex-direction: column; gap: 0.1rem; overflow-y: auto; flex: 1; }
+
+  .poem-result-btn {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-align: left;
+    border-radius: 2px;
+    transition: background 0.1s, color 0.1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .poem-result-btn:hover  { background: var(--stat-hover); color: var(--ink); }
+  .poem-result-btn.active { background: var(--stat-hover); color: var(--ink); }
+
+  /* ── Info box ────────────────────────────────────────────────────────────── */
+  .sidebar-info {
+    flex-shrink: 0;
+    border-top: 1px solid var(--rule);
+    padding: 0.9rem 1.4rem;
+    min-height: 72px;
+  }
+  .info-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0 0 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .info-meta {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.6;
+  }
+  .info-open {
+    display: inline-block;
+    margin-top: 0.45rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .info-open:hover { color: var(--ink); border-color: var(--ink); }
+  .info-empty {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: italic;
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+
+  /* ── Canvas ──────────────────────────────────────────────────────────────── */
+  .canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-panel);
+  }
+  #graph-svg { width: 100%; height: 100%; display: block; }
+
+  /* ── Empty state ─────────────────────────────────────────────────────────── */
+  .graph-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    pointer-events: none;
+  }
+  .empty-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--ink);
+    opacity: 0.3;
+  }
+  .empty-hint {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.4;
+    font-family: 'Karla', sans-serif;
+  }
+
+  /* ── Tooltip ─────────────────────────────────────────────────────────────── */
+  #tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.6rem 0.8rem;
+    max-width: 190px;
+    z-index: 20;
+    display: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+  .tt-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+    line-height: 1.2;
+  }
+  .tt-via {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+  }
+
+  /* ── Hint ────────────────────────────────────────────────────────────────── */
+  .graph-hint {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.57rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0.45;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  @media (max-width: 700px) {
+    .graph-page { grid-template-columns: 1fr; grid-template-rows: 45vh 1fr; }
+    .sidebar { height: 45vh; border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+
+<div class="graph-page">
+
+  <!-- ── Sidebar ─────────────────────────────────────────────────────────── -->
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <h1 class="sidebar-title">Graph</h1>
+      <div class="sidebar-sub">Connection map</div>
+    </div>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="hub">Hub view</button>
+      <button class="mode-tab"        data-mode="local">Local view</button>
+    </div>
+
+    <!-- Hub panel: one accordion per field -->
+    <div class="sidebar-panel active" id="panel-hub">
+
+      {[
+        { key: 'themes', label: 'Theme'  },
+        { key: 'mood',   label: 'Mood'   },
+        { key: 'style',  label: 'Style'  },
+        { key: 'energy', label: 'Energy' },
+        { key: 'tags',   label: 'Tags'   },
+        { key: 'form',   label: 'Form'   },
+      ].map(({ key, label }) => (
+        <div class="accordion-item" data-field={key}>
+          <button class="accordion-trigger" data-field={key}>
+            <span class="accordion-trigger-left">
+              <span class={`field-dot fd-${key}`}></span>
+              {label}
+            </span>
+            <span class="accordion-arrow">▾</span>
+          </button>
+          <div class="accordion-body">
+            <input
+              class="accordion-search"
+              type="text"
+              placeholder={`Filter ${label.toLowerCase()}…`}
+              autocomplete="off"
+              data-field={key}
+            />
+            <div class="value-list" data-field={key}></div>
+          </div>
+        </div>
+      ))}
+
+    </div>
+
+    <!-- Local panel -->
+    <div class="sidebar-panel" id="panel-local">
+      <div class="local-panel-inner">
+        <div class="local-label">Search poems</div>
+        <input
+          class="poem-search"
+          type="text"
+          id="poem-search"
+          placeholder="Type a title…"
+          autocomplete="off"
+        />
+        <div class="poem-results" id="poem-results"></div>
+      </div>
+    </div>
+
+    <!-- Info box -->
+    <div class="sidebar-info" id="sidebar-info">
+      <div class="info-empty">Open a hub or search for a poem</div>
+    </div>
+  </aside>
+
+  <!-- ── Canvas ──────────────────────────────────────────────────────────── -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <svg id="graph-svg"></svg>
+    <div class="graph-empty" id="graph-empty">
+      <div class="empty-title">Choose a starting point</div>
+      <div class="empty-hint" id="empty-hint">Hub view — expand a field and pick a value</div>
+    </div>
+    <div id="tooltip">
+      <div class="tt-title" id="tt-title"></div>
+      <div class="tt-via"   id="tt-via"></div>
+    </div>
+    <div class="graph-hint" id="graph-hint" style="display:none">
+      Scroll to zoom · Drag to pan · Click node to open poem
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script define:vars={{ graphData }}>
+
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  const t = setInterval(() => { if (window.d3) { clearInterval(t); cb(); } }, 50);
+}
+waitForD3(init);
+
+function init() {
+  const { nodes, edges, hubsByField } = JSON.parse(graphData);
+
+  const nodeById = new Map(nodes.map(n => [n.id, n]));
+
+  // adjacency map for local view
+  const adj = new Map();
+  edges.forEach(e => {
+    if (!adj.has(e.source)) adj.set(e.source, []);
+    if (!adj.has(e.target)) adj.set(e.target, []);
+    adj.get(e.source).push({ slug: e.target, fields: e.fields, values: e.values });
+    adj.get(e.target).push({ slug: e.source, fields: e.fields, values: e.values });
+  });
+
+  const COLORS = {
+    themes: '#7c9e87', mood: '#a07080', tags: '#7088a0',
+    form: '#a09060',   style: '#9070a0', energy: '#a08050', related: '#888',
+  };
+  const edgeColor = fields => COLORS[fields[0]] || '#888';
+
+  // ── D3 setup ──────────────────────────────────────────────────────────────
+  const wrap = document.getElementById('canvas-wrap');
+  const svg  = d3.select('#graph-svg');
+  const g    = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.1, 5])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
+
+  let simulation = null;
+  let currentMode = 'hub';
+  let activeKey   = null; // "field::value"
+  let activePoemSlug = null;
+
+  // ── Accordion setup ───────────────────────────────────────────────────────
+  // Populate value lists from hubsByField
+  const FIELD_KEYS = ['themes','mood','style','energy','tags','form'];
+
+  FIELD_KEYS.forEach(field => {
+    const hubs = hubsByField[field] || [];
+    renderValueList(field, hubs, '');
+  });
+
+  function renderValueList(field, hubs, filter) {
+    const q   = filter.toLowerCase();
+    const list = document.querySelector(`.value-list[data-field="${field}"]`);
+    if (!list) return;
+    const filtered = q ? hubs.filter(h => h.value.toLowerCase().includes(q)) : hubs;
+    list.innerHTML = filtered.map(h => `
+      <button
+        class="value-btn${activeKey === field+'::'+h.value ? ' active' : ''}"
+        data-field="${field}"
+        data-value="${h.value.replace(/"/g,'&quot;')}"
+      >
+        <span>${h.value}</span>
+        <span class="value-count">${h.poems.length}</span>
+      </button>
+    `).join('');
+    list.querySelectorAll('.value-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.field;
+        const v = btn.dataset.value;
+        activeKey = f+'::'+v;
+        // re-render this list to update active state
+        renderValueList(f, hubsByField[f]||[], document.querySelector(`.accordion-search[data-field="${f}"]`)?.value || '');
+        const hub = (hubsByField[f]||[]).find(h => h.value === v);
+        if (hub) drawHub(f, hub);
+      });
+    });
+  }
+
+  // Accordion open/close
+  document.querySelectorAll('.accordion-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const body = btn.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      // close all
+      document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.accordion-trigger').forEach(b => b.classList.remove('open'));
+      if (!isOpen) {
+        body.classList.add('open');
+        btn.classList.add('open');
+      }
+    });
+  });
+
+  // Search within accordion
+  document.querySelectorAll('.accordion-search').forEach(input => {
+    input.addEventListener('input', () => {
+      const field = input.dataset.field;
+      renderValueList(field, hubsByField[field]||[], input.value);
+    });
+    // prevent accordion close when clicking search
+    input.addEventListener('click', e => e.stopPropagation());
+  });
+
+  // ── Mode tabs ─────────────────────────────────────────────────────────────
+  document.querySelectorAll('.mode-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentMode = btn.dataset.mode;
+      document.querySelectorAll('.mode-tab').forEach(b => b.classList.toggle('active', b === btn));
+      document.getElementById('panel-hub').classList.toggle('active',   currentMode === 'hub');
+      document.getElementById('panel-local').classList.toggle('active', currentMode === 'local');
+      clearGraph();
+      document.getElementById('empty-hint').textContent =
+        currentMode === 'hub'
+          ? 'Hub view — expand a field and pick a value'
+          : 'Local view — search and select a poem';
+    });
+  });
+
+  // ── Poem search (local panel) ─────────────────────────────────────────────
+  document.getElementById('poem-search').addEventListener('input', e => {
+    const q  = e.target.value.trim().toLowerCase();
+    const el = document.getElementById('poem-results');
+    if (!q) { el.innerHTML = ''; return; }
+    const matches = nodes.filter(n => n.label.toLowerCase().includes(q)).slice(0, 14);
+    el.innerHTML = matches.map(n =>
+      `<button class="poem-result-btn${activePoemSlug===n.id?' active':''}" data-slug="${n.id}">${n.label}</button>`
+    ).join('');
+    el.querySelectorAll('.poem-result-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activePoemSlug = btn.dataset.slug;
+        el.querySelectorAll('.poem-result-btn').forEach(b => b.classList.toggle('active', b === btn));
+        drawLocal(btn.dataset.slug);
+      });
+    });
+  });
+
+  // ── Helpers ───────────────────────────────────────────────────────────────
+  function clearGraph() {
+    if (simulation) { simulation.stop(); simulation = null; }
+    g.selectAll('*').remove();
+    document.getElementById('graph-empty').style.display = 'flex';
+    document.getElementById('graph-hint').style.display  = 'none';
+    setInfo(null);
+  }
+
+  function showCanvas() {
+    document.getElementById('graph-empty').style.display = 'none';
+    document.getElementById('graph-hint').style.display  = 'block';
+  }
+
+  function resetZoom(duration = 350) {
+    svg.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+  }
+
+  function setInfo(node, via) {
+    const el = document.getElementById('sidebar-info');
+    if (!node) {
+      el.innerHTML = '<div class="info-empty">Open a hub or search for a poem</div>';
+      return;
+    }
+    const meta = [
+      ...(node.mood   ||[]).slice(0,2),
+      ...(node.themes ||[]).slice(0,2),
+      ...(node.style  ||[]).slice(0,1),
+    ].filter(Boolean).join(' · ');
+    el.innerHTML = `
+      <div class="info-title">${node.label}</div>
+      ${meta ? `<div class="info-meta">${meta}</div>` : ''}
+      ${via  ? `<div class="info-meta" style="margin-top:.2rem">via ${via}</div>` : ''}
+      <a href="/poem/${node.id}" class="info-open">Open poem →</a>
+    `;
+  }
+
+  // ── HUB VIEW ──────────────────────────────────────────────────────────────
+  function drawHub(field, hub) {
+    if (simulation) simulation.stop();
+    g.selectAll('*').remove();
+    showCanvas();
+    resetZoom();
+
+    const W  = wrap.offsetWidth;
+    const H  = wrap.offsetHeight;
+    const cx = W / 2, cy = H / 2;
+    const spokes = hub.poems.map(id => nodeById.get(id)).filter(Boolean);
+    const n      = spokes.length;
+    const R      = Math.min(W, H) * (n > 24 ? 0.43 : n > 12 ? 0.38 : 0.32);
+    const color  = COLORS[field] || '#888';
+
+    const spokeData = spokes.map((p, i) => ({
+      poem: p,
+      x: cx + R * Math.cos((i / n) * 2 * Math.PI - Math.PI / 2),
+      y: cy + R * Math.sin((i / n) * 2 * Math.PI - Math.PI / 2),
+    }));
+    const spokeById = new Map(spokeData.map(s => [s.poem.id, s]));
+
+    // Spoke lines
+    g.append('g').selectAll('line').data(spokeData).join('line')
+      .attr('x1', cx).attr('y1', cy)
+      .attr('x2', d => d.x).attr('y2', d => d.y)
+      .attr('stroke', color).attr('stroke-width', 1).attr('stroke-opacity', 0.2);
+
+    // Cross-edges between spoke poems
+    const crossEdges = [];
+    spokes.forEach(p => {
+      (adj.get(p.id)||[]).forEach(e => {
+        if (spokeById.has(e.slug) && p.id < e.slug)
+          crossEdges.push({ sx: spokeById.get(p.id), tx: spokeById.get(e.slug), fields: e.fields });
+      });
+    });
+    g.append('g').selectAll('line').data(crossEdges).join('line')
+      .attr('x1', d => d.sx.x).attr('y1', d => d.sx.y)
+      .attr('x2', d => d.tx.x).attr('y2', d => d.tx.y)
+      .attr('stroke', d => edgeColor(d.fields))
+      .attr('stroke-width', 0.8).attr('stroke-opacity', 0.18)
+      .attr('stroke-dasharray', '3 3');
+
+    // Hub centre
+    const hubG = g.append('g').attr('transform', `translate(${cx},${cy})`);
+    hubG.append('circle').attr('r', 22)
+      .attr('fill', color).attr('fill-opacity', 0.1)
+      .attr('stroke', color).attr('stroke-width', 1.5);
+    hubG.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
+      .attr('font-size', '11px').attr('font-family', 'Karla, sans-serif')
+      .attr('letter-spacing', '0.06em').attr('fill', color)
+      .text(hub.value);
+
+    // Spoke nodes
+    const nodeGs = g.append('g').selectAll('g').data(spokeData).join('g')
+      .style('cursor', 'pointer');
+
+    nodeGs.append('circle')
+      .attr('cx', d => d.x).attr('cy', d => d.y)
+      .attr('r', 5).attr('fill', 'var(--bg-panel)')
+      .attr('stroke', color).attr('stroke-width', 1);
+
+    nodeGs.append('text')
+      .attr('x', d => d.x).attr('y', d => d.y - 10)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', '10px')
+      .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+      .attr('fill', 'var(--muted)')
+      .text(d => d.poem.label.length > 20 ? d.poem.label.slice(0,18)+'…' : d.poem.label);
+
+    nodeGs
+      .on('mouseover', function(event, d) {
+        d3.select(this).select('circle').attr('r', 8).attr('fill', color).attr('fill-opacity', 0.25);
+        showTip(event, d.poem, `${field}: ${hub.value}`);
+        setInfo(d.poem, `${field}: ${hub.value}`);
+      })
+      .on('mousemove', moveTip)
+      .on('mouseout', function() {
+        d3.select(this).select('circle').attr('r', 5).attr('fill', 'var(--bg-panel)').attr('fill-opacity', 1);
+        hideTip();
+      })
+      .on('click', (e, d) => { window.location.href = `/poem/${d.poem.id}`; });
+  }
+
+  // ── LOCAL VIEW ────────────────────────────────────────────────────────────
+  function drawLocal(slug) {
+    if (simulation) simulation.stop();
+    g.selectAll('*').remove();
+    showCanvas();
+    resetZoom();
+
+    const center = nodeById.get(slug);
+    if (!center) return;
+    setInfo(center);
+
+    const neighbours = (adj.get(slug)||[])
+      .map(e => ({ node: nodeById.get(e.slug), fields: e.fields, values: e.values }))
+      .filter(e => e.node);
+
+    const simNodes = [
+      { id: center.id, label: center.label, r: 13, isCenter: true, data: center },
+      ...neighbours.map(e => ({ id: e.node.id, label: e.node.label, r: 6, isCenter: false, data: e.node }))
+    ];
+    const simLinks = neighbours.map(e => ({
+      source: center.id, target: e.node.id, fields: e.fields, values: e.values,
+    }));
+
+    const W = wrap.offsetWidth, H = wrap.offsetHeight;
+
+    simulation = d3.forceSimulation(simNodes)
+      .force('link',    d3.forceLink(simLinks).id(d => d.id).distance(155).strength(0.85))
+      .force('charge',  d3.forceManyBody().strength(-700))
+      .force('center',  d3.forceCenter(W/2, H/2))
+      .force('collide', d3.forceCollide(d => d.r + 26))
+      .alphaDecay(0.035);
+
+    const linkSel = g.append('g').selectAll('line').data(simLinks).join('line')
+      .attr('stroke', d => edgeColor(d.fields))
+      .attr('stroke-width', 1.2).attr('stroke-opacity', 0.45);
+
+    const eLabelSel = g.append('g').selectAll('text').data(simLinks).join('text')
+      .attr('text-anchor', 'middle')
+      .attr('font-size', '9px').attr('font-family', 'Karla, sans-serif')
+      .attr('fill', 'var(--muted)').attr('pointer-events', 'none').attr('opacity', 0)
+      .text(d => d.fields.join(' · '));
+
+    const nodeGs = g.append('g').selectAll('g').data(simNodes).join('g')
+      .style('cursor', d => d.isCenter ? 'default' : 'pointer');
+
+    nodeGs.append('circle')
+      .attr('r', d => d.r)
+      .attr('fill',   d => d.isCenter ? 'var(--ink)' : 'var(--bg-panel)')
+      .attr('stroke', d => d.isCenter ? 'none' : 'var(--rule)')
+      .attr('stroke-width', 1);
+
+    nodeGs.append('text')
+      .attr('text-anchor', 'middle')
+      .attr('dy', d => -(d.r + 6) + 'px')
+      .attr('font-size', d => d.isCenter ? '12px' : '10px')
+      .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+      .attr('fill', d => d.isCenter ? 'var(--ink)' : 'var(--muted)')
+      .text(d => d.label.length > 22 ? d.label.slice(0,20)+'…' : d.label);
+
+    nodeGs.call(d3.drag()
+      .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx=d.x; d.fy=d.y; })
+      .on('drag',  (ev, d) => { d.fx=ev.x; d.fy=ev.y; })
+      .on('end',   (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx=null; d.fy=null; })
+    );
+
+    nodeGs.filter(d => !d.isCenter)
+      .on('mouseover', function(event, d) {
+        const conn = simLinks.find(l => {
+          const s = typeof l.source==='object' ? l.source.id : l.source;
+          const t = typeof l.target==='object' ? l.target.id : l.target;
+          return s===d.id || t===d.id;
+        });
+        const col = conn ? edgeColor(conn.fields) : '#888';
+        d3.select(this).select('circle').attr('fill', col).attr('fill-opacity', 0.25).attr('r', d.r+3);
+        eLabelSel.attr('opacity', l => {
+          const s = typeof l.source==='object' ? l.source.id : l.source;
+          const t = typeof l.target==='object' ? l.target.id : l.target;
+          return (s===d.id||t===d.id) ? 0.75 : 0;
+        });
+        showTip(event, d.data, conn ? conn.fields.join(' · ') : '');
+        setInfo(d.data, conn ? conn.fields.join(' · ') : '');
+      })
+      .on('mousemove', moveTip)
+      .on('mouseout', function(event, d) {
+        d3.select(this).select('circle').attr('fill','var(--bg-panel)').attr('fill-opacity',1).attr('r',d.r);
+        eLabelSel.attr('opacity', 0);
+        hideTip();
+      })
+      .on('click', (e, d) => { window.location.href = `/poem/${d.data.id}`; });
+
+    simulation.on('tick', () => {
+      linkSel
+        .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      eLabelSel
+        .attr('x', d => (d.source.x+d.target.x)/2)
+        .attr('y', d => (d.source.y+d.target.y)/2 - 5);
+      nodeGs.attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+  }
+
+  // ── Tooltip ───────────────────────────────────────────────────────────────
+  const tipEl    = document.getElementById('tooltip');
+  const tipTitle = document.getElementById('tt-title');
+  const tipVia   = document.getElementById('tt-via');
+
+  function showTip(event, poem, via) {
+    tipTitle.textContent = poem.label;
+    tipVia.textContent   = via ? `via ${via}` : '';
+    tipEl.style.display  = 'block';
+    moveTip(event);
+  }
+  function moveTip(event) {
+    const rect = wrap.getBoundingClientRect();
+    let x = event.clientX - rect.left + 14;
+    let y = event.clientY - rect.top  + 14;
+    if (x + 200 > wrap.offsetWidth)  x -= 214;
+    if (y + 70  > wrap.offsetHeight) y -= 78;
+    tipEl.style.left = x + 'px';
+    tipEl.style.top  = y + 'px';
+  }
+  function hideTip() { tipEl.style.display = 'none'; }
+}
+</script>
+</Base>

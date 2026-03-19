@@ -1,0 +1,533 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoems, getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
+
+const poems = getAllPoemsMeta();
+const filters = getFilterOptions(poems);
+const total = poems.length;
+const themeCount = filters.themes.length;
+const moodCount  = filters.moods.length;
+const formCount  = filters.forms.length;
+
+// Search index: meta only, no content — keeps the client bundle lean.
+const searchIndex = poems.map(p => ({
+  slug:      p.slug,
+  title:     p.title,
+  tags:      p.tags,
+  themes:    p.themes,
+  mood:      p.mood,
+  form:      p.form,
+  preview:   p.preview,
+  wordCount: p.wordCount,
+}));
+
+// Featured pool: filter by actual content, not stale frontmatter wordCount.
+// Criteria: fewer than 60 words AND fewer than 15 non-blank lines.
+function contentStats(content) {
+  const lines = content
+    .split('\n')
+    .filter(l => l.trim() && !l.startsWith('#')); // non-blank, non-heading
+  const words = content
+    .replace(/#+[^\n]*/g, '')   // strip headings
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return { lines: lines.length, words };
+}
+
+const featuredPool = getAllPoems()
+  .filter(p => {
+    const { lines, words } = contentStats(p.content);
+    return words > 0 && words < 60 && lines < 15;
+  })
+  .map(p => ({ slug: p.slug, title: p.title, tags: p.tags, content: p.content }));
+
+// Fallback: if no poems pass the filter yet, use previews from the meta index.
+const featuredPoolFinal = featuredPool.length > 0
+  ? featuredPool
+  : searchIndex.map(p => ({ slug: p.slug, title: p.title, tags: p.tags, content: p.preview }));
+---
+
+<Base title="Barking">
+<style is:global>
+  /* ─── LAYOUT ────────────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - var(--nav-h, 56px));
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-left {
+    padding: 5rem 4rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid var(--rule);
+  }
+
+  .hero-right {
+    padding: 5rem 5rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-panel);
+    transition: background 0.3s;
+  }
+
+  /* ─── LEFT: TYPOGRAPHY ──────────────────────────────────────── */
+  .hero-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(4rem, 6vw, 7rem);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .hero-byline {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 2rem;
+    line-height: 2;
+  }
+
+  .hero-desc {
+    margin-top: 1.8rem;
+    max-width: 380px;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 2;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* ─── SEARCH ────────────────────────────────────────────────── */
+  .search-wrap {
+    margin-top: 2.5rem;
+    position: relative;
+    max-width: 380px;
+  }
+
+  .search-input {
+    width: 100%;
+    background: var(--search-bg);
+    border: 1px solid var(--search-border);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    padding: 0.8rem 1rem 0.8rem 2.6rem;
+    outline: none;
+    transition: border-color 0.2s, background 0.3s;
+    box-sizing: border-box;
+  }
+  .search-input::placeholder { color: var(--muted); }
+  .search-input:focus { border-color: var(--muted); }
+
+  .search-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.85rem;
+    pointer-events: none;
+    line-height: 1;
+  }
+
+  .search-results {
+    position: absolute;
+    top: calc(100% + 2px);
+    left: 0; right: 0;
+    background: var(--bg-panel);
+    border: 1px solid var(--search-border);
+    border-top: none;
+    max-height: 280px;
+    overflow-y: auto;
+    z-index: 50;
+    display: none;
+  }
+  .search-results.open { display: block; }
+
+  .search-result-item {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--ink);
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.1s;
+  }
+  .search-result-item:last-child { border-bottom: none; }
+  .search-result-item:hover { background: var(--stat-hover); }
+
+  .sri-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 300;
+    display: block;
+  }
+  .sri-meta {
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.2rem;
+    display: block;
+  }
+
+  .search-empty {
+    padding: 0.9rem 1rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+
+  /* ─── LEFT: CTA ─────────────────────────────────────────────── */
+  .hero-cta {
+    margin-top: auto;
+    padding-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: var(--btn-bg);
+    color: var(--btn-ink);
+    border: none;
+    padding: 0.9rem 1.8rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.75; }
+
+  .btn-ghost {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: none;
+    color: var(--muted);
+    border: 1px solid var(--rule);
+    padding: 0.9rem 1.8rem;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .btn-ghost:hover { color: var(--ink); border-color: var(--muted); }
+
+  /* ─── RIGHT: FEATURED POEM ──────────────────────────────────── */
+  .featured-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .featured-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  .featured-poem {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .featured-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: var(--ink);
+    text-decoration: none;
+    display: block;
+    transition: color 0.2s;
+    line-height: 1.2;
+  }
+  .featured-title:hover { color: var(--accent); }
+
+  .featured-body {
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-size: 1.1rem;
+    line-height: 2.3;
+    color: var(--ink);
+  }
+  .featured-body p { margin: 0 0 0.15rem 0; }
+  .featured-body p.stanza-break { margin-bottom: 1.2rem; }
+
+  .featured-footer {
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .tag {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    background: var(--tag-bg);
+    color: var(--tag-ink);
+    padding: 0.3rem 0.75rem;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .tag:hover { background: var(--rule); }
+
+  .refresh-btn {
+    margin-left: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .refresh-btn::before { content: '↻'; font-size: 0.9rem; }
+  .refresh-btn:hover { color: var(--ink); }
+
+  /* ─── STATS ─────────────────────────────────────────────────── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .stat {
+    padding: 2rem 2.5rem;
+    border-right: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background 0.15s;
+    display: block;
+  }
+  .stat:last-child { border-right: none; }
+  .stat:hover { background: var(--stat-hover); }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    display: block;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.5rem;
+    display: block;
+  }
+
+  /* ─── RESPONSIVE ────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 3rem 2rem; }
+    .hero-right { padding: 3rem 2rem; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(2) { border-right: none; }
+    .stat:nth-child(3) { border-top: 1px solid var(--rule); }
+    .search-wrap { max-width: 100%; }
+  }
+</style>
+
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <h1 class="hero-title">Barking</h1>
+      <div class="hero-byline">{total} poems</div>
+      <p class="hero-desc">
+        A collection crossing absence, paradox, and the residue of ordinary life —
+        written between silence and what refuses to stay quiet.
+      </p>
+
+      <!-- Search -->
+      <div class="search-wrap">
+        <span class="search-icon">⌕</span>
+        <input
+          type="text"
+          class="search-input"
+          id="search-input"
+          placeholder="Search poems, themes, moods…"
+          autocomplete="off"
+        />
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+
+    <div class="hero-cta">
+      <a href="/browse" class="btn">Browse the collection</a>
+      <button class="btn-ghost" id="random-btn">Random poem →</button>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="featured-label">Featured</div>
+    <div class="featured-poem" id="featured"></div>
+  </div>
+</section>
+
+<div class="stats">
+  <a href="/browse?filter=themes" class="stat">
+    <span class="stat-num">{themeCount}</span>
+    <span class="stat-label">Themes</span>
+  </a>
+  <a href="/browse?filter=moods" class="stat">
+    <span class="stat-num">{moodCount}</span>
+    <span class="stat-label">Moods</span>
+  </a>
+  <a href="/browse?filter=forms" class="stat">
+    <span class="stat-num">{formCount}</span>
+    <span class="stat-label">Forms</span>
+  </a>
+  <a href="/browse" class="stat">
+    <span class="stat-num">{total}</span>
+    <span class="stat-label">Poems</span>
+  </a>
+</div>
+
+<script define:vars={{ searchIndex, featuredPool: featuredPoolFinal }}>
+
+  // ── HTML sanitiser — prevents <> in search queries breaking the layout ─────
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  // ── Highlight matched query text in a result title ─────────────────────────
+  function highlight(text, q) {
+    const safe = escapeHtml(text);
+    const escapedQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const re = new RegExp(`(${escapedQ})`, 'gi');
+    return safe.replace(re, '<mark style="background:var(--accent);color:var(--bg)">$1</mark>');
+  }
+
+  // ── Featured poem ──────────────────────────────────────────────────────────
+  // Pool is pre-filtered server-side: < 60 words AND < 15 non-blank lines.
+  // Shuffle on load so every visit starts at a different poem.
+  const pool = featuredPool.slice().sort(() => Math.random() - 0.5);
+  let idx = 0;
+
+  function renderFeatured(poem) {
+    // Strip heading lines, trim blank edges, preserve stanza breaks
+    const lines = poem.content.split('\n').filter(l => !l.startsWith('#'));
+    while (lines.length && !lines[0].trim()) lines.shift();
+    while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+    const bodyHtml = lines.map(l =>
+      l.trim() ? `<p>${escapeHtml(l)}</p>` : `<p class="stanza-break"></p>`
+    ).join('');
+
+    const tagHtml = poem.tags.slice(0, 3).map(t =>
+      `<a href="/browse?tag=${encodeURIComponent(t)}" class="tag">${escapeHtml(t)}</a>`
+    ).join('');
+
+    document.getElementById('featured').innerHTML = `
+      <a href="/poem/${poem.slug}" class="featured-title">${escapeHtml(poem.title)}</a>
+      <div class="featured-body">${bodyHtml}</div>
+      <div class="featured-footer">
+        ${tagHtml}
+        <button class="refresh-btn" id="next-poem-btn">another poem</button>
+      </div>
+    `;
+    document.getElementById('next-poem-btn').addEventListener('click', nextPoem);
+  }
+
+  // Always moves forward in the shuffled pool — never repeats the current poem
+  function nextPoem() {
+    idx = (idx + 1) % pool.length;
+    renderFeatured(pool[idx]);
+  }
+
+  renderFeatured(pool[idx]);
+
+  document.getElementById('random-btn').addEventListener('click', () => {
+    const rand = pool[Math.floor(Math.random() * pool.length)];
+    window.location.href = `/poem/${rand.slug}`;
+  });
+
+  // ── Search ─────────────────────────────────────────────────────────────────
+  const input   = document.getElementById('search-input');
+  const results = document.getElementById('search-results');
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim().toLowerCase();
+    if (q.length < 2) { results.classList.remove('open'); return; }
+
+    const matches = searchIndex.filter(p => {
+      return p.title.toLowerCase().includes(q)
+        || p.tags.some(t    => t.toLowerCase().includes(q))
+        || p.themes.some(t  => t.toLowerCase().includes(q))
+        || p.mood.some(m    => m.toLowerCase().includes(q))   // fixed: array
+        || p.form.some(f    => f.toLowerCase().includes(q))   // fixed: array
+        || (p.preview && p.preview.toLowerCase().includes(q));
+    }).slice(0, 7);
+
+    if (!matches.length) {
+      results.innerHTML = `<div class="search-empty">No poems found for "${escapeHtml(q)}"</div>`;
+    } else {
+      results.innerHTML = matches.map(p => {
+        // Build meta from arrays — fixed from original string assumption
+        const meta = [...p.mood, ...p.form, ...p.themes.slice(0, 2)]
+          .filter(Boolean).join(' · ');
+        return `<a href="/poem/${p.slug}" class="search-result-item">
+          <span class="sri-title">${highlight(p.title, q)}</span>
+          ${meta ? `<span class="sri-meta">${escapeHtml(meta)}</span>` : ''}
+        </a>`;
+      }).join('');
+    }
+    results.classList.add('open');
+  });
+
+  // Close on outside click or Tab
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.search-wrap')) results.classList.remove('open');
+  });
+
+  input.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); }
+    if (e.key === 'Tab')    { results.classList.remove('open'); }
+    if (e.key === 'Enter') {
+      const first = results.querySelector('.search-result-item');
+      if (first) window.location.href = first.href;
+    }
+  });
+</script>
+</Base>
