@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { getAllPoems } from '../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/,'');
+
 const poems = getAllPoems();
 
 // ── Nodes: all fields including new style + energy ────────────────────────────
@@ -536,7 +538,7 @@ const graphData = JSON.stringify({ nodes, edges, hubsByField });
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script define:vars={{ graphData }}>
+<script define:vars={{ graphData, base }}>
 
 function waitForD3(cb) {
   if (window.d3) { cb(); return; }
@@ -705,7 +707,7 @@ function init() {
       <div class="info-title">${node.label}</div>
       ${meta ? `<div class="info-meta">${meta}</div>` : ''}
       ${via  ? `<div class="info-meta" style="margin-top:.2rem">via ${via}</div>` : ''}
-      <a href="/poem/${node.id}" class="info-open">Open poem →</a>
+      <a href="${base}/poem/${node.id}" class="info-open">Open poem →</a>
     `;
   }
 
@@ -790,7 +792,7 @@ function init() {
         d3.select(this).select('circle').attr('r', 5).attr('fill', 'var(--bg-panel)').attr('fill-opacity', 1);
         hideTip();
       })
-      .on('click', (e, d) => { window.location.href = `/poem/${d.poem.id}`; });
+      .on('click', (e, d) => { window.location.href = `${base}/poem/${d.poem.id}`; });
   }
 
   // ── LOCAL VIEW ────────────────────────────────────────────────────────────
@@ -881,7 +883,7 @@ function init() {
         eLabelSel.attr('opacity', 0);
         hideTip();
       })
-      .on('click', (e, d) => { window.location.href = `/poem/${d.data.id}`; });
+      .on('click', (e, d) => { window.location.href = `${base}/poem/${d.data.id}`; });
 
     simulation.on('tick', () => {
       linkSel

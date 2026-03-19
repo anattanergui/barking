@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import { getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const poems = getAllPoemsMeta();
 const filters = getFilterOptions(poems);
 
@@ -260,14 +262,13 @@ const allTagsJson = JSON.stringify(filters.tags);
   </main>
 </div>
 
-<script define:vars={{ poemsJson, allTagsJson }}>
-  const ALL     = JSON.parse(poemsJson);
-  const ALL_TAGS = JSON.parse(allTagsJson); // [[val, count], ...]
+<script define:vars={{ poemsJson, allTagsJson, base }}>
+  const ALL      = JSON.parse(poemsJson);
+  const ALL_TAGS = JSON.parse(allTagsJson);
   const TAG_PREVIEW = 15;
   let tagsExpanded = false;
 
   // ── Active filter state ────────────────────────────────────────────────────
-  // Initialise from URL so bookmarked/shared links restore correctly.
   const params = new URLSearchParams(location.search);
   let active = {
     theme: params.get('theme') || null,
@@ -300,7 +301,6 @@ const allTagsJson = JSON.stringify(filters.tags);
       </button>
     `).join('');
 
-    // Wire click handlers for freshly rendered tag buttons
     tagList.querySelectorAll('.filter-btn').forEach(btn => {
       btn.addEventListener('click', () => handleFilterClick(btn));
     });
@@ -316,7 +316,7 @@ const allTagsJson = JSON.stringify(filters.tags);
     }
   }
 
-  // ── Filter click handler (shared by static + dynamic buttons) ─────────────
+  // ── Filter click handler ───────────────────────────────────────────────────
   function handleFilterClick(btn) {
     const type = btn.dataset.type;
     const val  = btn.dataset.val;
@@ -325,7 +325,6 @@ const allTagsJson = JSON.stringify(filters.tags);
       active[type] = null;
       btn.classList.remove('active');
     } else {
-      // Deactivate siblings of the same type
       document.querySelectorAll(`[data-type="${type}"]`).forEach(b => b.classList.remove('active'));
       active[type] = val;
       btn.classList.add('active');
@@ -335,7 +334,6 @@ const allTagsJson = JSON.stringify(filters.tags);
     updateClear();
     apply();
 
-    // Re-render tags so active state reflects correctly
     if (type === 'tag') renderTags();
   }
 
@@ -365,7 +363,7 @@ const allTagsJson = JSON.stringify(filters.tags);
     }
 
     grid.innerHTML = list.map(p => `
-      <a href="/poem/${p.slug}" class="card">
+      <a href="${base}/poem/${p.slug}" class="card">
         <div class="card-title">${p.title}</div>
         <div class="card-meta">${[...p.mood, ...p.form].filter(Boolean).join(' · ')}</div>
         <div class="card-preview">${p.preview}</div>
@@ -376,7 +374,7 @@ const allTagsJson = JSON.stringify(filters.tags);
     `).join('');
   }
 
-  // ── Static filter buttons (theme / mood / form) ────────────────────────────
+  // ── Static filter buttons ──────────────────────────────────────────────────
   document.querySelectorAll('.filter-btn').forEach(btn => {
     const type = btn.dataset.type;
     if (active[type] === btn.dataset.val) btn.classList.add('active');
@@ -396,8 +394,6 @@ const allTagsJson = JSON.stringify(filters.tags);
   // ── Search ─────────────────────────────────────────────────────────────────
   const searchEl = document.getElementById('search');
   searchEl.addEventListener('input', apply);
-
-  // Close dropdown on Tab (accessibility)
   searchEl.addEventListener('keydown', e => {
     if (e.key === 'Tab') searchEl.blur();
   });
