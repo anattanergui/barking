@@ -42,8 +42,8 @@ That seeks to continue
 
 Being without form —
 It infiltrates form — human —
-Driving him to represent
-It in form
+Driving him to represent  — it —
+In form
 
 Convincing him 
 That the representations 
