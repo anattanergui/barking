@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const VAULT_PATH = '/Users/anattanergui/Desktop/VellumFull';
+const VAULT_PATH = path.join(process.cwd(), 'src/content/poems');
 
 // ── Memoization cache ────────────────────────────────────────────────────────
 let _cache = null;
