@@ -86,7 +86,7 @@ export function getAllPoems() {
         tags:      toArray(data.tags),
         related:   toArray(data.related),
         content:   body,
-        preview:   body.split('\n').find(l => l.trim() && !l.startsWith('#')) || '',
+        preview:   body.split('\n').filter(l => l.trim() && !l.startsWith('#')).slice(0, 4).join('\n') || '',
       }];
     } catch (err) {
       console.warn(`[poems] Skipping "${file}": ${err.message}`);
