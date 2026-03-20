@@ -149,7 +149,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   }
 
   .card {
-    padding: 2rem 1.8rem;
+    padding: 2.5rem 1.8rem;
     border-bottom: 1px solid var(--rule);
     border-right: 1px solid var(--rule);
     cursor: pointer;
@@ -157,6 +157,7 @@ const allTagsJson = JSON.stringify(filters.tags);
     text-decoration: none;
     color: inherit;
     display: block;
+    min-height: 160px;
   }
   .card:hover { background: var(--paper-warm); }
 
@@ -165,17 +166,17 @@ const allTagsJson = JSON.stringify(filters.tags);
     font-size: 1.25rem;
     font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
   }
   .card-preview {
     font-family: 'Libre Baskerville', serif;
     font-size: 0.8rem;
     line-height: 1.9;
     color: var(--muted);
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+  }
+  .card-preview p {
+    margin: 0;
+    padding: 0;
   }
 
   .empty {
@@ -351,12 +352,20 @@ const allTagsJson = JSON.stringify(filters.tags);
       return;
     }
 
-    grid.innerHTML = list.map(p => `
-      <a href="${base}/poem/${p.slug}" class="card">
-        <div class="card-title">${p.title}</div>
-        <div class="card-preview">${p.preview}</div>
-      </a>
-    `).join('');
+    grid.innerHTML = list.map(p => {
+      const previewHtml = p.preview
+        .split('\n')
+        .filter(l => l.trim())
+        .slice(0, 4)
+        .map(l => `<p>${l}</p>`)
+        .join('');
+      return `
+        <a href="${base}/poem/${p.slug}" class="card">
+          <div class="card-title">${p.title}</div>
+          <div class="card-preview">${previewHtml}</div>
+        </a>
+      `;
+    }).join('');
   }
 
   // ── Static filter buttons ──────────────────────────────────────────────────

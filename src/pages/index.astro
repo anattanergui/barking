@@ -44,7 +44,7 @@ const featuredPool = getAllPoems()
   })
   .map(p => ({ slug: p.slug, title: p.title, tags: p.tags, content: p.content }));
 
-// Fallback: if no poems pass the filter yet, use previews from the meta index.
+// Fallback: if no poems pass the filter yet, use all poems (showing preview as content)
 const featuredPoolFinal = featuredPool.length > 0
   ? featuredPool
   : searchIndex.map(p => ({ slug: p.slug, title: p.title, tags: p.tags, content: p.preview }));
@@ -458,15 +458,21 @@ const featuredPoolFinal = featuredPool.length > 0
       `<a href="${base}/browse?tag=${encodeURIComponent(t)}" class="tag">${escapeHtml(t)}</a>`
     ).join('');
 
+    const nextBtn = pool.length > 1
+      ? `<button class="refresh-btn" id="next-poem-btn">another poem</button>`
+      : '';
+
     document.getElementById('featured').innerHTML = `
       <a href="${base}/poem/${poem.slug}" class="featured-title">${escapeHtml(poem.title)}</a>
       <div class="featured-body">${bodyHtml}</div>
       <div class="featured-footer">
         ${tagHtml}
-        <button class="refresh-btn" id="next-poem-btn">another poem</button>
+        ${nextBtn}
       </div>
     `;
-    document.getElementById('next-poem-btn').addEventListener('click', nextPoem);
+    if (pool.length > 1) {
+      document.getElementById('next-poem-btn').addEventListener('click', nextPoem);
+    }
   }
 
   function nextPoem() {
