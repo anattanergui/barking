@@ -75,7 +75,8 @@ His existence
 
 His power
 To fully dispose — destroy —
-Including — the destroyer
+Including — the destroyer —
+Himself
 
 Unfounded 
 On individual sovereignty
