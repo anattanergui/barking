@@ -163,16 +163,9 @@ const allTagsJson = JSON.stringify(filters.tags);
   .card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.25rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.25;
-    margin-bottom: 0.5rem;
-  }
-  .card-meta {
-    font-size: 0.62rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
   }
   .card-preview {
     font-family: 'Libre Baskerville', serif;
@@ -180,13 +173,9 @@ const allTagsJson = JSON.stringify(filters.tags);
     line-height: 1.9;
     color: var(--muted);
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  }
-  .card-tags {
-    margin-top: 1.1rem;
-    display: flex; flex-wrap: wrap; gap: 0.35rem;
   }
 
   .empty {
@@ -365,11 +354,7 @@ const allTagsJson = JSON.stringify(filters.tags);
     grid.innerHTML = list.map(p => `
       <a href="${base}/poem/${p.slug}" class="card">
         <div class="card-title">${p.title}</div>
-        <div class="card-meta">${[...p.mood, ...p.form].filter(Boolean).join(' · ')}</div>
         <div class="card-preview">${p.preview}</div>
-        <div class="card-tags">
-          ${p.tags.slice(0, 3).map(t => `<span class="tag">${t}</span>`).join('')}
-        </div>
       </a>
     `).join('');
   }
