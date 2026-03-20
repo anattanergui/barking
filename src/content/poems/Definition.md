@@ -27,7 +27,7 @@ style:
 energy:
   - contracting
   - arrived
-word-count: "24"
+word-count: "22"
 ---
 # Definition
 Whatever defines you 
