@@ -1,37 +1,38 @@
 ---
 tags:
-  - depths
   - pregnant
   - infinitesimal
-  - infinity
   - condensed
   - directionless
   - vanity
+  - pretentiously
   - bounties
-  - god
-  - man
+  - origins
+  - stretched
+  - visions
 themes:
-  - wonder
+  - void
   - divinity
-  - duality
+  - paradox
 mood:
-  - austere
-  - mystical
+  - hushed
+  - vast
 style:
   - apophatic
   - imagistic
   - paradoxical
 form:
-  - descending
-  - minimalist
   - triptych
+  - descending
+  - epigrammatic
 word-count: "32"
 related:
   - "[[The God Complex]]"
   - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
 energy:
+  - inward
   - contracting
-  - vertical
+  - targeted
 ---
 # Wonder
 Unimaginable depths 

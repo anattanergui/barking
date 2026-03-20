@@ -2,37 +2,37 @@
 title: Words
 tags:
   - words
-  - walking
-  - mapping
-  - soul
-  - reaching
-  - toward
   - dark
-  - void
+  - reaching
+  - mapping
+  - handful
+  - soul
+  - igniting
+  - edges
+  - depths
+  - unspeaking
 themes:
   - language
-  - consciousness
   - void
-  - creation
+  - self
 mood:
   - hushed
-  - austere
-  - meditative
+  - reverent
 form:
-  - minimalist
   - descending
   - ascending
+  - triptych
 related:
   - "[[The Shape Of Absence]]"
 style:
   - imagistic
-  - apophatic
   - spare
+  - apophatic
 energy:
   - vertical
   - inward
   - surfacing
-word-count:
+word-count: "37"
 ---
 # Words
 These words, and a million more —
