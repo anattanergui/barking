@@ -33,11 +33,11 @@ word-count: "24"
 Whatever defines you 
 Confines you
 
-And without definition
+But without definition
 You are 
 But a corpse
 
-And yet 
+Still
 We put tombstones 
 Named, carved in —
 Upon corpses
