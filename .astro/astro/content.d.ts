@@ -141,9 +141,44 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"poems": {
+"Aloneness.md": {
+	id: "Aloneness.md";
+  slug: "aloneness";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Ash.md": {
+	id: "Ash.md";
+  slug: "ash";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Atman.md": {
+	id: "Atman.md";
+  slug: "atman";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Genesis.md": {
+	id: "Genesis.md";
+  slug: "genesis";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Infiltration.md": {
 	id: "Infiltration.md";
   slug: "infiltration";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Lam Yalid Wa Lam Yulad.md": {
+	id: "Lam Yalid Wa Lam Yulad.md";
+  slug: "lam-yalid-wa-lam-yulad";
   body: string;
   collection: "poems";
   data: any
