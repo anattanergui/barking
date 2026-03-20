@@ -29,7 +29,7 @@ style:
 energy:
   - contracting
   - arrived
-word-count: "149"
+word-count: "124"
 ---
 # First Philosophy
 If 
