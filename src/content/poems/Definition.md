@@ -33,7 +33,7 @@ word-count: "24"
 Whatever defines you 
 Confines you
 
-But without definition
+Without definition
 You are 
 But a corpse
 
