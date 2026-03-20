@@ -33,45 +33,59 @@ word-count: "149"
 ---
 # First Philosophy
 If 
-Philosophy is concerned with
-Whether life has meaning or worth
-Then suicide becomes philosophy’s only problem
+Philosophy's concerns is
+Life's meaning and worth
+Then suicide is
+Philosophy’s only problem
 
 If
-Philosophy is concerned with
-Whether the individual exists — as sovereign —
-Then suicide is the irrefutable proof
+Philosophy's concerns is
+Whether individual  — as sovereign —
+Exists
+Then suicide is 
+The irrefutable proof
 
-But to speak of suicide at all
-One must assume the individual exists
-As subject and object to itself —
-Capable of acting upon itself
+Yet
+To speak of suicide at all
+One must assume
+That individual exists — subject and object —
+To itself — capable —
+Of acting upon himself
 
-And to question meaning 
+To question meaning 
 One must already be —
-The entity empowered to ask
+The entity 
+With capacity — to question
 
-Without this unprovable assumption
-No conversation is possible
+Without assumptions
+Conversation is impossible
 
-Existence therefore
-Must precede meaning
-For any conversation about meaning 
-To be possible
+Existence must
+Precede meaning
+To converse
+About meaning
 
-Suicide enacts what nothing else can enact:
-The individual possesses absolute
-Inalienable ownership
-Over its own existence —
-The power of ultimate disposal —
-Destruction that includes the destroyer
+Suicide enacts —
+What nothing else does
 
-Any reductive inquiry not founded
-Upon individual sovereignty
-Collapses into incoherence —
+Individual's demonstration 
+Of utter ownership
+Over —
+His existence
 
-Without grounding itself in the individual
+His power
+To fully dispose — destroy —
+Including — the destroyer
+
+Unfounded 
+On individual sovereignty
+No enquiry 
+Has coherence
+
+Ungrounded on Individual
 Ethics and politics
-Have no ground
-And philosophy —
-Has no beginning
+Are phantoms
+
+And philosophy 
+Remains aborted
+
