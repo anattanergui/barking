@@ -1,37 +1,42 @@
 ---
 title: Worth
 tags:
-  - worth
   - lifetime
   - cup
+  - price
   - filled
-  - emptied
-  - sitting
-  - walking
+  - emptieed
   - value
+  - costing
+  - worth
 themes:
   - worth
-  - being
+  - value
+  - impermanence
+  - exile
 mood:
   - contemplative
-  - austere
+  - hushed
 form:
-  - descending
-  - epigrammatic
+  - syllogistic
+  - minimalist
+  - definition
 related:
   - "[[Mercy]]"
   - "[[Worth Of An Hour]]"
   - "[[Flyer’s Myth]]"
 style:
+  - interrogative
   - apophatic
   - spare
 energy:
+  - descending
   - contracting
-  - recursive
-word-count: "40"
+  - still
+word-count: "42"
 ---
 # Worth
-What’s the worth
+What’s the price
 Of a lifetime
 From birth to old age
 
@@ -39,7 +44,7 @@ Of success, status — grief and loss
 Beauty, joy
 And tears
 
-What’s the worth 
+What’s the price
 Of a cup —
 Filled, emptied, refilled
 Emptied again
@@ -47,4 +52,7 @@ Emptied again
 Sitting — walking —
 Made of value
 Without worth
+
+Costing —
+Lifetime
 
