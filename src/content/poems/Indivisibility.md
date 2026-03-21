@@ -79,7 +79,7 @@ And the other unreal or untrue
 No Brahman alone as real
 And Maya unreal
 
-Their unity is absolute
+Their indistiction is absolute
 Any attempt to distinguish
 One from the other is self-contradictory
 For the very act of distinction
