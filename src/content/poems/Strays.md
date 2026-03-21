@@ -30,7 +30,6 @@ And weave webs before me
 And I wonder — what if others came to know
 The thoughts that only I know
 Yet I am sure
-Now no longer a child
 
 That everyone else — young or old —
 Has thoughts only they know
