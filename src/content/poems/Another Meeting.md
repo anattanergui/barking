@@ -24,11 +24,13 @@ form:
   - dissolving
 related:
   - "[[Hallucinating Factory]]"
-  - "[[Worth]]"
+  - "[[Anxiety]]"
+  - "[[Size Of Concern]]"
 energy:
   - drifting
   - emptying
   - arrived
+  - contracting
 style:
   - interrogative
   - essayistic
