@@ -7,20 +7,20 @@ tags:
   - heals
   - sorrow
   - irretrievably
-  - universe
   - death
+  - recovers
+  - existence
 themes:
   - grief
-  - mortality
   - loss
+  - mortality
 mood:
-  - elegiac
   - mournful
-  - austere
+  - suspended
 form:
+  - interrogative 
   - accumulative
-  - descending
-  - rhetorical
+  - dissolving
 related:
   - "[[Sacrifice]]"
   - "[[Inna Lillahi Wa Inna Ilayhi Raji'un]]"
@@ -28,10 +28,10 @@ related:
 style:
   - interrogative
   - apophatic
-  - essayistic
+  - spare
 energy:
+  - coiling
   - inward
-  - contracting
 word-count: "143"
 ---
 # Dedication
