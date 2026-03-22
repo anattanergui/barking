@@ -2,31 +2,27 @@
 title: Seamless
 tags:
   - seamless
-  - day
-  - ordinary
-  - senses
   - beholding
-  - blended
   - unbroken
+  - senses
+  - ordinary
 themes:
   - presence
-  - wonder
-  - nonduality
+  - being
 mood:
   - reverent
-  - hushed
 form:
-  - epigrammatic
   - minimalist
+  - aphorism
 related:
   - "[[Stillness In Motion]]"
+  - "[[Beholding]]"
 style:
   - imagistic
-  - declarative
+  - lapidary
 energy:
-  - still
-  - arrived
   - vast
+  - still
 word-count: "12"
 ---
 # Seamless

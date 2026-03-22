@@ -5,10 +5,6 @@ tags:
   - price
   - something
 themes:
-  - loss
-  - emptiness
-  - deprivation
-  - negation
   - paradox
 mood:
   - austere
