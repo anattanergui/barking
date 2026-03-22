@@ -1,33 +1,34 @@
 ---
 title: Negation
 tags:
-  - paradox
-  - logic
   - system
+  - closed
+  - loop
+  - openness
   - boundaries
-  - negation
-  - closure
-  - aphorism
+  - component
+  - negated
+  - identical
+  - closedness
+  - simultaneous
 themes:
   - negation
-  - nonduality
+  - necessity
+  - duality
 mood:
   - clinical
   - austere
 form:
   - syllogistic
-  - descending
-  - demonstration
+  - definition
+  - ascending
 related:
   - "[[Lam Yalid Wa Lam Yulad]]"
 style:
   - logical
   - declarative
   - apophatic
-energy:
-  - contracting
-  - targeted
-  - voiding
+  - spare
 word-count: "97"
 ---
 # Negation
