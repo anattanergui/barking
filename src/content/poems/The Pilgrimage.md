@@ -1,28 +1,38 @@
 ---
-title: "The Pilgrimage"
+title: The Pilgrimage
 tags:
-  - mortality
-  - descent
-  - ruins
-  - emptiness
-  - dark
-  - paradox
-  - ritual
-  - thresholds
+  - skulls
+  - staircare
+  - stench
+  - ash
+  - spades
+  - inferno
+  - bones
+  - hole
 themes:
-  - death
-  - emptiness
-  - suffering
-  - transformation
-  - faith
-mood: stark
-form: free-verse
+  - seeking
+  - void
+  - futility
+mood:
+  - sombre
+  - austere
+form:
+  - sequential
+  - allegorical
+  - descending
 related:
   - "[[Tawaf]]"
-  - "[[Dissolution]]"
-  - "[[The Dying Misnamed]]"
-  - "[[Two Deaths]]"
-  - "[[Emptiness]]"
+  - "[[Fuck The Dependable]]"
+style:
+  - imagistic
+  - observational
+  - spare
+energy:
+  - descending
+  - contracting
+  - arrived
+  - voiding
+word-count: "101"
 ---
 # The Pilgrimage
 A staircase 
