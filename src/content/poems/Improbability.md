@@ -28,7 +28,7 @@ energy:
   - inward
   - dissolving
 related:
-  - "[[Absence Of Absence]]"
+  - "[[I — I know]]"
 word-count: "60"
 ---
 # Improbability
