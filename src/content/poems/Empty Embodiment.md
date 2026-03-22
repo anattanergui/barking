@@ -1,36 +1,37 @@
 ---
 title: Empty Embodiment
 tags:
-  - moksha
-  - robot
-  - monkey
-  - cells
-  - bones
+  - embodiment
+  - realisation
   - download
   - sage
+  - moksha
+  - metamorphosis
   - caterpillar
+  - nonsense
+  - chakra
+  - delusion
 themes:
-  - disillusion
   - language
   - embodiment
+  - liberation
+  - no-self
 mood:
-  - ironic
-  - contemptuous
+  - clinical
 form:
   - polemical
   - accumulative
-  - catalogue
+  - triptych
 related:
   - "[[Who Cares]]"
   - "[[Spirituality]]"
+  - "[[The Mirror Sage]]"
 energy:
-  - centrifugal
-  - deflating
+  - targeted
 style:
-  - rhetorical
-  - satirical
   - argumentative
-  - apophatic
+  - rhetorical
+  - declarative
 word-count: "441"
 ---
 # Empty Embodiment
