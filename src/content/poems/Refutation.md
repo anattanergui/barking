@@ -11,31 +11,23 @@ tags:
   - avatar
   - birds
 themes:
+  - nonduality
   - no-self
   - perception
-  - appearance
-  - knowledge
 mood:
-  - contemplative
   - lucid
-  - wry
 form:
   - syllogistic
   - demonstrative
-  - circular
 related:
   - "[[Hallucinating Factory]]"
   - "[[One Gaze]]"
 style:
   - interrogative
   - logical
-  - paratactic
-  - apophatic
+  - paradoxical
 energy:
-  - contracting
-  - dissolving
-  - recursive
-  - layered
+  - inward
 word-count: "1035"
 ---
 # Refutation

@@ -3,25 +3,20 @@ title: Reader-Writer
 tags:
   - reader
   - writer
-  - speaker
-  - listener
-  - audience
-  - dreamer
+  - reading
   - writing
-  - dreaming
+  - arising
+  - dreamer
   - dream
+  - listener
 themes:
   - nonduality
   - creation
-  - consciousness
-  - language
 mood:
   - meditative
-  - contemplative
 form:
-  - circular
-  - braided
-  - metaphorical
+  - syllogistic
+  - minimalist
 related:
   - "[[One And Other]]"
 energy:
@@ -29,8 +24,8 @@ energy:
   - still 
   - arrived
 style:
+  - logical
   - paradoxical
-  - declarative
   - apophatic
 word-count: "109"
 ---
