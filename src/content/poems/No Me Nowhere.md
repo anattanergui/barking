@@ -1,43 +1,32 @@
 ---
 title: No Me Nowhere
 tags:
-  - self-inquiry
-  - night
-  - day
-  - me
   - nowhere
-  - here
-  - beyond
+  - winters
+  - conclude
+  - anywhere
+  - found
+  - instant
+  - looked
+  - me
 themes:
   - no-self
-  - emptiness
-  - existence
-  - time
-  - negation
+  - self-inquiry
 mood:
-  - meditative
-  - vast
-  - spacious
+  - clinical
   - austere
 form:
-  - catalogue
   - syllogistic
+  - demonstrative
   - epigrammatic
 related:
-  - "[[No Self]]"
-  - "[[Absence Of Absence]]"
-  - "[[Anatta]]"
+  - "[[I Equals Body]]"
   - "[[Collective Delusion]]"
-  - "[[A Costume Speak]]"
 energy:
-  - expansive
-  - temporal
-  - iterative
-  - dissolving
+  - vast
 style:
-  - investigative
+  - logical
   - declarative
-  - apophatic
   - spare
 ---
 # No Me Nowhere
