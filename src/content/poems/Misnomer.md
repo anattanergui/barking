@@ -1,5 +1,13 @@
 ---
 tags:
+  - misnomer
+  - inversion
+  - possessed
+  - reflection
+  - default
+  - impossible
+  - deeds
+  - beliefs
 themes:
   - language
   - self-inquiry
@@ -15,6 +23,10 @@ style:
   - paradoxical
   - analytical
 word-count: "76"
+related:
+  - "[[A Costume Speak]]"
+  - "[[The Unnatural Recognition]]"
+  - "[[Illusory Self]]"
 ---
 # Misnomer
 In the absence of a self
