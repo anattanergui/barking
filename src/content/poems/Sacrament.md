@@ -5,31 +5,34 @@ tags:
   - altar
   - confession
   - couch
-  - pills
   - clergy
   - wafer
   - dsm
   - microscope
   - exorcism
+  - tumours
 themes:
-  - pathologisation
-  - power
   - substitution
+  - conformity
 mood:
   - sardonic
 form:
   - accumulative
   - polemical
+  - expanding
+  - catalogue
 related:
   - "[[Second Hand God]]"
   - "[[Sermon]]"
   - "[[The Last Idol]]"
 style:
-  - satirical
   - rhetorical
   - analytical
+  - satirical
+  - paratactic
 energy:
-  - horizontal
+  - invasive
+  - grounded
 word-count: "396"
 ---
 # Sacrament

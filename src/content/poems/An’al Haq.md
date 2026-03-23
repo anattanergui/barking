@@ -37,7 +37,6 @@ style:
   - confessional
   - apophatic
 word-count: "283"
-type: poem
 ---
 # An’al Haq
 Was it the Middle Ages

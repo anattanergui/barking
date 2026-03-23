@@ -2,31 +2,31 @@
 title: The Aloneness
 tags:
   - god
-  - creation
-  - dissolution
-  - heart
   - aloneness
-themes:
-  - creation
   - man
-  - divinity
-  - union
+  - heart
+  - made
+  - rest
+  - worlds
+themes:
   - solitude
+  - divinity
 mood:
-  - serene
-  - reverent
+  - lucid
   - vast
-  - contemplative
-  - haunting
 form:
-  - vertical
-  - aphoristic
+  - triptych
 related:
-  - "[[Irreducible Aloneness]]"
   - "[[Aloneness]]"
   - "[[Solitude]]"
-  - "[[Emptiness]]"
-  - "[[God Is A Jealous Lover]]"
+  - "[[Genesis]]"
+style:
+  - declarative
+  - aphoristic
+  - lapidary
+energy:
+  - breathing
+word-count: "23"
 ---
 # The Aloneness
 The aloneness —
@@ -34,8 +34,8 @@ In man’s heart
 Is God’s 
 
 It is out of that 
-He created —
+He made —
 All worlds
 
 And into which
-They dissolve
+They rest
