@@ -11,6 +11,7 @@ tags:
 themes:
   - language
   - self-inquiry
+  - self-reflection
 form:
   - syllogistic
   - definition
