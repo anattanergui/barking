@@ -72,7 +72,7 @@ export function getAllPoems() {
         crux:       toArray(data.crux || data.form),
         ground:     toArray(data.ground || data.energy),
         wordCount:  parseInt(data['word-count'] || data.wordCount || 0),
-        domains:    toArray(data.domains || data.themes || data.theme),
+        domains:    toArray(data.domains || data.domain || data.themes || data.theme),
         tags:       toArray(data.tags),
         related:    toArray(data.related),
         content:    body,
