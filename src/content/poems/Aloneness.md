@@ -10,12 +10,12 @@ tags:
   - compared
 domain:
   - aloneness
-  - consciousness
+  - divinity
 crux:
   - asymmetry
 atmosphere:
   - devotional
-  - awestruck
+  - awed
 ground:
   - experiential
   - nondual
