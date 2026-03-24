@@ -7,20 +7,20 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 const filters = getFilterOptions(poems);
 const total = poems.length;
-const themeCount = filters.themes.length;
-const moodCount  = filters.moods.length;
-const formCount  = filters.forms.length;
+const domainCount    = filters.domains.length;
+const atmosphereCount = filters.atmospheres.length;
+const cruxCount      = filters.cruxes.length;
 
 // Search index: meta only, no content — keeps the client bundle lean.
 const searchIndex = poems.map(p => ({
-  slug:      p.slug,
-  title:     p.title,
-  tags:      p.tags,
-  themes:    p.themes,
-  mood:      p.mood,
-  form:      p.form,
-  preview:   p.preview,
-  wordCount: p.wordCount,
+  slug:       p.slug,
+  title:      p.title,
+  tags:       p.tags,
+  domains:    p.domains,
+  atmosphere: p.atmosphere,
+  crux:       p.crux,
+  preview:    p.preview,
+  wordCount:  p.wordCount,
 }));
 
 // Featured pool: filter by actual content, not stale frontmatter wordCount.
@@ -386,7 +386,7 @@ Essentially no different from barkings of a dog.
           type="text"
           class="search-input"
           id="search-input"
-          placeholder="Search poems, themes, moods…"
+          placeholder="Search poems, domains, atmospheres…"
           autocomplete="off"
         />
         <div class="search-results" id="search-results"></div>
@@ -406,17 +406,17 @@ Essentially no different from barkings of a dog.
 </section>
 
 <div class="stats">
-  <a href={`${base}/browse?filter=themes`} class="stat">
-    <span class="stat-num">{themeCount}</span>
-    <span class="stat-label">Themes</span>
+  <a href={`${base}/browse?filter=domains`} class="stat">
+    <span class="stat-num">{domainCount}</span>
+    <span class="stat-label">Domains</span>
   </a>
-  <a href={`${base}/browse?filter=moods`} class="stat">
-    <span class="stat-num">{moodCount}</span>
-    <span class="stat-label">Moods</span>
+  <a href={`${base}/browse?filter=atmospheres`} class="stat">
+    <span class="stat-num">{atmosphereCount}</span>
+    <span class="stat-label">Atmospheres</span>
   </a>
-  <a href={`${base}/browse?filter=forms`} class="stat">
-    <span class="stat-num">{formCount}</span>
-    <span class="stat-label">Forms</span>
+  <a href={`${base}/browse?filter=cruxes`} class="stat">
+    <span class="stat-num">{cruxCount}</span>
+    <span class="stat-label">Cruxes</span>
   </a>
   <a href={`${base}/browse`} class="stat">
     <span class="stat-num">{total}</span>
@@ -498,10 +498,10 @@ Essentially no different from barkings of a dog.
 
     const matches = searchIndex.filter(p => {
       return p.title.toLowerCase().includes(q)
-        || p.tags.some(t    => t.toLowerCase().includes(q))
-        || p.themes.some(t  => t.toLowerCase().includes(q))
-        || p.mood.some(m    => m.toLowerCase().includes(q))
-        || p.form.some(f    => f.toLowerCase().includes(q))
+        || p.tags.some(t        => t.toLowerCase().includes(q))
+        || p.domains.some(t     => t.toLowerCase().includes(q))
+        || p.atmosphere.some(m  => m.toLowerCase().includes(q))
+        || p.crux.some(f        => f.toLowerCase().includes(q))
         || (p.preview && p.preview.toLowerCase().includes(q));
     }).slice(0, 7);
 
@@ -509,7 +509,7 @@ Essentially no different from barkings of a dog.
       results.innerHTML = `<div class="search-empty">No poems found for "${escapeHtml(q)}"</div>`;
     } else {
       results.innerHTML = matches.map(p => {
-        const meta = [...p.mood, ...p.form, ...p.themes.slice(0, 2)]
+        const meta = [...p.atmosphere, ...p.crux, ...p.domains.slice(0, 2)]
           .filter(Boolean).join(' · ');
         return `<a href="${base}/poem/${p.slug}" class="search-result-item">
           <span class="sri-title">${highlight(p.title, q)}</span>

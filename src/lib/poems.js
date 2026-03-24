@@ -24,18 +24,11 @@ function toArray(val) {
 
 // ── Safely parse a file that may have missing or unclosed frontmatter ────────
 function safeParse(raw) {
-  // If the file has no frontmatter at all, matter() is fine — data will be {}
-  // If frontmatter is unclosed (only one ---), matter() throws or returns garbage.
-  // We detect that and fall back to treating the whole file as content.
   try {
     const result = matter(raw);
-    // gray-matter can "succeed" on unclosed frontmatter by consuming the whole
-    // file as data. If content is empty but the raw file clearly has lines after
-    // the opening ---, that's a sign the block was never closed.
     const hasFrontmatter = raw.trimStart().startsWith('---');
     const closingDashes = (raw.match(/^---/gm) || []).length;
     if (hasFrontmatter && closingDashes < 2) {
-      // Unclosed frontmatter — treat entire file as plain content, no metadata
       return { data: {}, content: raw };
     }
     return result;
@@ -62,7 +55,6 @@ export function getAllPoems() {
       const sanitized = raw.replace(/\[\[([^\]]*)\]\]/g, '$1');
       const { data, content } = safeParse(sanitized);
 
-      // Title: frontmatter → filename (strip extension)
       const title = (data.title && String(data.title).trim()) || file.replace(/\.md$/, '');
       const slug  = slugify(title);
 
@@ -71,22 +63,20 @@ export function getAllPoems() {
         return [];
       }
 
-      // Content: prefer parsed content block; fall back to full raw text
       const body = (content || raw).trim();
 
       return [{
         slug,
         title,
-        mood:      toArray(data.mood),
-        form:      toArray(data.form),
-        style:     toArray(data.style),
-        energy:    toArray(data.energy),
-        wordCount: parseInt(data['word-count'] || data.wordCount || 0),
-        themes:    toArray(data.themes),
-        tags:      toArray(data.tags),
-        related:   toArray(data.related),
-        content:   body,
-        preview:   body.split('\n').filter(l => l.trim() && !l.startsWith('#')).slice(0, 4).join('\n') || '',
+        atmosphere: toArray(data.atmosphere || data.mood),
+        crux:       toArray(data.crux || data.form),
+        ground:     toArray(data.ground || data.energy),
+        wordCount:  parseInt(data['word-count'] || data.wordCount || 0),
+        domains:    toArray(data.domains || data.themes || data.theme),
+        tags:       toArray(data.tags),
+        related:    toArray(data.related),
+        content:    body,
+        preview:    body.split('\n').filter(l => l.trim() && !l.startsWith('#')).slice(0, 4).join('\n') || '',
       }];
     } catch (err) {
       console.warn(`[poems] Skipping "${file}": ${err.message}`);
@@ -99,44 +89,38 @@ export function getAllPoems() {
 }
 
 // ── Lightweight metadata-only loader (no content) ────────────────────────────
-// Use this when you only need the browse grid / search index — avoids
-// carrying large content strings into client-side JSON bundles.
 export function getAllPoemsMeta() {
   return getAllPoems().map(({ content: _content, ...meta }) => meta);
 }
 
 // ── Single poem lookup ───────────────────────────────────────────────────────
 export function getPoemBySlug(slug) {
-  // Reuses the memoized cache — no extra disk reads.
   return getAllPoems().find(p => p.slug === slug);
 }
 
 // ── Filter option aggregation ────────────────────────────────────────────────
 export function getFilterOptions(poems) {
-  const themes   = new Map();
-  const moods    = new Map();
-  const forms    = new Map();
-  const tags     = new Map();
-  const styles   = new Map();
-  const energies = new Map();
+  const domains     = new Map();
+  const atmospheres = new Map();
+  const cruxes      = new Map();
+  const tags        = new Map();
+  const grounds     = new Map();
 
   poems.forEach(p => {
-    p.themes.forEach(t => themes.set(t,    (themes.get(t)    || 0) + 1));
-    p.tags.forEach(t   => tags.set(t,      (tags.get(t)      || 0) + 1));
-    p.mood.forEach(m   => moods.set(m,     (moods.get(m)     || 0) + 1));
-    p.form.forEach(f   => forms.set(f,     (forms.get(f)     || 0) + 1));
-    p.style.forEach(s  => styles.set(s,    (styles.get(s)    || 0) + 1));
-    p.energy.forEach(e => energies.set(e,  (energies.get(e)  || 0) + 1));
+    p.domains.forEach(t    => domains.set(t,     (domains.get(t)     || 0) + 1));
+    p.tags.forEach(t       => tags.set(t,         (tags.get(t)         || 0) + 1));
+    p.atmosphere.forEach(m => atmospheres.set(m,  (atmospheres.get(m)  || 0) + 1));
+    p.crux.forEach(f       => cruxes.set(f,       (cruxes.get(f)       || 0) + 1));
+    p.ground.forEach(e     => grounds.set(e,      (grounds.get(e)      || 0) + 1));
   });
 
   const sort = m => [...m.entries()].sort((a, b) => b[1] - a[1]);
   return {
-    themes:   sort(themes),
-    moods:    sort(moods),
-    forms:    sort(forms),
-    tags:     sort(tags),
-    styles:   sort(styles),
-    energies: sort(energies),
+    domains:     sort(domains),
+    atmospheres: sort(atmospheres),
+    cruxes:      sort(cruxes),
+    tags:        sort(tags),
+    grounds:     sort(grounds),
   };
 }
 

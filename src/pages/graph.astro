@@ -6,22 +6,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/,'');
 
 const poems = getAllPoems();
 
-// ── Nodes: all fields including new style + energy ────────────────────────────
+// ── Nodes: all fields ────────────────────────────────────────────────────────
 const nodes = poems.map(p => ({
-  id:      p.slug,
-  label:   p.title,
-  themes:  p.themes  || [],
-  mood:    p.mood    || [],
-  tags:    p.tags    || [],
-  form:    p.form    || [],
-  style:   p.style   || [],
-  energy:  p.energy  || [],
-  related: p.related || [],
-  preview: p.preview || '',
+  id:         p.slug,
+  label:      p.title,
+  domains:    p.domains    || [],
+  atmosphere: p.atmosphere || [],
+  tags:       p.tags       || [],
+  crux:       p.crux       || [],
+  ground:     p.ground     || [],
+  related:    p.related    || [],
+  preview:    p.preview    || '',
 }));
 
 // ── Edges: shared values across all fields, max 10 per node ──────────────────
-const FIELDS = ['themes','mood','tags','form','style','energy'];
+const FIELDS = ['domains','atmosphere','tags','crux','ground'];
 const edgeMap = new Map();
 const degree  = new Map(nodes.map(n => [n.id, 0]));
 
@@ -202,12 +201,11 @@ const graphData = JSON.stringify({ nodes, edges, hubsByField });
     border-radius: 50%;
     flex-shrink: 0;
   }
-  .fd-themes  { background: #7c9e87; }
-  .fd-mood    { background: #a07080; }
-  .fd-tags    { background: #7088a0; }
-  .fd-form    { background: #a09060; }
-  .fd-style   { background: #9070a0; }
-  .fd-energy  { background: #a08050; }
+  .fd-domains    { background: #7c9e87; }
+  .fd-atmosphere { background: #a07080; }
+  .fd-tags       { background: #7088a0; }
+  .fd-crux       { background: #a09060; }
+  .fd-ground     { background: #a08050; }
 
   .accordion-arrow {
     font-size: 0.6rem;
@@ -468,12 +466,11 @@ const graphData = JSON.stringify({ nodes, edges, hubsByField });
     <div class="sidebar-panel active" id="panel-hub">
 
       {[
-        { key: 'themes', label: 'Theme'  },
-        { key: 'mood',   label: 'Mood'   },
-        { key: 'style',  label: 'Style'  },
-        { key: 'energy', label: 'Energy' },
-        { key: 'tags',   label: 'Tags'   },
-        { key: 'form',   label: 'Form'   },
+        { key: 'domains',    label: 'Domain'     },
+        { key: 'atmosphere', label: 'Atmosphere' },
+        { key: 'ground',     label: 'Ground'     },
+        { key: 'tags',       label: 'Tags'       },
+        { key: 'crux',       label: 'Crux'       },
       ].map(({ key, label }) => (
         <div class="accordion-item" data-field={key}>
           <button class="accordion-trigger" data-field={key}>
@@ -561,8 +558,8 @@ function init() {
   });
 
   const COLORS = {
-    themes: '#7c9e87', mood: '#a07080', tags: '#7088a0',
-    form: '#a09060',   style: '#9070a0', energy: '#a08050', related: '#888',
+    domains: '#7c9e87', atmosphere: '#a07080', tags: '#7088a0',
+    crux: '#a09060', ground: '#a08050', related: '#888',
   };
   const edgeColor = fields => COLORS[fields[0]] || '#888';
 
@@ -581,7 +578,7 @@ function init() {
 
   // ── Accordion setup ───────────────────────────────────────────────────────
   // Populate value lists from hubsByField
-  const FIELD_KEYS = ['themes','mood','style','energy','tags','form'];
+  const FIELD_KEYS = ['domains','atmosphere','ground','tags','crux'];
 
   FIELD_KEYS.forEach(field => {
     const hubs = hubsByField[field] || [];
@@ -699,9 +696,9 @@ function init() {
       return;
     }
     const meta = [
-      ...(node.mood   ||[]).slice(0,2),
-      ...(node.themes ||[]).slice(0,2),
-      ...(node.style  ||[]).slice(0,1),
+      ...(node.atmosphere ||[]).slice(0,2),
+      ...(node.domains    ||[]).slice(0,2),
+      ...(node.ground     ||[]).slice(0,1),
     ].filter(Boolean).join(' · ');
     el.innerHTML = `
       <div class="info-title">${node.label}</div>

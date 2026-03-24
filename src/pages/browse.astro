@@ -8,13 +8,13 @@ const poems = getAllPoemsMeta();
 const filters = getFilterOptions(poems);
 
 const poemsJson = JSON.stringify(poems.map(p => ({
-  slug:    p.slug,
-  title:   p.title,
-  mood:    p.mood,
-  form:    p.form,
-  themes:  p.themes,
-  tags:    p.tags,
-  preview: p.preview,
+  slug:       p.slug,
+  title:      p.title,
+  atmosphere: p.atmosphere,
+  crux:       p.crux,
+  domains:    p.domains,
+  tags:       p.tags,
+  preview:    p.preview,
 })));
 
 // All tags (untruncated) — client-side JS handles show-more
@@ -171,9 +171,9 @@ const allTagsJson = JSON.stringify(filters.tags);
     <input class="search" type="text" placeholder="Search poems…" id="search" />
 
     <div class="filter-group">
-      <div class="filter-heading">Theme</div>
-      {filters.themes.map(([val, count]) => (
-        <button class="filter-btn" data-type="theme" data-val={val}>
+      <div class="filter-heading">Domain</div>
+      {filters.domains.map(([val, count]) => (
+        <button class="filter-btn" data-type="domain" data-val={val}>
           <span class="filter-name">{val}</span>
           <span class="filter-count">{count}</span>
         </button>
@@ -181,9 +181,9 @@ const allTagsJson = JSON.stringify(filters.tags);
     </div>
 
     <div class="filter-group">
-      <div class="filter-heading">Mood</div>
-      {filters.moods.map(([val, count]) => (
-        <button class="filter-btn" data-type="mood" data-val={val}>
+      <div class="filter-heading">Atmosphere</div>
+      {filters.atmospheres.map(([val, count]) => (
+        <button class="filter-btn" data-type="atmosphere" data-val={val}>
           <span class="filter-name">{val}</span>
           <span class="filter-count">{count}</span>
         </button>
@@ -191,9 +191,9 @@ const allTagsJson = JSON.stringify(filters.tags);
     </div>
 
     <div class="filter-group">
-      <div class="filter-heading">Form</div>
-      {filters.forms.map(([val, count]) => (
-        <button class="filter-btn" data-type="form" data-val={val}>
+      <div class="filter-heading">Crux</div>
+      {filters.cruxes.map(([val, count]) => (
+        <button class="filter-btn" data-type="crux" data-val={val}>
           <span class="filter-name">{val}</span>
           <span class="filter-count">{count}</span>
         </button>
@@ -215,8 +215,8 @@ const allTagsJson = JSON.stringify(filters.tags);
       <div class="result-count" id="count">… <span>poems</span></div>
       <div class="sort-btns">
         <button class="sort-btn active" data-sort="alpha">A–Z</button>
-        <button class="sort-btn" data-sort="mood">By mood</button>
-        <button class="sort-btn" data-sort="theme">By theme</button>
+        <button class="sort-btn" data-sort="atmosphere">By atmosphere</button>
+        <button class="sort-btn" data-sort="domain">By domain</button>
       </div>
     </div>
     <div class="grid" id="grid"></div>
@@ -232,10 +232,10 @@ const allTagsJson = JSON.stringify(filters.tags);
   // ── Active filter state ────────────────────────────────────────────────────
   const params = new URLSearchParams(location.search);
   let active = {
-    theme: params.get('theme') || null,
-    mood:  params.get('mood')  || null,
-    form:  params.get('form')  || null,
-    tag:   params.get('tag')   || null,
+    domain:     params.get('domain')     || null,
+    atmosphere: params.get('atmosphere') || null,
+    crux:       params.get('crux')       || null,
+    tag:        params.get('tag')        || null,
   };
   let sortMode = 'alpha';
 
@@ -302,17 +302,17 @@ const allTagsJson = JSON.stringify(filters.tags);
   function apply() {
     const q = document.getElementById('search').value.toLowerCase();
     let list = ALL.filter(p => {
-      if (active.theme && !p.themes.includes(active.theme)) return false;
-      if (active.mood  && !p.mood.includes(active.mood))    return false;
-      if (active.form  && !p.form.includes(active.form))    return false;
-      if (active.tag   && !p.tags.includes(active.tag))     return false;
+      if (active.domain     && !p.domains.includes(active.domain))         return false;
+      if (active.atmosphere && !p.atmosphere.includes(active.atmosphere))   return false;
+      if (active.crux       && !p.crux.includes(active.crux))               return false;
+      if (active.tag        && !p.tags.includes(active.tag))                 return false;
       if (q && !p.title.toLowerCase().includes(q) && !p.preview.toLowerCase().includes(q)) return false;
       return true;
     });
 
-    if (sortMode === 'alpha') list.sort((a, b) => a.title.localeCompare(b.title));
-    else if (sortMode === 'mood')  list.sort((a, b) => (a.mood[0]  || '').localeCompare(b.mood[0]  || ''));
-    else if (sortMode === 'theme') list.sort((a, b) => (a.themes[0] || '').localeCompare(b.themes[0] || ''));
+    if (sortMode === 'alpha')       list.sort((a, b) => a.title.localeCompare(b.title));
+    else if (sortMode === 'atmosphere') list.sort((a, b) => (a.atmosphere[0] || '').localeCompare(b.atmosphere[0] || ''));
+    else if (sortMode === 'domain')     list.sort((a, b) => (a.domains[0]    || '').localeCompare(b.domains[0]    || ''));
 
     document.getElementById('count').innerHTML =
       `${list.length} <span>poem${list.length !== 1 ? 's' : ''}</span>`;
@@ -370,7 +370,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   }
 
   document.getElementById('clear-all').addEventListener('click', () => {
-    active = { theme: null, mood: null, form: null, tag: null };
+    active = { domain: null, atmosphere: null, crux: null, tag: null };
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('search').value = '';
     syncURL();
