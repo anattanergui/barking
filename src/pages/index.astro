@@ -24,7 +24,8 @@ const searchIndex = poems.map(p => ({
   wordCount:  p.wordCount,
 }));
 
-// Featured pool: filter by actual content, not stale frontmatter wordCount.
+// Featured pool: short poems only.
+// Use frontmatter word-count if set, otherwise count from content.
 // Criteria: fewer than 60 words AND fewer than 15 non-blank lines.
 function contentStats(content) {
   const lines = content
@@ -40,8 +41,12 @@ function contentStats(content) {
 
 const featuredPool = getAllPoems()
   .filter(p => {
-    const { lines, words } = contentStats(p.content);
-    return words > 0 && words < 60 && lines < 15;
+    // Trust frontmatter wordCount if present and non-zero
+    const wc = p.wordCount && p.wordCount > 0
+      ? p.wordCount
+      : contentStats(p.content).words;
+    const { lines } = contentStats(p.content);
+    return wc > 0 && wc < 60 && lines < 15;
   })
   .map(p => ({ slug: p.slug, title: p.title, tags: p.tags, content: p.content }));
 
