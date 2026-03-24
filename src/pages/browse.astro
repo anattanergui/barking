@@ -12,6 +12,7 @@ const poemsJson = JSON.stringify(poems.map(p => ({
   title:      p.title,
   atmosphere: p.atmosphere,
   crux:       p.crux,
+  ground:     p.ground,
   domains:    p.domains,
   tags:       p.tags,
   preview:    p.preview,
@@ -62,7 +63,20 @@ const allTagsJson = JSON.stringify(filters.tags);
     padding-bottom: 0.6rem;
     border-bottom: 1px solid var(--rule);
     margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
   }
+  .filter-heading:hover { color: var(--ink); }
+  .filter-arrow {
+    font-size: 0.55rem;
+    transition: transform 0.2s;
+    color: var(--muted);
+  }
+  .filter-heading.collapsed .filter-arrow { transform: rotate(-90deg); }
+  .filter-body.collapsed { display: none; }
 
   .filter-btn {
     display: flex; align-items: center; justify-content: space-between;
@@ -171,40 +185,60 @@ const allTagsJson = JSON.stringify(filters.tags);
     <input class="search" type="text" placeholder="Search poems…" id="search" />
 
     <div class="filter-group">
-      <div class="filter-heading">Domain</div>
-      {filters.domains.map(([val, count]) => (
-        <button class="filter-btn" data-type="domain" data-val={val}>
-          <span class="filter-name">{val}</span>
-          <span class="filter-count">{count}</span>
-        </button>
-      ))}
+      <div class="filter-heading" data-collapse="domain-body">Domain <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="domain-body">
+        {filters.domains.map(([val, count]) => (
+          <button class="filter-btn" data-type="domain" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
     </div>
 
     <div class="filter-group">
-      <div class="filter-heading">Atmosphere</div>
-      {filters.atmospheres.map(([val, count]) => (
-        <button class="filter-btn" data-type="atmosphere" data-val={val}>
-          <span class="filter-name">{val}</span>
-          <span class="filter-count">{count}</span>
-        </button>
-      ))}
+      <div class="filter-heading" data-collapse="atmosphere-body">Atmosphere <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="atmosphere-body">
+        {filters.atmospheres.map(([val, count]) => (
+          <button class="filter-btn" data-type="atmosphere" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
     </div>
 
     <div class="filter-group">
-      <div class="filter-heading">Crux</div>
-      {filters.cruxes.map(([val, count]) => (
-        <button class="filter-btn" data-type="crux" data-val={val}>
-          <span class="filter-name">{val}</span>
-          <span class="filter-count">{count}</span>
-        </button>
-      ))}
+      <div class="filter-heading" data-collapse="ground-body">Ground <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="ground-body">
+        {filters.grounds.map(([val, count]) => (
+          <button class="filter-btn" data-type="ground" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="crux-body">Crux <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="crux-body">
+        {filters.cruxes.map(([val, count]) => (
+          <button class="filter-btn" data-type="crux" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
     </div>
 
     <!-- Tags rendered client-side so show-more works without JS hydration -->
     <div class="filter-group">
-      <div class="filter-heading">Tags</div>
-      <div id="tag-list"></div>
-      <button class="show-more-btn" id="show-more-tags" style="display:none"></button>
+      <div class="filter-heading" data-collapse="tag-body">Tags <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="tag-body">
+        <div id="tag-list"></div>
+        <button class="show-more-btn" id="show-more-tags" style="display:none"></button>
+      </div>
     </div>
 
     <button class="clear-all" id="clear-all">Clear all filters</button>
@@ -217,6 +251,8 @@ const allTagsJson = JSON.stringify(filters.tags);
         <button class="sort-btn active" data-sort="alpha">A–Z</button>
         <button class="sort-btn" data-sort="atmosphere">By atmosphere</button>
         <button class="sort-btn" data-sort="domain">By domain</button>
+        <button class="sort-btn" data-sort="crux">By crux</button>
+        <button class="sort-btn" data-sort="ground">By ground</button>
       </div>
     </div>
     <div class="grid" id="grid"></div>
@@ -234,6 +270,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   let active = {
     domain:     params.get('domain')     || null,
     atmosphere: params.get('atmosphere') || null,
+    ground:     params.get('ground')     || null,
     crux:       params.get('crux')       || null,
     tag:        params.get('tag')        || null,
   };
@@ -304,15 +341,18 @@ const allTagsJson = JSON.stringify(filters.tags);
     let list = ALL.filter(p => {
       if (active.domain     && !p.domains.includes(active.domain))         return false;
       if (active.atmosphere && !p.atmosphere.includes(active.atmosphere))   return false;
+      if (active.ground     && !(p.ground||[]).includes(active.ground))      return false;
       if (active.crux       && !p.crux.includes(active.crux))               return false;
       if (active.tag        && !p.tags.includes(active.tag))                 return false;
       if (q && !p.title.toLowerCase().includes(q) && !p.preview.toLowerCase().includes(q)) return false;
       return true;
     });
 
-    if (sortMode === 'alpha')       list.sort((a, b) => a.title.localeCompare(b.title));
+    if (sortMode === 'alpha')           list.sort((a, b) => a.title.localeCompare(b.title));
     else if (sortMode === 'atmosphere') list.sort((a, b) => (a.atmosphere[0] || '').localeCompare(b.atmosphere[0] || ''));
     else if (sortMode === 'domain')     list.sort((a, b) => (a.domains[0]    || '').localeCompare(b.domains[0]    || ''));
+    else if (sortMode === 'crux')       list.sort((a, b) => (a.crux[0]       || '').localeCompare(b.crux[0]       || ''));
+    else if (sortMode === 'ground')     list.sort((a, b) => ((a.ground||[])[0]|| '').localeCompare((b.ground||[])[0]|| ''));
 
     document.getElementById('count').innerHTML =
       `${list.length} <span>poem${list.length !== 1 ? 's' : ''}</span>`;
@@ -370,7 +410,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   }
 
   document.getElementById('clear-all').addEventListener('click', () => {
-    active = { domain: null, atmosphere: null, crux: null, tag: null };
+    active = { domain: null, atmosphere: null, ground: null, crux: null, tag: null };
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('search').value = '';
     syncURL();
@@ -389,6 +429,17 @@ const allTagsJson = JSON.stringify(filters.tags);
   renderTags();
   updateClear();
   apply();
+
+  // ── Collapsible filter sections ────────────────────────────────────────────
+  document.querySelectorAll('.filter-heading[data-collapse]').forEach(heading => {
+    heading.addEventListener('click', () => {
+      const bodyId = heading.dataset.collapse;
+      const body   = document.getElementById(bodyId);
+      if (!body) return;
+      const collapsed = body.classList.toggle('collapsed');
+      heading.classList.toggle('collapsed', collapsed);
+    });
+  });
 </script>
 
 <style is:global>
