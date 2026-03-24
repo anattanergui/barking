@@ -10,7 +10,6 @@ export async function getStaticPaths() {
     params: { slug: p.slug },
     props: {
       poem: p,
-      // Pass neighbours at build time — no second getAllPoems() call at runtime
       prevPoem: poems[i - 1] ?? null,
       nextPoem: poems[i + 1] ?? null,
       allPoems: poems,
@@ -19,13 +18,12 @@ export async function getStaticPaths() {
 }
 
 const { poem, prevPoem, nextPoem, allPoems } = Astro.props;
-const { title, mood, form, themes, tags, related, content, wordCount } = poem;
+const { title, atmosphere, crux, domains, ground, related, content, wordCount } = poem;
 
-// Build a richer description for SEO / OG using available metadata
 const metaParts = [
-  mood.length  > 0 ? mood.join(', ')   : null,
-  form.length  > 0 ? form.join(', ')   : null,
-  themes.length > 0 ? themes.join(', ') : null,
+  atmosphere.length > 0 ? atmosphere.join(', ') : null,
+  crux.length       > 0 ? crux.join(', ')       : null,
+  domains.length    > 0 ? domains.join(', ')     : null,
 ].filter(Boolean);
 const description = metaParts.length
   ? `${title} — ${metaParts.join(' · ')}`
@@ -80,7 +78,6 @@ const relatedPoems = related
     margin-bottom: 4rem;
   }
 
-  /* Scoped poem body — avoids :global and !important */
   .poem-body {
     font-family: 'Libre Baskerville', serif;
     font-size: 1.05rem;
@@ -192,23 +189,23 @@ const relatedPoems = related
   </article>
 
   <aside class="sidebar">
-    {mood.length > 0 && (
+    {atmosphere.length > 0 && (
       <>
-        <span class="s-label">Mood</span>
+        <span class="s-label">Atmosphere</span>
         <div class="s-tags">
-          {mood.map(m => (
-            <a href={`${base}/browse?mood=${encodeURIComponent(m)}`} class="tag">{m}</a>
+          {atmosphere.map(m => (
+            <a href={`${base}/browse?atmosphere=${encodeURIComponent(m)}`} class="tag">{m}</a>
           ))}
         </div>
       </>
     )}
 
-    {form.length > 0 && (
+    {crux.length > 0 && (
       <>
-        <span class="s-label">Form</span>
+        <span class="s-label">Crux</span>
         <div class="s-tags">
-          {form.map(f => (
-            <a href={`${base}/browse?form=${encodeURIComponent(f)}`} class="tag">{f}</a>
+          {crux.map(f => (
+            <a href={`${base}/browse?crux=${encodeURIComponent(f)}`} class="tag">{f}</a>
           ))}
         </div>
       </>
@@ -221,23 +218,23 @@ const relatedPoems = related
       </>
     )}
 
-    {themes.length > 0 && (
+    {domains.length > 0 && (
       <>
-        <span class="s-label">Themes</span>
+        <span class="s-label">Domain</span>
         <div class="s-tags">
-          {themes.map(t => (
-            <a href={`${base}/browse?theme=${encodeURIComponent(t)}`} class="tag">{t}</a>
+          {domains.map(t => (
+            <a href={`${base}/browse?domain=${encodeURIComponent(t)}`} class="tag">{t}</a>
           ))}
         </div>
       </>
     )}
 
-    {tags.length > 0 && (
+    {ground.length > 0 && (
       <>
-        <span class="s-label">Tags</span>
+        <span class="s-label">Ground</span>
         <div class="s-tags">
-          {tags.map(t => (
-            <a href={`${base}/browse?tag=${encodeURIComponent(t)}`} class="tag">{t}</a>
+          {ground.map(g => (
+            <a href={`${base}/browse?ground=${encodeURIComponent(g)}`} class="tag">{g}</a>
           ))}
         </div>
       </>
@@ -256,7 +253,6 @@ const relatedPoems = related
       </>
     )}
 
-    <!-- Prev / next navigation -->
     {(prevPoem || nextPoem) && (
       <nav class="nav-poem" aria-label="Adjacent poems">
         {prevPoem
