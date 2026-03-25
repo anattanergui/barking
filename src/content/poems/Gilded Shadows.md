@@ -21,7 +21,7 @@ ground:
   - structural
 related:
   - "[[Hollow King]]"
-word-count: "118"
+word-count: "41"
 ---
 # Gilded Shadows
 Insatiable voyeurs
