@@ -1,36 +1,36 @@
 ---
 // src/pages/lexicon.astro
-import { getCollection } from 'astro:content';
+import { getAllPoemsMeta } from '../lib/poems.js';
 
-const poems = await getCollection('poems');
+const poems = getAllPoemsMeta();
 
-// Categories to display
-const categories = ['domain', 'atmosphere', 'ground', 'crux'];
+const categories = [
+  { key: 'domains',    label: 'domain' },
+  { key: 'atmosphere', label: 'atmosphere' },
+  { key: 'ground',     label: 'ground' },
+  { key: 'crux',       label: 'crux' },
+];
 
-// Build a map: category -> term -> [poem titles]
+// Build map: category -> term -> [{ title, slug }]
 const taxonomy = {};
-
-for (const cat of categories) {
-  taxonomy[cat] = {};
+for (const { key } of categories) {
+  taxonomy[key] = {};
 }
 
 for (const poem of poems) {
-  const data = poem.data;
-  for (const cat of categories) {
-    const terms = data[cat];
-    if (!terms) continue;
-    const list = Array.isArray(terms) ? terms : [terms];
-    for (const term of list) {
-      if (!taxonomy[cat][term]) taxonomy[cat][term] = [];
-      taxonomy[cat][term].push({ title: data.title, slug: poem.slug });
+  for (const { key } of categories) {
+    const terms = poem[key] || [];
+    for (const term of terms) {
+      if (!taxonomy[key][term]) taxonomy[key][term] = [];
+      taxonomy[key][term].push({ title: poem.title, slug: poem.slug });
     }
   }
 }
 
-// Sort terms alphabetically within each category
-for (const cat of categories) {
-  taxonomy[cat] = Object.fromEntries(
-    Object.entries(taxonomy[cat]).sort(([a], [b]) => a.localeCompare(b))
+// Sort terms alphabetically
+for (const { key } of categories) {
+  taxonomy[key] = Object.fromEntries(
+    Object.entries(taxonomy[key]).sort(([a], [b]) => a.localeCompare(b))
   );
 }
 ---
@@ -47,8 +47,7 @@ for (const cat of categories) {
       --border: #2a2a2a;
       --text: #d4cfc8;
       --muted: #6b6560;
-      --accent: #c9b97a;
-      --domain: #7a9bc9;
+      --domains: #7a9bc9;
       --atmosphere: #c97a9b;
       --ground: #7ac99b;
       --crux: #c9b97a;
@@ -79,10 +78,7 @@ for (const cat of categories) {
       text-decoration: none;
     }
 
-    nav {
-      display: flex;
-      gap: 2rem;
-    }
+    nav { display: flex; gap: 2rem; }
 
     nav a {
       font-size: 0.7rem;
@@ -95,15 +91,12 @@ for (const cat of categories) {
 
     nav a:hover, nav a.active { color: var(--text); }
 
-    .page-header {
-      padding: 4rem 3rem 2rem;
-    }
+    .page-header { padding: 4rem 3rem 2rem; }
 
     h1 {
       font-size: 2.5rem;
       font-weight: 400;
       letter-spacing: 0.02em;
-      color: var(--text);
       margin-bottom: 0.4rem;
     }
 
@@ -124,7 +117,7 @@ for (const cat of categories) {
 
     @media (max-width: 768px) {
       .grid { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
-      header { padding: 1.5rem; }
+      header { padding: 1.5rem; flex-direction: column; gap: 1rem; }
       .page-header { padding: 2.5rem 1.5rem 1.5rem; }
     }
 
@@ -142,16 +135,10 @@ for (const cat of categories) {
       border-bottom: 1px solid var(--border);
     }
 
-    .category-title.domain   { color: var(--domain); border-color: var(--domain); }
+    .category-title.domains    { color: var(--domains);    border-color: var(--domains); }
     .category-title.atmosphere { color: var(--atmosphere); border-color: var(--atmosphere); }
-    .category-title.ground   { color: var(--ground); border-color: var(--ground); }
-    .category-title.crux     { color: var(--crux); border-color: var(--crux); }
-
-    .term-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .category-title.ground     { color: var(--ground);     border-color: var(--ground); }
+    .category-title.crux       { color: var(--crux);       border-color: var(--crux); }
 
     .term-row {
       display: flex;
@@ -160,11 +147,10 @@ for (const cat of categories) {
       padding: 0.55rem 0;
       border-bottom: 1px solid #1c1c1c;
       cursor: pointer;
-      transition: background 0.15s;
-      position: relative;
+      transition: all 0.15s;
     }
 
-    .term-row:hover { background: var(--surface); }
+    .term-row:hover { background: var(--surface); padding-left: 0.5rem; }
     .term-row:hover .term-name { color: var(--text); }
 
     .term-name {
@@ -180,7 +166,16 @@ for (const cat of categories) {
       letter-spacing: 0.1em;
     }
 
-    /* Expandable poem list */
+    .chevron {
+      font-size: 0.5rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+      display: inline-block;
+      transition: transform 0.2s;
+    }
+
+    .term-row.open .chevron { transform: rotate(90deg); }
+
     .poem-list {
       display: none;
       flex-direction: column;
@@ -196,20 +191,11 @@ for (const cat of categories) {
       color: var(--muted);
       text-decoration: none;
       letter-spacing: 0.04em;
-      transition: color 0.15s;
       font-style: italic;
+      transition: color 0.15s;
     }
 
     .poem-list a:hover { color: var(--text); }
-
-    .term-row .chevron {
-      font-size: 0.5rem;
-      color: var(--muted);
-      margin-left: 0.5rem;
-      transition: transform 0.2s;
-    }
-
-    .term-row.open .chevron { transform: rotate(90deg); }
   </style>
 </head>
 <body>
@@ -232,21 +218,21 @@ for (const cat of categories) {
   </div>
 
   <div class="grid">
-    {categories.map(cat => (
+    {categories.map(({ key, label }) => (
       <div class="category-block">
-        <div class={`category-title ${cat}`}>{cat}</div>
+        <div class={`category-title ${key}`}>{label}</div>
         <div class="term-list">
-          {Object.entries(taxonomy[cat]).map(([term, poems]) => (
+          {Object.entries(taxonomy[key]).map(([term, termPoems]) => (
             <div>
-              <div class="term-row" data-term={term}>
+              <div class="term-row" data-key={key} data-term={term}>
                 <span class="term-name">{term}</span>
                 <span>
-                  <span class="term-count">{poems.length}</span>
+                  <span class="term-count">{termPoems.length}</span>
                   <span class="chevron">▶</span>
                 </span>
               </div>
-              <div class="poem-list" id={`poems-${cat}-${term.replace(/\s+/g, '-')}`}>
-                {poems.map(p => (
+              <div class="poem-list" id={`poems-${key}-${term.replace(/\s+/g, '-')}`}>
+                {termPoems.map(p => (
                   <a href={`/poems/${p.slug}`}>{p.title}</a>
                 ))}
               </div>
@@ -260,9 +246,9 @@ for (const cat of categories) {
   <script>
     document.querySelectorAll('.term-row').forEach(row => {
       row.addEventListener('click', () => {
-        const cat = row.closest('.category-block').querySelector('.category-title').classList[1];
+        const key  = row.dataset.key;
         const term = row.dataset.term.replace(/\s+/g, '-');
-        const list = document.getElementById(`poems-${cat}-${term}`);
+        const list = document.getElementById(`poems-${key}-${term}`);
         if (!list) return;
         const isOpen = list.classList.contains('open');
         list.classList.toggle('open', !isOpen);
