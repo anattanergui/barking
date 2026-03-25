@@ -3,13 +3,15 @@
 import Base from '../layouts/Base.astro';
 import { getAllPoemsMeta } from '../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 
+// Note: internal key is 'domains' but browse query param is 'domain'
 const categories = [
-  { key: 'domains',    label: 'domain' },
-  { key: 'atmosphere', label: 'atmosphere' },
-  { key: 'ground',     label: 'ground' },
-  { key: 'crux',       label: 'crux' },
+  { key: 'domains',    label: 'domain',     param: 'domain' },
+  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
+  { key: 'ground',     label: 'ground',     param: 'ground' },
+  { key: 'crux',       label: 'crux',       param: 'crux' },
 ];
 
 const taxonomy = {};
@@ -109,16 +111,37 @@ for (const { key } of categories) {
       transition: color 0.15s;
     }
 
+    .term-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
     .term-count {
       font-size: 0.63rem;
       color: var(--muted);
       letter-spacing: 0.1em;
     }
 
+    /* Link to browse with filter pre-applied */
+    .browse-link {
+      font-size: 0.55rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      opacity: 0;
+      transition: opacity 0.15s;
+      border: 1px solid var(--rule);
+      padding: 0.15rem 0.4rem;
+    }
+
+    .term-row:hover .browse-link { opacity: 1; }
+    .browse-link:hover { color: var(--ink); border-color: var(--ink); }
+
     .chevron {
       font-size: 0.45rem;
       color: var(--muted);
-      margin-left: 0.5rem;
+      margin-left: 0.3rem;
       display: inline-block;
       transition: transform 0.2s;
     }
@@ -153,21 +176,27 @@ for (const { key } of categories) {
   </div>
 
   <div class="lex-grid">
-    {categories.map(({ key, label }) => (
+    {categories.map(({ key, label, param }) => (
       <div class="cat-block">
         <div class={`cat-title ${key}`}>{label}</div>
         {Object.entries(taxonomy[key]).map(([term, termPoems]) => (
           <div>
             <div class="term-row" data-key={key} data-term={term}>
               <span class="term-name">{term}</span>
-              <span>
+              <span class="term-meta">
+                <a
+                  class="browse-link"
+                  href={`${base}/browse?${param}=${encodeURIComponent(term)}`}
+                  title="Filter in Browse"
+                  onclick="event.stopPropagation()"
+                >browse</a>
                 <span class="term-count">{termPoems.length}</span>
                 <span class="chevron">▶</span>
               </span>
             </div>
             <div class="poem-list" id={`poems-${key}-${term.replace(/\s+/g, '-')}`}>
               {termPoems.map(p => (
-                <a href={`/poems/${p.slug}`}>{p.title}</a>
+                <a href={`${base}/poem/${p.slug}`}>{p.title}</a>
               ))}
             </div>
           </div>

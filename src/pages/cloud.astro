@@ -3,29 +3,31 @@
 import Base from '../layouts/Base.astro';
 import { getAllPoemsMeta } from '../lib/poems.js';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 
+// param = the query string key browse.astro expects
 const categories = [
-  { key: 'domains',    label: 'domain' },
-  { key: 'atmosphere', label: 'atmosphere' },
-  { key: 'ground',     label: 'ground' },
-  { key: 'crux',       label: 'crux' },
+  { key: 'domains',    label: 'domain',     param: 'domain' },
+  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
+  { key: 'ground',     label: 'ground',     param: 'ground' },
+  { key: 'crux',       label: 'crux',       param: 'crux' },
 ];
 
 const termMap = {};
 
 for (const poem of poems) {
-  for (const { key } of categories) {
+  for (const { key, param } of categories) {
     const terms = poem[key] || [];
     for (const term of terms) {
-      if (!termMap[term]) termMap[term] = { count: 0, key };
+      if (!termMap[term]) termMap[term] = { count: 0, key, param };
       termMap[term].count++;
     }
   }
 }
 
 const allTerms = Object.entries(termMap)
-  .map(([term, { count, key }]) => ({ term, count, key }))
+  .map(([term, { count, key, param }]) => ({ term, count, key, param }))
   .sort((a, b) => b.count - a.count);
 
 const maxCount = Math.max(...allTerms.map(t => t.count));
@@ -122,6 +124,7 @@ const minCount = Math.min(...allTerms.map(t => t.count));
       line-height: 2;
     }
 
+    /* Each term links directly to browse pre-filtered */
     .cloud-term {
       text-decoration: none;
       display: inline-block;
@@ -163,7 +166,7 @@ const minCount = Math.min(...allTerms.map(t => t.count));
   <div class="page-header">
     <div>
       <h1>Cloud</h1>
-      <p class="subtitle">Terms by frequency</p>
+      <p class="subtitle">Terms by frequency — click any term to browse poems</p>
     </div>
     <div class="legend">
       {categories.map(({ key, label }) => (
@@ -183,12 +186,12 @@ const minCount = Math.min(...allTerms.map(t => t.count));
   </div>
 
   <div class="cloud-container">
-    {allTerms.map(({ term, count, key }) => {
+    {allTerms.map(({ term, count, key, param }) => {
       const ratio = maxCount === minCount ? 0.5 : (count - minCount) / (maxCount - minCount);
       const size  = (0.8 + ratio * 1.6).toFixed(2);
       return (
         <a
-          href={`/lexicon`}
+          href={`${base}/browse?${param}=${encodeURIComponent(term)}`}
           class={`cloud-term ${key}`}
           data-category={key}
           data-count={count}
