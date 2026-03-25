@@ -1,0 +1,52 @@
+---
+tags:
+  - communication
+  - transmission
+  - intimacy
+  - stripped
+  - vehicle
+  - expression
+  - feat
+word-count: "58"
+domain:
+  - intimacy
+  - communication
+crux:
+  - transmission
+atmosphere:
+  - tender
+  - reverent
+ground:
+  - ontological
+  - experiential
+---
+# The Vehicle
+To engage
+In the impossible feat
+Of communication 
+Across space and time 
+
+All we have — is thought
+Made into words
+Sounds
+Images
+
+Or images, sounds
+And words 
+Made into thought
+
+The feat then
+Is not expression 
+But transmission —
+
+Of the vehicle —
+Across space and time
+Adorned
+In communication —
+
+Reaching 
+Seeking 
+To be stripped
+For transmission —
+
+Intimacy 
