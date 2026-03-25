@@ -1,0 +1,345 @@
+---
+// src/pages/cloud.astro
+import { getCollection } from 'astro:content';
+
+const poems = await getCollection('poems');
+
+const categories = ['domain', 'atmosphere', 'ground', 'crux'];
+
+// Collect all terms with counts and which category they belong to
+const termMap = {}; // term -> { count, category }
+
+for (const poem of poems) {
+  const data = poem.data;
+  for (const cat of categories) {
+    const terms = data[cat];
+    if (!terms) continue;
+    const list = Array.isArray(terms) ? terms : [terms];
+    for (const term of list) {
+      if (!termMap[term]) {
+        termMap[term] = { count: 0, category: cat };
+      }
+      termMap[term].count++;
+    }
+  }
+}
+
+const allTerms = Object.entries(termMap)
+  .map(([term, { count, category }]) => ({ term, count, category }))
+  .sort((a, b) => b.count - a.count);
+
+const maxCount = Math.max(...allTerms.map(t => t.count));
+const minCount = Math.min(...allTerms.map(t => t.count));
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud — Anatta Nergui</title>
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text: #d4cfc8;
+      --muted: #6b6560;
+      --domain: #7a9bc9;
+      --atmosphere: #c97a9b;
+      --ground: #7ac99b;
+      --crux: #c9b97a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2.5rem 3rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .site-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--text); }
+
+    .page-header {
+      padding: 4rem 3rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      padding-bottom: 0.4rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .legend-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.domain     { background: var(--domain); }
+    .legend-dot.atmosphere { background: var(--atmosphere); }
+    .legend-dot.ground     { background: var(--ground); }
+    .legend-dot.crux       { background: var(--crux); }
+
+    /* Filter bar */
+    .filter-bar {
+      padding: 1.5rem 3rem;
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .filter-btn {
+      font-family: 'Georgia', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover { border-color: var(--text); color: var(--text); }
+    .filter-btn.active-all { border-color: var(--text); color: var(--text); }
+    .filter-btn.active-domain     { border-color: var(--domain); color: var(--domain); }
+    .filter-btn.active-atmosphere { border-color: var(--atmosphere); color: var(--atmosphere); }
+    .filter-btn.active-ground     { border-color: var(--ground); color: var(--ground); }
+    .filter-btn.active-crux       { border-color: var(--crux); color: var(--crux); }
+
+    /* Cloud */
+    .cloud-container {
+      padding: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      align-items: center;
+      line-height: 1.8;
+    }
+
+    .cloud-term {
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.15s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cloud-term:hover {
+      transform: translateY(-1px);
+      opacity: 1 !important;
+    }
+
+    .cloud-term.domain     { color: var(--domain); }
+    .cloud-term.atmosphere { color: var(--atmosphere); }
+    .cloud-term.ground     { color: var(--ground); }
+    .cloud-term.crux       { color: var(--crux); }
+
+    .cloud-term.hidden { display: none; }
+
+    /* Tooltip */
+    .tooltip {
+      position: fixed;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.15s;
+      z-index: 100;
+      white-space: nowrap;
+    }
+
+    .tooltip.visible { opacity: 1; }
+
+    @media (max-width: 768px) {
+      header { padding: 1.5rem; flex-direction: column; gap: 1rem; }
+      .page-header { padding: 2.5rem 1.5rem 1rem; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+      .filter-bar { padding: 1.5rem; }
+      .cloud-container { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="site-name">Anatta Nergui</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/browse">Browse</a>
+      <a href="/graph">Graph</a>
+      <a href="/lexicon">Lexicon</a>
+      <a href="/cloud" class="active">Cloud</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <div>
+      <h1>Cloud</h1>
+      <p class="subtitle">Terms by frequency</p>
+    </div>
+    <div class="legend">
+      {['domain','atmosphere','ground','crux'].map(cat => (
+        <div class="legend-item">
+          <div class={`legend-dot ${cat}`}></div>
+          {cat}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="filter-btn active-all" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="domain">Domain</button>
+    <button class="filter-btn" data-filter="atmosphere">Atmosphere</button>
+    <button class="filter-btn" data-filter="ground">Ground</button>
+    <button class="filter-btn" data-filter="crux">Crux</button>
+  </div>
+
+  <div class="cloud-container" id="cloud">
+    {allTerms.map(({ term, count, category }) => {
+      // Map count to font size between 0.8rem and 2.4rem
+      const min = minCount, max = maxCount;
+      const ratio = max === min ? 0.5 : (count - min) / (max - min);
+      const size = (0.8 + ratio * 1.6).toFixed(2);
+      const weight = count > 2 ? '400' : '300';
+      return (
+        <a
+          href={`/lexicon#${term.replace(/\s+/g,'-')}`}
+          class={`cloud-term ${category}`}
+          data-category={category}
+          data-count={count}
+          data-term={term}
+          style={`font-size: ${size}rem; font-weight: ${weight};`}
+          title={`${term} — ${count} poem${count !== 1 ? 's' : ''}`}
+        >
+          {term}
+        </a>
+      );
+    })}
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script>
+    // Filter buttons
+    const buttons = document.querySelectorAll('.filter-btn');
+    const terms = document.querySelectorAll('.cloud-term');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter;
+
+        // Update active button
+        buttons.forEach(b => {
+          b.className = 'filter-btn';
+        });
+        btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
+
+        // Show/hide terms
+        terms.forEach(term => {
+          if (filter === 'all' || term.dataset.category === filter) {
+            term.classList.remove('hidden');
+          } else {
+            term.classList.add('hidden');
+          }
+        });
+
+        // Dim non-active category terms slightly when filtered
+        terms.forEach(term => {
+          term.style.opacity = filter === 'all' ? '1' : (term.dataset.category === filter ? '1' : '0.2');
+          term.classList.toggle('hidden', filter !== 'all' && term.dataset.category !== filter ? false : false);
+        });
+      });
+    });
+
+    // Tooltip
+    const tooltip = document.getElementById('tooltip');
+
+    terms.forEach(term => {
+      term.addEventListener('mouseenter', (e) => {
+        const count = term.dataset.count;
+        const cat = term.dataset.category;
+        tooltip.textContent = `${count} poem${count != 1 ? 's' : ''} · ${cat}`;
+        tooltip.classList.add('visible');
+      });
+
+      term.addEventListener('mousemove', (e) => {
+        tooltip.style.left = (e.clientX + 14) + 'px';
+        tooltip.style.top = (e.clientY - 28) + 'px';
+      });
+
+      term.addEventListener('mouseleave', () => {
+        tooltip.classList.remove('visible');
+      });
+    });
+  </script>
+
+</body>
+</html>

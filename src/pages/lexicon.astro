@@ -1,0 +1,275 @@
+---
+// src/pages/lexicon.astro
+import { getCollection } from 'astro:content';
+
+const poems = await getCollection('poems');
+
+// Categories to display
+const categories = ['domain', 'atmosphere', 'ground', 'crux'];
+
+// Build a map: category -> term -> [poem titles]
+const taxonomy = {};
+
+for (const cat of categories) {
+  taxonomy[cat] = {};
+}
+
+for (const poem of poems) {
+  const data = poem.data;
+  for (const cat of categories) {
+    const terms = data[cat];
+    if (!terms) continue;
+    const list = Array.isArray(terms) ? terms : [terms];
+    for (const term of list) {
+      if (!taxonomy[cat][term]) taxonomy[cat][term] = [];
+      taxonomy[cat][term].push({ title: data.title, slug: poem.slug });
+    }
+  }
+}
+
+// Sort terms alphabetically within each category
+for (const cat of categories) {
+  taxonomy[cat] = Object.fromEntries(
+    Object.entries(taxonomy[cat]).sort(([a], [b]) => a.localeCompare(b))
+  );
+}
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lexicon — Anatta Nergui</title>
+  <style>
+    :root {
+      --bg: #0e0e0e;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text: #d4cfc8;
+      --muted: #6b6560;
+      --accent: #c9b97a;
+      --domain: #7a9bc9;
+      --atmosphere: #c97a9b;
+      --ground: #7ac99b;
+      --crux: #c9b97a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      min-height: 100vh;
+    }
+
+    header {
+      padding: 2.5rem 3rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .site-name {
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav a:hover, nav a.active { color: var(--text); }
+
+    .page-header {
+      padding: 4rem 3rem 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      color: var(--text);
+      margin-bottom: 0.4rem;
+    }
+
+    .subtitle {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin: 0 3rem 4rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
+      header { padding: 1.5rem; }
+      .page-header { padding: 2.5rem 1.5rem 1.5rem; }
+    }
+
+    .category-block {
+      background: var(--bg);
+      padding: 2.5rem;
+    }
+
+    .category-title {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .category-title.domain   { color: var(--domain); border-color: var(--domain); }
+    .category-title.atmosphere { color: var(--atmosphere); border-color: var(--atmosphere); }
+    .category-title.ground   { color: var(--ground); border-color: var(--ground); }
+    .category-title.crux     { color: var(--crux); border-color: var(--crux); }
+
+    .term-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .term-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.55rem 0;
+      border-bottom: 1px solid #1c1c1c;
+      cursor: pointer;
+      transition: background 0.15s;
+      position: relative;
+    }
+
+    .term-row:hover { background: var(--surface); }
+    .term-row:hover .term-name { color: var(--text); }
+
+    .term-name {
+      font-size: 0.9rem;
+      color: #a09a93;
+      letter-spacing: 0.03em;
+      transition: color 0.15s;
+    }
+
+    .term-count {
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+
+    /* Expandable poem list */
+    .poem-list {
+      display: none;
+      flex-direction: column;
+      gap: 0.3rem;
+      padding: 0.6rem 0 0.8rem 0.8rem;
+      background: var(--surface);
+    }
+
+    .poem-list.open { display: flex; }
+
+    .poem-list a {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+      font-style: italic;
+    }
+
+    .poem-list a:hover { color: var(--text); }
+
+    .term-row .chevron {
+      font-size: 0.5rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+      transition: transform 0.2s;
+    }
+
+    .term-row.open .chevron { transform: rotate(90deg); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="/" class="site-name">Anatta Nergui</a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/browse">Browse</a>
+      <a href="/graph">Graph</a>
+      <a href="/lexicon" class="active">Lexicon</a>
+      <a href="/cloud">Cloud</a>
+      <a href="/about">About</a>
+    </nav>
+  </header>
+
+  <div class="page-header">
+    <h1>Lexicon</h1>
+    <p class="subtitle">All terms — by category</p>
+  </div>
+
+  <div class="grid">
+    {categories.map(cat => (
+      <div class="category-block">
+        <div class={`category-title ${cat}`}>{cat}</div>
+        <div class="term-list">
+          {Object.entries(taxonomy[cat]).map(([term, poems]) => (
+            <div>
+              <div class="term-row" data-term={term}>
+                <span class="term-name">{term}</span>
+                <span>
+                  <span class="term-count">{poems.length}</span>
+                  <span class="chevron">▶</span>
+                </span>
+              </div>
+              <div class="poem-list" id={`poems-${cat}-${term.replace(/\s+/g, '-')}`}>
+                {poems.map(p => (
+                  <a href={`/poems/${p.slug}`}>{p.title}</a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+
+  <script>
+    document.querySelectorAll('.term-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const cat = row.closest('.category-block').querySelector('.category-title').classList[1];
+        const term = row.dataset.term.replace(/\s+/g, '-');
+        const list = document.getElementById(`poems-${cat}-${term}`);
+        if (!list) return;
+        const isOpen = list.classList.contains('open');
+        list.classList.toggle('open', !isOpen);
+        row.classList.toggle('open', !isOpen);
+      });
+    });
+  </script>
+
+</body>
+</html>
