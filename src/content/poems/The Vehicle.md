@@ -19,6 +19,10 @@ atmosphere:
 ground:
   - ontological
   - experiential
+related:
+  - "[[Mortar]]"
+  - "[[Awareness]]"
+  - "[[One-Way]]"
 ---
 # The Vehicle
 To engage
