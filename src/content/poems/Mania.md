@@ -1,0 +1,51 @@
+---
+title: Mania
+tags:
+  - vine
+  - frenzy
+  - antipsychotics
+  - blanketed
+  - police
+  - mood-stabilisers
+domain:
+  - mania
+  - nature
+crux:
+  - pathologisation
+atmosphere:
+  - exuberant
+  - dry
+ground:
+  - experiential
+  - political
+related:
+  - "[[The Howling]]"
+  - "[[Dissolution]]"
+  - "[[Hallucination]]"
+  - "[[Becoming Unself]]"
+  - "[[Power]]"
+
+---
+# Mania
+The vine —
+Teeming with flowers
+Burdened by leaves —
+Branches surging
+Sweeping 
+Clinging to the wall
+Dangling 
+Swaying in the air
+
+Ground blanketed
+With scattered flowers
+Air thick
+With scent
+
+Such frenzy —
+Call the police
+The medics
+Restrain the vine
+Detain it
+Pump it
+With antipsychotics
+Mood stabilisers

@@ -1,8 +1,16 @@
 ---
 tags:
+  - mirror
+  - sound
+  - silence
+  - orphan
+  - grief
+  - awe
+  - dispassion
 related:
   - "[[To Whom But You]]"
   - "[[—]]"
+  - "[[To —]]"
 domain:
   - address
   - otherness
@@ -14,6 +22,7 @@ atmosphere:
 ground:
   - nondual
   - apophatic
+word-count: "47"
 ---
 # Rabba
 Rabba —
@@ -36,7 +45,7 @@ Not even —
 
 Me —
 Pulsating
-Orphaned 
+Orphan
 
 Grief, awe
 Dispassion
