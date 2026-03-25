@@ -9,13 +9,13 @@ tags:
   - feat
 word-count: "58"
 domain:
-  - intimacy
+  - transmission
   - communication
 crux:
-  - transmission
+  - intimacy
 atmosphere:
   - tender
-  - reverent
+  - lucid
 ground:
   - ontological
   - experiential

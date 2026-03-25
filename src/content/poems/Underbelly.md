@@ -11,15 +11,15 @@ tags:
   - sanitised
 domain:
   - writing
-  - exposure
-crux:
   - compulsion
+crux:
+  - inversion
 atmosphere:
-  - visceral
+  - clinical
   - unflinching
 ground:
-  - experiential
-  - psychological
+  - lucid
+  - analytical
 related:
   - "[[Expression]]"
   - "[[The Unshared]]"
