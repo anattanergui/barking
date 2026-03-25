@@ -43,7 +43,7 @@ In dark, infinitesimal
 Directionless —
 Inside
 
-Pretentiously stretched
+Futilely squandered
 In infinity —
 Outside
 
