@@ -24,7 +24,7 @@ atmosphere:
   - exacting
 ground:
   - political
-  - ontological / logical
+  - ontological
 related:
   - "[[Insatiability]]"
   - "[[Cost Of More]]"
