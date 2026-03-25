@@ -5,11 +5,9 @@ tags:
   - condensed
   - directionless
   - vanity
-  - pretentiously
   - bounties
-  - origins
-  - stretched
   - visions
+  - squandered
 domain:
   - consciousness
   - infinity
