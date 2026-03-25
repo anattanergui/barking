@@ -19,7 +19,7 @@ domain:
 crux:
   - unrepresentable
 atmosphere:
-  - elegiac
+  - dissolving
   - spectral
 ground:
   - phenomenological

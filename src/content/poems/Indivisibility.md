@@ -11,11 +11,11 @@ tags:
   - inseparable
 domain:
   - nonduality
-  - appearance
+  - awareness
 crux:
-  - indivisible
+  - indivisibility
 atmosphere:
-  - corrective
+  - correcting
   - rigorous
 ground:
   - nondual
