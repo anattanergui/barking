@@ -14,7 +14,6 @@ domain:
   - reading
 crux:
   - nonduality
-
 atmosphere:
   - lucid
   - intimate
@@ -23,7 +22,7 @@ ground:
   - phenomenological
 related:
   - "[[One And Other]]"
-
+  - "[[No-Self Talk]]"
 word-count: "109"
 ---
 # Reader-Writer

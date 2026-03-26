@@ -24,7 +24,7 @@ ground:
 word-count: "181"
 related:
   - "[[Infiltration]]"
-  - "[[Solipsist’s Paradox]]"
+  - "[[To Myself]]"
 ---
 # Hall Of Mirrors
 Do you really want to speak —

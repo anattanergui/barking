@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Reader-Writer.md",
+                "file": "To Myself.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Reader-Writer"
+              "title": "To Myself"
             }
           },
           {
@@ -54,7 +54,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabeticalReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -88,13 +88,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -110,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Reader-Writer.md",
+                "file": "To Myself.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Reader-Writer"
+              "title": "Backlinks for To Myself"
             }
           },
           {
@@ -129,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Reader-Writer.md",
+                "file": "To Myself.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Reader-Writer"
+              "title": "Outgoing links from To Myself"
             }
           },
           {
@@ -172,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Reader-Writer.md",
+                "file": "To Myself.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Reader-Writer"
+              "title": "Outline of To Myself"
             }
           }
         ],
@@ -202,8 +200,10 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "Orphan.md",
+    "No-Self Talk.md",
+    "To Myself.md",
     "Reader-Writer.md",
+    "Orphan.md",
     "The Blind Seer.md",
     "The Aloneness.md",
     "Cat And I.md",
@@ -225,8 +225,6 @@
     "The Empty Instant.md",
     "Aloneness.md",
     "The Vehicle.md",
-    "Awake.md",
-    "Abrupt.md",
-    "Absence Of Absence.md"
+    "Awake.md"
   ]
 }
