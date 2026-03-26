@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Atman.md",
+                "file": "Hall Of Mirrors.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Atman"
+              "title": "Hall Of Mirrors"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Atman.md",
+                "file": "Hall Of Mirrors.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Atman"
+              "title": "Backlinks for Hall Of Mirrors"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Atman.md",
+                "file": "Hall Of Mirrors.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Atman"
+              "title": "Outgoing links from Hall Of Mirrors"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Atman.md",
+                "file": "Hall Of Mirrors.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Atman"
+              "title": "Outline of Hall Of Mirrors"
             }
           }
         ],
@@ -201,6 +201,7 @@
   },
   "active": "0ad885b324719c89",
   "lastOpenFiles": [
+    "Atman.md",
     "For Fuck’s Sake.md",
     "Mercy.md",
     "The Broken Tool.md",

@@ -11,16 +11,16 @@ tags:
   - god
   - sound
 domain:
-  - selfhood
+  - identity
   - truth
 crux:
-  - groundless
+  - reflexivity
 atmosphere:
-  - vertiginous
-  - sardonic
+  - wry
+  - rueful
 ground:
-  - logical
-  - apophatic
+  - epistemological
+  - constructivist
 word-count: "181"
 related:
   - "[[Infiltration]]"
