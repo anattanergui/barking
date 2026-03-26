@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "For Fuck’s Sake.md",
+                "file": "Atman.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "For Fuck’s Sake"
+              "title": "Atman"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "For Fuck’s Sake.md",
+                "file": "Atman.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for For Fuck’s Sake"
+              "title": "Backlinks for Atman"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "For Fuck’s Sake.md",
+                "file": "Atman.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from For Fuck’s Sake"
+              "title": "Outgoing links from Atman"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "For Fuck’s Sake.md",
+                "file": "Atman.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of For Fuck’s Sake"
+              "title": "Outline of Atman"
             }
           }
         ],
@@ -201,8 +201,8 @@
   },
   "active": "0ad885b324719c89",
   "lastOpenFiles": [
-    "Mercy.md",
     "For Fuck’s Sake.md",
+    "Mercy.md",
     "The Broken Tool.md",
     "The Boy.md",
     "This Bed.md",

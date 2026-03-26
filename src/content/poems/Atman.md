@@ -10,16 +10,16 @@ tags:
   - me
   - unnamed
 domain:
-  - consciousness
-  - universality
+  - perception
+  - identity
 crux:
-  - solipsism
+  - unity
 atmosphere:
+  - sovereign
   - vast
-  - stark
 ground:
   - nondual
-  - mystical
+  - ontological
 type: poem
 word-count: "39"
 ---
