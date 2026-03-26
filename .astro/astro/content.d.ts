@@ -141,9 +141,23 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"poems": {
+"2026-03-26.md": {
+	id: "2026-03-26.md";
+  slug: "2026-03-26";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Abrupt.md": {
 	id: "Abrupt.md";
   slug: "abrupt";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Absence Of Absence.md": {
+	id: "Absence Of Absence.md";
+  slug: "absence-of-absence";
   body: string;
   collection: "poems";
   data: any
@@ -155,9 +169,9 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Ash.md": {
-	id: "Ash.md";
-  slug: "ash";
+"Assumption And Perception.md": {
+	id: "Assumption And Perception.md";
+  slug: "assumption-and-perception";
   body: string;
   collection: "poems";
   data: any
@@ -165,6 +179,20 @@ declare module 'astro:content' {
 "Atman.md": {
 	id: "Atman.md";
   slug: "atman";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Autopsy.md": {
+	id: "Autopsy.md";
+  slug: "autopsy";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Awake.md": {
+	id: "Awake.md";
+  slug: "awake";
   body: string;
   collection: "poems";
   data: any
@@ -183,6 +211,13 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Between Silences.md": {
+	id: "Between Silences.md";
+  slug: "between-silences";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Bittersweet.md": {
 	id: "Bittersweet.md";
   slug: "bittersweet";
@@ -190,30 +225,30 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Bowed.md": {
-	id: "Bowed.md";
-  slug: "bowed";
+"Clothes.md": {
+	id: "Clothes.md";
+  slug: "clothes";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Cessation.md": {
-	id: "Cessation.md";
-  slug: "cessation";
+"Cobwebs.md": {
+	id: "Cobwebs.md";
+  slug: "cobwebs";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Continuity.md": {
-	id: "Continuity.md";
-  slug: "continuity";
+"Contentment.md": {
+	id: "Contentment.md";
+  slug: "contentment";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Dear Heart.md": {
-	id: "Dear Heart.md";
-  slug: "dear-heart";
+"Cost Of Space.md": {
+	id: "Cost Of Space.md";
+  slug: "cost-of-space";
   body: string;
   collection: "poems";
   data: any
@@ -232,9 +267,30 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Dis-identification.md": {
+	id: "Dis-identification.md";
+  slug: "dis-identification";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Doer.md": {
+	id: "Doer.md";
+  slug: "doer";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Echoes In Silence.md": {
 	id: "Echoes In Silence.md";
   slug: "echoes-in-silence";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Emptiness.md": {
+	id: "Emptiness.md";
+  slug: "emptiness";
   body: string;
   collection: "poems";
   data: any
@@ -260,6 +316,20 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Eternity.md": {
+	id: "Eternity.md";
+  slug: "eternity";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"First Philosophy.md": {
+	id: "First Philosophy.md";
+  slug: "first-philosophy";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Folding.md": {
 	id: "Folding.md";
   slug: "folding";
@@ -267,9 +337,9 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Future.md": {
-	id: "Future.md";
-  slug: "future";
+"Futility.md": {
+	id: "Futility.md";
+  slug: "futility";
   body: string;
   collection: "poems";
   data: any
@@ -288,6 +358,34 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Gilded Shadows.md": {
+	id: "Gilded Shadows.md";
+  slug: "gilded-shadows";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Good News.md": {
+	id: "Good News.md";
+  slug: "good-news";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Hall Of Mirrors.md": {
+	id: "Hall Of Mirrors.md";
+  slug: "hall-of-mirrors";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Hallucinating Factory.md": {
+	id: "Hallucinating Factory.md";
+  slug: "hallucinating-factory";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Here-ward.md": {
 	id: "Here-ward.md";
   slug: "here-ward";
@@ -295,9 +393,58 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"In My Bed.md": {
-	id: "In My Bed.md";
-  slug: "in-my-bed";
+"Here.md": {
+	id: "Here.md";
+  slug: "here";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"I Am That.md": {
+	id: "I Am That.md";
+  slug: "i-am-that";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Identity.md": {
+	id: "Identity.md";
+  slug: "identity";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"If Then.md": {
+	id: "If Then.md";
+  slug: "if-then";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Ignorance.md": {
+	id: "Ignorance.md";
+  slug: "ignorance";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Illusory Self.md": {
+	id: "Illusory Self.md";
+  slug: "illusory-self";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Improbability.md": {
+	id: "Improbability.md";
+  slug: "improbability";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Indivisibility.md": {
+	id: "Indivisibility.md";
+  slug: "indivisibility";
   body: string;
   collection: "poems";
   data: any
@@ -305,6 +452,20 @@ declare module 'astro:content' {
 "Infiltration.md": {
 	id: "Infiltration.md";
   slug: "infiltration";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Insatiability.md": {
+	id: "Insatiability.md";
+  slug: "insatiability";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Integration.md": {
+	id: "Integration.md";
+  slug: "integration";
   body: string;
   collection: "poems";
   data: any
@@ -323,13 +484,6 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Man.md": {
-	id: "Man.md";
-  slug: "man";
-  body: string;
-  collection: "poems";
-  data: any
-} & { render(): Render[".md"] };
 "Mania.md": {
 	id: "Mania.md";
   slug: "mania";
@@ -337,9 +491,9 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Mercy.md": {
-	id: "Mercy.md";
-  slug: "mercy";
+"Manufacture Of Lack.md": {
+	id: "Manufacture Of Lack.md";
+  slug: "manufacture-of-lack";
   body: string;
   collection: "poems";
   data: any
@@ -358,16 +512,16 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Mortar.md": {
-	id: "Mortar.md";
-  slug: "mortar";
+"Misnomer.md": {
+	id: "Misnomer.md";
+  slug: "misnomer";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Negation.md": {
-	id: "Negation.md";
-  slug: "negation";
+"Mortar.md": {
+	id: "Mortar.md";
+  slug: "mortar";
   body: string;
   collection: "poems";
   data: any
@@ -393,23 +547,23 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"No-Self Talk.md": {
-	id: "No-Self Talk.md";
-  slug: "no-self-talk";
+"Non-attachment.md": {
+	id: "Non-attachment.md";
+  slug: "non-attachment";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"None.md": {
-	id: "None.md";
-  slug: "none";
+"Nonduality.md": {
+	id: "Nonduality.md";
+  slug: "nonduality";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Now.md": {
-	id: "Now.md";
-  slug: "now";
+"Nowhere.md": {
+	id: "Nowhere.md";
+  slug: "nowhere";
   body: string;
   collection: "poems";
   data: any
@@ -435,30 +589,30 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Reader-Writer.md": {
-	id: "Reader-Writer.md";
-  slug: "reader-writer";
+"Orphan.md": {
+	id: "Orphan.md";
+  slug: "orphan";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Retrospect.md": {
-	id: "Retrospect.md";
-  slug: "retrospect";
+"Paradox.md": {
+	id: "Paradox.md";
+  slug: "paradox";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Sacrifice.md": {
-	id: "Sacrifice.md";
-  slug: "sacrifice";
+"Prayer.md": {
+	id: "Prayer.md";
+  slug: "prayer";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Seamless.md": {
-	id: "Seamless.md";
-  slug: "seamless";
+"Rabba.md": {
+	id: "Rabba.md";
+  slug: "rabba";
   body: string;
   collection: "poems";
   data: any
@@ -470,9 +624,30 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Silence.md": {
+	id: "Silence.md";
+  slug: "silence";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Spirituality.md": {
+	id: "Spirituality.md";
+  slug: "spirituality";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Split-Mind.md": {
 	id: "Split-Mind.md";
   slug: "split-mind";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Stillness In Motion.md": {
+	id: "Stillness In Motion.md";
+  slug: "stillness-in-motion";
   body: string;
   collection: "poems";
   data: any
@@ -484,9 +659,16 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Strays.md": {
-	id: "Strays.md";
-  slug: "strays";
+"Surrender.md": {
+	id: "Surrender.md";
+  slug: "surrender";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Sweetheart.md": {
+	id: "Sweetheart.md";
+  slug: "sweetheart";
   body: string;
   collection: "poems";
   data: any
@@ -498,6 +680,20 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"That-Which-Perceives-Form.md": {
+	id: "That-Which-Perceives-Form.md";
+  slug: "that-which-perceives-form";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"The Addict.md": {
+	id: "The Addict.md";
+  slug: "the-addict";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "The Aloneness.md": {
 	id: "The Aloneness.md";
   slug: "the-aloneness";
@@ -505,30 +701,23 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"The Gap.md": {
-	id: "The Gap.md";
-  slug: "the-gap";
+"The Empty Instant.md": {
+	id: "The Empty Instant.md";
+  slug: "the-empty-instant";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"The Invasion.md": {
-	id: "The Invasion.md";
-  slug: "the-invasion";
+"The Impossible Knowing.md": {
+	id: "The Impossible Knowing.md";
+  slug: "the-impossible-knowing";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"The Pilgrimage.md": {
-	id: "The Pilgrimage.md";
-  slug: "the-pilgrimage";
-  body: string;
-  collection: "poems";
-  data: any
-} & { render(): Render[".md"] };
-"The Scar.md": {
-	id: "The Scar.md";
-  slug: "the-scar";
+"The Last Idol.md": {
+	id: "The Last Idol.md";
+  slug: "the-last-idol";
   body: string;
   collection: "poems";
   data: any
@@ -547,30 +736,44 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"The Unshared.md": {
-	id: "The Unshared.md";
-  slug: "the-unshared";
+"The Unnatural Recognition.md": {
+	id: "The Unnatural Recognition.md";
+  slug: "the-unnatural-recognition";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"This Bed.md": {
-	id: "This Bed.md";
-  slug: "this-bed";
+"The Vehicle.md": {
+	id: "The Vehicle.md";
+  slug: "the-vehicle";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"To —.md": {
-	id: "To —.md";
-  slug: "to-";
+"This, Or That.md": {
+	id: "This, Or That.md";
+  slug: "this-or-that";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Two Deaths.md": {
-	id: "Two Deaths.md";
-  slug: "two-deaths";
+"Those Who Know Speak.md": {
+	id: "Those Who Know Speak.md";
+  slug: "those-who-know-speak";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"To Whom But You.md": {
+	id: "To Whom But You.md";
+  slug: "to-whom-but-you";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Turn.md": {
+	id: "Turn.md";
+  slug: "turn";
   body: string;
   collection: "poems";
   data: any
@@ -589,6 +792,20 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Underbelly.md": {
+	id: "Underbelly.md";
+  slug: "underbelly";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Unhindered.md": {
+	id: "Unhindered.md";
+  slug: "unhindered";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Uniqueness.md": {
 	id: "Uniqueness.md";
   slug: "uniqueness";
@@ -596,16 +813,16 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Unseduced.md": {
-	id: "Unseduced.md";
-  slug: "unseduced";
+"Unorbiting.md": {
+	id: "Unorbiting.md";
+  slug: "unorbiting";
   body: string;
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"Unseen Form.md": {
-	id: "Unseen Form.md";
-  slug: "unseen-form";
+"Unoriginated.md": {
+	id: "Unoriginated.md";
+  slug: "unoriginated";
   body: string;
   collection: "poems";
   data: any
@@ -617,9 +834,16 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
-"We Sense.md": {
-	id: "We Sense.md";
-  slug: "we-sense";
+"Wedge.md": {
+	id: "Wedge.md";
+  slug: "wedge";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"When I Just See.md": {
+	id: "When I Just See.md";
+  slug: "when-i-just-see";
   body: string;
   collection: "poems";
   data: any
@@ -634,6 +858,20 @@ declare module 'astro:content' {
 "Words.md": {
 	id: "Words.md";
   slug: "words";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"Yet.md": {
+	id: "Yet.md";
+  slug: "yet";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
+"—.md": {
+	id: "—.md";
+  slug: "";
   body: string;
   collection: "poems";
   data: any

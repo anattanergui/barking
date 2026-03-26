@@ -21,9 +21,6 @@ ground:
   - political
   - logical
 related:
-  - "[[Groups For Groups]]"
-  - "[[Heretics]]"
-  - "[[Protector Parrots]]"
   - "[[First Philosophy]]"
 word-count: "136"
 ---
