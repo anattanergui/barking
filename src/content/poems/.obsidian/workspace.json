@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Blind Seer.md",
+                "file": "Reader-Writer.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "The Blind Seer"
+              "title": "Reader-Writer"
             }
           },
           {
@@ -88,11 +88,13 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -108,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Blind Seer.md",
+                "file": "Reader-Writer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Blind Seer"
+              "title": "Backlinks for Reader-Writer"
             }
           },
           {
@@ -127,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Blind Seer.md",
+                "file": "Reader-Writer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Blind Seer"
+              "title": "Outgoing links from Reader-Writer"
             }
           },
           {
@@ -170,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Blind Seer.md",
+                "file": "Reader-Writer.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Blind Seer"
+              "title": "Outline of Reader-Writer"
             }
           }
         ],
@@ -200,9 +202,11 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
+    "Orphan.md",
+    "Reader-Writer.md",
+    "The Blind Seer.md",
     "The Aloneness.md",
     "Cat And I.md",
-    "The Blind Seer.md",
     "This, Or That.md",
     "Atman.md",
     "Underbelly.md",
@@ -223,8 +227,6 @@
     "The Vehicle.md",
     "Awake.md",
     "Abrupt.md",
-    "Absence Of Absence.md",
-    "Contentment.md",
-    "Cost Of Space.md"
+    "Absence Of Absence.md"
   ]
 }
