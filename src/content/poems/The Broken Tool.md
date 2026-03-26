@@ -50,19 +50,18 @@ Despite its utter inadequacy
 Is the only mechanism
 That exists 
 
-To point to or at 
+To point to 
 Show or articulate
 What exists  
 
 Beyond its reach
-Uncontaminated  —
+Uncontaminated 
 By fingerprints
 
-Knowing this 
+Knowing this —
 Silence is no greater teaching 
-Of whatever 
-Has no greater claim to whatever —
-It’s pointing to
+Has no greater claim —
+To whatever it's pointing at
 Showing or representing
 
 Than speech
