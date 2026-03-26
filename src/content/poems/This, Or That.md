@@ -1,16 +1,15 @@
 ---
 domain:
   - being
-crux:
-  - inversion
   - differentiation
+crux:
+  - autopoiesis
 atmosphere:
-  - wry
-  - vast
+  - equanimous
+  - measured
 ground:
   - nondual
   - apophatic
-  - ontological
 word-count: "145"
 related:
   - "[[Unoriginated]]"
