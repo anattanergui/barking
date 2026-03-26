@@ -13,8 +13,8 @@ ground:
 word-count: "63"
 related:
   - "[[Uniqueness]]"
-  - "[[No Path]]"
   - "[[Older As Young]]"
+  - "[[This, Or That]]"
 ---
 # Perfection
 Expression and perfection
@@ -33,7 +33,7 @@ Because perfection is what
 This expression is
 
 If not —
-The the only perfect expression
+Then the only perfect expression
 Must be that
 Which is not expression at all
 
