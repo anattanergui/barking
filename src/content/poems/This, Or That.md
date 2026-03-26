@@ -58,10 +58,10 @@ It itself would rather be
 A log of wood
 Than —
 Unimaginably, crushingly 
-Being —
-
-Without being this 
+Being 
+Without being — this 
 Or that
+
 It would swallow and keep swallowing 
 The infinite space of an unending universe
 
