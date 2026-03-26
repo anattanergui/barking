@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cat And I.md",
+                "file": "The Blind Seer.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Cat And I"
+              "title": "The Blind Seer"
             }
           },
           {
@@ -54,7 +54,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabeticalReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -92,8 +92,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -109,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cat And I.md",
+                "file": "The Blind Seer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Cat And I"
+              "title": "Backlinks for The Blind Seer"
             }
           },
           {
@@ -128,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cat And I.md",
+                "file": "The Blind Seer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Cat And I"
+              "title": "Outgoing links from The Blind Seer"
             }
           },
           {
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cat And I.md",
+                "file": "The Blind Seer.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cat And I"
+              "title": "Outline of The Blind Seer"
             }
           }
         ],
@@ -201,8 +200,10 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "This, Or That.md",
+    "The Aloneness.md",
     "Cat And I.md",
+    "The Blind Seer.md",
+    "This, Or That.md",
     "Atman.md",
     "Underbelly.md",
     "Hall Of Mirrors.md",
@@ -224,8 +225,6 @@
     "Abrupt.md",
     "Absence Of Absence.md",
     "Contentment.md",
-    "Cost Of Space.md",
-    "—.md",
-    "Assumption And Perception.md"
+    "Cost Of Space.md"
   ]
 }
