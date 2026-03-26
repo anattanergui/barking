@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "This, Or That.md",
+                "file": "Cat And I.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "This, Or That"
+              "title": "Cat And I"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hall Of Mirrors.md",
+                "file": "Atman.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Hall Of Mirrors"
+              "title": "Atman"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -55,7 +54,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -93,7 +92,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hall Of Mirrors.md",
+                "file": "Cat And I.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Hall Of Mirrors"
+              "title": "Backlinks for Cat And I"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hall Of Mirrors.md",
+                "file": "Cat And I.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Hall Of Mirrors"
+              "title": "Outgoing links from Cat And I"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hall Of Mirrors.md",
+                "file": "Cat And I.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Hall Of Mirrors"
+              "title": "Outline of Cat And I"
             }
           }
         ],
@@ -199,9 +199,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "0ad885b324719c89",
+  "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
+    "This, Or That.md",
+    "Cat And I.md",
     "Atman.md",
+    "Underbelly.md",
+    "Hall Of Mirrors.md",
     "For Fuck’s Sake.md",
     "Mercy.md",
     "The Broken Tool.md",
@@ -210,7 +214,6 @@
     "Machinery.md",
     "Thief.md",
     "Left Coat.md",
-    "This, Or That.md",
     "2026-03-26.md",
     "Perfection.md",
     "Paradox.md",
@@ -223,7 +226,6 @@
     "Contentment.md",
     "Cost Of Space.md",
     "—.md",
-    "Assumption And Perception.md",
-    "The Unnatural Recognition.md"
+    "Assumption And Perception.md"
   ]
 }

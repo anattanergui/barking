@@ -22,6 +22,8 @@ ground:
   - ontological
 type: poem
 word-count: "39"
+related:
+  - "[[Hall Of Mirrors]]"
 ---
 # Atman
 I have seen —
