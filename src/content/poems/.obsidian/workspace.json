@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fuck The Dependable.md",
+                "file": "The God Complex.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Fuck The Dependable"
+              "title": "The God Complex"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Fuck The Dependable.md",
+                "file": "The God Complex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Fuck The Dependable"
+              "title": "Backlinks for The God Complex"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Fuck The Dependable.md",
+                "file": "The God Complex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Fuck The Dependable"
+              "title": "Outgoing links from The God Complex"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Fuck The Dependable.md",
+                "file": "The God Complex.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Fuck The Dependable"
+              "title": "Outline of The God Complex"
             }
           }
         ],
@@ -184,10 +184,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "72c3fac121af05d9",
+  "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "Shoddy Bastards.md",
     "Fuck The Dependable.md",
+    "The God Complex.md",
+    "Shoddy Bastards.md",
     "The Accomplishment.md",
     "Between Worlds.md",
     "Flyer’s Myth.md",
@@ -210,7 +211,6 @@
     "For Fuck’s Sake.md",
     "Mercy.md",
     "The Broken Tool.md",
-    "The Boy.md",
-    "This Bed.md"
+    "The Boy.md"
   ]
 }
