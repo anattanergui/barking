@@ -6,18 +6,18 @@ tags:
   - place
   - anybody
   - everyone
-  - I
+  - anyone
+
 domain:
   - identity
-  - belonging
+  - conformity
 crux:
   - inversion
 atmosphere:
   - wry
-  - defiant
+  - assured
 ground:
-  - existential
-  - paradoxical
+  - dialectical
 related:
   - "[[Self]]"
 
