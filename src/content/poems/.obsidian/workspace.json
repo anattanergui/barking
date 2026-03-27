@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "On Objectification.md",
+                "file": "Cocoon.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "On Objectification"
+              "title": "Cocoon"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "On Objectification.md",
+                "file": "Cocoon.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for On Objectification"
+              "title": "Backlinks for Cocoon"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "On Objectification.md",
+                "file": "Cocoon.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from On Objectification"
+              "title": "Outgoing links from Cocoon"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "On Objectification.md",
+                "file": "Cocoon.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of On Objectification"
+              "title": "Outline of Cocoon"
             }
           }
         ],
@@ -187,8 +187,9 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "Abbatoir.md",
     "On Objectification.md",
+    "Cocoon.md",
+    "Abbatoir.md",
     "No Other.md",
     "Paradox.md",
     "The Howling.md",
@@ -211,7 +212,6 @@
     "The Blind Seer.md",
     "The Aloneness.md",
     "Cat And I.md",
-    "This, Or That.md",
-    "Underbelly.md"
+    "This, Or That.md"
   ]
 }
