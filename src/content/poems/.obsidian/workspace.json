@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Not-duality.md",
+                "file": "An’al Haq.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Not-duality"
+              "title": "An’al Haq"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Not-duality.md",
+                "file": "An’al Haq.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Not-duality"
+              "title": "Backlinks for An’al Haq"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Not-duality.md",
+                "file": "An’al Haq.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Not-duality"
+              "title": "Outgoing links from An’al Haq"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Not-duality.md",
+                "file": "An’al Haq.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Not-duality"
+              "title": "Outline of An’al Haq"
             }
           }
         ],
@@ -188,9 +188,10 @@
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
     "Pavement Sutra.md",
-    "not-Paradox.md",
-    "Not-duality.md",
+    "An’al Haq.md",
     "Pavement Sutra 1.md",
+    "Not-duality.md",
+    "not-Paradox.md",
     "Perfection.md",
     "Cocoon.md",
     "On Objectification.md",
@@ -211,7 +212,6 @@
     "Ineffable.md",
     "Atman.md",
     "To Myself.md",
-    "No-Self Talk.md",
-    "Reader-Writer.md"
+    "No-Self Talk.md"
   ]
 }
