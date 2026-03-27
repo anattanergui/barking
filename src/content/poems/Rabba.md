@@ -13,14 +13,14 @@ related:
   - "[[To —]]"
 domain:
   - address
-  - otherness
+  - divinity
 crux:
-  - indistinction
+  - cancellation
 atmosphere:
   - trembling
-  - bereft
+  - reverent
 ground:
-  - nondual
+  - devotional
   - apophatic
 word-count: "47"
 ---

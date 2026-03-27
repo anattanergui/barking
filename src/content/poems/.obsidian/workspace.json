@@ -13,26 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "To Myself.md",
+                "file": "The Accomplishment.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "To Myself"
-            }
-          },
-          {
-            "id": "0ad885b324719c89",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Atman.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Atman"
+              "title": "The Accomplishment"
             }
           }
         ]
@@ -54,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -92,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -108,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "To Myself.md",
+                "file": "The Accomplishment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for To Myself"
+              "title": "Backlinks for The Accomplishment"
             }
           },
           {
@@ -127,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "To Myself.md",
+                "file": "The Accomplishment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from To Myself"
+              "title": "Outgoing links from The Accomplishment"
             }
           },
           {
@@ -170,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "To Myself.md",
+                "file": "The Accomplishment.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of To Myself"
+              "title": "Outline of The Accomplishment"
             }
           }
         ],
@@ -200,15 +187,23 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "No-Self Talk.md",
+    "Between Worlds.md",
+    "The Accomplishment.md",
+    "Flyer’s Myth.md",
+    "Unquestioning.md",
+    "No Other.md",
+    "Love.md",
+    "Rabba.md",
+    "Ineffable.md",
+    "Atman.md",
     "To Myself.md",
+    "No-Self Talk.md",
     "Reader-Writer.md",
     "Orphan.md",
     "The Blind Seer.md",
     "The Aloneness.md",
     "Cat And I.md",
     "This, Or That.md",
-    "Atman.md",
     "Underbelly.md",
     "Hall Of Mirrors.md",
     "For Fuck’s Sake.md",
@@ -217,14 +212,6 @@
     "The Boy.md",
     "This Bed.md",
     "Machinery.md",
-    "Thief.md",
-    "Left Coat.md",
-    "2026-03-26.md",
-    "Perfection.md",
-    "Paradox.md",
-    "The Empty Instant.md",
-    "Aloneness.md",
-    "The Vehicle.md",
-    "Awake.md"
+    "Thief.md"
   ]
 }
