@@ -13,7 +13,7 @@ tags:
   - hardwiring
 domain:
   - domestication
-  - disenchantment
+  - no-self
 crux:
   - dissimulation
   - pyrrhic
