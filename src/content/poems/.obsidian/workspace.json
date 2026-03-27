@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cocoon.md",
+                "file": "Pavement Sutra.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Cocoon"
+              "title": "Pavement Sutra"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cocoon.md",
+                "file": "Pavement Sutra.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Cocoon"
+              "title": "Backlinks for Pavement Sutra"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cocoon.md",
+                "file": "Pavement Sutra.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Cocoon"
+              "title": "Outgoing links from Pavement Sutra"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cocoon.md",
+                "file": "Pavement Sutra.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cocoon"
+              "title": "Outline of Pavement Sutra"
             }
           }
         ],
@@ -187,8 +187,11 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "On Objectification.md",
+    "Pavement Sutra 1.md",
+    "Perfection.md",
     "Cocoon.md",
+    "Pavement Sutra.md",
+    "On Objectification.md",
     "Abbatoir.md",
     "No Other.md",
     "Paradox.md",
@@ -209,9 +212,6 @@
     "No-Self Talk.md",
     "Reader-Writer.md",
     "Orphan.md",
-    "The Blind Seer.md",
-    "The Aloneness.md",
-    "Cat And I.md",
-    "This, Or That.md"
+    "The Blind Seer.md"
   ]
 }
