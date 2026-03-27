@@ -3,7 +3,6 @@ title: The Accomplishment
 tags:
   - tracks
   - transgression
-  - sovereignty
   - taboos
   - mask-making
   - tongue-biting
