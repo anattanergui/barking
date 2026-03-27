@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "On Objectification.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Abbatoir"
+              "title": "On Objectification"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "On Objectification.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Abbatoir"
+              "title": "Backlinks for On Objectification"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "On Objectification.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Abbatoir"
+              "title": "Outgoing links from On Objectification"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "On Objectification.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Abbatoir"
+              "title": "Outline of On Objectification"
             }
           }
         ],
@@ -186,8 +187,9 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "No Other.md",
     "Abbatoir.md",
+    "On Objectification.md",
+    "No Other.md",
     "Paradox.md",
     "The Howling.md",
     "Abbatoir 1.md",
@@ -210,7 +212,6 @@
     "The Aloneness.md",
     "Cat And I.md",
     "This, Or That.md",
-    "Underbelly.md",
-    "Hall Of Mirrors.md"
+    "Underbelly.md"
   ]
 }
