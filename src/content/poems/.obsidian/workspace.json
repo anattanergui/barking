@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The God Complex.md",
+                "file": "The Howling.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "The God Complex"
+              "title": "The Howling"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The God Complex.md",
+                "file": "The Howling.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The God Complex"
+              "title": "Backlinks for The Howling"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The God Complex.md",
+                "file": "The Howling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The God Complex"
+              "title": "Outgoing links from The Howling"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The God Complex.md",
+                "file": "The Howling.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The God Complex"
+              "title": "Outline of The Howling"
             }
           }
         ],
@@ -187,8 +187,9 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
-    "Fuck The Dependable.md",
     "The God Complex.md",
+    "The Howling.md",
+    "Fuck The Dependable.md",
     "Shoddy Bastards.md",
     "The Accomplishment.md",
     "Between Worlds.md",
@@ -211,7 +212,6 @@
     "Hall Of Mirrors.md",
     "For Fuck’s Sake.md",
     "Mercy.md",
-    "The Broken Tool.md",
-    "The Boy.md"
+    "The Broken Tool.md"
   ]
 }
