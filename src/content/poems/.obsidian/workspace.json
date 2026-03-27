@@ -15,7 +15,7 @@
               "state": {
                 "file": "The God Complex.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "The God Complex"
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
