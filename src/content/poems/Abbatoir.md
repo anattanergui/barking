@@ -20,7 +20,8 @@ ground:
   - axiomatic
   - individualist
 related:
-  - "[[No Other]]"[[Autopsy]]
+  - "[[No Other]]"
+  - "[[Autopsy]]"
 word-count: "153"
 ---
 # Abbatoir
