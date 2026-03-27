@@ -22,6 +22,10 @@ ground:
   - existential
   - apophatic
 word-count: "283"
+related:
+  - "[[I Am That]]"
+  - "[[not-Paradox]]"
+  - "[[Identity]]"
 ---
 # An’al Haq
 Was it the Middle Ages
