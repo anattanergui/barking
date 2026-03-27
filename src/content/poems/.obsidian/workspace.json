@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Paradox.md",
+                "file": "Abbatoir.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Paradox"
+              "title": "Abbatoir"
             }
           }
         ]
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Paradox.md",
+                "file": "Abbatoir.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Paradox"
+              "title": "Backlinks for Abbatoir"
             }
           },
           {
@@ -114,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Paradox.md",
+                "file": "Abbatoir.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Paradox"
+              "title": "Outgoing links from Abbatoir"
             }
           },
           {
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Paradox.md",
+                "file": "Abbatoir.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Paradox"
+              "title": "Outline of Abbatoir"
             }
           }
         ],
@@ -187,7 +186,11 @@
   },
   "active": "d5ebc144df1e1405",
   "lastOpenFiles": [
+    "No Other.md",
+    "Abbatoir.md",
+    "Paradox.md",
     "The Howling.md",
+    "Abbatoir 1.md",
     "The God Complex.md",
     "Fuck The Dependable.md",
     "Shoddy Bastards.md",
@@ -195,7 +198,6 @@
     "Between Worlds.md",
     "Flyer’s Myth.md",
     "Unquestioning.md",
-    "No Other.md",
     "Love.md",
     "Rabba.md",
     "Ineffable.md",
@@ -209,9 +211,6 @@
     "Cat And I.md",
     "This, Or That.md",
     "Underbelly.md",
-    "Hall Of Mirrors.md",
-    "For Fuck’s Sake.md",
-    "Mercy.md",
-    "The Broken Tool.md"
+    "Hall Of Mirrors.md"
   ]
 }

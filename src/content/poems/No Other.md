@@ -18,8 +18,7 @@ domain:
 crux:
   - vision
 atmosphere:
-  - dispassionate
-  - exacting
+  - lucid
 ground:
   - nondual
   - dialectical
