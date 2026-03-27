@@ -9,6 +9,7 @@ tags:
   - tears
   - speak
   - words
+  - nansur
 domain:
   - martyrdom
   - speech

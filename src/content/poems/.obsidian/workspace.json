@@ -15,7 +15,7 @@
               "state": {
                 "file": "An’al Haq.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "An’al Haq"
