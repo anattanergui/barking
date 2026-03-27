@@ -22,7 +22,8 @@ ground:
   - testimonial
 related:
   - "[[Quiet Desperation]]"
-
+  - "[[Turn]]"
+  - "[[The Howling]]"
 word-count: "172"
 ---
 # Cocoon
