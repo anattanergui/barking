@@ -11,15 +11,14 @@ tags:
   - presupposes
 domain:
   - agency
-  - selfhood
 crux:
   - groundlessness
 atmosphere:
-  - contemplative
-  - vertiginous
+  - patient
+  - equanimous
 ground:
-  - apophatic
-  - ontological
+  - no-self
+  - nondual
 related:
   - "[[Invisible Ink]]"
   - "[[The Addict]]"

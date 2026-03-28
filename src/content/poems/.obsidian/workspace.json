@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Between Silences.md",
+                "file": "Doer.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Between Silences"
+              "title": "Doer"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "between sil",
+                "query": "cloud",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -122,7 +122,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -138,7 +139,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Between Silences.md",
+                "file": "Doer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -148,7 +149,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Between Silences"
+              "title": "Backlinks for Doer"
             }
           },
           {
@@ -157,12 +158,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Between Silences.md",
+                "file": "Doer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Between Silences"
+              "title": "Outgoing links from Doer"
             }
           },
           {
@@ -200,13 +201,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Between Silences.md",
+                "file": "Doer.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Between Silences"
+              "title": "Outline of Doer"
             }
           }
         ],
@@ -230,6 +231,7 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "Between Silences.md",
     "Illusory Self.md",
     "The Shape Of Absence.md",
     "Words.md",
@@ -254,7 +256,6 @@
     "Pavement Sutra.md",
     "Pavement Sutra 1.md",
     "Not-duality.md",
-    "not-Paradox.md",
-    "Perfection.md"
+    "not-Paradox.md"
   ]
 }
