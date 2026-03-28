@@ -9,19 +9,21 @@ tags:
   - severance
 domain:
   - grief
+  - temporality
   - memory
 crux:
-  - derivation
+  - causation
 atmosphere:
-  - unflinching
-  - somber
+  - elegiac
+  - exhaustive
 ground:
   - taxonomic
-  - temporality
 related:
   - "[[Asymmetrical Loss]]"
   - "[[Residues]]"
-
+  - "[[Equanimity]]"
+  - "[[Dedication]]"
+word-count: "96"
 ---
 # Thief
 There are many kinds

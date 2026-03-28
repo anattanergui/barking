@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Equanimity.md",
+                "file": "Thief.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Equanimity"
+              "title": "Thief"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Equanimity.md",
+                "file": "Thief.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Equanimity"
+              "title": "Backlinks for Thief"
             }
           },
           {
@@ -156,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Equanimity.md",
+                "file": "Thief.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Equanimity"
+              "title": "Outgoing links from Thief"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Equanimity.md",
+                "file": "Thief.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Equanimity"
+              "title": "Outline of Thief"
             }
           }
         ],
@@ -229,10 +229,12 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
-    "Emptiness.md",
-    "Equanimity.md",
     "Devotion.md",
+    "Thief.md",
+    "Dedication.md",
     "Dis-identification.md",
+    "Equanimity.md",
+    "Emptiness.md",
     "Contentment.md",
     "The Pilgrimage.md",
     "Beholding.md",
@@ -252,8 +254,6 @@
     "Cocoon.md",
     "On Objectification.md",
     "Abbatoir.md",
-    "Paradox.md",
-    "The Howling.md",
-    "Abbatoir 1.md"
+    "Paradox.md"
   ]
 }
