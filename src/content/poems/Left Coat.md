@@ -9,15 +9,15 @@ tags:
   - bin
 domain:
   - belongings
-  - selfhood
+  - memory
 crux:
   - shedding
 atmosphere:
   - detached
-  - tender
+  - elegiac
 ground:
-  - retrospection
-  - estrangement
+  - retrospective
+  - impermanence
 related:
   - "[[Unfitting Costume]]"
   - "[[Residues]]"

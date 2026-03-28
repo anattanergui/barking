@@ -6,14 +6,16 @@ tags:
   - alive
   - entered
 domain:
-  - selfhood
+  - no-self
   - mortality
 crux:
-  - paradox
+  - unborn
 atmosphere:
-  - oracular
+  - lucid
+  - austere
 ground:
   - nondual
+  - apophatic
 related:
   - "[[Refutation]]"
 word-count: "17"

@@ -10,16 +10,18 @@ tags:
   - departing
   - self
 domain:
-  - selfhood
+  - embededness
   - maternity
+  - selfhood
 crux:
   - inseparability
 atmosphere:
-  - devotional
+  - reverent
   - luminous
 ground:
   - nondual
-  - experiential
+  - devotional
+  - testimonial
 related:
   - "[[Devotion]]"
 word-count: "53"

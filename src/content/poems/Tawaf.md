@@ -12,16 +12,15 @@ tags:
   - substantial
   - worshipping
 domain:
-  - selfhood
-  - devotion
-crux:
-  - circumambulation
-atmosphere:
+  - constitution
   - sacred
+crux:
+  - immanence
+atmosphere:
   - intoxicated
+  - devotional
 ground:
   - nondual
-  - apophatic
 related:
   - "[[Godhead]]"
   - "[[Integration]]"

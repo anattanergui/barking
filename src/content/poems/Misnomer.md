@@ -9,16 +9,15 @@ tags:
   - deeds
   - beliefs
 domain:
-  - selfhood
-  - language
+  - reflexivity
 crux:
-  - tautological
+  - inversion
 atmosphere:
-  - austere
-  - precise
+  - diagnostic
+  - dispassionate
 ground:
-  - logical
-  - phenomenological
+  - no-self
+  - analytical
 word-count: "76"
 related:
   - "[[A Costume Speak]]"
