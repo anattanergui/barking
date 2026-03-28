@@ -10,6 +10,7 @@ tags:
   - beauty
 domain:
   - meaning
+  - metaphysics
 crux:
   - annihilation
 atmosphere:
