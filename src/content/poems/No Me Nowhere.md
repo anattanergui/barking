@@ -2,24 +2,24 @@
 title: No Me Nowhere
 tags:
   - nowhere
-  - winters
   - conclude
   - anywhere
   - found
   - instant
   - looked
   - me
+  - beyond
 domain:
-  - selfhood
-  - no-self
+  - self
+  - inquiry
 crux:
-  - absence
+  - no-self
 atmosphere:
   - methodical
-  - still
+  - settled
 ground:
   - apophatic
-  - experiential
+  - empirical
 related:
   - "[[I Equals Body]]"
   - "[[Collective Delusion]]"
