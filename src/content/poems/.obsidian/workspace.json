@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Words.md",
+                "file": "Decree.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Words"
+              "title": "Decree"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Words.md",
+                "file": "Decree.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Words"
+              "title": "Backlinks for Decree"
             }
           },
           {
@@ -114,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Words.md",
+                "file": "Decree.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Words"
+              "title": "Outgoing links from Decree"
             }
           },
           {
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Words.md",
+                "file": "Decree.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Words"
+              "title": "Outline of Decree"
             }
           }
         ],
@@ -187,6 +186,10 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "Daily Bread.md",
+    "Daily Bread 1.md",
+    "Decree.md",
+    "Words.md",
     "When I Just See.md",
     "Unorbiting.md",
     "To Whom But You.md",
@@ -208,10 +211,6 @@
     "Tawaf.md",
     "Misnomer.md",
     "Left Coat.md",
-    "Khudi.md",
-    "Prayer.md",
-    "Unoriginated.md",
-    "The Unshared.md",
-    "Devotion.md"
+    "Khudi.md"
   ]
 }
