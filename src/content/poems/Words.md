@@ -25,7 +25,6 @@ atmosphere:
 ground:
   - apophatic
   - phenomenological 
-  - 
 related:
   - "[[The Shape Of Absence]]"
 word-count: "37"
