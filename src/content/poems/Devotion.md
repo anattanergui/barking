@@ -9,16 +9,14 @@ tags:
   - shrinking
   - wordless
 domain:
-  - devotion
-  - selfhood
+  - subsumption
 crux:
-  - dissolution
+  - pursuit
 atmosphere:
   - surrendered
-  - kinetic
+  - hushed
 ground:
-  - experiential
-  - apophatic
+  - devotional
 related:
   - "[[Surrender]]"
   - "[[Integration]]"

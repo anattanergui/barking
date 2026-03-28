@@ -11,16 +11,18 @@ tags:
   - ego
 domain:
   - disidentification
-  - selfhood
+  - consciousness
+
 crux:
-  - impossible
-  - tautological
+  - death
+
 atmosphere:
-  - exacting
-  - relentless
+  - forensic
+  - austere
+
 ground:
   - nondual
-  - logical
+  - deductive
 related:
   - "[[The Speaking Pond]]"
   - "[[Refutation]]"

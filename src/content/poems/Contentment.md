@@ -7,16 +7,14 @@ tags:
   - glad
   - content
 domain:
-  - contenment
-  - selfhood
+  - reach
+  - completion
 crux:
-  - sufficiency
+  - contentment
 atmosphere:
   - settled
-  - quiet
 ground:
-  - existential
-  - experiential
+  - testimonial
 related:
   - "[[The Empty Instant]]"
 

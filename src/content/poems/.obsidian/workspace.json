@@ -41,16 +41,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Pilgrimage.md",
+                "file": "Devotion.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Devotion"
+            }
+          },
+          {
+            "id": "06d2ce79952ff5ca",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Equanimity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Pilgrimage"
+              "title": "Equanimity"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -82,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "devotion",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,8 +117,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -124,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Pilgrimage.md",
+                "file": "Equanimity.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Pilgrimage"
+              "title": "Backlinks for Equanimity"
             }
           },
           {
@@ -143,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Pilgrimage.md",
+                "file": "Equanimity.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Pilgrimage"
+              "title": "Outgoing links from Equanimity"
             }
           },
           {
@@ -186,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Pilgrimage.md",
+                "file": "Equanimity.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Pilgrimage"
+              "title": "Outline of Equanimity"
             }
           }
         ],
@@ -214,13 +227,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "35e7b1955125d65d",
+  "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
-    "Beholding.md",
+    "Emptiness.md",
+    "Equanimity.md",
+    "Devotion.md",
+    "Dis-identification.md",
+    "Contentment.md",
     "The Pilgrimage.md",
+    "Beholding.md",
     "Metaphysical Rot.md",
     "The Unshared.md",
-    "Emptiness.md",
     "Awake.md",
     "Aloneness.md",
     "Abrupt.md",
@@ -237,10 +254,6 @@
     "Abbatoir.md",
     "Paradox.md",
     "The Howling.md",
-    "Abbatoir 1.md",
-    "The God Complex.md",
-    "Fuck The Dependable.md",
-    "Shoddy Bastards.md",
-    "The Accomplishment.md"
+    "Abbatoir 1.md"
   ]
 }
