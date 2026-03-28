@@ -9,16 +9,13 @@ tags:
   - something
   - no-more
 domain:
-  - absence
-  - impermanence
-crux:
   - cessation
+crux:
+  - abruptness
 atmosphere:
   - stark
-  - stunned
 ground:
   - ontological
-  - experiential
 related:
   - "[[Oblivion]]"
 

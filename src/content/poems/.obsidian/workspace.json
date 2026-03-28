@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Metaphysics.md",
+                "file": "The Pilgrimage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Metaphysics"
+              "title": "The Pilgrimage"
             }
           }
         ],
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "paradox",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -123,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Metaphysics.md",
+                "file": "The Pilgrimage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Metaphysics"
+              "title": "Backlinks for The Pilgrimage"
             }
           },
           {
@@ -142,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Metaphysics.md",
+                "file": "The Pilgrimage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Metaphysics"
+              "title": "Outgoing links from The Pilgrimage"
             }
           },
           {
@@ -185,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Metaphysics.md",
+                "file": "The Pilgrimage.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Metaphysics"
+              "title": "Outline of The Pilgrimage"
             }
           }
         ],
@@ -215,11 +216,17 @@
   },
   "active": "35e7b1955125d65d",
   "lastOpenFiles": [
+    "Beholding.md",
+    "The Pilgrimage.md",
     "Metaphysical Rot.md",
+    "The Unshared.md",
+    "Emptiness.md",
+    "Awake.md",
+    "Aloneness.md",
+    "Abrupt.md",
     "Metaphysics.md",
     "No Other.md",
     "An’al Haq.md",
-    "The Unshared.md",
     "Pavement Sutra.md",
     "Pavement Sutra 1.md",
     "Not-duality.md",
@@ -234,12 +241,6 @@
     "The God Complex.md",
     "Fuck The Dependable.md",
     "Shoddy Bastards.md",
-    "The Accomplishment.md",
-    "Between Worlds.md",
-    "Flyer’s Myth.md",
-    "Unquestioning.md",
-    "Love.md",
-    "Rabba.md",
-    "Ineffable.md"
+    "The Accomplishment.md"
   ]
 }

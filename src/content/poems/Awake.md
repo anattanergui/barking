@@ -9,16 +9,15 @@ tags:
   - seeing
   - body
 domain:
-  - awareness
-  - embodiment
+  - sentience
+  - impingement
 crux:
-  - witnessing
+  - unwilled
 atmosphere:
   - stark
-  - impassive
+  - dispassionate
 ground:
-  - nondual
-  - experiential
+  - receptivity
 word-count: "19"
 related:
   - "[[Sleep’s Sky]]"

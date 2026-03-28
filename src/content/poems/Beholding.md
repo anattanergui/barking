@@ -10,19 +10,18 @@ tags:
   - behold
   - sites
 domain:
-  - perception
-  - selfhood
+  - beholding
+  - pilgrimage
 crux:
   - reflexivity
 atmosphere:
-  - still
-  - spacious
+  - serene
 ground:
-  - nondual
-  - experiential
+  - immanence
 related:
   - "[[Emptiness]]"
   - "[[That-Which-Perceives-Form]]"
+  - "[[The Pilgrimage]]"
 type: poem
 word-count: "21"
 ---

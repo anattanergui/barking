@@ -10,14 +10,12 @@ tags:
   - compared
 domain:
   - aloneness
-  - divinity
 crux:
-  - asymmetry
+  - identity
 atmosphere:
   - devotional
   - awed
 ground:
-  - experiential
   - nondual
 related:
   - "[[The Aloneness]]"
