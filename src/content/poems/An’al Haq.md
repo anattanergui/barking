@@ -66,7 +66,13 @@ An’al Haq —
 I now whisper —
 Back to you
 
+
+
+
+
 Wondering —
+
+
 As the ages roll on
 Centuries and millennia —
 
