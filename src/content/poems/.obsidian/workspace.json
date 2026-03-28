@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No Me Nowhere.md",
+                "file": "Illusory Self.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "No Me Nowhere"
+              "title": "Illusory Self"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "devotion",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "No Me Nowhere.md",
+                "file": "Illusory Self.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for No Me Nowhere"
+              "title": "Backlinks for Illusory Self"
             }
           },
           {
@@ -156,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "No Me Nowhere.md",
+                "file": "Illusory Self.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from No Me Nowhere"
+              "title": "Outgoing links from Illusory Self"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "No Me Nowhere.md",
+                "file": "Illusory Self.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of No Me Nowhere"
+              "title": "Outline of Illusory Self"
             }
           }
         ],
@@ -229,6 +229,9 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "The Shape Of Absence.md",
+    "Words.md",
+    "No Me Nowhere.md",
     "Thief.md",
     "Devotion.md",
     "Dedication.md",
@@ -251,9 +254,6 @@
     "Not-duality.md",
     "not-Paradox.md",
     "Perfection.md",
-    "Cocoon.md",
-    "On Objectification.md",
-    "Abbatoir.md",
-    "Paradox.md"
+    "Cocoon.md"
   ]
 }

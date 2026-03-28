@@ -14,16 +14,17 @@ tags:
   - dissolving
   - line
 domain:
-  - selfhood
-  - absence
+  - gesture
+  - representation
 crux:
-  - unrepresentable
+  - trace
 atmosphere:
-  - dissolving
+  - contemplative
   - spectral
 ground:
-  - phenomenological
-  - nondual
+  - apophatic
+  - no-self
+
 related:
   - "[[No Me Nowhere]]"
 ---

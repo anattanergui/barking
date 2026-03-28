@@ -9,16 +9,17 @@ tags:
   - illusory
   - comprehend
 domain:
-  - selfhood
   - narration
+  - illusion
 crux:
   - groundless
 atmosphere:
-  - vertiginous
-  - spare
+  - dispassionate
+  - austere
 ground:
   - nondual
-  - deconstructive
+  - no-self
+  - analytical
 related:
   - "[[False Self]]"
   - "[[A Thousand Words]]"
