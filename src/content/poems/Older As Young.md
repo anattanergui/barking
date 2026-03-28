@@ -9,23 +9,19 @@ tags:
   - remebering
   - caught
 domain:
-  - age
   - memory
-crux:
   - inversion
+crux:
+  - recognition
 atmosphere:
   - wry
-  - elegiac
+  - reflective
 ground:
-  - paradoxical
-  - experiential
+  - retrospective
+  - cyclical
 related:
   - "[[Growing Up]]"
   - "[[Mirror We Cannot Be]]"
-style:
-  - paradoxical
-  - lapidary
-  - declarative
 word-count: "27"
 ---
 # Older As Young

@@ -9,16 +9,17 @@ tags:
   - feat
 word-count: "58"
 domain:
-  - transmission
   - communication
+  - transmission
+  - intimacy
 crux:
   - intimacy
 atmosphere:
   - tender
-  - lucid
+  - reaching
 ground:
-  - ontological
-  - experiential
+  - apophatic
+  - phenomenological
 related:
   - "[[Mortar]]"
   - "[[Awareness]]"

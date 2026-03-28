@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Older As Young.md",
+                "file": "Words.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Older As Young"
+              "title": "Words"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "older as young",
+                "query": "million more",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Older As Young.md",
+                "file": "Words.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Older As Young"
+              "title": "Backlinks for Words"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Older As Young.md",
+                "file": "Words.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Older As Young"
+              "title": "Outgoing links from Words"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Older As Young.md",
+                "file": "Words.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Older As Young"
+              "title": "Outline of Words"
             }
           }
         ],
@@ -187,6 +187,14 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "When I Just See.md",
+    "Unorbiting.md",
+    "To Whom But You.md",
+    "The Vehicle.md",
+    "Those Who Know Speak.md",
+    "The Empty Instant.md",
+    "Surrender.md",
+    "Older As Young.md",
     "Stir.md",
     "Non-attachment.md",
     "Mania.md",
@@ -204,14 +212,6 @@
     "Prayer.md",
     "Unoriginated.md",
     "The Unshared.md",
-    "Devotion.md",
-    "Metaphysical Rot.md",
-    "Wedge.md",
-    "The Impossible Knowing.md",
-    "Integration.md",
-    "Doer.md",
-    "Between Silences.md",
-    "Illusory Self.md",
-    "The Shape Of Absence.md"
+    "Devotion.md"
   ]
 }

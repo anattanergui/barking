@@ -9,16 +9,19 @@ tags:
   - grasps
   - nothing
 domain:
-  - prayer
-  - solitude
+  - emptiness
+  - address
+  - soul
 crux:
-  - nakedness
+  - recognition
 atmosphere:
-  - bereft
   - vast
+  - desolate
+  - reverent
 ground:
-  - experiential
-  - apophatic
+  - devotional
+  - surrendered
+  - theistic
 related:
   - "[[The Shape Of Absence]]"
   - "[[Devotion]]"

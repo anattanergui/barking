@@ -4,26 +4,20 @@ tags:
   - orphan
   - tether
   - unorbiting
-  - unoriented
-  - via-negativa
 domain:
   - attachment
-  - loss
+  - endings
 crux:
-  - decentering
+  - orphaned
 atmosphere:
   - adrift
   - bare
 ground:
-  - existential
-  - experiential
+  - surrendered
+  - impermanence
 related:
-  - "[[Irreducible Aloneness]]"
-  - "[[Connection Myth]]"
-  - "[[Asymmetrical Loss]]"
-  - "[[No Me Nowhere]]"
-  - "[[The Shape Of Absence]]"
-
+  - "[[The Unshared]]"
+  - "[[Between Worlds]]"
 ---
 # Unorbiting
 That person —

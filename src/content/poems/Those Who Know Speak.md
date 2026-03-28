@@ -4,7 +4,7 @@ tags:
   - write
   - sound
   - word
-  - "true"
+  - true
   - construction
   - show
   - hoping
@@ -14,15 +14,16 @@ tags:
   - spoken
 domain:
   - language
-  - truth
+  - writing
 crux:
-  - liberation
+  - freedom
+  - unspeakability
 atmosphere:
-  - unburdened
-  - wry
+  - liberated
+  - lucid
 ground:
   - apophatic
-  - experiential
+  - nondual
 related:
   - "[[Silence]]"
   - "[[Emptiness]]"

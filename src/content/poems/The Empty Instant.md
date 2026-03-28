@@ -7,25 +7,24 @@ tags:
   - awake
   - expanse
   - world
-  - hours
   - time
-  - hollow
   - blink
 domain:
   - time
-  - awakening
+  - instant
 crux:
-  - sufficiency
+  - completeness
 atmosphere:
-  - contemplative
-  - luminous
+  - wondering
+  - expansive
 ground:
+  - timeless
   - nondual
-  - experiential
 related:
   - "[[Emptiness]]"
   - "[[Now]]"
   - "[[The Still Point]]"
+  - "[[Atman]]"
 word-count: "62"
 ---
 # The Empty Instant

@@ -9,26 +9,19 @@ tags:
   - embrace
   - stone
 domain:
-  - peace
   - surrender
+  - peace
 crux:
-  - absorption
+  - embrace
 atmosphere:
-  - devotional
+  - reverential
   - still
 ground:
+  - devotional
   - nondual
-  - experiential
+  - surrendered
 related:
   - "[[Source]]"
-energy:
-  - plunging
-  - grounded
-  - centripetal
-style:
-  - imagistic
-  - declarative
-  - incantatory
 word-count: "25"
 ---
 # Surrender

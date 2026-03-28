@@ -13,15 +13,19 @@ tags:
   - unspeaking
 domain:
   - void
+  - language
   - soul
 crux:
   - retrieval
+  - yield
 atmosphere:
-  - luminous
   - vast
+  - intimate
+  - tender
 ground:
   - apophatic
-  - experiential
+  - phenomenological 
+  - 
 related:
   - "[[The Shape Of Absence]]"
 word-count: "37"

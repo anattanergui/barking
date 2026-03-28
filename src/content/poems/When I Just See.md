@@ -12,16 +12,17 @@ tags:
   - stars
   - nameless
 domain:
-  - awareness
-  - perception
+  - seeing
+  - knowing
 crux:
   - primacy
 atmosphere:
   - spacious
-  - sovereign
+  - still
+  - serene
 ground:
   - nondual
-  - experiential
+  - phenomenological
 related:
   - "[[Atman]]"
   - "[[Being Struck]]"
