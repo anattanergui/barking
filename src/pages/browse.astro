@@ -122,6 +122,32 @@ const allTagsJson = JSON.stringify(filters.tags);
   }
   .clear-all.visible { display: block; }
 
+  /* Cloud term badge — shown when arriving from cloud page */
+  .term-badge {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--rule);
+  }
+  .term-badge.visible { display: flex; }
+  .term-badge-label { color: var(--ink); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: none; }
+  .term-badge-clear {
+    margin-left: auto;
+    cursor: pointer;
+    background: none; border: none;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1;
+    padding: 0;
+  }
+  .term-badge-clear:hover { color: var(--ink); }
+
   /* Main area */
   .main { padding: 2.5rem 3.5rem; }
 
@@ -183,6 +209,13 @@ const allTagsJson = JSON.stringify(filters.tags);
 <div class="layout">
   <aside class="sidebar">
     <input class="search" type="text" placeholder="Search poems…" id="search" />
+
+    <!-- Badge shown when arriving from the cloud page via ?term= -->
+    <div class="term-badge" id="term-badge">
+      <span>Cloud term: </span>
+      <span class="term-badge-label" id="term-badge-label"></span>
+      <button class="term-badge-clear" id="term-badge-clear" title="Clear">✕</button>
+    </div>
 
     <div class="filter-group">
       <div class="filter-heading" data-collapse="domain-body">Domain <span class="filter-arrow">&#9662;</span></div>
@@ -267,6 +300,14 @@ const allTagsJson = JSON.stringify(filters.tags);
 
   // ── Active filter state ────────────────────────────────────────────────────
   const params = new URLSearchParams(location.search);
+
+  // ?term= + ?cats= come from cloud.astro links (cross-category match)
+  // When set, a poem matches if the term appears in ANY of the listed cats.
+  let cloudTerm = params.get('term') || null;
+  let cloudCats = params.get('cats')
+    ? params.get('cats').split(',').filter(Boolean)
+    : null;
+
   let active = {
     domain:     params.get('domain')     || null,
     atmosphere: params.get('atmosphere') || null,
@@ -276,13 +317,46 @@ const allTagsJson = JSON.stringify(filters.tags);
   };
   let sortMode = 'alpha';
 
+  // Map from category key → the poem field that holds those values
+  const CAT_FIELD = {
+    domains:    'domains',
+    atmosphere: 'atmosphere',
+    ground:     'ground',
+    crux:       'crux',
+  };
+
   // ── URL sync ───────────────────────────────────────────────────────────────
   function syncURL() {
     const p = new URLSearchParams();
     Object.entries(active).forEach(([k, v]) => { if (v) p.set(k, v); });
+    if (cloudTerm) {
+      p.set('term', cloudTerm);
+      if (cloudCats) p.set('cats', cloudCats.join(','));
+    }
     const qs = p.toString();
     history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
   }
+
+  // ── Cloud term badge ───────────────────────────────────────────────────────
+  function updateTermBadge() {
+    const badge = document.getElementById('term-badge');
+    const label = document.getElementById('term-badge-label');
+    if (cloudTerm) {
+      label.textContent = cloudTerm;
+      badge.classList.add('visible');
+    } else {
+      badge.classList.remove('visible');
+    }
+  }
+
+  document.getElementById('term-badge-clear').addEventListener('click', () => {
+    cloudTerm = null;
+    cloudCats = null;
+    syncURL();
+    updateTermBadge();
+    updateClear();
+    apply();
+  });
 
   // ── Render tag list ────────────────────────────────────────────────────────
   function renderTags() {
@@ -328,6 +402,11 @@ const allTagsJson = JSON.stringify(filters.tags);
       btn.classList.add('active');
     }
 
+    // Clicking a sidebar filter clears any cloud term override
+    cloudTerm = null;
+    cloudCats = null;
+    updateTermBadge();
+
     syncURL();
     updateClear();
     apply();
@@ -339,11 +418,26 @@ const allTagsJson = JSON.stringify(filters.tags);
   function apply() {
     const q = document.getElementById('search').value.toLowerCase();
     let list = ALL.filter(p => {
+      // Standard per-category filters (from sidebar clicks or single ?param= links)
       if (active.domain     && !p.domains.includes(active.domain))         return false;
       if (active.atmosphere && !p.atmosphere.includes(active.atmosphere))   return false;
       if (active.ground     && !(p.ground||[]).includes(active.ground))      return false;
       if (active.crux       && !p.crux.includes(active.crux))               return false;
       if (active.tag        && !p.tags.includes(active.tag))                 return false;
+
+      // Cross-category cloud term filter: poem must contain the term in
+      // at least one of the categories it was tagged with in the cloud.
+      if (cloudTerm && cloudCats) {
+        const termLower = cloudTerm.toLowerCase();
+        const matchesAny = cloudCats.some(cat => {
+          const field = CAT_FIELD[cat];
+          if (!field) return false;
+          const values = p[field] || [];
+          return values.some(v => v.toLowerCase() === termLower);
+        });
+        if (!matchesAny) return false;
+      }
+
       if (q && !p.title.toLowerCase().includes(q) && !p.preview.toLowerCase().includes(q)) return false;
       return true;
     });
@@ -405,16 +499,19 @@ const allTagsJson = JSON.stringify(filters.tags);
 
   // ── Clear all ──────────────────────────────────────────────────────────────
   function updateClear() {
-    const hasActive = Object.values(active).some(Boolean);
+    const hasActive = Object.values(active).some(Boolean) || !!cloudTerm;
     document.getElementById('clear-all').classList.toggle('visible', hasActive);
   }
 
   document.getElementById('clear-all').addEventListener('click', () => {
     active = { domain: null, atmosphere: null, ground: null, crux: null, tag: null };
+    cloudTerm = null;
+    cloudCats = null;
     document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     document.getElementById('search').value = '';
     syncURL();
     updateClear();
+    updateTermBadge();
     renderTags();
     apply();
   });
@@ -428,6 +525,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   // ── Init ───────────────────────────────────────────────────────────────────
   renderTags();
   updateClear();
+  updateTermBadge();
   apply();
 
   // ── Collapsible filter sections ────────────────────────────────────────────

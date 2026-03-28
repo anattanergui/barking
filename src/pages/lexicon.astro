@@ -184,9 +184,15 @@ for (const { key } of categories) {
             <div class="term-row" data-key={key} data-term={term}>
               <span class="term-name">{term}</span>
               <span class="term-meta">
+                {/*
+                  Use ?term=&cats= so browse matches this term across all
+                  categories it appears in — consistent with cloud.astro links.
+                  From lexicon we know exactly which category this term belongs
+                  to, so cats= is a single value, but the convention is shared.
+                */}
                 <a
                   class="browse-link"
-                  href={`${base}/browse?${param}=${encodeURIComponent(term)}`}
+                  href={`${base}/browse?term=${encodeURIComponent(term)}&cats=${key}`}
                   title="Filter in Browse"
                   onclick="event.stopPropagation()"
                 >browse</a>

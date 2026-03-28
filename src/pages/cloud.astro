@@ -14,20 +14,28 @@ const categories = [
   { key: 'crux',       label: 'crux',       param: 'crux' },
 ];
 
+// Build termMap: totalCount across ALL categories, plus per-category breakdown
 const termMap = {};
 
 for (const poem of poems) {
-  for (const { key, param } of categories) {
+  for (const { key } of categories) {
     const terms = poem[key] || [];
     for (const term of terms) {
-      if (!termMap[term]) termMap[term] = { count: 0, key, param };
-      termMap[term].count++;
+      if (!termMap[term]) {
+        termMap[term] = { totalCount: 0, cats: {} };
+      }
+      termMap[term].totalCount++;
+      termMap[term].cats[key] = (termMap[term].cats[key] || 0) + 1;
     }
   }
 }
 
+// Derive dominant category (for colour) from whichever has the most occurrences
 const allTerms = Object.entries(termMap)
-  .map(([term, { count, key, param }]) => ({ term, count, key, param }))
+  .map(([term, { totalCount, cats }]) => {
+    const [dominantKey] = Object.entries(cats).sort((a, b) => b[1] - a[1])[0];
+    return { term, count: totalCount, key: dominantKey, cats };
+  })
   .sort((a, b) => b.count - a.count);
 
 const maxCount = Math.max(...allTerms.map(t => t.count));
@@ -186,12 +194,14 @@ const minCount = Math.min(...allTerms.map(t => t.count));
   </div>
 
   <div class="cloud-container">
-    {allTerms.map(({ term, count, key, param }) => {
+    {allTerms.map(({ term, count, key, cats }) => {
       const ratio = maxCount === minCount ? 0.5 : (count - minCount) / (maxCount - minCount);
       const size  = (0.8 + ratio * 1.6).toFixed(2);
+      // Encode which categories this term belongs to, so browse can filter across all of them
+      const catsParam = encodeURIComponent(Object.keys(cats).join(','));
       return (
         <a
-          href={`${base}/browse?${param}=${encodeURIComponent(term)}`}
+          href={`${base}/browse?term=${encodeURIComponent(term)}&cats=${catsParam}`}
           class={`cloud-term ${key}`}
           data-category={key}
           data-count={count}

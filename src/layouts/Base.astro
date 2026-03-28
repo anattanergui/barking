@@ -27,7 +27,42 @@ function isActive(href) {
   <meta property="og:type"        content="website" />
   <title>{pageTitle}</title>
   <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+
+  <!-- Apply saved theme before first paint to prevent flash -->
+  <script is:inline>
+    (function () {
+      var t = localStorage.getItem('barking-theme') || 'graphite';
+      document.documentElement.className = document.documentElement.className
+        .replace(/theme-\w+/g, '').trim() + ' theme-' + t;
+    })();
+  </script>
 </head>
+
+<body>
+  <nav aria-label="Site navigation">
+    <a href={`${base}/`} class="nav-brand">Anatta Nergui</a>
+    <div class="nav-links">
+      <a href={`${base}/`}        aria-current={isActive(`${base}/`)        ? 'page' : undefined}>Home</a>
+      <a href={`${base}/browse`}  aria-current={isActive(`${base}/browse`)  ? 'page' : undefined}>Browse</a>
+      <a href={`${base}/graph`}   aria-current={isActive(`${base}/graph`)   ? 'page' : undefined}>Graph</a>
+      <a href={`${base}/lexicon`} aria-current={isActive(`${base}/lexicon`) ? 'page' : undefined}>Lexicon</a>
+      <a href={`${base}/cloud`}   aria-current={isActive(`${base}/cloud`)   ? 'page' : undefined}>Cloud</a>
+      <a href={`${base}/about`}   aria-current={isActive(`${base}/about`)   ? 'page' : undefined}>About</a>
+    </div>
+  </nav>
+
+  <main class="main-content">
+    <slot />
+  </main>
+
+  <!-- Theme switcher — present on every page via Base.astro -->
+  <div class="theme-switcher" aria-label="Choose colour theme">
+    <button class="theme-dot" data-theme="ivory"    title="Warm ivory"></button>
+    <button class="theme-dot" data-theme="slate"    title="Charcoal slate"></button>
+    <button class="theme-dot" data-theme="graphite" title="Warm graphite"></button>
+  </div>
+</body>
+</html>
 
 <style is:global>
   /* ─── THEME VARIABLES ───────────────────────────────────────────────────── */
@@ -88,14 +123,14 @@ function isActive(href) {
 
   /* ─── BASE ──────────────────────────────────────────────────────────────── */
   body {
-    background: var(--bg) !important;
-    color: var(--ink) !important;
+    background: var(--bg);
+    color: var(--ink);
     transition: background 0.3s, color 0.3s;
   }
 
   nav {
-    background: var(--bg) !important;
-    border-bottom-color: var(--rule) !important;
+    background: var(--bg);
+    border-bottom-color: var(--rule);
     transition: background 0.3s;
   }
 
@@ -141,7 +176,7 @@ function isActive(href) {
     border-color: rgba(255, 255, 255, 0.5);
   }
   .theme-dot.active {
-    border-color: #fff !important;
+    border-color: #fff;
     box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.35);
     transform: scale(1.2);
   }
@@ -149,41 +184,6 @@ function isActive(href) {
   .theme-dot[data-theme="slate"]    { background: #18191c; }
   .theme-dot[data-theme="graphite"] { background: #3a3228; }
 </style>
-
-<!-- Apply saved theme before first paint to prevent flash -->
-<script is:inline>
-  (function () {
-    var t = localStorage.getItem('barking-theme') || 'graphite';
-    document.documentElement.className = document.documentElement.className
-      .replace(/theme-\w+/g, '').trim() + ' theme-' + t;
-  })();
-</script>
-
-<body>
-  <nav aria-label="Site navigation">
-    <a href={`${base}/`} class="nav-brand">Anatta Nergui</a>
-    <div class="nav-links">
-      <a href={`${base}/`}        aria-current={isActive(`${base}/`)        ? 'page' : undefined}>Home</a>
-      <a href={`${base}/browse`}  aria-current={isActive(`${base}/browse`)  ? 'page' : undefined}>Browse</a>
-      <a href={`${base}/graph`}   aria-current={isActive(`${base}/graph`)   ? 'page' : undefined}>Graph</a>
-      <a href={`${base}/lexicon`} aria-current={isActive(`${base}/lexicon`) ? 'page' : undefined}>Lexicon</a>
-      <a href={`${base}/cloud`}   aria-current={isActive(`${base}/cloud`)   ? 'page' : undefined}>Cloud</a>
-      <a href={`${base}/about`}   aria-current={isActive(`${base}/about`)   ? 'page' : undefined}>About</a>
-    </div>
-  </nav>
-
-  <main class="main-content">
-    <slot />
-  </main>
-
-  <!-- Theme switcher — present on every page via Base.astro -->
-  <div class="theme-switcher" aria-label="Choose colour theme">
-    <button class="theme-dot" data-theme="ivory"    title="Warm ivory"></button>
-    <button class="theme-dot" data-theme="slate"    title="Charcoal slate"></button>
-    <button class="theme-dot" data-theme="graphite" title="Warm graphite"></button>
-  </div>
-</body>
-</html>
 
 <script>
   // Runs on every page via Base.astro
