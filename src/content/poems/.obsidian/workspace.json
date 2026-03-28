@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Illusory Self.md",
+                "file": "Between Silences.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Illusory Self"
+              "title": "Between Silences"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "between sil",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,7 +117,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -137,7 +138,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Illusory Self.md",
+                "file": "Between Silences.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +148,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Illusory Self"
+              "title": "Backlinks for Between Silences"
             }
           },
           {
@@ -156,12 +157,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Illusory Self.md",
+                "file": "Between Silences.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Illusory Self"
+              "title": "Outgoing links from Between Silences"
             }
           },
           {
@@ -199,13 +200,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Illusory Self.md",
+                "file": "Between Silences.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Illusory Self"
+              "title": "Outline of Between Silences"
             }
           }
         ],
@@ -229,6 +230,7 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "Illusory Self.md",
     "The Shape Of Absence.md",
     "Words.md",
     "No Me Nowhere.md",
@@ -253,7 +255,6 @@
     "Pavement Sutra 1.md",
     "Not-duality.md",
     "not-Paradox.md",
-    "Perfection.md",
-    "Cocoon.md"
+    "Perfection.md"
   ]
 }

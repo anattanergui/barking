@@ -10,16 +10,17 @@ tags:
   - stretched
   - between
 domain:
-  - presence
   - silence
+  - ambience
 crux:
-  - continuity
+  - indivisibility
 atmosphere:
-  - still
   - intimate
+  - serene
 ground:
+  - immanence
   - phenomenological
-  - experiential
+  - nondual
 related:
   - "[[Silence]]"
   - "[[Sitting In Silence]]"
