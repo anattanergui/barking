@@ -11,16 +11,16 @@ tags:
   - seen
   - felt
 domain:
-  - selfhood
-  - epistemology
+  - phenomenality
+  - negation
 crux:
-  - disjunction
+  - incommensurability
 atmosphere:
-  - austere
+  - unflinching
   - clinical
 ground:
-  - nondual
   - phenomenological
+  - nondual
 related:
   - "[[Nonduality]]"
   - "[[Unknowable]]"

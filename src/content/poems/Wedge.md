@@ -10,16 +10,16 @@ tags:
   - connect
   - protect
 domain:
-  - selfhood
-  - otherness
+  - privacy
+  - expression
 crux:
-  - illusory
+  - paradox
 atmosphere:
   - incisive
-  - paradoxical
+  - ironic
 ground:
   - nondual
-  - logical
+  - analytical
 related:
   - "[[Clothes]]"
   - "[[The First Cause]]"

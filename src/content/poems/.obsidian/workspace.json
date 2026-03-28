@@ -8,63 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6a4c45358bed5159",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "The Unshared.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "The Unshared"
-            }
-          },
-          {
-            "id": "69f858c62731b14a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Metaphysical Rot.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Metaphysical Rot"
-            }
-          },
-          {
-            "id": "35e7b1955125d65d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Devotion.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Devotion"
-            }
-          },
-          {
             "id": "06d2ce79952ff5ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Doer.md",
+                "file": "Prayer.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Doer"
+              "title": "Prayer"
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -96,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "cloud",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -139,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Doer.md",
+                "file": "Prayer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -149,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Doer"
+              "title": "Backlinks for Prayer"
             }
           },
           {
@@ -158,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Doer.md",
+                "file": "Prayer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Doer"
+              "title": "Outgoing links from Prayer"
             }
           },
           {
@@ -201,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Doer.md",
+                "file": "Prayer.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Doer"
+              "title": "Outline of Prayer"
             }
           }
         ],
@@ -231,13 +187,20 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "Unoriginated.md",
+    "The Unshared.md",
+    "Devotion.md",
+    "Metaphysical Rot.md",
+    "Wedge.md",
+    "The Impossible Knowing.md",
+    "Integration.md",
+    "Doer.md",
     "Between Silences.md",
     "Illusory Self.md",
     "The Shape Of Absence.md",
     "Words.md",
     "No Me Nowhere.md",
     "Thief.md",
-    "Devotion.md",
     "Dedication.md",
     "Dis-identification.md",
     "Equanimity.md",
@@ -245,17 +208,10 @@
     "Contentment.md",
     "The Pilgrimage.md",
     "Beholding.md",
-    "Metaphysical Rot.md",
-    "The Unshared.md",
     "Awake.md",
     "Aloneness.md",
     "Abrupt.md",
     "Metaphysics.md",
-    "No Other.md",
-    "An’al Haq.md",
-    "Pavement Sutra.md",
-    "Pavement Sutra 1.md",
-    "Not-duality.md",
-    "not-Paradox.md"
+    "No Other.md"
   ]
 }

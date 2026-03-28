@@ -10,16 +10,17 @@ tags:
   - beloved
   - myself
 domain:
-  - selfhood
+  - address
   - love
 crux:
-  - unobjectifiable
+  - unsayable
 atmosphere:
   - intimate
-  - aporetic
+  - tender
+  - reverent
 ground:
   - nondual
-  - apophatic
+  - devotional
 related:
   - "[[To —]]"
   - "[[Devotion]]"

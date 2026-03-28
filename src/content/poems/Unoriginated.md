@@ -11,16 +11,17 @@ tags:
   - feet
   - conclude
 domain:
-  - authorship
-  - selfhood
+  - originality
+  - absence
 crux:
-  - unoriginability
+  - equivalence
 atmosphere:
-  - methodical
-  - vertiginous
+  - searching
+  - still
 ground:
   - apophatic
   - nondual
+  - skeptical
 related:
   - "[[Unnameable]]"
   - "[[The Last Nothing]]"

@@ -12,16 +12,16 @@ tags:
   - plotting
   - form
 domain:
-  - devotion
-  - selfhood
+  - prayer
+  - agency
 crux:
   - lila
 atmosphere:
-  - suppliant
-  - wry
+  - intimate
+  - questioning
 ground:
-  - experiential
-  - nondual
+  - devotional
+  - theistic
 related:
   - "[[Devotion]]"
   - "[[Surrender]]"
