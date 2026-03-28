@@ -8,16 +8,15 @@ tags:
   - police
   - mood-stabilisers
 domain:
-  - mania
-  - nature
-crux:
+  - vitality
   - pathologisation
+crux:
+  - medicalization
 atmosphere:
   - exuberant
-  - dry
+  - ironic
 ground:
-  - experiential
-  - political
+  - naturalist
 related:
   - "[[The Howling]]"
   - "[[Dissolution]]"

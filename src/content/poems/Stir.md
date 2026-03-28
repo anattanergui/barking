@@ -9,15 +9,15 @@ tags:
   - being
 domain:
   - emergence
-  - consciousness
+  - movement
 crux:
-  - presencing
+  - primacy
 atmosphere:
-  - numinous
-  - tender
+  - still
+  - attentive
 ground:
-  - nondual
-  - experiential
+  - processual
+  - phenomenological
 related:
   - "[[An'al Haq]]"
   - "[[Something]]"

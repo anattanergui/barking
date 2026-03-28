@@ -8,16 +8,16 @@ tags:
   - folds
   - world
 domain:
-  - consciousness
   - sleep
+  - wakefulness
 crux:
   - folding
 atmosphere:
-  - spare
+  - watchful
   - still
 ground:
   - nondual
-  - experiential
+  - impermanence
 related:
   - "[[Sleep’s Sky]]"
 word-count: "25"

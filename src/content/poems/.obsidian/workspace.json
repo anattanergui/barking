@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Eternal.md",
+                "file": "Older As Young.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Eternal"
+              "title": "Older As Young"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "never entere",
+                "query": "older as young",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Eternal.md",
+                "file": "Older As Young.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Eternal"
+              "title": "Backlinks for Older As Young"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Eternal.md",
+                "file": "Older As Young.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Eternal"
+              "title": "Outgoing links from Older As Young"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Eternal.md",
+                "file": "Older As Young.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Eternal"
+              "title": "Outline of Older As Young"
             }
           }
         ],
@@ -187,6 +187,16 @@
   },
   "active": "06d2ce79952ff5ca",
   "lastOpenFiles": [
+    "Stir.md",
+    "Non-attachment.md",
+    "Mania.md",
+    "Here.md",
+    "Improbability.md",
+    "Eternity.md",
+    "Good News.md",
+    "Folding.md",
+    "Bittersweet.md",
+    "Eternal.md",
     "Tawaf.md",
     "Misnomer.md",
     "Left Coat.md",
@@ -202,16 +212,6 @@
     "Doer.md",
     "Between Silences.md",
     "Illusory Self.md",
-    "The Shape Of Absence.md",
-    "Words.md",
-    "No Me Nowhere.md",
-    "Thief.md",
-    "Dedication.md",
-    "Dis-identification.md",
-    "Equanimity.md",
-    "Emptiness.md",
-    "Contentment.md",
-    "The Pilgrimage.md",
-    "Beholding.md"
+    "The Shape Of Absence.md"
   ]
 }

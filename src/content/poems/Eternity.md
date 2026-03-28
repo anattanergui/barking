@@ -9,15 +9,16 @@ tags:
   - thousand
 domain:
   - devotion
-  - time
+  - presence
 crux:
   - constancy
 atmosphere:
   - steadfast
   - luminous
 ground:
-  - experiential
-  - ontological
+  - love
+  - devotional
+  - eternity
 related:
   - "[[Eternal]]"
 style:

@@ -11,15 +11,15 @@ tags:
   - weaving
 domain:
   - non-attachment
-  - stillness
+  - incapacity
 crux:
-  - equanimity
+  - irreducibility
 atmosphere:
   - still
   - stripped
 ground:
-  - nondual
-  - experiential
+  - witnessing
+  - non-attachment
 related:
   - "[[The Empty Instant]]"
 word-count: "27"

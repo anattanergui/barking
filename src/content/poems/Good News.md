@@ -9,15 +9,14 @@ tags:
   - imprisonment
   - oblivion
 domain:
-  - liberation
-  - time
+  - conditions
 crux:
-  - ending
+  - passing
 atmosphere:
-  - spare
-  - valedictory
+  - assured
+  - clear
 ground:
-  - experiential
+  - impermanence
 related:
   - "[[Mercy]]"
   - "[[Oblivion]]"

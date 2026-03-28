@@ -10,16 +10,16 @@ tags:
   - home
   - pitch
 domain:
-  - consciousness
-  - rest
+  - unknowability
+  - embodiment
 crux:
   - identity
 atmosphere:
-  - contemplative
-  - numinous
+  - still
+  - wondering
 ground:
+  - phenomenological
   - nondual
-  - experiential
 related:
   - "[[I — I know]]"
 word-count: "60"

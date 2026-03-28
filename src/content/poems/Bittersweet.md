@@ -9,13 +9,12 @@ domain:
   - happiness
   - grief
 crux:
-  - inseparability
+  - affirmation
 atmosphere:
-  - bittersweet
-  - wry
+  - tender
+  - equanimous
 ground:
-  - experiential
-  - paradoxical
+  - inseparability
 related:
   - "[[No Self]]"
 word-count: "16"
