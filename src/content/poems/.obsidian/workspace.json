@@ -20,8 +20,37 @@
               "icon": "lucide-file",
               "title": "Decree"
             }
+          },
+          {
+            "id": "192dd1f02f6836a6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Power.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Power"
+            }
+          },
+          {
+            "id": "26ecd5bfad31521d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Suicide.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Suicide"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -40,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -53,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "million more",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Decree.md",
+                "file": "Suicide.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Decree"
+              "title": "Backlinks for Suicide"
             }
           },
           {
@@ -113,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Decree.md",
+                "file": "Suicide.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Decree"
+              "title": "Outgoing links from Suicide"
             }
           },
           {
@@ -128,8 +157,8 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true,
-                "showSearch": true,
+                "useHierarchy": false,
+                "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-tags",
@@ -156,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Decree.md",
+                "file": "Suicide.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Decree"
+              "title": "Outline of Suicide"
             }
           }
         ],
@@ -184,11 +213,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "06d2ce79952ff5ca",
+  "active": "72c3fac121af05d9",
   "lastOpenFiles": [
+    "Suicide 1.md",
+    "Suicide.md",
+    "Silence.md",
+    "Sovereignty.md",
+    "Power.md",
+    "Machinery.md",
+    "The Myth Of Unaltered States.md",
+    "In Defence Of Thought.md",
+    "Decree.md",
+    "Presence.md",
+    "not-Paradox.md",
     "Daily Bread.md",
     "Daily Bread 1.md",
-    "Decree.md",
     "Words.md",
     "When I Just See.md",
     "Unorbiting.md",
@@ -201,16 +240,6 @@
     "Stir.md",
     "Non-attachment.md",
     "Mania.md",
-    "Here.md",
-    "Improbability.md",
-    "Eternity.md",
-    "Good News.md",
-    "Folding.md",
-    "Bittersweet.md",
-    "Eternal.md",
-    "Tawaf.md",
-    "Misnomer.md",
-    "Left Coat.md",
-    "Khudi.md"
+    "Here.md"
   ]
 }
