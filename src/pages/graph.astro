@@ -87,6 +87,7 @@ FIELDS.forEach(f => {
 });
 
 const graphData = JSON.stringify({ nodes, edges, hubsByField });
+const graphDataB64 = Buffer.from(graphData).toString('base64');
 ---
 
 <Base title="Graph — Barking">
@@ -429,6 +430,8 @@ const graphData = JSON.stringify({ nodes, edges, hubsByField });
   }
 </style>
 
+<div id="graph-data" data-graph={graphDataB64} data-base={base} hidden></div>
+
 <div class="graph-page">
 
   <aside class="sidebar">
@@ -513,16 +516,30 @@ const graphData = JSON.stringify({ nodes, edges, hubsByField });
 </div>
 
 <!--
-  defer guarantees D3 is parsed before the module script below executes,
-  eliminating the need for the previous waitForD3 polling loop.
+  D3 loaded as a normal blocking script. Astro compiles define:vars scripts
+  into <head>, so they can execute before a deferred external script fires.
+  The waitForD3 guard below handles any remaining race on slow connections.
 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js" defer></script>
-<script define:vars={{ graphData, base }}>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
 
-// FIELD_KEYS must match the accordion HTML order above exactly.
-// Previously this was ['domains','atmosphere','ground','tags','crux'] which
-// swapped tags and crux, causing value-list population to mismatch the UI.
+const _el      = document.getElementById('graph-data');
+const base     = _el.dataset.base;
+const graphData = atob(_el.dataset.graph);
+
 const FIELD_KEYS = ['domains','atmosphere','ground','crux','tags'];
+
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  let attempts = 0;
+  function poll() {
+    if (window.d3) { cb(); return; }
+    if (++attempts < 100) requestAnimationFrame(poll);
+  }
+  requestAnimationFrame(poll);
+}
+waitForD3(init);
+function init() {
 
 const { nodes, edges, hubsByField } = JSON.parse(graphData);
 const nodeById = new Map(nodes.map(n => [n.id, n]));
@@ -881,5 +898,6 @@ function moveTip(event) {
 }
 function hideTip() { tipEl.style.display = 'none'; }
 
+} // end init()
 </script>
 </Base>

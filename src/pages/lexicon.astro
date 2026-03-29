@@ -6,32 +6,35 @@ import { getAllPoemsMeta } from '../lib/poems.js';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 
-// Note: internal key is 'domains' but browse query param is 'domain'
 const categories = [
-  { key: 'domains',    label: 'domain',     param: 'domain' },
-  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
-  { key: 'ground',     label: 'ground',     param: 'ground' },
-  { key: 'crux',       label: 'crux',       param: 'crux' },
+  { key: 'domains',    label: 'domain'     },
+  { key: 'atmosphere', label: 'atmosphere' },
+  { key: 'ground',     label: 'ground'     },
+  { key: 'crux',       label: 'crux'       },
 ];
 
-const taxonomy = {};
-for (const { key } of categories) taxonomy[key] = {};
+const taxonomyRaw = {};
+for (const { key } of categories) taxonomyRaw[key] = {};
 
 for (const poem of poems) {
   for (const { key } of categories) {
-    const terms = poem[key] || [];
-    for (const term of terms) {
-      if (!taxonomy[key][term]) taxonomy[key][term] = [];
-      taxonomy[key][term].push({ title: poem.title, slug: poem.slug });
+    for (const term of (poem[key] || [])) {
+      if (!taxonomyRaw[key][term]) taxonomyRaw[key][term] = [];
+      taxonomyRaw[key][term].push({ title: poem.title, slug: poem.slug });
     }
   }
 }
 
+// Arrays sorted alpha by default — JS re-sorts on demand
+const taxonomyArrays = {};
 for (const { key } of categories) {
-  taxonomy[key] = Object.fromEntries(
-    Object.entries(taxonomy[key]).sort(([a], [b]) => a.localeCompare(b))
-  );
+  taxonomyArrays[key] = Object.entries(taxonomyRaw[key])
+    .map(([term, termPoems]) => ({ term, poems: termPoems }))
+    .sort((a, b) => a.term.localeCompare(b.term));
 }
+
+// Encode as base64 so no quote/backslash in poem titles can break the attribute
+const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64');
 ---
 
 <Base title="Lexicon">
@@ -39,7 +42,6 @@ for (const { key } of categories) {
     .page-header {
       padding: 3.5rem 3rem 2rem;
     }
-
     .page-header h1 {
       font-size: 2.2rem;
       font-weight: 400;
@@ -47,7 +49,6 @@ for (const { key } of categories) {
       color: var(--ink);
       margin-bottom: 0.3rem;
     }
-
     .page-header .subtitle {
       font-size: 0.68rem;
       letter-spacing: 0.2em;
@@ -62,9 +63,8 @@ for (const { key } of categories) {
       background: var(--rule);
       margin: 0 3rem 5rem;
     }
-
     @media (max-width: 768px) {
-      .lex-grid { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
+      .lex-grid    { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
       .page-header { padding: 2.5rem 1.5rem 1.5rem; }
     }
 
@@ -73,19 +73,83 @@ for (const { key } of categories) {
       padding: 2.5rem;
     }
 
+    .cat-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 1.8rem;
+      padding-bottom: 0.7rem;
+    }
+    .cat-header.domains    { border-bottom: 1px solid #7a9bc9; }
+    .cat-header.atmosphere { border-bottom: 1px solid #c97a9b; }
+    .cat-header.ground     { border-bottom: 1px solid #7ac99b; }
+    .cat-header.crux       { border-bottom: 1px solid #c9b97a; }
+
     .cat-title {
       font-size: 0.63rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      margin-bottom: 1.8rem;
-      padding-bottom: 0.7rem;
-      border-bottom: 1px solid var(--rule);
+      margin: 0;
+      flex-shrink: 0;
+    }
+    .cat-title.domains    { color: #7a9bc9; }
+    .cat-title.atmosphere { color: #c97a9b; }
+    .cat-title.ground     { color: #7ac99b; }
+    .cat-title.crux       { color: #c9b97a; }
+
+    .cat-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-shrink: 0;
     }
 
-    .cat-title.domains    { color: #7a9bc9; border-color: #7a9bc9; }
-    .cat-title.atmosphere { color: #c97a9b; border-color: #c97a9b; }
-    .cat-title.ground     { color: #7ac99b; border-color: #7ac99b; }
-    .cat-title.crux       { color: #c9b97a; border-color: #c9b97a; }
+    .sort-btn {
+      font-family: 'Karla', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      background: none;
+      border: 1px solid var(--rule);
+      padding: 0.2rem 0.55rem;
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+      line-height: 1.7;
+      white-space: nowrap;
+    }
+    .sort-btn:hover  { color: var(--ink); border-color: var(--muted); }
+    .sort-btn.active { color: var(--ink); border-color: var(--ink); }
+
+    .ctrl-divider {
+      width: 1px;
+      height: 1rem;
+      background: var(--rule);
+      flex-shrink: 0;
+    }
+
+    .collapse-btn {
+      color: var(--muted);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.15rem 0.25rem;
+      transition: color 0.15s;
+      line-height: 1;
+      display: flex;
+      align-items: center;
+    }
+    .collapse-btn:hover { color: var(--ink); }
+    .collapse-btn .arrow {
+      display: inline-block;
+      font-size: 0.55rem;
+      transition: transform 0.2s;
+    }
+    .cat-block.collapsed .collapse-btn .arrow { transform: rotate(-90deg); }
+
+    .term-list {}
+    .cat-block.collapsed .term-list { display: none; }
 
     .term-row {
       display: flex;
@@ -94,14 +158,9 @@ for (const { key } of categories) {
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--rule);
       cursor: pointer;
-      transition: all 0.15s;
+      transition: padding 0.12s, background 0.12s;
     }
-
-    .term-row:hover {
-      padding-left: 0.5rem;
-      background: var(--bg-panel);
-    }
-
+    .term-row:hover { padding-left: 0.5rem; background: var(--bg-panel); }
     .term-row:hover .term-name { color: var(--ink); }
 
     .term-name {
@@ -110,20 +169,16 @@ for (const { key } of categories) {
       letter-spacing: 0.03em;
       transition: color 0.15s;
     }
-
     .term-meta {
       display: flex;
       align-items: center;
       gap: 0.5rem;
     }
-
     .term-count {
       font-size: 0.63rem;
       color: var(--muted);
       letter-spacing: 0.1em;
     }
-
-    /* Link to browse with filter pre-applied */
     .browse-link {
       font-size: 0.55rem;
       color: var(--muted);
@@ -134,7 +189,6 @@ for (const { key } of categories) {
       border: 1px solid var(--rule);
       padding: 0.15rem 0.4rem;
     }
-
     .term-row:hover .browse-link { opacity: 1; }
     .browse-link:hover { color: var(--ink); border-color: var(--ink); }
 
@@ -145,7 +199,6 @@ for (const { key } of categories) {
       display: inline-block;
       transition: transform 0.2s;
     }
-
     .term-row.open .chevron { transform: rotate(90deg); }
 
     .poem-list {
@@ -155,9 +208,7 @@ for (const { key } of categories) {
       padding: 0.6rem 0 0.8rem 0.8rem;
       background: var(--bg-panel);
     }
-
     .poem-list.open { display: flex; }
-
     .poem-list a {
       font-size: 0.78rem;
       color: var(--muted);
@@ -166,7 +217,6 @@ for (const { key } of categories) {
       font-style: italic;
       transition: color 0.15s;
     }
-
     .poem-list a:hover { color: var(--ink); }
   </style>
 
@@ -175,53 +225,122 @@ for (const { key } of categories) {
     <p class="subtitle">All terms — by category</p>
   </div>
 
+  <!--
+    Taxonomy data is stored on a hidden element as a base64 data attribute.
+    This sidesteps define:vars injection issues with quotes/backslashes in
+    poem titles or term names breaking the serialised JSON string.
+  -->
+  <div id="lex-data" data-taxonomy={taxonomyB64} data-base={base} hidden></div>
+
   <div class="lex-grid">
-    {categories.map(({ key, label, param }) => (
-      <div class="cat-block">
-        <div class={`cat-title ${key}`}>{label}</div>
-        {Object.entries(taxonomy[key]).map(([term, termPoems]) => (
-          <div>
-            <div class="term-row" data-key={key} data-term={term}>
-              <span class="term-name">{term}</span>
-              <span class="term-meta">
-                {/*
-                  Use ?term=&cats= so browse matches this term across all
-                  categories it appears in — consistent with cloud.astro links.
-                  From lexicon we know exactly which category this term belongs
-                  to, so cats= is a single value, but the convention is shared.
-                */}
-                <a
-                  class="browse-link"
-                  href={`${base}/browse?term=${encodeURIComponent(term)}&cats=${key}`}
-                  title="Filter in Browse"
-                  onclick="event.stopPropagation()"
-                >browse</a>
-                <span class="term-count">{termPoems.length}</span>
-                <span class="chevron">▶</span>
-              </span>
-            </div>
-            <div class="poem-list" id={`poems-${key}-${term.replace(/\s+/g, '-')}`}>
-              {termPoems.map(p => (
-                <a href={`${base}/poem/${p.slug}`}>{p.title}</a>
-              ))}
-            </div>
+    {categories.map(({ key, label }) => (
+      <div class="cat-block" id={`block-${key}`} data-key={key}>
+        <div class={`cat-header ${key}`}>
+          <span class={`cat-title ${key}`}>{label}</span>
+          <div class="cat-controls">
+            <button class="sort-btn active" data-key={key} data-sort="alpha">A–Z</button>
+            <button class="sort-btn"        data-key={key} data-sort="freq">most used</button>
+            <div class="ctrl-divider"></div>
+            <button class="collapse-btn" data-key={key} title="Collapse / expand">
+              <span class="arrow">▾</span>
+            </button>
           </div>
-        ))}
+        </div>
+        <div class="term-list" id={`list-${key}`}></div>
       </div>
     ))}
   </div>
 
   <script>
-    document.querySelectorAll('.term-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const key  = row.dataset.key;
-        const term = row.dataset.term.replace(/\s+/g, '-');
-        const list = document.getElementById(`poems-${key}-${term}`);
-        if (!list) return;
-        const isOpen = list.classList.contains('open');
-        list.classList.toggle('open', !isOpen);
-        row.classList.toggle('open', !isOpen);
+    const el       = document.getElementById('lex-data');
+    const base     = el.dataset.base;
+    const taxonomy = JSON.parse(atob(el.dataset.taxonomy));
+
+    const state = {};
+    for (const key of Object.keys(taxonomy)) {
+      state[key] = { sort: 'alpha', collapsed: false };
+    }
+
+    function esc(str) {
+      return String(str)
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    function renderList(key) {
+      const container = document.getElementById(`list-${key}`);
+      if (!container) return;
+
+      const terms = [...taxonomy[key]];
+      if (state[key].sort === 'alpha') {
+        terms.sort((a, b) => a.term.localeCompare(b.term));
+      } else {
+        terms.sort((a, b) =>
+          b.poems.length - a.poems.length || a.term.localeCompare(b.term)
+        );
+      }
+
+      container.innerHTML = terms.map(({ term, poems }) => {
+        const safeId    = `${key}-${term.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`;
+        const poemLinks = poems
+          .map(p => `<a href="${base}/poem/${esc(p.slug)}">${esc(p.title)}</a>`)
+          .join('');
+        return `
+          <div>
+            <div class="term-row" data-id="${safeId}">
+              <span class="term-name">${esc(term)}</span>
+              <span class="term-meta">
+                <a class="browse-link"
+                   href="${base}/browse?term=${encodeURIComponent(term)}&cats=${key}"
+                   title="Filter in Browse"
+                   onclick="event.stopPropagation()">browse</a>
+                <span class="term-count">${poems.length}</span>
+                <span class="chevron">▶</span>
+              </span>
+            </div>
+            <div class="poem-list" id="poems-${safeId}">${poemLinks}</div>
+          </div>`;
+      }).join('');
+
+      container.querySelectorAll('.term-row').forEach(row => {
+        row.addEventListener('click', () => {
+          const list = document.getElementById(`poems-${row.dataset.id}`);
+          if (!list) return;
+          list.classList.toggle('open');
+          row.classList.toggle('open');
+        });
+      });
+    }
+
+    // Sort buttons
+    document.querySelectorAll('.sort-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key  = btn.dataset.key;
+        const sort = btn.dataset.sort;
+        if (state[key].sort === sort) return;
+        state[key].sort = sort;
+        document.querySelectorAll(`.sort-btn[data-key="${key}"]`).forEach(b => {
+          b.classList.toggle('active', b.dataset.sort === sort);
+        });
+        // Close any open poem sub-lists before re-rendering
+        const container = document.getElementById(`list-${key}`);
+        container?.querySelectorAll('.poem-list.open, .term-row.open')
+          .forEach(el => el.classList.remove('open'));
+        renderList(key);
       });
     });
+
+    // Collapse buttons
+    document.querySelectorAll('.collapse-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key   = btn.dataset.key;
+        const block = document.getElementById(`block-${key}`);
+        state[key].collapsed = !state[key].collapsed;
+        block.classList.toggle('collapsed', state[key].collapsed);
+      });
+    });
+
+    // Initial render
+    for (const key of Object.keys(taxonomy)) renderList(key);
   </script>
 </Base>
