@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Mirror Sage.md",
+                "file": "Sacrament.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "The Mirror Sage"
+              "title": "Sacrament"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Mirror Sage.md",
+                "file": "Sacrament.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Mirror Sage"
+              "title": "Backlinks for Sacrament"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Mirror Sage.md",
+                "file": "Sacrament.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Mirror Sage"
+              "title": "Outgoing links from Sacrament"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Mirror Sage.md",
+                "file": "Sacrament.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Mirror Sage"
+              "title": "Outline of Sacrament"
             }
           }
         ],
@@ -186,13 +186,15 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
+    "Groups For Groups.md",
     "Spacetime.md",
     "Your Order.md",
+    "The Mirror Sage.md",
+    "Sacrament.md",
     "Your Order 1.md",
     "Ishq.md",
     "This Is It.md",
     "The Brew.md",
-    "The Mirror Sage.md",
     "Summum Bukmun Umyum.md",
     "Summum Bukmun Umyum 1.md",
     "Who Cares.md",
@@ -209,8 +211,6 @@
     "not-Paradox.md",
     "Schmutz.md",
     "Shadow.md",
-    "The Forgetting Itself.md",
-    "The Empty Instant.md",
-    "I Am That.md"
+    "The Forgetting Itself.md"
   ]
 }
