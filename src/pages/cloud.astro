@@ -221,18 +221,24 @@ const minCount = Math.min(...allTerms.map(t => t.count));
     const terms   = document.querySelectorAll('.cloud-term');
     const tooltip = document.getElementById('tooltip');
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const filter = btn.dataset.filter;
-        buttons.forEach(b => { b.className = 'filter-btn'; });
-        btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
-        terms.forEach(term => {
-          const match = filter === 'all' || term.dataset.category === filter;
-          term.style.opacity       = match ? '1' : '0.12';
-          term.style.pointerEvents = match ? 'auto' : 'none';
-        });
+    function applyFilter(filter) {
+      buttons.forEach(b => { b.className = 'filter-btn'; });
+      const btn = [...buttons].find(b => b.dataset.filter === filter) || buttons[0];
+      btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
+      terms.forEach(term => {
+        const match = filter === 'all' || term.dataset.category === filter;
+        term.style.opacity       = match ? '1' : '0.12';
+        term.style.pointerEvents = match ? 'auto' : 'none';
       });
+    }
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
     });
+
+    // Activate filter from URL hash (e.g. /cloud#atmosphere from home page stats)
+    const hash = location.hash.replace('#', '');
+    if (hash) applyFilter(hash);
 
     terms.forEach(term => {
       term.addEventListener('mouseenter', () => {
