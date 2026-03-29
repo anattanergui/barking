@@ -14,6 +14,7 @@ related:
   - "[[Sovereignty]]"
   - "[[First Philosophy]]"
   - "[[The Aloneness]]"
+  - "[[Metaphysics]]"
 word-count: "144"
 tags:
   - crossing
