@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "[\"related\"]",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,11 +103,13 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -195,7 +197,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -213,10 +215,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "72c3fac121af05d9",
+  "active": "26ecd5bfad31521d",
   "lastOpenFiles": [
-    "Suicide 1.md",
+    "The Aloneness.md",
     "Suicide.md",
+    "Surrender.md",
+    "Stir.md",
+    "Suicide 1.md",
     "Silence.md",
     "Sovereignty.md",
     "Power.md",
@@ -235,11 +240,8 @@
     "The Vehicle.md",
     "Those Who Know Speak.md",
     "The Empty Instant.md",
-    "Surrender.md",
     "Older As Young.md",
-    "Stir.md",
     "Non-attachment.md",
-    "Mania.md",
-    "Here.md"
+    "Mania.md"
   ]
 }

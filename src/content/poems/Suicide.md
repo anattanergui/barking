@@ -1,16 +1,4 @@
 ---
-title: Suicide
-tags:
-  - crossing
-  - sovereign
-  - sealed
-  - line
-  - door
-  - disclosure
-  - bonds
-  - authority
-  - verdict
-  - boundary
 domain:
   - suicide
   - sovereignty
@@ -23,11 +11,24 @@ ground:
   - individualist
   - apophatic
 related:
-  - "[[Two Deaths]]"
-  - "[[First Philosophy]]"[[Sovereignty]]
-
-word-count: "145"
+  - "[[Sovereignty]]"
+  - "[[First Philosophy]]"
+  - "[[The Aloneness]]"
+word-count: "144"
+tags:
+  - crossing
+  - sovereign
+  - sealed
+  - line
+  - door
+  - disclosure
+  - bonds
+  - authority
+  - verdict
+  - boundary
 ---
+
+
 # Suicide
 One life ends
 One consciousness — one mind —
