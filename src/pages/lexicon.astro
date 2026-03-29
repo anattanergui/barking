@@ -25,7 +25,6 @@ for (const poem of poems) {
   }
 }
 
-// Arrays sorted alpha by default — JS re-sorts on demand
 const taxonomyArrays = {};
 for (const { key } of categories) {
   taxonomyArrays[key] = Object.entries(taxonomyRaw[key])
@@ -33,11 +32,21 @@ for (const { key } of categories) {
     .sort((a, b) => a.term.localeCompare(b.term));
 }
 
-// Encode as base64 so no quote/backslash in poem titles can break the attribute
 const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64');
 ---
 
 <Base title="Lexicon">
+
+  <!--
+    IMPORTANT: All styles that apply to dynamically-injected HTML (term-row,
+    poem-list, etc.) must use is:global. Astro scopes component <style> tags
+    with a hash, but innerHTML elements don't receive that hash, so scoped
+    rules never match them.
+
+    Static elements (page-header, lex-grid, cat-block, cat-header, controls)
+    can stay scoped.
+  -->
+
   <style>
     .page-header {
       padding: 3.5rem 3rem 2rem;
@@ -70,7 +79,12 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
 
     .cat-block {
       background: var(--bg);
-      padding: 2.5rem;
+      /* Only pad the header area; term-list takes full width */
+      padding: 2.5rem 2.5rem 0;
+    }
+    /* When collapsed, restore bottom padding so block doesn't look clipped */
+    .cat-block.collapsed {
+      padding-bottom: 2.5rem;
     }
 
     .cat-header {
@@ -104,7 +118,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       gap: 0.4rem;
       flex-shrink: 0;
     }
-
     .sort-btn {
       font-family: 'Karla', sans-serif;
       font-size: 0.55rem;
@@ -128,7 +141,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       background: var(--rule);
       flex-shrink: 0;
     }
-
     .collapse-btn {
       color: var(--muted);
       background: none;
@@ -148,10 +160,16 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     }
     .cat-block.collapsed .collapse-btn .arrow { transform: rotate(-90deg); }
 
-    .term-list {}
+    .term-list {
+      /* Bottom padding lives here so it disappears when collapsed */
+      padding-bottom: 2.5rem;
+    }
     .cat-block.collapsed .term-list { display: none; }
+  </style>
 
-    .term-row {
+  <!-- Global styles for dynamically-injected innerHTML elements -->
+  <style is:global>
+    .lex-term-row {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
@@ -160,26 +178,27 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       cursor: pointer;
       transition: padding 0.12s, background 0.12s;
     }
-    .term-row:hover { padding-left: 0.5rem; background: var(--bg-panel); }
-    .term-row:hover .term-name { color: var(--ink); }
+    .lex-term-row:hover { padding-left: 0.5rem; background: var(--bg-panel); }
+    .lex-term-row:hover .lex-term-name { color: var(--ink); }
 
-    .term-name {
+    .lex-term-name {
       font-size: 0.88rem;
       color: var(--muted);
       letter-spacing: 0.03em;
       transition: color 0.15s;
     }
-    .term-meta {
+    .lex-term-meta {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      flex-shrink: 0;
     }
-    .term-count {
+    .lex-term-count {
       font-size: 0.63rem;
       color: var(--muted);
       letter-spacing: 0.1em;
     }
-    .browse-link {
+    .lex-browse-link {
       font-size: 0.55rem;
       color: var(--muted);
       text-decoration: none;
@@ -189,35 +208,37 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       border: 1px solid var(--rule);
       padding: 0.15rem 0.4rem;
     }
-    .term-row:hover .browse-link { opacity: 1; }
-    .browse-link:hover { color: var(--ink); border-color: var(--ink); }
+    .lex-term-row:hover .lex-browse-link { opacity: 1; }
+    .lex-browse-link:hover { color: var(--ink); border-color: var(--ink); }
 
-    .chevron {
+    .lex-chevron {
       font-size: 0.45rem;
       color: var(--muted);
       margin-left: 0.3rem;
       display: inline-block;
       transition: transform 0.2s;
     }
-    .term-row.open .chevron { transform: rotate(90deg); }
+    .lex-term-row.open .lex-chevron { transform: rotate(90deg); }
 
-    .poem-list {
+    /* Poem sub-list — hidden by default, flex when .open */
+    .lex-poem-list {
       display: none;
       flex-direction: column;
       gap: 0.3rem;
       padding: 0.6rem 0 0.8rem 0.8rem;
       background: var(--bg-panel);
     }
-    .poem-list.open { display: flex; }
-    .poem-list a {
+    .lex-poem-list.open { display: flex; }
+    .lex-poem-list a {
       font-size: 0.78rem;
       color: var(--muted);
       text-decoration: none;
       letter-spacing: 0.03em;
       font-style: italic;
       transition: color 0.15s;
+      display: block;
     }
-    .poem-list a:hover { color: var(--ink); }
+    .lex-poem-list a:hover { color: var(--ink); }
   </style>
 
   <div class="page-header">
@@ -225,11 +246,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     <p class="subtitle">All terms — by category</p>
   </div>
 
-  <!--
-    Taxonomy data is stored on a hidden element as a base64 data attribute.
-    This sidesteps define:vars injection issues with quotes/backslashes in
-    poem titles or term names breaking the serialised JSON string.
-  -->
   <div id="lex-data" data-taxonomy={taxonomyB64} data-base={base} hidden></div>
 
   <div class="lex-grid">
@@ -252,9 +268,9 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
   </div>
 
   <script>
-    const el       = document.getElementById('lex-data');
-    const base     = el.dataset.base;
-    const taxonomy = JSON.parse(atob(el.dataset.taxonomy));
+    const dataEl   = document.getElementById('lex-data');
+    const base     = dataEl.dataset.base;
+    const taxonomy = JSON.parse(atob(dataEl.dataset.taxonomy));
 
     const state = {};
     for (const key of Object.keys(taxonomy)) {
@@ -281,28 +297,30 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       }
 
       container.innerHTML = terms.map(({ term, poems }) => {
-        const safeId    = `${key}-${term.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`;
+        const safeId = `${key}-${term.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`;
+        // Each poem link on its own line — joined with newline so they
+        // don't concatenate visually if CSS somehow fails
         const poemLinks = poems
           .map(p => `<a href="${base}/poem/${esc(p.slug)}">${esc(p.title)}</a>`)
-          .join('');
-        return `
-          <div>
-            <div class="term-row" data-id="${safeId}">
-              <span class="term-name">${esc(term)}</span>
-              <span class="term-meta">
-                <a class="browse-link"
-                   href="${base}/browse?term=${encodeURIComponent(term)}&cats=${key}"
-                   title="Filter in Browse"
-                   onclick="event.stopPropagation()">browse</a>
-                <span class="term-count">${poems.length}</span>
-                <span class="chevron">▶</span>
-              </span>
-            </div>
-            <div class="poem-list" id="poems-${safeId}">${poemLinks}</div>
-          </div>`;
+          .join('\n');
+
+        return `<div>
+  <div class="lex-term-row" data-id="${safeId}">
+    <span class="lex-term-name">${esc(term)}</span>
+    <span class="lex-term-meta">
+      <a class="lex-browse-link"
+         href="${base}/browse?term=${encodeURIComponent(term)}&cats=${key}"
+         title="Filter in Browse"
+         onclick="event.stopPropagation()">browse</a>
+      <span class="lex-term-count">${poems.length}</span>
+      <span class="lex-chevron">▶</span>
+    </span>
+  </div>
+  <div class="lex-poem-list" id="poems-${safeId}">${poemLinks}</div>
+</div>`;
       }).join('');
 
-      container.querySelectorAll('.term-row').forEach(row => {
+      container.querySelectorAll('.lex-term-row').forEach(row => {
         row.addEventListener('click', () => {
           const list = document.getElementById(`poems-${row.dataset.id}`);
           if (!list) return;
@@ -312,7 +330,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       });
     }
 
-    // Sort buttons
     document.querySelectorAll('.sort-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const key  = btn.dataset.key;
@@ -322,15 +339,13 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
         document.querySelectorAll(`.sort-btn[data-key="${key}"]`).forEach(b => {
           b.classList.toggle('active', b.dataset.sort === sort);
         });
-        // Close any open poem sub-lists before re-rendering
         const container = document.getElementById(`list-${key}`);
-        container?.querySelectorAll('.poem-list.open, .term-row.open')
+        container?.querySelectorAll('.lex-poem-list.open, .lex-term-row.open')
           .forEach(el => el.classList.remove('open'));
         renderList(key);
       });
     });
 
-    // Collapse buttons
     document.querySelectorAll('.collapse-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const key   = btn.dataset.key;
@@ -340,7 +355,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       });
     });
 
-    // Initial render
     for (const key of Object.keys(taxonomy)) renderList(key);
   </script>
 </Base>
