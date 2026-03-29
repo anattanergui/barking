@@ -62,9 +62,23 @@
               "icon": "lucide-file",
               "title": "The Forgetting Itself"
             }
+          },
+          {
+            "id": "74d0a6b38faa84eb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Schmutz.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Schmutz"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -137,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Forgetting Itself.md",
+                "file": "Schmutz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Forgetting Itself"
+              "title": "Backlinks for Schmutz"
             }
           },
           {
@@ -156,12 +170,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Forgetting Itself.md",
+                "file": "Schmutz.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Forgetting Itself"
+              "title": "Outgoing links from Schmutz"
             }
           },
           {
@@ -199,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Forgetting Itself.md",
+                "file": "Schmutz.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Forgetting Itself"
+              "title": "Outline of Schmutz"
             }
           }
         ],
@@ -227,10 +241,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "30f6185a83de93c5",
+  "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
-    "The Empty Instant.md",
+    "Shadow.md",
+    "Schmutz.md",
     "The Forgetting Itself.md",
+    "The Empty Instant.md",
     "I Am That.md",
     "Heretics.md",
     "Nonduality.md",
@@ -252,8 +268,6 @@
     "Daily Bread.md",
     "Daily Bread 1.md",
     "Words.md",
-    "When I Just See.md",
-    "Unorbiting.md",
-    "To Whom But You.md"
+    "When I Just See.md"
   ]
 }
