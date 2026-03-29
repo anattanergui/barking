@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Your Order.md",
+                "file": "The Mirror Sage.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Your Order"
+              "title": "The Mirror Sage"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Your Order.md",
+                "file": "The Mirror Sage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Your Order"
+              "title": "Backlinks for The Mirror Sage"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Your Order.md",
+                "file": "The Mirror Sage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Your Order"
+              "title": "Outgoing links from The Mirror Sage"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Your Order.md",
+                "file": "The Mirror Sage.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Your Order"
+              "title": "Outline of The Mirror Sage"
             }
           }
         ],
@@ -186,9 +186,10 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
+    "Spacetime.md",
+    "Your Order.md",
     "Your Order 1.md",
     "Ishq.md",
-    "Your Order.md",
     "This Is It.md",
     "The Brew.md",
     "The Mirror Sage.md",
@@ -210,7 +211,6 @@
     "Shadow.md",
     "The Forgetting Itself.md",
     "The Empty Instant.md",
-    "I Am That.md",
-    "Heretics.md"
+    "I Am That.md"
   ]
 }
