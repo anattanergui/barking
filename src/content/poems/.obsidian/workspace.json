@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Sightless Eye.md",
+                "file": "Absence Of Absence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Sightless Eye"
+              "title": "Absence Of Absence"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fab",
+                "query": "absence",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,12 +74,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Sightless Eye.md",
+                "file": "Absence Of Absence.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Sightless Eye"
+              "title": "Backlinks for Absence Of Absence"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Sightless Eye.md",
+                "file": "Absence Of Absence.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Sightless Eye"
+              "title": "Outgoing links from Absence Of Absence"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Sightless Eye.md",
+                "file": "Absence Of Absence.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Sightless Eye"
+              "title": "Outline of Absence Of Absence"
             }
           }
         ],
@@ -187,8 +187,8 @@
   },
   "active": "6d0c3353e0ca456d",
   "lastOpenFiles": [
-    "The Invasion.md",
     "The Sightless Eye.md",
+    "The Invasion.md",
     "Hallucinating Factory.md",
     "Nothing Alone.md",
     "Unknowable.md",

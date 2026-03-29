@@ -23,7 +23,7 @@ ground:
 related:
   - "[[Illusory Self]]"
   - "[[Lam Yalid Wa Lam Yulad]]"
-word-count: "214"
+word-count: "114"
 ---
 # Absence Of Absence
 
