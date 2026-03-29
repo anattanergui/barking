@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "b8cd669e92057c33",
+        "id": "e1593ec4099693c9",
         "type": "tabs",
         "children": [
           {
-            "id": "74d0a6b38faa84eb",
+            "id": "6d0c3353e0ca456d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nothing Alone.md",
+                "file": "The Sightless Eye.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nothing Alone"
-            }
-          },
-          {
-            "id": "a4aaf6893d98b256",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Unknowable.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Unknowable"
+              "title": "The Sightless Eye"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Unknowable.md",
+                "file": "The Sightless Eye.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Unknowable"
+              "title": "Backlinks for The Sightless Eye"
             }
           },
           {
@@ -129,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Unknowable.md",
+                "file": "The Sightless Eye.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Unknowable"
+              "title": "Outgoing links from The Sightless Eye"
             }
           },
           {
@@ -172,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Unknowable.md",
+                "file": "The Sightless Eye.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Unknowable"
+              "title": "Outline of The Sightless Eye"
             }
           }
         ],
@@ -200,12 +185,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "a4aaf6893d98b256",
+  "active": "6d0c3353e0ca456d",
   "lastOpenFiles": [
+    "The Invasion.md",
+    "The Sightless Eye.md",
+    "Hallucinating Factory.md",
     "Nothing Alone.md",
+    "Unknowable.md",
     "Nothing Alone 1.md",
     "Extinction.md",
-    "Unknowable.md",
     "No Path.md",
     "So Simple.md",
     "No-Self.md",
@@ -224,9 +212,6 @@
     "The Dying Misnamed.md",
     "Consecrated Flicker.md",
     "Throughlines.md",
-    "— ing —.md",
-    "Therapy.md",
-    "The Industry.md",
-    "Machinery.md"
+    "— ing —.md"
   ]
 }
