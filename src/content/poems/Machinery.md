@@ -1,24 +1,25 @@
 ---
 title: Machinery
 tags:
-  - bureaucracy
   - slaughterhouse
   - blame
   - gears
   - sludge
   - bundle
   - bile
+  - machinery
+  - misconduct
+  - conduct
 domain:
-  - bureaucracy
-  - justice
+  - adjudication
+  - culpability
 crux:
   - inversion
 atmosphere:
-  - sardonic
-  - unflinching
+  - prosecutorial
+  - cold
 ground:
   - structural
-  - materialist
 related:
   - "[[Power]]"
   - "[[The Industry]]"

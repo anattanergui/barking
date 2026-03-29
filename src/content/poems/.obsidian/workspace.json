@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sacrament.md",
+                "file": "Machinery.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Sacrament"
+              "title": "Machinery"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sacrament.md",
+                "file": "Machinery.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Sacrament"
+              "title": "Backlinks for Machinery"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sacrament.md",
+                "file": "Machinery.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Sacrament"
+              "title": "Outgoing links from Machinery"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sacrament.md",
+                "file": "Machinery.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Sacrament"
+              "title": "Outline of Machinery"
             }
           }
         ],
@@ -186,11 +186,14 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
+    "Protector Parrots.md",
+    "Machinery.md",
+    "Untitled.md",
+    "Sacrament.md",
     "Groups For Groups.md",
     "Spacetime.md",
     "Your Order.md",
     "The Mirror Sage.md",
-    "Sacrament.md",
     "Your Order 1.md",
     "Ishq.md",
     "This Is It.md",
@@ -208,9 +211,6 @@
     "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "Given.md",
     "Be Yourself.md",
-    "not-Paradox.md",
-    "Schmutz.md",
-    "Shadow.md",
-    "The Forgetting Itself.md"
+    "not-Paradox.md"
   ]
 }

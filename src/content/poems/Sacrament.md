@@ -20,17 +20,11 @@ atmosphere:
   - unsparing
 ground:
   - genealogical
+  - structural
 related:
   - "[[The Myth Of Unaltered States]]"
   - "[[Mania]]"
-style:
-  - rhetorical
-  - analytical
-  - satirical
-  - paratactic
-energy:
-  - invasive
-  - grounded
+
 word-count: "396"
 ---
 # Sacrament
