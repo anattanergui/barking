@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Divine.md",
+                "file": "Summum Bukmun Umyum.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "The Divine"
+              "title": "Summum Bukmun Umyum"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Divine.md",
+                "file": "Summum Bukmun Umyum.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Divine"
+              "title": "Backlinks for Summum Bukmun Umyum"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Divine.md",
+                "file": "Summum Bukmun Umyum.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Divine"
+              "title": "Outgoing links from Summum Bukmun Umyum"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Divine.md",
+                "file": "Summum Bukmun Umyum.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Divine"
+              "title": "Outline of Summum Bukmun Umyum"
             }
           }
         ],
@@ -187,6 +187,14 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
+    "Summum Bukmun Umyum 1.md",
+    "Who Cares.md",
+    "Summum Bukmun Umyum.md",
+    "Playthings.md",
+    "Atman.md",
+    "Illusory Self.md",
+    "Dis-identification.md",
+    "Indivisibility.md",
     "Godhead.md",
     "The Divine.md",
     "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
@@ -204,14 +212,6 @@
     "Suicide.md",
     "The Aloneness.md",
     "Surrender.md",
-    "Stir.md",
-    "Suicide 1.md",
-    "Silence.md",
-    "Sovereignty.md",
-    "Power.md",
-    "Machinery.md",
-    "The Myth Of Unaltered States.md",
-    "In Defence Of Thought.md",
-    "Decree.md"
+    "Stir.md"
   ]
 }

@@ -17,8 +17,8 @@ atmosphere:
   - dispassionate
   - austere
 ground:
-  - nondual
   - no-self
+  - nondual
   - analytical
 related:
   - "[[False Self]]"

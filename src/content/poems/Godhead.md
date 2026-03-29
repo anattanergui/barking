@@ -11,7 +11,7 @@ tags:
   - awarenness
   - sustenance
 domain:
-  - awareness
+  - godhead
   - worship
 crux:
   - nonduality
@@ -19,7 +19,7 @@ atmosphere:
   - dispassionate
   - lucid
 ground:
-  - nondual
+  - dialectical
   - idealist
 related:
   - "[[Nonduality]]"

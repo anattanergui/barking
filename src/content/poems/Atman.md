@@ -13,7 +13,7 @@ domain:
   - perception
   - identity
 crux:
-  - unity
+  - singularity
 atmosphere:
   - sovereign
   - vast

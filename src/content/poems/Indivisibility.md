@@ -10,12 +10,12 @@ tags:
   - brahman
   - inseparable
 domain:
-  - nonduality
   - awareness
+  - appearance
 crux:
   - indivisibility
 atmosphere:
-  - correcting
+  - contemplative
   - rigorous
 ground:
   - nondual

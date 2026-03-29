@@ -11,15 +11,12 @@ tags:
   - ego
 domain:
   - disidentification
-  - consciousness
-
+  - action
 crux:
   - death
-
 atmosphere:
-  - forensic
   - austere
-
+  - forensic
 ground:
   - nondual
   - deductive
