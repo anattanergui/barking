@@ -10,10 +10,9 @@ domain:
   - existence
   - essence
 crux:
-  - inarticulable
+  - inaexpressibility
 atmosphere:
   - austere
-  - inexorable
 ground:
   - apophatic
   - logical

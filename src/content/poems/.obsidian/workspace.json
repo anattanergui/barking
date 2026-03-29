@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absence Of Absence.md",
+                "file": "Vanishing Point.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Absence Of Absence"
+              "title": "Vanishing Point"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "absence",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Absence Of Absence.md",
+                "file": "Vanishing Point.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Absence Of Absence"
+              "title": "Backlinks for Vanishing Point"
             }
           },
           {
@@ -114,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Absence Of Absence.md",
+                "file": "Vanishing Point.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Absence Of Absence"
+              "title": "Outgoing links from Vanishing Point"
             }
           },
           {
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Absence Of Absence.md",
+                "file": "Vanishing Point.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Absence Of Absence"
+              "title": "Outline of Vanishing Point"
             }
           }
         ],
@@ -187,6 +186,11 @@
   },
   "active": "6d0c3353e0ca456d",
   "lastOpenFiles": [
+    "Untitled.md",
+    "Negation.md",
+    "Vanishing Point.md",
+    "Lam Yalid Wa Lam Yulad.md",
+    "Absence Of Absence.md",
     "The Sightless Eye.md",
     "The Invasion.md",
     "Hallucinating Factory.md",
@@ -207,11 +211,6 @@
     "Hallucination.md",
     "Imago.md",
     "Alright.md",
-    "The Dreaming-I.md",
-    "Continuity.md",
-    "The Dying Misnamed.md",
-    "Consecrated Flicker.md",
-    "Throughlines.md",
-    "— ing —.md"
+    "The Dreaming-I.md"
   ]
 }
