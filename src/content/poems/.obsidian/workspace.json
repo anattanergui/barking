@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machinery.md",
+                "file": "Throughlines.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Machinery"
+              "title": "Throughlines"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Machinery.md",
+                "file": "Throughlines.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Machinery"
+              "title": "Backlinks for Throughlines"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Machinery.md",
+                "file": "Throughlines.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Machinery"
+              "title": "Outgoing links from Throughlines"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Machinery.md",
+                "file": "Throughlines.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Machinery"
+              "title": "Outline of Throughlines"
             }
           }
         ],
@@ -186,8 +187,12 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
-    "Protector Parrots.md",
+    "— ing —.md",
+    "Throughlines.md",
+    "Therapy.md",
+    "The Industry.md",
     "Machinery.md",
+    "Protector Parrots.md",
     "Untitled.md",
     "Sacrament.md",
     "Groups For Groups.md",
@@ -207,10 +212,6 @@
     "Dis-identification.md",
     "Indivisibility.md",
     "Godhead.md",
-    "The Divine.md",
-    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
-    "Given.md",
-    "Be Yourself.md",
-    "not-Paradox.md"
+    "The Divine.md"
   ]
 }
