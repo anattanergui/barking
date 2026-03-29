@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Summum Bukmun Umyum.md",
+                "file": "Your Order.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Summum Bukmun Umyum"
+              "title": "Your Order"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -95,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Summum Bukmun Umyum.md",
+                "file": "Your Order.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Summum Bukmun Umyum"
+              "title": "Backlinks for Your Order"
             }
           },
           {
@@ -114,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Summum Bukmun Umyum.md",
+                "file": "Your Order.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Summum Bukmun Umyum"
+              "title": "Outgoing links from Your Order"
             }
           },
           {
@@ -157,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Summum Bukmun Umyum.md",
+                "file": "Your Order.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Summum Bukmun Umyum"
+              "title": "Outline of Your Order"
             }
           }
         ],
@@ -187,9 +186,15 @@
   },
   "active": "74d0a6b38faa84eb",
   "lastOpenFiles": [
+    "Your Order 1.md",
+    "Ishq.md",
+    "Your Order.md",
+    "This Is It.md",
+    "The Brew.md",
+    "The Mirror Sage.md",
+    "Summum Bukmun Umyum.md",
     "Summum Bukmun Umyum 1.md",
     "Who Cares.md",
-    "Summum Bukmun Umyum.md",
     "Playthings.md",
     "Atman.md",
     "Illusory Self.md",
@@ -206,12 +211,6 @@
     "The Forgetting Itself.md",
     "The Empty Instant.md",
     "I Am That.md",
-    "Heretics.md",
-    "Nonduality.md",
-    "An’al Haq.md",
-    "Suicide.md",
-    "The Aloneness.md",
-    "Surrender.md",
-    "Stir.md"
+    "Heretics.md"
   ]
 }
