@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Imago.md",
+                "file": "Extinction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Imago"
+              "title": "Extinction"
+            }
+          },
+          {
+            "id": "a4aaf6893d98b256",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "No Path.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "No Path"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -78,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -95,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Imago.md",
+                "file": "No Path.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Imago"
+              "title": "Backlinks for No Path"
             }
           },
           {
@@ -114,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Imago.md",
+                "file": "No Path.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Imago"
+              "title": "Outgoing links from No Path"
             }
           },
           {
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Imago.md",
+                "file": "No Path.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Imago"
+              "title": "Outline of No Path"
             }
           }
         ],
@@ -185,9 +199,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "74d0a6b38faa84eb",
+  "active": "a4aaf6893d98b256",
   "lastOpenFiles": [
     "So Simple.md",
+    "No Path.md",
+    "No-Self.md",
+    "No-Self Talk.md",
+    "Extinction.md",
+    "The Empty Instant.md",
+    "Emptiness.md",
+    "Non-attachment.md",
+    "Source.md",
+    "Godhead.md",
+    "Trumpet.md",
+    "Hallucination.md",
     "Imago.md",
     "Alright.md",
     "The Dreaming-I.md",
@@ -200,18 +225,7 @@
     "The Industry.md",
     "Machinery.md",
     "Protector Parrots.md",
-    "Untitled.md",
     "Sacrament.md",
-    "Groups For Groups.md",
-    "Spacetime.md",
-    "Your Order.md",
-    "The Mirror Sage.md",
-    "Your Order 1.md",
-    "Ishq.md",
-    "This Is It.md",
-    "The Brew.md",
-    "Summum Bukmun Umyum.md",
-    "Summum Bukmun Umyum 1.md",
-    "Who Cares.md"
+    "Groups For Groups.md"
   ]
 }

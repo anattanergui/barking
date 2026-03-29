@@ -24,7 +24,7 @@ related:
   - "[[Hallucination]]"
   - "[[Illusory Self]]"
   - "[[Emptiness]]"
-  - "[[Volition]]"
+  - "[[Extinction]]"
   - "[[Miscreation]]"
 word-count: "91"
 ---

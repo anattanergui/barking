@@ -24,6 +24,7 @@ related:
   - "[[Alright]]"
   - "[[Illusory Self]]"
   - "[[This Is It]]"
+  - "[[No Path]]"
 ---
 # So Simple
 It was all
