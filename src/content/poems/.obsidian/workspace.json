@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -186,9 +187,10 @@
   },
   "active": "6d0c3353e0ca456d",
   "lastOpenFiles": [
+    "The Unshared.md",
+    "Vanishing Point.md",
     "Untitled.md",
     "Negation.md",
-    "Vanishing Point.md",
     "Lam Yalid Wa Lam Yulad.md",
     "Absence Of Absence.md",
     "The Sightless Eye.md",
@@ -210,7 +212,6 @@
     "Trumpet.md",
     "Hallucination.md",
     "Imago.md",
-    "Alright.md",
-    "The Dreaming-I.md"
+    "Alright.md"
   ]
 }
