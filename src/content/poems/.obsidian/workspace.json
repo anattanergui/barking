@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No Path.md",
+                "file": "Unknowable.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "No Path"
+              "title": "Unknowable"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -109,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "No Path.md",
+                "file": "Unknowable.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for No Path"
+              "title": "Backlinks for Unknowable"
             }
           },
           {
@@ -128,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "No Path.md",
+                "file": "Unknowable.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from No Path"
+              "title": "Outgoing links from Unknowable"
             }
           },
           {
@@ -171,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "No Path.md",
+                "file": "Unknowable.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of No Path"
+              "title": "Outline of Unknowable"
             }
           }
         ],
@@ -201,8 +202,9 @@
   },
   "active": "a4aaf6893d98b256",
   "lastOpenFiles": [
-    "So Simple.md",
     "No Path.md",
+    "Unknowable.md",
+    "So Simple.md",
     "No-Self.md",
     "No-Self Talk.md",
     "Extinction.md",
@@ -225,7 +227,6 @@
     "The Industry.md",
     "Machinery.md",
     "Protector Parrots.md",
-    "Sacrament.md",
-    "Groups For Groups.md"
+    "Sacrament.md"
   ]
 }
