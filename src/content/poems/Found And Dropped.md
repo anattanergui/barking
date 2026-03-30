@@ -12,6 +12,12 @@ related:
   - "[[Source]]"
   - "[[Orphan]]"
   - "[[Left Coat]]"
+tags:
+  - nest
+  - left
+  - bird
+  - sticks
+  - dried
 ---
 
 # Found And Dropped

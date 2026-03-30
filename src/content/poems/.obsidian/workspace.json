@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Found And Dropped"
             }
+          },
+          {
+            "id": "f7c9dbb994368203",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "The Undercurrent.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "The Undercurrent"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -55,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Found And Dropped.md",
+                "file": "The Undercurrent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Found And Dropped"
+              "title": "Backlinks for The Undercurrent"
             }
           },
           {
@@ -128,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Found And Dropped.md",
+                "file": "The Undercurrent.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Found And Dropped"
+              "title": "Outgoing links from The Undercurrent"
             }
           },
           {
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Found And Dropped.md",
+                "file": "The Undercurrent.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Found And Dropped"
+              "title": "Outline of The Undercurrent"
             }
           }
         ],
@@ -199,10 +213,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "de838a472ba4ef37",
+  "active": "f7c9dbb994368203",
   "lastOpenFiles": [
-    "Futility.md",
+    "Equanimity.md",
+    "The Undercurrent.md",
     "Found And Dropped.md",
+    "Futility.md",
     "For Fuck’s Sake.md",
     "Vanishing Point.md",
     "The Unshared.md",
@@ -224,8 +240,6 @@
     "Emptiness.md",
     "Non-attachment.md",
     "Source.md",
-    "Godhead.md",
-    "Trumpet.md",
-    "Hallucination.md"
+    "Godhead.md"
   ]
 }
