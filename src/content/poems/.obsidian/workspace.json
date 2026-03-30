@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nothing Is At Stake.md",
+                "file": "The Same Gaze.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Nothing Is At Stake"
+              "title": "The Same Gaze"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Nothing Is At Stake.md",
+                "file": "The Same Gaze.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Nothing Is At Stake"
+              "title": "Backlinks for The Same Gaze"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Nothing Is At Stake.md",
+                "file": "The Same Gaze.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Nothing Is At Stake"
+              "title": "Outgoing links from The Same Gaze"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Nothing Is At Stake.md",
+                "file": "The Same Gaze.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Nothing Is At Stake"
+              "title": "Outline of The Same Gaze"
             }
           }
         ],
@@ -257,9 +257,11 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "Demigods.md",
+    "The Same Gaze.md",
+    "Nothing Is At Stake.md",
     "Old Friend.md",
     "Old Friend 1.md",
-    "Nothing Is At Stake.md",
     "Nothing Is At Stake 1.md",
     "Arrogance Of Death.md",
     "Arrogance Of Death 1.md",
@@ -280,8 +282,6 @@
     "Vanity.md",
     "not-Paradox.md",
     "Grace.md",
-    "Being Struck.md",
-    "Becoming Unself.md",
-    "Good News.md"
+    "Being Struck.md"
   ]
 }
