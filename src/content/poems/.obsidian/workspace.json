@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Same Gaze.md",
+                "file": "Another Name.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "The Same Gaze"
+              "title": "Another Name"
             }
           }
         ],
@@ -111,7 +111,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -149,7 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Same Gaze.md",
+                "file": "Another Name.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Same Gaze"
+              "title": "Backlinks for Another Name"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Same Gaze.md",
+                "file": "Another Name.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Same Gaze"
+              "title": "Outgoing links from Another Name"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Same Gaze.md",
+                "file": "Another Name.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Same Gaze"
+              "title": "Outline of Another Name"
             }
           }
         ],
@@ -257,31 +257,31 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
-    "Demigods.md",
-    "The Same Gaze.md",
-    "Nothing Is At Stake.md",
-    "Old Friend.md",
-    "Old Friend 1.md",
-    "Nothing Is At Stake 1.md",
-    "Arrogance Of Death.md",
-    "Arrogance Of Death 1.md",
-    "Another Name.md",
     "Another Name 1.md",
+    "Another Name.md",
+    "This, Very Here.md",
+    "This, Very Here 1.md",
+    "Positive Thinking.md",
     "Life.md",
     "Life 1.md",
-    "Dissolution.md",
-    "Refutation.md",
-    "Irreducible Aloneness.md",
-    "Tat Tvam Nasi.md",
+    "Your Order.md",
+    "Your Order 1.md",
+    "Without Script.md",
+    "Without Script 1.md",
+    "Summum Bukmun Umyum.md",
+    "Summum Bukmun Umyum 1.md",
     "Second Hand God.md",
-    "One Gaze.md",
     "Second Hand God 1.md",
-    "The Word.md",
-    "Barking Of Dogs.md",
-    "Without The Word.md",
-    "Vanity.md",
-    "not-Paradox.md",
-    "Grace.md",
-    "Being Struck.md"
+    "Nothing Is At Stake.md",
+    "Nothing Is At Stake 1.md",
+    "Nothing Alone.md",
+    "Nothing Alone 1.md",
+    "Arrogance Of Death.md",
+    "Arrogance Of Death 1.md",
+    "Ox-Press.md",
+    "Purgatory.md",
+    "Another Meeting.md",
+    "Unnamed.md",
+    "Same I.md"
   ]
 }
