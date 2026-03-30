@@ -207,6 +207,7 @@ const minCount = Math.min(...allTerms.map(t => t.count));
           data-count={count}
           data-cats={JSON.stringify(cats)}
           data-term={term}
+          data-base-href={`${base}/browse?term=${encodeURIComponent(term)}`}
           style={`font-size: ${size}rem;`}
         >
           {term}
@@ -230,9 +231,18 @@ const minCount = Math.min(...allTerms.map(t => t.count));
       const btn = [...buttons].find(b => b.dataset.filter === filter) || buttons[0];
       btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
       terms.forEach(term => {
-        const match = filter === 'all' || term.dataset.category === filter;
+        const cats = JSON.parse(term.dataset.cats);
+        // A term is visible if it exists in the filtered category (not just if it's dominant)
+        const match = filter === 'all' || cats[filter] !== undefined;
         term.style.opacity       = match ? '1' : '0.12';
         term.style.pointerEvents = match ? 'auto' : 'none';
+        // Update the href so clicking navigates to the correct category-filtered browse page
+        if (filter === 'all') {
+          const catsParam = encodeURIComponent(Object.keys(cats).join(','));
+          term.href = term.dataset.baseHref + '&cats=' + catsParam;
+        } else {
+          term.href = term.dataset.baseHref + '&cats=' + encodeURIComponent(filter);
+        }
       });
     }
 
