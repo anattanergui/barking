@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Grace.md",
+                "file": "Barking Of Dogs.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Grace"
+              "title": "Barking Of Dogs"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Grace.md",
+                "file": "Barking Of Dogs.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Grace"
+              "title": "Backlinks for Barking Of Dogs"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Grace.md",
+                "file": "Barking Of Dogs.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Grace"
+              "title": "Outgoing links from Barking Of Dogs"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Grace.md",
+                "file": "Barking Of Dogs.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Grace"
+              "title": "Outline of Barking Of Dogs"
             }
           }
         ],
@@ -257,10 +257,12 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "not-Paradox.md",
+    "Barking Of Dogs.md",
+    "Grace.md",
     "Being Struck.md",
     "Becoming Unself.md",
     "Good News.md",
-    "Grace.md",
     "Beholding.md",
     "Uniqueness.md",
     "Be Yourself.md",
@@ -280,8 +282,6 @@
     "Hallucinating Factory.md",
     "Nothing Alone.md",
     "Unknowable.md",
-    "Nothing Alone 1.md",
-    "Extinction.md",
-    "No Path.md"
+    "Nothing Alone 1.md"
   ]
 }
