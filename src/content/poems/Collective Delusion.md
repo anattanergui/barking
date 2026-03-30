@@ -27,6 +27,7 @@ related:
   - "[[No Me Nowhere]]"
   - "[[Integration]]"
   - "[[The Forgetting Itself]]"
+word-count: "690"
 ---
 # Collective Delusion
 If I had money
