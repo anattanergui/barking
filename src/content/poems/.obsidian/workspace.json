@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Second Hand God.md",
+                "file": "Refutation.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Second Hand God"
+              "title": "Refutation"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Second Hand God.md",
+                "file": "Refutation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Second Hand God"
+              "title": "Backlinks for Refutation"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Second Hand God.md",
+                "file": "Refutation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Second Hand God"
+              "title": "Outgoing links from Refutation"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Second Hand God.md",
+                "file": "Refutation.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Second Hand God"
+              "title": "Outline of Refutation"
             }
           }
         ],
@@ -257,9 +257,11 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "Tat Tvam Nasi.md",
+    "Refutation.md",
+    "Second Hand God.md",
     "Second Hand God 1.md",
     "The Word.md",
-    "Second Hand God.md",
     "Barking Of Dogs.md",
     "Without The Word.md",
     "Vanity.md",
@@ -280,8 +282,6 @@
     "Vanishing Point.md",
     "The Unshared.md",
     "Negation.md",
-    "Lam Yalid Wa Lam Yulad.md",
-    "Absence Of Absence.md",
-    "The Sightless Eye.md"
+    "Lam Yalid Wa Lam Yulad.md"
   ]
 }
