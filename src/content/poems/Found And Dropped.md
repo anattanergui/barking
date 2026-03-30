@@ -11,7 +11,7 @@ word-count: "28"
 related:
   - "[[Source]]"
   - "[[Orphan]]"
-  - "[[Futility]]"
+  - "[[Left Coat]]"
 ---
 
 # Found And Dropped
