@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Barking Of Dogs.md",
+                "file": "Second Hand God.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Barking Of Dogs"
+              "title": "Second Hand God"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Barking Of Dogs.md",
+                "file": "Second Hand God.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Barking Of Dogs"
+              "title": "Backlinks for Second Hand God"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Barking Of Dogs.md",
+                "file": "Second Hand God.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Barking Of Dogs"
+              "title": "Outgoing links from Second Hand God"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Barking Of Dogs.md",
+                "file": "Second Hand God.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Barking Of Dogs"
+              "title": "Outline of Second Hand God"
             }
           }
         ],
@@ -257,8 +257,13 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
-    "not-Paradox.md",
+    "Second Hand God 1.md",
+    "The Word.md",
+    "Second Hand God.md",
     "Barking Of Dogs.md",
+    "Without The Word.md",
+    "Vanity.md",
+    "not-Paradox.md",
     "Grace.md",
     "Being Struck.md",
     "Becoming Unself.md",
@@ -277,11 +282,6 @@
     "Negation.md",
     "Lam Yalid Wa Lam Yulad.md",
     "Absence Of Absence.md",
-    "The Sightless Eye.md",
-    "The Invasion.md",
-    "Hallucinating Factory.md",
-    "Nothing Alone.md",
-    "Unknowable.md",
-    "Nothing Alone 1.md"
+    "The Sightless Eye.md"
   ]
 }
