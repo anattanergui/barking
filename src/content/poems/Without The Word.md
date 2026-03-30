@@ -24,7 +24,7 @@ related:
   - "[[Gateway]]"
   - "[[The Word]]"
   - "[[None]]"
-
+  - "[[Kun]]"
 word-count: "69"
 ---
 # Without The Word

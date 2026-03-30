@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kun.md",
+                "file": "None.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Kun"
+              "title": "None"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Kun.md",
+                "file": "None.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Kun"
+              "title": "Backlinks for None"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Kun.md",
+                "file": "None.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Kun"
+              "title": "Outgoing links from None"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Kun.md",
+                "file": "None.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Kun"
+              "title": "Outline of None"
             }
           }
         ],
@@ -186,8 +186,10 @@
   },
   "active": "844328aaf6dec862",
   "lastOpenFiles": [
-    "Dissolution.md",
+    "Without The Word.md",
+    "None.md",
     "Kun.md",
+    "Dissolution.md",
     "A Costume Speak.md",
     "Whiskey.md",
     "A Thousand Words.md",
@@ -209,8 +211,6 @@
     "Being Struck.md",
     "Uniqueness.md",
     "Purgatory.md",
-    "Another Name.md",
-    "Unseduced.md",
-    "Endurance.md"
+    "Another Name.md"
   ]
 }
