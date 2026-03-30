@@ -20,7 +20,7 @@ related:
   - "[[Stillness In Motion]]"
 ---
 
-# The Undercurrent
+# Undercurrent
 Beauty and love
 What without
 The undercurrent

@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Stillness In Motion.md",
+                "file": "Undercurrent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Stillness In Motion"
+              "title": "Undercurrent"
             }
           }
         ],
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Stillness In Motion.md",
+                "file": "Undercurrent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Stillness In Motion"
+              "title": "Backlinks for Undercurrent"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Stillness In Motion.md",
+                "file": "Undercurrent.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Stillness In Motion"
+              "title": "Outgoing links from Undercurrent"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Stillness In Motion.md",
+                "file": "Undercurrent.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Stillness In Motion"
+              "title": "Outline of Undercurrent"
             }
           }
         ],
@@ -215,7 +215,8 @@
   },
   "active": "f7c9dbb994368203",
   "lastOpenFiles": [
-    "The Undercurrent.md",
+    "Stillness In Motion.md",
+    "Undercurrent.md",
     "Found And Dropped.md",
     "Equanimity.md",
     "Futility.md",
@@ -239,7 +240,6 @@
     "The Empty Instant.md",
     "Emptiness.md",
     "Non-attachment.md",
-    "Source.md",
-    "Godhead.md"
+    "Source.md"
   ]
 }
