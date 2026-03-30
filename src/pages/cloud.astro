@@ -205,6 +205,7 @@ const minCount = Math.min(...allTerms.map(t => t.count));
           class={`cloud-term ${key}`}
           data-category={key}
           data-count={count}
+          data-cats={JSON.stringify(cats)}
           data-term={term}
           style={`font-size: ${size}rem;`}
         >
@@ -221,7 +222,10 @@ const minCount = Math.min(...allTerms.map(t => t.count));
     const terms   = document.querySelectorAll('.cloud-term');
     const tooltip = document.getElementById('tooltip');
 
+    let activeFilter = 'all';
+
     function applyFilter(filter) {
+      activeFilter = filter;
       buttons.forEach(b => { b.className = 'filter-btn'; });
       const btn = [...buttons].find(b => b.dataset.filter === filter) || buttons[0];
       btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
@@ -242,9 +246,18 @@ const minCount = Math.min(...allTerms.map(t => t.count));
 
     terms.forEach(term => {
       term.addEventListener('mouseenter', () => {
-        const count = term.dataset.count;
-        const cat   = term.dataset.category;
-        tooltip.textContent = `${count} poem${count != 1 ? 's' : ''} · ${cat}`;
+        const cats = JSON.parse(term.dataset.cats);
+        let count, label;
+        // If a specific category filter is active and this term exists in it, show that count
+        if (activeFilter !== 'all' && cats[activeFilter] !== undefined) {
+          count = cats[activeFilter];
+          label = activeFilter;
+        } else {
+          // Fall back to total count with dominant category label
+          count = term.dataset.count;
+          label = term.dataset.category;
+        }
+        tooltip.textContent = `${count} poem${count != 1 ? 's' : ''} · ${label}`;
         tooltip.classList.add('visible');
       });
       term.addEventListener('mousemove', e => {
