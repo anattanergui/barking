@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "One Gaze.md",
+                "file": "Irreducible Aloneness.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "One Gaze"
+              "title": "Irreducible Aloneness"
             }
           }
         ],
@@ -149,8 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -166,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "One Gaze.md",
+                "file": "Irreducible Aloneness.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for One Gaze"
+              "title": "Backlinks for Irreducible Aloneness"
             }
           },
           {
@@ -185,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "One Gaze.md",
+                "file": "Irreducible Aloneness.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from One Gaze"
+              "title": "Outgoing links from Irreducible Aloneness"
             }
           },
           {
@@ -228,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "One Gaze.md",
+                "file": "Irreducible Aloneness.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of One Gaze"
+              "title": "Outline of Irreducible Aloneness"
             }
           }
         ],
@@ -258,8 +257,9 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
-    "Refutation.md",
     "One Gaze.md",
+    "Irreducible Aloneness.md",
+    "Refutation.md",
     "Tat Tvam Nasi.md",
     "Second Hand God.md",
     "Second Hand God 1.md",
@@ -282,7 +282,6 @@
     "Futility.md",
     "For Fuck’s Sake.md",
     "Vanishing Point.md",
-    "The Unshared.md",
-    "Negation.md"
+    "The Unshared.md"
   ]
 }
