@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Life.md",
+                "file": "Nothing Is At Stake.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Life"
+              "title": "Nothing Is At Stake"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Life.md",
+                "file": "Nothing Is At Stake.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Life"
+              "title": "Backlinks for Nothing Is At Stake"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Life.md",
+                "file": "Nothing Is At Stake.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Life"
+              "title": "Outgoing links from Nothing Is At Stake"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Life.md",
+                "file": "Nothing Is At Stake.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Life"
+              "title": "Outline of Nothing Is At Stake"
             }
           }
         ],
@@ -257,9 +257,17 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "Old Friend.md",
+    "Old Friend 1.md",
+    "Nothing Is At Stake.md",
+    "Nothing Is At Stake 1.md",
+    "Arrogance Of Death.md",
+    "Arrogance Of Death 1.md",
+    "Another Name.md",
+    "Another Name 1.md",
+    "Life.md",
     "Life 1.md",
     "Dissolution.md",
-    "Life.md",
     "Refutation.md",
     "Irreducible Aloneness.md",
     "Tat Tvam Nasi.md",
@@ -274,14 +282,6 @@
     "Grace.md",
     "Being Struck.md",
     "Becoming Unself.md",
-    "Good News.md",
-    "Beholding.md",
-    "Uniqueness.md",
-    "Be Yourself.md",
-    "Undercurrent.md",
-    "Stillness In Motion.md",
-    "Found And Dropped.md",
-    "Equanimity.md",
-    "Futility.md"
+    "Good News.md"
   ]
 }
