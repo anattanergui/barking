@@ -10,6 +10,7 @@ ground:
 word-count: "28"
 related:
   - "[[Source]]"
+  - "[[Orphan]]"
   - "[[Futility]]"
 ---
 
