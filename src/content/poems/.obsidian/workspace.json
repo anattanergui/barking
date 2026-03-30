@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Gap.md",
+                "file": "Collective Delusion.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "The Gap"
+              "title": "Collective Delusion"
             }
           },
           {
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Gap.md",
+                "file": "Collective Delusion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Gap"
+              "title": "Backlinks for Collective Delusion"
             }
           },
           {
@@ -123,12 +123,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Gap.md",
+                "file": "Collective Delusion.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Gap"
+              "title": "Outgoing links from Collective Delusion"
             }
           },
           {
@@ -166,13 +166,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Gap.md",
+                "file": "Collective Delusion.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Gap"
+              "title": "Outline of Collective Delusion"
             }
           }
         ],
@@ -194,11 +194,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "72c3fac121af05d9",
+  "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "The Gap.md",
+    "Collective Delusion.md",
     "Grace.md",
     "The Holy Ghost.md",
-    "The Gap.md",
     "Samsara.md",
     "Samsara 1.md",
     "Ox-Press.md",
@@ -220,7 +221,6 @@
     "Life 1.md",
     "Your Order.md",
     "Your Order 1.md",
-    "Without Script.md",
-    "Without Script 1.md"
+    "Without Script.md"
   ]
 }
