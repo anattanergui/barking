@@ -12,16 +12,15 @@ tags:
   - that
   - thou
 domain:
-  - consciousness
-  - identity
+  - awareness
+  - separation
 crux:
-  - disjunction
+  - negation
 atmosphere:
   - dispassionate
   - forensic
 ground:
-  - post-Vedantic
-  - deductive
+  - apophatic
 related:
   - "[[The Speaking Pond]]"
   - "[[Refutation]]"

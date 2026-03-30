@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Irreducible Aloneness.md",
+                "file": "Dissolution.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Irreducible Aloneness"
+              "title": "Dissolution"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Irreducible Aloneness.md",
+                "file": "Dissolution.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Irreducible Aloneness"
+              "title": "Backlinks for Dissolution"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Irreducible Aloneness.md",
+                "file": "Dissolution.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Irreducible Aloneness"
+              "title": "Outgoing links from Dissolution"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Irreducible Aloneness.md",
+                "file": "Dissolution.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Irreducible Aloneness"
+              "title": "Outline of Dissolution"
             }
           }
         ],
@@ -257,11 +257,12 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
-    "One Gaze.md",
-    "Irreducible Aloneness.md",
     "Refutation.md",
+    "Irreducible Aloneness.md",
     "Tat Tvam Nasi.md",
     "Second Hand God.md",
+    "One Gaze.md",
+    "Dissolution.md",
     "Second Hand God 1.md",
     "The Word.md",
     "Barking Of Dogs.md",
@@ -281,7 +282,6 @@
     "Equanimity.md",
     "Futility.md",
     "For Fuck’s Sake.md",
-    "Vanishing Point.md",
-    "The Unshared.md"
+    "Vanishing Point.md"
   ]
 }

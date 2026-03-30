@@ -11,8 +11,8 @@ tags:
   - avatar
   - birds
 domain:
-  - appearance
-  - knowing
+  - perception
+  - agency
 crux:
   - agentlessness
   - necessity
@@ -20,8 +20,8 @@ atmosphere:
   - equanimous
   - wry
 ground:
-  - post-nondual
   - phenomenological
+  - nondual
 related:
   - "[[Hallucinating Factory]]"
   - "[[One Gaze]]"
