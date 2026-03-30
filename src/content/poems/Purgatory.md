@@ -10,18 +10,19 @@ tags:
   - there
   - paid
 domain:
-  - labour
-  - longing
+  - vocation
+  - estrangement
 crux:
   - suspension
 atmosphere:
-  - restless
+  - muted
   - elegiac
 ground:
-  - alienated
+  - drift
 related:
   - "[[Quiet Desperation]]"
   - "[[Between Worlds]]"
+word-count: "173"
 ---
 # Purgatory
 Early morning

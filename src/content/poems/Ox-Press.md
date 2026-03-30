@@ -3,49 +3,29 @@ title: Ox-Press
 tags:
   - ox
   - turning
-  - surrender
   - bound
-  - samsara
-  - wu-wei
-themes:
-  - impermanence
-  - freedom
-  - existence
+  - cycle
+  - escape
+  - surrender
+  - forget
+  - remember
+domain:
+  - cyclicality
+crux:
   - acceptance
-  - consciousness
-  - ritual
-  - duality
-  - liberation
-mood:
-  - meditative
-  - austere
-  - spacious
-  - vast
-form:
-  - accumulative
-  - catalogue
-  - circular
-  - descending
-  - triptych
+atmosphere:
+  - weary
+  - resolute
+ground:
+  - no-self
+  - nonattachment
 related:
   - "[[Samsara]]"
   - "[[Becoming Unself]]"
   - "[[Endurance]]"
   - "[[Dissolution]]"
   - "[[Nonduality]]"
-style:
-  - incantatory
-  - paratactic
-  - declarative
-  - paradoxical
-  - spare
-  - apophatic
-energy:
-  - iterative
-  - coiling
-  - recursive
-  - still
-  - arrived
+word-count: "172"
 ---
 # Ox-Press
 Drinking 

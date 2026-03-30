@@ -23,6 +23,7 @@ ground:
 related:
   - "[[Mercy]]"
   - "[[Equations]]"
+  - "[[The Holy Ghost]]"
 ---
 
 # Grace
