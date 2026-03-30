@@ -2,14 +2,12 @@
 title: Stillness In Motion
 tags:
   - beauty
-  - breath
   - stillness
   - light
   - skin
   - perceived
   - perceiving
   - motion
-  - sky
   - emphemerality
 domain:
   - beauty

@@ -17,6 +17,7 @@ ground:
 related:
   - "[[Bittersweet]]"
   - "[[Equanimity]]"
+  - "[[Stillness In Motion]]"
 ---
 
 # The Undercurrent
