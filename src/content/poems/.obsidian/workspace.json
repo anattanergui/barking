@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "A Costume Speak.md",
+                "file": "Kun.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "A Costume Speak"
+              "title": "Kun"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "A Costume Speak.md",
+                "file": "Kun.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for A Costume Speak"
+              "title": "Backlinks for Kun"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "A Costume Speak.md",
+                "file": "Kun.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from A Costume Speak"
+              "title": "Outgoing links from Kun"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "A Costume Speak.md",
+                "file": "Kun.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of A Costume Speak"
+              "title": "Outline of Kun"
             }
           }
         ],
@@ -186,8 +186,10 @@
   },
   "active": "844328aaf6dec862",
   "lastOpenFiles": [
-    "Whiskey.md",
+    "Dissolution.md",
+    "Kun.md",
     "A Costume Speak.md",
+    "Whiskey.md",
     "A Thousand Words.md",
     "False Self.md",
     "Just This.md",
@@ -209,8 +211,6 @@
     "Purgatory.md",
     "Another Name.md",
     "Unseduced.md",
-    "Endurance.md",
-    "Another Name 1.md",
-    "This, Very Here.md"
+    "Endurance.md"
   ]
 }
