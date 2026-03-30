@@ -20,6 +20,7 @@ ground:
   - phenomenological
 related:
   - "[[Being Struck]]"
+  - "[[Becoming Unself]]"
 ---
 # Uniqueness
 The path of no one else
