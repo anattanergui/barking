@@ -26,11 +26,11 @@ related:
   - "[[Awareness]]"
   - "[[Barking Of Dogs]]"
   - "[[Refutation]]"
-
+  - "[[Equations]]"
 word-count: "1000"
 ---
 # A Thousand Words
-It is impossible to the know —
+It is impossible to know —
 Really and truly know —
 The meaning of anything 
 I cannot even know the meaning 
