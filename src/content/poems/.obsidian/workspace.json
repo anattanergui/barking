@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dissolution.md",
+                "file": "Life.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Dissolution"
+              "title": "Life"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dissolution.md",
+                "file": "Life.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Dissolution"
+              "title": "Backlinks for Life"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dissolution.md",
+                "file": "Life.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Dissolution"
+              "title": "Outgoing links from Life"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dissolution.md",
+                "file": "Life.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dissolution"
+              "title": "Outline of Life"
             }
           }
         ],
@@ -257,12 +257,14 @@
   },
   "active": "ae4144c0cfd24c67",
   "lastOpenFiles": [
+    "Life 1.md",
+    "Dissolution.md",
+    "Life.md",
     "Refutation.md",
     "Irreducible Aloneness.md",
     "Tat Tvam Nasi.md",
     "Second Hand God.md",
     "One Gaze.md",
-    "Dissolution.md",
     "Second Hand God 1.md",
     "The Word.md",
     "Barking Of Dogs.md",
@@ -280,8 +282,6 @@
     "Stillness In Motion.md",
     "Found And Dropped.md",
     "Equanimity.md",
-    "Futility.md",
-    "For Fuck’s Sake.md",
-    "Vanishing Point.md"
+    "Futility.md"
   ]
 }

@@ -15,9 +15,10 @@ domain:
 crux:
   - groundlessness
 atmosphere:
-  - austere
+  - tender
+  - contemplative
 ground:
-  - apophatic
+  - testimonial
 related:
   - "[[Unknowable]]"
 word-count: "86"
