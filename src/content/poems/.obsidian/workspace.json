@@ -27,16 +27,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Anomaly.md",
+                "file": "Freezer.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Freezer"
+            }
+          },
+          {
+            "id": "05ccdee2ee9dd56f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "The Lot Of The Lot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Anomaly"
+              "title": "The Lot Of The Lot"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -93,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -110,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Anomaly.md",
+                "file": "The Lot Of The Lot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Anomaly"
+              "title": "Backlinks for The Lot Of The Lot"
             }
           },
           {
@@ -129,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Anomaly.md",
+                "file": "The Lot Of The Lot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Anomaly"
+              "title": "Outgoing links from The Lot Of The Lot"
             }
           },
           {
@@ -172,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Anomaly.md",
+                "file": "The Lot Of The Lot.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Anomaly"
+              "title": "Outline of The Lot Of The Lot"
             }
           }
         ],
@@ -200,10 +213,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "ff293de79f587db4",
+  "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
-    "Infiltration.md",
+    "The Lot Of The Lot 1.md",
+    "Worth Of An Hour.md",
+    "The Lot Of The Lot.md",
+    "No Me Nowhere.md",
+    "Never Get There.md",
+    "Freezer.md",
     "Anomaly.md",
+    "Infiltration.md",
     "To Myself.md",
     "None.md",
     "To Whom But You.md",
@@ -221,12 +240,6 @@
     "Samsara.md",
     "The Gap.md",
     "The Holy Ghost.md",
-    "Grace.md",
-    "Samsara 1.md",
-    "Ox-Press.md",
-    "Human Condition.md",
-    "Disillusion.md",
-    "Vanishing Point.md",
-    "Found And Dropped.md"
+    "Grace.md"
   ]
 }
