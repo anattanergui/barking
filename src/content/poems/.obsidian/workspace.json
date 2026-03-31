@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "None.md",
+                "file": "Cost Of More.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "None"
+              "title": "Cost Of More"
             }
           }
         ],
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "skies",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,8 +103,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -124,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "None.md",
+                "file": "Cost Of More.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for None"
+              "title": "Backlinks for Cost Of More"
             }
           },
           {
@@ -143,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "None.md",
+                "file": "Cost Of More.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from None"
+              "title": "Outgoing links from Cost Of More"
             }
           },
           {
@@ -186,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "None.md",
+                "file": "Cost Of More.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of None"
+              "title": "Outline of Cost Of More"
             }
           }
         ],
@@ -216,6 +215,18 @@
   },
   "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
+    "A Thousand Words.md",
+    "Half Awake.md",
+    "Control.md",
+    "Dick Measuring Contest.md",
+    "Cult.md",
+    "Algorithm.md",
+    "Cost Of More.md",
+    "Connection Myth.md",
+    "Connection Myth 1.md",
+    "An Arms Length.md",
+    "Echoes.md",
+    "None.md",
     "The Lot Of The Lot.md",
     "The Lot Of The Lot 1.md",
     "Worth Of An Hour.md",
@@ -225,22 +236,10 @@
     "Anomaly.md",
     "Infiltration.md",
     "To Myself.md",
-    "None.md",
     "To Whom But You.md",
     "Without The Word.md",
     "Kun.md",
     "Dissolution.md",
-    "A Costume Speak.md",
-    "Whiskey.md",
-    "A Thousand Words.md",
-    "False Self.md",
-    "Just This.md",
-    "Unfitting Costume.md",
-    "Invisible Ink.md",
-    "Collective Delusion.md",
-    "Samsara.md",
-    "The Gap.md",
-    "The Holy Ghost.md",
-    "Grace.md"
+    "A Costume Speak.md"
   ]
 }

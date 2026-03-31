@@ -9,28 +9,25 @@ tags:
   - comprehension
   - dissolve
   - perception
-domain:
-  - epistemology
-  - language
-  - nonduality
-crux:
-  - self-consumption
-atmosphere:
-  - relentless
-  - vertiginous
-ground:
-  - no-self
-  - nondual
+
 related:
   - "[[Tat Tvam Nasi]]"
   - "[[Awareness]]"
   - "[[Barking Of Dogs]]"
   - "[[Refutation]]"
-  - "[[Equations]]"
+domain:
+  - expression
+  - individuation
+crux:
+  - self-consumption
+atmosphere:
+  - unflinching
+ground:
+  - nondual
 word-count: "1000"
 ---
 # A Thousand Words
-It is impossible to know —
+It is impossible to the know —
 Really and truly know —
 The meaning of anything 
 I cannot even know the meaning 
