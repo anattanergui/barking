@@ -20,7 +20,9 @@ ground:
 word-count: "169"
 related:
   - "[[Hall Of Mirrors]]"
+  - "[[Infiltration]]"
   - "[[The God Complex]]"
+  - "[[Sovereignty]]"
 ---
 
 # Anomaly
@@ -34,17 +36,16 @@ A hen and cat
 And man
 
 And that distinction is not
-The capacity to say yes 
-Or no
+The capacity to say yes or no
 Not the ability 
 To refuse or accept
 
 Not the instinct
 To avoid danger, to procreate
-Sustain, and to remain at ease
+To sustain oneself
 
 Not the behaviour
-From before birth till after death
+From birth till death
 Not the composition
 Of molecules and cells
 
@@ -54,26 +55,28 @@ That generates and maintains
 Reflection —
 
 As if walking with a mirror
-All encompassing and total
-In all directions
+All-encompassing
+In every directions
 
 So encompassing
-That one does not even see the mirror
-But sees himself
-Wherever he looks, standing before him
-Standing between him
-And the world, the other
+That one no longer see the mirror
+But see himself
 
-He glimpses — but not for long —
-Not like an animal
+Wherever he looks, it stands before him
+Between him
+And the world — the other
+
+Man glimpses — but not for long —
+What it is, like an animal
 To be without this mirror
 
-But an experience, where he was not
-Cannot be and is not his
+But that state — where he is not —
+Cannot be
+And is not his
 
 To numb, anaesthetise, forget
-Or break the mirror
-Is thanatos
+Or to break the mirror
+Is thanatos —
 
-Is knowledge
+Is the knowledge
 Of birth and death
