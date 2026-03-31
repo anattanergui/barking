@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "To Myself.md",
+                "file": "Anomaly.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "To Myself"
+              "title": "Anomaly"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "To Myself.md",
+                "file": "Anomaly.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for To Myself"
+              "title": "Backlinks for Anomaly"
             }
           },
           {
@@ -129,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "To Myself.md",
+                "file": "Anomaly.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from To Myself"
+              "title": "Outgoing links from Anomaly"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "To Myself.md",
+                "file": "Anomaly.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of To Myself"
+              "title": "Outline of Anomaly"
             }
           }
         ],
@@ -202,10 +202,11 @@
   },
   "active": "ff293de79f587db4",
   "lastOpenFiles": [
-    "To Whom But You.md",
-    "To Myself.md",
+    "Infiltration.md",
     "Anomaly.md",
+    "To Myself.md",
     "None.md",
+    "To Whom But You.md",
     "Without The Word.md",
     "Kun.md",
     "Dissolution.md",
@@ -226,7 +227,6 @@
     "Human Condition.md",
     "Disillusion.md",
     "Vanishing Point.md",
-    "Found And Dropped.md",
-    "Being Struck.md"
+    "Found And Dropped.md"
   ]
 }

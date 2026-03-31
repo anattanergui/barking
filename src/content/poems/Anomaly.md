@@ -19,16 +19,15 @@ atmosphere:
 ground:
   - anthropological
   - apperceptive
-word-count: "176"
+word-count: "174"
 related:
   - "[[Hall Of Mirrors]]"
-  - "[[Infiltration]]"
   - "[[The God Complex]]"
   - "[[One-Way]]"
 ---
 
 # Anomaly
-There is only one
+There is one
 Only one
 Core distinction 
 Between man and not-man
