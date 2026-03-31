@@ -22,8 +22,8 @@ ground:
 word-count: "174"
 related:
   - "[[Hall Of Mirrors]]"
-  - "[[The God Complex]]"
   - "[[One-Way]]"
+  - "[[Given]]"
 ---
 
 # Anomaly
