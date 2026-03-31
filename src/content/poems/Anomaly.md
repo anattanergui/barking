@@ -46,6 +46,7 @@ To sustain oneself
 
 Not the behaviour
 From birth till death
+
 Not the composition
 Of molecules and cells
 
@@ -56,18 +57,19 @@ Reflection —
 
 As if walking with a mirror
 All-encompassing
-In every direction
+In all directions
 
 So encompassing
-That one no longer see the mirror
+That one no longer sees the mirror
 But only himself
+
 Wherever he looks, he stands before him
 Between him
-And the world — the other
+And the world, the other
 
 Man glimpses — but not for long —
 What it is, like an animal
-To be without this mirror
+To be without the mirror
 
 But that state — where he is not —
 Cannot be
@@ -75,7 +77,9 @@ And is not his
 
 To numb, anaesthetise, forget
 Or to break the mirror
-Is thanatos —
+Is thanatos, the garden of eden
+Enlightenment
 
+And only in the mirror
 Is the knowledge
 Of birth and death
