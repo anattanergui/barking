@@ -8,6 +8,8 @@ tags:
   - knowledge
   - birth
   - death
+  - eden
+  - enlightenment
 domain:
   - reflexivity
 crux:
@@ -17,7 +19,7 @@ atmosphere:
 ground:
   - anthropological
   - apperceptive
-word-count: "169"
+word-count: "176"
 related:
   - "[[Hall Of Mirrors]]"
   - "[[Infiltration]]"
