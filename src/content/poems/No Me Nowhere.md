@@ -10,15 +10,12 @@ tags:
   - me
   - beyond
 domain:
-  - self
-  - inquiry
+  - search
 crux:
   - no-self
 atmosphere:
-  - methodical
   - settled
 ground:
-  - apophatic
   - empirical
 related:
   - "[[I Equals Body]]"

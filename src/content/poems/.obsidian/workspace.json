@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cost Of More.md",
+                "file": "No Me Nowhere.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Cost Of More"
+              "title": "No Me Nowhere"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "summer",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -123,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cost Of More.md",
+                "file": "No Me Nowhere.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Cost Of More"
+              "title": "Backlinks for No Me Nowhere"
             }
           },
           {
@@ -142,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cost Of More.md",
+                "file": "No Me Nowhere.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Cost Of More"
+              "title": "Outgoing links from No Me Nowhere"
             }
           },
           {
@@ -185,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cost Of More.md",
+                "file": "No Me Nowhere.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cost Of More"
+              "title": "Outline of No Me Nowhere"
             }
           }
         ],
@@ -215,13 +216,13 @@
   },
   "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
+    "Cost Of More.md",
     "A Thousand Words.md",
     "Half Awake.md",
     "Control.md",
     "Dick Measuring Contest.md",
     "Cult.md",
     "Algorithm.md",
-    "Cost Of More.md",
     "Connection Myth.md",
     "Connection Myth 1.md",
     "An Arms Length.md",
