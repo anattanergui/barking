@@ -2,7 +2,6 @@
 title: Your Order
 tags:
   - order
-  - yielding
   - property
   - whore
   - mother
@@ -10,10 +9,11 @@ tags:
   - strip
   - dressed
   - heels
-  - yours
   - skin
+  - nails
 domain:
   - possession
+  - sex
 crux:
   - totalisation
 atmosphere:

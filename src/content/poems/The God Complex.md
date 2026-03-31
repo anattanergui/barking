@@ -10,6 +10,7 @@ tags:
   - delusion
   - imagination
   - boredom
+  - sex
 domain:
   - divinity
   - creation
