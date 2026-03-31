@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Anomaly.md",
+                "file": "To Myself.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Anomaly"
+              "title": "To Myself"
             }
           }
         ],
@@ -55,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Anomaly.md",
+                "file": "To Myself.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Anomaly"
+              "title": "Backlinks for To Myself"
             }
           },
           {
@@ -129,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Anomaly.md",
+                "file": "To Myself.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Anomaly"
+              "title": "Outgoing links from To Myself"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Anomaly.md",
+                "file": "To Myself.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Anomaly"
+              "title": "Outline of To Myself"
             }
           }
         ],
@@ -202,8 +202,10 @@
   },
   "active": "ff293de79f587db4",
   "lastOpenFiles": [
-    "None.md",
+    "To Whom But You.md",
+    "To Myself.md",
     "Anomaly.md",
+    "None.md",
     "Without The Word.md",
     "Kun.md",
     "Dissolution.md",
@@ -225,8 +227,6 @@
     "Disillusion.md",
     "Vanishing Point.md",
     "Found And Dropped.md",
-    "Being Struck.md",
-    "Uniqueness.md",
-    "Purgatory.md"
+    "Being Struck.md"
   ]
 }

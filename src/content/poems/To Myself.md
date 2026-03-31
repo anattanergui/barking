@@ -14,20 +14,17 @@ tags:
 domain:
   - source
   - writing
-
 crux:
   - unmanifest
-
 atmosphere:
   - restless
   - expansive
-
 ground:
-  - nondual
-  - solipsistic
+  - solipsist
 related:
   - "[[No-Self Talk]]"
-word-count: "339"
+  - "[[Anomaly]]"
+word-count: "330"
 ---
 # To Myself
 To who else but myself
@@ -60,7 +57,7 @@ Creating
 Strings of words
 One after another
 
-Is that not time -
+Is that not time —
 Thing after thing
 Where would time drift
 If nothing was
@@ -71,11 +68,11 @@ If all vanished
 Who lives
 Who dies
 Who fades
-What’s another -
+What’s another —
 A body
 An image
 In my mind
-What’s my mind -
+What’s my mind —
 Here
 Or there
 Where all unfolds
@@ -105,7 +102,7 @@ How can I know
 Who am I talking to
 A memory
 An image in me
-That body -
+That body —
 Underground
 Somewhere else
 Am I speaking to her
@@ -118,7 +115,7 @@ Do I live in them
 Where do we live
 
 A garden
-Where we bloom -
+Where we bloom —
 The sky
 The universe
 Where’s there
@@ -129,9 +126,8 @@ I write to them
 Editing
 Cleaning
 Smiles and propriety
-To myself -
+To myself —
 No bullshit
-Zero bullshit
 
 Whose words fill
 Those books
@@ -145,7 +141,7 @@ Full of nothing
 What’s there to say
 Not much
 To whom 
-A coffin -
+A coffin —
 Does it know
 
 Is this my deathbed
