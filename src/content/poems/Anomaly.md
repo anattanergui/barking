@@ -29,8 +29,8 @@ Only one
 Core distinction 
 Between man and not-man
 
-Between a sheep, cow, horse
-Insect, hen, cat
+Between a sheep, a horse
+A hen and cat
 And man
 
 And that distinction is not
