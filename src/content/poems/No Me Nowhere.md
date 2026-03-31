@@ -20,6 +20,7 @@ ground:
 related:
   - "[[I Equals Body]]"
   - "[[Collective Delusion]]"
+  - "[[No Path]]"
 ---
 # No Me Nowhere
 I have looked
