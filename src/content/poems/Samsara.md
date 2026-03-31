@@ -19,9 +19,8 @@ atmosphere:
 ground:
   - samsaric
 related:
-  - "[[Barking Of Dogs]]"
-  - "[[Hall Of Mirrors]]"
-  - "[[The God Complex]]"
+  - "[[The Holy Ghost]]"
+  - "[[Suicide]]"
 word-count: "90"
 ---
 # Samsara

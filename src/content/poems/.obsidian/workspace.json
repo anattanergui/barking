@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "I Equals Body.md",
+                "file": "Hollow King.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "I Equals Body"
+              "title": "Hollow King"
             }
           }
         ],
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "I Equals Body.md",
+                "file": "Hollow King.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for I Equals Body"
+              "title": "Backlinks for Hollow King"
             }
           },
           {
@@ -143,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "I Equals Body.md",
+                "file": "Hollow King.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from I Equals Body"
+              "title": "Outgoing links from Hollow King"
             }
           },
           {
@@ -186,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "I Equals Body.md",
+                "file": "Hollow King.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of I Equals Body"
+              "title": "Outline of Hollow King"
             }
           }
         ],
@@ -216,8 +216,12 @@
   },
   "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
-    "No Me Nowhere.md",
+    "Equilibrium.md",
+    "Samsara.md",
+    "Equilibrium 1.md",
+    "Hollow King.md",
     "I Equals Body.md",
+    "No Me Nowhere.md",
     "Cost Of More.md",
     "A Thousand Words.md",
     "Half Awake.md",
@@ -237,10 +241,6 @@
     "Freezer.md",
     "Anomaly.md",
     "Infiltration.md",
-    "To Myself.md",
-    "To Whom But You.md",
-    "Without The Word.md",
-    "Kun.md",
-    "Dissolution.md"
+    "To Myself.md"
   ]
 }
