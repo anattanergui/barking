@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Lot Of The Lot.md",
+                "file": "None.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Lot Of The Lot"
+              "title": "None"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "skies",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -123,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Lot Of The Lot.md",
+                "file": "None.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Lot Of The Lot"
+              "title": "Backlinks for None"
             }
           },
           {
@@ -142,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Lot Of The Lot.md",
+                "file": "None.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Lot Of The Lot"
+              "title": "Outgoing links from None"
             }
           },
           {
@@ -185,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Lot Of The Lot.md",
+                "file": "None.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Lot Of The Lot"
+              "title": "Outline of None"
             }
           }
         ],
@@ -215,9 +216,9 @@
   },
   "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
+    "The Lot Of The Lot.md",
     "The Lot Of The Lot 1.md",
     "Worth Of An Hour.md",
-    "The Lot Of The Lot.md",
     "No Me Nowhere.md",
     "Never Get There.md",
     "Freezer.md",

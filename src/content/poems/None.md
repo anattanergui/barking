@@ -29,7 +29,7 @@ Late-nights won’t always be here
 Nor early mornings, late evenings
 
 No days will be here
-No sun, no skies
+No sun, no sky
 No air, no light, no touch
 
 But then none will be
