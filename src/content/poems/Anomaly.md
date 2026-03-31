@@ -56,13 +56,13 @@ Reflection —
 
 As if walking with a mirror
 All-encompassing
-In every directions
+In every direction
 
 So encompassing
 That one no longer see the mirror
 But see himself
 
-Wherever he looks, it stands before him
+Wherever he looks, he stands before him
 Between him
 And the world — the other
 
