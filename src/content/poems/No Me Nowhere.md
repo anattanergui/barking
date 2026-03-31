@@ -31,15 +31,18 @@ And far outside
 I have looked
 At night and in the day
 Through a thousand winters
-And in as many summers, autumns
-And springs
+And in as many springs, autumns
+And summers
 
-I have looked —
+I have looked 
+
 Not once anywhere
 Not even for an instant
 Have I found a me  
 
 So I conclude
 No me is there —
-Never was or could be
+Never was 
+Or could be
+
 Here or anywhere beyond
