@@ -60,8 +60,7 @@ In every direction
 
 So encompassing
 That one no longer see the mirror
-But see himself
-
+But only himself
 Wherever he looks, he stands before him
 Between him
 And the world — the other
