@@ -1,0 +1,349 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoemsMeta } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const poems = getAllPoemsMeta();
+
+// Build keyword → poems index
+const keywordMap = new Map();
+
+poems.forEach(p => {
+  p.tags.forEach(tag => {
+    if (!tag) return;
+    const key = tag.trim();
+    if (!keywordMap.has(key)) keywordMap.set(key, []);
+    keywordMap.get(key).push({ slug: p.slug, title: p.title, domains: p.domains, atmosphere: p.atmosphere });
+  });
+});
+
+// Sort keywords alphabetically
+const sortedKeywords = [...keywordMap.entries()]
+  .sort((a, b) => a[0].localeCompare(b[0]))
+  .map(([keyword, poems]) => ({
+    keyword,
+    poems: poems.sort((a, b) => a.title.localeCompare(b.title)),
+  }));
+
+// Letters present
+const letters = [...new Set(sortedKeywords.map(k => k.keyword[0].toUpperCase()))].sort();
+
+// Group by first letter
+const grouped = letters.map(letter => ({
+  letter,
+  keywords: sortedKeywords.filter(k => k.keyword[0].toUpperCase() === letter),
+}));
+
+const totalKeywords = sortedKeywords.length;
+const totalPoems = poems.length;
+---
+
+<Base title="Keywords">
+<style is:global>
+  /* ── HEADER ──────────────────────────────────────────────────── */
+  .kw-header {
+    padding: 3rem 3rem 2rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .kw-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .kw-meta {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  /* ── CONTROLS ────────────────────────────────────────────────── */
+  .kw-controls {
+    padding: 0 3rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .kw-controls::-webkit-scrollbar { display: none; }
+
+  .search-wrap-kw {
+    padding: 1rem 0;
+    margin-right: 2rem;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .kw-search {
+    background: var(--search-bg);
+    border: 1px solid var(--search-border);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    padding: 0.55rem 0.9rem 0.55rem 2.2rem;
+    outline: none;
+    width: 220px;
+    transition: border-color 0.2s;
+  }
+  .kw-search::placeholder { color: var(--muted); }
+  .kw-search:focus { border-color: var(--muted); }
+
+  .kw-search-icon {
+    position: absolute;
+    left: 0.7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 0.85rem;
+    pointer-events: none;
+  }
+
+  /* ── JUMP BAR ────────────────────────────────────────────────── */
+  .jump-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+  }
+
+  .jump-letter {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 1.2rem 0.6rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  .jump-letter:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .jump-letter.active { color: var(--ink); border-bottom-color: var(--ink); }
+  .jump-letter.dim { color: var(--rule); pointer-events: none; }
+
+  /* ── LETTER GROUP ────────────────────────────────────────────── */
+  .letter-group {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .letter-anchor {
+    display: flex;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 1.5rem 3rem 1.2rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-panel);
+    position: sticky;
+    top: var(--nav-h, 56px);
+    z-index: 10;
+  }
+
+  .letter-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .letter-kw-count {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── KEYWORD ROWS ────────────────────────────────────────────── */
+  .keyword-row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    border-bottom: 1px solid var(--rule);
+    transition: background 0.12s;
+  }
+  .keyword-row:last-child { border-bottom: none; }
+  .keyword-row.hidden { display: none; }
+
+  .keyword-cell {
+    padding: 1.5rem 3rem;
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.3rem;
+  }
+
+  .keyword-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  .keyword-count {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .poems-cell {
+    padding: 1.2rem 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: 0.4rem 0.8rem;
+  }
+
+  .poem-link {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--ink);
+    text-decoration: none;
+    font-style: italic;
+    transition: color 0.15s;
+    padding: 0.15rem 0;
+    border-bottom: 1px solid transparent;
+    white-space: nowrap;
+  }
+  .poem-link:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  .poem-sep {
+    color: var(--rule);
+    font-size: 0.8rem;
+    align-self: center;
+  }
+
+  /* ── NO RESULTS ──────────────────────────────────────────────── */
+  .no-results {
+    padding: 4rem 3rem;
+    font-family: 'Libre Baskerville', Georgia, serif;
+    font-style: italic;
+    color: var(--muted);
+    font-size: 1rem;
+    display: none;
+  }
+  .no-results.visible { display: block; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 800px) {
+    .kw-header, .letter-anchor { padding: 2rem 1.5rem; }
+    .kw-controls { padding: 0 1.5rem; }
+    .keyword-row { grid-template-columns: 1fr; }
+    .keyword-cell { padding: 1.2rem 1.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+    .poems-cell { padding: 1rem 1.5rem; }
+    .kw-search { width: 160px; }
+    .jump-letter { padding: 1rem 0.4rem; }
+  }
+</style>
+
+<div class="kw-header">
+  <div>
+    <h1 class="kw-title">Keywords</h1>
+  </div>
+  <div class="kw-meta">
+    {totalKeywords} keywords · {totalPoems} poems
+  </div>
+</div>
+
+<div class="kw-controls">
+  <div class="search-wrap-kw">
+    <span class="kw-search-icon">⌕</span>
+    <input
+      type="text"
+      class="kw-search"
+      id="kw-search"
+      placeholder="Filter keywords…"
+      autocomplete="off"
+    />
+  </div>
+  <nav class="jump-bar" aria-label="Jump to letter">
+    {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l => (
+      <a
+        href={`#letter-${l}`}
+        class={`jump-letter${letters.includes(l) ? '' : ' dim'}`}
+        data-letter={l}
+      >{l}</a>
+    ))}
+  </nav>
+</div>
+
+<div id="kw-index">
+  {grouped.map(group => (
+    <div class="letter-group" id={`letter-${group.letter}`} data-letter-group={group.letter}>
+      <div class="letter-anchor">
+        <span class="letter-heading">{group.letter}</span>
+        <span class="letter-kw-count">
+          {group.keywords.length} {group.keywords.length === 1 ? 'keyword' : 'keywords'}
+        </span>
+      </div>
+      {group.keywords.map(kw => (
+        <div class="keyword-row" data-keyword={kw.keyword.toLowerCase()}>
+          <div class="keyword-cell">
+            <span class="keyword-name">{kw.keyword}</span>
+            <span class="keyword-count">
+              {kw.poems.length} {kw.poems.length === 1 ? 'poem' : 'poems'}
+            </span>
+          </div>
+          <div class="poems-cell">
+            {kw.poems.map((p, i) => (
+              <>
+                <a href={`${base}/poem/${p.slug}`} class="poem-link">{p.title}</a>
+                {i < kw.poems.length - 1 && <span class="poem-sep">·</span>}
+              </>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  ))}
+</div>
+
+<div class="no-results" id="no-results">No keywords match your search.</div>
+
+<script>
+  const searchInput = document.getElementById('kw-search') as HTMLInputElement;
+  const noResults   = document.getElementById('no-results');
+  const rows        = document.querySelectorAll<HTMLElement>('.keyword-row');
+  const groups      = document.querySelectorAll<HTMLElement>('.letter-group');
+
+  searchInput.addEventListener('input', () => {
+    const q = searchInput.value.trim().toLowerCase();
+    let anyVisible = false;
+
+    rows.forEach(row => {
+      const kw = row.dataset.keyword || '';
+      const match = !q || kw.includes(q);
+      row.classList.toggle('hidden', !match);
+      if (match) anyVisible = true;
+    });
+
+    // Hide letter groups that have no visible rows
+    groups.forEach(group => {
+      const visibleRows = group.querySelectorAll('.keyword-row:not(.hidden)');
+      (group as HTMLElement).style.display = visibleRows.length ? '' : 'none';
+    });
+
+    noResults!.classList.toggle('visible', !anyVisible);
+  });
+</script>
+</Base>

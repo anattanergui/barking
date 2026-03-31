@@ -1,0 +1,397 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoemsMeta } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const poems = getAllPoemsMeta();
+
+// Band definitions
+const BANDS = [
+  { key: 'fragment',  label: 'Fragment',  min: 0,   max: 19,  desc: 'under 20 words' },
+  { key: 'haiku',     label: 'Haiku-scale', min: 20, max: 49, desc: '20–49 words' },
+  { key: 'short',     label: 'Short',     min: 50,  max: 99,  desc: '50–99 words' },
+  { key: 'medium',    label: 'Medium',    min: 100, max: 199, desc: '100–199 words' },
+  { key: 'long',      label: 'Long',      min: 200, max: 399, desc: '200–399 words' },
+  { key: 'extended',  label: 'Extended',  min: 400, max: Infinity, desc: '400+ words' },
+];
+
+function getBand(wc) {
+  return BANDS.find(b => wc >= b.min && wc <= b.max) || BANDS[BANDS.length - 1];
+}
+
+// Only poems with a word count set
+const withCount = poems.filter(p => p.wordCount && p.wordCount > 0);
+const withoutCount = poems.filter(p => !p.wordCount || p.wordCount === 0);
+
+const banded = BANDS.map(band => ({
+  ...band,
+  poems: withCount.filter(p => p.wordCount >= band.min && p.wordCount <= band.max)
+                  .sort((a, b) => a.wordCount - b.wordCount),
+})).filter(b => b.poems.length > 0);
+
+const sorted = [...withCount].sort((a, b) => a.wordCount - b.wordCount);
+
+const poemData = {
+  banded: banded.map(b => ({
+    key: b.key, label: b.label, desc: b.desc,
+    poems: b.poems.map(p => ({ slug: p.slug, title: p.title, wordCount: p.wordCount, atmosphere: p.atmosphere, domains: p.domains }))
+  })),
+  sorted: sorted.map(p => ({ slug: p.slug, title: p.title, wordCount: p.wordCount, atmosphere: p.atmosphere, domains: p.domains })),
+  withoutCount: withoutCount.map(p => ({ slug: p.slug, title: p.title })),
+  total: withCount.length,
+  min: sorted.length ? sorted[0].wordCount : 0,
+  max: sorted.length ? sorted[sorted.length - 1].wordCount : 0,
+};
+---
+
+<Base title="Length">
+<style is:global>
+  /* ── PAGE HEADER ─────────────────────────────────────────────── */
+  .length-header {
+    padding: 3rem 3rem 2rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .length-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .length-meta {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 2;
+  }
+
+  /* ── CONTROLS ────────────────────────────────────────────────── */
+  .length-controls {
+    padding: 1.2rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule);
+  }
+
+  .toggle-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: none;
+    color: var(--muted);
+    border: none;
+    border-right: 1px solid var(--rule);
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toggle-btn:last-child { border-right: none; }
+  .toggle-btn.active {
+    background: var(--ink);
+    color: var(--bg);
+  }
+  .toggle-btn:not(.active):hover { background: var(--stat-hover); color: var(--ink); }
+
+  .sort-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .sort-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .sort-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: none;
+    color: var(--muted);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .sort-btn.active { color: var(--ink); border-bottom: 1px solid var(--ink); }
+  .sort-btn:not(.active):hover { color: var(--ink); }
+  .sort-sep { color: var(--rule); }
+
+  /* ── BAND VIEW ───────────────────────────────────────────────── */
+  #view-banded { display: block; }
+  #view-sorted  { display: none; }
+
+  .band-section {
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .band-header {
+    padding: 1.5rem 3rem 1.2rem;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--rule);
+    background: var(--bg-panel);
+  }
+
+  .band-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .band-desc {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .band-count {
+    margin-left: auto;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.2rem;
+    color: var(--muted);
+  }
+
+  .band-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .poem-card {
+    padding: 2rem 2.5rem;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    transition: background 0.15s;
+    position: relative;
+  }
+  .poem-card:hover { background: var(--stat-hover); }
+
+  .card-wc {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+    display: block;
+    margin-bottom: 0.7rem;
+  }
+
+  .card-meta {
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+  }
+
+  /* ── SORTED VIEW ─────────────────────────────────────────────── */
+  .sorted-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  /* ── SCALE BAR ───────────────────────────────────────────────── */
+  .scale-bar-wrap {
+    padding: 2rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .scale-bar-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .scale-bar {
+    height: 4px;
+    background: var(--rule);
+    position: relative;
+    border-radius: 2px;
+  }
+
+  .scale-bands {
+    display: flex;
+    height: 100%;
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .scale-segment {
+    height: 100%;
+    transition: opacity 0.2s;
+    cursor: pointer;
+  }
+  .scale-segment:hover { opacity: 0.7; }
+
+  /* ── DIRECTION TOGGLE (sorted view) ─────────────────────────── */
+  .direction-desc { display: block; }
+  .direction-asc  { display: none; }
+  body.asc .direction-desc { display: none; }
+  body.asc .direction-asc  { display: block; }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 700px) {
+    .length-header, .length-controls { padding: 2rem 1.5rem; }
+    .band-header { padding: 1.2rem 1.5rem; }
+    .poem-card { padding: 1.5rem; }
+    .scale-bar-wrap { padding: 1.5rem; }
+    .band-grid, .sorted-list { grid-template-columns: 1fr; }
+  }
+</style>
+
+<div class="length-header">
+  <div>
+    <h1 class="length-title">Length</h1>
+  </div>
+  <div class="length-meta">
+    {poemData.total} poems with word count ·
+    {poemData.min}–{poemData.max} words
+  </div>
+</div>
+
+<div class="length-controls">
+  <div class="view-toggle">
+    <button class="toggle-btn active" id="btn-banded">By band</button>
+    <button class="toggle-btn" id="btn-sorted">Sorted</button>
+  </div>
+  <div class="sort-toggle" id="sort-controls" style="display:none">
+    <span class="sort-label">Order</span>
+    <button class="sort-btn active" id="sort-asc">Shortest first</button>
+    <span class="sort-sep">·</span>
+    <button class="sort-btn" id="sort-desc">Longest first</button>
+  </div>
+</div>
+
+<!-- Band view -->
+<div id="view-banded">
+  {banded.map(band => (
+    <div class="band-section" data-band={band.key}>
+      <div class="band-header">
+        <span class="band-name">{band.label}</span>
+        <span class="band-desc">{band.desc}</span>
+        <span class="band-count">{band.poems.length}</span>
+      </div>
+      <div class="band-grid">
+        {band.poems.map(p => (
+          <a href={`${base}/poem/${p.slug}`} class="poem-card">
+            <span class="card-wc">{p.wordCount} words</span>
+            <span class="card-title">{p.title}</span>
+            {(p.atmosphere.length > 0 || p.domains.length > 0) && (
+              <span class="card-meta">
+                {[...p.atmosphere, ...p.domains].slice(0, 3).join(' · ')}
+              </span>
+            )}
+          </a>
+        ))}
+      </div>
+    </div>
+  ))}
+</div>
+
+<!-- Sorted view -->
+<div id="view-sorted">
+  <div class="sorted-list" id="sorted-grid"></div>
+</div>
+
+<script define:vars={{ poemData, base }}>
+  const btnBanded = document.getElementById('btn-banded');
+  const btnSorted = document.getElementById('btn-sorted');
+  const viewBanded = document.getElementById('view-banded');
+  const viewSorted = document.getElementById('view-sorted');
+  const sortControls = document.getElementById('sort-controls');
+  const sortAsc = document.getElementById('sort-asc');
+  const sortDesc = document.getElementById('sort-desc');
+  const sortedGrid = document.getElementById('sorted-grid');
+
+  let ascending = true;
+
+  function escHtml(s) {
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  }
+
+  function renderSorted() {
+    const list = ascending
+      ? poemData.sorted
+      : [...poemData.sorted].reverse();
+
+    sortedGrid.innerHTML = list.map(p => {
+      const meta = [...(p.atmosphere||[]), ...(p.domains||[])].slice(0,3).join(' · ');
+      return `<a href="${base}/poem/${escHtml(p.slug)}" class="poem-card">
+        <span class="card-wc">${escHtml(String(p.wordCount))} words</span>
+        <span class="card-title">${escHtml(p.title)}</span>
+        ${meta ? `<span class="card-meta">${escHtml(meta)}</span>` : ''}
+      </a>`;
+    }).join('');
+  }
+
+  btnBanded.addEventListener('click', () => {
+    btnBanded.classList.add('active');
+    btnSorted.classList.remove('active');
+    viewBanded.style.display = 'block';
+    viewSorted.style.display = 'none';
+    sortControls.style.display = 'none';
+  });
+
+  btnSorted.addEventListener('click', () => {
+    btnSorted.classList.add('active');
+    btnBanded.classList.remove('active');
+    viewBanded.style.display = 'none';
+    viewSorted.style.display = 'block';
+    sortControls.style.display = 'flex';
+    renderSorted();
+  });
+
+  sortAsc.addEventListener('click', () => {
+    ascending = true;
+    sortAsc.classList.add('active');
+    sortDesc.classList.remove('active');
+    renderSorted();
+  });
+
+  sortDesc.addEventListener('click', () => {
+    ascending = false;
+    sortDesc.classList.add('active');
+    sortAsc.classList.remove('active');
+    renderSorted();
+  });
+</script>
+</Base>
