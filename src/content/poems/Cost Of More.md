@@ -13,14 +13,14 @@ domain:
   - migration
   - belonging
 crux:
-  - impoverishment
+  - dispossession
 atmosphere:
   - elegiac
+  - ruminative
 ground:
-  - sufficiency
+  - situated
 related:
-  - "[[Manufacture Of Lack]]"
-
+  - "[[Ancient Urge]]"
 word-count: "353"
 ---
 # Cost Of More

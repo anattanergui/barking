@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hollow King.md",
+                "file": "Ancient Urge.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Hollow King"
+              "title": "Ancient Urge"
             }
           }
         ],
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Hollow King.md",
+                "file": "Ancient Urge.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Hollow King"
+              "title": "Backlinks for Ancient Urge"
             }
           },
           {
@@ -143,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Hollow King.md",
+                "file": "Ancient Urge.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Hollow King"
+              "title": "Outgoing links from Ancient Urge"
             }
           },
           {
@@ -186,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Hollow King.md",
+                "file": "Ancient Urge.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Hollow King"
+              "title": "Outline of Ancient Urge"
             }
           }
         ],
@@ -216,13 +216,14 @@
   },
   "active": "05ccdee2ee9dd56f",
   "lastOpenFiles": [
+    "Cost Of More.md",
+    "Ancient Urge.md",
+    "Hollow King.md",
     "Equilibrium.md",
     "Samsara.md",
     "Equilibrium 1.md",
-    "Hollow King.md",
     "I Equals Body.md",
     "No Me Nowhere.md",
-    "Cost Of More.md",
     "A Thousand Words.md",
     "Half Awake.md",
     "Control.md",
@@ -240,7 +241,6 @@
     "Never Get There.md",
     "Freezer.md",
     "Anomaly.md",
-    "Infiltration.md",
-    "To Myself.md"
+    "Infiltration.md"
   ]
 }
