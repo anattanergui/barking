@@ -24,7 +24,7 @@ related:
   - "[[Hall Of Mirrors]]"
   - "[[Infiltration]]"
   - "[[The God Complex]]"
-  - "[[Sovereignty]]"
+  - "[[One-Way]]"
 ---
 
 # Anomaly
