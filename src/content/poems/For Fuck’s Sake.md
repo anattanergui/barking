@@ -9,6 +9,7 @@ tags:
   - echoing
   - bastard
   - for
+  - fuck
 domain:
   - purpose
   - writing
@@ -23,7 +24,6 @@ ground:
 related:
   - "[[Underbelly]]"
   - "[[Barking Of Dogs]]"
-
 word-count: "1150"
 ---
 # For Fuck’s Sake
