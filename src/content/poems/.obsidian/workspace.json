@@ -29,7 +29,7 @@
               "state": {
                 "file": "Ghosted Self.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Ghosted Self"
@@ -43,14 +43,14 @@
               "state": {
                 "file": "Revolt.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Revolt"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Revolt.md",
+                "file": "Ghosted Self.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Revolt"
+              "title": "Backlinks for Ghosted Self"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Revolt.md",
+                "file": "Ghosted Self.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Revolt"
+              "title": "Outgoing links from Ghosted Self"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Revolt.md",
+                "file": "Ghosted Self.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Revolt"
+              "title": "Outline of Ghosted Self"
             }
           },
           {
@@ -200,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Revolt.md"
+                "file": "Ghosted Self.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Revolt"
+              "title": "File properties for Ghosted Self"
             }
           }
         ],
@@ -225,10 +225,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "7a37c14a3cad2db5",
+  "active": "8f9f5d11772f2181",
   "lastOpenFiles": [
-    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
+    "A Costume Speak.md",
+    "Ghosted Self.md",
     "Revolt.md",
+    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "False Self.md",
     "Extinction.md",
     "Collective Delusion.md",
@@ -250,8 +252,6 @@
     "Atman.md",
     "Assumption And Perception.md",
     "Arrogance Of Death.md",
-    "Another Name.md",
-    "Another Meeting.md",
-    "Anomaly.md"
+    "Another Name.md"
   ]
 }

@@ -15,20 +15,15 @@ tags:
   - image
 domain:
   - theodicy
-
 crux:
   - indictment
-
 atmosphere:
   - contemptuous
-
 ground:
   - absurdism
 related:
   - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
-  - "[[Fuck The Dependable]]"
-  - "[[The Howling]]"
-
+  - "[[The God Complex]]"
 word-count: "64"
 ---
 # Revolt

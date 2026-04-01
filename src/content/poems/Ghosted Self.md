@@ -8,6 +8,7 @@ tags:
   - contradiction
   - no-self
   - intimacy
+  - exorcising
 domain:
   - self
   - intimacy
@@ -21,6 +22,7 @@ related:
   - "[[Mortar]]"
   - "[[Clothes]]"
   - "[[Autopsy]]"
+  - "[[Whiskey]]"
 word-count: "61"
 ---
 
@@ -48,7 +50,7 @@ For the body possessed
 By a ghost
 Demon —
 
-Evicting intimacy —
+Exorcising intimacy —
 Out of the body
 
 To be
