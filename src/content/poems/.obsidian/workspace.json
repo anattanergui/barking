@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "— ing —.md",
+                "file": "I Am-ing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "— ing —"
+              "title": "I Am-ing"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "— ing —.md",
+                "file": "Not-Mutes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "— ing —"
+              "title": "Not-Mutes"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -110,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "— ing —.md",
+                "file": "I Am-ing.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for — ing —"
+              "title": "Backlinks for I Am-ing"
             }
           },
           {
@@ -129,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "— ing —.md",
+                "file": "I Am-ing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from — ing —"
+              "title": "Outgoing links from I Am-ing"
             }
           },
           {
@@ -172,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "— ing —.md",
+                "file": "I Am-ing.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of — ing —"
+              "title": "Outline of I Am-ing"
             }
           },
           {
@@ -187,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "— ing —.md"
+                "file": "I Am-ing.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for — ing —"
+              "title": "File properties for I Am-ing"
             }
           }
         ],
@@ -212,13 +211,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "7a37c14a3cad2db5",
+  "active": "a5d117216c1668c3",
   "lastOpenFiles": [
-    "I Am-ing.md",
     "— ing —.md",
-    "Abbatoir.md",
-    "Half-Life.md",
     "Not-Mutes.md",
+    "Half-Life.md",
+    "Abbatoir.md",
+    "I Am-ing.md",
     "Not-duality.md",
     "Products And Services.md",
     "Products And Services 1.md",

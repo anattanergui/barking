@@ -1,14 +1,15 @@
 ---
 title: I Am-ing
 tags:
-  - I-am-ing
   - awareness-ing
   - tree-ing
   - happening
   - process
   - fixed
   - knowledge
-  - ing
+  - -ing
+  - language
+  - movement
 domain:
   - consciousness
   - predication
@@ -20,8 +21,9 @@ atmosphere:
 ground:
   - processual
 related:
-  - "[[Nonduality]]"
-
+  - "[[Not-duality]]"
+  - "[[— ing —]]"
+  - "[[Indivisibility]]"
 word-count: "169"
 ---
 # I Am-ing
