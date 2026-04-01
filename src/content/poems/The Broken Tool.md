@@ -2,17 +2,15 @@
 domain:
   - language
   - truth
-
 crux:
   - inadequacy
-
 atmosphere:
   - forensic
   - unsparing
-
 ground:
   - epistemological
   - apophatic
+word-count: "130"
 ---
 # The Broken Tool
 You can never say a single thing

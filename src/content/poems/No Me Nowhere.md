@@ -21,6 +21,7 @@ related:
   - "[[I Equals Body]]"
   - "[[Collective Delusion]]"
   - "[[No Path]]"
+word-count: "70"
 ---
 # No Me Nowhere
 I have looked

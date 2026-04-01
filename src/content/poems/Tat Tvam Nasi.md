@@ -24,6 +24,7 @@ ground:
 related:
   - "[[The Speaking Pond]]"
   - "[[Refutation]]"
+word-count: "306"
 ---
 # Tat Tvam Nasi
 Is God —

@@ -22,6 +22,7 @@ ground:
 related:
   - "[[Collective Delusion]]"
   - "[[Manufacture Of Lack]]"
+word-count: "92"
 ---
 # Positive Thinking
 It’s not all havoc

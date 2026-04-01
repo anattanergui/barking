@@ -24,6 +24,7 @@ ground:
   - ontological
 related:
   - "[[Tat Tvam Nasi]]"
+word-count: "198"
 ---
 # Not-duality
 What I am 

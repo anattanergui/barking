@@ -1,17 +1,16 @@
 ---
 title: "Those Who Know: Speak"
 tags:
-  - write
-  - sound
   - word
-  - true
+  - "true"
+  - sound
   - construction
-  - show
   - hoping
   - free
+  - write
+  - speak
   - hollow
   - empty
-  - spoken
 domain:
   - language
   - writing

@@ -31,6 +31,7 @@ energy:
   - suspended
   - still
   - inward
+word-count: "43"
 ---
 # Shadow
 Why speak of integrating something —

@@ -18,6 +18,7 @@ ground:
 related:
   - "[[The Howling]]"
   - "[[Turn]]"
+word-count: "40"
 ---
 
 # Becoming Unself

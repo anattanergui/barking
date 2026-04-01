@@ -21,7 +21,7 @@ ground:
 related:
   - "[[Unfitting Costume]]"
   - "[[Residues]]"
-
+word-count: "90"
 ---
 # Left Coat
 Do you remember the coat

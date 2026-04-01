@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Not-Mutes.md",
+                "file": "Your Order.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Not-Mutes"
+              "title": "Your Order"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTimeReverse",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Ghosted Self.md",
+                "file": "Your Order.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Ghosted Self"
+              "title": "Backlinks for Your Order"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Ghosted Self.md",
+                "file": "Your Order.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Ghosted Self"
+              "title": "Outgoing links from Your Order"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Ghosted Self.md",
+                "file": "Your Order.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Ghosted Self"
+              "title": "Outline of Your Order"
             }
           },
           {
@@ -200,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Ghosted Self.md"
+                "file": "Your Order.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Ghosted Self"
+              "title": "File properties for Your Order"
             }
           }
         ],
@@ -225,33 +225,33 @@
       "bases:Create new base": false
     }
   },
-  "active": "8f9f5d11772f2181",
+  "active": "7a37c14a3cad2db5",
   "lastOpenFiles": [
-    "Seamless.md",
-    "Ghosted Self.md",
-    "Indivisibility.md",
-    "Consciousness.md",
-    "Emptiness.md",
-    "I Am-ing.md",
-    "— ing —.md",
-    "Not-Mutes.md",
-    "Half-Life.md",
-    "Abbatoir.md",
-    "Not-duality.md",
-    "Products And Services.md",
-    "Products And Services 1.md",
-    "None.md",
-    "Freezer.md",
-    "The Lot Of The Lot.md",
-    "The Lot Of The Lot 1.md",
-    "Connection Myth.md",
-    "Connection Myth 1.md",
-    "Consecrated Flicker.md",
-    "Done.md",
-    "Your Order.md",
-    "The First Cause.md",
-    "The God Complex.md",
-    "For Fuck’s Sake.md",
-    "Ancient Urge.md"
+    "Yet.md",
+    "Worth Of An Hour.md",
+    "Words.md",
+    "Wonder.md",
+    "Without The Word.md",
+    "Without Script.md",
+    "Who Cares.md",
+    "Whiskey.md",
+    "When I Just See.md",
+    "Wedge.md",
+    "Vanity.md",
+    "Vanishing Point.md",
+    "Unseduced.md",
+    "Unquestioning.md",
+    "Unoriginated.md",
+    "Unorbiting.md",
+    "Unnamed.md",
+    "Unknowable.md",
+    "Uniqueness.md",
+    "Unhindered.md",
+    "Unfitting Costume.md",
+    "Undercurrent.md",
+    "Underbelly.md",
+    "Un —.md",
+    "Umbilical Cord.md",
+    "Turn.md"
   ]
 }

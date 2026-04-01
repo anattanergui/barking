@@ -17,6 +17,7 @@ ground:
 related:
   - "[[Not-duality]]"
   - "[[Atman]]"
+word-count: "16"
 ---
 # Nonduality
 There can only be 

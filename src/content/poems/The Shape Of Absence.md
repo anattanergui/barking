@@ -24,9 +24,9 @@ atmosphere:
 ground:
   - apophatic
   - no-self
-
 related:
   - "[[No Me Nowhere]]"
+word-count: "138"
 ---
 # The Shape Of Absence
 Dancing words, appearing like puppets —

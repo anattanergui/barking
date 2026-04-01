@@ -23,6 +23,7 @@ related:
   - "[[Equations]]"
   - "[[The Divine]]"
   - "[[Dis-identification]]"
+word-count: "404"
 ---
 # I Equals Body
 The very fact of this expression

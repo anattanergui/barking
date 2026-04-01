@@ -23,7 +23,7 @@ related:
   - "[[Hallucination]]"
   - "[[Becoming Unself]]"
   - "[[Power]]"
-
+word-count: "48"
 ---
 # Mania
 The vine —

@@ -22,6 +22,7 @@ related:
   - "[[An'al Haq]]"
   - "[[Something]]"
   - "[[Stillness In Motion]]"
+word-count: "38"
 ---
 # Stir
 Something stirs

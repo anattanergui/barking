@@ -23,6 +23,7 @@ related:
   - "[[A Costume Speak]]"
   - "[[The Accomplishment]]"
   - "[[Illusory Self]]"
+word-count: "319"
 ---
 # Whiskey
 What's most revolting

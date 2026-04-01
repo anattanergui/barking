@@ -23,6 +23,7 @@ related:
   - "[[Gilded Shadows]]"
   - "[[Power]]"
   - "[[Equilibrium]]"
+word-count: "128"
 ---
 # Hollow King
 Poppycock of poppycocks —

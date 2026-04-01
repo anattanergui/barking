@@ -21,6 +21,7 @@ ground:
 related:
   - "[[Dissolution]]"
   - "[[Without The Word]]"
+word-count: "46"
 ---
 # Kun
 Beyond 

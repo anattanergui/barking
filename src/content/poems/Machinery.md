@@ -24,6 +24,7 @@ related:
   - "[[Power]]"
   - "[[The Industry]]"
   - "[[Another Meeting]]"
+word-count: "132"
 ---
 # Machinery
 Complaints, allegations, accusations

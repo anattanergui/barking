@@ -22,6 +22,7 @@ related:
   - "[[Rock Bottom]]"
   - "[[In My Bed]]"
   - "[[Half-Life]]"
+word-count: "54"
 ---
 # This Bed
 This bed —
