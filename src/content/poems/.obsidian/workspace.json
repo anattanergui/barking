@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "— ing —"
             }
+          },
+          {
+            "id": "7a37c14a3cad2db5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Half-Life.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Half-Life"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -40,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -95,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "— ing —.md",
+                "file": "Half-Life.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for — ing —"
+              "title": "Backlinks for Half-Life"
             }
           },
           {
@@ -114,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "— ing —.md",
+                "file": "Half-Life.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from — ing —"
+              "title": "Outgoing links from Half-Life"
             }
           },
           {
@@ -157,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "— ing —.md",
+                "file": "Half-Life.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of — ing —"
+              "title": "Outline of Half-Life"
             }
           },
           {
@@ -172,10 +187,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "— ing —.md"
+                "file": "Half-Life.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for — ing —"
+              "title": "File properties for Half-Life"
             }
           }
         ],
@@ -197,8 +212,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "a5d117216c1668c3",
+  "active": "7a37c14a3cad2db5",
   "lastOpenFiles": [
+    "Not-Mutes.md",
+    "Not-duality.md",
+    "Half-Life.md",
+    "Products And Services.md",
+    "Products And Services 1.md",
+    "— ing —.md",
     "None.md",
     "Freezer.md",
     "The Lot Of The Lot.md",
@@ -218,12 +239,6 @@
     "Samsara.md",
     "Equilibrium 1.md",
     "I Equals Body.md",
-    "No Me Nowhere.md",
-    "A Thousand Words.md",
-    "Half Awake.md",
-    "Control.md",
-    "Dick Measuring Contest.md",
-    "Cult.md",
-    "Algorithm.md"
+    "No Me Nowhere.md"
   ]
 }
