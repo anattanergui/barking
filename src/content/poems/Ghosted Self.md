@@ -25,7 +25,7 @@ word-count: "61"
 ---
 
 
-# Self-Possession
+# Ghosted Self
 If self-possession means
 To possess the self
 

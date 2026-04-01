@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Self-Possession.md",
+                "file": "Ghosted Self.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Self-Possession"
+              "title": "Ghosted Self"
             }
           },
           {
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Self-Possession.md",
+                "file": "Ghosted Self.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Self-Possession"
+              "title": "Backlinks for Ghosted Self"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Self-Possession.md",
+                "file": "Ghosted Self.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Self-Possession"
+              "title": "Outgoing links from Ghosted Self"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Self-Possession.md",
+                "file": "Ghosted Self.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Self-Possession"
+              "title": "Outline of Ghosted Self"
             }
           },
           {
@@ -200,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Self-Possession.md"
+                "file": "Ghosted Self.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Self-Possession"
+              "title": "File properties for Ghosted Self"
             }
           }
         ],
@@ -228,7 +228,7 @@
   "active": "8f9f5d11772f2181",
   "lastOpenFiles": [
     "Seamless.md",
-    "Self-Possession.md",
+    "Ghosted Self.md",
     "Indivisibility.md",
     "Consciousness.md",
     "Emptiness.md",
