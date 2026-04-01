@@ -9,27 +9,18 @@ tags:
   - superior
   - equal
   - alone
-themes:
-  - self
-  - nonduality
-mood:
-  - lucid
-  - austere
-form:
-  - epigrammatic
-  - vertical
-  - descending
-  - fragmented
-  - ascending
+domain:
+  - sovereignty
+crux:
+  - absoluteness
+atmosphere:
+  - oracular
+ground:
+  - nondual
 related:
   - "[[I Am That]]"
+  - "[[Sovereignty]]"
   - "[[An’al Haq]]"
-  - "[[Identity]]"
-style:
-  - declarative
-  - paradoxical
-  - lapidary
-energy:
 word-count: "35"
 ---
 # not-Paradox
