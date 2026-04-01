@@ -230,13 +230,33 @@ const minCount = Math.min(...allTerms.map(t => t.count));
       buttons.forEach(b => { b.className = 'filter-btn'; });
       const btn = [...buttons].find(b => b.dataset.filter === filter) || buttons[0];
       btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
+
+      // Compute min/max using only the counts relevant to the active filter,
+      // so font sizes are always scaled relative to the visible set of terms.
+      const visibleCounts = [...terms].map(term => {
+        const cats = JSON.parse(term.dataset.cats);
+        if (filter === 'all') return Number(term.dataset.count);
+        return cats[filter] !== undefined ? cats[filter] : null;
+      }).filter(c => c !== null);
+
+      const minC = Math.min(...visibleCounts);
+      const maxC = Math.max(...visibleCounts);
+
       terms.forEach(term => {
         const cats = JSON.parse(term.dataset.cats);
-        // A term is visible if it exists in the filtered category (not just if it's dominant)
         const match = filter === 'all' || cats[filter] !== undefined;
+
         term.style.opacity       = match ? '1' : '0.12';
         term.style.pointerEvents = match ? 'auto' : 'none';
-        // Update the href so clicking navigates to the correct category-filtered browse page
+
+        // Rescale font size based on the active-filter count range
+        if (match) {
+          const c     = filter === 'all' ? Number(term.dataset.count) : cats[filter];
+          const ratio = maxC === minC ? 0.5 : (c - minC) / (maxC - minC);
+          term.style.fontSize = (0.8 + ratio * 1.6).toFixed(2) + 'rem';
+        }
+
+        // Update href to the correct category-filtered browse page
         if (filter === 'all') {
           const catsParam = encodeURIComponent(Object.keys(cats).join(','));
           term.href = term.dataset.baseHref + '&cats=' + catsParam;
