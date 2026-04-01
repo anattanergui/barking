@@ -20,9 +20,12 @@ related:
 word-count: "16"
 ---
 # Bittersweet
-If happiness
-Is an unrelenting 
-Undercurrent of grief pervading
-My being
+If
+Happiness is
+An unrelenting undercurrent
 
-Then I am happy
+Of grief
+Pervading my being
+
+Then
+I am happy
