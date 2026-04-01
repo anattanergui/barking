@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Same Old Shit.md",
+                "file": "The Lost Lineage.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Same Old Shit"
+              "title": "The Lost Lineage"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Same Old Shit.md",
+                "file": "The Lost Lineage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Same Old Shit"
+              "title": "Backlinks for The Lost Lineage"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Same Old Shit.md",
+                "file": "The Lost Lineage.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Same Old Shit"
+              "title": "Outgoing links from The Lost Lineage"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Same Old Shit.md",
+                "file": "The Lost Lineage.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Same Old Shit"
+              "title": "Outline of The Lost Lineage"
             }
           },
           {
@@ -171,10 +172,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Same Old Shit.md"
+                "file": "The Lost Lineage.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Same Old Shit"
+              "title": "File properties for The Lost Lineage"
             }
           }
         ],
@@ -198,8 +199,10 @@
   },
   "active": "789ad07255ae23c0",
   "lastOpenFiles": [
-    "Seamless.md",
+    "Prophet’s Dilemma.md",
+    "The Lost Lineage.md",
     "Same Old Shit.md",
+    "Seamless.md",
     "Same I.md",
     "Echoes.md",
     "Beside.md",
@@ -222,8 +225,6 @@
     "Bowed.md",
     "About Prayer.md",
     "Prayer.md",
-    "Silence.md",
-    "Lullaby.md",
-    "Emptiness.md"
+    "Silence.md"
   ]
 }
