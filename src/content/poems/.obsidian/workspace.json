@@ -4,53 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "9971bca0f5aa926f",
+        "id": "50a4cc214e2969d4",
         "type": "tabs",
         "children": [
           {
-            "id": "844328aaf6dec862",
+            "id": "a5d117216c1668c3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "None.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "None"
-            }
-          },
-          {
-            "id": "ff293de79f587db4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Freezer.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Freezer"
-            }
-          },
-          {
-            "id": "05ccdee2ee9dd56f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Done.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Done"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -107,7 +74,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -123,7 +91,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Done.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +100,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Done"
+              "title": "Backlinks"
             }
           },
           {
@@ -142,12 +109,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Done.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Done"
+              "title": "Outgoing links"
             }
           },
           {
@@ -185,13 +151,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Done.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Done"
+              "title": "Outline"
             }
           },
           {
@@ -199,11 +164,9 @@
             "type": "leaf",
             "state": {
               "type": "file-properties",
-              "state": {
-                "file": "Done.md"
-              },
+              "state": {},
               "icon": "lucide-info",
-              "title": "File properties for Done"
+              "title": "File properties"
             }
           }
         ],
@@ -211,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -224,10 +188,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "704f7e462ca44669",
+  "active": "a5d117216c1668c3",
   "lastOpenFiles": [
-    "Your Order.md",
+    "None.md",
+    "Freezer.md",
+    "The Lot Of The Lot.md",
+    "The Lot Of The Lot 1.md",
+    "Connection Myth.md",
+    "Connection Myth 1.md",
+    "Consecrated Flicker.md",
     "Done.md",
+    "Your Order.md",
     "The First Cause.md",
     "The God Complex.md",
     "For Fuck’s Sake.md",
@@ -244,13 +215,6 @@
     "Control.md",
     "Dick Measuring Contest.md",
     "Cult.md",
-    "Algorithm.md",
-    "Connection Myth.md",
-    "Connection Myth 1.md",
-    "An Arms Length.md",
-    "Echoes.md",
-    "None.md",
-    "The Lot Of The Lot.md",
-    "The Lot Of The Lot 1.md"
+    "Algorithm.md"
   ]
 }
