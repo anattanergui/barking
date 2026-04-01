@@ -22,6 +22,7 @@ ground:
 related:
   - "[[Khudi]]"
   - "[[Unfitting Costume]]"
+  - "[[Ghosted Self]]"
 word-count: "163"
 ---
 # Heart
