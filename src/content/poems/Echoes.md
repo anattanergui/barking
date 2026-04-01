@@ -17,9 +17,9 @@ atmosphere:
   - incantatory
 ground:
   - analogical
-  - "[[Echoes In Silence]]"
-
 word-count: "74"
+related:
+  - "[[Echoes In Silence]]"
 ---
 # Echoes
 Echoes 
