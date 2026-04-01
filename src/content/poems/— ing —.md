@@ -1,7 +1,6 @@
 ---
 title: — ing —
 tags:
-  - ing
   - bedrock
   - endures
   - sustains
@@ -10,6 +9,7 @@ tags:
   - grasped
   - carved
   - happen
+  - -ing
 domain:
   - process
 crux:
