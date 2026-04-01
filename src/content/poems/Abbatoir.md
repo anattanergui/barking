@@ -4,11 +4,12 @@ tags:
   - abattoir
   - married
   - dies
-  - singles
   - religion
   - prophet
   - impossible
   - gospel
+  - sex
+  - dogma
 domain:
   - marriage
 crux:
