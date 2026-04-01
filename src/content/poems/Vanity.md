@@ -8,17 +8,15 @@ tags:
   - word
 domain:
   - meaning
-  - illusion
 crux:
-  - groundless
+  - unsayability
 atmosphere:
-  - stark
-  - irreverent
+  - wry
 ground:
-  - apophatic
   - nondual
 related:
   - "[[Barking Of Dogs]]"
+  - "[[Hall Of Mirrors]]"
 word-count: "30"
 ---
 # Vanity

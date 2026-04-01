@@ -12,10 +12,9 @@ domain:
   - narration
   - illusion
 crux:
-  - groundless
+  - inoperability
 atmosphere:
-  - dispassionate
-  - austere
+  - precise
 ground:
   - no-self
   - nondual
