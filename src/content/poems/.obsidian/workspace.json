@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lullaby.md",
+                "file": "About Prayer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Lullaby"
+              "title": "About Prayer"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Lullaby.md",
+                "file": "About Prayer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Lullaby"
+              "title": "Backlinks for About Prayer"
             }
           },
           {
@@ -156,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Lullaby.md",
+                "file": "About Prayer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Lullaby"
+              "title": "Outgoing links from About Prayer"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Lullaby.md",
+                "file": "About Prayer.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Lullaby"
+              "title": "Outline of About Prayer"
             }
           },
           {
@@ -214,10 +214,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Lullaby.md"
+                "file": "About Prayer.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Lullaby"
+              "title": "File properties for About Prayer"
             }
           }
         ],
@@ -241,8 +241,12 @@
   },
   "active": "7a3796c31ea3709b",
   "lastOpenFiles": [
-    "Never Get There.md",
+    "Prayer.md",
+    "About Prayer.md",
+    "Silence.md",
     "Lullaby.md",
+    "Emptiness.md",
+    "Never Get There.md",
     "Neither God Nor Me.md",
     "— —.md",
     "— ing —.md",
@@ -262,10 +266,6 @@
     "Anxiety.md",
     "Purge.md",
     "Confidant.md",
-    "The Aloneness.md",
-    "Heart.md",
-    "Safety Blanket.md",
-    "Ghosted Self.md",
-    "A Costume Speak.md"
+    "The Aloneness.md"
   ]
 }
