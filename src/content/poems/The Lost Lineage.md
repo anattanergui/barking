@@ -24,7 +24,7 @@ ground:
 related:
   - "[[The Howling]]"
   - "[[Fuck The Dependable]]"
-word-count: "369"
+word-count: "367"
 ---
 # The Lost Lineage
 Truth is not a democracy
@@ -100,7 +100,7 @@ Of circle-jerking saints
 Could a teacher, a guru survive 
 Ranting this to their flock
 Of course not 
-So they slice off their fire
+Slice off their fire
 Don the robe
 Become the drone —
 Smile, pander
