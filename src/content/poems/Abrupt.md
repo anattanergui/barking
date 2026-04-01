@@ -18,7 +18,8 @@ ground:
   - ontological
 related:
   - "[[Oblivion]]"
-
+  - "[[None]]"
+  - "[[Is Forever]]"
 word-count: "12"
 ---
 # Abrupt

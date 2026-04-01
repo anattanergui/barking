@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bittersweet.md",
+                "file": "Abrupt.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bittersweet"
+              "title": "Abrupt"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "bitt",
+                "query": "oblivi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bittersweet.md",
+                "file": "Abrupt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Bittersweet"
+              "title": "Backlinks for Abrupt"
             }
           },
           {
@@ -114,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bittersweet.md",
+                "file": "Abrupt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Bittersweet"
+              "title": "Outgoing links from Abrupt"
             }
           },
           {
@@ -157,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bittersweet.md",
+                "file": "Abrupt.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Bittersweet"
+              "title": "Outline of Abrupt"
             }
           },
           {
@@ -172,10 +172,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Bittersweet.md"
+                "file": "Abrupt.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Bittersweet"
+              "title": "File properties for Abrupt"
             }
           }
         ],
@@ -199,6 +199,7 @@
   },
   "active": "789ad07255ae23c0",
   "lastOpenFiles": [
+    "Bittersweet.md",
     "Daimon.md",
     "No-Self.md",
     "Prophet’s Dilemma.md",
@@ -224,7 +225,6 @@
     "Is Forever.md",
     "God Is A Jealous Lover.md",
     "Unnameable.md",
-    "Unnamed.md",
-    "Unowned.md"
+    "Unnamed.md"
   ]
 }
