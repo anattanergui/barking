@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Your Order.md",
+                "file": "Revolt.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Your Order"
+              "title": "Revolt"
             }
           }
         ],
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Your Order.md",
+                "file": "Revolt.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Your Order"
+              "title": "Backlinks for Revolt"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Your Order.md",
+                "file": "Revolt.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Your Order"
+              "title": "Outgoing links from Revolt"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Your Order.md",
+                "file": "Revolt.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Your Order"
+              "title": "Outline of Revolt"
             }
           },
           {
@@ -200,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Your Order.md"
+                "file": "Revolt.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Your Order"
+              "title": "File properties for Revolt"
             }
           }
         ],
@@ -227,31 +227,31 @@
   },
   "active": "7a37c14a3cad2db5",
   "lastOpenFiles": [
-    "Yet.md",
-    "Worth Of An Hour.md",
-    "Words.md",
-    "Wonder.md",
-    "Without The Word.md",
-    "Without Script.md",
-    "Who Cares.md",
-    "Whiskey.md",
-    "When I Just See.md",
-    "Wedge.md",
-    "Vanity.md",
-    "Vanishing Point.md",
-    "Unseduced.md",
-    "Unquestioning.md",
-    "Unoriginated.md",
-    "Unorbiting.md",
-    "Unnamed.md",
-    "Unknowable.md",
-    "Uniqueness.md",
-    "Unhindered.md",
-    "Unfitting Costume.md",
-    "Undercurrent.md",
-    "Underbelly.md",
-    "Un —.md",
-    "Umbilical Cord.md",
-    "Turn.md"
+    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
+    "Revolt.md",
+    "False Self.md",
+    "Extinction.md",
+    "Collective Delusion.md",
+    "Cocoon.md",
+    "Cobwebs.md",
+    "Clothes.md",
+    "Cat And I.md",
+    "Bittersweet.md",
+    "Between Worlds.md",
+    "Between Silences.md",
+    "Being Struck.md",
+    "Beholding.md",
+    "Becoming Unself.md",
+    "Be Yourself.md",
+    "Barking Of Dogs.md",
+    "Awareness.md",
+    "Awake.md",
+    "Autopsy.md",
+    "Atman.md",
+    "Assumption And Perception.md",
+    "Arrogance Of Death.md",
+    "Another Name.md",
+    "Another Meeting.md",
+    "Anomaly.md"
   ]
 }
