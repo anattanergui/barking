@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "not-Paradox.md",
+                "file": "Undercurrent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "not-Paradox"
+              "title": "Undercurrent"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "not-pa",
+                "query": "underc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -94,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "not-Paradox.md",
+                "file": "Undercurrent.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for not-Paradox"
+              "title": "Backlinks for Undercurrent"
             }
           },
           {
@@ -113,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "not-Paradox.md",
+                "file": "Undercurrent.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from not-Paradox"
+              "title": "Outgoing links from Undercurrent"
             }
           },
           {
@@ -156,13 +157,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "not-Paradox.md",
+                "file": "Undercurrent.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of not-Paradox"
+              "title": "Outline of Undercurrent"
             }
           },
           {
@@ -171,10 +172,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "not-Paradox.md"
+                "file": "Undercurrent.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for not-Paradox"
+              "title": "File properties for Undercurrent"
             }
           }
         ],
@@ -198,6 +199,7 @@
   },
   "active": "789ad07255ae23c0",
   "lastOpenFiles": [
+    "not-Paradox.md",
     "The Lost Lineage.md",
     "Prophet’s Dilemma.md",
     "Same Old Shit.md",
@@ -223,7 +225,6 @@
     "Unowned.md",
     "Bowed.md",
     "About Prayer.md",
-    "Prayer.md",
-    "Silence.md"
+    "Prayer.md"
   ]
 }
