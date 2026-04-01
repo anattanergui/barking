@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Neither God Nor Me.md",
+                "file": "Lullaby.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Neither God Nor Me"
+              "title": "Lullaby"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Neither God Nor Me.md",
+                "file": "Lullaby.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Neither God Nor Me"
+              "title": "Backlinks for Lullaby"
             }
           },
           {
@@ -156,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Neither God Nor Me.md",
+                "file": "Lullaby.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Neither God Nor Me"
+              "title": "Outgoing links from Lullaby"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Neither God Nor Me.md",
+                "file": "Lullaby.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Neither God Nor Me"
+              "title": "Outline of Lullaby"
             }
           },
           {
@@ -214,10 +214,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Neither God Nor Me.md"
+                "file": "Lullaby.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Neither God Nor Me"
+              "title": "File properties for Lullaby"
             }
           }
         ],
@@ -241,8 +241,10 @@
   },
   "active": "7a3796c31ea3709b",
   "lastOpenFiles": [
-    "— —.md",
+    "Never Get There.md",
+    "Lullaby.md",
     "Neither God Nor Me.md",
+    "— —.md",
     "— ing —.md",
     "Revolt.md",
     "Seamless.md",
@@ -264,8 +266,6 @@
     "Heart.md",
     "Safety Blanket.md",
     "Ghosted Self.md",
-    "A Costume Speak.md",
-    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
-    "False Self.md"
+    "A Costume Speak.md"
   ]
 }
