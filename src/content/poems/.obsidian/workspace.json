@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "Daimon.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Undercurrent"
+              "title": "Daimon"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "underc",
+                "query": "daimon",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -95,7 +96,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "Daimon.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +106,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Undercurrent"
+              "title": "Backlinks for Daimon"
             }
           },
           {
@@ -114,12 +115,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "Daimon.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Undercurrent"
+              "title": "Outgoing links from Daimon"
             }
           },
           {
@@ -157,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "Daimon.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Undercurrent"
+              "title": "Outline of Daimon"
             }
           },
           {
@@ -172,10 +173,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Undercurrent.md"
+                "file": "Daimon.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Undercurrent"
+              "title": "File properties for Daimon"
             }
           }
         ],
@@ -199,9 +200,12 @@
   },
   "active": "789ad07255ae23c0",
   "lastOpenFiles": [
+    "No-Self.md",
+    "Daimon.md",
+    "Prophet’s Dilemma.md",
+    "Undercurrent.md",
     "not-Paradox.md",
     "The Lost Lineage.md",
-    "Prophet’s Dilemma.md",
     "Same Old Shit.md",
     "Seamless.md",
     "Same I.md",
@@ -222,9 +226,6 @@
     "God Is A Jealous Lover.md",
     "Unnameable.md",
     "Unnamed.md",
-    "Unowned.md",
-    "Bowed.md",
-    "About Prayer.md",
-    "Prayer.md"
+    "Unowned.md"
   ]
 }
