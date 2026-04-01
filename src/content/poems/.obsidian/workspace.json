@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "About Prayer.md",
+                "file": "God Is A Jealous Lover.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "About Prayer"
+              "title": "God Is A Jealous Lover"
             }
           }
         ],
@@ -137,7 +137,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "About Prayer.md",
+                "file": "God Is A Jealous Lover.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -147,7 +147,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for About Prayer"
+              "title": "Backlinks for God Is A Jealous Lover"
             }
           },
           {
@@ -156,12 +156,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "About Prayer.md",
+                "file": "God Is A Jealous Lover.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from About Prayer"
+              "title": "Outgoing links from God Is A Jealous Lover"
             }
           },
           {
@@ -199,13 +199,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "About Prayer.md",
+                "file": "God Is A Jealous Lover.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of About Prayer"
+              "title": "Outline of God Is A Jealous Lover"
             }
           },
           {
@@ -214,10 +214,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "About Prayer.md"
+                "file": "God Is A Jealous Lover.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for About Prayer"
+              "title": "File properties for God Is A Jealous Lover"
             }
           }
         ],
@@ -241,8 +241,13 @@
   },
   "active": "7a3796c31ea3709b",
   "lastOpenFiles": [
-    "Prayer.md",
+    "Unnameable.md",
+    "God Is A Jealous Lover.md",
+    "Unnamed.md",
+    "Unowned.md",
+    "Bowed.md",
     "About Prayer.md",
+    "Prayer.md",
     "Silence.md",
     "Lullaby.md",
     "Emptiness.md",
@@ -261,11 +266,6 @@
     "Where The Dead Once Lived.md",
     "Equanimity.md",
     "Connection Myth.md",
-    "Asymmetrical Loss.md",
-    "Disquiet.md",
-    "Anxiety.md",
-    "Purge.md",
-    "Confidant.md",
-    "The Aloneness.md"
+    "Asymmetrical Loss.md"
   ]
 }
