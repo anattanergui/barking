@@ -10,9 +10,7 @@ tags:
   - god
   - man
   - reason
-  - mess
   - life
-  - image
 domain:
   - theodicy
 crux:
