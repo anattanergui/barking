@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "— ing —.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Abbatoir"
+              "title": "— ing —"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "— ing —.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Abbatoir"
+              "title": "Backlinks for — ing —"
             }
           },
           {
@@ -129,12 +129,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "— ing —.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Abbatoir"
+              "title": "Outgoing links from — ing —"
             }
           },
           {
@@ -172,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Abbatoir.md",
+                "file": "— ing —.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Abbatoir"
+              "title": "Outline of — ing —"
             }
           },
           {
@@ -187,10 +187,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Abbatoir.md"
+                "file": "— ing —.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Abbatoir"
+              "title": "File properties for — ing —"
             }
           }
         ],
@@ -214,12 +214,14 @@
   },
   "active": "7a37c14a3cad2db5",
   "lastOpenFiles": [
+    "I Am-ing.md",
+    "— ing —.md",
+    "Abbatoir.md",
     "Half-Life.md",
     "Not-Mutes.md",
     "Not-duality.md",
     "Products And Services.md",
     "Products And Services 1.md",
-    "— ing —.md",
     "None.md",
     "Freezer.md",
     "The Lot Of The Lot.md",
@@ -237,8 +239,6 @@
     "Hollow King.md",
     "Equilibrium.md",
     "Samsara.md",
-    "Equilibrium 1.md",
-    "I Equals Body.md",
-    "No Me Nowhere.md"
+    "Equilibrium 1.md"
   ]
 }
