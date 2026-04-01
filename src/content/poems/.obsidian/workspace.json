@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Where The Dead Once Lived.md",
+                "file": "Second Hand God.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Where The Dead Once Lived"
+              "title": "Second Hand God"
             }
           },
           {
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Where The Dead Once Lived.md",
+                "file": "Second Hand God.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Where The Dead Once Lived"
+              "title": "Backlinks for Second Hand God"
             }
           },
           {
@@ -142,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Where The Dead Once Lived.md",
+                "file": "Second Hand God.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Where The Dead Once Lived"
+              "title": "Outgoing links from Second Hand God"
             }
           },
           {
@@ -185,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Where The Dead Once Lived.md",
+                "file": "Second Hand God.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Where The Dead Once Lived"
+              "title": "Outline of Second Hand God"
             }
           },
           {
@@ -200,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Where The Dead Once Lived.md"
+                "file": "Second Hand God.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Where The Dead Once Lived"
+              "title": "File properties for Second Hand God"
             }
           }
         ],
@@ -227,8 +227,8 @@
   },
   "active": "8f9f5d11772f2181",
   "lastOpenFiles": [
-    "Equanimity.md",
     "Where The Dead Once Lived.md",
+    "Equanimity.md",
     "Connection Myth.md",
     "Asymmetrical Loss.md",
     "Disquiet.md",

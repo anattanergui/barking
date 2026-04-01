@@ -9,6 +9,7 @@ tags:
   - proselytising
   - righteousness
   - discovered
+  - haunted
 domain:
   - derivativeness
 crux:
@@ -22,19 +23,16 @@ related:
   - "[[Heretics]]"
   - "[[The Last Idol]]"
   - "[[The Naked Heresy]]"
-  - "[[False Self]]"
-  - "[[Cult]]"
-
-word-count: "41"
+word-count: "33"
 ---
 # Second Hand God
 Religious fanatics —
-Hiding their holy books
-Upon their heads, their faces
-On their bodies —
+Haunted 
+By their holy books
 
-Posing as philosophers
-Debating, proselytising
+Academics —
+Referencing, pointing
+Proselytising
 
 Unshakeably convinced
 About their ingested worldviews
