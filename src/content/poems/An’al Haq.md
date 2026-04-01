@@ -64,9 +64,11 @@ Your words
 An’al Haq —
 
 I now whisper —
-Back to you
+Back
+To you
 
 
+]
 
 
 
