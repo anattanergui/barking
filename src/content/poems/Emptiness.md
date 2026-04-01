@@ -18,8 +18,7 @@ ground:
   - nondual
   - ontological
 related:
-  - "[[Phenomenology Of No-Self]]"
-
+  - "[[No-Self]]"
 word-count: "14"
 ---
 # Emptiness

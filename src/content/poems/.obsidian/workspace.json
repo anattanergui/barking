@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "I Am-ing.md",
+                "file": "Seamless.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "I Am-ing"
+              "title": "Seamless"
             }
           },
           {
@@ -54,7 +54,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "I Am-ing.md",
+                "file": "Seamless.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for I Am-ing"
+              "title": "Backlinks for Seamless"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "I Am-ing.md",
+                "file": "Seamless.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from I Am-ing"
+              "title": "Outgoing links from Seamless"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "I Am-ing.md",
+                "file": "Seamless.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of I Am-ing"
+              "title": "Outline of Seamless"
             }
           },
           {
@@ -186,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "I Am-ing.md"
+                "file": "Seamless.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for I Am-ing"
+              "title": "File properties for Seamless"
             }
           }
         ],
@@ -213,11 +213,15 @@
   },
   "active": "a5d117216c1668c3",
   "lastOpenFiles": [
+    "Indivisibility.md",
+    "Seamless.md",
+    "Consciousness.md",
+    "Emptiness.md",
+    "I Am-ing.md",
     "— ing —.md",
     "Not-Mutes.md",
     "Half-Life.md",
     "Abbatoir.md",
-    "I Am-ing.md",
     "Not-duality.md",
     "Products And Services.md",
     "Products And Services 1.md",
@@ -234,10 +238,6 @@
     "The God Complex.md",
     "For Fuck’s Sake.md",
     "Ancient Urge.md",
-    "Cost Of More.md",
-    "Hollow King.md",
-    "Equilibrium.md",
-    "Samsara.md",
-    "Equilibrium 1.md"
+    "Cost Of More.md"
   ]
 }
