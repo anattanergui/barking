@@ -15,15 +15,18 @@ tags:
   - mind
 domain:
   - perception
+  - subject-object
 crux:
   - unestablishability
 atmosphere:
-  - methodical
+  - measured
+  - conclusive
 ground:
   - nondual
+  - idealist
 related:
   - "[[Indivisibility]]"
-  - "[[I Am-ing]]"
+  - "[[Lam Yalid Wa Lam Yulad]]"
 word-count: "274"
 ---
 # Unestablished

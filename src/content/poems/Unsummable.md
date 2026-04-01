@@ -21,7 +21,6 @@ domain:
   - reflexivity
 crux:
   - unspeakability
-
 atmosphere:
   - vertiginous
   - hushed
@@ -31,6 +30,7 @@ ground:
 related:
   - "[[Unnameable]]"
   - "[[Ineffable]]"
+  - "[[Refutation]]"
 style:
   - apophatic
   - interrogative
