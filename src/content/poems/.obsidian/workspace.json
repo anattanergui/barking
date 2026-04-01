@@ -15,7 +15,7 @@
               "state": {
                 "file": "Same Old Shit.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Same Old Shit"

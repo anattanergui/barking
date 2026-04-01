@@ -26,7 +26,8 @@ ground:
 related:
   - "[[Imago]]"
   - "[[False Self]]"
-  - "[[Becoming Unself]]"
+  - "[[Imago]]"
+  - "[[I Am That]]"
 word-count: "279"
 ---
 
