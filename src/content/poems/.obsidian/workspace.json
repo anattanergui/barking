@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Unseduced.md",
+                "file": "Whom Shall I Mourn.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Unseduced"
+              "title": "Whom Shall I Mourn"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Unseduced.md",
+                "file": "Whom Shall I Mourn.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Unseduced"
+              "title": "Backlinks for Whom Shall I Mourn"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Unseduced.md",
+                "file": "Whom Shall I Mourn.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Unseduced"
+              "title": "Outgoing links from Whom Shall I Mourn"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Unseduced.md",
+                "file": "Whom Shall I Mourn.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Unseduced"
+              "title": "Outline of Whom Shall I Mourn"
             }
           },
           {
@@ -171,10 +171,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Unseduced.md"
+                "file": "Whom Shall I Mourn.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Unseduced"
+              "title": "File properties for Whom Shall I Mourn"
             }
           }
         ],
@@ -198,6 +198,10 @@
   },
   "active": "092eafd1e973740a",
   "lastOpenFiles": [
+    "Ghosts.md",
+    "Whom Shall I Mourn.md",
+    "Surface.md",
+    "Unseduced.md",
     "An’al Haq.md",
     "In The First Place.md",
     "Both Irrefutably.md",
@@ -220,10 +224,6 @@
     "To Myself.md",
     "The Question.md",
     "A Million Words.md",
-    "Strays.md",
-    "Cessation.md",
-    "The Broken Tool.md",
-    "Closing.md",
     "Untitled.base"
   ]
 }
