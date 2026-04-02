@@ -69,16 +69,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "A Million Words.md",
+                "file": "Now.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "A Million Words"
+              "title": "Now"
+            }
+          },
+          {
+            "id": "6f5399ccb9d37aec",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "To See.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "To See"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -151,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "A Million Words.md",
+                "file": "To See.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for A Million Words"
+              "title": "Backlinks for To See"
             }
           },
           {
@@ -170,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "A Million Words.md",
+                "file": "To See.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from A Million Words"
+              "title": "Outgoing links from To See"
             }
           },
           {
@@ -213,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "A Million Words.md",
+                "file": "To See.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of A Million Words"
+              "title": "Outline of To See"
             }
           },
           {
@@ -228,10 +242,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "A Million Words.md"
+                "file": "To See.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for A Million Words"
+              "title": "File properties for To See"
             }
           }
         ],
@@ -253,10 +267,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "31c489c594a5b840",
+  "active": "6f5399ccb9d37aec",
   "lastOpenFiles": [
-    "Strays.md",
+    "To Myself.md",
+    "To See.md",
+    "Now.md",
+    "The Question.md",
     "A Million Words.md",
+    "Strays.md",
     "Cessation.md",
     "The Broken Tool.md",
     "Closing.md",
@@ -277,10 +295,6 @@
     "Daimon.md",
     "Prophet’s Dilemma.md",
     "Undercurrent.md",
-    "not-Paradox.md",
-    "The Lost Lineage.md",
-    "Same Old Shit.md",
-    "Seamless.md",
     "Untitled.base"
   ]
 }
