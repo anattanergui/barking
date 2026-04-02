@@ -90,9 +90,23 @@
               "icon": "lucide-file",
               "title": "Expression"
             }
+          },
+          {
+            "id": "e8e3b49355f02dcb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "I.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "I"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -149,8 +163,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -166,7 +179,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Expression.md",
+                "file": "I.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +189,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Expression"
+              "title": "Backlinks for I"
             }
           },
           {
@@ -185,12 +198,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Expression.md",
+                "file": "I.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Expression"
+              "title": "Outgoing links from I"
             }
           },
           {
@@ -228,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Expression.md",
+                "file": "I.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Expression"
+              "title": "Outline of I"
             }
           },
           {
@@ -243,10 +256,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Expression.md"
+                "file": "I.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Expression"
+              "title": "File properties for I"
             }
           }
         ],
@@ -268,11 +281,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "6f5399ccb9d37aec",
+  "active": "e8e3b49355f02dcb",
   "lastOpenFiles": [
+    "I Am That.md",
+    "I.md",
+    "Expression.md",
     "Expression 1.md",
     "There.md",
-    "Expression.md",
     "Here.md",
     "Marching In Place.md",
     "The Empty Instant.md",
@@ -294,8 +309,6 @@
     "Dissolution.md",
     "— —.md",
     "Retrofitting.md",
-    "In The First Place.md",
-    "The Industry.md",
     "Untitled.base"
   ]
 }
