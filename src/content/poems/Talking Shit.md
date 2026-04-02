@@ -10,7 +10,7 @@ tags:
   - "true"
   - correct
   - penis
-word-count: "443"
+word-count: "414"
 domain:
   - transmission
 crux:
@@ -21,6 +21,7 @@ ground:
   - nominalist
 related:
   - "[[The Myth Of Unaltered States]]"
+  - "[[Why The Fuck]]"
 ---
 
 
@@ -44,7 +45,7 @@ A precise description
 
 Yet that’s not something people in suits
 Robes and ties say
-Common people say such things —
+Common people say such things 
 It shows you’re crude
 You lack command of language
 
@@ -52,18 +53,17 @@ You don’t say things like
 Talking shit
 In public
 In schools, in colleges
-To your professor who tells you 
-And teaches you that
+To the teacher who tells you 
 
-The sun rises in the east
+That sun rises in the east
 You can’t ask him what century he lives in
 
 You can’t tell your doctor
 That he’s talking shit
-When he tells you that 
-You have depression 
+When he tells you 
+That you have depression
 Or schizophrenia
-Or bipolar or a personality disorder
+Or bipolar, or a personality disorder
 Or any label dispensed to you
 
 You can’t go and ask all those 
@@ -75,7 +75,6 @@ That
 
 All the questions that you have 
 To mark as true or false
-
 Are neither true nor false
 But correct
 Or incorrect
@@ -83,32 +82,26 @@ Or incorrect
 That
 Your feelings aren’t true
 They are real
-There’s a difference — did anyone tell you
 What you feel isn’t right or wrong
-It’s real
-
 What you think isn’t true
-What you think is what you think
-Your thoughts are experiences you have
+What you experience 
+Isn't correct, right, wrong or true
 
-They aren’t correct, not right and not true
-
-Your father and mother
-Aren’t truly your father and mother 
-Either — 
+Your father and mother aren't
+Truly your father and mother 
+Either 
 But don’t go there yet
 
 They are your biological parents
 
-And no one 
-No one ever 
-Has cancer, has any one of those ten thousand
+And no one — no one ever
+Has 
+Cancer — or one of the thousand
 Diagnoses they’re given
 
 And did no one teach you
 That having a penis
 Doesn’t make you a man
-
 It assigns you a sex called male
 You don’t become a man
 Or a boy by having a penis
@@ -122,7 +115,6 @@ On their death bed
 
 You can’t slap someone
 When they are talking shit
-
 Instead
 
 You just ingest it
@@ -130,12 +122,12 @@ Get infected and covered in their shit
 And then 
 Slowly, slowly
 You lose all your sense
+
 Of distinguishing 
 Shit from not-shit
 
 Covered in shit and your mind and brain
 Infested with shit
-
 You go on 
 And infect another generation
 Of innocent
@@ -147,13 +139,12 @@ Unto you
 
 What is the cost
 Of ignorance —
-
 A herd of sheep
 
 Humans turned into herds of cattle
 Alive and awake children
-And adults turned into 
-Stumbling, stuttering
+And adults turned —
+Into stumbling, stuttering
 Zombies —
 Going through life
 Half asleep
