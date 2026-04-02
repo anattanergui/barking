@@ -18,7 +18,8 @@ atmosphere:
 ground:
   - observational
 related:
-
+  - "[[For Fuck’s Sake]]"
+  - "[[Because It Could]]"
 word-count: "88"
 ---
 # Algorithm
