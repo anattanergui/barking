@@ -24,8 +24,8 @@ ground:
   - implication
   - theodicy
 related:
-  - "[[Thief]]"
   - "[[An’al Haq]]"
+  - "[[Turn]]"
 word-count: "171"
 ---
 # Whom Shall I Mourn
