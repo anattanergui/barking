@@ -11,6 +11,9 @@ ground:
   - epistemological
   - apophatic
 word-count: "130"
+related:
+  - "[[Those Who Know Speak]]"
+  - "[[Awareness]]"
 ---
 # The Broken Tool
 You can never say a single thing

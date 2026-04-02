@@ -24,11 +24,8 @@ ground:
   - apophatic
   - nondual
 related:
-  - "[[Silence]]"
-  - "[[Emptiness]]"
-  - "[[Nonduality]]"
-  - "[[The Word]]"
-  - "[[Ineffable]]"
+  - "[[The Broken Tool]]"
+  - "[[The Vehicle]]"
 word-count: "107"
 ---
 # Those Who Know: Speak
