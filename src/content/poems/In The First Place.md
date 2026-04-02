@@ -24,6 +24,7 @@ ground:
 related:
   - "[[Orphan]]"
   - "[[The Forgetting Itself]]"
+  - "[[Being Struck]]"
 ---
 
 # In The First Place
