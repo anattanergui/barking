@@ -23,7 +23,7 @@ ground:
 related:
   - "[[Who Cares]]"
   - "[[Spirituality]]"
-  - "[[Dick Measuring Contest]]"
+  - "[[In The First Place]]"
 word-count: "441"
 ---
 # Empty Embodiment
