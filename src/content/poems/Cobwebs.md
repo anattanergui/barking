@@ -14,12 +14,11 @@ crux:
 atmosphere:
   - deadpan
 ground:
-  - structural
+  - internalist
 related:
   - "[[Power]]"
   - "[[Hollow King]]"
-  - "[[The Lost Lineage]]"
-
+  - "[[Strays]]"
 word-count: "18"
 ---
 # Cobwebs

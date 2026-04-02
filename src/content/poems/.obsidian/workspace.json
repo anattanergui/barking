@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "—.md",
+                "file": "Two Deaths.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "—"
+              "title": "Two Deaths"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "—.md",
+                "file": "Two Deaths.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for —"
+              "title": "Backlinks for Two Deaths"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "—.md",
+                "file": "Two Deaths.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from —"
+              "title": "Outgoing links from Two Deaths"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "—.md",
+                "file": "Two Deaths.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of —"
+              "title": "Outline of Two Deaths"
             }
           },
           {
@@ -171,10 +171,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "—.md"
+                "file": "Two Deaths.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for —"
+              "title": "File properties for Two Deaths"
             }
           }
         ],
@@ -198,6 +198,10 @@
   },
   "active": "092eafd1e973740a",
   "lastOpenFiles": [
+    "Sitting In Silence.md",
+    "Two Deaths.md",
+    "Cobwebs.md",
+    "—.md",
     "— —.md",
     "— ing —.md",
     "A Costume Speak.md",
@@ -220,10 +224,6 @@
     "Anxiety.md",
     "Arrogance Of Death.md",
     "Assumption And Perception.md",
-    "Asymmetrical Loss.md",
-    "Atman.md",
-    "Attention.md",
-    "Autopsy.md",
     "Untitled.base"
   ]
 }
