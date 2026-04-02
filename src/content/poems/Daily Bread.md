@@ -10,18 +10,18 @@ tags:
   - stones
   - mortar
 domain:
-  - solitude
-  - provision
+  - striving
+  - ordinariness
 crux:
   - inhabitation
 atmosphere:
   - wry
-  - plain
+  - ease
 ground:
-  - embodiment
+  - embodied
 related:
-  - "[[Who Cares]]"
-  - "[[decree]]"
+  - "[[Decree]]"
+  - "[[Positive Thinking]]"
 word-count: "143"
 ---
 # Daily Bread

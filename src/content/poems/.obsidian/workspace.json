@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "We Sense.md",
+                "file": "Marching In Place.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "We Sense"
+              "title": "Marching In Place"
             }
           }
         ],
@@ -165,7 +165,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "We Sense.md",
+                "file": "Marching In Place.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -175,7 +175,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for We Sense"
+              "title": "Backlinks for Marching In Place"
             }
           },
           {
@@ -184,12 +184,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "We Sense.md",
+                "file": "Marching In Place.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from We Sense"
+              "title": "Outgoing links from Marching In Place"
             }
           },
           {
@@ -227,13 +227,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "We Sense.md",
+                "file": "Marching In Place.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of We Sense"
+              "title": "Outline of Marching In Place"
             }
           },
           {
@@ -242,10 +242,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "We Sense.md"
+                "file": "Marching In Place.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for We Sense"
+              "title": "File properties for Marching In Place"
             }
           }
         ],
@@ -269,9 +269,13 @@
   },
   "active": "6f5399ccb9d37aec",
   "lastOpenFiles": [
+    "The Empty Instant.md",
+    "Marching In Place.md",
+    "Emptiness.md",
+    "Daily Bread.md",
+    "We Sense.md",
     "We Sense 1.md",
     "Nothing To Do With Him.md",
-    "We Sense.md",
     "To See.md",
     "To Myself.md",
     "Now.md",
@@ -291,10 +295,6 @@
     "Refutation.md",
     "Reader-Writer.md",
     "No-Self.md",
-    "Bittersweet.md",
-    "In Defence Of Thought.md",
-    "An’al Haq.md",
-    "Abrupt.md",
     "Untitled.base"
   ]
 }
