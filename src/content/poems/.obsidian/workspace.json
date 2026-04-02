@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "In The First Place"
             }
+          },
+          {
+            "id": "162c188aadd9277b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Both Irrefutably.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Both Irrefutably"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -109,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "In The First Place.md",
+                "file": "Both Irrefutably.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for In The First Place"
+              "title": "Backlinks for Both Irrefutably"
             }
           },
           {
@@ -128,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "In The First Place.md",
+                "file": "Both Irrefutably.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from In The First Place"
+              "title": "Outgoing links from Both Irrefutably"
             }
           },
           {
@@ -171,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "In The First Place.md",
+                "file": "Both Irrefutably.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of In The First Place"
+              "title": "Outline of Both Irrefutably"
             }
           },
           {
@@ -186,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "In The First Place.md"
+                "file": "Both Irrefutably.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for In The First Place"
+              "title": "File properties for Both Irrefutably"
             }
           }
         ],
@@ -211,15 +225,16 @@
       "bases:Create new base": false
     }
   },
-  "active": "f21bf38a4660d9c4",
+  "active": "162c188aadd9277b",
   "lastOpenFiles": [
-    "In Defence Of Thought.md",
+    "No-Self.md",
+    "Both Irrefutably.md",
+    "Bittersweet.md",
     "In The First Place.md",
+    "In Defence Of Thought.md",
     "An’al Haq.md",
     "Abrupt.md",
-    "Bittersweet.md",
     "Daimon.md",
-    "No-Self.md",
     "Prophet’s Dilemma.md",
     "Undercurrent.md",
     "not-Paradox.md",
@@ -238,7 +253,6 @@
     "Vanity.md",
     "Illusory Self.md",
     "Imago.md",
-    "Unestablished.md",
-    "Unsummable.md"
+    "Unestablished.md"
   ]
 }

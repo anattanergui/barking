@@ -23,7 +23,6 @@ ground:
   - rational
 related:
   - "[[Orphan]]"
-  - "[[The Forgetting Itself]]"
   - "[[Being Struck]]"
 ---
 
