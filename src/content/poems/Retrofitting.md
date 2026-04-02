@@ -23,7 +23,6 @@ ground:
   - no-self
 related:
   - "[[In The First Place]]"
-  - "[[Both Irrefutably]]"
   - "[[For Fuck’s Sake]]"
   - "[[The Industry]]"
 ---
