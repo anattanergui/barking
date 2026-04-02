@@ -23,8 +23,7 @@ ground:
 related:
   - "[[Who Cares]]"
   - "[[Spirituality]]"
-  - "[[The Mirror Sage]]"
-
+  - "[[Dick Measuring Contest]]"
 word-count: "441"
 ---
 # Empty Embodiment
