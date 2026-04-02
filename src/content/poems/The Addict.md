@@ -23,7 +23,7 @@ ground:
   - existential
 related:
   - "[[War On Myself]]"
-  - "[[The Architect]]"
+  - "[[The Forgetting Itself]]"
 style:
   - rhetorical
   - analytical

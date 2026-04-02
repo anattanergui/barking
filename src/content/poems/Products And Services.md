@@ -19,10 +19,7 @@ atmosphere:
 ground:
   - reductive
 related:
-  - "[[Flesh]]"
-  - "[[Transaction]]"
   - "[[Clothes]]"
-
 word-count: "107"
 ---
 # Products And Services

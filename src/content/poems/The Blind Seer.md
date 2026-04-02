@@ -22,10 +22,7 @@ ground:
 related:
   - "[[The Sightless Eye]]"
   - "[[Nonduality]]"
-  - "[[Silence]]"
   - "[[The Speaking Pond]]"
-  - "[[Ineffable]]"
-
 word-count: "161"
 ---
 # The Blind Seer

@@ -16,10 +16,7 @@ ground:
   - nondual
   - logical
 related:
-  - "[[Nonduality]]"
-  - "[[Emptiness]]"
   - "[[The Shape Of Absence]]"
-  - "[[Dissolution]]"
   - "[[I Am That]]"
 word-count: "142"
 ---

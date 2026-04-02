@@ -21,7 +21,6 @@ ground:
   - ontological
 related:
   - "[[Aloneness]]"
-  - "[[Solitude]]"
   - "[[Genesis]]"
 word-count: "23"
 ---

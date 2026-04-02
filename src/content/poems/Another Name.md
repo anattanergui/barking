@@ -17,7 +17,7 @@ atmosphere:
 ground:
   - apophatic
 related:
-  - "[[The Dying Misnamed]]"
+  - "[[Spacetime]]"
 word-count: "88"
 ---
 # Another Name

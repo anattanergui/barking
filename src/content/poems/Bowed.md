@@ -22,7 +22,6 @@ ground:
   - apophatic
 related:
   - "[[A Million Words]]"
-  - "[[To —]]"
 word-count: "150"
 ---
 # Bowed

@@ -19,8 +19,7 @@ atmosphere:
 ground:
   - phenomenological
 related:
-  - "[[The Dying Misnamed]]"
-
+  - "[[Ghosted Self]]"
 word-count: "226"
 ---
 # Life

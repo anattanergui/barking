@@ -18,6 +18,7 @@ ground:
 related:
   - "[[Nonduality]]"
   - "[[Equations]]"
+word-count: "19"
 ---
 # De-Supposition
 De-supposition

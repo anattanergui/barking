@@ -21,10 +21,7 @@ ground:
   - nonattachment
 related:
   - "[[Samsara]]"
-  - "[[Becoming Unself]]"
-  - "[[Endurance]]"
-  - "[[Dissolution]]"
-  - "[[Nonduality]]"
+  - "[[Absurdity]]"
 word-count: "172"
 ---
 # Ox-Press

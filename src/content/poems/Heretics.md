@@ -21,10 +21,8 @@ ground:
   - perennialist
   - typological
 related:
-  - "[[The Naked Heresy]]"
   - "[[Nonduality]]"
   - "[[Identity]]"
-  - "[[Only The False]]"
   - "[[An’al Haq]]"
 word-count: "63"
 ---

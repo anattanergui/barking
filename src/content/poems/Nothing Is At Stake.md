@@ -24,8 +24,6 @@ ground:
   - inquiry
 related:
   - "[[Refutation]]"
-  - "[[The Impossibility Of Love]]"
-
 word-count: "346"
 ---
 # Nothing Is At Stake

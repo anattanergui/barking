@@ -20,12 +20,8 @@ atmosphere:
 ground:
   - phenomenological
   - empiricist
-
 related:
-  - "[[The Dying Misnamed]]"
-  - "[[Two Deaths]]"
   - "[[The Dreaming-I]]"
-
 word-count: "156"
 ---
 # Arrogance Of Death

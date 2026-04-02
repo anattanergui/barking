@@ -22,10 +22,8 @@ ground:
   - political
 related:
   - "[[One-Way]]"
-  - "[[The Architect]]"
   - "[[Clothes]]"
   - "[[The First Cause]]"
-  - "[[Being Struck]]"
 word-count: "79"
 ---
 # Autopsy

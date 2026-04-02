@@ -20,6 +20,7 @@ ground:
   - futility
 word-count: "178"
 related:
+  - "[[Same Old Shit]]"
 ---
 
 

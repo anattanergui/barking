@@ -17,6 +17,8 @@ atmosphere:
 ground:
   - lexical
 word-count: "43"
+related:
+  - "[[Collective Delusion]]"
 ---
 
 # Schmutz

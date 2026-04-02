@@ -27,11 +27,8 @@ ground:
   - ontological
 related:
   - "[[Insatiability]]"
-  - "[[Cost Of More]]"
-  - "[[Emptiness]]"
-  - "[[Quiet Desperation]]"
   - "[[The Industry]]"
-
+  - "[[Talking Shit]]"
 word-count: "142"
 ---
 # Manufacture Of Lack

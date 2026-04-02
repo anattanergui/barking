@@ -19,10 +19,8 @@ atmosphere:
 ground:
   - no-self
 related:
-  - "[[False Self]]"
-  - "[[Illusory Self]]"
   - "[[Unfitting Costume]]"
-  - "[[Becoming Unself]]"
+  - "[[Empty Embodiment]]"
 word-count: "478"
 ---
 # Invisible Ink

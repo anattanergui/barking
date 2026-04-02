@@ -23,9 +23,7 @@ ground:
   - nondual
   - dialectical
 related:
-  - "[[Love]]"
   - "[[Connection Myth]]"
-
 word-count: "195"
 ---
 # No Other

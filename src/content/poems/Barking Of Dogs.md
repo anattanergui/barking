@@ -21,7 +21,6 @@ ground:
   - nominalist
 related:
   - "[[The Word]]"
-  - "[[Silence]]"
   - "[[Vanity]]"
   - "[[Without The Word]]"
 word-count: "409"

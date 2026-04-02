@@ -21,7 +21,7 @@ ground:
   - existential
   - testimonial
 related:
-  - "[[Like A Dog]]"
+  - "[[Consciousness]]"
 word-count: "54"
 ---
 # Irreducible Aloneness

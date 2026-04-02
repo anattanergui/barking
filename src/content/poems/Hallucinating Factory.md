@@ -23,9 +23,7 @@ ground:
 related:
   - "[[Hallucination]]"
   - "[[Illusory Self]]"
-  - "[[Emptiness]]"
   - "[[Extinction]]"
-  - "[[Miscreation]]"
 word-count: "91"
 ---
 # Hallucinating Factory

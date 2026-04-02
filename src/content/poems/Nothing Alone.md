@@ -22,7 +22,6 @@ atmosphere:
 ground:
   - nondual
 related:
-  - "[[The Last Nothing]]"
   - "[[Without Script]]"
   - "[[Integration]]"
   - "[[Equations]]"

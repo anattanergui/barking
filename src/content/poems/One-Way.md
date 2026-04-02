@@ -23,8 +23,6 @@ ground:
 related:
   - "[[Clothes]]"
   - "[[Autopsy]]"
-  - "[[The Image Inside]]"
-  - "[[The Architect]]"
 word-count: "45"
 ---
 # One-Way

@@ -19,9 +19,8 @@ ground:
   - processual
   - phenomenological
 related:
-  - "[[An'al Haq]]"
-  - "[[Something]]"
   - "[[Stillness In Motion]]"
+  - "[[An’al Haq]]"
 word-count: "38"
 ---
 # Stir

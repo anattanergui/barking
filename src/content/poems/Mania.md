@@ -18,11 +18,9 @@ atmosphere:
 ground:
   - naturalist
 related:
-  - "[[The Howling]]"
-  - "[[Dissolution]]"
   - "[[Hallucination]]"
-  - "[[Becoming Unself]]"
   - "[[Power]]"
+  - "[[The Myth Of Unaltered States]]"
 word-count: "48"
 ---
 # Mania

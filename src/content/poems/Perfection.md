@@ -15,6 +15,12 @@ related:
   - "[[Uniqueness]]"
   - "[[Older As Young]]"
   - "[[This, Or That]]"
+tags:
+  - expression
+  - perfection
+  - perfect
+  - impossible
+  - synonymous
 ---
 # Perfection
 Expression and perfection

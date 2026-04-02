@@ -20,9 +20,7 @@ atmosphere:
 ground:
   - naturalist
 related:
-  - "[[Something]]"
   - "[[Cost Of More]]"
-
 word-count: "165"
 ---
 # Ancient Urge

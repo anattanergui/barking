@@ -20,8 +20,7 @@ atmosphere:
 ground:
   - nondual
 related:
-  - "[[Instrument]]"
-
+  - "[[Atman]]"
 word-count: "198"
 ---
 # Demigods

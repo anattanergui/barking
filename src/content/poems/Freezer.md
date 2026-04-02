@@ -21,9 +21,7 @@ atmosphere:
 ground:
   - embodied
 related:
-  - "[[Flesh]]"
   - "[[Spirituality]]"
-
 word-count: "92"
 ---
 # Freezer

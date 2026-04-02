@@ -7,7 +7,6 @@ tags:
   - anybody
   - everyone
   - anyone
-
 domain:
   - identity
   - conformity
@@ -19,8 +18,7 @@ atmosphere:
 ground:
   - dialectical
 related:
-  - "[[Self]]"
-
+  - "[[Cost Of Space]]"
 word-count: "23"
 ---
 # Paradox

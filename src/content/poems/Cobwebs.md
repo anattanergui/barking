@@ -8,27 +8,18 @@ tags:
   - mind
   - dead
 domain:
-  - tradition
-  - mind
+  - internalisation
 crux:
   - infestation
 atmosphere:
-  - sardonic
-  - unsettling
+  - deadpan
 ground:
-  - psychological
   - structural
 related:
   - "[[Power]]"
-  - "[[Gilded Shadows]]"
   - "[[Hollow King]]"
-  - "[[Residues]]"
   - "[[The Lost Lineage]]"
-style:
-  - aphoristic
-  - imagistic
-  - declarative
-energy:
+
 word-count: "18"
 ---
 # Cobwebs

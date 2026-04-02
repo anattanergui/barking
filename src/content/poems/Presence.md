@@ -18,7 +18,6 @@ tags:
 word-count: "28"
 related:
   - "[[Pavement Sutra]]"
-  - "[[Spirituality]]"
   - "[[Daily Bread]]"
   - "[[In Defence Of Thought]]"
 ---

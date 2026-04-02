@@ -19,7 +19,7 @@ atmosphere:
 ground:
   - retrospective
 related:
-  - "[[Mirror We Cannot Be]]"
+  - "[[Growing Up]]"
 style:
   - analytical
   - interrogative

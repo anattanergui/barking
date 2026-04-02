@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Broken Tool.md",
+                "file": "—.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Broken Tool"
+              "title": "—"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Broken Tool.md",
+                "file": "—.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Broken Tool"
+              "title": "Backlinks for —"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Broken Tool.md",
+                "file": "—.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Broken Tool"
+              "title": "Outgoing links from —"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Broken Tool.md",
+                "file": "—.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Broken Tool"
+              "title": "Outline of —"
             }
           },
           {
@@ -171,10 +171,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "The Broken Tool.md"
+                "file": "—.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for The Broken Tool"
+              "title": "File properties for —"
             }
           }
         ],
@@ -198,32 +198,32 @@
   },
   "active": "092eafd1e973740a",
   "lastOpenFiles": [
-    "Those Who Know Speak.md",
-    "The Vehicle.md",
-    "Words.md",
-    "Empty Embodiment.md",
-    "Empty Embodiment 1.md",
-    "War On Myself.md",
-    "Why The Fuck.md",
-    "Quiet Desperation.md",
-    "Talking Shit.md",
+    "— —.md",
+    "— ing —.md",
+    "A Costume Speak.md",
+    "A Million Words.md",
+    "A Thousand Words.md",
+    "Abbatoir.md",
+    "About Prayer.md",
+    "Abrupt.md",
+    "Absence Of Absence.md",
     "Absurdity.md",
-    "Absurdity 1.md",
-    "Growing Up.md",
-    "Residues.md",
-    "Disillusion.md",
-    "Unseduced.md",
-    "Riddled With Doubt.md",
-    "Purge.md",
-    "Unquestioning.md",
-    "Unsummable.md",
-    "Untitled.base",
-    "No Longer.md",
-    "We Sense 1.md",
-    "Half Awake.md",
-    "No Mind.md",
-    "Mind.md",
-    "Awareness.md",
-    "That-Which-Perceives-Form.md"
+    "Algorithm.md",
+    "Aloneness.md",
+    "Alright.md",
+    "An Arms Length.md",
+    "An’al Haq.md",
+    "Ancient Urge.md",
+    "Anomaly.md",
+    "Another Meeting.md",
+    "Another Name.md",
+    "Anxiety.md",
+    "Arrogance Of Death.md",
+    "Assumption And Perception.md",
+    "Asymmetrical Loss.md",
+    "Atman.md",
+    "Attention.md",
+    "Autopsy.md",
+    "Untitled.base"
   ]
 }

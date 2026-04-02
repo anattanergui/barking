@@ -13,6 +13,12 @@ word-count: "16"
 related:
   - "[[Bittersweet]]"
   - "[[Non-attachment]]"
+tags:
+  - certainty
+  - uncertainty
+  - transparent
+  - grief
+  - grasping
 ---
 
 # Equanimity

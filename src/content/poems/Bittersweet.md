@@ -16,7 +16,7 @@ atmosphere:
 ground:
   - inseparability
 related:
-  - "[[No Self]]"
+  - "[[No-Self]]"
 word-count: "16"
 ---
 # Bittersweet

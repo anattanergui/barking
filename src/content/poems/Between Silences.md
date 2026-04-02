@@ -23,8 +23,6 @@ ground:
   - nondual
 related:
   - "[[Silence]]"
-  - "[[Sitting In Silence]]"
-
 word-count: "45"
 ---
 # Between Silences

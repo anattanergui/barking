@@ -22,7 +22,6 @@ ground:
   - axiomatic
 related:
   - "[[A Million Words]]"
-  - "[[In My Bed]]"
   - "[[Dissolution]]"
 word-count: "21"
 style:

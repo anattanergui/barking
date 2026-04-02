@@ -23,7 +23,7 @@ ground:
   - ontological
   - confessional
 related:
-  - "[[An Arrm's Length]]"
+  - "[[An Arms Length]]"
 word-count: "179"
 ---
 # The Boy
