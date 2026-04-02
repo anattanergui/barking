@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "War On Myself.md",
+                "file": "Empty Embodiment.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "War On Myself"
+              "title": "Empty Embodiment"
             }
           },
           {
@@ -29,7 +29,7 @@
               "state": {
                 "file": "Why The Fuck.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Why The Fuck"
@@ -49,8 +49,7 @@
               "title": "Quiet Desperation"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -123,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Why The Fuck.md",
+                "file": "Empty Embodiment.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +132,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Why The Fuck"
+              "title": "Backlinks for Empty Embodiment"
             }
           },
           {
@@ -142,12 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Why The Fuck.md",
+                "file": "Empty Embodiment.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Why The Fuck"
+              "title": "Outgoing links from Empty Embodiment"
             }
           },
           {
@@ -185,13 +184,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Why The Fuck.md",
+                "file": "Empty Embodiment.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Why The Fuck"
+              "title": "Outline of Empty Embodiment"
             }
           },
           {
@@ -200,10 +199,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Why The Fuck.md"
+                "file": "Empty Embodiment.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Why The Fuck"
+              "title": "File properties for Empty Embodiment"
             }
           }
         ],
@@ -225,11 +224,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "b89793c7fa3f4510",
+  "active": "092eafd1e973740a",
   "lastOpenFiles": [
-    "Talking Shit.md",
-    "Why The Fuck.md",
+    "Empty Embodiment 1.md",
     "War On Myself.md",
+    "Empty Embodiment.md",
+    "Why The Fuck.md",
+    "Quiet Desperation.md",
+    "Talking Shit.md",
     "Absurdity.md",
     "Absurdity 1.md",
     "Growing Up.md",
@@ -237,7 +239,6 @@
     "Disillusion.md",
     "Unseduced.md",
     "Riddled With Doubt.md",
-    "Quiet Desperation.md",
     "Purge.md",
     "Unquestioning.md",
     "Unsummable.md",
@@ -251,8 +252,6 @@
     "That-Which-Perceives-Form.md",
     "Gateway.md",
     "Mind Alone.md",
-    "Here-ward.md",
-    "The Unnatural Recognition.md",
-    "Whom Shall I Mourn.md"
+    "Here-ward.md"
   ]
 }

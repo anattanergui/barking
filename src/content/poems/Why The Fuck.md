@@ -22,8 +22,7 @@ ground:
   - debunking
 related:
   - "[[The Industry]]"
-  - "[[The Architect]]"
-
+  - "[[The Forgetting Itself]]"
 word-count: "355"
 ---
 # Why The Fuck
