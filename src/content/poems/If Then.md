@@ -21,11 +21,8 @@ ground:
   - nondual
   - phenomenological
 related:
-  - "[[Nonduality]]"
-  - "[[Emptiness]]"
   - "[[Neither God Nor Me]]"
-  - "[[Two Deaths]]"
-  - "[[The Last Nothing]]"
+  - "[[The Word]]"
 word-count: "98"
 ---
 # If/ Then

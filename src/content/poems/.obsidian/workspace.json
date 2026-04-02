@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Two Deaths.md",
+                "file": "If Then.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Two Deaths"
+              "title": "If Then"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -58,7 +58,7 @@
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
-                "sortOrder": "alphabetical"
+                "sortOrder": "byCreatedTime"
               },
               "icon": "lucide-search",
               "title": "Search"
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Two Deaths.md",
+                "file": "If Then.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Two Deaths"
+              "title": "Backlinks for If Then"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Two Deaths.md",
+                "file": "If Then.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Two Deaths"
+              "title": "Outgoing links from If Then"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Two Deaths.md",
+                "file": "If Then.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Two Deaths"
+              "title": "Outline of If Then"
             }
           },
           {
@@ -171,14 +171,14 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Two Deaths.md"
+                "file": "If Then.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Two Deaths"
+              "title": "File properties for If Then"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -198,32 +198,32 @@
   },
   "active": "092eafd1e973740a",
   "lastOpenFiles": [
-    "Sitting In Silence.md",
-    "Two Deaths.md",
-    "Cobwebs.md",
-    "—.md",
+    "The Word.md",
+    "If Then.md",
+    "Emptiness.md",
+    "Oblivion.md",
+    "Mind.md",
+    "No Mind.md",
+    "Gateway.md",
+    "Mind Alone.md",
+    "Here-ward.md",
+    "To —.md",
+    "A Million Words.md",
+    "A Costume Speak.md",
     "— —.md",
     "— ing —.md",
-    "A Costume Speak.md",
-    "A Million Words.md",
-    "A Thousand Words.md",
-    "Abbatoir.md",
+    "—.md",
     "About Prayer.md",
-    "Abrupt.md",
     "Absence Of Absence.md",
-    "Absurdity.md",
     "Algorithm.md",
-    "Aloneness.md",
-    "Alright.md",
-    "An Arms Length.md",
-    "An’al Haq.md",
-    "Ancient Urge.md",
-    "Anomaly.md",
     "Another Meeting.md",
-    "Another Name.md",
-    "Anxiety.md",
-    "Arrogance Of Death.md",
-    "Assumption And Perception.md",
+    "Anomaly.md",
+    "An’al Haq.md",
+    "Aloneness.md",
+    "Absurdity.md",
+    "Autopsy.md",
+    "Barking Of Dogs.md",
+    "Becoming Unself.md",
     "Untitled.base"
   ]
 }
