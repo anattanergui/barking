@@ -1,7 +1,6 @@
 ---
 title: Unseduced
 tags:
-  - enlightenment
   - disillusionment
   - distortion
   - undistorted
