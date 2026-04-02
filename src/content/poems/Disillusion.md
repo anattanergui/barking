@@ -10,19 +10,15 @@ tags:
   - anymore
 domain:
   - disenchantment
-
 crux:
   - nullification
-
 atmosphere:
   - becalmed
-
 ground:
   - phenomenological
 related:
   - "[[Disquiet]]"
-  - "[[Unseduced]]"
-
+  - "[[No Longer]]"
 word-count: "50"
 ---
 # Disillusion
