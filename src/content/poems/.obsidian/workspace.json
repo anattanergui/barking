@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "An’al Haq"
             }
+          },
+          {
+            "id": "f21bf38a4660d9c4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "In The First Place.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "In The First Place"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "An’al Haq.md",
+                "file": "In The First Place.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for An’al Haq"
+              "title": "Backlinks for In The First Place"
             }
           },
           {
@@ -114,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "An’al Haq.md",
+                "file": "In The First Place.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from An’al Haq"
+              "title": "Outgoing links from In The First Place"
             }
           },
           {
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "An’al Haq.md",
+                "file": "In The First Place.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of An’al Haq"
+              "title": "Outline of In The First Place"
             }
           },
           {
@@ -172,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "An’al Haq.md"
+                "file": "In The First Place.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for An’al Haq"
+              "title": "File properties for In The First Place"
             }
           }
         ],
@@ -197,8 +211,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "789ad07255ae23c0",
+  "active": "f21bf38a4660d9c4",
   "lastOpenFiles": [
+    "In Defence Of Thought.md",
+    "In The First Place.md",
+    "An’al Haq.md",
     "Abrupt.md",
     "Bittersweet.md",
     "Daimon.md",
@@ -222,9 +239,6 @@
     "Illusory Self.md",
     "Imago.md",
     "Unestablished.md",
-    "Unsummable.md",
-    "Is Forever.md",
-    "God Is A Jealous Lover.md",
-    "Unnameable.md"
+    "Unsummable.md"
   ]
 }
