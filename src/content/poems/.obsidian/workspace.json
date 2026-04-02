@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cessation.md",
+                "file": "A Million Words.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Cessation"
+              "title": "A Million Words"
             }
           }
         ],
@@ -151,7 +151,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cessation.md",
+                "file": "A Million Words.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -161,7 +161,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Cessation"
+              "title": "Backlinks for A Million Words"
             }
           },
           {
@@ -170,12 +170,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cessation.md",
+                "file": "A Million Words.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Cessation"
+              "title": "Outgoing links from A Million Words"
             }
           },
           {
@@ -213,13 +213,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cessation.md",
+                "file": "A Million Words.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Cessation"
+              "title": "Outline of A Million Words"
             }
           },
           {
@@ -228,10 +228,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Cessation.md"
+                "file": "A Million Words.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Cessation"
+              "title": "File properties for A Million Words"
             }
           }
         ],
@@ -255,8 +255,10 @@
   },
   "active": "31c489c594a5b840",
   "lastOpenFiles": [
-    "The Broken Tool.md",
+    "Strays.md",
+    "A Million Words.md",
     "Cessation.md",
+    "The Broken Tool.md",
     "Closing.md",
     "Algorithm.md",
     "Dissolution.md",
@@ -279,8 +281,6 @@
     "The Lost Lineage.md",
     "Same Old Shit.md",
     "Seamless.md",
-    "Same I.md",
-    "Echoes.md",
     "Untitled.base"
   ]
 }
