@@ -11,14 +11,14 @@ tags:
   - heritage
 word-count: "112"
 domain:
-  - universality
+  - pursuit
   - transmission
 crux:
   - cessation
 atmosphere:
-  - lucid
+  - tender
 ground:
-  - realization
+  - nondual
 related:
   - "[[The Broken Tool]]"
   - "[[The Vehicle]]"

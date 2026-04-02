@@ -71,7 +71,7 @@
               "state": {
                 "file": "Cessation.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Cessation"
