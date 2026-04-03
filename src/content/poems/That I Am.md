@@ -22,8 +22,8 @@ ground:
   - idealist
 related:
   - "[[That-Which-Perceives-Form]]"
-  - "[[Lam Yalid Wa Lam Yulad]]"
   - "[[Anomaly]]"
+  - "[[I Am That]]"
 ---
 # That I Am
 Could I think —
