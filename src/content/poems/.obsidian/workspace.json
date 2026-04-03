@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "Unnameable.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Undercurrent"
+              "title": "Unnameable"
             }
           }
         ]
@@ -198,8 +198,10 @@
   },
   "active": "a447a4596e863705",
   "lastOpenFiles": [
-    "Unestablished.md",
+    "Unnamed.md",
+    "Unnameable.md",
     "Undercurrent.md",
+    "Unestablished.md",
     "Mirror We Cannot Be.md",
     "The Unshared.md",
     "In The First Place.md",
@@ -222,8 +224,6 @@
     "Your View.md",
     "Wonder.md",
     "Uniqueness.md",
-    "Written Off.md",
-    "Unsummable.md",
     "Untitled.base"
   ]
 }

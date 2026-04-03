@@ -34,7 +34,7 @@ Will not be conceived
 
 Will not be perceived
 Will not be located
-Will not be companioned
+Will not be associated —
 
 Will not be created
 Will not be destroyed
