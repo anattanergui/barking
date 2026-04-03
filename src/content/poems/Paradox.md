@@ -1,31 +1,47 @@
 ---
-title: Paradox
+title: Paradox2
 tags:
-  - nobody
-  - somebody
-  - place
-  - anybody
-  - everyone
-  - anyone
-domain:
-  - identity
-  - conformity
-crux:
-  - inversion
-atmosphere:
-  - wry
-  - assured
-ground:
-  - dialectical
+  - self
+  - word
+  - spoken
+  - written
+  - heard
+  - exists
+  - never
+  - single
+domain: no-self
+crux: paradox
+atmosphere: austere
+ground: non-dual
+
+description: >
+  A philosophical poem that holds the self and language in simultaneous
+  affirmation and negation — the self does not exist, yet only the self
+  has ever spoken. For readers drawn to questions of consciousness, identity,
+  and the limits of language to capture its own source.
 related:
-  - "[[Cost Of Space]]"
-word-count: "23"
+  - "[[No-Self Talk]]"
+
+word-count: "57"
 ---
 # Paradox
-I’d rather be nobody
-In a place where
-Anyone can be anybody 
+I write
+I think
 
-Than be somebody
-In a place where 
-Everyone is nobody
+But never has a self 
+Ever written, spoken, or heard
+A single word
+
+And never but a self
+Has ever written, spoken, or heard
+A single word
+
+Why
+
+Because neither the self —
+Nor the word spoken or heard —
+Exist
+
+And only the self
+Has ever spoken, written, or heard
+Any single word

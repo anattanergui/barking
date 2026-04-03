@@ -21,7 +21,7 @@ ground:
 related:
   - "[[Never Get There]]"
   - "[[Ox-Press]]"
-  - "[[Paradox]]"
+  - "[[Belonging]]"
 word-count: "221"
 ---
 # The Lot Of The Lot

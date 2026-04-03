@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Inna Lillahi Wa Inna Ilayhi Raji'un.md",
+                "file": "The Dying Misnamed.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Inna Lillahi Wa Inna Ilayhi Raji'un"
+              "title": "The Dying Misnamed"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "never has a self",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -198,8 +199,19 @@
   },
   "active": "a447a4596e863705",
   "lastOpenFiles": [
-    "Unknowable.md",
+    "Exactly That.md",
+    "The Dying Misnamed.md",
+    "This Flag.md",
+    "Paradox.md",
+    "Belonging.md",
+    "Flesh.md",
+    "The Scar.md",
+    "No Door.md",
+    "Not.md",
+    "Impossibility.md",
+    "Instrument.md",
     "Inna Lillahi Wa Inna Ilayhi Raji'un.md",
+    "Unknowable.md",
     "The Holy Ghost.md",
     "Full Service.md",
     "Your View.md",
@@ -213,17 +225,6 @@
     "Untitled.base",
     "Flow.md",
     "Not-Mutes.md",
-    "Compassion.md",
-    "Dot.md",
-    "— ing —.md",
-    "Groceries.md",
-    "Two-gatherness.md",
-    "On Your Own.md",
-    "One And Other.md",
-    "The Image Inside.md",
-    "The Still Point.md",
-    "Now.md",
-    "Proxy.md",
-    "Rock Bottom.md"
+    "Compassion.md"
   ]
 }
