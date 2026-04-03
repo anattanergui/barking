@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Unnameable.md",
+                "file": "Plague.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Unnameable"
+              "title": "Plague"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -198,8 +199,11 @@
   },
   "active": "a447a4596e863705",
   "lastOpenFiles": [
-    "Unnamed.md",
+    "Sacrifice.md",
+    "Plague.md",
+    "Like A Dog.md",
     "Unnameable.md",
+    "Unnamed.md",
     "Undercurrent.md",
     "Unestablished.md",
     "Mirror We Cannot Be.md",
@@ -221,9 +225,6 @@
     "Unknowable.md",
     "The Holy Ghost.md",
     "Full Service.md",
-    "Your View.md",
-    "Wonder.md",
-    "Uniqueness.md",
     "Untitled.base"
   ]
 }
