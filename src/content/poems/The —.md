@@ -18,8 +18,9 @@ atmosphere:
 ground:
   - nondual
 related:
-  - "[[Godhead]]"
   - "[[The Divine]]"
+  - "[[Metaphysics]]"
+  - "[[Godhead]]"
 ---
 
 # The —
