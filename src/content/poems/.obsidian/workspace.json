@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mirror We Cannot Be.md",
+                "file": "Undercurrent.md",
                 "mode": "source",
                 "source": true
               },
               "icon": "lucide-file",
-              "title": "Mirror We Cannot Be"
+              "title": "Undercurrent"
             }
           }
         ]
@@ -198,8 +198,10 @@
   },
   "active": "a447a4596e863705",
   "lastOpenFiles": [
-    "The Unshared.md",
+    "Unestablished.md",
+    "Undercurrent.md",
     "Mirror We Cannot Be.md",
+    "The Unshared.md",
     "In The First Place.md",
     "Publication Paradox.md",
     "The Dying Misnamed.md",
@@ -222,8 +224,6 @@
     "Uniqueness.md",
     "Written Off.md",
     "Unsummable.md",
-    "Not-duality.md",
-    "Untitled.md",
     "Untitled.base"
   ]
 }
