@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Dying Misnamed.md",
+                "file": "Mirror We Cannot Be.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "The Dying Misnamed"
+              "title": "Mirror We Cannot Be"
             }
           }
         ]
@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "alphabeticalReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -199,8 +198,12 @@
   },
   "active": "a447a4596e863705",
   "lastOpenFiles": [
-    "Exactly That.md",
+    "The Unshared.md",
+    "Mirror We Cannot Be.md",
+    "In The First Place.md",
+    "Publication Paradox.md",
     "The Dying Misnamed.md",
+    "Exactly That.md",
     "This Flag.md",
     "Paradox.md",
     "Belonging.md",
@@ -221,10 +224,6 @@
     "Unsummable.md",
     "Not-duality.md",
     "Untitled.md",
-    "Untitled 1.md",
-    "Untitled.base",
-    "Flow.md",
-    "Not-Mutes.md",
-    "Compassion.md"
+    "Untitled.base"
   ]
 }
