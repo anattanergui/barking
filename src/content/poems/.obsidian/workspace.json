@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "Nothing To Do With Him.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Poor Sod"
+              "title": "Nothing To Do With Him"
             }
           },
           {
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "substantia",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,12 +103,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -124,7 +124,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "Nothing To Do With Him.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Poor Sod"
+              "title": "Backlinks for Nothing To Do With Him"
             }
           },
           {
@@ -143,12 +143,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "Nothing To Do With Him.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Poor Sod"
+              "title": "Outgoing links from Nothing To Do With Him"
             }
           },
           {
@@ -186,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "Nothing To Do With Him.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Poor Sod"
+              "title": "Outline of Nothing To Do With Him"
             }
           },
           {
@@ -201,10 +201,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "The Poor Sod.md"
+                "file": "Nothing To Do With Him.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for The Poor Sod"
+              "title": "File properties for Nothing To Do With Him"
             }
           }
         ],
@@ -228,8 +228,8 @@
   },
   "active": "c73bee055d46680f",
   "lastOpenFiles": [
-    "Sweetheart.md",
     "The Poor Sod.md",
+    "Sweetheart.md",
     "Equanimity.md",
     "The Gap.md",
     "Both Irrefutably.md",
