@@ -14,7 +14,7 @@ domain:
   - consciousness
   - predication
 crux:
-  - nondual
+  - nonduality
 atmosphere:
   - precise
   - still
