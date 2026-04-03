@@ -15,13 +15,11 @@ domain: perception
 crux: inexpressibility
 atmosphere: besieged
 ground: porous
-
-description: >
-  A poem about the impossibility of conveying what it is to live inside an
-  overwhelming perceptual reality — asking to be written about not as a person but as a texture, a sight that exceeds language. For readers drawn to themes of inner experience, the limits of expression, and consciousness.
+description: |
+  A poem about the impossibility of conveying what it is to live inside an overwhelming perceptual reality — asking to be written about not as a person but as a texture, a sight that exceeds language. For readers drawn to themes of inner experience, the limits of expression, and consciousness.
 related:
-  - "[[To Whom But You]]"
-
+  - "[[The Blind Seer]]"
+  - "[[Consciousness]]"
 word-count: "41"
 ---
 # Plague
