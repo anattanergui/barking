@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "The God Complex.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Poor Sod"
+              "title": "The God Complex"
             }
           },
           {
@@ -106,7 +106,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -122,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "The God Complex.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for The Poor Sod"
+              "title": "Backlinks for The God Complex"
             }
           },
           {
@@ -141,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "The God Complex.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from The Poor Sod"
+              "title": "Outgoing links from The God Complex"
             }
           },
           {
@@ -184,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Poor Sod.md",
+                "file": "The God Complex.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Poor Sod"
+              "title": "Outline of The God Complex"
             }
           },
           {
@@ -199,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "The Poor Sod.md"
+                "file": "The God Complex.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for The Poor Sod"
+              "title": "File properties for The God Complex"
             }
           }
         ],
@@ -226,12 +227,12 @@
   },
   "active": "092eafd1e973740a",
   "lastOpenFiles": [
+    "The Poor Sod.md",
     "If Then.md",
     "The Aloneness.md",
     "Aloneness.md",
     "Unnameable.md",
     "Nothing To Do With Him.md",
-    "The Poor Sod.md",
     "Sweetheart.md",
     "Equanimity.md",
     "The Gap.md",

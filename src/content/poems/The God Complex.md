@@ -12,15 +12,13 @@ tags:
   - boredom
   - sex
 domain:
-  - divinity
-  - creation
-crux:
   - solipsism
+crux:
+  - narcissism
 atmosphere:
-  - ironic
-  - dispassionate
+  - mordant
 ground:
-  - psychological
+  - psychoanalytic
 related:
   - "[[Sweetheart]]"
   - "[[Wonder]]"
