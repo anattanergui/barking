@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dot.md",
+                "file": "Flow.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dot"
+              "title": "Flow"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dot.md",
+                "file": "Flow.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Dot"
+              "title": "Backlinks for Flow"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dot.md",
+                "file": "Flow.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Dot"
+              "title": "Outgoing links from Flow"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dot.md",
+                "file": "Flow.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Dot"
+              "title": "Outline of Flow"
             }
           },
           {
@@ -186,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Dot.md"
+                "file": "Flow.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Dot"
+              "title": "File properties for Flow"
             }
           }
         ],
@@ -213,6 +213,10 @@
   },
   "active": "7ae78472d4b36ade",
   "lastOpenFiles": [
+    "Full Service.md",
+    "Compassion.md",
+    "Flow.md",
+    "Dot.md",
     "— ing —.md",
     "Untitled.md",
     "Groceries.md",
@@ -235,10 +239,6 @@
     "Unseen Form.md",
     "Through Your Eyes.md",
     "I Am-ing.md",
-    "Threshold.md",
-    "The Last Nothing.md",
-    "Solitude.md",
-    "To Myself.md",
     "Untitled.base"
   ]
 }
