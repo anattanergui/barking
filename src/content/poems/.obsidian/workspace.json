@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "c73bee055d46680f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "The —.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "The —"
+            }
+          },
+          {
             "id": "f694862bcc181755",
             "type": "leaf",
             "state": {
@@ -35,7 +49,8 @@
               "title": "That I Am"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -108,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "If Then.md",
+                "file": "The —.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for If Then"
+              "title": "Backlinks for The —"
             }
           },
           {
@@ -127,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "If Then.md",
+                "file": "The —.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from If Then"
+              "title": "Outgoing links from The —"
             }
           },
           {
@@ -170,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "If Then.md",
+                "file": "The —.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of If Then"
+              "title": "Outline of The —"
             }
           },
           {
@@ -185,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "If Then.md"
+                "file": "The —.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for If Then"
+              "title": "File properties for The —"
             }
           }
         ],
@@ -210,11 +225,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "092eafd1e973740a",
+  "active": "c73bee055d46680f",
   "lastOpenFiles": [
     "That I Am.md",
-    "That I Be.md",
+    "The —.md",
     "If Then.md",
+    "That I Be.md",
     "The Word.md",
     "Emptiness.md",
     "Oblivion.md",
@@ -237,7 +253,6 @@
     "An’al Haq.md",
     "Aloneness.md",
     "Absurdity.md",
-    "Autopsy.md",
     "Untitled.base"
   ]
 }
