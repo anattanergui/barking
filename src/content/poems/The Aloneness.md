@@ -22,6 +22,7 @@ ground:
 related:
   - "[[Aloneness]]"
   - "[[Genesis]]"
+  - "[[The Poor Sod]]"
 word-count: "23"
 ---
 # The Aloneness

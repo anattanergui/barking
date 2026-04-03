@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nothing To Do With Him.md",
+                "file": "The Aloneness.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nothing To Do With Him"
+              "title": "The Aloneness"
             }
           },
           {
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "substantia",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,8 +103,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -124,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Nothing To Do With Him.md",
+                "file": "The Aloneness.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +133,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Nothing To Do With Him"
+              "title": "Backlinks for The Aloneness"
             }
           },
           {
@@ -143,12 +142,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Nothing To Do With Him.md",
+                "file": "The Aloneness.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Nothing To Do With Him"
+              "title": "Outgoing links from The Aloneness"
             }
           },
           {
@@ -186,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Nothing To Do With Him.md",
+                "file": "The Aloneness.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Nothing To Do With Him"
+              "title": "Outline of The Aloneness"
             }
           },
           {
@@ -201,10 +200,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Nothing To Do With Him.md"
+                "file": "The Aloneness.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Nothing To Do With Him"
+              "title": "File properties for The Aloneness"
             }
           }
         ],
@@ -228,6 +227,10 @@
   },
   "active": "c73bee055d46680f",
   "lastOpenFiles": [
+    "Aloneness.md",
+    "The Aloneness.md",
+    "Unnameable.md",
+    "Nothing To Do With Him.md",
     "The Poor Sod.md",
     "Sweetheart.md",
     "Equanimity.md",
@@ -250,10 +253,6 @@
     "Two Deaths.md",
     "Sitting In Silence.md",
     "—.md",
-    "To —.md",
-    "If Then.md",
-    "That I Be.md",
-    "That I Am.md",
     "Untitled.base"
   ]
 }
