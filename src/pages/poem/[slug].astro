@@ -1,8 +1,10 @@
 ---
 import Base from '../../layouts/Base.astro';
+import JsonLd from '../../components/JsonLd.astro';
 import { getAllPoems, getPoemBySlug, slugify } from '../../lib/poems.js';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteUrl = 'https://anattanergui.github.io/barking';
 
 export async function getStaticPaths() {
   const poems = getAllPoems();
@@ -42,8 +44,53 @@ const relatedPoems = related
   .map(r => allPoems.find(p => p.slug === slugify(r) || p.title === r))
   .filter(Boolean)
   .slice(0, 6);
+
+// ── JSON-LD schema ────────────────────────────────────────────────────────────
+// Plain text content for the schema (strip markdown headings)
+const plainText = content
+  .split('\n')
+  .filter(l => !l.startsWith('#'))
+  .join('\n')
+  .trim();
+
+const keywords = [
+  ...atmosphere,
+  ...crux,
+  ...domains,
+  ...ground,
+  ...(poem.tags || []),
+].filter(Boolean).join(', ');
+
+const poemUrl = `${siteUrl}/poem/${poem.slug}/`;
+
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'Poem',
+  name: title,
+  description: description,
+  text: plainText,
+  url: poemUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Anatta Nergui',
+    url: siteUrl,
+  },
+  isPartOf: {
+    '@type': 'Book',
+    name: 'Barking',
+    url: siteUrl,
+    author: {
+      '@type': 'Person',
+      name: 'Anatta Nergui',
+    },
+  },
+  ...(keywords ? { keywords } : {}),
+  ...(wordCount > 0 ? { wordCount } : {}),
+};
 ---
 <Base {title} {description}>
+  <JsonLd slot="head" schema={schema} />
+
 <style>
   .poem-layout {
     display: grid;

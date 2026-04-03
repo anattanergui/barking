@@ -1,0 +1,10 @@
+---
+/**
+ * JsonLd.astro
+ * Injects a <script type="application/ld+json"> block into the page <head>.
+ * Usage: <JsonLd schema={...} />
+ * The schema prop should be a plain JS object — this component handles serialisation.
+ */
+const { schema } = Astro.props;
+---
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
