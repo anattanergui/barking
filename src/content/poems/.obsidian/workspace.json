@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Groceries.md",
+                "file": "Dot.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Groceries"
+              "title": "Dot"
             }
           }
         ],
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Groceries.md",
+                "file": "Dot.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Groceries"
+              "title": "Backlinks for Dot"
             }
           },
           {
@@ -128,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Groceries.md",
+                "file": "Dot.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Groceries"
+              "title": "Outgoing links from Dot"
             }
           },
           {
@@ -171,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Groceries.md",
+                "file": "Dot.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Groceries"
+              "title": "Outline of Dot"
             }
           },
           {
@@ -186,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "Groceries.md"
+                "file": "Dot.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for Groceries"
+              "title": "File properties for Dot"
             }
           }
         ],
@@ -213,8 +213,10 @@
   },
   "active": "7ae78472d4b36ade",
   "lastOpenFiles": [
-    "Two-gatherness.md",
+    "— ing —.md",
+    "Untitled.md",
     "Groceries.md",
+    "Two-gatherness.md",
     "On Your Own.md",
     "One And Other.md",
     "The Image Inside.md",
@@ -237,8 +239,6 @@
     "The Last Nothing.md",
     "Solitude.md",
     "To Myself.md",
-    "The Naked Heresy.md",
-    "Unseduced.md",
     "Untitled.base"
   ]
 }

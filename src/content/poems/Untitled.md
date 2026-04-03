@@ -1,5 +1,5 @@
 ---
-title: " —"
+title: Untitled
 tags:
   - tea
   - breath
@@ -25,7 +25,7 @@ related:
   - "[[Words]]"
 word-count: "69"
 ---
-#  —
+# Untitled
 For hours —
 I sit
 Just sit, sipping tea

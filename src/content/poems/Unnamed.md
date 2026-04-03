@@ -11,18 +11,15 @@ tags:
 domain:
   - perception
   - namelessness
-
 crux:
   - sanctification
-
 atmosphere:
   - unhurried
   - reverent
-
 ground:
   - unknowing
 related:
-  - "[[—]]"
+  - "[[Untitled]]"
 style:
   - spare
   - imagistic

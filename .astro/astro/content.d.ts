@@ -652,6 +652,13 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Dot.md": {
+	id: "Dot.md";
+  slug: "dot";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Echoes In Silence.md": {
 	id: "Echoes In Silence.md";
   slug: "echoes-in-silence";
@@ -2416,6 +2423,13 @@ declare module 'astro:content' {
   collection: "poems";
   data: any
 } & { render(): Render[".md"] };
+"Untitled.md": {
+	id: "Untitled.md";
+  slug: "untitled";
+  body: string;
+  collection: "poems";
+  data: any
+} & { render(): Render[".md"] };
 "Vanishing Point.md": {
 	id: "Vanishing Point.md";
   slug: "vanishing-point";
@@ -2573,20 +2587,6 @@ declare module 'astro:content' {
 "— ing —.md": {
 	id: "— ing —.md";
   slug: "-ing-";
-  body: string;
-  collection: "poems";
-  data: any
-} & { render(): Render[".md"] };
-"— —.md": {
-	id: "— —.md";
-  slug: "-";
-  body: string;
-  collection: "poems";
-  data: any
-} & { render(): Render[".md"] };
-"—.md": {
-	id: "—.md";
-  slug: "";
   body: string;
   collection: "poems";
   data: any
