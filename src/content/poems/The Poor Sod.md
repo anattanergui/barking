@@ -24,6 +24,7 @@ related:
   - "[[Echoes In Silence]]"
   - "[[Sweetheart]]"
   - "[[Those Who Know Speak]]"
+  - "[[The God Complex]]"
 ---
 
 # The Poor Sod
