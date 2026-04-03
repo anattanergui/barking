@@ -22,7 +22,7 @@ atmosphere:
 ground:
   - self-inquiry
 related:
-  - "[[Volition]]"
+  - "[[Suicide]]"
 word-count: "188"
 ---
 # The Holy Ghost
