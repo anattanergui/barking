@@ -1,5 +1,4 @@
 ---
-title: Man
 tags:
   - writing
   - immortality
