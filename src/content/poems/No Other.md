@@ -13,15 +13,13 @@ tags:
   - unlove
   - conditional
 domain:
-  - love
-  - otherness
+  - alterity
 crux:
-  - vision
+  - inadequacy
 atmosphere:
-  - lucid
+  - dispassionate
 ground:
-  - nondual
-  - dialectical
+  - monist
 related:
   - "[[Connection Myth]]"
 word-count: "195"

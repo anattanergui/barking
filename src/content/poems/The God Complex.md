@@ -10,7 +10,7 @@ tags:
   - delusion
   - imagination
   - boredom
-  - sex
+  - solitude
 domain:
   - solipsism
 crux:

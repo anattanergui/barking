@@ -13,13 +13,15 @@ tags:
   - awareness
 word-count: "55"
 domain:
-  - finitude
+  - suffering
+  - identification
 crux:
-  - inseparability
+  - inversion
 atmosphere:
   - tender
+  - spare
 ground:
-  - cosmological
+  - nondual
 related:
   - "[[Echoes In Silence]]"
   - "[[Sweetheart]]"
