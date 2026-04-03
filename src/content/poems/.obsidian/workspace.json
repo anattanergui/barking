@@ -35,8 +35,7 @@
               "title": "That I Am"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "That I Am.md",
+                "file": "If Then.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -119,7 +118,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for That I Am"
+              "title": "Backlinks for If Then"
             }
           },
           {
@@ -128,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "That I Am.md",
+                "file": "If Then.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from That I Am"
+              "title": "Outgoing links from If Then"
             }
           },
           {
@@ -171,13 +170,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "That I Am.md",
+                "file": "If Then.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of That I Am"
+              "title": "Outline of If Then"
             }
           },
           {
@@ -186,10 +185,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "That I Am.md"
+                "file": "If Then.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for That I Am"
+              "title": "File properties for If Then"
             }
           }
         ],
@@ -211,10 +210,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "f694862bcc181755",
+  "active": "092eafd1e973740a",
   "lastOpenFiles": [
-    "That I Be.md",
     "That I Am.md",
+    "That I Be.md",
     "If Then.md",
     "The Word.md",
     "Emptiness.md",

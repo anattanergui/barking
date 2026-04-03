@@ -48,7 +48,7 @@ The necessity
 Inevitability
 
 That being — in-form —
-Sentience becomes
+Sentience, becomes
 Is
 
 Without this I
