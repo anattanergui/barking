@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "If Then"
             }
+          },
+          {
+            "id": "f694862bcc181755",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "That I Am.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "That I Am"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -95,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "If Then.md",
+                "file": "That I Am.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +119,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for If Then"
+              "title": "Backlinks for That I Am"
             }
           },
           {
@@ -114,12 +128,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "If Then.md",
+                "file": "That I Am.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from If Then"
+              "title": "Outgoing links from That I Am"
             }
           },
           {
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "If Then.md",
+                "file": "That I Am.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of If Then"
+              "title": "Outline of That I Am"
             }
           },
           {
@@ -172,10 +186,10 @@
             "state": {
               "type": "file-properties",
               "state": {
-                "file": "If Then.md"
+                "file": "That I Am.md"
               },
               "icon": "lucide-info",
-              "title": "File properties for If Then"
+              "title": "File properties for That I Am"
             }
           }
         ],
@@ -197,10 +211,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "092eafd1e973740a",
+  "active": "f694862bcc181755",
   "lastOpenFiles": [
-    "The Word.md",
     "If Then.md",
+    "That I Am.md",
+    "The Word.md",
     "Emptiness.md",
     "Oblivion.md",
     "Mind.md",
@@ -224,7 +239,6 @@
     "Absurdity.md",
     "Autopsy.md",
     "Barking Of Dogs.md",
-    "Becoming Unself.md",
     "Untitled.base"
   ]
 }
