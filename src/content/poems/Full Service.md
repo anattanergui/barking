@@ -9,30 +9,19 @@ tags:
   - shrines
   - eulogies
   - feeds
-themes:
+domain:
+  - commemoration
   - grief
-  - hypocricy
-  - complicity
-mood:
-  - ironic
-  - sombre
-  - surgical
-  - elegiac
-  - contemplative
-form:
-  - catalogue
-  - accumulative
-  - exhibitive
+crux:
+  - economy
+atmosphere:
+  - detachment
+ground:
+  - alienness
 related:
   - "[[Definition]]"
   - "[[Heretics]]"
-style:
-  - observational
-  - rhetorical
-  - accumulative
-energy:
-  - horizontal
-  - deflating
+
 word-count: "185"
 ---
 # Full Service

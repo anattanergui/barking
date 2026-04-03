@@ -13,30 +13,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Written Off.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Written Off"
-            }
-          },
-          {
-            "id": "7ae78472d4b36ade",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Flow.md",
+                "file": "Full Service.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Flow"
+              "title": "Full Service"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,14 +196,23 @@
       "bases:Create new base": false
     }
   },
-  "active": "7ae78472d4b36ade",
+  "active": "a447a4596e863705",
   "lastOpenFiles": [
+    "Your View.md",
+    "Wonder.md",
+    "Uniqueness.md",
+    "Written Off.md",
+    "Unsummable.md",
+    "Not-duality.md",
+    "Untitled.md",
+    "Untitled 1.md",
+    "Untitled.base",
+    "Flow.md",
+    "Not-Mutes.md",
     "Full Service.md",
     "Compassion.md",
-    "Flow.md",
     "Dot.md",
     "— ing —.md",
-    "Untitled.md",
     "Groceries.md",
     "Two-gatherness.md",
     "On Your Own.md",
@@ -230,15 +224,6 @@
     "Rock Bottom.md",
     "Risk Assessment.md",
     "Unknowablity.md",
-    "Wedge.md",
-    "Unknowable.md",
-    "Unmeasured.md",
-    "The Placeless.md",
-    "Your View.md",
-    "Written Off.md",
-    "Unseen Form.md",
-    "Through Your Eyes.md",
-    "I Am-ing.md",
-    "Untitled.base"
+    "Wedge.md"
   ]
 }
