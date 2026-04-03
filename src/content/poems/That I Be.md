@@ -19,12 +19,11 @@ ground:
   - skeptical
 related:
   - "[[The Dreaming-I]]"
-  - "[[Continuity]]"
   - "[[Folding]]"
 word-count: "101"
 ---
 
-# I 
+# That I Be
 Awake I return 
 To a world entirely unique — sensed, remembered
 Narrated only by me
