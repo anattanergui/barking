@@ -5,10 +5,6 @@ tags:
   - fewer
   - more
   - first
-word-count: "24"
-related:
-  - "[[A Million Words]]"
-  - "[[Words]]
 domain:
   - representation
 crux:
@@ -17,9 +13,11 @@ atmosphere:
   - reticent
 ground:
   - ineffability
-
-description: >
-  A poem saying fewer words don't show better — they fail more honestly; compression as the only adequate response to the unshowable.
+description: A poem saying fewer words don't show better — they fail more honestly; compression — after failure — the only response to unshowable.
+related:
+  - "[[Words]]"
+  - "[[A Million Words]]"
+word-count: "24"
 ---
 # Enough
 Fewer words
