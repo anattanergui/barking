@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Unshared.md",
+                "file": "Not.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Unshared"
+              "title": "Not"
             }
           }
         ]
@@ -198,6 +198,7 @@
   },
   "active": "ff5c317b9c8b577b",
   "lastOpenFiles": [
+    "The Unshared.md",
     "About Prayer.md",
     "Untitled.md",
     "Untitled.base",
@@ -224,7 +225,6 @@
     "Done.md",
     "Doer.md",
     "Sacrifice.md",
-    "Unnameable.md",
-    "Unnamed.md"
+    "Unnameable.md"
   ]
 }

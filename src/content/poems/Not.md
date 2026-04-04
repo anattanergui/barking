@@ -14,13 +14,11 @@ atmosphere:
   - wonder
 ground:
   - apophatic
-description: >
-  A spare, eight-line poem sitting with the discovery that negation is the only
-  honest language for ultimate truth — and marveling that even this much got said.
-  For readers drawn to mystical theology, the limits of language, and the tradition
-  of knowing through unknowing.
+description: |
+  A spare, eight-line poem sitting with the discovery that negation is the only honest language for ultimate truth — and marveling that even this much got said. For readers drawn to mystical theology, the limits of language, and the tradition of knowing through unknowing.
 related:
-  - "[[This Is It]]"
+  - "[[Those Who Know Speak]]"
+  - "[[Hall Of Mirrors]]"
 word-count: "20"
 ---
 # Not
