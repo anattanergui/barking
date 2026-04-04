@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "cfb4186219ddb655",
+        "id": "fc1c22388f5c4789",
         "type": "tabs",
         "children": [
           {
-            "id": "a447a4596e863705",
+            "id": "6a3e088167396e52",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Presence.md",
+                "file": "Un-Point.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Presence"
-            }
-          },
-          {
-            "id": "84323730dfb3d687",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "The Myth Of Unaltered States.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Myth Of Unaltered States"
+              "title": "Un-Point"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -93,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -211,8 +197,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "84323730dfb3d687",
+  "active": "6a3e088167396e52",
   "lastOpenFiles": [
+    "Un —.md",
+    "Un-Point.md",
     "Presence.md",
     "The Myth Of Unaltered States.md",
     "Sacrament.md",
@@ -237,8 +225,6 @@
     "Publication Paradox.md",
     "The Dying Misnamed.md",
     "Exactly That.md",
-    "This Flag.md",
-    "Paradox.md",
     "Untitled.base"
   ]
 }
