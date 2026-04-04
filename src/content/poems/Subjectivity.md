@@ -26,6 +26,7 @@ related:
   - "[[Indivisibility]]"
   - "[[Lam Yalid Wa Lam Yulad]]"
 word-count: "202"
+description: "  A poem using camera as perceiving subject to express that perceiver, perception and perceived cannot be established as independently existing."
 ---
 # Subjectivity
 
