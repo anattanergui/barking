@@ -12,19 +12,21 @@ tags:
   - scientists
   - reality
 domain:
-  - states
-  - myth
-  - enforcement
+  - phenomenology
+  - therapeutisation
 crux:
-  - enclosure
+  - totality
 atmosphere:
-  - dispassionate
-  - damning
+  - lucid
+  - contemptuous
 ground:
-  - processual
-  - heterodox
+  - constructivist
+  - no-self
+description: |
+  A poem arguing there is no unaltered state — only the myth, enforced by doctors, scientists and society, that one exists.
 related:
-  - "[[power]]"
+  - "[[2026]]"
+  - "[[Sacrament]]"
 word-count: "432"
 ---
 # The Myth Of Unaltered States

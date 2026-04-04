@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2026.md",
+                "file": "The Myth Of Unaltered States.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026"
+              "title": "The Myth Of Unaltered States"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -215,6 +214,8 @@
   "active": "84323730dfb3d687",
   "lastOpenFiles": [
     "Presence.md",
+    "The Myth Of Unaltered States.md",
+    "Sacrament.md",
     "2026.md",
     "What Returns.md",
     "— ing —.md",
@@ -238,8 +239,6 @@
     "Exactly That.md",
     "This Flag.md",
     "Paradox.md",
-    "Belonging.md",
-    "Flesh.md",
     "Untitled.base"
   ]
 }

@@ -12,7 +12,7 @@ tags:
   - exorcism
   - tumours
 domain:
-  - medicalization
+  - therapeutisation
 crux:
   - substitution
 atmosphere:
@@ -24,7 +24,6 @@ ground:
 related:
   - "[[The Myth Of Unaltered States]]"
   - "[[Mania]]"
-
 word-count: "396"
 ---
 # Sacrament
