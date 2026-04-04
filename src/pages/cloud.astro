@@ -6,7 +6,6 @@ import { getAllPoemsMeta } from '../lib/poems.js';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 
-// param = the query string key browse.astro expects
 const categories = [
   { key: 'domains',    label: 'domain',     param: 'domain' },
   { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
@@ -14,23 +13,18 @@ const categories = [
   { key: 'crux',       label: 'crux',       param: 'crux' },
 ];
 
-// Build termMap: totalCount across ALL categories, plus per-category breakdown
 const termMap = {};
-
 for (const poem of poems) {
   for (const { key } of categories) {
     const terms = poem[key] || [];
     for (const term of terms) {
-      if (!termMap[term]) {
-        termMap[term] = { totalCount: 0, cats: {} };
-      }
+      if (!termMap[term]) termMap[term] = { totalCount: 0, cats: {} };
       termMap[term].totalCount++;
       termMap[term].cats[key] = (termMap[term].cats[key] || 0) + 1;
     }
   }
 }
 
-// Derive dominant category (for colour) from whichever has the most occurrences
 const allTerms = Object.entries(termMap)
   .map(([term, { totalCount, cats }]) => {
     const [dominantKey] = Object.entries(cats).sort((a, b) => b[1] - a[1])[0];
@@ -38,143 +32,185 @@ const allTerms = Object.entries(termMap)
   })
   .sort((a, b) => b.count - a.count);
 
-const maxCount = Math.max(...allTerms.map(t => t.count));
-const minCount = Math.min(...allTerms.map(t => t.count));
+const cloudData = JSON.stringify({ terms: allTerms, base });
+const cloudDataB64 = Buffer.from(cloudData).toString('base64');
 ---
 
-<Base title="Cloud">
-  <style>
-    .page-header {
-      padding: 3.5rem 3rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
+<Base title="Cloud — Barking">
+<style>
+  .cloud-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--nav-h, 56px));
+    overflow: hidden;
+  }
 
-    .page-header h1 {
-      font-size: 2.2rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      margin-bottom: 0.3rem;
-    }
+  .cloud-header {
+    padding: 2rem 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.2rem;
+  }
 
-    .page-header .subtitle {
-      font-size: 0.68rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+  .cloud-header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin: 0 0 0.2rem;
+    line-height: 1;
+  }
 
-    .legend {
-      display: flex;
-      gap: 1.5rem;
-      padding-bottom: 0.3rem;
-    }
+  .cloud-subtitle {
+    font-size: 0.63rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
 
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.63rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 0.15rem;
+    flex-shrink: 0;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+  }
+  .legend-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.domains    { background: #7a9bc9; }
+  .legend-dot.atmosphere { background: #c97a9b; }
+  .legend-dot.ground     { background: #7ac99b; }
+  .legend-dot.crux       { background: #c9b97a; }
 
-    .legend-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
+  .filter-bar {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.9rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+    align-items: center;
+  }
 
-    .legend-dot.domains    { background: #7a9bc9; }
-    .legend-dot.atmosphere { background: #c97a9b; }
-    .legend-dot.ground     { background: #7ac99b; }
-    .legend-dot.crux       { background: #c9b97a; }
+  .filter-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .filter-btn:hover             { border-color: var(--muted); color: var(--ink); }
+  .filter-btn.active-all        { border-color: var(--ink);   color: var(--ink); }
+  .filter-btn.active-domains    { border-color: #7a9bc9; color: #7a9bc9; }
+  .filter-btn.active-atmosphere { border-color: #c97a9b; color: #c97a9b; }
+  .filter-btn.active-ground     { border-color: #7ac99b; color: #7ac99b; }
+  .filter-btn.active-crux       { border-color: #c9b97a; color: #c9b97a; }
 
-    .filter-bar {
-      padding: 1.5rem 3rem;
-      display: flex;
-      gap: 0.75rem;
-      border-bottom: 1px solid var(--rule);
-      border-top: 1px solid var(--rule);
-      margin-top: 1.5rem;
-    }
+  .term-count-badge {
+    margin-left: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+  }
 
-    .filter-btn {
-      font-family: 'Georgia', serif;
-      font-size: 0.63rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.85rem;
-      border: 1px solid var(--rule);
-      background: transparent;
-      color: var(--muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+  .cloud-canvas-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .filter-btn:hover             { border-color: var(--ink);  color: var(--ink); }
-    .filter-btn.active-all        { border-color: var(--ink);  color: var(--ink); }
-    .filter-btn.active-domains    { border-color: #7a9bc9; color: #7a9bc9; }
-    .filter-btn.active-atmosphere { border-color: #c97a9b; color: #c97a9b; }
-    .filter-btn.active-ground     { border-color: #7ac99b; color: #7ac99b; }
-    .filter-btn.active-crux       { border-color: #c9b97a; color: #c9b97a; }
+  #cloud-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  #cloud-svg:active { cursor: grabbing; }
 
-    .cloud-container {
-      padding: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1.3rem;
-      align-items: center;
-      line-height: 2;
-    }
+  .cloud-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    opacity: 0.4;
+    pointer-events: none;
+  }
 
-    /* Each term links directly to browse pre-filtered */
-    .cloud-term {
-      text-decoration: none;
-      display: inline-block;
-      transition: opacity 0.2s, transform 0.15s;
-    }
+  #cloud-tooltip {
+    position: fixed;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  #cloud-tooltip.visible { opacity: 1; }
+  #cloud-tooltip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
 
-    .cloud-term:hover { transform: translateY(-2px); opacity: 1 !important; }
+  .zoom-hint {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.35;
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+  }
 
-    .cloud-term.domains    { color: #7a9bc9; }
-    .cloud-term.atmosphere { color: #c97a9b; }
-    .cloud-term.ground     { color: #7ac99b; }
-    .cloud-term.crux       { color: #c9b97a; }
+  @media (max-width: 768px) {
+    .cloud-header { padding: 1.5rem 1.5rem 1rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .filter-bar   { padding: 0.75rem 1.5rem; flex-wrap: wrap; }
+  }
+</style>
 
-    .tooltip {
-      position: fixed;
-      background: var(--bg-panel);
-      border: 1px solid var(--rule);
-      padding: 0.5rem 0.9rem;
-      font-size: 0.68rem;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.15s;
-      z-index: 100;
-      white-space: nowrap;
-    }
+<div id="cloud-data" data-cloud={cloudDataB64} hidden></div>
 
-    .tooltip.visible { opacity: 1; }
+<div class="cloud-page">
 
-    @media (max-width: 768px) {
-      .page-header { padding: 2.5rem 1.5rem 1rem; flex-direction: column; gap: 1.5rem; align-items: flex-start; }
-      .filter-bar  { padding: 1.5rem; flex-wrap: wrap; }
-      .cloud-container { padding: 2rem 1.5rem; }
-      .legend { flex-wrap: wrap; gap: 1rem; }
-    }
-  </style>
-
-  <div class="page-header">
+  <div class="cloud-header">
     <div>
       <h1>Cloud</h1>
-      <p class="subtitle">Terms by frequency — click any term to browse poems</p>
+      <p class="cloud-subtitle">Terms by frequency — click any term to browse poems</p>
     </div>
     <div class="legend">
       {categories.map(({ key, label }) => (
@@ -191,112 +227,244 @@ const minCount = Math.min(...allTerms.map(t => t.count));
     {categories.map(({ key, label }) => (
       <button class="filter-btn" data-filter={key}>{label}</button>
     ))}
+    <span class="term-count-badge" id="term-count-badge"></span>
   </div>
 
-  <div class="cloud-container">
-    {allTerms.map(({ term, count, key, cats }) => {
-      const ratio = maxCount === minCount ? 0.5 : (count - minCount) / (maxCount - minCount);
-      const size  = (0.8 + ratio * 1.6).toFixed(2);
-      // Encode which categories this term belongs to, so browse can filter across all of them
-      const catsParam = encodeURIComponent(Object.keys(cats).join(','));
-      return (
-        <a
-          href={`${base}/browse?term=${encodeURIComponent(term)}&cats=${catsParam}`}
-          class={`cloud-term ${key}`}
-          data-category={key}
-          data-count={count}
-          data-cats={JSON.stringify(cats)}
-          data-term={term}
-          data-base-href={`${base}/browse?term=${encodeURIComponent(term)}`}
-          style={`font-size: ${size}rem;`}
-        >
-          {term}
-        </a>
-      );
-    })}
+  <div class="cloud-canvas-wrap">
+    <svg id="cloud-svg"></svg>
+    <div class="cloud-loading" id="cloud-loading">Arranging terms…</div>
+    <div class="zoom-hint">Scroll to zoom · Drag to pan</div>
   </div>
 
-  <div class="tooltip" id="tooltip"></div>
+</div>
 
-  <script>
-    const buttons = document.querySelectorAll('.filter-btn');
-    const terms   = document.querySelectorAll('.cloud-term');
-    const tooltip = document.getElementById('tooltip');
+<div id="cloud-tooltip"></div>
 
-    let activeFilter = 'all';
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const _el = document.getElementById('cloud-data');
+const { terms: allTerms, base } = JSON.parse(atob(_el.dataset.cloud));
 
-    function applyFilter(filter) {
-      activeFilter = filter;
-      buttons.forEach(b => { b.className = 'filter-btn'; });
-      const btn = [...buttons].find(b => b.dataset.filter === filter) || buttons[0];
-      btn.classList.add(filter === 'all' ? 'active-all' : `active-${filter}`);
+const COLORS = {
+  domains:    '#7a9bc9',
+  atmosphere: '#c97a9b',
+  ground:     '#7ac99b',
+  crux:       '#c9b97a',
+};
 
-      // Compute min/max using only the counts relevant to the active filter,
-      // so font sizes are always scaled relative to the visible set of terms.
-      const visibleCounts = [...terms].map(term => {
-        const cats = JSON.parse(term.dataset.cats);
-        if (filter === 'all') return Number(term.dataset.count);
-        return cats[filter] !== undefined ? cats[filter] : null;
-      }).filter(c => c !== null);
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  let n = 0;
+  function poll() { if (window.d3) { cb(); return; } if (++n < 100) requestAnimationFrame(poll); }
+  requestAnimationFrame(poll);
+}
+waitForD3(initCloud);
 
-      const minC = Math.min(...visibleCounts);
-      const maxC = Math.max(...visibleCounts);
+function initCloud() {
+  const wrap   = document.querySelector('.cloud-canvas-wrap');
+  const svg    = d3.select('#cloud-svg');
+  const g      = svg.append('g');
+  const tipEl  = document.getElementById('cloud-tooltip');
+  const badge  = document.getElementById('term-count-badge');
+  const loader = document.getElementById('cloud-loading');
 
-      terms.forEach(term => {
-        const cats = JSON.parse(term.dataset.cats);
-        const match = filter === 'all' || cats[filter] !== undefined;
+  let activeFilter = 'all';
+  let simulation   = null;
+  let nodeData     = [];
 
-        term.style.opacity       = match ? '1' : '0.12';
-        term.style.pointerEvents = match ? 'auto' : 'none';
+  // ── Zoom & pan ──────────────────────────────────────────────────────────────
+  const zoom = d3.zoom()
+    .scaleExtent([0.25, 4])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
 
-        // Rescale font size based on the active-filter count range
-        if (match) {
-          const c     = filter === 'all' ? Number(term.dataset.count) : cats[filter];
-          const ratio = maxC === minC ? 0.5 : (c - minC) / (maxC - minC);
-          term.style.fontSize = (0.8 + ratio * 1.6).toFixed(2) + 'rem';
-        }
+  // ── Font size scale ─────────────────────────────────────────────────────────
+  function getFontScale(visibleTerms) {
+    const counts = visibleTerms.map(t => t.displayCount);
+    const minC   = Math.min(...counts);
+    const maxC   = Math.max(...counts);
+    // Use sqrt scale so huge outliers don't dominate
+    return d3.scaleSqrt().domain([minC, maxC]).range([11, 48]).clamp(true);
+  }
 
-        // Update href to the correct category-filtered browse page
-        if (filter === 'all') {
-          const catsParam = encodeURIComponent(Object.keys(cats).join(','));
-          term.href = term.dataset.baseHref + '&cats=' + catsParam;
-        } else {
-          term.href = term.dataset.baseHref + '&cats=' + encodeURIComponent(filter);
-        }
+  // ── Collision radius (based on approximate text width) ──────────────────────
+  function collideR(d) {
+    return (d.fontSize || 14) * d.term.length * 0.33 + 6;
+  }
+
+  // ── Prepare node data for a given filter ────────────────────────────────────
+  function buildNodes(filter) {
+    const visible = allTerms
+      .map(t => {
+        const c = filter === 'all' ? t.count : (t.cats[filter] || 0);
+        return { ...t, displayCount: c, visible: c > 0 };
+      })
+      .filter(t => t.visible);
+
+    const fScale = getFontScale(visible);
+    visible.forEach(t => { t.fontSize = fScale(t.displayCount); });
+    return visible;
+  }
+
+  // ── Draw / redraw ────────────────────────────────────────────────────────────
+  function draw(filter, firstRun) {
+    activeFilter = filter;
+    const visible = buildNodes(filter);
+
+    badge.textContent = `${visible.length} term${visible.length !== 1 ? 's' : ''}`;
+
+    const W  = wrap.offsetWidth;
+    const H  = wrap.offsetHeight;
+    const cx = W / 2, cy = H / 2;
+
+    // On re-filter, preserve positions of terms that were already placed
+    const posCache = new Map(nodeData.map(n => [n.term, { x: n.x, y: n.y, vx: n.vx || 0, vy: n.vy || 0 }]));
+
+    nodeData = visible.map(t => {
+      const cached = posCache.get(t.term);
+      return {
+        ...t,
+        x:  cached ? cached.x  : cx + (Math.random() - 0.5) * W * 0.5,
+        y:  cached ? cached.y  : cy + (Math.random() - 0.5) * H * 0.5,
+        vx: cached ? cached.vx : 0,
+        vy: cached ? cached.vy : 0,
+      };
+    });
+
+    // ── Bind text nodes ──────────────────────────────────────────────────────
+    const textSel = g.selectAll('text.cloud-node')
+      .data(nodeData, d => d.term);
+
+    // EXIT
+    textSel.exit()
+      .transition().duration(300)
+      .attr('opacity', 0)
+      .remove();
+
+    // ENTER
+    const entered = textSel.enter()
+      .append('text')
+      .attr('class', 'cloud-node')
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'middle')
+      .attr('cursor', 'pointer')
+      .attr('fill', d => COLORS[d.key] || '#888')
+      .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+      .attr('font-size', d => d.fontSize + 'px')
+      .attr('opacity', 0)
+      .attr('x', d => d.x)
+      .attr('y', d => d.y)
+      .text(d => d.term);
+
+    entered.transition().duration(400).delay((d, i) => i * 4).attr('opacity', 1);
+
+    // UPDATE
+    textSel
+      .transition().duration(350)
+      .attr('font-size', d => d.fontSize + 'px')
+      .attr('fill', d => COLORS[d.key] || '#888')
+      .attr('opacity', 1);
+
+    const allNodes = g.selectAll('text.cloud-node');
+
+    // ── Events ───────────────────────────────────────────────────────────────
+    allNodes
+      .on('mouseenter', function(event, d) {
+        d3.select(this)
+          .transition().duration(120)
+          .attr('opacity', 1)
+          .style('text-decoration', 'underline');
+
+        // Dim others slightly
+        allNodes.filter(n => n.term !== d.term)
+          .transition().duration(120).attr('opacity', 0.25);
+
+        const label = activeFilter !== 'all' ? activeFilter : d.key;
+        const count = activeFilter !== 'all' ? d.cats[activeFilter] : d.count;
+        tipEl.innerHTML = `<strong>${d.term}</strong> · ${count} poem${count !== 1 ? 's' : ''} · ${label}`;
+        tipEl.classList.add('visible');
+      })
+      .on('mousemove', event => {
+        tipEl.style.left = (event.clientX + 14) + 'px';
+        tipEl.style.top  = (event.clientY - 30) + 'px';
+      })
+      .on('mouseleave', function() {
+        d3.select(this).transition().duration(120).attr('opacity', 1).style('text-decoration', 'none');
+        allNodes.transition().duration(200).attr('opacity', 1);
+        tipEl.classList.remove('visible');
+      })
+      .on('click', (e, d) => {
+        const cat = activeFilter !== 'all' ? activeFilter : Object.keys(d.cats).join(',');
+        window.location.href = `${base}/browse?term=${encodeURIComponent(d.term)}&cats=${encodeURIComponent(cat)}`;
       });
+
+    // ── Force simulation ─────────────────────────────────────────────────────
+    if (simulation) simulation.stop();
+
+    simulation = d3.forceSimulation(nodeData)
+      // Pull everything toward centre, weighted by font size (bigger = closer in)
+      .force('x', d3.forceX(cx).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+      .force('y', d3.forceY(cy).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+      // Collision: terms don't overlap
+      .force('collide', d3.forceCollide(collideR).strength(0.85).iterations(3))
+      // Slight repulsion between all nodes for spacing
+      .force('charge', d3.forceManyBody().strength(d => -d.fontSize * 1.5).distanceMax(200))
+      .alphaDecay(0.018)
+      .velocityDecay(0.4)
+      .on('tick', () => {
+        g.selectAll('text.cloud-node')
+          .attr('x', d => d.x)
+          .attr('y', d => d.y);
+      })
+      .on('end', () => {
+        loader.style.display = 'none';
+        // Auto-fit after first settle
+        if (firstRun) fitView(400);
+      });
+
+    loader.style.display = 'flex';
+    loader.textContent   = 'Arranging terms…';
+  }
+
+  // ── Fit all nodes into view ──────────────────────────────────────────────────
+  function fitView(duration) {
+    const W = wrap.offsetWidth, H = wrap.offsetHeight;
+    if (!nodeData.length) return;
+    const xs = nodeData.map(d => d.x), ys = nodeData.map(d => d.y);
+    const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
+    const y0 = Math.min(...ys) - 40, y1 = Math.max(...ys) + 40;
+    const k  = Math.min(W / (x1 - x0), H / (y1 - y0), 1.2) * 0.85;
+    const tx = (W - k * (x0 + x1)) / 2;
+    const ty = (H - k * (y0 + y1)) / 2;
+    svg.transition().duration(duration)
+      .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+
+  // ── Filter buttons ───────────────────────────────────────────────────────────
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(b => { b.className = 'filter-btn'; });
+      btn.classList.add(f === 'all' ? 'active-all' : `active-${f}`);
+      draw(f, false);
+      // Re-fit after simulation settles
+      setTimeout(() => fitView(600), 1200);
+    });
+  });
+
+  // ── Hash routing ─────────────────────────────────────────────────────────────
+  const hash = location.hash.replace('#', '');
+  const initialFilter = ['domains','atmosphere','ground','crux'].includes(hash) ? hash : 'all';
+  if (initialFilter !== 'all') {
+    const btn = document.querySelector(`[data-filter="${initialFilter}"]`);
+    if (btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => { b.className = 'filter-btn'; });
+      btn.classList.add(`active-${initialFilter}`);
     }
+  }
 
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => applyFilter(btn.dataset.filter));
-    });
-
-    // Activate filter from URL hash (e.g. /cloud#atmosphere from home page stats)
-    const hash = location.hash.replace('#', '');
-    if (hash) applyFilter(hash);
-
-    terms.forEach(term => {
-      term.addEventListener('mouseenter', () => {
-        const cats = JSON.parse(term.dataset.cats);
-        let count, label;
-        // If a specific category filter is active and this term exists in it, show that count
-        if (activeFilter !== 'all' && cats[activeFilter] !== undefined) {
-          count = cats[activeFilter];
-          label = activeFilter;
-        } else {
-          // Fall back to total count with dominant category label
-          count = term.dataset.count;
-          label = term.dataset.category;
-        }
-        tooltip.textContent = `${count} poem${count != 1 ? 's' : ''} · ${label}`;
-        tooltip.classList.add('visible');
-      });
-      term.addEventListener('mousemove', e => {
-        tooltip.style.left = (e.clientX + 14) + 'px';
-        tooltip.style.top  = (e.clientY - 28) + 'px';
-      });
-      term.addEventListener('mouseleave', () => {
-        tooltip.classList.remove('visible');
-      });
-    });
-  </script>
+  // ── Initial draw ─────────────────────────────────────────────────────────────
+  draw(initialFilter, true);
+}
+</script>
 </Base>
