@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "At Best.md",
+                "file": "Subjectivity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "At Best"
+              "title": "Subjectivity"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -213,8 +214,8 @@
   },
   "active": "9c315e53ebbed975",
   "lastOpenFiles": [
-    "Not.md",
     "At Best.md",
+    "Not.md",
     "The Lost Lineage.md",
     "Spirituality.md",
     "Atman.md",
