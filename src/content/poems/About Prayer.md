@@ -22,7 +22,7 @@ related:
   - "[[Prayer]]"
   - "[[To Whom But You]]"
   - "[[Rabba]]"
-type: "69"
+word-count: "69"
 ---
 # About Prayer
 Could it be anything

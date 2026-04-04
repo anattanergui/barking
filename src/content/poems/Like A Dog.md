@@ -23,6 +23,7 @@ related:
   - "[[Insatiability]]"
   - "[[Human Condition]]"
   - "[[No Other]]"
+word-count: "451"
 ---
 # Like A Dog
 I loved her —

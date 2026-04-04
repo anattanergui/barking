@@ -25,8 +25,7 @@ ground:
 related:
   - "[[Consecrated Flicker]]"
   - "[[Illusory Self]]"
-energy:
-  - "526"
+word-count: "281"
 ---
 # Throughlines
 My story with A, from 1 to 5

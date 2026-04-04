@@ -21,8 +21,7 @@ related:
   - "[[Underbelly]]"
   - "[[The Vehicle]]"
   - "[[The Boy]]"
-style:
-  - enumerative
+word-count: "130"
 ---
 # The Unshared
 Who can you entrust

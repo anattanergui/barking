@@ -23,6 +23,7 @@ related:
   - "[[Arrogance Of Death]]"
   - "[[— ing —]]"
   - "[[Talking Shit]]"
+word-count: "177"
 ---
 # The Dying Misnamed
 Does it not become obvious

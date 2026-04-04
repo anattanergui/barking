@@ -23,6 +23,7 @@ ground:
 related:
   - "[[Insatiability]]"
   - "[[Solitude]]"
+word-count: "497"
 ---
 # The Image Inside
 It is never
