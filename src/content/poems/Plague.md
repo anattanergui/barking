@@ -1,41 +1,41 @@
 ---
 title: Plague
 tags:
-  - texture
-  - plagues
-  - biography
   - inexpressible
   - unimaginable
-  - nights
   - management
   - sight
-  - between
-  - today
-domain: perception
-crux: inexpressibility
-atmosphere: besieged
-ground: porous
+  - plague
+  - vacant
+  - me
+  - time
+crux:
+  - no-self
+atmosphere:
+  - stark
+ground:
+  - endurance
 description: |
-  A poem about the impossibility of conveying what it is to live inside an overwhelming perceptual reality — asking to be written about not as a person but as a texture, a sight that exceeds language. For readers drawn to themes of inner experience, the limits of expression, and consciousness.
+  Existence managed against an overwhelming vacancy; the self as something to be replaced rather than inhabited.
 related:
   - "[[The Blind Seer]]"
-  - "[[Consciousness]]"
-word-count: "41"
+  - "[[Dog]]"
+word-count: "32"
+domain:
+  - presence
 ---
 # Plague
 My days, nights
 And the time between
-Have been but a management
+Have been but a management 
+Of how to 
+Be
 
-Of how to be —
-Amidst what I perceive
+Amidst what befalls
+A vacant, inexpressible 
+Unimaginable 
+Sight 
 
-And if you must 
-Write a word, about me
-
-Write about the texture
-And the unimaginable, inexpressible
-Sight —
-
-That plagues me
-Today
+That has replaced 
+The plague
+Of me
