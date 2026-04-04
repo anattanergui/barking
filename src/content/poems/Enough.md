@@ -29,8 +29,8 @@ But first
 More must fail
 For fewer
 
-To be —
-Enough, for failing
+To be — enough
+For failing
 
 To show 
 The seen
