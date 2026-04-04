@@ -9,17 +9,17 @@ tags:
   - rooted
   - dust
   - word
+  - fucked
+  - man
 domain:
   - authenticity
   - embodiment
 crux:
   - recognition
 atmosphere:
-  - yearning
   - defiant
 ground:
-  - immanent
-  - sovereign
+  - sovereignty
 related:
   - "[[Fuck The Dependable]]"
   - "[[For Fuck’s Sake]]"
