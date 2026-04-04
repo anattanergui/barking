@@ -1,0 +1,71 @@
+---
+tags:
+  - entrepreneur
+  - teacher
+  - student
+  - truth
+  - thinking
+  - independent
+  - profit
+  - peace
+  - knowledge
+  - perpetuate
+word-count: "117"
+related:
+  - "[[The Lost Lineage]]"
+  - "[[The Howling]]"
+domain:
+  - spiritual-marketplace
+crux:
+  - entrepreneurship
+atmosphere:
+  - clinical
+ground:
+  - sovereignty
+description: |
+  A poem saying that a teacher who knows the student must discard him — yet keeps teaching — is, at best, an entrepreneur.
+---
+
+# At Best
+In pursuit
+Of truth, knowledge, peace
+Even happiness
+The one thing that matters
+Is the only thing
+
+That can never be delivered
+By any amount
+Of reading and listening
+To others
+
+What does it make
+Of the teacher who knows —
+That the pursuit ends only 
+
+When the student — in earnest —
+Begins to think
+For himself
+And discards the teacher
+
+And despite knowing this
+For years, decades
+He keeps speaking, answering
+Writing —
+
+All the things 
+That delay the onset 
+Perpetuate the avoidance 
+
+Of the one thing
+The student must do
+To end the pursuit
+
+Independent thinking —
+Discarding the teacher 
+
+What it makes of the teacher
+The one who profits
+From teaching
+
+Is an entrepreneur 
+At best

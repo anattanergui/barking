@@ -10,8 +10,7 @@ tags:
   - body
   - thoughts
 domain:
-  - spirituality
-  - commodification
+  - spiritual-marketplace
 crux:
   - recuperation
 atmosphere:
@@ -24,6 +23,7 @@ word-count: "27"
 related:
   - "[[Dick Measuring Contest]]"
   - "[[The Mirror Sage]]"
+  - "[[At Best]]"
 ---
 # Spirituality
 Embodiment —
