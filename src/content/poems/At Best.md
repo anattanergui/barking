@@ -10,7 +10,7 @@ tags:
   - peace
   - knowledge
   - perpetuate
-word-count: "117"
+word-count: "119"
 related:
   - "[[The Lost Lineage]]"
   - "[[The Howling]]"
@@ -49,10 +49,10 @@ And discards the teacher
 
 And despite knowing this
 For years, decades
-He keeps speaking, answering
+The teacher keeps speaking, answering
 Writing —
 
-All the things 
+Doing all the things 
 That delay the onset 
 Perpetuate the avoidance 
 
