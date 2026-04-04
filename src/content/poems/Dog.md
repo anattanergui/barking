@@ -19,18 +19,17 @@ atmosphere:
   - quiet
 ground:
   - presence
-description: |
-  A poem about presence, absence, and the quiet faithfulness of small things — tea, breath, words — that attend even when the self goes missing.
+description: A poem about presence, absence, and the quiet faithfulness of small things — tea, breath, words — that attend even when the self goes missing.
 related:
   - "[[The Shape Of Absence]]"
   - "[[To Myself]]"
+  - "[[Presence]]"
 ---
 
 
 # Dog
 Un-anchored from past, future
 And this day
-
 Hot tea,  the dark
 Breath —
 
