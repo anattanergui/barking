@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Un-Point"
             }
+          },
+          {
+            "id": "e8ac5a7d13f0e358",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Three Seconds.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Three Seconds"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -78,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -197,10 +211,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "6a3e088167396e52",
+  "active": "e8ac5a7d13f0e358",
   "lastOpenFiles": [
-    "Un —.md",
+    "Threshold.md",
+    "Three Seconds.md",
     "Un-Point.md",
+    "Un —.md",
     "Presence.md",
     "The Myth Of Unaltered States.md",
     "Sacrament.md",
@@ -223,8 +239,6 @@
     "The Unshared.md",
     "In The First Place.md",
     "Publication Paradox.md",
-    "The Dying Misnamed.md",
-    "Exactly That.md",
     "Untitled.base"
   ]
 }
