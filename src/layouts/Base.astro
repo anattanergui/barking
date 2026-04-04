@@ -43,7 +43,7 @@ const resolvedSchema = schema ?? defaultSchema;
   <meta property="og:title"       content={pageTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type"        content="website" />
-  <meta property="og:image"       content={`${base}/og-image.jpg`} />
+  <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site).toString()} />
   <meta property="og:image:alt" content="Barking — a poetry collection by Anatta Nergui" />
   <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).toString()} />
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
