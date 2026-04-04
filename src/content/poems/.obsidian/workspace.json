@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Pavement Sutra"
             }
+          },
+          {
+            "id": "2399da022e34af43",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Enough.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Enough"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,8 +225,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "9c315e53ebbed975",
+  "active": "2399da022e34af43",
   "lastOpenFiles": [
+    "Equanimity.md",
+    "Enough.md",
+    "Pavement Sutra.md",
     "The Howling.md",
     "At Best.md",
     "Subjectivity.md",
@@ -237,9 +254,6 @@
     "The Myth Of Unaltered States.md",
     "Sacrament.md",
     "2026.md",
-    "What Returns.md",
-    "— ing —.md",
-    "A Costume Speak.md",
-    "Machinery.md"
+    "What Returns.md"
   ]
 }
