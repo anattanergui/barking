@@ -14,20 +14,19 @@ tags:
 related:
   - "[[The Accomplishment]]"
   - "[[Empty Embodiment]]"
-  - "[[Old Friend]]"
   - "[[The Brew]]"
 domain:
-  - seeking
   - subsistence
+  - reckoning
 crux:
   - effortlessness
 atmosphere:
-  - wry
   - weary
 ground:
-  - materialist
   - apophatic
+  - no-self
 word-count: "135"
+description: A poem walking home after wage labour and seeking — finding nothing gained, nothing lost, carried by the pavement.
 ---
 # Pavement Sutra
 Walking back 

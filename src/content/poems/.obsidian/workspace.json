@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Howling.md",
+                "file": "Pavement Sutra.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Howling"
+              "title": "Pavement Sutra"
             }
           }
         ],
@@ -213,6 +213,7 @@
   },
   "active": "9c315e53ebbed975",
   "lastOpenFiles": [
+    "The Howling.md",
     "At Best.md",
     "Subjectivity.md",
     "Not.md",
@@ -239,7 +240,6 @@
     "What Returns.md",
     "— ing —.md",
     "A Costume Speak.md",
-    "Machinery.md",
-    "Plague.md"
+    "Machinery.md"
   ]
 }
