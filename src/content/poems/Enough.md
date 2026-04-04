@@ -8,9 +8,9 @@ tags:
 domain:
   - representation
 crux:
-  - adequacy
+  - honesty
 atmosphere:
-  - reticent
+  - austere
 ground:
   - ineffability
 description: A poem saying fewer words don't show better — they fail more honestly; compression — after failure — the only response to unshowable.
