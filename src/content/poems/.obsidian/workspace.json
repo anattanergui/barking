@@ -41,12 +41,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Undercurrent.md",
+                "file": "This.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Undercurrent"
+              "title": "This"
+            }
+          },
+          {
+            "id": "9c277a5f24b3fd23",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Future.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Future"
             }
           },
           {
@@ -78,7 +92,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -135,8 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -254,8 +267,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "af178bf4c278a1a8",
+  "active": "9c277a5f24b3fd23",
   "lastOpenFiles": [
+    "Futility.md",
+    "Future.md",
+    "This.md",
+    "Undercurrent.md",
     "Misnaming Care.md",
     "Misnomer.md",
     "Modern Slavery.md",
@@ -278,10 +295,6 @@
     "The Lost Lineage.md",
     "At Best.md",
     "The Mirror Sage.md",
-    "Spirituality.md",
-    "Enough.md",
-    "Equanimity.md",
-    "Subjectivity.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
