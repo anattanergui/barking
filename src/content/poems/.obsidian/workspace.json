@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Necessity.md",
+                "file": "I Am.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Necessity"
+              "title": "I Am"
             }
           },
           {
@@ -212,9 +212,9 @@
   },
   "active": "7bc57be46851bb7e",
   "lastOpenFiles": [
+    "Necessity.md",
     "I Am.md",
     "I — I know.md",
-    "Necessity.md",
     "Mortar.md",
     "Future.md",
     "Being.md",

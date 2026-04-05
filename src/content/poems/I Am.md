@@ -19,9 +19,9 @@ ground:
 description: I am is known by all, understood by none — a poem on consciousness knowing itself through us, not as us
 related:
   - "[[Never Get There]]"
-  - "[[Freezer]]"
   - "[[Same Old Shit]]"
-word-count: "41"
+  - "[[No Me Nowhere]]"
+word-count: "56"
 ---
 # I Am
 Every fucker knows
@@ -41,5 +41,13 @@ Is that
 
 It’s not them
 That knows
+
+I am
+
+Nor is it them
+That doesn’t know 
+That it’s them
+
+That doesn’t know
 
 I am
