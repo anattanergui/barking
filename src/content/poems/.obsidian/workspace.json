@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "I Am That.md",
+                "file": "Lam Yalid Wa Lam Yulad.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I Am That"
+              "title": "Lam Yalid Wa Lam Yulad"
             }
           }
         ],
@@ -228,6 +228,7 @@
   },
   "active": "bcc366d2027c548c",
   "lastOpenFiles": [
+    "I Am That.md",
     "An’al Haq.md",
     "Heretics.md",
     "Modern Slavery.md",
@@ -254,7 +255,6 @@
     "Like A Dog.md",
     "The Image Inside.md",
     "The Dying Misnamed.md",
-    "Throughlines.md",
     "Untitled.canvas"
   ]
 }

@@ -9,17 +9,20 @@ tags:
 domain:
   - existence
   - essence
+  - causation
 crux:
-  - inaexpressibility
+  - ingeneracy
 atmosphere:
-  - austere
+  - reverent
+  - incantatory
 ground:
   - apophatic
-  - logical
+  - ontological
 related:
   - "[[Unoriginated]]"
   - "[[Emptiness]]"
 word-count: "144"
+description: Demonstrates through logic why existence — like God — is neither born nor births, and cannot possess essence.
 ---
 # Lam Yalid Wa Lam Yulad
 Essence refers to —
