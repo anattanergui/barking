@@ -287,7 +287,7 @@ function initCloud() {
     const minC   = Math.min(...counts);
     const maxC   = Math.max(...counts);
     // Use sqrt scale so huge outliers don't dominate
-    return d3.scaleSqrt().domain([minC, maxC]).range([11, 48]).clamp(true);
+    return d3.scaleSqrt().domain([minC, maxC]).range([13, 48]).clamp(true);
   }
 
   // ── Collision radius (based on approximate text width) ──────────────────────
@@ -354,6 +354,7 @@ function initCloud() {
       .attr('fill', d => getColors()[d.key] || '#888')
       .attr('font-family', 'Cormorant Garamond, Georgia, serif')
       .attr('font-size', d => d.fontSize + 'px')
+      .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
       .attr('opacity', 0)
       .attr('x', d => d.x)
       .attr('y', d => d.y)
@@ -365,6 +366,7 @@ function initCloud() {
     textSel
       .transition().duration(350)
       .attr('font-size', d => d.fontSize + 'px')
+      .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
       .attr('fill', d => getColors()[d.key] || '#888')
       .attr('opacity', 1);
 
