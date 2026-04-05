@@ -8,15 +8,16 @@ tags:
   - I
   - am
 domain:
-  - consciousness
   - knowledge
+  - apperception
 crux:
-  - misattribution
+  - no-self
 atmosphere:
-  - piercing
+  - irreverent
 ground:
   - nondual
-description: I am is known by all, understood by none — a poem on consciousness knowing itself through us, not as us
+  - no-self
+description: " Everyone knows I am — but it isn't them that knows it, nor them that doesn't know that."
 related:
   - "[[Never Get There]]"
   - "[[Same Old Shit]]"
