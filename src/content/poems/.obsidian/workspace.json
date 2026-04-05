@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nonsense.md",
+                "file": "Modern Slavery.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Nonsense"
+              "title": "Modern Slavery"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -214,8 +213,8 @@
   },
   "active": "caaaa3f6fe1f3945",
   "lastOpenFiles": [
-    "None.md",
     "Nonsense.md",
+    "None.md",
     "Not.md",
     "The Howling.md",
     "Paradox.md",

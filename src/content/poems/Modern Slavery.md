@@ -43,7 +43,7 @@ Captive —
 Psychologically or emotionally 
 Or under lock and key
 
-Cut off 
+Cut off —
 From the world
 Their autonomy 
 
@@ -67,7 +67,7 @@ Through millennia
 And today 
 Like those young people
 Live the same lives 
-That we would call
+That one would call
 Modern slavery
 
 Only worse 
