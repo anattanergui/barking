@@ -15,15 +15,16 @@ related:
   - "[[The Lost Lineage]]"
   - "[[The Howling]]"
 domain:
-  - spiritual-marketplace
+  - instruction
+  - autonomy
+  - spirituality
 crux:
   - entrepreneurship
 atmosphere:
-  - clinical
+  - austere
 ground:
   - sovereignty
-description: |
-  A poem saying that a teacher who knows the student must discard him — yet keeps teaching — is, at best, an entrepreneur.
+description: If only self-inquiry ends the pursuit, the teacher who keeps teaching is, at best, an entrepreneur.
 ---
 
 # At Best

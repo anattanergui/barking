@@ -10,21 +10,18 @@ tags:
   - character
   - opinions
 domain:
-  - dependability
-  - doctrine
   - no-self
+  - spirituality
 crux:
   - purgation
 atmosphere:
   - incendiary
 ground:
-  - alienness
   - purgative
   - apostasy
 related:
   - "[[Purge]]"
   - "[[The Howling]]"
-
 word-count: "308"
 ---
 # Fuck The Dependable

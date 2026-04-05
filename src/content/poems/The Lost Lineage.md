@@ -15,7 +15,7 @@ tags:
   - soul
 domain:
   - corruption
-  - spiritual-marketplace
+  - spirituality
 crux:
   - complicity
 atmosphere:

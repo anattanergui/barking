@@ -14,7 +14,7 @@ word-count: "115"
 domain:
   - discipleship
   - belief
-  - spiritual-marketplace
+  - spirituality
 crux:
   - enthrallment
 atmosphere:

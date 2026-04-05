@@ -10,7 +10,7 @@ tags:
   - body
   - thoughts
 domain:
-  - spiritual-marketplace
+  - spirituality
 crux:
   - recuperation
 atmosphere:

@@ -13,6 +13,7 @@ tags:
 domain:
   - projection
   - oracle
+  - spirituality
 crux:
   - recognition
 atmosphere:
