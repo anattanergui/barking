@@ -5,11 +5,9 @@ domain:
 crux:
   - disclosure
 atmosphere:
-  - clinical
-  - austere
+  - composed
 ground:
-  - individualist
-  - apophatic
+  - phenomenological
 related:
   - "[[Sovereignty]]"
   - "[[First Philosophy]]"
@@ -27,6 +25,7 @@ tags:
   - authority
   - verdict
   - boundary
+description: Examines suicide as structure, not morality — the one act sealed from all outside authority, disclosing sovereign completion.
 ---
 
 

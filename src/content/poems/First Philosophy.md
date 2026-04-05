@@ -13,17 +13,18 @@ domain:
   - sovereignty
   - philosophy
 crux:
-  - axiomatic
+  - primacy
 atmosphere:
-  - exacting
-  - unflinching
+  - austere
+  - declarative
 ground:
-  - logical
-  - existential
+  - analytical
+  - constructivistt
 related:
   - "[[Gateway]]"
   - "[[Suicide]]"
 word-count: "124"
+description: Suicide as proof of individual sovereignty and the precondition of all philosophical inquiry.
 ---
 # First Philosophy
 If 

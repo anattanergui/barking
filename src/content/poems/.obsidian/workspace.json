@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "7f138969e10537bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Free Healthcare.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Free Healthcare"
+            }
+          },
+          {
             "id": "caaaa3f6fe1f3945",
             "type": "leaf",
             "state": {
@@ -41,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Lam Yalid Wa Lam Yulad.md",
+                "file": "First Philosophy.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Lam Yalid Wa Lam Yulad"
+              "title": "First Philosophy"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -107,8 +121,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -226,13 +239,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "bcc366d2027c548c",
+  "active": "7f138969e10537bc",
   "lastOpenFiles": [
+    "Found And Dropped.md",
+    "Free Healthcare.md",
+    "Not.md",
+    "Modern Slavery.md",
+    "First Philosophy.md",
+    "Suicide.md",
+    "Lam Yalid Wa Lam Yulad.md",
     "I Am That.md",
     "An’al Haq.md",
     "Heretics.md",
-    "Modern Slavery.md",
-    "Not.md",
     "Nonsense.md",
     "None.md",
     "The Howling.md",
@@ -249,12 +267,7 @@
     "Subjectivity.md",
     "Atman.md",
     "The Unshared.md",
-    "About Prayer.md",
-    "Untitled.md",
     "Untitled.base",
-    "Like A Dog.md",
-    "The Image Inside.md",
-    "The Dying Misnamed.md",
     "Untitled.canvas"
   ]
 }
