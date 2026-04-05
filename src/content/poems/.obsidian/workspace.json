@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Misnaming Care.md",
+                "file": "Undercurrent.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Misnaming Care"
+              "title": "Undercurrent"
             }
           },
           {
@@ -135,7 +135,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -255,9 +256,9 @@
   },
   "active": "af178bf4c278a1a8",
   "lastOpenFiles": [
+    "Misnaming Care.md",
     "Misnomer.md",
     "Modern Slavery.md",
-    "Misnaming Care.md",
     "There.md",
     "Free Healthcare.md",
     "Found And Dropped.md",

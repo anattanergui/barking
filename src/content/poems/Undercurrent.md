@@ -6,18 +6,19 @@ tags:
   - undercurrent
 word-count: "11"
 domain:
-  - transience
   - beauty
+  - love
 crux:
-  - dependency
+  - interdependence
 atmosphere:
-  - grave
-ground:
   - elegiac
+ground:
+  - impermanence
 related:
   - "[[Bittersweet]]"
   - "[[Equanimity]]"
   - "[[Stillness In Motion]]"
+description: Love and beauty defined by their own passing — a poem on impermanence as essence.
 ---
 
 # Undercurrent
