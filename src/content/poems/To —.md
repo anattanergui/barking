@@ -26,7 +26,8 @@ word-count: "37"
 God
 
 Not a single word more
-Have I got left to say
+Have I got left
+To say
 Not a single gesture more
 Left to make
 
