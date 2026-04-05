@@ -10,21 +10,23 @@ tags:
   - plaques
   - statues
 domain:
-  - martyrdom
   - naming
+  - heresy
 crux:
   - indestructibility
 atmosphere:
-  - witnessing
-  - elegiac
+  - oracular
 ground:
   - perennialist
-  - typological
+  - nominalist
 related:
   - "[[Nonduality]]"
   - "[[Identity]]"
   - "[[An’al Haq]]"
 word-count: "63"
+description: |2-
+    Heretics are killed for the word applied to them — the word
+    that no body can contain and cannot be killed.
 ---
 # Heretics
 When they are dead
