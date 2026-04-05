@@ -10,22 +10,22 @@ tags:
   - immovable
   - knowing
 domain:
-  - identity
-  - absolute
+  - nonduality
+  - desirelessness
 crux:
-  - fullness
+  - plenitude
 atmosphere:
-  - sovereign
-  - still
+  - beatific
 ground:
   - nondual
-  - ontological
+  - realized
 related:
   - "[[An’al Haq]]"
   - "[[Rabba]]"
   - "[[Untitled]]"
   - "[[Identity]]"
 word-count: "78"
+description: Speaks from inside total identity with the Absolute — self as God, nothing left to ask or want.
 ---
 # I Am That
 What could I wish, knowing
