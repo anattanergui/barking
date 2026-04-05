@@ -34,9 +34,19 @@
               "icon": "lucide-file",
               "title": "Modern Slavery"
             }
+          },
+          {
+            "id": "bcc366d2027c548c",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,11 +221,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "caaaa3f6fe1f3945",
+  "active": "bcc366d2027c548c",
   "lastOpenFiles": [
+    "Not.md",
+    "Modern Slavery.md",
     "Nonsense.md",
     "None.md",
-    "Not.md",
     "The Howling.md",
     "Paradox.md",
     "Pavement Sutra.md",
@@ -224,7 +235,6 @@
     "At Best.md",
     "The Mirror Sage.md",
     "Spirituality.md",
-    "Modern Slavery.md",
     "Misnomer.md",
     "Enough.md",
     "Equanimity.md",
