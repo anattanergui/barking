@@ -23,6 +23,8 @@ ground:
   - materialist
 description: |
   Reframes guru devotion as modern slavery: teachers supply the drug that makes students believe they can leave.
+related:
+  - "[[At Best]]"
 ---
 
 
