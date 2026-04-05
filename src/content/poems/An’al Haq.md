@@ -11,22 +11,22 @@ tags:
   - words
   - nansur
 domain:
-  - martyrdom
-  - speech
+  - utterance
+  - annihilation
 crux:
-  - remainder
+  - supplication
 atmosphere:
-  - bereft
   - elegiac
+  - ecstatic
 ground:
-  - identificatory
-  - existential
   - apophatic
+  - mystical
 word-count: "283"
 related:
   - "[[I Am That]]"
   - "[[not-Paradox]]"
   - "[[Identity]]"
+description: "Speaks to Al-Hallaj across centuries: why utter the unspeakable when nothing remains — and yet, tears, and O' Lord."
 ---
 # An’al Haq
 Was it the Middle Ages
