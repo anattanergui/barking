@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Being.md",
+                "file": "Future.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Being"
+              "title": "Future"
             }
           },
           {
@@ -311,8 +311,8 @@
   },
   "active": "ead79857ea508d1a",
   "lastOpenFiles": [
-    "Beholding.md",
     "Being.md",
+    "Beholding.md",
     "Brink.md",
     "Bowed.md",
     "Weaving.md",

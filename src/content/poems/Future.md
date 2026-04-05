@@ -19,7 +19,7 @@ ground:
   - retrospective
 description:
   - Youth, heat, and future once felt as one thing — a poem on uncoupling.
-ground:
+related:
   - "[[Equanimity]]"
   - "[[Futility]]"
 ---
