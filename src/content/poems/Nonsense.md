@@ -12,6 +12,7 @@ tags:
 related:
   - "[[No Mind]]"
   - "[[Spirituality]]"
+  - "[[Shadow]]"
 domain:
   - vitality
   - motivation

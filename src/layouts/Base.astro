@@ -48,7 +48,7 @@ const resolvedSchema = schema ?? defaultSchema;
   <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).toString()} />
   <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
   <title>{pageTitle}</title>
-  <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
   <link rel="alternate" type="application/rss+xml" title="Barking" href={`${base}/rss.xml`} />
   <JsonLd schema={resolvedSchema} />
   <slot name="head" />
