@@ -17,12 +17,16 @@ crux:
 atmosphere:
   - vacant
 ground:
-  - consciousness
+  - phenomenological
+  - immanent
 related:
   - "[[Here]]"
   - "[[Extinction]]"
 type: poem
 word-count: "99"
+description: |2-
+    Renders the state of being moved by a body not your own —
+    there the same as here, until it is laid down.
 ---
 # There
 You don’t want to go

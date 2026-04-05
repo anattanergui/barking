@@ -27,12 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Free Healthcare.md",
+                "file": "There.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Free Healthcare"
+              "title": "There"
+            }
+          },
+          {
+            "id": "af178bf4c278a1a8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Misnaming Care.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Misnaming Care"
             }
           },
           {
@@ -64,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -239,12 +253,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "7f138969e10537bc",
+  "active": "af178bf4c278a1a8",
   "lastOpenFiles": [
-    "Found And Dropped.md",
-    "Free Healthcare.md",
-    "Not.md",
+    "Misnomer.md",
     "Modern Slavery.md",
+    "Misnaming Care.md",
+    "There.md",
+    "Free Healthcare.md",
+    "Found And Dropped.md",
+    "Not.md",
     "First Philosophy.md",
     "Suicide.md",
     "Lam Yalid Wa Lam Yulad.md",
@@ -261,12 +278,9 @@
     "At Best.md",
     "The Mirror Sage.md",
     "Spirituality.md",
-    "Misnomer.md",
     "Enough.md",
     "Equanimity.md",
     "Subjectivity.md",
-    "Atman.md",
-    "The Unshared.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
