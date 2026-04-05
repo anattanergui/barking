@@ -12,16 +12,11 @@ tags:
 domain: no-self
 crux: paradox
 atmosphere: austere
-ground: non-dual
-
-description: >
-  A philosophical poem that holds the self and language in simultaneous
-  affirmation and negation — the self does not exist, yet only the self
-  has ever spoken. For readers drawn to questions of consciousness, identity,
-  and the limits of language to capture its own source.
+ground: nondual
+description: |
+  A philosophical poem that holds the self and language in simultaneous affirmation and negation — the self does not exist, yet only the self has ever spoken. For readers drawn to questions of consciousness, identity, and the limits of language to capture its own source.
 related:
   - "[[No-Self Talk]]"
-
 word-count: "57"
 ---
 # Paradox
