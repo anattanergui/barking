@@ -21,10 +21,11 @@ ground:
 related:
   - "[[Definition]]"
   - "[[Who Cares]]"
-word-count: "31"
+  - "[[Eternal]]"
+word-count: "28"
 type: poem
 ---
-# Nothing To Do With Him
+# Not His 
 Through writing —
 Man gives himself substantiation
 That does not exist

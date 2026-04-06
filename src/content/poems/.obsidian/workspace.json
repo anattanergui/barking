@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Retrofitting.md",
+                "file": "Not His.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Retrofitting"
+              "title": "Not His"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "The Industry"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,11 +210,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "bfa2f17a9f290cd4",
+  "active": "f21d896944fb4a72",
   "lastOpenFiles": [
+    "Retrofitting.md",
+    "The Industry.md",
     "Barking.md",
     "Awareness.md",
-    "Retrofitting.md",
     "I Am.md",
     "Revaluation Of Value.md",
     "Reality.md",
@@ -238,7 +238,6 @@
     "Future.md",
     "Being.md",
     "Beholding.md",
-    "Brink.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
