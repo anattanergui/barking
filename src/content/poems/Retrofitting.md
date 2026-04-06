@@ -10,21 +10,27 @@ tags:
   - truth
   - actuality
   - reasons
-word-count: "69"
+  - fictions
+  - retrofitted
+  - installs
+word-count: "71"
 domain:
-  - retrofitting
-  - psychologisation
+  - psychology
+  - retroaction
 crux:
-  - servitude
+  - fiction
 atmosphere:
-  - sardonic
+  - mordant
+  - elegiac
 ground:
-  - structural
   - no-self
+  - nominalist
+description: |
+  Psychology retrofits a ghost self onto past actions — and sits — between two fictions.
 related:
   - "[[In The First Place]]"
-  - "[[For Fuck’s Sake]]"
   - "[[The Industry]]"
+  - "[[Imago Dei]]"
 ---
 
 # Retrofitting
@@ -36,19 +42,23 @@ Tragically
 
 Where it takes a fragment
 Of speech or action 
-And re-installs it backward
+And installs it backward
 Into a body 
 Retrofitting a ghost self
 
-And then seeks to find reasons
-And motives, of no self
+Seeking reasons and motives
+Of no self
 For that
 Which has already taken place
 
-Psychology then
-Is not in service of
-Truth, reality, or actuality
+Psychology’s domain
+Is not the reality 
 Of psyche —
 
-But serves only
-The society
+But the friction
+Between the retrofitted ghost
+And society —
+
+On either end
+Psychology sits
+Between fictions
