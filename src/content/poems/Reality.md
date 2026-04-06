@@ -1,8 +1,8 @@
 ---
 related:
   - "[[Who Cares]]"
-  - "[[Empty Embodiment]]"
   - "[[Vanity]]"
+  - "[[Atman]]"
 domain:
   - suffering
   - abstraction
