@@ -21,7 +21,7 @@ related:
   - "[[To Myself]]"
 ---
 
-# Instruction
+# Epigram
 Write
 But do not expect 
 To be read
