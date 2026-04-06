@@ -1,5 +1,4 @@
 ---
-title: Lullaby
 tags:
   - lord
   - experience
@@ -14,20 +13,24 @@ tags:
   - character
 domain:
   - ineffability
+  - awareness
 crux:
   - phenomenality
+  - groundlessness
 atmosphere:
-  - tender
-  - paradoxical
+  - lucid
+  - intimate
 ground:
   - nondual
   - apophatic
 related:
   - "[[Tat Tvam Nasi]]"
   - "[[Refutation]]"
-word-count: "176"
+  - "[[God Speaks]]"
+word-count: "172"
+description: Don't ask how I am aware — ask yourself. Neither of us can say what That is.
 ---
-# Lullaby
+# Ask Yourself
 How, lord —
 How
 How could You
@@ -89,11 +92,9 @@ It —
 No one can ever say
 What It is, or isn’t
 
-All I can say —
-And you —
-Is that we aren’t —
+All I — and you 
+Can say is
+That we aren’t —
 
-No more
-Than characters —
-Characters
-In a dream
+Are what 
+We say
