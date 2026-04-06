@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Epigram.md",
+                "file": "Instruction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Epigram"
+              "title": "Instruction"
             }
           }
         ],
@@ -93,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -214,7 +215,7 @@
   "active": "331c4a6500ec7df8",
   "lastOpenFiles": [
     "Enough.md",
-    "Epigram.md",
+    "Instruction.md",
     "Bittersweet.md",
     "No-Self.md",
     "Ask Yourself.md",
