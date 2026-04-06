@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Retrofitting"
             }
+          },
+          {
+            "id": "bfa2f17a9f290cd4",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Barking.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Barking"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -196,8 +211,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "f21d896944fb4a72",
+  "active": "bfa2f17a9f290cd4",
   "lastOpenFiles": [
+    "Awareness.md",
+    "Barking.md",
+    "Retrofitting.md",
     "I Am.md",
     "Revaluation Of Value.md",
     "Reality.md",
@@ -221,9 +239,6 @@
     "Being.md",
     "Beholding.md",
     "Brink.md",
-    "Bowed.md",
-    "Weaving.md",
-    "Wedge.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
