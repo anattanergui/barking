@@ -49,7 +49,7 @@ Bring to them
 
 Without —
 This very instant
-Right here, and of right now
+Right here, right now
 This singular instant 
 Of your —
 Attention 

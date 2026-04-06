@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Miracle.md",
+                "file": "Revaluation Of Value.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Miracle"
+              "title": "Revaluation Of Value"
             }
           },
           {
@@ -78,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -253,12 +253,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "35aaf29c6dcfee31",
+  "active": "dbeef3cfe68194df",
   "lastOpenFiles": [
+    "Reality.md",
     "Revaluation Of Value.md",
     "Miracle.md",
     "Revolt.md",
-    "Reality.md",
     "Reader-Writer.md",
     "To —.md",
     "Throughlines.md",
