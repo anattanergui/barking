@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Ask Yourself.md",
+                "file": "Bittersweet.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Ask Yourself"
+              "title": "Bittersweet"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "lulla",
+                "query": "bitter",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -199,6 +200,9 @@
   },
   "active": "f21d896944fb4a72",
   "lastOpenFiles": [
+    "No-Self.md",
+    "Bittersweet.md",
+    "Ask Yourself.md",
     "Who Cares.md",
     "God Speaks.md",
     "Not His.md",
@@ -222,9 +226,6 @@
     "Revolt.md",
     "Reader-Writer.md",
     "Throughlines.md",
-    "Thief.md",
-    "Necessity.md",
-    "I — I know.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

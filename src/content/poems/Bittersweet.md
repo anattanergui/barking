@@ -9,15 +9,17 @@ domain:
   - happiness
   - grief
 crux:
-  - affirmation
+  - identification
 atmosphere:
   - tender
-  - equanimous
 ground:
   - inseparability
 related:
   - "[[No-Self]]"
+  - "[[Given]]"
+  - "[[Equanimity]]"
 word-count: "16"
+description: Happiness as unrelenting undercurrent of grief
 ---
 # Bittersweet
 If
