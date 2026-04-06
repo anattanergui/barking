@@ -25,7 +25,7 @@ ground:
   - theological
   - prosopopoeic
 description: only your eyes witness my affliction — what but death redeems me, uncurse you of the evil that's me.
-word-count: "50"
+word-count: "51"
 related:
   - "[[The God Complex]]"
   - "[[Wonder]]"
@@ -37,8 +37,8 @@ Sickness, agony
 And death 
 
 Unimaginable cruelty
-Corruption, slaughter
-Incomprehensibility
+Genocide, slaughter
+Savagery, barbarity
 
 Who do you think
 Witnesses —
