@@ -24,7 +24,7 @@ ground:
   - pragmatic
 description: Thinking followed to its own end — on thought as the tool that dissolves itself.
 ---
-# Thinking Is My Religion
+# Thinking 
 Thinking 
 Was my religion 
 I followed it 
