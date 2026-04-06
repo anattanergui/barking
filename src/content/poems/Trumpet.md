@@ -19,9 +19,9 @@ ground:
   - sacramental
   - apophatic
 related:
-  - "[[The Divine]]"
-  - "[[Flesh]]"
   - "[[Imago Dei]]"
+  - "[[Proxy]]"
+  - "[[The Divine]]"
 word-count: "18"
 ---
 # Trumpet

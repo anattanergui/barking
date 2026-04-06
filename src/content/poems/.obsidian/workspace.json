@@ -4,25 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "430855c628005068",
+        "id": "7dd4cd52ec077abd",
         "type": "tabs",
         "children": [
           {
-            "id": "f21d896944fb4a72",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bittersweet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Bittersweet"
-            }
-          },
-          {
-            "id": "ed08f3a60a6bd1f9",
+            "id": "af15a4e728094e6d",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -35,8 +21,7 @@
               "title": "Trumpet"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "trump",
+                "query": "caco",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -212,8 +197,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "ed08f3a60a6bd1f9",
+  "active": "42f1c3f342662405",
   "lastOpenFiles": [
+    "Trumpet.md",
     "Bittersweet.md",
     "Epigram.md",
     "Enough.md",
@@ -239,7 +225,6 @@
     "Imago.md",
     "Older As Young.md",
     "Miracle.md",
-    "Revolt.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
