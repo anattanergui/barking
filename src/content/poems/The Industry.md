@@ -10,21 +10,23 @@ tags:
   - health
   - broken
   - good
+  - psyche
 domain:
   - pathologisation
-  - fallibility
+  - psychology
 crux:
-  - sufficiency
+  - wholeness
 atmosphere:
   - defiant
   - raw
 ground:
-  - anti-therapeutic
+  - testimonial
 related:
   - "[[Therapy]]"
   - "[[War On Myself]]"
   - "[[Quiet Desperation]]"
 word-count: "155"
+description: Could I be whole as I am — before the industry fixes me
 ---
 # The Industry
 Am I allowed 

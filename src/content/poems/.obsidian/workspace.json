@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Barking.md",
+                "file": "The Industry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Barking"
+              "title": "The Industry"
             }
           }
         ],
@@ -213,8 +213,8 @@
   },
   "active": "bfa2f17a9f290cd4",
   "lastOpenFiles": [
-    "Awareness.md",
     "Barking.md",
+    "Awareness.md",
     "Retrofitting.md",
     "I Am.md",
     "Revaluation Of Value.md",
