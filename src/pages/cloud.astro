@@ -7,10 +7,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const poems = getAllPoemsMeta();
 
 const categories = [
-  { key: 'domains',    label: 'domain',     param: 'domain' },
-  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
   { key: 'ground',     label: 'ground',     param: 'ground' },
+  { key: 'domains',    label: 'domain',     param: 'domain' },
   { key: 'crux',       label: 'crux',       param: 'crux' },
+  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
 ];
 
 const termMap = {};
@@ -223,10 +223,10 @@ const cloudDataB64 = Buffer.from(cloudData).toString('base64');
   </div>
 
   <div class="filter-bar">
-    <button class="filter-btn active-all" data-filter="all">All</button>
     {categories.map(({ key, label }) => (
       <button class="filter-btn" data-filter={key}>{label}</button>
     ))}
+    <button class="filter-btn" data-filter="all">All</button>
     <span class="term-count-badge" id="term-count-badge"></span>
   </div>
 
@@ -459,7 +459,7 @@ function initCloud() {
 
   // ── Hash routing ─────────────────────────────────────────────────────────────
   const hash = location.hash.replace('#', '');
-  const initialFilter = ['domains','atmosphere','ground','crux'].includes(hash) ? hash : 'all';
+  const initialFilter = ['domains','atmosphere','ground','crux'].includes(hash) ? hash : 'ground';
   if (initialFilter !== 'all') {
     const btn = document.querySelector(`[data-filter="${initialFilter}"]`);
     if (btn) {
