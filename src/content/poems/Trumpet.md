@@ -21,13 +21,13 @@ ground:
 related:
   - "[[The Divine]]"
   - "[[Flesh]]"
-  - "[[Imago]]"
-word-count: "19"
+  - "[[Imago Dei]]"
+word-count: "18"
 ---
 # Trumpet
 This body 
 Vessel —
-And the only
+The only
 Trumpet of God  
 
 Unheard would God be
