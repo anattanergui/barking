@@ -12,17 +12,18 @@ tags:
   - step
 domain:
   - embodiment
+  - nonduality
 crux:
   - inconsequence
 atmosphere:
-  - sardonic
   - disenchanted
 ground:
-  - pragmatist
+  - pragmatic
+  - experiential
 related:
   - "[[Pavement Sutra]]"
-  - "[[Old Friend]]"
 word-count: "278"
+description: Who has ever taken a single step without a body — who cares if the universe isn't real.
 ---
 # Who Cares
 You are not a human being
