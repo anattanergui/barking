@@ -60,5 +60,5 @@ Between the retrofitted ghost
 And society —
 
 On either end
-Psychology sits
+It sits
 Between fictions
