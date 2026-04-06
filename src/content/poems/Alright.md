@@ -11,20 +11,19 @@ tags:
   - high
   - low
 domain:
-  - ordinariness
-  - renunciation
+  - wanting
+  - dailiness
 crux:
   - equipoise
 atmosphere:
   - plain
-  - sober
 ground:
-  - non-seeking
+  - cessation
 related:
-  - "[[Contentment]]"
-  - "[[This Is It]]"
-  - "[[Equanimity]]"
+  - "[[Cessation]]"
+  - "[[Extinction]]"
 word-count: "112"
+description: No more seeking — death and another day of stacking shelves equally alright.
 ---
 # Alright
 No more seeking
