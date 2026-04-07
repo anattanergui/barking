@@ -26,7 +26,7 @@ related:
   - "[[The Holy Ghost]]"
 ---
 
-# Grace
+c
 Grace is not happenstance —
 Not some sudden or special moment of insight
 Not a lightning strike

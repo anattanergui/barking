@@ -19,9 +19,8 @@ atmosphere:
 ground:
   - liminal
 related:
-  - "[[The Empty Instant]]"
   - "[[Folding]]"
-
+  - "[[I — I know]]"
 word-count: "22"
 ---
 # Sleep’s Sky

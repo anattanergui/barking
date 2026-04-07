@@ -22,7 +22,7 @@ ground:
 related:
   - "[[An’al Haq]]"
   - "[[Rabba]]"
-  - "[[Untitled]]"
+  - "[[Unwritten]]"
   - "[[Identity]]"
 word-count: "78"
 description: Speaks from inside total identity with the Absolute — self as God, nothing left to ask or want.

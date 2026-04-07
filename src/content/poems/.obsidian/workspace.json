@@ -13,15 +13,100 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Alright.md",
+                "file": "Door.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Alright"
+              "title": "Door"
+            }
+          },
+          {
+            "id": "5956538858c406a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wiring.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Wiring"
+            }
+          },
+          {
+            "id": "131c2a897d57da1b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Sleep’s Sky.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sleep’s Sky"
+            }
+          },
+          {
+            "id": "abf285ec93fe133a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Itself.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Itself"
+            }
+          },
+          {
+            "id": "1f17431a9db28a3d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Unwritten.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Unwritten"
+            }
+          },
+          {
+            "id": "4e2fe132cf2fff98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Behind.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Behind"
+            }
+          },
+          {
+            "id": "0e7eaa68afc18a32",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Without.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Without"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -74,13 +159,11 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -198,8 +281,25 @@
       "bases:Create new base": false
     }
   },
-  "active": "af15a4e728094e6d",
+  "active": "1f17431a9db28a3d",
   "lastOpenFiles": [
+    "Vanishing Point.md",
+    "Unwritten.md",
+    "Door.md",
+    "Itself.md",
+    "Sleep’s Sky.md",
+    "Wiring.md",
+    "Without.md",
+    "Without Script.md",
+    "Groceries.md",
+    "Good News.md",
+    "Behind.md",
+    "Beholding.md",
+    "Alright.md",
+    "The Divine.md",
+    "Ishq.md",
+    "God Is A Jealous Lover.md",
+    "Grace.md",
     "Trumpet.md",
     "Bittersweet.md",
     "Epigram.md",
@@ -209,23 +309,6 @@
     "Who Cares.md",
     "God Speaks.md",
     "Not His.md",
-    "Thinking.md",
-    "Godhead.md",
-    "Reality.md",
-    "Retrofitting.md",
-    "The Industry.md",
-    "Barking.md",
-    "Awareness.md",
-    "I Am.md",
-    "Revaluation Of Value.md",
-    "To —.md",
-    "Of —.md",
-    "Imago Dei.md",
-    "The Aloneness.md",
-    "Aloneness.md",
-    "Imago.md",
-    "Older As Young.md",
-    "Miracle.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
