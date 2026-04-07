@@ -49,8 +49,7 @@
               "title": "Work-Life Balance"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -225,13 +224,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "c450abb7781688d5",
+  "active": "0178a90ebe8b6464",
   "lastOpenFiles": [
+    "Grief.md",
+    "Work-Life Balance.md",
     "Growing Up.md",
     "Older As Young.md",
     "Operative.md",
-    "Grief.md",
-    "Work-Life Balance.md",
     "Itself.md",
     "At Face Value.md",
     "Interaction.md",
