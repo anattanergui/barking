@@ -19,8 +19,9 @@ atmosphere:
 ground:
   - witnessing
 related:
-  - "[[First Philosophy]]"
-  - "[[Sovereignty]]"
+  - "[[Operative]]"
+  - "[[At Face Value]]"
+  - "[[Work-Life Balance]]"
 word-count: "84"
 ---
 # Growing Up

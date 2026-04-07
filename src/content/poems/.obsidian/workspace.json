@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Operative.md",
+                "file": "Growing Up.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Operative"
+              "title": "Growing Up"
             }
           },
           {
@@ -43,13 +43,14 @@
               "state": {
                 "file": "Work-Life Balance.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Work-Life Balance"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,13 +225,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "0178a90ebe8b6464",
+  "active": "c450abb7781688d5",
   "lastOpenFiles": [
+    "Growing Up.md",
+    "Older As Young.md",
+    "Operative.md",
     "Grief.md",
     "Work-Life Balance.md",
     "Itself.md",
     "At Face Value.md",
-    "Operative.md",
     "Interaction.md",
     "Un-Point.md",
     "At Best.md",
@@ -250,8 +253,6 @@
     "God Is A Jealous Lover.md",
     "Grace.md",
     "Trumpet.md",
-    "Bittersweet.md",
-    "Epigram.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

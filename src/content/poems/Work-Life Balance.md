@@ -21,15 +21,15 @@ domain:
   - livelihood
   - identity
 crux:
-  - false
+  - "false"
 atmosphere:
   - spare
   - resolute
 ground:
   - sufficiency
-
-description: >
+description: |
   Living is already work. Working to live is false.
+word-count: "43"
 ---
 
 # Work-Life Balance
