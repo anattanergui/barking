@@ -18,14 +18,12 @@ domain:
   - grief
   - reality
 crux:
-  - disclosure
+  - redefinition
 atmosphere:
-  - austere
-  - grave
+  - stark
 ground:
   - ontological
-  - analytical
-description: Grief is not for the lost — grief is the living knowing the architecture of reality.
+description: Grief is not for the lost — but the living knowing the architecture of reality.
 ---
 
 # Grief
