@@ -11,6 +11,7 @@ tags:
   - human
   - machine
   - filter
+  - llm
 word-count: "90"
 domain:
   - therapeutisation
@@ -31,7 +32,7 @@ related:
   - "[[Sacrament]]"
 ---
 
-# 2026
+# Interaction
 The seepage, perversion
 And contamination
 
@@ -48,7 +49,8 @@ Most hideously
 It is permanently lodged
 As a filter through which
 Every response 
-Of every large language model
+Of every large —
+Language model
 Is generated
 
 The contamination

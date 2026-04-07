@@ -25,7 +25,7 @@ ground:
 description: |
   A poem arguing there is no unaltered state — only the myth, enforced by doctors, scientists and society, that one exists.
 related:
-  - "[[2026]]"
+  - "[[Interaction]]"
   - "[[Sacrament]]"
 word-count: "432"
 ---
