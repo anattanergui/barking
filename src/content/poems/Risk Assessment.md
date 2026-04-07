@@ -12,15 +12,19 @@ tags:
 domain:
   - pathologisation
 crux:
-  - indelibility
+  - absurdity
 atmosphere:
   - deadpan
+  - satirical
 ground:
-  - proportionalist
+  - critical
+  - allegorical
+  - a
 related:
   - "[[Protector Parrots]]"
   - "[[What Medicine Tonight]]"
 word-count: "121"
+description: Smith the sheep bleated at a bird — and got EMDR, quarantine, and a place on the register.
 ---
 # Risk Assessment
 That sheep in a herd of sheep
