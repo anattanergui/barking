@@ -13,18 +13,22 @@ tags:
   - delusion
   - enlightenment
 domain:
-  - metamorphosis
+  - enlightenment
+  - embodiment
 crux:
-  - fixity
+  - debunking
 atmosphere:
-  - clinical
+  - sardonic
+  - unflinching
 ground:
-  - deflationary
+  - nondual
+  - materialist
 related:
   - "[[Who Cares]]"
   - "[[Spirituality]]"
   - "[[In The First Place]]"
 word-count: "441"
+description: "No word, concept or idea can ever be embodied — enlightenment, moksha, awakening: nonsense piled on nonsense."
 ---
 # Empty Embodiment
 Just because words can flow
