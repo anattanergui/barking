@@ -15,20 +15,20 @@ tags:
   - letting
 related:
   - "[[Worth Of An Hour]]"
-  - "[[The Empty Instant]]"
   - "[[Never Get There]]"
+  - "[[No Mind]]"
 domain:
   - livelihood
   - identity
 crux:
   - "false"
-atmosphere:
-  - spare
-  - resolute
-ground:
   - sufficiency
-description: |
-  Living is already work. Working to live is false.
+atmosphere:
+  - understated
+  - anguished
+ground:
+  - nondual
+description: Living is already work. Working to live is false.
 word-count: "43"
 ---
 
