@@ -50,6 +50,8 @@ Is to live
 In narratives
 
 The journey —
+
 That they
 From definitional
+
 Become operative 

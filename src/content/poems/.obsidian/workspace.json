@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Interaction.md",
+                "file": "Operative.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interaction"
+              "title": "Operative"
             }
           },
           {
@@ -35,8 +35,7 @@
               "title": "At Face Value"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -211,7 +210,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "c2df46506fabb9e3",
+  "active": "0178a90ebe8b6464",
   "lastOpenFiles": [
     "Interaction.md",
     "At Face Value.md",
