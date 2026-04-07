@@ -1,33 +1,32 @@
 ---
 tags:
   - grief
-  - ground
-  - thing
   - potentiality
   - architecture
-  - hardwiring
   - reality
   - place
   - person
-word-count: "36"
+  - wiring
+  - living
+  - knowing
+word-count: "37"
 related:
   - "[[Equanimity]]"
-  - "[[Itself]]"
+  - "[[Dedication]]"
+  - "[[Bittersweet]]"
 domain:
   - grief
-  - ground
+  - reality
 crux:
-  - substrate
+  - disclosure
 atmosphere:
-  - oracular
+  - austere
 ground:
   - ontological
-  - apophatic
-description: |
-  Grief is not for what is lost or what could have been — grief is the architecture, the ground, the wiring of reality.
+description: Grief is not for the lost — grief is the living knowing the architecture of reality.
 ---
 
-# Wiring
+# Grief
 Grief is not
 For
 
@@ -48,8 +47,10 @@ Potentiality
 
 Grief is
 
-The architecture
-The ground
+The living 
+Knowing 
+
+The architecture 
 The wiring
 
 Of reality

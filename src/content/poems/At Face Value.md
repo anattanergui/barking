@@ -17,15 +17,17 @@ word-count: "66"
 related:
   - "[[Connection Myth]]"
 domain:
-  - illegibility
+  - intersubjectivity
+  - interpretation
 crux:
   - momentariness
 atmosphere:
   - sober
+  - lucid
 ground:
-  - ontological
-description: |
-  You will never know what another thinks — take what they do at face value, only in the moment it's done.
+  - pragmatic
+  - epistemological
+description: Take what they say at face value — but only for the moment it's said, never the next.
 ---
 # At Face Value
 Whatever you think 

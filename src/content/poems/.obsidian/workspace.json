@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "At Face Value.md",
+                "file": "Grief.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "At Face Value"
+              "title": "Grief"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -67,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "being alrigh",
+                "query": "archite",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -210,17 +212,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "0178a90ebe8b6464",
+  "active": "c2df46506fabb9e3",
   "lastOpenFiles": [
-    "Interaction.md",
+    "Itself.md",
+    "Grief.md",
     "At Face Value.md",
     "Operative.md",
+    "Interaction.md",
     "Un-Point.md",
     "At Best.md",
     "Door.md",
-    "Wiring.md",
     "Sleep’s Sky.md",
-    "Itself.md",
     "Unwritten.md",
     "Behind.md",
     "Without.md",

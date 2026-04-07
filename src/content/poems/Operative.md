@@ -24,8 +24,7 @@ atmosphere:
 ground:
   - developmental
   - pragmatic
-description: |
-  All beliefs are fictions — maturity is when they stop defining and start operating.
+description: All beliefs are fictions — maturity is when they stop defining and start operating.
 word-count: "45"
 ---
 # Operative
