@@ -16,12 +16,14 @@ domain:
 crux:
   - longing
 atmosphere:
-  - wistful
+  - tender
+  - rueful
 ground:
   - lucid
 related:
   - "[[The Aloneness]]"
 word-count: "56"
+description: Wish for a confidant who knows your petty miseries
 ---
 # Confidant
 I long for a confidant who knows
