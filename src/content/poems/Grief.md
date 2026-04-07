@@ -13,7 +13,7 @@ word-count: "37"
 related:
   - "[[Equanimity]]"
   - "[[Dedication]]"
-  - "[[Bittersweet]]"
+  - "[[Suicide]]"
 domain:
   - grief
   - reality
@@ -21,8 +21,10 @@ crux:
   - disclosure
 atmosphere:
   - austere
+  - grave
 ground:
   - ontological
+  - analytical
 description: Grief is not for the lost — grief is the living knowing the architecture of reality.
 ---
 
