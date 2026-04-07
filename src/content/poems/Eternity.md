@@ -7,27 +7,26 @@ tags:
   - understanding
   - awaiting
   - thousand
+  - ten
+  - years
+  - stood
+  - day
 domain:
   - devotion
-  - presence
+  - love
 crux:
   - constancy
 atmosphere:
   - steadfast
   - luminous
 ground:
-  - love
-  - devotional
-  - eternity
+  - experiential
+  - contemplative
 related:
   - "[[Eternal]]"
-style:
-  - declarative
-  - imagistic
-energy:
-  - still
-  - temporal
+  - "[[Inna Lillahi Wa Inna Ilayhi Raji'un]]"
 word-count: "29"
+description: Ten thousand years in your gaze — ten thousand more awaiting your return.
 ---
 # Eternity
 Ten thousand years and more
