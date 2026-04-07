@@ -10,19 +10,22 @@ tags:
   - there
   - paid
 domain:
-  - vocation
-  - estrangement
+  - work
+  - waiting
+  - identity
 crux:
   - suspension
 atmosphere:
-  - muted
-  - elegiac
+  - weary
 ground:
-  - drift
+  - immanence
 related:
   - "[[Quiet Desperation]]"
   - "[[Between Worlds]]"
 word-count: "173"
+description: |-
+  Waiting is me — daily paid work, unpaid writing, and a self unchanged
+  by distance or job
 ---
 # Purgatory
 Early morning
