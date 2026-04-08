@@ -12,45 +12,46 @@ tags:
   - write
   - read
 domain:
-  - actualization
+  - creation
+  - existence
 crux:
-  - sufficiency
+  - aseity
 atmosphere:
-  - celebratory
-  - intimate
+  - declarative
+  - wonder
 ground:
   - immanent
-word-count: "161"
+  - observational
+word-count: "151"
 related:
   - "[[For Fuck’s Sake]]"
   - "[[Doer]]"
   - "[[Underbelly]]"
 ---
 
-
-
 # Because It Could
 A poem 
 
-Like a work of art
-A piece of music
+Like work of art
+Piece of music
 Building, monument, rocket
 Carved stick
 
 Each word, sentence, thought
-Within it is like
+Within is like
 Nuts and bolts
-Bricks and mortar
+Bricks, mortar
 Brushstrokes and colours —
-Each singular touch on an instrument
+Each singular touch
+On an instrument
 
 All coming together
 Into 
 A poem
 
-The poem
-Exists for its own sake
-First and foremost
+A poem exists
+For its own sake
+First, and foremost
 
 It exists simply because
 It can exist
@@ -59,36 +60,36 @@ It could exist
 
 Like life
 With its unimaginable, astounding
-Immense complexity —
+Immense complexity 
 Diversity and depth
 Exists
-Simply because
+Because
 It could
 Because it does
 
-The writers
-Builders, composers
-And artists
+Writers
+Builders, composers, artists
 May think
 That their work
 Exists for other reasons
-Ten thousand reasons —
+
+Ten thousand reasons 
 A bridge to bridge the gap
 Stick to aid the walk
-A book to teach 
+Book to teach 
 Music, painting, poems
 To inspire
 Evoke wonder
 
-Yet
-First and foremost
-Each touch —
+Yet first —
+Each touch 
 Lifting a brick
 Holding a brush
-A pen — or an instrument 
+A pen 
+Or an instrument 
+Happens —
 
-Happens — 
-Happened
+Happened 
 Because it could
 Because it did
 
