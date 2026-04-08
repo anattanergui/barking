@@ -34,9 +34,37 @@
               "icon": "lucide-file",
               "title": "Because It Could"
             }
+          },
+          {
+            "id": "a581d19c9a81c611",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "What Or Who.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "What Or Who"
+            }
+          },
+          {
+            "id": "8e27e5688de45267",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ether.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ether"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -211,10 +239,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "78a0a5ab53d82c4f",
+  "active": "8e27e5688de45267",
   "lastOpenFiles": [
-    "Pavement Sutra.md",
+    "What Or Who.md",
+    "Ether.md",
     "Because It Could.md",
+    "Pavement Sutra.md",
     "Uncast.md",
     "Who Cares.md",
     "The Gap.md",
@@ -237,8 +267,6 @@
     "Confidant.md",
     "Equations.md",
     "Empty Embodiment.md",
-    "Growing Up.md",
-    "Older As Young.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
