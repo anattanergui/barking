@@ -26,7 +26,7 @@ ground:
   - nondual
 description: No such thing as materialism or spiritualism — material and immaterial, never apart
 ---
-# — ism
+# -ism
 There is no such thing 
 As material-ism or
 Spiritual-ism

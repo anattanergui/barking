@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "— ism.md",
+                "file": "-ism.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "— ism"
+              "title": "-ism"
             }
           }
         ],
@@ -228,7 +228,7 @@
   "active": "ffdc0976685f5820",
   "lastOpenFiles": [
     "— ing —.md",
-    "— ism.md",
+    "-ism.md",
     "A Costume Speak.md",
     "Mind Alone.md",
     "The.md",
