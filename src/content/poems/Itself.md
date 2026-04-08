@@ -33,7 +33,7 @@ description: |2-
 ---
 
 # Itself
-Itself Breathing
+Breathing
 This breath, unseen — being pulled
 Going in — and then
 Out —
