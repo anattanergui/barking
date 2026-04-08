@@ -10,6 +10,7 @@ tags:
   - perceived
   - between
   - stood
+  - -ism
 related:
   - "[[Equations]]"
   - "[[Indivisibility]]"
