@@ -13,9 +13,9 @@ tags:
   - births
 domain:
   - perception
-  - idealism
+  - mind
 crux:
-  - mindonly
+  - self
 atmosphere:
   - austere
   - precise
@@ -26,6 +26,7 @@ related:
   - "[[Mind]]"
   - "[[No Mind]]"
 word-count: "31"
+description: Images do not contact eyes but mind — in mind alone, tainted by thought, lives and dies world and self
 ---
 # Mind Alone
 Images 

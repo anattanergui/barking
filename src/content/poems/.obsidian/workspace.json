@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The.md",
+                "file": "Mind Alone.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The"
+              "title": "Mind Alone"
             }
           }
         ],
@@ -213,8 +213,8 @@
   },
   "active": "4bd0419efc4ee053",
   "lastOpenFiles": [
-    "Eternal.md",
     "The.md",
+    "Eternal.md",
     "Due Diligence.md",
     "Seeing.md",
     "The Word.md",
