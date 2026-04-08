@@ -26,7 +26,7 @@ ground:
 description: Everything ever experienced by anyone, anywhere — is a state of mind. Full stop.
 ---
 
-# What Else Would It Be
+# What Else 
 Everything
 
 Everything ever experienced 

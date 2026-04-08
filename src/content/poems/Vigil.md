@@ -1,5 +1,4 @@
 ---
-title: Eternity
 tags:
   - gaze
   - night
@@ -28,7 +27,7 @@ related:
 word-count: "29"
 description: Ten thousand years in your gaze — ten thousand more awaiting your return.
 ---
-# Eternity
+# Vigil
 Ten thousand years and more
 I have stood
 In your gaze —

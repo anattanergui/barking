@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Eternity.md",
+                "file": "Vigil.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Eternity"
+              "title": "Vigil"
             }
           },
           {
@@ -48,9 +48,36 @@
               "icon": "lucide-file",
               "title": "Death"
             }
+          },
+          {
+            "id": "7b3777b6db777314",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "It.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "It"
+            }
+          },
+          {
+            "id": "93650a2d02f09c9a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "What Else.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "What Else"
+            }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -225,21 +252,25 @@
       "bases:Create new base": false
     }
   },
-  "active": "610840a53880d9dd",
+  "active": "b6e8f435c4354fa4",
   "lastOpenFiles": [
     "Work-Life Balance.md",
+    "It.md",
     "Death.md",
-    "Eternity.md",
+    "What Else.md",
+    "Vigil.md",
+    "Just This.md",
+    "Unnameable.md",
+    "Grief.md",
+    "Theology.md",
     "The World.md",
     "Risk Assessment.md",
     "Referent.md",
     "Purgatory.md",
     "Confidant.md",
-    "What Else Would It Be.md",
     "Equations.md",
     "Empty Embodiment.md",
     "Growing Up.md",
-    "Grief.md",
     "Older As Young.md",
     "Operative.md",
     "Itself.md",
@@ -249,10 +280,6 @@
     "At Best.md",
     "Door.md",
     "Sleep’s Sky.md",
-    "Unwritten.md",
-    "Behind.md",
-    "Without.md",
-    "Vanishing Point.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

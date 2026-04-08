@@ -2,22 +2,37 @@
 tags:
   - death
   - meaning
-word-count: "148"
+  - birth
+  - love
+  - beauty
+  - celebration
+  - caskets
+  - flags
+  - drugs
+  - concealment
+  - euphemised
+  - demonised
+  - water
+  - river
+  - well
+word-count: "114"
 related:
   - "[[Full Service]]"
   - "[[Grief]]"
+  - "[[Undercurrent]]"
 domain:
   - death
-  - culture
+  - meaning
 crux:
-  - indictment
+  - self-defeat
 atmosphere:
-  - indignant
+  - incredulous
+  - elegiac
 ground:
-  - ontological
-  - critical
-description: |
-  Death births all meaning and life — yet we demonise the well and go in search of water.
+  - nondual
+description: |-
+  Death as architect of all meaning — love, beauty, life — euphemised, 
+  demonised, denied.
 ---
 
 # Death
@@ -25,17 +40,17 @@ Is there anything
 That does not birth 
 From death 
 
-Love and beauty, 
-Creativity, passion and compassion 
-All meaning and
+Love and beauty
+Creativity, passion, compassion 
+All meaning 
 Life itself 
 
 Can any of it 
 Truly express, be experienced
 Without death 
 
-And yet,
-Where’s the celebration for the source 
+Where is the celebration
+For the source 
 What day of the year 
 Is for honouring
 Death 
@@ -45,28 +60,24 @@ Colleges and universities
 Are departments
 Of death 
 
-What do we know about death
 When do we not approach it
-With shame, fear
-Denial, concealment, mockery 
-Violence, anger, aversion 
-Stigma and taboos 
-When do we not approach it
-With needles, machines, guns 
-And drugs
+With fear, denial
+Anger, aversion, concealment
+Stigma, taboo
+With needles, machines
+Drugs
 
-How’s the architect of all meaning 
-Cannot be directly named
-Has been commercialised
-Cheapened by caskets
-Gravestones and wreaths 
-Ridiculed by flags, gun salutes and statues 
-Shrines of dead bodies 
+How does the architect of all meaning
+Gets euphemised, commercialised
+In caskets, gravestones, wreaths
+Mocked
+By flags, gun salutes, statues 
+Shrines 
 
 Demonising the well
-The river, we then 
-go in search of water 
-Seeking everything 
-That could only take birth 
-From and
-Through death 
+The river —
+We go searching for water
+Seeking 
+What could only take birth 
+From 
+Through death 
