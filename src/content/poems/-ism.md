@@ -12,8 +12,9 @@ tags:
   - stood
   - -ism
 related:
-  - "[[Equations]]"
   - "[[Indivisibility]]"
+  - "[[Khudi]]"
+  - "[[Umbilical Cord]]"
 word-count: "47"
 domain:
   - materialism
