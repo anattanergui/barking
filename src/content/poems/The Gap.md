@@ -12,18 +12,20 @@ tags:
   - gap
   - another
 domain:
-  - subjectivity
-  - death
+  - mortality
+  - projection
 crux:
-  - gap
+  - constructedness
 atmosphere:
-  - austere
-  - unsparing
+  - disabsused
 ground:
-  - phenomenological
+  - idealist
 related:
   - "[[Arrogance Of Death]]"
 word-count: "81"
+description: |-
+  Mortality and time exist only through observing another's death — never in 
+  first-person experience
 ---
 # The Gap
 Only through observation 

@@ -27,9 +27,7 @@ atmosphere:
 ground:
   - elemental
   - apophatic
-description: |2-
-    Breath pulled in and out — same as stones, algae, sky.
-    Dark, silent, empty: reality.
+description: "Breath pulled in and out — same as stones, algae, sky. Dark, silent, empty: reality."
 ---
 
 # Itself

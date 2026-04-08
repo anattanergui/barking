@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Itself.md",
+                "file": "The Gap.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Itself"
+              "title": "The Gap"
             }
           }
         ]
@@ -198,6 +198,7 @@
   },
   "active": "bafe59cb5812ee3d",
   "lastOpenFiles": [
+    "Itself.md",
     "Vigil.md",
     "Work-Life Balance.md",
     "What Else.md",
@@ -220,7 +221,6 @@
     "Growing Up.md",
     "Older As Young.md",
     "Operative.md",
-    "Itself.md",
     "At Face Value.md",
     "Interaction.md",
     "Un-Point.md",
