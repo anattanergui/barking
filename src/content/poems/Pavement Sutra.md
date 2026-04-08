@@ -1,7 +1,6 @@
 ---
 title: Pavement Sutra
 tags:
-  - buddha
   - pavement
   - wage
   - rubble
