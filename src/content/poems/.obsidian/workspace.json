@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef8f7cd240ce9133",
+        "id": "873685123a066e83",
         "type": "tabs",
         "children": [
           {
-            "id": "bafe59cb5812ee3d",
+            "id": "42fcb1a4e16f13c9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Gap.md",
+                "file": "Pavement Sutra.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Gap"
+              "title": "Pavement Sutra"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "pavemen",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -196,14 +197,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "bafe59cb5812ee3d",
+  "active": "42fcb1a4e16f13c9",
   "lastOpenFiles": [
+    "Who Cares.md",
+    "The Gap.md",
     "Itself.md",
     "Vigil.md",
     "Work-Life Balance.md",
     "What Else.md",
     "It.md",
-    "The Gap.md",
     "Dedication.md",
     "Two Deaths.md",
     "Death.md",
@@ -223,7 +225,6 @@
     "Operative.md",
     "At Face Value.md",
     "Interaction.md",
-    "Un-Point.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

@@ -25,7 +25,7 @@ atmosphere:
 ground:
   - apophatic
   - no-self
-word-count: "135"
+word-count: "132"
 description: A poem walking home after wage labour and seeking — finding nothing gained, nothing lost, carried by the pavement.
 ---
 # Pavement Sutra
@@ -36,9 +36,8 @@ The tasks — the jobs —
 You wonder if
 
 There was ever any point
-To all your seeking —
-Your becoming 
-The Buddha —
+To all your seeking
+Becoming —
 
 While all waking hours
 Are traded for a wage
