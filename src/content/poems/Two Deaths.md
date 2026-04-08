@@ -13,6 +13,7 @@ tags:
   - I
 domain:
   - subjectivity
+  - death
 crux:
   - subjectlessness
 atmosphere:
@@ -21,7 +22,6 @@ ground:
   - self-inquiry
 related:
   - "[[Awareness]]"
-
 word-count: "38"
 ---
 # Two Deaths

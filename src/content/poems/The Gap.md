@@ -12,8 +12,8 @@ tags:
   - gap
   - another
 domain:
-  - mortality
   - subjectivity
+  - death
 crux:
   - gap
 atmosphere:
@@ -23,7 +23,6 @@ ground:
   - phenomenological
 related:
   - "[[Arrogance Of Death]]"
-
 word-count: "81"
 ---
 # The Gap
