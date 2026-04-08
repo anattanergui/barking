@@ -10,22 +10,23 @@ tags:
   - dust
   - sutra
   - seeking
+  - sleep
 related:
   - "[[The Accomplishment]]"
   - "[[Empty Embodiment]]"
   - "[[The Brew]]"
 domain:
   - subsistence
-  - reckoning
+  - seeking
 crux:
-  - effortlessness
+  - groundlessness
 atmosphere:
   - weary
 ground:
   - apophatic
   - no-self
 word-count: "132"
-description: A poem walking home after wage labour and seeking — finding nothing gained, nothing lost, carried by the pavement.
+description: Eight hours, no wisdom, no ground — only the pavement that walks you home
 ---
 # Pavement Sutra
 Walking back 
