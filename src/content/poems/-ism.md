@@ -51,8 +51,9 @@ That is ever
 Perceived
 
 No -ism
-Has ever stood
+Can ever stand
 Between
+
 What has never
 
 Been apart  
