@@ -18,8 +18,8 @@ ground:
   - apophatic
 related:
   - "[[Refutation]]"
+  - "[[Due Diligence]]"
 word-count: "17"
-
 ---
 # Eternal
 You

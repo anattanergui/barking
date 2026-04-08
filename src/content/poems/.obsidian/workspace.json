@@ -4,35 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "bb00b4eb6147be68",
+        "id": "331f8ea67afa7524",
         "type": "tabs",
         "children": [
           {
-            "id": "25dd2b2508100a0e",
+            "id": "32e2d92a1a2516d9",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Seeing.md",
+                "file": "Eternal.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Seeing"
+              "title": "Eternal"
             }
           },
           {
-            "id": "2e133aabb4492a96",
+            "id": "4bd0419efc4ee053",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Due Diligence.md",
+                "file": "The.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Due Diligence"
+              "title": "The"
             }
           }
         ],
@@ -211,11 +211,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "2e133aabb4492a96",
+  "active": "4bd0419efc4ee053",
   "lastOpenFiles": [
-    "The Word.md",
+    "Eternal.md",
+    "The.md",
     "Due Diligence.md",
     "Seeing.md",
+    "The Word.md",
     "Ether.md",
     "What Or Who.md",
     "Because It Could.md",
@@ -237,8 +239,6 @@
     "Theology.md",
     "The World.md",
     "Risk Assessment.md",
-    "Referent.md",
-    "Purgatory.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
