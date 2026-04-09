@@ -22,6 +22,7 @@ ground:
 related:
   - "[[The Broken Tool]]"
   - "[[The Vehicle]]"
+  - "[[Translation]]"
 ---
 
 # Cessation
