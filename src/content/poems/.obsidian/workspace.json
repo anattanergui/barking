@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "As"
             }
+          },
+          {
+            "id": "86b8c174145ca05b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Wish You.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Wish You"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -211,8 +225,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "753c87ba388647e5",
+  "active": "86b8c174145ca05b",
   "lastOpenFiles": [
+    "Beholding.md",
+    "Wish You.md",
     "As.md",
     "Eternal.md",
     "— ing —.md",
@@ -237,8 +253,6 @@
     "It.md",
     "Dedication.md",
     "Two Deaths.md",
-    "Death.md",
-    "Just This.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
