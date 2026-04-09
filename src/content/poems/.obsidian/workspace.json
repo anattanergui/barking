@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Translation.md",
+                "file": "Wish You.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Translation"
+              "title": "Wish You"
             }
           }
         ],
@@ -213,9 +213,9 @@
   },
   "active": "a8dc033d733373f9",
   "lastOpenFiles": [
+    "Translation.md",
     "Cessation.md",
     "Eternal.md",
-    "Translation.md",
     "Trumpet.md",
     "As.md",
     "Wish You.md",
