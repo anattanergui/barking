@@ -13,7 +13,7 @@ tags:
   - parasites
   - structure
   - foreign
-word-count:
+word-count: "50"
 related:
   - "[[Bad Habits]]"
 domain:
