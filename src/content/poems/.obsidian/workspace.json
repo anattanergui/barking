@@ -97,12 +97,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Love Letter.md",
+                "file": "The Industry.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Love Letter"
+              "title": "The Industry"
             }
           }
         ],
@@ -283,8 +283,9 @@
   },
   "active": "df8628f50e3fc943",
   "lastOpenFiles": [
-    "Throughlines.md",
     "Love Letter.md",
+    "One-Way.md",
+    "Throughlines.md",
     "Habitations.md",
     "Ask Yourself.md",
     "Name And Form.md",
@@ -308,7 +309,6 @@
     "-ism.md",
     "A Costume Speak.md",
     "Mind Alone.md",
-    "The.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

@@ -24,7 +24,7 @@ ground:
 related:
   - "[[Therapy]]"
   - "[[War On Myself]]"
-  - "[[Quiet Desperation]]"
+  - "[[Bad Habits]]"
 word-count: "155"
 description: Could I be whole as I am — before the industry fixes me
 ---
