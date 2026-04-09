@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "What.md",
+                "file": "No Path.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What"
+              "title": "No Path"
             }
           }
         ],
@@ -241,8 +241,8 @@
   },
   "active": "6f6ab2f76e81e275",
   "lastOpenFiles": [
-    "Wish You.md",
     "What.md",
+    "Wish You.md",
     "Beholding.md",
     "As.md",
     "Eternal.md",

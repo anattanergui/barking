@@ -16,7 +16,8 @@ ground:
   - nondual
   - apophatic
 related:
-  - "[[So Simple]]"
+  - "[[Referent]]"
+  - "[[What]]"
 word-count: "15"
 ---
 # No Path
