@@ -25,7 +25,7 @@ ground:
 related:
   - "[[Consecrated Flicker]]"
   - "[[Illusory Self]]"
-word-count: "277"
+word-count: "271"
 ---
 # Throughlines
 My story with A, from 1 to 5
@@ -58,16 +58,18 @@ Trains caught, meetings missed
 Friends gained, friends lost
 
 Innumerable angles, stories —
-Captured in drama, in fiction
-In film, in the mind
+Captured in drama, fiction, film
+In mind
+
 What happened 
 To him and his job
 To her and that house
 To him on that walk, during that talk
+
 To me — and my problem
-My hope, my desire
-My want and frustration
-My need, my pursuit
+My hope, desire
+My want, frustration
+My need, pursuit
 
 My story with X
 Which I think of today 
