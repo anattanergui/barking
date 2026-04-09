@@ -45,7 +45,7 @@ You experience —
 Which means, you think
 Which means
 You think there’s you thinking —
-About something or someone:
+About something or someone
 Me, the world, the other
 
 Bottom line —
