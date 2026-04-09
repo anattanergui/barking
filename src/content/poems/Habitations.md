@@ -17,6 +17,7 @@ word-count: "50"
 related:
   - "[[Bad Habits]]"
   - "[[The Myth Of Unaltered States]]"
+  - "[[Where The Dead Once Lived]]"
 domain:
   - habituation
   - body
