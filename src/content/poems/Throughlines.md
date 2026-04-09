@@ -25,7 +25,7 @@ ground:
 related:
   - "[[Consecrated Flicker]]"
   - "[[Illusory Self]]"
-word-count: "280"
+word-count: "277"
 ---
 # Throughlines
 My story with A, from 1 to 5
@@ -39,9 +39,10 @@ H, from 28 to 32
 
 Between any two letters
 Between any two numbers
-A throughline may begin — and end
+A throughline can begin — and end
 
-Each story spawns another
+Each story
+Spawns another
 A with Y, B with S, F with M
 From 1 to 19, from 37 to 92
 From yesterday to tomorrow —
@@ -71,34 +72,42 @@ My need, my pursuit
 My story with X
 Which I think of today 
 Began at 37 — 
-And what does it matter
+
+What does it matter
 When another throughline appears
 Another story, with another letter
 Will begin —
 And this one will end
 
-Among institutions of sorting, selecting, curating —
+Among institutions 
+Of sorting, selecting, curating —
 Historians, psychologists
 Biographers, journalists —
+
 Libraries filled with fragments
-Arbitrarily chosen throughlines
+Arbitrarily chosen
+Throughlines
 Between any two letters
-Between any two numbers
+Any two numbers
 
 Edifices of medicine, science, philosophy
 Histories, identities
 Friendships, enmities —
+
 Assembled tales — constructed, slanted
 Narrower than the sight
 Of a blinkered horse
 
 Morality, law, justice —
 Wars, treaties, executions, constructions —
-All built on narratives — called knowledge —
+All built
+On narratives — called knowledge —
 Partial, blinkered, false
+
 Fashioned from a few letters
-A few numbers
+Few numbers
 Plucked from the soup
+
 Of innumerable letters
 Innumerable numbers
 
