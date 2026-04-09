@@ -27,6 +27,7 @@ atmosphere:
 ground:
   - nominalist
 description: In whose name — collective, that does not exist attacks, violates, erases
+word-count: "54"
 ---
 # In Whose Name
 What legitimises
