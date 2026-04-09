@@ -16,6 +16,7 @@ tags:
 word-count: "50"
 related:
   - "[[Bad Habits]]"
+  - "[[The Myth Of Unaltered States]]"
 domain:
   - habituation
   - body
