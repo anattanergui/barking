@@ -19,12 +19,13 @@ description: A vertical line and another — one horizontal line crossing off bo
 word-count: "47"
 domain:
   - image
-crux:
   - transmission
+crux:
+  - translation
 atmosphere:
   - hushed
 ground:
-  - semiotic
+  - nondual
 ---
 # Translation
 Squatting before the wall
