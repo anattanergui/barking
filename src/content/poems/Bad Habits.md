@@ -22,6 +22,9 @@ atmosphere:
 ground:
   - structural
 description: Bad habits are who this structure is, without them the structure is subjected to absence of those.
+related:
+  - "[[The Addict]]"
+  - "[[Rock Bottom]]"
 ---
 # Bad Habits
 So many bad habits
