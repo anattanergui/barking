@@ -24,9 +24,9 @@ ground:
   - nondual
   - apophatic
 related:
-  - "[[Tat Tvam Nasi]]"
   - "[[Refutation]]"
   - "[[God Speaks]]"
+  - "[[This Is It]]"
 word-count: "172"
 description: Don't ask how I am aware — ask yourself. Neither of us can say what That is.
 ---
@@ -54,9 +54,10 @@ You are
 You are aware
 
 Why ask me, then
-How I am aware
+How am I aware
 Why not ask yourself —
-How you are aware
+How you
+Are aware —
 If, at all
 You are —
 
