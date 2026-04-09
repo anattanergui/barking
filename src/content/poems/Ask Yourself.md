@@ -27,7 +27,7 @@ related:
   - "[[Refutation]]"
   - "[[God Speaks]]"
   - "[[This Is It]]"
-word-count: "172"
+word-count: "173"
 description: Don't ask how I am aware — ask yourself. Neither of us can say what That is.
 ---
 # Ask Yourself
