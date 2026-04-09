@@ -24,7 +24,6 @@ related:
 ---
 
 # Being Struck
-Being Struck
 The incapacity —
 Blindness to see
 As we are —
