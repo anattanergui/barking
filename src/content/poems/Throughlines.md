@@ -25,7 +25,7 @@ ground:
 related:
   - "[[Consecrated Flicker]]"
   - "[[Illusory Self]]"
-word-count: "281"
+word-count: "280"
 ---
 # Throughlines
 My story with A, from 1 to 5
@@ -88,7 +88,7 @@ Between any two numbers
 Edifices of medicine, science, philosophy
 Histories, identities
 Friendships, enmities —
-All assembled tales: constructed, slanted
+Assembled tales — constructed, slanted
 Narrower than the sight
 Of a blinkered horse
 

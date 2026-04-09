@@ -83,12 +83,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Habitations.md",
+                "file": "Throughlines.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Habitations"
+              "title": "Throughlines"
             }
           }
         ],
@@ -269,11 +269,11 @@
   },
   "active": "46655a3f6373449f",
   "lastOpenFiles": [
+    "Habitations.md",
     "Ask Yourself.md",
     "Name And Form.md",
     "Being Struck.md",
     "Wish You.md",
-    "Habitations.md",
     "Bad Habits.md",
     "No Title.md",
     "Due Diligence.md",
