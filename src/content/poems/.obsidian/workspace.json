@@ -43,7 +43,7 @@
               "state": {
                 "file": "Wish You.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Wish You"
