@@ -8,6 +8,7 @@ tags:
   - be
 related:
   - "[[Beholding]]"
+  - "[[Purgatory]]"
 domain: greeting
 crux: no-self
 atmosphere: wry
