@@ -25,6 +25,7 @@ related:
   - "[[Abbatoir]]"
   - "[[One-Way]]"
   - "[[Wedge]]"
+word-count: "32"
 ---
 # Love Letter
 Your world
