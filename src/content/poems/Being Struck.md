@@ -7,7 +7,7 @@ tags:
   - absurdity
   - inherited
   - need
-word-count: "79"
+word-count: "77"
 domain:
   - gaze
 crux:
