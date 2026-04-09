@@ -14,9 +14,9 @@ tags:
   - face
 related:
   - "[[Found And Dropped]]"
+  - "[[Dog]]"
 description: A vertical line and another — one horizontal line crossing off both
 word-count: "47"
-
 domain:
   - image
 crux:
