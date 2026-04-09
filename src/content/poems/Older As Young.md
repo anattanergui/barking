@@ -1,5 +1,4 @@
 ---
-title: Older As Young
 tags:
   - older
   - young
