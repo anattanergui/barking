@@ -19,6 +19,7 @@ ground:
 related:
   - "[[Refutation]]"
   - "[[Due Diligence]]"
+  - "[[The]]"
 word-count: "17"
 ---
 # Eternal
