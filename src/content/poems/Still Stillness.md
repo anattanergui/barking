@@ -14,6 +14,7 @@ tags:
   - unspeaking
 related:
   - "[[Proxy]]"
+  - "[[Stillness In Motion]]"
 word-count: "39"
 domain:
   - stillness
