@@ -19,12 +19,12 @@ domain:
   - body
   - death
 crux:
-  - language
+  - awareness
 atmosphere:
   - aphoristic
   - oracular
 ground:
-  - awareness
+  - language
 description: |
   Only 3 human concerns — body, mind, death — and language, if pointed at the three.
 ---
