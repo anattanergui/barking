@@ -14,7 +14,7 @@ tags:
 related:
   - "[[Death]]"
   - "[[The Sightless Eye]]"
-word-count: "59"
+word-count: "57"
 domain:
   - death
   - body
@@ -22,7 +22,7 @@ domain:
 crux:
   - inversion
 atmosphere:
-  - dispassionate
+  - lucid
 ground:
   - nondual
 description: Mind dies first, then body — that's all ever born, never dies
@@ -50,5 +50,3 @@ Is all that’s ever born
 And that it is
 That which knows
 No death
-
-Never dies
