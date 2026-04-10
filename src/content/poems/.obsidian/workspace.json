@@ -160,9 +160,23 @@
               "icon": "lucide-file",
               "title": "What Or Who"
             }
+          },
+          {
+            "id": "aabd8533c65b60e2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Fulfilment.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Fulfilment"
+            }
           }
         ],
-        "currentTab": 10
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -337,8 +351,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "fc7dd7aee44c087c",
+  "active": "aabd8533c65b60e2",
   "lastOpenFiles": [
+    "Becoming Unself.md",
+    "Fulfilment.md",
+    "What Or Who.md",
     "Self.md",
     "That-Which-Perceives-Form.md",
     "On Whom.md",
@@ -362,9 +379,6 @@
     "Translation.md",
     "Cessation.md",
     "Eternal.md",
-    "Trumpet.md",
-    "As.md",
-    "In Whose Name.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
