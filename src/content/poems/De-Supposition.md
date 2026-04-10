@@ -18,14 +18,16 @@ ground:
 related:
   - "[[Nonduality]]"
   - "[[Equations]]"
-word-count: "19"
+word-count: "21"
 ---
 # De-Supposition
 De-supposition
-Of the supposed questioner
-Of the knower
+Of the supposed knower
+Of the questioner
 Of the doer
 
 What — without this
 Could ever be
-Enlightenment
+The alleged 
+
+Enlightenment 
