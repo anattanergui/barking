@@ -20,6 +20,9 @@ atmosphere:
 ground:
   - no-self
 description: Caught in physicality, seeking freedom — but the one caught is never found.
+related:
+  - "[[De-Supposition]]"
+  - "[[On Whom]]"
 ---
 
 # What Or Who
