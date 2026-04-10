@@ -12,6 +12,7 @@ tags:
   - not
 related:
   - "[[Indivisibility]]"
+  - "[[Assumption And Perception]]"
 domain:
   - perception
   - self
