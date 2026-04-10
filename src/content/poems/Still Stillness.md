@@ -15,6 +15,7 @@ tags:
 related:
   - "[[Proxy]]"
   - "[[Stillness In Motion]]"
+  - "[[It]]"
 word-count: "39"
 domain:
   - stillness
