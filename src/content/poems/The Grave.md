@@ -78,7 +78,7 @@ No breath
 
 These words
 Left
-Like
+As
 The dead
 In 
 This grave
