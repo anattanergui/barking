@@ -44,6 +44,7 @@ Dream
 All wiped
 Forgotten but this
 That 
+
 It was
 Displayed
 Played
@@ -51,20 +52,22 @@ Spoken
 
 Elaborate poems
 Dialogues
-Upon same screen
+Upon same 
+Screen
 Made outward
 With eyes opened
 
 Like the dead
 Given
-To earth, buried
+To earth
+Buried
 Left alone 
+
 In the cold
 Dark
 Graves
 
 Out there
-Left 
 For worms
 Rot
 
@@ -82,6 +85,7 @@ This grave
 
 Each word 
 In its own
+Dark
 Space
 
 Here, here
