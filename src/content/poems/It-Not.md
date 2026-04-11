@@ -26,8 +26,8 @@ ground:
 description: Not-soul, trapped in body, mourns body's fate — not knowing it's It-not
 word-count: "24"
 related:
-  - "[[The Holy Ghost]]"
   - "[[Dis-identification]]"
+  - "[[I Equals Body]]"
 ---
 # It-Not
 Not-soul
