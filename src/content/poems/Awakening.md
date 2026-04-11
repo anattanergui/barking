@@ -15,7 +15,6 @@ tags:
   - heart
   - clothes
   - clean
-title: "[[Dog]]"
 domain:
   - waking
 crux:
