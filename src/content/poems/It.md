@@ -9,6 +9,8 @@ tags:
   - flowing
   - sits
   - unchanged
+  - bce
+  - ad
 word-count: "30"
 description: "  Shifting seasons, flowing rivers — it sits unchanged."
 related:
