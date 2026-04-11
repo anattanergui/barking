@@ -39,11 +39,10 @@ But before that
 Body also dies
 In the eyes of the mind
 
-And in the sightless eye
-That never existed —
+And in the unseeing eye
 Of the body
 
-Seeing that 
+Knowing that 
 The body 
 Is all that’s ever born
 
