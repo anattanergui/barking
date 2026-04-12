@@ -28,6 +28,7 @@ related:
   - "[[Dis-identification]]"
   - "[[Illusory Self]]"
 word-count: "188"
+description: Self cannot escape itself — destroying the ghost destroys the one who'd know
 ---
 # The Holy Ghost
 Like a barrel scraped raw — drained dry —

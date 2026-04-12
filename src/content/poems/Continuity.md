@@ -11,20 +11,20 @@ tags:
   - earth
 domain:
   - continuity
+  - impermanence
 crux:
-  - persistence
+  - presence
 atmosphere:
-  - hushed
-  - tender
+  - serene
+  - intimate
 ground:
-  - contemplative
-  - presentist
-  - 
+  - nondual
 related:
   - "[[Same I]]"
   - "[[Now]]"
-
+  - "[[It]]"
 word-count: "63"
+description: " Hope as quiet continuity — something remains, as it is, now."
 ---
 # Continuity
 Hope is quiet
@@ -33,7 +33,7 @@ Like this moment blending
 Into the next
 
 Like these words
-Echoing the ones before
+Echoing the ones beforese
 Arriving on the page
 Entering time’s stream
 

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Holy Ghost.md",
+                "file": "Continuity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Holy Ghost"
+              "title": "Continuity"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "shifting",
+                "query": "continu",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -213,14 +214,16 @@
   },
   "active": "01ae514685d71cb6",
   "lastOpenFiles": [
+    "The Holy Ghost.md",
     "Pathos.md",
+    "Continuity.md",
+    "It.md",
     "Severed.md",
     "Shows.md",
     "About Death.md",
     "The Boy.md",
     "Three Bed House.md",
     "Awakening.md",
-    "It.md",
     "Held.md",
     "It-Not.md",
     "One-Way.md",
@@ -237,8 +240,6 @@
     "Thinking.md",
     "The Word.md",
     "Words.md",
-    "Eternal.md",
-    "Due Diligence.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
