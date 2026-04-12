@@ -18,8 +18,8 @@ tags:
   - people
   - growing
 related:
-  - "[[Growing Up]]"
-  - "[[Operative]]"
+  - "[[Half-Life]]"
+  - "[[Genesis]]"
   - "[[Abbatoir]]"
 word-count: "37"
 domain:
@@ -41,7 +41,7 @@ Connected —
 Contracted 
 Among walls, their own 
 Worlds
-While awake 
+While awake [[]]
 
 Sidled 
 Half-bed of a double 
