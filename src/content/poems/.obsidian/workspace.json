@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Severed.md",
+                "file": "The Boy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Severed"
+              "title": "The Boy"
             }
           }
         ],
@@ -107,8 +107,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -228,13 +227,13 @@
   },
   "active": "83b5df3e349f1699",
   "lastOpenFiles": [
+    "Severed.md",
     "Awakening.md",
     "It.md",
     "Held.md",
     "It-Not.md",
     "About Death.md",
     "Three Bed House.md",
-    "Severed.md",
     "One-Way.md",
     "Operative.md",
     "Half-Life.md",

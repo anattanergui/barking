@@ -24,6 +24,7 @@ ground:
   - confessional
 related:
   - "[[An Arms Length]]"
+  - "[[Three Bed House]]"
 word-count: "179"
 ---
 # The Boy
