@@ -45,7 +45,7 @@ Permanent temporary
 
 Absurdity, oxymoron
 Propaganda, deception
-Falsity — politics
+Falsity — corruption
 
 Whichever way it’s looked
 Body is
