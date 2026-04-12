@@ -1,5 +1,4 @@
 ---
-title: Paradox2
 tags:
   - self
   - word
@@ -9,14 +8,26 @@ tags:
   - exists
   - never
   - single
-domain: no-self
-crux: paradox
-atmosphere: austere
-ground: nondual
-description: |
-  A philosophical poem that holds the self and language in simultaneous affirmation and negation — the self does not exist, yet only the self has ever spoken. For readers drawn to questions of consciousness, identity, and the limits of language to capture its own source.
+  - think
+  - I
+  - neither
+  - nor
+  - why
+  - because
+domain:
+  - no-self
+  - self
+  - language
+crux:
+  - paradox
+atmosphere:
+  - precise
+ground:
+  - nondual
+description: No self has ever spoken a word. Only a self has ever spoken. Neither self nor word exist — and only the self has ever spoken
 related:
   - "[[No-Self Talk]]"
+  - "[[not-Paradox]]"
 word-count: "57"
 ---
 # Paradox

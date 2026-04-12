@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Oxymoron.md",
+                "file": "Paradox.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Oxymoron"
+              "title": "Paradox"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "paradox2",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,8 +213,8 @@
   },
   "active": "63d4d4e8c797b1af",
   "lastOpenFiles": [
-    "No Title.md",
     "Oxymoron.md",
+    "No Title.md",
     "The Empty Instant.md",
     "Translation.md",
     "Words.md",
