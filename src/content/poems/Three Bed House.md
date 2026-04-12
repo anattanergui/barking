@@ -32,6 +32,7 @@ atmosphere:
   - muted
 ground:
   - ethnographic
+description: In a three beds, a teen growing up among two older people
 ---
 # Three Bed House
 To their own screens
