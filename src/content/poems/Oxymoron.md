@@ -21,7 +21,7 @@ related:
   - "[[Talking Shit]]"
   - "[[The Industry]]"
   - "[[Translation]]"
-word-count: "93"
+word-count: "92"
 domain:
   - health
   - body
@@ -43,7 +43,7 @@ Health body
 Translates into 
 Permanent temporary
 
-Absurdity, an oxymoron
+Absurdity, oxymoron
 Propaganda, deception
 Falsity — politics
 
