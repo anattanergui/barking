@@ -11,30 +11,22 @@ tags:
   - here
   - there
   - out
+  - no-self
 domain:
   - no-self
-  - speech
+  - language
 crux:
-  - dissolution
+  - subjectlessness
 atmosphere:
-  - dispassionate
-  - exacting
+  - lucid
+  - stark
 ground:
-  - apophatic
-  - subjectless
+  - nondual
 related:
   - "[[The Impossible Knowing]]"
   - "[[The Word]]"
-style:
-  - apophatic
-  - declarative
-  - paradoxical
-energy:
-  - coiling
-  - still
-  - voiding
-type: poem
 word-count: "74"
+description: No one out there, no one here — just talk talking to talk. All talk is no-self talk
 ---
 # No-Self Talk
 All talk 
