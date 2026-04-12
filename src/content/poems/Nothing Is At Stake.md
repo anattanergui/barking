@@ -12,19 +12,20 @@ tags:
   - clarity
   - living
 domain:
-  - dreaming
   - awakening
+  - dreaming
 crux:
-  - unstakedness
+  - unstaking
 atmosphere:
-  - dispassionate
-  - vertiginous
+  - relentless
+  - equanimous
 ground:
   - nondual
-  - inquiry
 related:
   - "[[Refutation]]"
+  - "[[What]]"
 word-count: "346"
+description: Life is a dream, nothing is at stake — dream proceeds as it must, with or without the seeing of it
 ---
 # Nothing Is At Stake
 What is the best way to dream
