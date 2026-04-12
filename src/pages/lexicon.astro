@@ -65,6 +65,85 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       color: var(--muted);
     }
 
+    /* ── Search bar ─────────────────────────────────────────────────────── */
+    .lex-search-wrap {
+      padding: 0 3rem 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .lex-search-inner {
+      position: relative;
+      flex: 1;
+      max-width: 38rem;
+    }
+    .lex-search-inner svg.search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 13px;
+      height: 13px;
+      color: var(--muted);
+      pointer-events: none;
+      transition: color 0.15s;
+    }
+    #lex-search {
+      width: 100%;
+      background: var(--search-bg);
+      border: 1px solid var(--search-border);
+      color: var(--ink);
+      font-family: 'Karla', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      padding: 0.55rem 2.2rem 0.55rem 2.4rem;
+      outline: none;
+      transition: border-color 0.15s;
+      box-sizing: border-box;
+    }
+    #lex-search::placeholder {
+      color: var(--muted);
+      opacity: 0.7;
+    }
+    #lex-search:focus {
+      border-color: var(--muted);
+    }
+    #lex-search:focus + .search-clear,
+    .search-clear.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .search-clear {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0.1rem 0.2rem;
+      font-size: 0.75rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: color 0.15s, opacity 0.15s;
+      line-height: 1;
+    }
+    .search-clear:hover { color: var(--ink); }
+
+    /* hint text beside the search bar */
+    .lex-search-hint {
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .lex-search-hint.visible { opacity: 1; }
+
+    /* ── Grid ────────────────────────────────────────────────────────────── */
     .lex-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -73,16 +152,15 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       margin: 0 3rem 5rem;
     }
     @media (max-width: 768px) {
-      .lex-grid    { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
-      .page-header { padding: 2.5rem 1.5rem 1.5rem; }
+      .lex-grid        { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
+      .page-header     { padding: 2.5rem 1.5rem 1.5rem; }
+      .lex-search-wrap { padding: 0 1.5rem 2rem; }
     }
 
     .cat-block {
       background: var(--bg);
-      /* Only pad the header area; term-list takes full width */
       padding: 2.5rem 2.5rem 0;
     }
-    /* When collapsed, restore bottom padding so block doesn't look clipped */
     .cat-block.collapsed {
       padding-bottom: 2.5rem;
     }
@@ -100,6 +178,14 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     .cat-header.ground     { border-bottom: 1px solid #7ac99b; }
     .cat-header.crux       { border-bottom: 1px solid #c9b97a; }
 
+    /* Left side of header: title + live term count */
+    .cat-header-left {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      flex-shrink: 0;
+      min-width: 0;
+    }
     .cat-title {
       font-size: 0.63rem;
       letter-spacing: 0.25em;
@@ -111,6 +197,17 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     .cat-title.atmosphere { color: #c97a9b; }
     .cat-title.ground     { color: #7ac99b; }
     .cat-title.crux       { color: #c9b97a; }
+
+    /* "3 of 214" counter shown during search */
+    .cat-count {
+      font-size: 0.55rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .cat-count.visible { opacity: 1; }
 
     .cat-controls {
       display: flex;
@@ -161,7 +258,6 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     .cat-block.collapsed .collapse-btn .arrow { transform: rotate(-90deg); }
 
     .term-list {
-      /* Bottom padding lives here so it disappears when collapsed */
       padding-bottom: 2.5rem;
     }
     .cat-block.collapsed .term-list { display: none; }
@@ -181,18 +277,44 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     .lex-term-row:hover { padding-left: 0.5rem; background: var(--bg-panel); }
     .lex-term-row:hover .lex-term-name { color: var(--ink); }
 
+    /* Hidden during search filter */
+    .lex-term-row.lex-hidden,
+    .lex-term-row.lex-hidden + .lex-poem-list {
+      display: none !important;
+    }
+
     .lex-term-name {
       font-size: 0.88rem;
       color: var(--muted);
       letter-spacing: 0.03em;
       transition: color 0.15s;
     }
+    /* Highlighted matched substring */
+    .lex-term-name mark {
+      background: none;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
     .lex-term-meta {
       display: flex;
       align-items: center;
       gap: 0.5rem;
       flex-shrink: 0;
     }
+
+    /* Cross-category badge: "also in: atmosphere · crux" */
+    .lex-also {
+      font-size: 0.5rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      opacity: 0;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .lex-term-row:hover .lex-also,
+    .lex-also.lex-also-search { opacity: 1; }
+
     .lex-term-count {
       font-size: 0.63rem;
       color: var(--muted);
@@ -220,7 +342,7 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     }
     .lex-term-row.open .lex-chevron { transform: rotate(90deg); }
 
-    /* Poem sub-list — hidden by default, flex when .open */
+    /* Poem sub-list */
     .lex-poem-list {
       display: none;
       flex-direction: column;
@@ -239,11 +361,43 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       display: block;
     }
     .lex-poem-list a:hover { color: var(--ink); }
+
+    /* "No results" message per category */
+    .lex-no-results {
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      padding: 1.2rem 0 0.8rem;
+      opacity: 0.6;
+      display: none;
+    }
+    .lex-no-results.visible { display: block; }
   </style>
 
   <div class="page-header">
     <h1>Lexicon</h1>
     <p class="subtitle">All terms — by category</p>
+  </div>
+
+  <!-- Search bar -->
+  <div class="lex-search-wrap">
+    <div class="lex-search-inner">
+      <!-- search icon -->
+      <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="6.5" cy="6.5" r="4.5"/>
+        <line x1="10" y1="10" x2="14" y2="14"/>
+      </svg>
+      <input
+        id="lex-search"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="search terms across all categories…"
+        aria-label="Search lexicon terms"
+      />
+      <button class="search-clear" id="lex-clear" aria-label="Clear search" title="Clear">✕</button>
+    </div>
+    <span class="lex-search-hint" id="lex-hint">searching all categories</span>
   </div>
 
   <div id="lex-data" data-taxonomy={taxonomyB64} data-base={base} hidden></div>
@@ -252,7 +406,10 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     {categories.map(({ key, label }) => (
       <div class="cat-block" id={`block-${key}`} data-key={key}>
         <div class={`cat-header ${key}`}>
-          <span class={`cat-title ${key}`}>{label}</span>
+          <div class="cat-header-left">
+            <span class={`cat-title ${key}`}>{label}</span>
+            <span class="cat-count" id={`count-${key}`}></span>
+          </div>
           <div class="cat-controls">
             <button class="sort-btn active" data-key={key} data-sort="alpha">A–Z</button>
             <button class="sort-btn"        data-key={key} data-sort="freq">most used</button>
@@ -272,15 +429,39 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     const base     = dataEl.dataset.base;
     const taxonomy = JSON.parse(atob(dataEl.dataset.taxonomy));
 
+    // Build a flat map: term → [categories it appears in]
+    // Used for cross-category "also in:" badges.
+    const termCategories = {};
+    for (const [cat, terms] of Object.entries(taxonomy)) {
+      for (const { term } of terms) {
+        if (!termCategories[term]) termCategories[term] = [];
+        termCategories[term].push(cat);
+      }
+    }
+
     const state = {};
     for (const key of Object.keys(taxonomy)) {
       state[key] = { sort: 'alpha', collapsed: false };
     }
 
+    let currentQuery = '';
+
     function esc(str) {
       return String(str)
         .replace(/&/g,'&amp;').replace(/</g,'&lt;')
         .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    // Wrap matched substring in <mark> for highlighting.
+    function highlight(term, query) {
+      if (!query) return esc(term);
+      const idx = term.toLowerCase().indexOf(query.toLowerCase());
+      if (idx === -1) return esc(term);
+      return (
+        esc(term.slice(0, idx)) +
+        '<mark>' + esc(term.slice(idx, idx + query.length)) + '</mark>' +
+        esc(term.slice(idx + query.length))
+      );
     }
 
     function renderList(key) {
@@ -298,16 +479,22 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
 
       container.innerHTML = terms.map(({ term, poems }) => {
         const safeId = `${key}-${term.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`;
-        // Each poem link on its own line — joined with newline so they
-        // don't concatenate visually if CSS somehow fails
+
+        // Cross-category badge: other categories this term also appears in
+        const otherCats = (termCategories[term] || []).filter(c => c !== key);
+        const alsoHtml  = otherCats.length > 0
+          ? `<span class="lex-also">also in: ${otherCats.map(esc).join(' · ')}</span>`
+          : '';
+
         const poemLinks = poems
           .map(p => `<a href="${base}/poem/${esc(p.slug)}">${esc(p.title)}</a>`)
           .join('\n');
 
         return `<div>
-  <div class="lex-term-row" data-id="${safeId}">
-    <span class="lex-term-name">${esc(term)}</span>
+  <div class="lex-term-row" data-id="${safeId}" data-term="${esc(term)}">
+    <span class="lex-term-name">${highlight(term, currentQuery)}</span>
     <span class="lex-term-meta">
+      ${alsoHtml}
       <a class="lex-browse-link"
          href="${base}/browse?term=${encodeURIComponent(term)}&cats=${key}"
          title="Filter in Browse"
@@ -328,7 +515,95 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
           row.classList.toggle('open');
         });
       });
+
+      // Ensure no-results placeholder exists
+      let noRes = container.querySelector('.lex-no-results');
+      if (!noRes) {
+        noRes = document.createElement('p');
+        noRes.className = 'lex-no-results';
+        noRes.textContent = 'no matching terms';
+        container.appendChild(noRes);
+      }
+
+      // Apply current filter
+      applyFilter(key);
     }
+
+    // Filter visible rows in one category and update its count badge.
+    function applyFilter(key) {
+      const container  = document.getElementById(`list-${key}`);
+      const countEl    = document.getElementById(`count-${key}`);
+      if (!container) return;
+
+      const q     = currentQuery.toLowerCase();
+      const rows  = container.querySelectorAll('.lex-term-row');
+      const noRes = container.querySelector('.lex-no-results');
+      let visible = 0;
+
+      rows.forEach(row => {
+        const term    = row.dataset.term || '';
+        const matches = !q || term.toLowerCase().includes(q);
+        row.classList.toggle('lex-hidden', !matches);
+
+        // Update highlight in term name
+        const nameEl = row.querySelector('.lex-term-name');
+        if (nameEl) nameEl.innerHTML = highlight(term, currentQuery);
+
+        // Show "also in" badge whenever search is active
+        const alsoEl = row.querySelector('.lex-also');
+        if (alsoEl) alsoEl.classList.toggle('lex-also-search', !!q);
+
+        if (matches) visible++;
+      });
+
+      // Count badge
+      const total = rows.length;
+      if (q && countEl) {
+        countEl.textContent = `${visible} of ${total}`;
+        countEl.classList.toggle('visible', true);
+      } else if (countEl) {
+        countEl.classList.remove('visible');
+      }
+
+      // No-results message
+      if (noRes) noRes.classList.toggle('visible', q !== '' && visible === 0);
+    }
+
+    // ── Search input handling ──────────────────────────────────────────────
+
+    const searchInput = document.getElementById('lex-search');
+    const clearBtn    = document.getElementById('lex-clear');
+    const hintEl      = document.getElementById('lex-hint');
+
+    function runSearch(q) {
+      currentQuery = q.trim();
+      const active = currentQuery.length > 0;
+
+      // Update hint + clear button visibility
+      hintEl.classList.toggle('visible', active);
+      clearBtn.classList.toggle('visible', active);
+
+      // Re-render all lists so highlights update, then filter
+      for (const key of Object.keys(taxonomy)) {
+        renderList(key);
+      }
+    }
+
+    searchInput.addEventListener('input', () => runSearch(searchInput.value));
+
+    searchInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') clearSearch();
+    });
+
+    clearBtn.addEventListener('click', clearSearch);
+
+    function clearSearch() {
+      searchInput.value = '';
+      runSearch('');
+      searchInput.focus();
+    }
+
+    // ── Sort buttons ───────────────────────────────────────────────────────
 
     document.querySelectorAll('.sort-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -346,6 +621,8 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
       });
     });
 
+    // ── Collapse buttons ───────────────────────────────────────────────────
+
     document.querySelectorAll('.collapse-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const key   = btn.dataset.key;
@@ -354,6 +631,8 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
         block.classList.toggle('collapsed', state[key].collapsed);
       });
     });
+
+    // ── Initial render ─────────────────────────────────────────────────────
 
     for (const key of Object.keys(taxonomy)) renderList(key);
   </script>
