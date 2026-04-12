@@ -48,9 +48,23 @@
               "icon": "lucide-file",
               "title": "Exile"
             }
+          },
+          {
+            "id": "c1bd93ce049a6232",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Misplaced.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Misplaced"
+            }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -225,10 +239,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "bf4471232cfdb501",
+  "active": "c1bd93ce049a6232",
   "lastOpenFiles": [
-    "Continuity.md",
+    "Full Service.md",
+    "Misplaced.md",
     "Exile.md",
+    "Continuity.md",
     "The Holy Ghost.md",
     "Pathos.md",
     "It.md",
@@ -251,8 +267,6 @@
     "The Sightless Eye.md",
     "Death.md",
     "At Once.md",
-    "Thinking.md",
-    "The Word.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
