@@ -35,6 +35,7 @@ domain:
   - individuation
   - consciousness
   - epistemology
+  - meaning
 crux:
   - self-consumption
   - involution
