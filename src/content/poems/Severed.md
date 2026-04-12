@@ -16,9 +16,9 @@ tags:
   - people
   - exist
 related:
-  - "[[Autopsy]]"
   - "[[Three Bed House]]"
-  - "[[One-Way]]"
+  - "[[Genesis]]"
+  - "[[Mortar]]"
 word-count: "26"
 domain:
   - ego
