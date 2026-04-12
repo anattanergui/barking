@@ -21,7 +21,7 @@ related:
   - "[[Talking Shit]]"
   - "[[The Industry]]"
   - "[[Translation]]"
-word-count: "96"
+word-count: "93"
 domain:
   - health
   - body
@@ -57,7 +57,7 @@ Refers only to
 That 
 Which is whole
 
-And once again — that — 
+And  — that — 
 Can never be
 Has never been
 Will never be
