@@ -29,6 +29,10 @@ atmosphere:
 ground:
   - nondual
 description: Pathos — suffering, fate, aloneness — is the only ground of compassion. Empathy is bastardisation — assuming separateness, it tries to bridge.
+related:
+  - "[[Severed]]"
+  - "[[Imago Dei]]"
+  - "[[The Divine]]"
 ---
 # Pathos
 Pathos is 
