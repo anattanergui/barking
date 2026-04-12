@@ -10,30 +10,32 @@ tags:
   - wish
   - ever
 domain:
-  - presence
-  - relation
+  - being
+  - self
 crux:
   - sufficiency
 atmosphere:
+  - bare
   - tender
-  - still
 ground:
-  - immanence
-description: I am. You are — unknown poet, you ever would be
-word-count: "23"
+  - nondual
+description: I am. You are. That's all your wishes will ever be
+word-count: "21"
 related:
   - "[[Translation]]"
-  - "[[Words]]"
+  - "[[I Am That]]"
+  - "[[The Empty Instant]]"
 ---
 # No Title
 Unknown poet
 I am 
 You are
 
-That’s all 
-You can wish to be
 That’s all
+Your wishes
+Will ever be
+That's all
 
-You ever are
+You are
 And
-Would be
+Will be
