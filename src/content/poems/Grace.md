@@ -8,6 +8,12 @@ tags:
   - mind
   - god
   - intermediaries
+  - insight
+  - epiphany
+  - independent
+  - hidden
+  - gift
+  - special
 word-count: "89"
 domain:
   - grace

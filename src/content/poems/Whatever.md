@@ -5,10 +5,10 @@ tags:
   - death
   - reduced
   - something
-  - brother
   - words
   - all
   - not
+  - bother
 word-count: "22"
 related:
   - "[[Oblivion]]"
