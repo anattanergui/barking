@@ -16,9 +16,9 @@ tags:
   - people
   - exist
 related:
-  - "[[One-Way]]"
   - "[[Autopsy]]"
   - "[[Three Bed House]]"
+  - "[[One-Way]]"
 word-count: "26"
 domain:
   - ego
