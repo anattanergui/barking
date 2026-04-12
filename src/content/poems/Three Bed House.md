@@ -41,7 +41,7 @@ Connected —
 Contracted 
 Among walls, their own 
 Worlds
-While awake [[]]
+While awake
 
 Sidled 
 Half-bed of a double 
