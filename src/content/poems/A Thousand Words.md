@@ -9,7 +9,22 @@ tags:
   - comprehension
   - dissolve
   - perception
-
+  - communication
+  - falsest
+  - form
+  - mortality
+  - immortality
+  - individual
+  - expression
+  - cat
+  - man
+  - perceived
+  - perceiver
+  - being
+  - perceptions
+  - word
+  - meaning
+  - know
 related:
   - "[[Tat Tvam Nasi]]"
   - "[[Awareness]]"
@@ -18,10 +33,15 @@ related:
 domain:
   - expression
   - individuation
+  - consciousness
+  - epistemology
 crux:
   - self-consumption
+  - involution
 atmosphere:
   - unflinching
+  - relentless
+  - vertiginous
 ground:
   - nondual
 word-count: "1000"

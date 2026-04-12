@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Nothing Is At Stake.md",
+                "file": "A Thousand Words.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Nothing Is At Stake"
+              "title": "A Thousand Words"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "stake",
+                "query": "thousand words",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -79,7 +79,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -199,8 +200,9 @@
   },
   "active": "f2a87d72f0e66d21",
   "lastOpenFiles": [
-    "What.md",
+    "Awareness.md",
     "Nothing Is At Stake.md",
+    "What.md",
     "Whatever.md",
     "Severed.md",
     "Continuity.md",
@@ -224,7 +226,6 @@
     "Half-Life.md",
     "Growing Up.md",
     "Maya.md",
-    "Beholding.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
