@@ -12,17 +12,21 @@ tags:
   - barrel
   - stripped
 domain:
-  - haunting
-  - inescapability
+  - ego
+  - suicide
+  - self
 crux:
-  - irresolvability
+  - paradox
 atmosphere:
-  - tormented
-  - unflinching
+  - relentless
+  - stark
 ground:
-  - self-inquiry
+  - nondual
+  - dialectical
 related:
   - "[[Suicide]]"
+  - "[[Dis-identification]]"
+  - "[[Illusory Self]]"
 word-count: "188"
 ---
 # The Holy Ghost
