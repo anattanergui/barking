@@ -11,22 +11,21 @@ tags:
 word-count: "89"
 domain:
   - grace
-  - inquiry
+  - thought
 crux:
-  - deification
+  - apotheosis
 atmosphere:
   - declarative
   - expansive
 ground:
-  - rationalist
-  - iconoclastic
+  - rational
 related:
-  - "[[Mercy]]"
-  - "[[Equations]]"
-  - "[[The Holy Ghost]]"
+  - "[[Thinking]]"
+  - "[[The God Complex]]"
+  - "[[If Then]]"
+description: Grace is not epiphany — but focused independent thought that seeks, finds, and becomes the mind of God
 ---
-
-c
+# Grace
 Grace is not happenstance —
 Not some sudden or special moment of insight
 Not a lightning strike

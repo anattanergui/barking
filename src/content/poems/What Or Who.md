@@ -12,14 +12,14 @@ tags:
 word-count: "55"
 domain:
   - embodiment
-  - inquiry
+  - no-self
 crux:
   - dissolution
 atmosphere:
   - dispassionate
 ground:
-  - no-self
-description: Caught in physicality, seeking freedom — but the one caught is never found.
+  - nondual
+description: Caught in physicality, seeking freedom — but the one caught is never found
 related:
   - "[[De-Supposition]]"
   - "[[On Whom]]"
