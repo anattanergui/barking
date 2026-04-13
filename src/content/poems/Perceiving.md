@@ -18,8 +18,8 @@ tags:
 word-count: "57"
 description: Perceiving is movement — where life and sorrow live
 related:
-  - "[[Stillness In Motion]]"
   - "[[The Still Point]]"
+  - "[[Grief]]"
   - "[[Equanimity]]"
 domain:
   - perception

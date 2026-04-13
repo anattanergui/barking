@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Subtle.md",
+                "file": "To —.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Subtle"
+              "title": "To —"
             }
           },
           {
@@ -27,16 +27,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "In.md",
+                "file": "Perceiving.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "In"
+              "title": "Perceiving"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:touching",
+                "query": "gesture more",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +88,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -211,19 +211,20 @@
       "bases:Create new base": false
     }
   },
-  "active": "eca235c89b86dcf5",
+  "active": "fd0f4aac8bde5fec",
   "lastOpenFiles": [
     "Subtle.md",
+    "Perceiving.md",
+    "The Still Point.md",
+    "Equanimity.md",
+    "Pavement Sutra.md",
     "In.md",
     "Unseen Form.md",
     "Itself.md",
-    "Perceiving.md",
     "Sympathy.md",
     "Sensitivity.md",
     "No Title.md",
     "No-Self Talk.md",
-    "Equanimity.md",
-    "The Still Point.md",
     "The Wall Wins.md",
     "Paradox.md",
     "Oxymoron.md",
@@ -238,7 +239,6 @@
     "Severed.md",
     "Continuity.md",
     "Exile.md",
-    "Grace.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

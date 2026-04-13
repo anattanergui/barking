@@ -21,7 +21,7 @@ related:
   - "[[Devotion]]"
   - "[[Rabba]]"
   - "[[Godhead]]"
-word-count: "37"
+word-count: "35"
 ---
 # To —
 God
@@ -30,9 +30,9 @@ Not a single word more
 Have I got left
 To say
 Not a single gesture more
-Left to make
+To make
 
-And if I must —
+If I must —
 What but
 A swell 
 In my chest
