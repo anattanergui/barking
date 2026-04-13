@@ -14,16 +14,14 @@ related:
   - "[[Those Who Know Speak]]"
 domain:
   - knowledge
-  - language
-
+  - speech
 crux:
   - nonduality
 atmosphere:
   - luminous
 ground:
   - apophatic
-description:
-  In absolute unknowing all becomes known — in utter unspeakability, all becomes speakable.
+description: In absolute unknowing all becomes known — in utter unspeakability, all becomes speakable.
 ---
 # In
 In absolute unknowing
