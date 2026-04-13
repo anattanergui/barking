@@ -20,7 +20,7 @@ ground:
 related:
   - "[[Devotion]]"
   - "[[Rabba]]"
-  - "[[Godhead]]"
+  - "[[To Whom But You]]"
 word-count: "35"
 ---
 # To —
