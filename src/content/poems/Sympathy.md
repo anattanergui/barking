@@ -1,5 +1,4 @@
 ---
-title: Compassion
 tags:
   - pain
   - wound
@@ -11,19 +10,23 @@ tags:
   - feelings
   - emotional
   - physical
+  - pathos
 domain:
-  - witness
+  - pathos
+  - care
 crux:
-  - relinquishment
+  - sympathy
 atmosphere:
-  - austere
+  - tender
 ground:
-  - dialectical
-related:
-  - "[[Be Yourself]]"
+  - ethical
+  - deductive
+description: To leave someone alone to die in their own way — isn't that sympathy - "[[Be Yourself]]"
 word-count: "184"
+related:
+  - "[[Pathos]]"
 ---
-# Compassion
+# Sympathy
 When I am in agonising pain —
 Physical or emotional —
 Do I want around me
@@ -79,4 +82,4 @@ About his feelings
 In my last moments
 
 Isn’t that
-Compassion
+Sympathy
