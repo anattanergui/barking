@@ -15,7 +15,7 @@ tags:
   - escape
   - life
   - sorrow
-word-count: "60"
+word-count: "57"
 description: Perceiving is movement — where life and sorrow live
 related:
   - "[[Stillness In Motion]]"
@@ -54,7 +54,7 @@ Before
 The inhalation
 After
 
-What is time 
+What's time 
 But movement 
 Perceived
 
@@ -64,7 +64,7 @@ From perception
 Perceiving 
 Is movement
 
-That is where 
+That's where 
 Life lives
-That is where
+That's where
 Sorrow lives
