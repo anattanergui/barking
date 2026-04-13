@@ -11,6 +11,9 @@ tags:
   - emotional
   - physical
   - pathos
+  - sympathy
+  - silence
+  - muffle
 domain:
   - pathos
   - care
@@ -21,10 +24,11 @@ atmosphere:
 ground:
   - ethical
   - deductive
-description: To leave someone alone to die in their own way — isn't that sympathy - "[[Be Yourself]]"
+description: To leave someone alone to die in their own way — isn't that sympathy -
 word-count: "184"
 related:
   - "[[Pathos]]"
+  - "[[Be Yourself]]"
 ---
 # Sympathy
 When I am in agonising pain —
