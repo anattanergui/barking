@@ -29,7 +29,7 @@
               "state": {
                 "file": "Sympathy.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Sympathy"
