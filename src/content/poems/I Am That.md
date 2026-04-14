@@ -21,9 +21,7 @@ ground:
   - realized
 related:
   - "[[An’al Haq]]"
-  - "[[Rabba]]"
-  - "[[Unwritten]]"
-  - "[[Identity]]"
+  - "[[Metaphysical Rot]]"
 word-count: "78"
 description: Speaks from inside total identity with the Absolute — self as God, nothing left to ask or want.
 ---
