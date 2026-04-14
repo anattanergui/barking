@@ -21,6 +21,7 @@ ground:
 related:
   - "[[Definition]]"
   - "[[Eternal]]"
+  - "[[Metaphysical Rot]]"
 word-count: "28"
 type: poem
 ---

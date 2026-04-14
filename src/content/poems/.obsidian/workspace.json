@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Futility.md",
+                "file": "Patheticnicity.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Futility"
+              "title": "Patheticnicity"
             }
           },
           {
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "raises it",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,6 +213,7 @@
   },
   "active": "fd0f4aac8bde5fec",
   "lastOpenFiles": [
+    "Futility.md",
     "Patheticnicity.md",
     "To —.md",
     "Subtle.md",
@@ -238,7 +239,6 @@
     "Nothing Is At Stake.md",
     "What.md",
     "Whatever.md",
-    "Severed.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
