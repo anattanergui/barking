@@ -20,6 +20,7 @@ ground:
   - ontological
 related:
   - "[[Oblivion]]"
+  - "[[Patheticnicity]]"
 word-count: "25"
 ---
 # Futility

@@ -20,12 +20,11 @@ ground:
   - no-self
 related:
   - "[[Definition]]"
-  - "[[Who Cares]]"
   - "[[Eternal]]"
 word-count: "28"
 type: poem
 ---
-# Not His 
+# Patheticnicity
 Through writing —
 Man gives himself substantiation
 That does not exist
