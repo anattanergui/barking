@@ -19,7 +19,6 @@ atmosphere:
 ground:
   - critical
   - allegorical
-  - a
 related:
   - "[[Protector Parrots]]"
   - "[[What Medicine Tonight]]"

@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "59e0291511544850",
+        "id": "0d1f137e8c34ed5e",
         "type": "tabs",
         "children": [
           {
-            "id": "fd0f4aac8bde5fec",
+            "id": "f9f58a87e110444b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "I Am That.md",
+                "file": "Risk Assessment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "I Am That"
-            }
-          },
-          {
-            "id": "a7411019f77eacc3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Reprieves.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Reprieves"
-            }
-          },
-          {
-            "id": "eca235c89b86dcf5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Perceiving.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Perceiving"
+              "title": "Risk Assessment"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -82,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "what could i wish knowing",
+                "query": "risk ass",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,12 +74,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -226,17 +197,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "a7411019f77eacc3",
+  "active": "f9f58a87e110444b",
   "lastOpenFiles": [
-    "Solitude.md",
+    "Perceiving.md",
     "Reprieves.md",
     "I Am That.md",
+    "Solitude.md",
     "Unwritten.md",
     "Patheticnicity.md",
     "Futility.md",
     "To —.md",
     "Subtle.md",
-    "Perceiving.md",
     "The Still Point.md",
     "Equanimity.md",
     "Pavement Sutra.md",
