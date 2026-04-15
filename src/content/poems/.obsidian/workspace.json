@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "What.md",
+                "file": "Fear.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What"
+              "title": "Fear"
             }
           },
           {
@@ -242,6 +242,7 @@
   },
   "active": "cf2c9d45f7cf4cd3",
   "lastOpenFiles": [
+    "What.md",
     "Fear.md",
     "Shows.md",
     "Shunning.md",
@@ -267,7 +268,6 @@
     "Sympathy.md",
     "Sensitivity.md",
     "No Title.md",
-    "No-Self Talk.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

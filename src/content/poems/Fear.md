@@ -20,8 +20,8 @@ tags:
   - self
 related:
   - "[[Cost Of Space]]"
+  - "[[Who Cares]]"
   - "[[The Accomplishment]]"
-  - "[[Heretics]]"
 word-count: "107"
 domain:
   - speech
