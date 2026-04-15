@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Shows.md",
+                "file": "Three Bed House.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shows"
+              "title": "Three Bed House"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Shunning.md",
+                "file": "Reprieves.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Shunning"
+              "title": "Reprieves"
             }
           },
           {
@@ -63,8 +63,7 @@
               "title": "Word"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -83,7 +82,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -96,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "never born",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,8 +116,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -240,34 +238,34 @@
       "bases:Create new base": false
     }
   },
-  "active": "cf2c9d45f7cf4cd3",
+  "active": "72c3fac121af05d9",
   "lastOpenFiles": [
-    "What.md",
-    "Fear.md",
-    "Shows.md",
-    "Shunning.md",
+    "Oxymoron.md",
+    "Paradox.md",
+    "No-Self Talk.md",
+    "Sensitivity.md",
+    "Sympathy.md",
+    "Subtle.md",
+    "In.md",
+    "Perceiving.md",
+    "To —.md",
+    "Futility.md",
+    "Patheticnicity.md",
+    "I Am That.md",
+    "Reprieves.md",
+    "Risk Assessment.md",
     "Word.md",
     "Three Bed House.md",
+    "Shows.md",
+    "Fear.md",
+    "Shunning.md",
+    "What.md",
     "Enough.md",
-    "Risk Assessment.md",
-    "Perceiving.md",
-    "Reprieves.md",
-    "I Am That.md",
     "Solitude.md",
     "Unwritten.md",
-    "Patheticnicity.md",
-    "Futility.md",
-    "To —.md",
-    "Subtle.md",
     "The Still Point.md",
     "Equanimity.md",
     "Pavement Sutra.md",
-    "In.md",
-    "Unseen Form.md",
-    "Itself.md",
-    "Sympathy.md",
-    "Sensitivity.md",
-    "No Title.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

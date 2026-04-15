@@ -22,7 +22,7 @@ related:
   - "[[Definition]]"
   - "[[Eternal]]"
   - "[[Metaphysical Rot]]"
-word-count: "28"
+word-count: "27"
 type: poem
 ---
 # Patheticnicity
