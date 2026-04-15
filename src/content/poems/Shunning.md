@@ -25,7 +25,6 @@ related:
   - "[[Summum Bukmun Umyum]]"
 domain:
   - ego
-  - exclusion
 crux:
   - fear
 atmosphere:

@@ -13,18 +13,17 @@ tags:
   - fear
 word-count: "25"
 domain:
-  - appearance
-  - fear
+  - ego
 crux:
-  - revelation
+  - fear
 atmosphere:
-  - clinical
+  - diagnostic
 ground:
-  - observational
+  - lucid
 description: Fear shows — as wall, mask, veil — in postures, words, expressions.
 related:
   - "[[Severed]]"
-  - "[[Three Bed House]]"
+  - "[[Shunning]]"
 ---
 
 # Shows
