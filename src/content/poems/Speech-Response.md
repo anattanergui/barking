@@ -17,8 +17,8 @@ tags:
   - framing
   - socialised
 related:
+  - "[[Cost Of Space]]"
   - "[[The Accomplishment]]"
-  - "[[The Forgetting Itself]]"
   - "[[Heretics]]"
 word-count: "89"
 domain:
