@@ -16,6 +16,8 @@ tags:
   - collapse
   - framing
   - socialised
+  - absent
+  - self
 related:
   - "[[Cost Of Space]]"
   - "[[The Accomplishment]]"
