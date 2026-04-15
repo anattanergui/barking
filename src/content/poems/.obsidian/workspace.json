@@ -95,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "religion",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,8 +116,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -241,6 +240,8 @@
   },
   "active": "f9f58a87e110444b",
   "lastOpenFiles": [
+    "Belonging.md",
+    "Thinking.md",
     "Threshold.md",
     "Patheticnicity.md",
     "Theology.md",
@@ -265,8 +266,6 @@
     "Sensitivity.md",
     "Sympathy.md",
     "Subtle.md",
-    "In.md",
-    "Perceiving.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
