@@ -12,6 +12,7 @@ word-count: "14"
 related:
   - "[[As]]"
   - "[[The Empty Instant]]"
+  - "[[Fear]]"
 domain:
   - desire
   - fear
