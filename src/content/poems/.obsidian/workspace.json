@@ -36,6 +36,20 @@
             }
           },
           {
+            "id": "cf2c9d45f7cf4cd3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Speech-Response.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Speech-Response"
+            }
+          },
+          {
             "id": "d82dbc8bee814bee",
             "type": "leaf",
             "state": {
@@ -50,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -107,7 +121,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -225,10 +240,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "bd0d586994ec4594",
+  "active": "cf2c9d45f7cf4cd3",
   "lastOpenFiles": [
-    "Shows.md",
     "Shunning.md",
+    "Speech-Response.md",
+    "Shows.md",
     "Three Bed House.md",
     "Word.md",
     "Enough.md",
@@ -252,7 +268,6 @@
     "Sensitivity.md",
     "No Title.md",
     "No-Self Talk.md",
-    "The Wall Wins.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

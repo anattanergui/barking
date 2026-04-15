@@ -1,0 +1,12 @@
+{
+  "types": {
+    "aliases": "aliases",
+    "cssclasses": "multitext",
+    "tags": "tags",
+    "domain": "multitext",
+    "crux": "multitext",
+    "atmosphere": "multitext",
+    "ground": "multitext",
+    "description": "multitext"
+  }
+}

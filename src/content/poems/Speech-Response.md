@@ -1,0 +1,70 @@
+---
+tags:
+  - fear
+  - speech
+  - response
+  - human
+  - congealment
+  - costs
+  - biological
+  - expression
+  - demonstration
+  - time
+  - unconditioned
+  - acceptable
+  - society
+  - collapse
+  - framing
+  - socialised
+related:
+  - "[[The Accomplishment]]"
+  - "[[The Forgetting Itself]]"
+  - "[[Heretics]]"
+word-count: "89"
+domain:
+  - speech
+  - fear
+crux:
+  - dissolution
+atmosphere:
+  - clinical
+ground:
+  - constructivist
+description: Fear is speech-response based on conditioning about acceptable speech that applies only to humans
+---
+
+# Speech-Response
+Fear is a speech-response
+Based on conditioning
+About acceptable speech
+That applies only
+To humans
+
+It is a congealment 
+Of speech
+And physical response that speech
+Incurs — costs —
+In oneself and other
+
+Its biological expression
+Or behavioural demonstration
+Could not —
+Would not exist
+In a human or animal
+
+Unconditioned 
+By acceptable speech
+
+Fear — in humans —
+Is identical to socialised speech
+Without which 
+Society would collapse
+
+Without speech
+Beyond society
+Outside the time-based framing
+Of human language
+The response is not fear
+
+But the absence —
+Of the one afraid  
