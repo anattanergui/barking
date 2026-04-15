@@ -23,6 +23,7 @@ atmosphere:
 ground:
   - pragmatic
 description: Thinking followed to its own end — on thought as the tool that dissolves itself.
+word-count: "30"
 ---
 # Thinking 
 Thinking 

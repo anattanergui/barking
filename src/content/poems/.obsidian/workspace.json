@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Threshold.md",
+                "file": "Thinking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Threshold"
+              "title": "Thinking"
             }
           },
           {
@@ -95,7 +95,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "theolog",
+                "query": "religion",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -116,7 +116,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -240,6 +241,7 @@
   },
   "active": "f9f58a87e110444b",
   "lastOpenFiles": [
+    "Threshold.md",
     "Patheticnicity.md",
     "Theology.md",
     "No Title.md",
@@ -265,7 +267,6 @@
     "Subtle.md",
     "In.md",
     "Perceiving.md",
-    "To —.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
