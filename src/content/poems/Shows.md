@@ -10,18 +10,18 @@ tags:
   - words
   - expressions
   - shows
-  - ego
+  - fear
 word-count: "25"
 domain:
-  - ego
   - appearance
+  - fear
 crux:
   - revelation
 atmosphere:
-  - forensic
+  - clinical
 ground:
-  - diagnostic
-description: Ego shows — as wall, mask, veil — in postures, words, expressions.
+  - observational
+description: Fear shows — as wall, mask, veil — in postures, words, expressions.
 related:
   - "[[Severed]]"
   - "[[Three Bed House]]"
@@ -42,4 +42,4 @@ Words
 Expressions
 
 Shows
-Ego  
+Fear
