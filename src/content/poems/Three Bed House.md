@@ -20,7 +20,7 @@ tags:
 related:
   - "[[Half-Life]]"
   - "[[Genesis]]"
-  - "[[Abbatoir]]"
+  - "[[Shunning]]"
 word-count: "37"
 domain:
   - domesticity

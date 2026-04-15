@@ -8,8 +8,8 @@ tags:
   - sometimes
 related:
   - "[[Enough]]"
-  - "[[A Million Words]]"
-  - "[[An’al Haq]]"
+  - "[[The Word]]"
+  - "[[Heretics]]"
 word-count: "7"
 domain:
   - logos
