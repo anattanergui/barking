@@ -20,20 +20,21 @@ related:
   - "[[Cost Of Space]]"
   - "[[The Accomplishment]]"
   - "[[Heretics]]"
-word-count: "89"
+word-count: "107"
 domain:
   - speech
   - fear
+  - self
 crux:
   - dissolution
 atmosphere:
-  - clinical
+  - forensic
 ground:
-  - constructivist
+  - no-self
 description: Fear is speech-response based on conditioning about acceptable speech that applies only to humans
 ---
 
-# Speech-Response
+# Fear
 Fear is a speech-response
 Based on conditioning
 About acceptable speech
@@ -68,3 +69,9 @@ The response is not fear
 
 But the absence —
 Of the one afraid  
+
+Fear is not what 
+Self —  absent self — has
+Nor is fear — of, anything 
+It is what
+Self is
