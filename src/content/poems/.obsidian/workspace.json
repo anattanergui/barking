@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Space.md",
+                "file": "Cost Of Space.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Space"
+              "title": "Cost Of Space"
             }
           }
         ],
@@ -213,8 +213,8 @@
   },
   "active": "595ae444972dce18",
   "lastOpenFiles": [
-    "Till Grave.md",
     "Space.md",
+    "Till Grave.md",
     "Godhead.md",
     "Who Cares.md",
     "A Costume Speak.md",
