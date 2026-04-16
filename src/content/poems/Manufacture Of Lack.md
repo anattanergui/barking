@@ -26,9 +26,9 @@ ground:
   - political
   - ontological
 related:
-  - "[[Insatiability]]"
   - "[[The Industry]]"
   - "[[Talking Shit]]"
+  - "[[Space]]"
 word-count: "142"
 ---
 # Manufacture Of Lack
