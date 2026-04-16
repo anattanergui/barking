@@ -29,7 +29,7 @@ related:
   - "[[Manufacture Of Lack]]"
   - "[[Spacetime]]"
   - "[[The Image Inside]]"
-word-count: "99"
+word-count: "97"
 domain:
   - space
   - identity
@@ -42,44 +42,62 @@ ground:
 description: Are attraction and rejection properties of objects or space itself
 ---
 # Space
-Rejection is fundamental—
-The foremost mechanism
-By which any being
-Sentient or otherwise — is
-Exists, maintains
-Manifests, appears
+Rejection is 
+The fundamental, foremost
+Mechanism by which
+Any being, sentient or otherwise
+Maintains
+Manifests
 
-No body, no form
-Can be a body or form
-Without repelling —
-Dispelling, keeping apart
-The other
+No body
+No form
+Is ever a body or form
+Without repelling 
+Dispelling
+Keeping apart 
+Other
 The foreign
 
-Electrons repel electrons
-Cell reject invasion
-Borders dispel crossing
-Self refuses other 
+Electrons
+Repel electrons
 
-Identity through boundary
+Cells reject
+Invasion
+
+Borders dispel
+Crossing
+
+Self
+Refuses
+Other
+
+Identity is
+Through boundary
 Negation, repulsion
 Rejection
 
-Yet, no form
-No body, rejection or repulsion
+Yet
+No form or body
+Rejection or repulsion
 Exists 
+
 Without space
-For distance to be
+For distance
+To be
 
-Are rejection, repulsion, attraction
-Constituents of objects
+Is rejection, repulsion
+Attraction
+Constituent of object
 
-Or the fabric of space —
+Or the fabric
+Of space 
 Where they appear
 To be
 
-The cat
-Attracted to mouse
+The cat attracted
+To the mouse
+
 The mouse — attracting
 Rejecting 
+
 The cat
