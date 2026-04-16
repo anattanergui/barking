@@ -80,4 +80,7 @@ Or the fabric, space
 Where they appear
 To be
 
-c
+The cat attracted
+To mouse 
+Attracting — rejecting
+The cat
