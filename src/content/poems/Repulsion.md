@@ -29,7 +29,7 @@ related:
   - "[[Spacetime]]"
   - "[[The Image Inside]]"
   - "[[Indivisibility]]"
-word-count: "85"
+word-count: "83"
 domain:
   - rejection
   - attraction
