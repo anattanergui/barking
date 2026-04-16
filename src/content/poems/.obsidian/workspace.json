@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Rejection.md",
+                "file": "Repulsion.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Rejection"
+              "title": "Repulsion"
             }
           }
         ],
@@ -214,8 +214,9 @@
   "active": "595ae444972dce18",
   "lastOpenFiles": [
     "Manufacture Of Lack.md",
-    "Rejection.md",
+    "Repulsion.md",
     "Spacetime.md",
+    "The Image Inside.md",
     "Cost Of Space.md",
     "Till Grave.md",
     "Godhead.md",
@@ -238,7 +239,6 @@
     "Continuity.md",
     "Exile.md",
     "Misplaced.md",
-    "What Or Who.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

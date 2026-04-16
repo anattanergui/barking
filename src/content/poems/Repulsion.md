@@ -41,7 +41,7 @@ ground:
   - ontological
 description: Are attraction and rejection properties of objects or space itself
 ---
-# Rejection
+# Repulsion
 Rejection is 
 The fundamental, foremost
 Mechanism by which
