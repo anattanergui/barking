@@ -11,12 +11,12 @@ tags:
 word-count: "28"
 domain:
   - ethics
-ground:
-  - ontological
 crux:
   - primacy
 atmosphere:
   - logical
+ground:
+  - ontological
 related:
   - "[[Gateway]]"
   - "[[Awareness]]"
