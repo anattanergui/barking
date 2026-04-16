@@ -22,7 +22,7 @@ ground:
   - logical
 related:
   - "[[First Philosophy]]"
-  - "[[Space]]"
+  - "[[Rejection]]"
 word-count: "136"
 ---
 # Cost Of Space

@@ -28,7 +28,7 @@ ground:
 related:
   - "[[The Industry]]"
   - "[[Talking Shit]]"
-  - "[[Space]]"
+  - "[[Rejection]]"
 word-count: "142"
 ---
 # Manufacture Of Lack
