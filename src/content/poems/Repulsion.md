@@ -26,10 +26,10 @@ tags:
   - rejecting
   - repulsion
 related:
-  - "[[Manufacture Of Lack]]"
   - "[[Spacetime]]"
   - "[[The Image Inside]]"
-word-count: "97"
+  - "[[Indivisibility]]"
+word-count: "85"
 domain:
   - rejection
   - attraction
@@ -58,46 +58,26 @@ Keeping apart
 Other
 The foreign
 
-Electrons
-Repel electrons
+Electrons repel
+Electrons —
+Cells, self, borders
+Dispel, reject
+The foreign
 
-Cells reject
-Invasion
-
-Borders dispel
-Crossing
-
-Self
-Refuses
-Other
-
-Identity is
-Through boundary
+Identity is — boundary
 Negation, repulsion
 Rejection
 
 Yet
-No form or body
-Rejection or repulsion
-Exists 
+Form or body
+Is not — without distance
+Space
 
-Without space
-For distance
-To be
-
-Is rejection, repulsion
-Attraction
-Constituent of object
-
-Or the fabric
-Of space 
+Is rejection, attraction
+Constituent
+Of object
+Or the fabric, space
 Where they appear
 To be
 
-The cat attracted
-To the mouse
-
-The mouse — attracting
-Rejecting 
-
-The cat
+c
