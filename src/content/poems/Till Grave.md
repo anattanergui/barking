@@ -25,8 +25,8 @@ tags:
   - permits
 related:
   - "[[Human Condition]]"
-  - "[[Who Cares]]"
   - "[[Equations]]"
+  - "[[Godhead]]"
 word-count: "127"
 domain:
   - awareness
