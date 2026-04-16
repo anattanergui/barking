@@ -27,7 +27,7 @@ related:
   - "[[Human Condition]]"
   - "[[Who Cares]]"
   - "[[Equations]]"
-word-count: "124"
+word-count: "123"
 domain:
   - awareness
 crux:
