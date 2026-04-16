@@ -27,7 +27,7 @@ related:
   - "[[Human Condition]]"
   - "[[Who Cares]]"
   - "[[Equations]]"
-word-count: "123"
+word-count: "127"
 domain:
   - awareness
 crux:
@@ -93,8 +93,9 @@ On this side
 Of the grave 
 Awareness permits 
 No experience
-Nor abiding state
+No abiding state
 
+But only a concept — 
 Of nondual awareness
 Unity consciousness
 Unsplit duality
