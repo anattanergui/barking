@@ -31,8 +31,8 @@ related:
   - "[[The Image Inside]]"
 word-count: "97"
 domain:
-  - space
-  - identity
+  - rejection
+  - attraction
 crux:
   - nonduality
 atmosphere:
