@@ -97,5 +97,5 @@ Nor abiding state
 
 Of nondual awareness
 Unity consciousness
-Unsplit nonduality
+Unsplit duality
 Or freedom
