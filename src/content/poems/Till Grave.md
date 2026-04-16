@@ -26,6 +26,7 @@ tags:
 related:
   - "[[Human Condition]]"
   - "[[Who Cares]]"
+  - "[[Equations]]"
 word-count: "124"
 domain:
   - awareness
@@ -45,9 +46,9 @@ Without knowing
 
 That it is a rock
 So — is, a cat
-Human 
 Foetus, newborn, asleep
-Brain damaged, cadaver
+Brain damaged
+Cadaver
 
 To be — is 
 To be
