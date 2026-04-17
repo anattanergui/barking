@@ -41,6 +41,7 @@ word-count: "219"
 related:
   - "[[Improbability]]"
   - "[[Wonder]]"
+  - "[[The Forgetting Itself]]"
 ---
 # Fish, As Me
 In the endless
