@@ -32,5 +32,5 @@ Objects depend on space
 
 The subject of ethics
 Is but, the space
-Never, objects
+Not, objects
 
