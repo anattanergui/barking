@@ -1,0 +1,107 @@
+---
+tags:
+  - fish
+  - me
+  - absolute
+  - certainty
+  - impulse
+  - survival
+  - movement
+  - intent
+  - drive
+  - unimaginable
+  - profundity
+  - wonder
+  - erased
+  - gulped
+  - indifferent
+  - infinite
+  - being
+  - point
+  - amidst
+  - swimming
+  - suspended
+  - extending
+  - immensity
+  - incomprehensibility
+  - aware
+  - wondering
+domain:
+  - existence
+  - consciousness
+crux:
+  - negation
+atmosphere:
+  - lucid
+  - vertiginous
+ground:
+  - phenomenological
+description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
+word-count: "204"
+related:
+  - "[[The Forgetting Itself]]"
+  - "[[Improbability]]"
+  - "[[Wonder]]"
+---
+# Fish, As Me
+In the endless,
+Immeasurable expanse
+Extending, enveloping all space 
+In each direction reaching 
+Unknown distances —
+Incomprehensibly, a little me
+Soaked 
+By all this immensity
+
+As a tiny fish 
+Suddenly becoming aware 
+Of the unending, incomprehensible
+Ocean surrounding it
+Above, below, in all directions
+And it, the tiny small fish
+Wondering about 
+
+The odds of wondering 
+Thinking, feeling — and 
+The odds of not being terrified
+Awestruck at the utter, inexplicable
+Pointlessness, and absurdity
+
+Of being —
+A singular point, in the midst 
+Of infinity 
+Swimming, suspended —
+Utterly indifferent
+To being gulped, gone, erased
+From this astounding 
+Incalculable improbability 
+
+The fish wonders, as me
+How in sea or on earth 
+The fish could ever believe — 
+Concoct and spread 
+Even bigger of an absurdity 
+That survival of the tiny fish 
+In this inexplicable, unsayable
+Unimaginable profundity
+Were the drives, the motives 
+That moved the fish 
+Or me
+
+Wiggling your fins, tapping
+The keys the fish writes
+With utter certainty —
+That never has there ever 
+Nor could be 
+Survival of one 
+The motive, drive, intent
+Or impulse — 
+Behind the movement 
+Of fish, or me
+
+And that the only absolute 
+That there could —
+Would ever, is always 
+At this precise, singular 
+Unmistakeable point
+Of fish, as me  
