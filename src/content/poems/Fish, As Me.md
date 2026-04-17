@@ -37,7 +37,7 @@ ground:
   - ecstatic
   - cosmological
 description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
-word-count: "219"
+word-count: "218"
 related:
   - "[[Wonder]]"
   - "[[The Forgetting Itself]]"
@@ -49,7 +49,7 @@ Immeasurable expanse
 Extending, enveloping all space 
 In each direction reaching 
 Unknown distances 
-Incomprehensibly — a little me
+And stupendously — a little me
 Soaked 
 In all this immensity
 
@@ -99,9 +99,9 @@ The motive, intent, or impulse
 Driving the movement
 Of fish, or me
 
-And that the only absolute
-That there could — would ever be
-Is always this precise
+That the only absolute
+There could — would ever be
+Is always this, precise
 Singular 
 Unmistakeable point
 Of fish, as me —

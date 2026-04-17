@@ -19,9 +19,9 @@ atmosphere:
 ground:
   - no-self
 related:
-  - "[[Disquiet]]"
   - "[[Illusory Self]]"
   - "[[No Me Nowhere]]"
+  - "[[Fish, As Me]]"
 word-count: "95"
 ---
 # Anxiety
