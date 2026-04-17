@@ -35,8 +35,7 @@
               "title": "After"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -89,7 +88,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -211,11 +211,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "c15a3fda8c2a6380",
+  "active": "783608eae3038947",
   "lastOpenFiles": [
+    "After.md",
+    "The Grave.md",
+    "Unwritten.md",
     "Unnamed.md",
     "In The First Place.md",
-    "After.md",
     "All Seasons.md",
     "Fish, As Me.md",
     "Anxiety.md",
@@ -237,8 +239,6 @@
     "Godhead.md",
     "Who Cares.md",
     "A Costume Speak.md",
-    "Threshold.md",
-    "Fear.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
