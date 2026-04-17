@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "In The First Place.md",
+                "file": "Fish, As Me.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "In The First Place"
+              "title": "Fish, As Me"
             }
           },
           {
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "fish",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,11 +213,11 @@
   },
   "active": "783608eae3038947",
   "lastOpenFiles": [
+    "In The First Place.md",
     "After.md",
     "The Grave.md",
     "Unwritten.md",
     "Unnamed.md",
-    "In The First Place.md",
     "All Seasons.md",
     "Fish, As Me.md",
     "Anxiety.md",

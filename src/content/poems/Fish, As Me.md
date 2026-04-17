@@ -58,7 +58,7 @@ Suddenly becoming aware
 Of the unending, unfathomable
 Ocean surrounding it
 Above, below, in all directions
-And it, the tiny small fish
+And it, the tiny little fish
 Wondering about —
 
 The odds of wondering 
