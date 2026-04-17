@@ -22,6 +22,7 @@ ground:
   - nondual
 related:
   - "[[I — I know]]"
+  - "[[Fish, As Me]]"
 word-count: "60"
 ---
 # Improbability

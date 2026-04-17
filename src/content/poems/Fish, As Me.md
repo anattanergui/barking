@@ -39,9 +39,9 @@ ground:
 description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
 word-count: "219"
 related:
-  - "[[Improbability]]"
   - "[[Wonder]]"
   - "[[The Forgetting Itself]]"
+  - "[[Absurdity]]"
 ---
 # Fish, As Me
 In the endless
