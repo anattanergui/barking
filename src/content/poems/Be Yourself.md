@@ -9,6 +9,13 @@ tags:
   - loss
   - love
   - sundering
+  - explain
+  - reckoned
+  - freed
+  - yourself
+  - be
+  - mercilessly
+  - spare
 domain:
   - separation
   - obligation
@@ -17,19 +24,13 @@ crux:
 atmosphere:
   - composed
 ground:
-  - retrospective
+  - relational
 related:
   - "[[Growing Up]]"
   - "[[The Space Of Grief]]"
-style:
-  - analytical
-  - interrogative
-  - apophatic
-energy:
-  - contracting
-  - outward
-  - arrived
-word-count: "113"
+word-count: "120"
+description:
+  - Losing me freed you from having to be anything for me. Take this freedom as the gift of sundering
 ---
 # Be Yourself
 
