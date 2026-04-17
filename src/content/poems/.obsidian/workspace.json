@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fish, As Me.md",
+                "file": "In The First Place.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fish, As Me"
+              "title": "In The First Place"
+            }
+          },
+          {
+            "id": "c15a3fda8c2a6380",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "After.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "After"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -74,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -197,11 +211,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "783608eae3038947",
+  "active": "c15a3fda8c2a6380",
   "lastOpenFiles": [
+    "Unnamed.md",
+    "In The First Place.md",
+    "After.md",
+    "All Seasons.md",
+    "Fish, As Me.md",
     "Anxiety.md",
     "Disquiet.md",
-    "Fish, As Me.md",
     "Be Yourself.md",
     "The Space Of Grief.md",
     "Grief.md",
@@ -221,10 +239,6 @@
     "A Costume Speak.md",
     "Threshold.md",
     "Fear.md",
-    "Word.md",
-    "Reprieves.md",
-    "Thinking.md",
-    "Belonging.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

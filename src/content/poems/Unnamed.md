@@ -20,6 +20,7 @@ ground:
   - unknowing
 related:
   - "[[Unwritten]]"
+  - "[[The Empty Instant]]"
 style:
   - spare
   - imagistic
