@@ -4,39 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "05904b6768d86831",
+        "id": "314c6ea3f3546795",
         "type": "tabs",
         "children": [
           {
-            "id": "783608eae3038947",
+            "id": "92508274cc25a180",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fish, As Me.md",
+                "file": "Testament.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fish, As Me"
-            }
-          },
-          {
-            "id": "c15a3fda8c2a6380",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Awareness.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Awareness"
+              "title": "Testament"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -68,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "no communic",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -172,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Flow.md",
+                "file": "Testament.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Flow"
+              "title": "Outline of Testament"
             }
           },
           {
@@ -198,8 +182,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 313.5,
-    "collapsed": true
+    "width": 313.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -212,10 +195,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "c15a3fda8c2a6380",
+  "active": "92508274cc25a180",
   "lastOpenFiles": [
+    "Without The Word.md",
+    "Testament.md",
+    "The Word.md",
     "After.md",
+    "Solitude.md",
+    "Till Grave.md",
     "Fish, As Me.md",
+    "Reprieves.md",
+    "Awareness.md",
     "In The First Place.md",
     "The Grave.md",
     "Unwritten.md",
@@ -226,7 +216,6 @@
     "Be Yourself.md",
     "The Space Of Grief.md",
     "Grief.md",
-    "Till Grave.md",
     "Repulsion.md",
     "Ethics.md",
     "Absurdity.md",
@@ -234,12 +223,6 @@
     "The Forgetting Itself.md",
     "Wonder.md",
     "Manufacture Of Lack.md",
-    "Spacetime.md",
-    "The Image Inside.md",
-    "Cost Of Space.md",
-    "Godhead.md",
-    "Who Cares.md",
-    "A Costume Speak.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

@@ -38,7 +38,7 @@ atmosphere:
 ground:
   - no-self
 description:
-  - Being aware of is the only awareness — that is human condition — that till grave no practice or state reverses.
+  - Being aware of is the only awareness — that is human condition — that till grave no practice or state reverses
 ---
 # Till Grave
 Rock — is

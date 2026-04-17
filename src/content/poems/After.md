@@ -18,7 +18,8 @@ domain: memory
 crux: recursion
 atmosphere:
   - dispassion
-ground: phenomenological
+ground:
+  - awareness
 description:
   - Remembering, after forgetting, I remember, having forgotten
 ---
