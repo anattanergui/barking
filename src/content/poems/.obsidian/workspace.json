@@ -41,16 +41,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "World.md",
+                "file": "Control.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "World"
+              "title": "Control"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "i have failed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,11 +103,13 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -185,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "World.md",
+                "file": "Love.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of World"
+              "title": "Outline of Love"
             }
           },
           {
@@ -225,10 +227,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "accecc8df60e505d",
+  "active": "866f6e2cf0d3bc30",
   "lastOpenFiles": [
-    "Untitled.md",
+    "Control.md",
     "World.md",
+    "Untitled.md",
     "Love.md",
     "Testament.md",
     "Without The Word.md",
@@ -252,7 +255,6 @@
     "Repulsion.md",
     "Ethics.md",
     "Absurdity.md",
-    "Improbability.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

@@ -10,24 +10,19 @@ tags:
   - author
   - success
 domain:
-  - agency
+  - control
 crux:
-  - authorship
+  - renunciation
 atmosphere:
   - disabused
 ground:
-  - subjection
+  - disillusionment
 related:
   - "[[Ox-Press]]"
-  - "[[Orphan]]"
   - "[[The Lot Of The Lot]]"
-energy:
-  - contracting
-  - voiding
-style:
-  - confessional
-  - rhetorical
 word-count: "83"
+description:
+  - Stripping away achievement to find the deeper chase, control — stripping that
 ---
 # Control
 I have failed —
