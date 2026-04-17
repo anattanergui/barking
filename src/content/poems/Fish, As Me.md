@@ -40,8 +40,8 @@ description: A fish becoming aware of the ocean refutes survival as motive — o
 word-count: "218"
 related:
   - "[[Wonder]]"
-  - "[[The Forgetting Itself]]"
-  - "[[Absurdity]]"
+  - "[[Equilibrium]]"
+  - "[[Refutation]]"
 ---
 # Fish, As Me
 In the endless
