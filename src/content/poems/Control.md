@@ -9,6 +9,13 @@ tags:
   - voices
   - author
   - success
+  - standards
+  - people
+  - achieve
+  - believed
+  - world
+  - drowned
+  - answered
 domain:
   - control
 crux:
@@ -18,8 +25,8 @@ atmosphere:
 ground:
   - disillusionment
 related:
-  - "[[Ox-Press]]"
-  - "[[The Lot Of The Lot]]"
+  - "[[Unmeasured]]"
+  - "[[Power]]"
 word-count: "83"
 description:
   - Stripping away achievement to find the deeper chase, control — stripping that

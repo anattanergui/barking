@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -187,13 +187,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Love.md",
+                "file": "Control.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Love"
+              "title": "Outline of Control"
             }
           },
           {
@@ -227,12 +227,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "866f6e2cf0d3bc30",
+  "active": "accecc8df60e505d",
   "lastOpenFiles": [
+    "Love.md",
     "Control.md",
     "World.md",
     "Untitled.md",
-    "Love.md",
     "Testament.md",
     "Without The Word.md",
     "The Word.md",
