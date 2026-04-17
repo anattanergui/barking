@@ -21,6 +21,7 @@ ground:
   - logical
 related:
   - "[[A Thousand Words]]"
+  - "[[Genesis]]"
 word-count: "26"
 ---
 # Awareness

@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "After.md",
+                "file": "Awareness.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "After"
+              "title": "Awareness"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -67,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "fish",
+                "query": "no communic",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -211,15 +212,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "783608eae3038947",
+  "active": "c15a3fda8c2a6380",
   "lastOpenFiles": [
-    "In The First Place.md",
     "After.md",
+    "Fish, As Me.md",
+    "In The First Place.md",
     "The Grave.md",
     "Unwritten.md",
     "Unnamed.md",
     "All Seasons.md",
-    "Fish, As Me.md",
     "Anxiety.md",
     "Disquiet.md",
     "Be Yourself.md",
