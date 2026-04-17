@@ -29,21 +29,21 @@ Is included
 No exception
 Implied
 
-From
+From —
 Strife, sickness
 Hatred
 Or violence
 
+By
 From
 Through
-By 
 Love —
 
 Of humans
 Or, of love
 At large
 
-All it is —
+All it is 
 Is the taking place
 Of recognition, of one
 
