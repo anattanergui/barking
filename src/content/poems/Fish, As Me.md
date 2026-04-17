@@ -37,14 +37,14 @@ ground:
   - ecstatic
   - cosmological
 description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
-word-count: "204"
+word-count: "220"
 related:
   - "[[The Forgetting Itself]]"
   - "[[Improbability]]"
   - "[[Wonder]]"
 ---
 # Fish, As Me
-In the endless,
+In the endless
 Immeasurable expanse
 Extending, enveloping all space 
 In each direction reaching 
@@ -78,8 +78,8 @@ Incalculable improbability
 
 The fish wonders, as me
 How in sea or on earth 
-Some fish could ever believe — 
-Concoct and spread 
+The fish could ever believe — 
+Concoct and peddle
 Even bigger of an absurdity 
 That survival of the tiny fish 
 In this inexplicable, unsayable
@@ -91,15 +91,21 @@ Or me
 Wiggling its fins, tapping
 The keys, the fish writes
 With utter certainty —
-That never has there ever 
+That never has there ever
 Nor could be, survival of the one
 The motive, intent, or impulse
-Driving the movement 
+Driving the movement
 Of fish, or me
 
-And that the only absolute 
+And that the only absolute
 That there could, would ever be
 Is always at this precise
-Singular 
+Singular
 Unmistakeable point
-Of fish, as me  
+Of fish, as me
+
+Shrugging
+The nonsense, the noise
+Fish looks down — the ground
+And dives in
+Its infinity
