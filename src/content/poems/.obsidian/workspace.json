@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Space Of Grief.md",
+                "file": "Be Yourself.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Space Of Grief"
+              "title": "Be Yourself"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -199,8 +198,8 @@
   },
   "active": "783608eae3038947",
   "lastOpenFiles": [
-    "Grief.md",
     "The Space Of Grief.md",
+    "Grief.md",
     "Till Grave.md",
     "Repulsion.md",
     "Fish, As Me.md",
