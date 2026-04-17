@@ -27,15 +27,15 @@ tags:
   - aware
   - wondering
 domain:
-  - existence
-  - consciousness
+  - infinity
 crux:
   - negation
+  - immersion 
 atmosphere:
   - lucid
-  - vertiginous
 ground:
-  - phenomenological
+  - ecstatic
+  - cosmological
 description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
 word-count: "204"
 related:
@@ -78,7 +78,7 @@ Incalculable improbability
 
 The fish wonders, as me
 How in sea or on earth 
-The fish could ever believe — 
+Some fish could ever believe — 
 Concoct and spread 
 Even bigger of an absurdity 
 That survival of the tiny fish 
@@ -88,20 +88,18 @@ Were the drives, the motives
 That moved the fish 
 Or me
 
-Wiggling your fins, tapping
-The keys the fish writes
+Wiggling its fins, tapping
+The keys, the fish writes
 With utter certainty —
 That never has there ever 
-Nor could be 
-Survival of one 
-The motive, drive, intent
-Or impulse — 
-Behind the movement 
+Nor could be, survival of the one
+The motive, intent, or impulse
+Driving the movement 
 Of fish, or me
 
 And that the only absolute 
-That there could —
-Would ever, is always 
-At this precise, singular 
+That there could, would ever be
+Is always at this precise
+Singular 
 Unmistakeable point
 Of fish, as me  
