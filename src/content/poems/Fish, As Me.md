@@ -37,9 +37,8 @@ ground:
   - ecstatic
   - cosmological
 description: A fish becoming aware of the ocean refutes survival as motive — only this singular point is absolute
-word-count: "220"
+word-count: "219"
 related:
-  - "[[The Forgetting Itself]]"
   - "[[Improbability]]"
   - "[[Wonder]]"
 ---
@@ -48,26 +47,27 @@ In the endless
 Immeasurable expanse
 Extending, enveloping all space 
 In each direction reaching 
-Unknown distances —
-Incomprehensibly, a little me
+Unknown distances 
+Incomprehensibly — a little me
 Soaked 
-By all this immensity
+In all this immensity
 
 As a tiny fish 
 Suddenly becoming aware 
-Of the unending, incomprehensible
+Of the unending, unfathomable
 Ocean surrounding it
 Above, below, in all directions
 And it, the tiny small fish
-Wondering about 
+Wondering about —
 
 The odds of wondering 
-Thinking, feeling — and 
-The odds of not being terrified
+Thinking, feeling, and 
+The odds 
+Of not being terrified
 Awestruck at the utter, inexplicable
 Pointlessness, and absurdity
 
-Of being —
+Of being 
 A singular point, in the midst 
 Of infinity 
 Swimming, suspended —
@@ -78,9 +78,10 @@ Incalculable improbability
 
 The fish wonders, as me
 How in sea or on earth 
-The fish could ever believe — 
+Some fish could ever believe — 
 Concoct and peddle
 Even bigger of an absurdity 
+
 That survival of the tiny fish 
 In this inexplicable, unsayable
 Unimaginable profundity
@@ -91,18 +92,18 @@ Or me
 Wiggling its fins, tapping
 The keys, the fish writes
 With utter certainty —
-That never has there ever
-Nor could be, survival of the one
+That never has there ever, nor could be
+Survival of the one
 The motive, intent, or impulse
 Driving the movement
 Of fish, or me
 
 And that the only absolute
-That there could, would ever be
-Is always at this precise
-Singular
+That there could — would ever be
+Is always this precise
+Singular 
 Unmistakeable point
-Of fish, as me
+Of fish, as me —
 
 Shrugging
 The nonsense, the noise
