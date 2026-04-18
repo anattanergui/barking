@@ -119,6 +119,56 @@ const featuredPoolFinal = featuredPool.length > 0
     max-width: 380px;
   }
 
+  .search-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .search-tips-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.4rem;
+    transition: color 0.2s;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.6rem;
+  }
+  .search-tips-btn:hover { color: var(--ink); }
+  .search-tips-btn::before { content: '?'; font-weight: 600; }
+
+  .search-tips {
+    background: var(--bg-panel);
+    border: 1px solid var(--rule);
+    padding: 1rem 1.2rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.75rem;
+    line-height: 1.9;
+    color: var(--muted);
+    font-style: italic;
+    display: none;
+  }
+  .search-tips.visible { display: block; }
+  .search-tips strong {
+    color: var(--ink);
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .search-input-wrap {
+    position: relative;
+  }
+
   .search-input {
     width: 100%;
     background: var(--search-bg);
@@ -327,6 +377,26 @@ const featuredPoolFinal = featuredPool.length > 0
   .refresh-btn::before { content: '↻'; font-size: 0.9rem; }
   .refresh-btn:hover { color: var(--ink); }
 
+  /* Bookmark button */
+  .bookmark-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .bookmark-btn::before { content: '♡'; font-size: 1.05rem; }
+  .bookmark-btn.bookmarked::before { content: '♥'; }
+  .bookmark-btn:hover { color: var(--ink); }
+
   /* ─── STATS ─────────────────────────────────────────────────── */
   .stats {
     display: grid;
@@ -365,13 +435,42 @@ const featuredPoolFinal = featuredPool.length > 0
   /* ─── RESPONSIVE ────────────────────────────────────────────── */
   @media (max-width: 900px) {
     .hero { grid-template-columns: 1fr; }
-    .hero-left { border-right: none; border-bottom: 1px solid var(--rule); padding: 3rem 2rem; }
+    .hero-left { 
+      border-right: none; 
+      border-bottom: 1px solid var(--rule); 
+      padding: 3rem 2rem 2.5rem; 
+    }
     .hero-right { padding: 3rem 2rem; }
     .stats { grid-template-columns: repeat(3, 1fr); }
+    .stat { padding: 1.5rem 1.2rem; }
     .stat:nth-child(3) { border-right: none; }
     .stat:nth-child(4) { border-top: 1px solid var(--rule); }
     .stat:nth-child(5) { border-top: 1px solid var(--rule); }
     .search-wrap { max-width: 100%; }
+    .hero-desc { max-width: 100%; }
+    .hero-cta {
+      padding-top: 2rem;
+      gap: 1rem;
+    }
+    .btn, .btn-ghost {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .hero-left {
+      padding: 2rem 1.5rem;
+    }
+    .hero-right {
+      padding: 2rem 1.5rem;
+    }
+    .stat {
+      padding: 1.2rem 0.8rem;
+    }
+    .stat-num {
+      font-size: 2rem;
+    }
   }
 </style>
 
@@ -388,15 +487,24 @@ const featuredPoolFinal = featuredPool.length > 0
 
       <!-- Search -->
       <div class="search-wrap">
-        <span class="search-icon">⌕</span>
-        <input
-          type="text"
-          class="search-input"
-          id="search-input"
-          placeholder="Search poems, domains, atmospheres…"
-          autocomplete="off"
-        />
-        <div class="search-results" id="search-results"></div>
+        <div class="search-header">
+          <button class="search-tips-btn" id="search-tips-btn" aria-label="Show search tips">Tips</button>
+        </div>
+        <div class="search-tips" id="search-tips" role="region" aria-live="polite">
+          Search by <strong>title</strong>, <strong>domain</strong>, <strong>atmosphere</strong>, <strong>crux</strong>, or combinations like <em>"silence stark"</em> or <em>"nondual groundlessness"</em>
+        </div>
+        <div class="search-input-wrap">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input
+            type="text"
+            class="search-input"
+            id="search-input"
+            placeholder="Search poems, domains, atmospheres…"
+            autocomplete="off"
+            aria-label="Search poems"
+          />
+        </div>
+        <div class="search-results" id="search-results" role="listbox"></div>
       </div>
     </div>
 
@@ -454,6 +562,31 @@ const featuredPoolFinal = featuredPool.length > 0
     return safe.replace(re, '<mark style="background:var(--accent);color:var(--bg)">$1</mark>');
   }
 
+  // ── Bookmark management ────────────────────────────────────────────────────
+  function getBookmarks() {
+    try {
+      return JSON.parse(localStorage.getItem('barking-bookmarks') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function isBookmarked(slug) {
+    return getBookmarks().includes(slug);
+  }
+
+  function toggleBookmark(slug) {
+    const bookmarks = getBookmarks();
+    const idx = bookmarks.indexOf(slug);
+    if (idx > -1) {
+      bookmarks.splice(idx, 1);
+    } else {
+      bookmarks.push(slug);
+    }
+    localStorage.setItem('barking-bookmarks', JSON.stringify(bookmarks));
+    return idx === -1; // returns true if now bookmarked
+  }
+
   // ── Featured poem ──────────────────────────────────────────────────────────
   const pool = featuredPool.slice().sort(() => Math.random() - 0.5);
   let idx = 0;
@@ -470,6 +603,14 @@ const featuredPoolFinal = featuredPool.length > 0
       `<a href="${base}/browse?tag=${encodeURIComponent(t)}" class="tag">${escapeHtml(t)}</a>`
     ).join('');
 
+    const bookmarked = isBookmarked(poem.slug);
+    const bookmarkBtn = `<button class="bookmark-btn ${bookmarked ? 'bookmarked' : ''}" 
+                                 id="bookmark-featured-btn" 
+                                 data-slug="${poem.slug}"
+                                 aria-label="${bookmarked ? 'Remove bookmark' : 'Bookmark this poem'}">
+                           ${bookmarked ? 'saved' : 'save'}
+                         </button>`;
+
     const nextBtn = pool.length > 1
       ? `<button class="refresh-btn" id="next-poem-btn">another poem</button>`
       : '';
@@ -479,9 +620,22 @@ const featuredPoolFinal = featuredPool.length > 0
       <div class="featured-body">${bodyHtml}</div>
       <div class="featured-footer">
         ${tagHtml}
+        ${bookmarkBtn}
         ${nextBtn}
       </div>
     `;
+    
+    // Attach bookmark handler
+    const bookmarkBtnEl = document.getElementById('bookmark-featured-btn');
+    if (bookmarkBtnEl) {
+      bookmarkBtnEl.addEventListener('click', function() {
+        const nowBookmarked = toggleBookmark(this.dataset.slug);
+        this.classList.toggle('bookmarked', nowBookmarked);
+        this.textContent = nowBookmarked ? 'saved' : 'save';
+        this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
+      });
+    }
+
     if (pool.length > 1) {
       document.getElementById('next-poem-btn').addEventListener('click', nextPoem);
     }
@@ -499,22 +653,71 @@ const featuredPoolFinal = featuredPool.length > 0
     window.location.href = `${base}/poem/${rand.slug}`;
   });
 
-  // ── Search ─────────────────────────────────────────────────────────────────
+  // ── Search tips toggle ─────────────────────────────────────────────────────
+  const tipsBtn = document.getElementById('search-tips-btn');
+  const tipsEl  = document.getElementById('search-tips');
+  
+  tipsBtn.addEventListener('click', () => {
+    tipsEl.classList.toggle('visible');
+    const isVisible = tipsEl.classList.contains('visible');
+    tipsBtn.setAttribute('aria-expanded', isVisible);
+    tipsBtn.textContent = isVisible ? 'Hide tips' : 'Tips';
+  });
+
+  // ── Search with fuzzy matching ─────────────────────────────────────────────
   const input   = document.getElementById('search-input');
   const results = document.getElementById('search-results');
 
-  input.addEventListener('input', () => {
-    const q = input.value.trim().toLowerCase();
-    if (q.length < 2) { results.classList.remove('open'); return; }
+  // Simple fuzzy matching: allow 1 character difference for terms > 4 chars
+  function fuzzyMatch(text, query) {
+    text = text.toLowerCase();
+    query = query.toLowerCase();
+    
+    if (text.includes(query)) return true;
+    
+    // Only fuzzy match if query is long enough
+    if (query.length <= 4) return false;
+    
+    // Check if it's close enough (Levenshtein distance <= 1)
+    if (Math.abs(text.length - query.length) > 1) return false;
+    
+    let differences = 0;
+    const maxLen = Math.max(text.length, query.length);
+    
+    for (let i = 0; i < maxLen; i++) {
+      if (text[i] !== query[i]) differences++;
+      if (differences > 1) return false;
+    }
+    
+    return differences <= 1;
+  }
 
-    const matches = searchIndex.filter(p => {
-      return p.title.toLowerCase().includes(q)
-        || p.tags.some(t        => t.toLowerCase().includes(q))
-        || p.domains.some(t     => t.toLowerCase().includes(q))
-        || p.atmosphere.some(m  => m.toLowerCase().includes(q))
-        || p.crux.some(f        => f.toLowerCase().includes(q))
-        || (p.preview && p.preview.toLowerCase().includes(q));
-    }).slice(0, 7);
+  function searchPoems(q) {
+    return searchIndex.filter(p => {
+      const lowerQ = q.toLowerCase();
+      
+      // Exact matches
+      if (p.title.toLowerCase().includes(lowerQ)) return true;
+      if (p.preview && p.preview.toLowerCase().includes(lowerQ)) return true;
+      if (p.tags.some(t => t.toLowerCase().includes(lowerQ))) return true;
+      if (p.domains.some(t => t.toLowerCase().includes(lowerQ))) return true;
+      if (p.atmosphere.some(m => m.toLowerCase().includes(lowerQ))) return true;
+      if (p.crux.some(f => f.toLowerCase().includes(lowerQ))) return true;
+      
+      // Fuzzy matches for taxonomy terms
+      const allTerms = [...p.domains, ...p.atmosphere, ...p.crux, ...p.tags];
+      return allTerms.some(term => fuzzyMatch(term, q));
+    });
+  }
+
+  input.addEventListener('input', () => {
+    const q = input.value.trim();
+    if (q.length < 2) { 
+      results.classList.remove('open'); 
+      return; 
+    }
+
+    const matches = searchPoems(q).slice(0, 7);
 
     if (!matches.length) {
       results.innerHTML = `<div class="search-empty">No poems found for "${escapeHtml(q)}"</div>`;
@@ -522,7 +725,7 @@ const featuredPoolFinal = featuredPool.length > 0
       results.innerHTML = matches.map(p => {
         const meta = [...p.atmosphere, ...p.crux, ...p.domains.slice(0, 2)]
           .filter(Boolean).join(' · ');
-        return `<a href="${base}/poem/${p.slug}" class="search-result-item">
+        return `<a href="${base}/poem/${p.slug}" class="search-result-item" role="option">
           <span class="sri-title">${highlight(p.title, q)}</span>
           ${meta ? `<span class="sri-meta">${escapeHtml(meta)}</span>` : ''}
         </a>`;
@@ -536,8 +739,13 @@ const featuredPoolFinal = featuredPool.length > 0
   });
 
   input.addEventListener('keydown', e => {
-    if (e.key === 'Escape') { results.classList.remove('open'); input.blur(); }
-    if (e.key === 'Tab')    { results.classList.remove('open'); }
+    if (e.key === 'Escape') { 
+      results.classList.remove('open'); 
+      input.blur(); 
+    }
+    if (e.key === 'Tab') { 
+      results.classList.remove('open'); 
+    }
     if (e.key === 'Enter') {
       const first = results.querySelector('.search-result-item');
       if (first) window.location.href = first.href;

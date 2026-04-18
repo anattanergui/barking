@@ -105,17 +105,51 @@ const schema = {
     max-width: 680px;
   }
 
+  .poem-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.5rem;
+  }
+
   .back {
-    display: inline-flex; align-items: center; gap: 0.4rem;
+    display: inline-flex; 
+    align-items: center; 
+    gap: 0.4rem;
     font-size: 0.62rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
-    margin-bottom: 3.5rem;
     transition: color 0.2s;
   }
   .back:hover { color: var(--ink); }
+
+  .bookmark-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    transition: color 0.2s, background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .bookmark-btn::before { 
+    content: '♡'; 
+    font-size: 1.15rem; 
+    line-height: 1;
+  }
+  .bookmark-btn.bookmarked::before { content: '♥'; }
+  .bookmark-btn:hover { 
+    color: var(--ink); 
+    background: var(--bg-panel);
+  }
 
   .poem-title {
     font-family: 'Cormorant Garamond', serif;
@@ -158,6 +192,34 @@ const schema = {
     margin-bottom: 0.6rem;
     display: block;
   }
+  
+  .s-label[data-tooltip] {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted var(--muted);
+    display: inline-block;
+  }
+
+  .s-label[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 0;
+    top: calc(100% + 0.5rem);
+    background: var(--bg-panel);
+    border: 1px solid var(--rule);
+    padding: 0.6rem 0.8rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    color: var(--ink);
+    white-space: normal;
+    width: 220px;
+    z-index: 100;
+    line-height: 1.6;
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+  }
+
   .s-value {
     font-size: 0.85rem;
     color: var(--ink);
@@ -165,13 +227,22 @@ const schema = {
   }
 
   .s-tags {
-    display: flex; flex-wrap: wrap; gap: 0.35rem;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 0.35rem;
     margin-bottom: 2rem;
   }
 
-  .related-list { list-style: none; margin-bottom: 2rem; }
-  .related-item { border-bottom: 1px solid var(--rule); }
-  .related-item:first-child { border-top: 1px solid var(--rule); }
+  .related-list { 
+    list-style: none; 
+    margin-bottom: 2rem; 
+  }
+  .related-item { 
+    border-bottom: 1px solid var(--rule); 
+  }
+  .related-item:first-child { 
+    border-top: 1px solid var(--rule); 
+  }
   .related-item a {
     display: block;
     padding: 0.6rem 0;
@@ -182,7 +253,10 @@ const schema = {
     text-decoration: none;
     color: var(--ink);
   }
-  .related-item a:hover { color: var(--accent); padding-left: 0.4rem; }
+  .related-item a:hover { 
+    color: var(--accent); 
+    padding-left: 0.4rem; 
+  }
 
   /* Prev / next navigation */
   .nav-poem {
@@ -203,7 +277,10 @@ const schema = {
     max-width: 45%;
   }
   .nav-poem a:hover { color: var(--ink); }
-  .nav-poem .nav-next { text-align: right; margin-left: auto; }
+  .nav-poem .nav-next { 
+    text-align: right; 
+    margin-left: auto; 
+  }
   .nav-poem .nav-label {
     display: block;
     font-size: 0.55rem;
@@ -223,15 +300,55 @@ const schema = {
   }
 
   @media (max-width: 900px) {
-    .poem-layout { grid-template-columns: 1fr; }
-    .sidebar { position: static; height: auto; border-left: none; border-top: 1px solid var(--rule); }
-    .poem-col { padding: 3rem 1.5rem; }
+    .poem-layout { 
+      grid-template-columns: 1fr; 
+    }
+    .sidebar { 
+      position: static; 
+      height: auto; 
+      border-left: none; 
+      border-top: 1px solid var(--rule); 
+    }
+    .poem-col { 
+      padding: 3rem 2rem; 
+    }
+    .poem-header {
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .poem-col {
+      padding: 2rem 1.5rem;
+    }
+    .sidebar {
+      padding: 2rem 1.5rem;
+    }
+    .poem-title {
+      font-size: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+    .poem-body {
+      font-size: 0.95rem;
+      line-height: 2.1;
+    }
   }
 </style>
 
 <div class="poem-layout">
   <article class="poem-col">
-    <a href={`${base}/browse`} class="back">← Collection</a>
+    <div class="poem-header">
+      <a href={`${base}/browse`} class="back">← Collection</a>
+      <button 
+        class="bookmark-btn" 
+        id="bookmark-btn" 
+        data-slug={poem.slug}
+        aria-label="Bookmark this poem"
+      >
+        Save
+      </button>
+    </div>
     <h1 class="poem-title">{title}</h1>
     <div class="poem-body" set:html={bodyHtml} />
   </article>
@@ -239,7 +356,12 @@ const schema = {
   <aside class="sidebar">
     {atmosphere.length > 0 && (
       <>
-        <span class="s-label">Atmosphere</span>
+        <span 
+          class="s-label" 
+          data-tooltip="The tonal quality or emotional texture of the poem"
+        >
+          Atmosphere
+        </span>
         <div class="s-tags">
           {atmosphere.map(m => (
             <a href={`${base}/browse?atmosphere=${encodeURIComponent(m)}`} class="tag">{m}</a>
@@ -250,7 +372,12 @@ const schema = {
 
     {crux.length > 0 && (
       <>
-        <span class="s-label">Crux</span>
+        <span 
+          class="s-label"
+          data-tooltip="The conceptual pivot or core tension of the poem"
+        >
+          Crux
+        </span>
         <div class="s-tags">
           {crux.map(f => (
             <a href={`${base}/browse?crux=${encodeURIComponent(f)}`} class="tag">{f}</a>
@@ -268,7 +395,12 @@ const schema = {
 
     {domains.length > 0 && (
       <>
-        <span class="s-label">Domain</span>
+        <span 
+          class="s-label"
+          data-tooltip="The subject matter or thematic territory"
+        >
+          Domain
+        </span>
         <div class="s-tags">
           {domains.map(t => (
             <a href={`${base}/browse?domain=${encodeURIComponent(t)}`} class="tag">{t}</a>
@@ -279,7 +411,12 @@ const schema = {
 
     {ground.length > 0 && (
       <>
-        <span class="s-label">Ground</span>
+        <span 
+          class="s-label"
+          data-tooltip="The philosophical or methodological approach"
+        >
+          Ground
+        </span>
         <div class="s-tags">
           {ground.map(g => (
             <a href={`${base}/browse?ground=${encodeURIComponent(g)}`} class="tag">{g}</a>
@@ -320,4 +457,51 @@ const schema = {
     )}
   </aside>
 </div>
+
+<script>
+  // Bookmark functionality
+  function getBookmarks() {
+    try {
+      return JSON.parse(localStorage.getItem('barking-bookmarks') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function isBookmarked(slug) {
+    return getBookmarks().includes(slug);
+  }
+
+  function toggleBookmark(slug) {
+    const bookmarks = getBookmarks();
+    const idx = bookmarks.indexOf(slug);
+    if (idx > -1) {
+      bookmarks.splice(idx, 1);
+    } else {
+      bookmarks.push(slug);
+    }
+    localStorage.setItem('barking-bookmarks', JSON.stringify(bookmarks));
+    return idx === -1; // returns true if now bookmarked
+  }
+
+  // Initialize bookmark button
+  const bookmarkBtn = document.getElementById('bookmark-btn');
+  if (bookmarkBtn) {
+    const slug = bookmarkBtn.dataset.slug;
+    const bookmarked = isBookmarked(slug);
+    
+    if (bookmarked) {
+      bookmarkBtn.classList.add('bookmarked');
+      bookmarkBtn.textContent = 'Saved';
+      bookmarkBtn.setAttribute('aria-label', 'Remove bookmark');
+    }
+
+    bookmarkBtn.addEventListener('click', function() {
+      const nowBookmarked = toggleBookmark(slug);
+      this.classList.toggle('bookmarked', nowBookmarked);
+      this.textContent = nowBookmarked ? 'Saved' : 'Save';
+      this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
+    });
+  }
+</script>
 </Base>
