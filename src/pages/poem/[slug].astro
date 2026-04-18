@@ -180,7 +180,7 @@ const schema = {
   .bookmark-btn.bookmarked::before { 
     content: '♥'; 
   }
-  .share-btn::before {
+  .send-btn::before {
     content: '↗';
   }
   .action-btn:hover { 
@@ -189,8 +189,8 @@ const schema = {
     background: var(--bg-panel);
   }
 
-  /* Share modal */
-  .share-modal {
+  /* Send modal */
+  .send-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -205,11 +205,11 @@ const schema = {
     justify-content: center;
     padding: 2rem;
   }
-  .share-modal.open {
+  .send-modal.open {
     display: flex;
   }
 
-  .share-panel {
+  .send-panel {
     background: var(--bg);
     border: 1px solid var(--rule);
     max-width: 460px;
@@ -218,21 +218,21 @@ const schema = {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
-  .share-header {
+  .send-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 2rem;
   }
 
-  .share-title {
+  .send-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.8rem;
     font-weight: 300;
     color: var(--ink);
   }
 
-  .share-close {
+  .send-close {
     background: none;
     border: none;
     color: var(--muted);
@@ -242,16 +242,16 @@ const schema = {
     line-height: 1;
     transition: color 0.2s;
   }
-  .share-close:hover {
+  .send-close:hover {
     color: var(--ink);
   }
 
-  .share-options {
+  .send-options {
     display: grid;
     gap: 0.8rem;
   }
 
-  .share-option {
+  .send-option {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -264,12 +264,12 @@ const schema = {
     text-decoration: none;
     color: var(--ink);
   }
-  .share-option:hover {
+  .send-option:hover {
     background: var(--bg-panel);
     border-color: var(--muted);
   }
 
-  .share-icon {
+  .send-icon {
     font-size: 1.4rem;
     line-height: 1;
     width: 24px;
@@ -277,11 +277,11 @@ const schema = {
     flex-shrink: 0;
   }
 
-  .share-label {
+  .send-label {
     flex: 1;
   }
 
-  .share-label-title {
+  .send-label-title {
     font-family: 'Karla', sans-serif;
     font-size: 0.75rem;
     letter-spacing: 0.12em;
@@ -290,7 +290,7 @@ const schema = {
     margin-bottom: 0.2rem;
   }
 
-  .share-label-desc {
+  .send-label-desc {
     font-family: 'Libre Baskerville', serif;
     font-size: 0.7rem;
     color: var(--muted);
@@ -481,7 +481,7 @@ const schema = {
       font-size: 0.95rem;
       line-height: 2.1;
     }
-    .share-panel {
+    .send-panel {
       padding: 2rem 1.5rem;
     }
     .poem-actions {
@@ -512,11 +512,11 @@ const schema = {
         <span>Save</span>
       </button>
       <button 
-        class="action-btn share-btn"
-        id="share-btn"
-        aria-label="Share this poem"
+        class="action-btn send-btn"
+        id="send-btn"
+        aria-label="Send this poem"
       >
-        <span>Share</span>
+        <span>Send</span>
       </button>
     </div>
   </article>
@@ -626,40 +626,40 @@ const schema = {
   </aside>
 </div>
 
-<!-- Share Modal -->
-<div class="share-modal" id="share-modal" role="dialog" aria-labelledby="share-title" aria-modal="true">
-  <div class="share-panel">
-    <div class="share-header">
-      <h2 class="share-title" id="share-title">Share</h2>
-      <button class="share-close" id="share-close" aria-label="Close share menu">×</button>
+<!-- Send Modal -->
+<div class="send-modal" id="send-modal" role="dialog" aria-labelledby="send-title" aria-modal="true">
+  <div class="send-panel">
+    <div class="send-header">
+      <h2 class="send-title" id="send-title">Send</h2>
+      <button class="send-close" id="send-close" aria-label="Close share menu">×</button>
     </div>
-    <div class="share-options">
-      <button class="share-option" id="copy-link" data-action="copy">
-        <div class="share-icon">🔗</div>
-        <div class="share-label">
-          <div class="share-label-title">Copy Link</div>
-          <div class="share-label-desc">Copy URL to clipboard</div>
+    <div class="send-options">
+      <button class="send-option" id="copy-link" data-action="copy">
+        <div class="send-icon">🔗</div>
+        <div class="send-label">
+          <div class="send-label-title">Copy Link</div>
+          <div class="send-label-desc">Copy URL to clipboard</div>
         </div>
       </button>
-      <a class="share-option" id="email-share" data-action="email">
-        <div class="share-icon">✉️</div>
-        <div class="share-label">
-          <div class="share-label-title">Email</div>
-          <div class="share-label-desc">Send via email</div>
+      <a class="send-option" id="email-share" data-action="email">
+        <div class="send-icon">✉️</div>
+        <div class="send-label">
+          <div class="send-label-title">Email</div>
+          <div class="send-label-desc">Send via email</div>
         </div>
       </a>
-      <a class="share-option" id="twitter-share" target="_blank" rel="noopener noreferrer">
-        <div class="share-icon">𝕏</div>
-        <div class="share-label">
-          <div class="share-label-title">Post on X</div>
-          <div class="share-label-desc">Share on X (Twitter)</div>
+      <a class="send-option" id="twitter-share" target="_blank" rel="noopener noreferrer">
+        <div class="send-icon">𝕏</div>
+        <div class="send-label">
+          <div class="send-label-title">Post on X</div>
+          <div class="send-label-desc">Send on X (Twitter)</div>
         </div>
       </a>
-      <button class="share-option" id="native-share" data-action="native" style="display: none;">
-        <div class="share-icon">↗</div>
-        <div class="share-label">
-          <div class="share-label-title">Share...</div>
-          <div class="share-label-desc">Use device share menu</div>
+      <button class="send-option" id="native-share" data-action="native" style="display: none;">
+        <div class="send-icon">↗</div>
+        <div class="send-label">
+          <div class="send-label-title">Send...</div>
+          <div class="send-label-desc">Use device share menu</div>
         </div>
       </button>
     </div>
@@ -737,14 +737,14 @@ const schema = {
     console.error('Failed to save history:', e);
   }
 
-  // Share functionality
-  const shareBtn = document.getElementById('share-btn');
-  const shareModal = document.getElementById('share-modal');
-  const shareClose = document.getElementById('share-close');
+  // Send functionality
+  const shareBtn = document.getElementById('send-btn');
+  const shareModal = document.getElementById('send-modal');
+  const shareClose = document.getElementById('send-close');
   const copyLinkBtn = document.getElementById('copy-link');
-  const emailShare = document.getElementById('email-share');
-  const twitterShare = document.getElementById('twitter-share');
-  const nativeShareBtn = document.getElementById('native-share');
+  const emailSend = document.getElementById('email-share');
+  const twitterSend = document.getElementById('twitter-share');
+  const nativeSendBtn = document.getElementById('native-share');
   const copyFeedback = document.getElementById('copy-feedback');
 
   const shareText = `${title} — a poem from Barking by Anatta Nergui`;
@@ -752,15 +752,15 @@ const schema = {
   // Email share
   const emailSubject = encodeURIComponent(shareText);
   const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`);
-  emailShare.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+  emailSend.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
 
   // Twitter/X share
   const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
-  twitterShare.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
 
   // Check if native share is available (mobile devices)
   if (navigator.share) {
-    nativeShareBtn.style.display = 'flex';
+    nativeSendBtn.style.display = 'flex';
   }
 
   // Open modal
@@ -813,8 +813,8 @@ const schema = {
   });
 
   // Native share (mobile)
-  if (nativeShareBtn) {
-    nativeShareBtn.addEventListener('click', async () => {
+  if (nativeSendBtn) {
+    nativeSendBtn.addEventListener('click', async () => {
       try {
         await navigator.share({
           title: shareText,
@@ -824,7 +824,7 @@ const schema = {
         closeModal();
       } catch (err) {
         if (err.name !== 'AbortError') {
-          console.error('Share failed:', err);
+          console.error('Send failed:', err);
         }
       }
     });
