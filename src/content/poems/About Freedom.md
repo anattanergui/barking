@@ -16,9 +16,9 @@ atmosphere: declarative
 ground: axiomatic
 description: Freedom does not exist in the company of another human — no exceptions.
 related:
-  - "[[Talking Shit]]"
   - "[[Cost Of Space]]"
   - "[[Repulsion]]"
+  - "[[What Else]]"
 ---
 # About Freedom
 No one 
