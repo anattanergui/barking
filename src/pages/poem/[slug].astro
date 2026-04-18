@@ -204,9 +204,11 @@ const schema = {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    pointer-events: none;
   }
   .send-modal.open {
     display: flex;
+    pointer-events: auto;
   }
 
   .send-panel {
@@ -216,6 +218,7 @@ const schema = {
     width: 100%;
     padding: 2.5rem;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
   }
 
   .send-header {
