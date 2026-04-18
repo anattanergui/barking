@@ -19,14 +19,13 @@ atmosphere:
 ground:
   - introspective
   - analytical
-word-count: "397"
+word-count: "395"
 related:
   - "[[Hallucinating Factory]]"
   - "[[The Dreaming-I]]"
 ---
 
 # The Invasion
-The Invasion
 How do I know
 That I am me
 
