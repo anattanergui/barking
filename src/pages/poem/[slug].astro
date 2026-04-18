@@ -770,71 +770,102 @@ const schema = {
   const shareText = `${title} — a poem from Barking by Anatta Nergui`;
   
   // Email share
-  const emailSubject = encodeURIComponent(shareText);
-  const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`);
-  emailSend.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+  if (emailSend) {
+    const emailSubject = encodeURIComponent(shareText);
+    const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`);
+    emailSend.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+  }
 
   // Twitter/X share
-  const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
-  twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  if (twitterSend) {
+    const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
+    twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  }
 
   // Check if native share is available (mobile devices)
-  if (navigator.share) {
+  if (nativeSendBtn && navigator.share) {
     nativeSendBtn.style.display = 'flex';
   }
 
   // Open modal
-  shareBtn.addEventListener('click', () => {
-    shareModal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  });
+  if (shareBtn && shareModal) {
+    shareBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      shareModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  }
 
   // Close modal
   function closeModal() {
-    shareModal.classList.remove('open');
-    document.body.style.overflow = '';
+    if (shareModal) {
+      shareModal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
   }
 
-  shareClose.addEventListener('click', closeModal);
-  shareModal.addEventListener('click', (e) => {
-    if (e.target === shareModal) closeModal();
-  });
+  if (shareClose) {
+    shareClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal();
+    });
+  }
+  
+  if (shareModal) {
+    shareModal.addEventListener('click', (e) => {
+      if (e.target === shareModal) {
+        closeModal();
+      }
+    });
+  }
 
   // Escape key closes modal
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && shareModal.classList.contains('open')) {
+    if (e.key === 'Escape' && shareModal && shareModal.classList.contains('open')) {
       closeModal();
     }
   });
 
   // Copy link
-  copyLinkBtn.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(poemUrl);
-      copyFeedback.classList.add('show');
-      setTimeout(() => copyFeedback.classList.remove('show'), 2000);
-    } catch (err) {
-      // Fallback for older browsers
-      const textArea = document.createElement('textarea');
-      textArea.value = poemUrl;
-      textArea.style.position = 'fixed';
-      textArea.style.left = '-999999px';
-      document.body.appendChild(textArea);
-      textArea.select();
+  if (copyLinkBtn) {
+    copyLinkBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       try {
-        document.execCommand('copy');
-        copyFeedback.classList.add('show');
-        setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+        await navigator.clipboard.writeText(poemUrl);
+        if (copyFeedback) {
+          copyFeedback.classList.add('show');
+          setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+        }
       } catch (err) {
-        console.error('Failed to copy:', err);
+        // Fallback for older browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = poemUrl;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand('copy');
+          if (copyFeedback) {
+            copyFeedback.classList.add('show');
+            setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+          }
+        } catch (err) {
+          console.error('Failed to copy:', err);
+        }
+        document.body.removeChild(textArea);
       }
-      document.body.removeChild(textArea);
-    }
-  });
+    });
+  }
 
   // Native share (mobile)
   if (nativeSendBtn) {
-    nativeSendBtn.addEventListener('click', async () => {
+    nativeSendBtn.addEventListener('click', async (e) => {
+      e.preventDefault();
+      e.stopPropagation();
       try {
         await navigator.share({
           title: shareText,
