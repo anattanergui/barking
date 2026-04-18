@@ -18,7 +18,7 @@ description: Freedom does not exist in the company of another human — no excep
 related:
   - "[[Cost Of Space]]"
   - "[[Repulsion]]"
-  - "[[What Else]]"
+  - "[[Reprieves]]"
 ---
 # About Freedom
 No one 
