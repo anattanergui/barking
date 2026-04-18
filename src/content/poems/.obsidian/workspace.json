@@ -49,8 +49,7 @@
               "title": "Control"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -69,7 +68,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -103,8 +102,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -186,13 +184,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Love.md",
+                "file": "Testament.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Love"
+              "title": "Outline of Testament"
             }
           },
           {
@@ -226,13 +224,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "866f6e2cf0d3bc30",
+  "active": "92508274cc25a180",
   "lastOpenFiles": [
-    "Control.md",
-    "Love.md",
     "World.md",
-    "Untitled.md",
+    "This.md",
     "Testament.md",
+    "Love.md",
+    "Control.md",
+    "Untitled.md",
     "Without The Word.md",
     "The Word.md",
     "After.md",
@@ -253,7 +252,6 @@
     "Grief.md",
     "Repulsion.md",
     "Ethics.md",
-    "Absurdity.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
