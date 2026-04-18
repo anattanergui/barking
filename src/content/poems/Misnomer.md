@@ -20,7 +20,6 @@ ground:
   - analytical
 word-count: "76"
 related:
-  - "[[A Costume Speak]]"
   - "[[The Unnatural Recognition]]"
   - "[[Illusory Self]]"
 ---
