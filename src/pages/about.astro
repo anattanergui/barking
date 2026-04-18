@@ -13,7 +13,7 @@ const poems = getAllPoemsMeta();
 >
 <style>
   .about {
-    max-width: 680px;
+    max-width: 560px;
     margin: 0 auto;
     padding: 7rem 2rem 5rem;
   }
@@ -45,83 +45,6 @@ const poems = getAllPoemsMeta();
     margin-bottom: 1.8rem;
   }
 
-  .glossary {
-    margin-top: 4rem;
-    padding-top: 3rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .glossary-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 2rem;
-    line-height: 1.2;
-    color: var(--ink);
-  }
-
-  .glossary-intro {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.88rem;
-    line-height: 2;
-    color: var(--muted);
-    font-style: italic;
-    margin-bottom: 2.5rem;
-  }
-
-  .glossary-section {
-    margin-bottom: 2.5rem;
-  }
-
-  .glossary-section-title {
-    font-family: 'Karla', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .glossary-section-title::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .glossary-grid {
-    display: grid;
-    gap: 1.2rem;
-  }
-
-  .glossary-term {
-    display: grid;
-    grid-template-columns: 140px 1fr;
-    gap: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--rule);
-  }
-  .glossary-term:last-child {
-    border-bottom: none;
-  }
-
-  .term-word {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 400;
-    color: var(--ink);
-    font-style: italic;
-  }
-
-  .term-def {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.82rem;
-    line-height: 1.9;
-    color: var(--muted);
-  }
-
   .meta {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -138,16 +61,6 @@ const poems = getAllPoemsMeta();
     transition: color 0.2s;
   }
   .meta a:hover { color: var(--ink); }
-
-  @media (max-width: 700px) {
-    .glossary-term {
-      grid-template-columns: 1fr;
-      gap: 0.3rem;
-    }
-    .term-word {
-      margin-bottom: 0.2rem;
-    }
-  }
 </style>
 
 <div class="about">
@@ -155,111 +68,6 @@ const poems = getAllPoemsMeta();
   <p class="subtitle">
     poems, rants, and reflections attempting to say what resists saying and doesn't get said all at once
   </p>
-
-  <p>
-    This collection of {poems.length} poems is organized through four taxonomic lenses: <strong>Domain</strong> (subject matter), <strong>Atmosphere</strong> (tonal quality), <strong>Ground</strong> (philosophical approach), and <strong>Crux</strong> (conceptual pivot). These classifications aren't prescriptive—they're navigational aids for wandering through interconnected territory.
-  </p>
-
-  <p>
-    Each poem can be found through multiple pathways: by browsing the full collection, exploring the graph of relationships, searching specific terms, or filtering by any combination of attributes. The site is designed for non-linear reading—there's no "correct" order.
-  </p>
-
-  <!-- GLOSSARY -->
-  <section class="glossary">
-    <h2 class="glossary-title">Glossary</h2>
-    <p class="glossary-intro">
-      Many of the taxonomic terms draw from philosophy, phenomenology, and contemplative traditions. Here are some of the more specialized ones:
-    </p>
-
-    <!-- Ground terms -->
-    <div class="glossary-section">
-      <h3 class="glossary-section-title">Ground (Philosophical Approach)</h3>
-      <div class="glossary-grid">
-        <div class="glossary-term">
-          <div class="term-word">Nondual</div>
-          <div class="term-def">Investigating experience without presuming inherent separation between subject and object, self and other, inside and outside.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Apophatic</div>
-          <div class="term-def">Approaching truth through negation—saying what something <em>isn't</em> rather than what it is. Common in mystical traditions.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Phenomenological</div>
-          <div class="term-def">Attending to the structure of lived experience as it appears, bracketing assumptions about underlying reality.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Ontological</div>
-          <div class="term-def">Concerned with the nature of being, existence, and what it means for something to <em>be</em>.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Epistemological</div>
-          <div class="term-def">Investigating the nature and limits of knowledge—how we know what we claim to know.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Deconstructive</div>
-          <div class="term-def">Exposing internal contradictions and instabilities in concepts, revealing how meaning undoes itself.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Crux terms -->
-    <div class="glossary-section">
-      <h3 class="glossary-section-title">Crux (Conceptual Pivot)</h3>
-      <div class="glossary-grid">
-        <div class="glossary-term">
-          <div class="term-word">Groundlessness</div>
-          <div class="term-def">The recognition that experience has no ultimate foundation or fixed point of reference.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Inseparability</div>
-          <div class="term-def">The impossibility of cleanly dividing apparently distinct phenomena or aspects of experience.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Reflexivity</div>
-          <div class="term-def">The self-referential loop where awareness becomes aware of itself, or a concept applies to itself.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Ineffability</div>
-          <div class="term-def">That which resists or exceeds linguistic capture—the unsayable.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Aporetic</div>
-          <div class="term-def">Marked by unresolvable paradox or impasse—from Greek <em>aporia</em>, "without passage."</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Tautological</div>
-          <div class="term-def">Circular reasoning where a statement refers back to itself, often revealing something is true by definition.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Atmosphere terms -->
-    <div class="glossary-section">
-      <h3 class="glossary-section-title">Atmosphere (Selected Terms)</h3>
-      <div class="glossary-grid">
-        <div class="glossary-term">
-          <div class="term-word">Vertiginous</div>
-          <div class="term-def">Inducing disorientation or conceptual vertigo, as if standing at a dizzying height.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Lapidary</div>
-          <div class="term-def">Precisely cut and polished like gemstones; concise, exact language with weight.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Oracular</div>
-          <div class="term-def">Speaking in cryptic, prophetic, or authoritative pronouncements.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Numinous</div>
-          <div class="term-def">Evoking awe, mystery, or a sense of the sacred beyond ordinary experience.</div>
-        </div>
-        <div class="glossary-term">
-          <div class="term-word">Austere</div>
-          <div class="term-def">Stripped of ornament, severe in simplicity, uncompromising.</div>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <div class="meta">
     Anatta Nergui<br>

@@ -105,13 +105,6 @@ const schema = {
     max-width: 680px;
   }
 
-  .poem-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 3.5rem;
-  }
-
   .back {
     display: inline-flex; 
     align-items: center; 
@@ -121,35 +114,10 @@ const schema = {
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
+    margin-bottom: 3.5rem;
     transition: color 0.2s;
   }
   .back:hover { color: var(--ink); }
-
-  .bookmark-btn {
-    font-family: 'Karla', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0.5rem 0.8rem;
-    transition: color 0.2s, background 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-  }
-  .bookmark-btn::before { 
-    content: '♡'; 
-    font-size: 1.15rem; 
-    line-height: 1;
-  }
-  .bookmark-btn.bookmarked::before { content: '♥'; }
-  .bookmark-btn:hover { 
-    color: var(--ink); 
-    background: var(--bg-panel);
-  }
 
   .poem-title {
     font-family: 'Cormorant Garamond', serif;
@@ -171,6 +139,49 @@ const schema = {
   }
   .poem-body :global(p:last-child) {
     margin-bottom: 0;
+  }
+
+  /* Bookmark button - placed after poem content */
+  .poem-actions {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .bookmark-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    padding: 0.7rem 1.2rem;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .bookmark-btn::before { 
+    content: '♡'; 
+    font-size: 1.15rem; 
+    line-height: 1;
+  }
+  .bookmark-btn.bookmarked {
+    color: var(--ink);
+    border-color: var(--ink);
+  }
+  .bookmark-btn.bookmarked::before { 
+    content: '♥'; 
+  }
+  .bookmark-btn:hover { 
+    color: var(--ink); 
+    border-color: var(--muted);
+    background: var(--bg-panel);
   }
 
   /* Sidebar */
@@ -312,10 +323,6 @@ const schema = {
     .poem-col { 
       padding: 3rem 2rem; 
     }
-    .poem-header {
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
   }
 
   @media (max-width: 500px) {
@@ -338,19 +345,21 @@ const schema = {
 
 <div class="poem-layout">
   <article class="poem-col">
-    <div class="poem-header">
-      <a href={`${base}/browse`} class="back">← Collection</a>
+    <a href={`${base}/browse`} class="back">← Collection</a>
+    <h1 class="poem-title">{title}</h1>
+    <div class="poem-body" set:html={bodyHtml} />
+    
+    <!-- Bookmark button after poem content -->
+    <div class="poem-actions">
       <button 
         class="bookmark-btn" 
         id="bookmark-btn" 
         data-slug={poem.slug}
         aria-label="Bookmark this poem"
       >
-        Save
+        <span>Save</span>
       </button>
     </div>
-    <h1 class="poem-title">{title}</h1>
-    <div class="poem-body" set:html={bodyHtml} />
   </article>
 
   <aside class="sidebar">
@@ -458,13 +467,26 @@ const schema = {
   </aside>
 </div>
 
-<script>
-  // Bookmark functionality
+<script define:vars={{ slug: poem.slug }}>
+  // Bookmark functionality with Safari localStorage fix
   function getBookmarks() {
     try {
-      return JSON.parse(localStorage.getItem('barking-bookmarks') || '[]');
-    } catch {
+      const data = localStorage.getItem('barking-bookmarks');
+      if (!data) return [];
+      return JSON.parse(data);
+    } catch (e) {
+      console.error('Failed to read bookmarks:', e);
       return [];
+    }
+  }
+
+  function saveBookmarks(bookmarks) {
+    try {
+      localStorage.setItem('barking-bookmarks', JSON.stringify(bookmarks));
+      return true;
+    } catch (e) {
+      console.error('Failed to save bookmarks:', e);
+      return false;
     }
   }
 
@@ -480,28 +502,38 @@ const schema = {
     } else {
       bookmarks.push(slug);
     }
-    localStorage.setItem('barking-bookmarks', JSON.stringify(bookmarks));
+    saveBookmarks(bookmarks);
     return idx === -1; // returns true if now bookmarked
   }
 
   // Initialize bookmark button
   const bookmarkBtn = document.getElementById('bookmark-btn');
   if (bookmarkBtn) {
-    const slug = bookmarkBtn.dataset.slug;
     const bookmarked = isBookmarked(slug);
     
     if (bookmarked) {
       bookmarkBtn.classList.add('bookmarked');
-      bookmarkBtn.textContent = 'Saved';
+      bookmarkBtn.querySelector('span').textContent = 'Saved';
       bookmarkBtn.setAttribute('aria-label', 'Remove bookmark');
     }
 
     bookmarkBtn.addEventListener('click', function() {
       const nowBookmarked = toggleBookmark(slug);
       this.classList.toggle('bookmarked', nowBookmarked);
-      this.textContent = nowBookmarked ? 'Saved' : 'Save';
+      this.querySelector('span').textContent = nowBookmarked ? 'Saved' : 'Save';
       this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
     });
+  }
+
+  // Track reading history
+  try {
+    const history = JSON.parse(localStorage.getItem('barking-history') || '[]');
+    // Remove if already in history, then add to front
+    const filtered = history.filter(s => s !== slug);
+    filtered.unshift(slug);
+    localStorage.setItem('barking-history', JSON.stringify(filtered.slice(0, 50)));
+  } catch (e) {
+    console.error('Failed to save history:', e);
   }
 </script>
 </Base>
