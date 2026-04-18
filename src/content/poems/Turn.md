@@ -63,7 +63,7 @@ Through edicts
 Of kings and parliaments 
 Marching boots waging wars
 Crumbling cities
-Decimating centuries of labour
+Destroying centuries of labour
 In an instant —
 I heard you speak
 

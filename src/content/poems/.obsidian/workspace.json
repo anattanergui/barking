@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Testament.md",
+                "file": "Turn.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Testament"
+              "title": "Turn"
             }
           },
           {
@@ -81,7 +81,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "decima",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -102,7 +102,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -184,13 +185,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Testament.md",
+                "file": "Turn.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Testament"
+              "title": "Outline of Turn"
             }
           },
           {
@@ -226,9 +227,9 @@
   },
   "active": "92508274cc25a180",
   "lastOpenFiles": [
+    "Testament.md",
     "World.md",
     "This.md",
-    "Testament.md",
     "Love.md",
     "Control.md",
     "Untitled.md",
