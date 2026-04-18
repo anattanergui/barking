@@ -6,8 +6,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const allPoems = getAllPoemsMeta();
 ---
 <Base
-  title="Bookmarks"
-  description="Your saved poems from Barking"
+  title="Marks"
+  description="Your marked poems from Barking"
 >
 <style>
   .bookmarks-container {
@@ -138,17 +138,17 @@ const allPoems = getAllPoemsMeta();
 </style>
 
 <div class="bookmarks-container">
-  <h1>Bookmarks</h1>
+  <h1>Marks</h1>
   <p class="subtitle" id="bookmark-count">Loading...</p>
 
   <div id="bookmarks-content">
     <div class="empty-state">
-      Loading your bookmarks...
+      Loading your marks...
     </div>
   </div>
 
   <div class="bookmark-actions" id="bookmark-actions" style="display: none;">
-    <button class="btn-ghost" id="clear-all-btn">Clear all bookmarks</button>
+    <button class="btn-ghost" id="clear-all-btn">Clear all marks</button>
     <button class="btn-ghost" id="export-btn">Export as JSON</button>
   </div>
 </div>
@@ -182,10 +182,10 @@ const allPoems = getAllPoemsMeta();
     const actionsEl = document.getElementById('bookmark-actions');
 
     if (bookmarkSlugs.length === 0) {
-      countEl.textContent = 'No bookmarks yet';
+      countEl.textContent = 'No marks yet';
       contentEl.innerHTML = `
         <div class="empty-state">
-          You haven't saved any poems yet. Click the "Save" button at the end of any poem to bookmark it.<br><br>
+          You haven't marked any poems yet. Click the "Mark" button at the end of any poem to mark it.<br><br>
           <a href="${base}/browse">Browse the collection →</a>
         </div>
       `;
@@ -193,7 +193,7 @@ const allPoems = getAllPoemsMeta();
       return;
     }
 
-    countEl.textContent = `${bookmarkSlugs.length} poem${bookmarkSlugs.length !== 1 ? 's' : ''} saved`;
+    countEl.textContent = `${bookmarkSlugs.length} poem${bookmarkSlugs.length !== 1 ? 's' : ''} marked`;
 
     // Get poem details for bookmarked slugs
     const bookmarkedPoems = bookmarkSlugs
@@ -203,7 +203,7 @@ const allPoems = getAllPoemsMeta();
     if (bookmarkedPoems.length === 0) {
       contentEl.innerHTML = `
         <div class="empty-state">
-          No matching poems found. Your bookmarks may reference deleted poems.
+          No matching poems found. Your marks may reference deleted poems.
         </div>
       `;
       actionsEl.style.display = 'none';
@@ -234,7 +234,7 @@ const allPoems = getAllPoemsMeta();
   }
 
   function clearAllBookmarks() {
-    if (confirm('Are you sure you want to clear all bookmarks? This cannot be undone.')) {
+    if (confirm('Are you sure you want to clear all marks? This cannot be undone.')) {
       saveBookmarks([]);
       renderBookmarks();
     }

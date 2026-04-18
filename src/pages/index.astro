@@ -394,8 +394,8 @@ const featuredPoolFinal = featuredPool.length > 0
     align-items: center;
     gap: 0.45rem;
   }
-  .bookmark-btn::before { content: '♡'; font-size: 1.05rem; }
-  .bookmark-btn.bookmarked::before { content: '♥'; }
+  .bookmark-btn::before { content: '✒'; font-size: 1.05rem; }
+  .bookmark-btn.bookmarked::before { content: '✒'; }
   .bookmark-btn:hover, .send-btn:hover { color: var(--ink); }
   
   .send-btn::before { content: '↗'; font-size: 0.9rem; }
@@ -799,8 +799,8 @@ const featuredPoolFinal = featuredPool.length > 0
     const bookmarkBtn = `<button class="bookmark-btn ${bookmarked ? 'bookmarked' : ''}" 
                                  id="bookmark-featured-btn" 
                                  data-slug="${poem.slug}"
-                                 aria-label="${bookmarked ? 'Remove bookmark' : 'Bookmark this poem'}">
-                           ${bookmarked ? 'saved' : 'save'}
+                                 aria-label="${bookmarked ? 'Remove mark' : 'Mark this poem'}">
+                           ${bookmarked ? 'marked' : 'mark'}
                          </button>`;
 
     const sendBtn = `<button class="send-btn" id="send-featured-btn" aria-label="Send this poem">send</button>`;
@@ -826,8 +826,8 @@ const featuredPoolFinal = featuredPool.length > 0
       bookmarkBtnEl.addEventListener('click', function() {
         const nowBookmarked = toggleBookmark(this.dataset.slug);
         this.classList.toggle('bookmarked', nowBookmarked);
-        this.textContent = nowBookmarked ? 'saved' : 'save';
-        this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
+        this.textContent = nowBookmarked ? 'marked' : 'mark';
+        this.setAttribute('aria-label', nowBookmarked ? 'Remove mark' : 'Mark this poem');
       });
     }
 
