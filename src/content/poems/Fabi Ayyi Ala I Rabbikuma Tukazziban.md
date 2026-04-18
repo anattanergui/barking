@@ -14,10 +14,10 @@ domain:
 crux:
   - no-self
 atmosphere:
-  - inquisitive
-  - forlorn
+  - stark
 ground:
-  - covenantal
+  - contingent
+  - dialectical
 related:
   - "[[Revolt]]"
   - "[[Wonder]]"
