@@ -50,7 +50,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "i have failed",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,8 +108,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -187,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Control.md",
+                "file": "Love.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Control"
+              "title": "Outline of Love"
             }
           },
           {
@@ -227,10 +226,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "accecc8df60e505d",
+  "active": "866f6e2cf0d3bc30",
   "lastOpenFiles": [
-    "Love.md",
     "Control.md",
+    "Love.md",
     "World.md",
     "Untitled.md",
     "Testament.md",

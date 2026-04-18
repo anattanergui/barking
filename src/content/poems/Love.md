@@ -21,6 +21,7 @@ description: Love grants no pardon, implies no exception — only recognition of
 related:
   - "[[An’al Haq]]"
   - "[[Whom Shall I Mourn]]"
+word-count: "38"
 ---
 # Love
 No pardon
