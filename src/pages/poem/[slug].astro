@@ -141,7 +141,7 @@ const schema = {
     margin-bottom: 0;
   }
 
-  /* Bookmark button - placed after poem content */
+  /* Action buttons after poem content */
   .poem-actions {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -151,7 +151,7 @@ const schema = {
     gap: 1rem;
   }
 
-  .bookmark-btn {
+  .action-btn {
     font-family: 'Karla', sans-serif;
     font-size: 0.65rem;
     letter-spacing: 0.18em;
@@ -166,10 +166,12 @@ const schema = {
     align-items: center;
     gap: 0.5rem;
   }
-  .bookmark-btn::before { 
-    content: '♡'; 
+  .action-btn::before { 
     font-size: 1.15rem; 
     line-height: 1;
+  }
+  .bookmark-btn::before { 
+    content: '♡'; 
   }
   .bookmark-btn.bookmarked {
     color: var(--ink);
@@ -178,10 +180,149 @@ const schema = {
   .bookmark-btn.bookmarked::before { 
     content: '♥'; 
   }
-  .bookmark-btn:hover { 
+  .share-btn::before {
+    content: '↗';
+  }
+  .action-btn:hover { 
     color: var(--ink); 
     border-color: var(--muted);
     background: var(--bg-panel);
+  }
+
+  /* Share modal */
+  .share-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .share-modal.open {
+    display: flex;
+  }
+
+  .share-panel {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    max-width: 460px;
+    width: 100%;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .share-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .share-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .share-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .share-close:hover {
+    color: var(--ink);
+  }
+
+  .share-options {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .share-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: none;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, border-color 0.15s;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .share-option:hover {
+    background: var(--bg-panel);
+    border-color: var(--muted);
+  }
+
+  .share-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .share-label {
+    flex: 1;
+  }
+
+  .share-label-title {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .share-label-desc {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .copy-feedback {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0.8rem 1.5rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    z-index: 3000;
+    display: none;
+  }
+  .copy-feedback.show {
+    display: block;
+    animation: fadeInOut 2s ease;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
   }
 
   /* Sidebar */
@@ -340,6 +481,17 @@ const schema = {
       font-size: 0.95rem;
       line-height: 2.1;
     }
+    .share-panel {
+      padding: 2rem 1.5rem;
+    }
+    .poem-actions {
+      flex-wrap: wrap;
+    }
+    .action-btn {
+      flex: 1;
+      min-width: 120px;
+      justify-content: center;
+    }
   }
 </style>
 
@@ -349,15 +501,22 @@ const schema = {
     <h1 class="poem-title">{title}</h1>
     <div class="poem-body" set:html={bodyHtml} />
     
-    <!-- Bookmark button after poem content -->
+    <!-- Action buttons after poem content -->
     <div class="poem-actions">
       <button 
-        class="bookmark-btn" 
+        class="action-btn bookmark-btn" 
         id="bookmark-btn" 
         data-slug={poem.slug}
         aria-label="Bookmark this poem"
       >
         <span>Save</span>
+      </button>
+      <button 
+        class="action-btn share-btn"
+        id="share-btn"
+        aria-label="Share this poem"
+      >
+        <span>Share</span>
       </button>
     </div>
   </article>
@@ -467,7 +626,50 @@ const schema = {
   </aside>
 </div>
 
-<script define:vars={{ slug: poem.slug }}>
+<!-- Share Modal -->
+<div class="share-modal" id="share-modal" role="dialog" aria-labelledby="share-title" aria-modal="true">
+  <div class="share-panel">
+    <div class="share-header">
+      <h2 class="share-title" id="share-title">Share</h2>
+      <button class="share-close" id="share-close" aria-label="Close share menu">×</button>
+    </div>
+    <div class="share-options">
+      <button class="share-option" id="copy-link" data-action="copy">
+        <div class="share-icon">🔗</div>
+        <div class="share-label">
+          <div class="share-label-title">Copy Link</div>
+          <div class="share-label-desc">Copy URL to clipboard</div>
+        </div>
+      </button>
+      <a class="share-option" id="email-share" data-action="email">
+        <div class="share-icon">✉️</div>
+        <div class="share-label">
+          <div class="share-label-title">Email</div>
+          <div class="share-label-desc">Send via email</div>
+        </div>
+      </a>
+      <a class="share-option" id="twitter-share" target="_blank" rel="noopener noreferrer">
+        <div class="share-icon">𝕏</div>
+        <div class="share-label">
+          <div class="share-label-title">Post on X</div>
+          <div class="share-label-desc">Share on X (Twitter)</div>
+        </div>
+      </a>
+      <button class="share-option" id="native-share" data-action="native" style="display: none;">
+        <div class="share-icon">↗</div>
+        <div class="share-label">
+          <div class="share-label-title">Share...</div>
+          <div class="share-label-desc">Use device share menu</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Copy feedback toast -->
+<div class="copy-feedback" id="copy-feedback">Link copied to clipboard</div>
+
+<script define:vars={{ slug: poem.slug, title: poem.title, poemUrl }}>
   // Bookmark functionality with Safari localStorage fix
   function getBookmarks() {
     try {
@@ -503,7 +705,7 @@ const schema = {
       bookmarks.push(slug);
     }
     saveBookmarks(bookmarks);
-    return idx === -1; // returns true if now bookmarked
+    return idx === -1;
   }
 
   // Initialize bookmark button
@@ -528,12 +730,104 @@ const schema = {
   // Track reading history
   try {
     const history = JSON.parse(localStorage.getItem('barking-history') || '[]');
-    // Remove if already in history, then add to front
     const filtered = history.filter(s => s !== slug);
     filtered.unshift(slug);
     localStorage.setItem('barking-history', JSON.stringify(filtered.slice(0, 50)));
   } catch (e) {
     console.error('Failed to save history:', e);
+  }
+
+  // Share functionality
+  const shareBtn = document.getElementById('share-btn');
+  const shareModal = document.getElementById('share-modal');
+  const shareClose = document.getElementById('share-close');
+  const copyLinkBtn = document.getElementById('copy-link');
+  const emailShare = document.getElementById('email-share');
+  const twitterShare = document.getElementById('twitter-share');
+  const nativeShareBtn = document.getElementById('native-share');
+  const copyFeedback = document.getElementById('copy-feedback');
+
+  const shareText = `${title} — a poem from Barking by Anatta Nergui`;
+  
+  // Email share
+  const emailSubject = encodeURIComponent(shareText);
+  const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`);
+  emailShare.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+
+  // Twitter/X share
+  const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
+  twitterShare.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+
+  // Check if native share is available (mobile devices)
+  if (navigator.share) {
+    nativeShareBtn.style.display = 'flex';
+  }
+
+  // Open modal
+  shareBtn.addEventListener('click', () => {
+    shareModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Close modal
+  function closeModal() {
+    shareModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  shareClose.addEventListener('click', closeModal);
+  shareModal.addEventListener('click', (e) => {
+    if (e.target === shareModal) closeModal();
+  });
+
+  // Escape key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && shareModal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Copy link
+  copyLinkBtn.addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(poemUrl);
+      copyFeedback.classList.add('show');
+      setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = poemUrl;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        copyFeedback.classList.add('show');
+        setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  });
+
+  // Native share (mobile)
+  if (nativeShareBtn) {
+    nativeShareBtn.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          title: shareText,
+          text: shareText,
+          url: poemUrl
+        });
+        closeModal();
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.error('Share failed:', err);
+        }
+      }
+    });
   }
 </script>
 </Base>
