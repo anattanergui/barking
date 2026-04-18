@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { getAllPoems, getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const siteUrl = 'https://anattanergui.github.io/barking';
 
 const poems = getAllPoemsMeta();
 const filters = getFilterOptions(poems);
@@ -377,8 +378,8 @@ const featuredPoolFinal = featuredPool.length > 0
   .refresh-btn::before { content: '↻'; font-size: 0.9rem; }
   .refresh-btn:hover { color: var(--ink); }
 
-  /* Bookmark button */
-  .bookmark-btn {
+  /* Bookmark and Send buttons */
+  .bookmark-btn, .send-btn {
     font-family: 'Karla', sans-serif;
     font-size: 0.65rem;
     letter-spacing: 0.18em;
@@ -395,7 +396,145 @@ const featuredPoolFinal = featuredPool.length > 0
   }
   .bookmark-btn::before { content: '♡'; font-size: 1.05rem; }
   .bookmark-btn.bookmarked::before { content: '♥'; }
-  .bookmark-btn:hover { color: var(--ink); }
+  .bookmark-btn:hover, .send-btn:hover { color: var(--ink); }
+  
+  .send-btn::before { content: '↗'; font-size: 0.9rem; }
+
+  /* Send modal (shared with poem page) */
+  .send-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+  }
+  .send-modal.open {
+    display: flex;
+  }
+
+  .send-panel {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    max-width: 460px;
+    width: 100%;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .send-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .send-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--ink);
+  }
+
+  .send-close {
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+  .send-close:hover {
+    color: var(--ink);
+  }
+
+  .send-options {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .send-option {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    background: none;
+    border: 1px solid var(--rule);
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.15s, border-color 0.15s;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .send-option:hover {
+    background: var(--bg-panel);
+    border-color: var(--muted);
+  }
+
+  .send-icon {
+    font-size: 1.4rem;
+    line-height: 1;
+    width: 24px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .send-label {
+    flex: 1;
+  }
+
+  .send-label-title {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .send-label-desc {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.7rem;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  .copy-feedback {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: var(--bg);
+    padding: 0.8rem 1.5rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    z-index: 3000;
+    display: none;
+  }
+  .copy-feedback.show {
+    display: block;
+    animation: fadeInOut 2s ease;
+  }
+
+  @keyframes fadeInOut {
+    0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
+    100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
+  }
 
   /* ─── STATS ─────────────────────────────────────────────────── */
   .stats {
@@ -471,6 +610,9 @@ const featuredPoolFinal = featuredPool.length > 0
     .stat-num {
       font-size: 2rem;
     }
+    .send-panel {
+      padding: 2rem 1.5rem;
+    }
   }
 </style>
 
@@ -543,7 +685,50 @@ const featuredPoolFinal = featuredPool.length > 0
   </a>
 </div>
 
-<script define:vars={{ searchIndex, featuredPool: featuredPoolFinal, base }}>
+<!-- Send Modal -->
+<div class="send-modal" id="send-modal" role="dialog" aria-labelledby="send-title" aria-modal="true">
+  <div class="send-panel">
+    <div class="send-header">
+      <h2 class="send-title" id="send-title">Send</h2>
+      <button class="send-close" id="send-close" aria-label="Close send menu">×</button>
+    </div>
+    <div class="send-options">
+      <button class="send-option" id="copy-link" data-action="copy">
+        <div class="send-icon">🔗</div>
+        <div class="send-label">
+          <div class="send-label-title">Copy Link</div>
+          <div class="send-label-desc">Copy URL to clipboard</div>
+        </div>
+      </button>
+      <a class="send-option" id="email-send" data-action="email">
+        <div class="send-icon">✉️</div>
+        <div class="send-label">
+          <div class="send-label-title">Email</div>
+          <div class="send-label-desc">Send via email</div>
+        </div>
+      </a>
+      <a class="send-option" id="twitter-send" target="_blank" rel="noopener noreferrer">
+        <div class="send-icon">𝕏</div>
+        <div class="send-label">
+          <div class="send-label-title">Post on X</div>
+          <div class="send-label-desc">Send on X (Twitter)</div>
+        </div>
+      </a>
+      <button class="send-option" id="native-send" data-action="native" style="display: none;">
+        <div class="send-icon">↗</div>
+        <div class="send-label">
+          <div class="send-label-title">Send...</div>
+          <div class="send-label-desc">Use device send menu</div>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Copy feedback toast -->
+<div class="copy-feedback" id="copy-feedback">Link copied to clipboard</div>
+
+<script define:vars={{ searchIndex, featuredPool: featuredPoolFinal, base, siteUrl }}>
 
   // ── HTML sanitiser — prevents <> in search queries breaking the layout ─────
   function escapeHtml(str) {
@@ -587,11 +772,18 @@ const featuredPoolFinal = featuredPool.length > 0
     return idx === -1; // returns true if now bookmarked
   }
 
+  // ── Send modal state ────────────────────────────────────────────────────
+  let currentPoemSlug = '';
+  let currentPoemTitle = '';
+
   // ── Featured poem ──────────────────────────────────────────────────────────
   const pool = featuredPool.slice().sort(() => Math.random() - 0.5);
   let idx = 0;
 
   function renderFeatured(poem) {
+    currentPoemSlug = poem.slug;
+    currentPoemTitle = poem.title;
+
     const lines = poem.content.split('\n').filter(l => !l.startsWith('#'));
     while (lines.length && !lines[0].trim()) lines.shift();
     while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
@@ -611,6 +803,8 @@ const featuredPoolFinal = featuredPool.length > 0
                            ${bookmarked ? 'saved' : 'save'}
                          </button>`;
 
+    const sendBtn = `<button class="send-btn" id="send-featured-btn" aria-label="Send this poem">send</button>`;
+
     const nextBtn = pool.length > 1
       ? `<button class="refresh-btn" id="next-poem-btn">another poem</button>`
       : '';
@@ -621,6 +815,7 @@ const featuredPoolFinal = featuredPool.length > 0
       <div class="featured-footer">
         ${tagHtml}
         ${bookmarkBtn}
+        ${sendBtn}
         ${nextBtn}
       </div>
     `;
@@ -634,6 +829,12 @@ const featuredPoolFinal = featuredPool.length > 0
         this.textContent = nowBookmarked ? 'saved' : 'save';
         this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
       });
+    }
+
+    // Attach send handler
+    const sendBtnEl = document.getElementById('send-featured-btn');
+    if (sendBtnEl) {
+      sendBtnEl.addEventListener('click', openSendModal);
     }
 
     if (pool.length > 1) {
@@ -751,5 +952,103 @@ const featuredPoolFinal = featuredPool.length > 0
       if (first) window.location.href = first.href;
     }
   });
+
+  // ── Send functionality ─────────────────────────────────────────────────────
+  const sendModal = document.getElementById('send-modal');
+  const sendClose = document.getElementById('send-close');
+  const copyLinkBtn = document.getElementById('copy-link');
+  const emailSend = document.getElementById('email-send');
+  const twitterSend = document.getElementById('twitter-send');
+  const nativeSendBtn = document.getElementById('native-send');
+  const copyFeedback = document.getElementById('copy-feedback');
+
+  // Check if native send is available (mobile devices)
+  if (navigator.share) {
+    nativeSendBtn.style.display = 'flex';
+  }
+
+  function openSendModal() {
+    const poemUrl = `${siteUrl}/poem/${currentPoemSlug}/`;
+    const sendText = `${currentPoemTitle} — a poem from Barking by Anatta Nergui`;
+    
+    // Email send
+    const emailSubject = encodeURIComponent(sendText);
+    const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${currentPoemTitle}\n\n${poemUrl}`);
+    emailSend.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
+
+    // Twitter/X send
+    const tweetText = encodeURIComponent(`"${currentPoemTitle}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
+    twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+
+    // Store current URL for copy
+    copyLinkBtn.dataset.url = poemUrl;
+    nativeSendBtn.dataset.url = poemUrl;
+    nativeSendBtn.dataset.text = sendText;
+
+    sendModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  // Close modal
+  function closeModal() {
+    sendModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  sendClose.addEventListener('click', closeModal);
+  sendModal.addEventListener('click', (e) => {
+    if (e.target === sendModal) closeModal();
+  });
+
+  // Escape key closes modal
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && sendModal.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Copy link
+  copyLinkBtn.addEventListener('click', async () => {
+    const url = copyLinkBtn.dataset.url;
+    try {
+      await navigator.clipboard.writeText(url);
+      copyFeedback.classList.add('show');
+      setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+    } catch (err) {
+      // Fallback for older browsers
+      const textArea = document.createElement('textarea');
+      textArea.value = url;
+      textArea.style.position = 'fixed';
+      textArea.style.left = '-999999px';
+      document.body.appendChild(textArea);
+      textArea.select();
+      try {
+        document.execCommand('copy');
+        copyFeedback.classList.add('show');
+        setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+      } catch (err) {
+        console.error('Failed to copy:', err);
+      }
+      document.body.removeChild(textArea);
+    }
+  });
+
+  // Native send (mobile)
+  if (nativeSendBtn) {
+    nativeSendBtn.addEventListener('click', async () => {
+      try {
+        await navigator.share({
+          title: nativeSendBtn.dataset.text,
+          text: nativeSendBtn.dataset.text,
+          url: nativeSendBtn.dataset.url
+        });
+        closeModal();
+      } catch (err) {
+        if (err.name !== 'AbortError') {
+          console.error('Send failed:', err);
+        }
+      }
+    });
+  }
 </script>
 </Base>
