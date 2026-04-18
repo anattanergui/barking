@@ -171,14 +171,14 @@ const schema = {
     line-height: 1;
   }
   .bookmark-btn::before { 
-    content: '♡'; 
+    content: '✒'; 
   }
   .bookmark-btn.bookmarked {
     color: var(--ink);
     border-color: var(--ink);
   }
   .bookmark-btn.bookmarked::before { 
-    content: '♥'; 
+    content: '✒'; 
   }
   .send-btn::before {
     content: '↗';
@@ -302,231 +302,251 @@ const schema = {
     bottom: 2rem;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--ink);
-    color: var(--bg);
-    padding: 0.8rem 1.5rem;
+    background: var(--btn-bg);
+    color: var(--btn-ink);
+    padding: 1rem 1.5rem;
     font-family: 'Karla', sans-serif;
     font-size: 0.7rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    border-radius: 4px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
     z-index: 3000;
-    display: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
   }
   .copy-feedback.show {
-    display: block;
-    animation: fadeInOut 2s ease;
+    opacity: 1;
   }
 
-  @keyframes fadeInOut {
-    0% { opacity: 0; transform: translateX(-50%) translateY(10px); }
-    15% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    85% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
-  }
-
-  /* Sidebar */
-  .sidebar {
+  /* Sidebar column */
+  .sidebar-col {
+    background: var(--bg-panel);
     border-left: 1px solid var(--rule);
-    padding: 5rem 2rem 5rem 2.5rem;
-    background: var(--paper-warm);
+    padding: 5rem 2.5rem;
+    overflow-y: auto;
+    max-height: calc(100vh - var(--nav-h));
     position: sticky;
     top: var(--nav-h);
-    height: calc(100vh - var(--nav-h));
-    overflow-y: auto;
   }
 
   .s-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.25em;
+    display: block;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 0.6rem;
-    display: block;
-  }
-  
-  .s-label[data-tooltip] {
+    margin-bottom: 0.8rem;
     position: relative;
     cursor: help;
-    border-bottom: 1px dotted var(--muted);
-    display: inline-block;
   }
 
-  .s-label[data-tooltip]:hover::after {
+  .s-label[data-tooltip]::after {
     content: attr(data-tooltip);
     position: absolute;
     left: 0;
-    top: calc(100% + 0.5rem);
-    background: var(--bg-panel);
-    border: 1px solid var(--rule);
-    padding: 0.6rem 0.8rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.08em;
+    bottom: calc(100% + 0.5rem);
+    background: var(--bg);
+    color: var(--ink);
+    padding: 0.5rem 0.8rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
     text-transform: none;
-    color: var(--ink);
-    white-space: normal;
-    width: 220px;
-    z-index: 100;
-    line-height: 1.6;
-    font-family: 'Libre Baskerville', serif;
-    font-style: italic;
+    white-space: nowrap;
+    border: 1px solid var(--rule);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+    z-index: 10;
   }
-
-  .s-value {
-    font-size: 0.85rem;
-    color: var(--ink);
-    margin-bottom: 2rem;
+  .s-label[data-tooltip]:hover::after {
+    opacity: 1;
   }
 
   .s-tags {
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 0.35rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.8rem;
   }
 
-  .related-list { 
-    list-style: none; 
-    margin-bottom: 2rem; 
+  .tag {
+    display: inline-block;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: var(--tag-ink);
+    background: var(--tag-bg);
+    padding: 0.3rem 0.8rem;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
   }
-  .related-item { 
-    border-bottom: 1px solid var(--rule); 
+  .tag:hover {
+    background: var(--accent);
+    color: var(--paper);
   }
-  .related-item:first-child { 
-    border-top: 1px solid var(--rule); 
+
+  .s-value {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    margin-bottom: 1.8rem;
+  }
+
+  .related-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .related-item {
+    margin-bottom: 0.5rem;
   }
   .related-item a {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.82rem;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.2s;
     display: block;
-    padding: 0.6rem 0;
+    line-height: 1.5;
+  }
+  .related-item a:hover {
+    color: var(--ink);
+  }
+
+  /* Adjacent poem navigation */
+  .nav-poem {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .nav-prev,
+  .nav-next {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 1rem;
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .nav-prev:hover,
+  .nav-next:hover {
+    background: var(--stat-hover);
+    border-color: var(--muted);
+  }
+
+  .nav-next {
+    text-align: right;
+  }
+
+  .nav-label {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .nav-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem;
     font-weight: 300;
-    transition: color 0.15s, padding-left 0.15s;
-    text-decoration: none;
     color: var(--ink);
-  }
-  .related-item a:hover { 
-    color: var(--accent); 
-    padding-left: 0.4rem; 
+    line-height: 1.3;
   }
 
-  /* Prev / next navigation */
-  .nav-poem {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
-    border-top: 1px solid var(--rule);
-    gap: 1rem;
-  }
-  .nav-poem a {
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    transition: color 0.2s;
-    max-width: 45%;
-  }
-  .nav-poem a:hover { color: var(--ink); }
-  .nav-poem .nav-next { 
-    text-align: right; 
-    margin-left: auto; 
-  }
-  .nav-poem .nav-label {
-    display: block;
-    font-size: 0.55rem;
-    letter-spacing: 0.2em;
-    color: var(--muted);
-    margin-bottom: 0.3rem;
-    opacity: 0.6;
-  }
-  .nav-poem .nav-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    letter-spacing: 0;
-    text-transform: none;
-    display: block;
-    color: var(--ink);
-  }
+  /* Mobile adjustments */
+  @media (max-width: 1100px) {
+    .poem-layout {
+      grid-template-columns: 1fr;
+    }
 
-  @media (max-width: 900px) {
-    .poem-layout { 
-      grid-template-columns: 1fr; 
+    .sidebar-col {
+      position: static;
+      max-height: none;
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding: 3rem 2rem;
     }
-    .sidebar { 
-      position: static; 
-      height: auto; 
-      border-left: none; 
-      border-top: 1px solid var(--rule); 
-    }
-    .poem-col { 
-      padding: 3rem 2rem; 
-    }
-  }
 
-  @media (max-width: 500px) {
     .poem-col {
-      padding: 2rem 1.5rem;
+      padding: 3rem 2rem;
     }
-    .sidebar {
-      padding: 2rem 1.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .poem-col {
+      padding: 2.5rem 1.5rem;
     }
+
+    .sidebar-col {
+      padding: 2.5rem 1.5rem;
+    }
+
     .poem-title {
-      font-size: 1.8rem;
-      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      margin-bottom: 3rem;
     }
+
     .poem-body {
-      font-size: 0.95rem;
-      line-height: 2.1;
+      font-size: 1rem;
+      line-height: 2;
     }
-    .send-panel {
-      padding: 2rem 1.5rem;
-    }
-    .poem-actions {
-      flex-wrap: wrap;
-    }
+
     .action-btn {
-      flex: 1;
-      min-width: 120px;
-      justify-content: center;
+      font-size: 0.6rem;
+      padding: 0.6rem 1rem;
+    }
+
+    .nav-poem {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
     }
   }
 </style>
 
 <div class="poem-layout">
-  <article class="poem-col">
-    <a href={`${base}/browse`} class="back">← Collection</a>
+  <div class="poem-col">
+    <a href={`${base}/browse`} class="back">
+      <span>←</span>
+      <span>Back to collection</span>
+    </a>
+
     <h1 class="poem-title">{title}</h1>
+
     <div class="poem-body" set:html={bodyHtml} />
-    
-    <!-- Action buttons after poem content -->
+
     <div class="poem-actions">
       <button 
         class="action-btn bookmark-btn" 
-        id="bookmark-btn" 
-        data-slug={poem.slug}
-        aria-label="Bookmark this poem"
+        id="bookmark-btn"
+        aria-label="Mark this poem"
       >
-        <span>Save</span>
+        <span>Mark</span>
       </button>
       <button 
-        class="action-btn send-btn"
+        class="action-btn send-btn" 
         id="send-btn"
-        aria-label="Send this poem"
+        aria-label="Share this poem"
       >
         <span>Send</span>
       </button>
     </div>
-  </article>
+  </div>
 
-  <aside class="sidebar">
+  <aside class="sidebar-col">
     {atmosphere.length > 0 && (
       <>
         <span 
-          class="s-label" 
-          data-tooltip="The tonal quality or emotional texture of the poem"
+          class="s-label"
+          data-tooltip="The sensory or emotional tone of the poem"
         >
           Atmosphere
         </span>
@@ -715,15 +735,15 @@ const schema = {
     
     if (bookmarked) {
       bookmarkBtn.classList.add('bookmarked');
-      bookmarkBtn.querySelector('span').textContent = 'Saved';
-      bookmarkBtn.setAttribute('aria-label', 'Remove bookmark');
+      bookmarkBtn.querySelector('span').textContent = 'Marked';
+      bookmarkBtn.setAttribute('aria-label', 'Remove mark');
     }
 
     bookmarkBtn.addEventListener('click', function() {
       const nowBookmarked = toggleBookmark(slug);
       this.classList.toggle('bookmarked', nowBookmarked);
-      this.querySelector('span').textContent = nowBookmarked ? 'Saved' : 'Save';
-      this.setAttribute('aria-label', nowBookmarked ? 'Remove bookmark' : 'Bookmark this poem');
+      this.querySelector('span').textContent = nowBookmarked ? 'Marked' : 'Mark';
+      this.setAttribute('aria-label', nowBookmarked ? 'Remove mark' : 'Mark this poem');
     });
   }
 
