@@ -404,22 +404,28 @@ const schema = {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .related-item {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   .related-item a {
     font-family: 'Libre Baskerville', serif;
-    font-size: 0.82rem;
-    color: var(--accent);
+    font-size: 0.78rem;
+    color: var(--ink);
+    background: var(--tag-bg);
     text-decoration: none;
-    transition: color 0.2s;
-    display: block;
-    line-height: 1.5;
+    transition: background 0.15s, color 0.15s;
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    line-height: 1.4;
   }
   .related-item a:hover {
-    color: var(--ink);
+    background: var(--accent);
+    color: var(--paper);
   }
 
   /* Adjacent poem navigation */
@@ -643,7 +649,6 @@ const schema = {
         }
         {nextPoem &&
           <a href={`${base}/poem/${nextPoem.slug}`} class="nav-next">
-            <span class="nav-label">Next →</span>
             <span class="nav-title">{nextPoem.title}</span>
           </a>
         }
