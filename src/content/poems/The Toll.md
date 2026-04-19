@@ -37,7 +37,7 @@ atmosphere:
 ground:
   - no-self
 description: Vacant inside, dragging the personhood outside — takes its toll — on every body.
-word-count: "108"
+word-count: "106"
 ---
 # The Toll
 Is it mostly serene
@@ -64,8 +64,8 @@ It cannot
 It takes it toll 
 Not on the mind, for there is none
 But only on the body
-That’s already seen
-To be the walking
+That already is 
+The walking
 Dead
 
 But, that’s the condition 
