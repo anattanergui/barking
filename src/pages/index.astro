@@ -854,7 +854,7 @@ const featuredPoolFinal = featuredPool.length > 0
     // Split query into individual words
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
     
-    return searchIndex.filter(p => {
+    const matches = searchIndex.filter(p => {
       // Combine all searchable text for this poem
       const searchable = [
         p.title,
@@ -867,6 +867,18 @@ const featuredPoolFinal = featuredPool.length > 0
       
       // Poem must contain ALL words from the query
       return words.every(word => searchable.includes(word));
+    });
+
+    // Sort: exact title matches first, then title-starts-with, then rest
+    return matches.sort((a, b) => {
+      const aTitle = a.title.toLowerCase();
+      const bTitle = b.title.toLowerCase();
+      const qLower = q.toLowerCase();
+      if (aTitle === qLower && bTitle !== qLower) return -1;
+      if (bTitle === qLower && aTitle !== qLower) return 1;
+      if (aTitle.startsWith(qLower) && !bTitle.startsWith(qLower)) return -1;
+      if (bTitle.startsWith(qLower) && !aTitle.startsWith(qLower)) return 1;
+      return 0;
     });
   }
 
