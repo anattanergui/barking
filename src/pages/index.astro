@@ -127,45 +127,6 @@ const featuredPoolFinal = featuredPool.length > 0
     margin-bottom: 0.6rem;
   }
 
-  .search-tips-btn {
-    background: none;
-    border: none;
-    color: var(--muted);
-    cursor: pointer;
-    font-size: 0.85rem;
-    padding: 0.2rem 0.4rem;
-    transition: color 0.2s;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-family: 'Karla', sans-serif;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-size: 0.6rem;
-  }
-  .search-tips-btn:hover { color: var(--ink); }
-  .search-tips-btn::before { content: '?'; font-weight: 600; }
-
-  .search-tips {
-    background: var(--bg-panel);
-    border: 1px solid var(--rule);
-    padding: 1rem 1.2rem;
-    margin-bottom: 0.8rem;
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.75rem;
-    line-height: 1.9;
-    color: var(--muted);
-    font-style: italic;
-    display: none;
-  }
-  .search-tips.visible { display: block; }
-  .search-tips strong {
-    color: var(--ink);
-    font-weight: 600;
-    font-style: normal;
-  }
-
   .search-input-wrap {
     position: relative;
   }
@@ -585,19 +546,13 @@ const featuredPoolFinal = featuredPool.length > 0
 
       <!-- Search -->
       <div class="search-wrap">
-        <div class="search-header">
-          <button class="search-tips-btn" id="search-tips-btn" aria-label="Show search tips">Tips</button>
-        </div>
-        <div class="search-tips" id="search-tips" role="region" aria-live="polite">
-          Search by <strong>title</strong>, <strong>domain</strong>, <strong>atmosphere</strong>, <strong>crux</strong>, or combinations like <em>"silence stark"</em> or <em>"nondual groundlessness"</em>
-        </div>
         <div class="search-input-wrap">
           <span class="search-icon" aria-hidden="true">⌕</span>
           <input
             type="text"
             class="search-input"
             id="search-input"
-            placeholder="Search poems, domains, atmospheres…"
+            placeholder="Search poems..."
             autocomplete="off"
             aria-label="Search poems"
           />
@@ -891,60 +846,27 @@ const featuredPoolFinal = featuredPool.length > 0
     window.location.href = `${base}/poem/${rand.slug}`;
   });
 
-  // ── Search tips toggle ─────────────────────────────────────────────────────
-  const tipsBtn = document.getElementById('search-tips-btn');
-  const tipsEl  = document.getElementById('search-tips');
-  
-  tipsBtn.addEventListener('click', () => {
-    tipsEl.classList.toggle('visible');
-    const isVisible = tipsEl.classList.contains('visible');
-    tipsBtn.setAttribute('aria-expanded', isVisible);
-    tipsBtn.textContent = isVisible ? 'Hide tips' : 'Tips';
-  });
-
-  // ── Search with fuzzy matching ─────────────────────────────────────────────
+  // ── Search with multi-word matching ────────────────────────────────────────
   const input   = document.getElementById('search-input');
   const results = document.getElementById('search-results');
 
-  // Simple fuzzy matching: allow 1 character difference for terms > 4 chars
-  function fuzzyMatch(text, query) {
-    text = text.toLowerCase();
-    query = query.toLowerCase();
-    
-    if (text.includes(query)) return true;
-    
-    // Only fuzzy match if query is long enough
-    if (query.length <= 4) return false;
-    
-    // Check if it's close enough (Levenshtein distance <= 1)
-    if (Math.abs(text.length - query.length) > 1) return false;
-    
-    let differences = 0;
-    const maxLen = Math.max(text.length, query.length);
-    
-    for (let i = 0; i < maxLen; i++) {
-      if (text[i] !== query[i]) differences++;
-      if (differences > 1) return false;
-    }
-    
-    return differences <= 1;
-  }
-
   function searchPoems(q) {
+    // Split query into individual words
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    
     return searchIndex.filter(p => {
-      const lowerQ = q.toLowerCase();
+      // Combine all searchable text for this poem
+      const searchable = [
+        p.title,
+        p.preview || '',
+        ...p.tags,
+        ...p.domains,
+        ...p.atmosphere,
+        ...p.crux
+      ].join(' ').toLowerCase();
       
-      // Exact matches
-      if (p.title.toLowerCase().includes(lowerQ)) return true;
-      if (p.preview && p.preview.toLowerCase().includes(lowerQ)) return true;
-      if (p.tags.some(t => t.toLowerCase().includes(lowerQ))) return true;
-      if (p.domains.some(t => t.toLowerCase().includes(lowerQ))) return true;
-      if (p.atmosphere.some(m => m.toLowerCase().includes(lowerQ))) return true;
-      if (p.crux.some(f => f.toLowerCase().includes(lowerQ))) return true;
-      
-      // Fuzzy matches for taxonomy terms
-      const allTerms = [...p.domains, ...p.atmosphere, ...p.crux, ...p.tags];
-      return allTerms.some(term => fuzzyMatch(term, q));
+      // Poem must contain ALL words from the query
+      return words.every(word => searchable.includes(word));
     });
   }
 
