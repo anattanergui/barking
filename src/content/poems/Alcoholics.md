@@ -52,8 +52,8 @@ description: Alcoholics as unwilling seers of the self's instability — shamed 
 word-count: "204"
 related:
   - "[[The Addict]]"
-  - "[[The Brew]]"
-  - "[[The Mirror Sage]]"
+  - "[[No Me Nowhere]]"
+  - "[[Between Worlds]]"
 ---
 # Alcoholics 
 It’s easy to see 
