@@ -36,8 +36,8 @@ atmosphere:
   - austere
 ground:
   - no-self
-description: 
-  Vacant inside, dragging the personhood outside — takes its toll — on every body.
+description: Vacant inside, dragging the personhood outside — takes its toll — on every body.
+word-count: "108"
 ---
 # The Toll
 Is it mostly serene
@@ -57,7 +57,7 @@ That sometimes, seeks company
 But how can it be effortless
 Or painless — 
 To be conscious, at all times
-Of vacant inside, dragging
+Vacant inside, dragging
 The personhood outside
 
 It cannot
