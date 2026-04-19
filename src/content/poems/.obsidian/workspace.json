@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Middle"
             }
+          },
+          {
+            "id": "712f0192f69b0ac7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graces.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Graces"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -172,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Middle.md",
+                "file": "Graces.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Middle"
+              "title": "Outline of Graces"
             }
           },
           {
@@ -212,10 +226,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "b91487652b1a71ef",
+  "active": "712f0192f69b0ac7",
   "lastOpenFiles": [
-    "Now.md",
     "Middle.md",
+    "Graces.md",
+    "Now.md",
     "One And Other.md",
     "Presence.md",
     "About Death.md",
@@ -239,7 +254,6 @@
     "After.md",
     "Solitude.md",
     "Till Grave.md",
-    "Fish, As Me.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
