@@ -19,6 +19,8 @@ atmosphere:
 ground:
   - immanence
 word-count: "9"
+description:
+  - Toast, buttered — fried eggs — hash — heaven
 ---
 # Graces
 Toast, buttered
