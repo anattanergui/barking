@@ -297,29 +297,7 @@ const schema = {
     color: var(--muted);
     margin-bottom: 0.8rem;
     position: relative;
-    cursor: help;
-  }
-
-  .s-label[data-tooltip]::after {
-    content: attr(data-tooltip);
-    position: absolute;
-    left: 0;
-    bottom: calc(100% + 0.5rem);
-    background: var(--bg);
-    color: var(--ink);
-    padding: 0.5rem 0.8rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.05em;
-    text-transform: none;
-    white-space: nowrap;
-    border: 1px solid var(--rule);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s;
-    z-index: 10;
-  }
-  .s-label[data-tooltip]:hover::after {
-    opacity: 1;
+    cursor: default;
   }
 
   .s-tags {
@@ -381,49 +359,36 @@ const schema = {
   }
 
   /* Adjacent poem navigation */
-  .nav-poem {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
+  /* Next poem - appears in sidebar between nav and metadata */
+  .next-poem {
+    margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--rule);
   }
 
-  .nav-prev,
-  .nav-next {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-    padding: 1rem;
-    border: 1px solid var(--rule);
-    text-decoration: none;
-    transition: background 0.15s, border-color 0.15s;
-  }
-  .nav-prev:hover,
-  .nav-next:hover {
-    background: var(--stat-hover);
-    border-color: var(--muted);
-  }
-
-  .nav-next {
-    text-align: right;
-  }
-
-  .nav-label {
+  .next-label {
     font-family: 'Karla', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
+    display: block;
+    margin-bottom: 0.8rem;
   }
 
-  .nav-title {
+  .next-link {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: 300;
     color: var(--ink);
-    line-height: 1.3;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+  }
+
+  .next-link:hover {
+    color: var(--accent);
   }
 
   /* Mobile adjustments */
@@ -528,12 +493,7 @@ const schema = {
   <aside class="sidebar-col">
     {atmosphere.length > 0 && (
       <>
-        <span 
-          class="s-label"
-          data-tooltip="The sensory or emotional tone of the poem"
-        >
-          Atmosphere
-        </span>
+        <span class="s-label">Atmosphere</span>
         <div class="s-tags">
           {atmosphere.map(m => (
             <a href={`${base}/browse?atmosphere=${encodeURIComponent(m)}`} class="tag">{m}</a>
@@ -544,12 +504,7 @@ const schema = {
 
     {crux.length > 0 && (
       <>
-        <span 
-          class="s-label"
-          data-tooltip="The conceptual pivot or core tension of the poem"
-        >
-          Crux
-        </span>
+        <span class="s-label">Crux</span>
         <div class="s-tags">
           {crux.map(f => (
             <a href={`${base}/browse?crux=${encodeURIComponent(f)}`} class="tag">{f}</a>
@@ -567,12 +522,7 @@ const schema = {
 
     {domains.length > 0 && (
       <>
-        <span 
-          class="s-label"
-          data-tooltip="The subject matter or thematic territory"
-        >
-          Domain
-        </span>
+        <span class="s-label">Domain</span>
         <div class="s-tags">
           {domains.map(t => (
             <a href={`${base}/browse?domain=${encodeURIComponent(t)}`} class="tag">{t}</a>
@@ -583,12 +533,7 @@ const schema = {
 
     {ground.length > 0 && (
       <>
-        <span 
-          class="s-label"
-          data-tooltip="The philosophical or methodological approach"
-        >
-          Ground
-        </span>
+        <span class="s-label">Ground</span>
         <div class="s-tags">
           {ground.map(g => (
             <a href={`${base}/browse?ground=${encodeURIComponent(g)}`} class="tag">{g}</a>
@@ -610,21 +555,11 @@ const schema = {
       </>
     )}
 
-    {(prevPoem || nextPoem) && (
-      <nav class="nav-poem" aria-label="Adjacent poems">
-        {prevPoem
-          ? <a href={`${base}/poem/${prevPoem.slug}`} class="nav-prev">
-              <span class="nav-label">← Previous</span>
-              <span class="nav-title">{prevPoem.title}</span>
-            </a>
-          : <span />
-        }
-        {nextPoem &&
-          <a href={`${base}/poem/${nextPoem.slug}`} class="nav-next">
-            <span class="nav-title">{nextPoem.title}</span>
-          </a>
-        }
-      </nav>
+    {nextPoem && (
+      <div class="next-poem">
+        <span class="next-label">Next poem</span>
+        <a href={`${base}/poem/${nextPoem.slug}`} class="next-link">{nextPoem.title}</a>
+      </div>
     )}
   </aside>
 </div>
