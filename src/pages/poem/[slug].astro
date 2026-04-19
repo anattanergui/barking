@@ -153,21 +153,21 @@ const schema = {
 
   .action-btn {
     font-family: 'Karla', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--muted);
     background: none;
-    border: 1px solid var(--rule);
+    border: none;
     cursor: pointer;
-    padding: 0.7rem 1.2rem;
-    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    padding: 0;
+    transition: color 0.2s;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
   .action-btn::before { 
-    font-size: 1.15rem; 
+    font-size: 1rem; 
     line-height: 1;
   }
   .bookmark-btn::before { 
@@ -175,7 +175,6 @@ const schema = {
   }
   .bookmark-btn.bookmarked {
     color: var(--ink);
-    border-color: var(--ink);
   }
   .bookmark-btn.bookmarked::before { 
     content: '✒'; 
@@ -185,8 +184,6 @@ const schema = {
   }
   .action-btn:hover { 
     color: var(--ink); 
-    border-color: var(--muted);
-    background: var(--bg-panel);
   }
 
   /* Send dropdown - appears directly below the button */
