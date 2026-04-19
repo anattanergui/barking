@@ -798,15 +798,25 @@ const schema = {
     nativeSendBtn.style.display = 'flex';
   }
 
+  // Track scroll position for modal
+  let scrollPosition = 0;
+
   // Open modal
   if (shareBtn && shareModal) {
     shareBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
-      shareModal.classList.add('open');
+      
+      // Save current scroll position
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Prevent body scroll
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPosition}px`;
       document.body.style.width = '100%';
+      
+      shareModal.classList.add('open');
       shareModal.scrollTop = 0;
     });
   }
@@ -815,9 +825,15 @@ const schema = {
   function closeModal() {
     if (shareModal) {
       shareModal.classList.remove('open');
+      
+      // Restore body scroll
       document.body.style.overflow = '';
       document.body.style.position = '';
+      document.body.style.top = '';
       document.body.style.width = '';
+      
+      // Restore scroll position
+      window.scrollTo(0, scrollPosition);
     }
   }
 
