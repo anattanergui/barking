@@ -123,11 +123,18 @@ const resolvedSchema = schema ?? defaultSchema;
       navToggle.addEventListener('click', toggleNav);
       navBackdrop.addEventListener('click', toggleNav);
 
-      // Close on nav link click
+      // Close on nav link click - small delay to allow navigation
       navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (e) => {
           if (navLinks.classList.contains('open')) {
-            toggleNav();
+            // Let the navigation happen, then close after a brief moment
+            setTimeout(() => {
+              navLinks.classList.remove('open');
+              navBackdrop.classList.remove('visible');
+              navToggle.classList.remove('active');
+              navToggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }, 100);
           }
         });
       });
@@ -348,12 +355,10 @@ const resolvedSchema = schema ?? defaultSchema;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 998;
     opacity: 0;
     transition: opacity 0.3s;
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
     pointer-events: none;
   }
 
@@ -370,6 +375,8 @@ const resolvedSchema = schema ?? defaultSchema;
       justify-content: space-between;
       align-items: center;
       padding: 0 1.5rem;
+      position: relative;
+      z-index: 1002;
     }
 
     .nav-toggle {
@@ -383,7 +390,7 @@ const resolvedSchema = schema ?? defaultSchema;
       bottom: 0;
       width: 75%;
       max-width: 280px;
-      background: var(--bg-panel);
+      background: var(--bg);
       border-left: 1px solid var(--rule);
       transform: translateX(100%);
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
