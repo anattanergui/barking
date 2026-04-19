@@ -43,7 +43,7 @@
               "state": {
                 "file": "Graces.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Graces"

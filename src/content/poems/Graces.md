@@ -10,6 +10,7 @@ tags:
 related:
   - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
   - "[[Profanity In Service]]"
+  - "[[Grace]]"
 domain:
   - ordinariness
 crux:
