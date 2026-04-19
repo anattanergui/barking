@@ -66,7 +66,10 @@ const resolvedSchema = schema ?? defaultSchema;
 <body>
   <nav aria-label="Site navigation">
     <a href={`${base}/`} class="nav-brand">Anatta Nergui</a>
-    <div class="nav-links">
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <div class="nav-links" id="nav-links">
       <a href={`${base}/`}          aria-current={isActive(`${base}/`)          ? 'page' : undefined}>Home</a>
       <a href={`${base}/browse`}    aria-current={isActive(`${base}/browse`)    ? 'page' : undefined}>Browse</a>
       <a href={`${base}/graph`}     aria-current={isActive(`${base}/graph`)     ? 'page' : undefined}>Graph</a>
@@ -79,6 +82,7 @@ const resolvedSchema = schema ?? defaultSchema;
       <a href={`${base}/about`}     aria-current={isActive(`${base}/about`)     ? 'page' : undefined}>About</a>
     </div>
   </nav>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
 
   <main class="main-content">
     <slot />
@@ -90,6 +94,52 @@ const resolvedSchema = schema ?? defaultSchema;
     <button class="theme-dot" data-theme="slate"    title="Charcoal slate"></button>
     <button class="theme-dot" data-theme="graphite" title="Warm graphite"></button>
   </div>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navBackdrop = document.getElementById('nav-backdrop');
+
+    if (navToggle && navLinks && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navLinks.classList.contains('open');
+        
+        if (isOpen) {
+          navLinks.classList.remove('open');
+          navBackdrop.classList.remove('visible');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        } else {
+          navLinks.classList.add('open');
+          navBackdrop.classList.add('visible');
+          navToggle.classList.add('active');
+          navToggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+
+      // Close on nav link click
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          if (navLinks.classList.contains('open')) {
+            toggleNav();
+          }
+        });
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+          toggleNav();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
 
@@ -227,6 +277,171 @@ const resolvedSchema = schema ?? defaultSchema;
   .theme-dot[data-theme="ivory"]    { background: #d8d4cd; }
   .theme-dot[data-theme="slate"]    { background: #18191c; }
   .theme-dot[data-theme="graphite"] { background: #3a3228; }
+
+  /* ─── MOBILE NAVIGATION ──────────────────────────────────────────────── */
+  
+  /* Hamburger toggle button - hidden on desktop */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1001;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle-icon,
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 4px;
+  }
+
+  .nav-toggle-icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    content: '';
+  }
+
+  .nav-toggle-icon::before {
+    top: -8px;
+  }
+
+  .nav-toggle-icon::after {
+    top: 8px;
+  }
+
+  /* Animated hamburger to X */
+  .nav-toggle.active .nav-toggle-icon {
+    background: transparent;
+  }
+
+  .nav-toggle.active .nav-toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle.active .nav-toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Navigation backdrop */
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+  }
+
+  .nav-backdrop.visible {
+    display: block;
+    opacity: 1;
+  }
+
+  /* Mobile navigation styles */
+  @media (max-width: 900px) {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: var(--nav-h);
+      right: 0;
+      bottom: 0;
+      width: 75%;
+      max-width: 280px;
+      background: var(--bg-panel);
+      border-left: 1px solid var(--rule);
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1000;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+      gap: 0;
+      box-shadow: none;
+    }
+
+    .nav-links.open {
+      transform: translateX(0);
+      box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links a {
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .nav-links a:hover {
+      background: var(--stat-hover);
+    }
+
+    .nav-links a[aria-current="page"] {
+      background: var(--ink);
+      color: var(--bg);
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .nav-brand {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 500px) {
+    nav {
+      padding: 0 1rem;
+    }
+
+    .nav-brand {
+      font-size: 0.7rem;
+    }
+
+    .nav-links {
+      width: 85%;
+      max-width: none;
+    }
+  }
 </style>
 
 <script>

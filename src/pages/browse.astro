@@ -156,6 +156,8 @@ const allTagsJson = JSON.stringify(filters.tags);
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+    gap: 1rem;
   }
 
   .result-count {
@@ -165,7 +167,7 @@ const allTagsJson = JSON.stringify(filters.tags);
   }
   .result-count span { font-family: 'Karla', sans-serif; font-size: 0.85rem; color: var(--muted); }
 
-  .sort-btns { display: flex; gap: 1.5rem; }
+  .sort-btns { display: flex; gap: 1.5rem; flex-wrap: wrap; }
   .sort-btn {
     font-size: 0.62rem;
     letter-spacing: 0.15em;
@@ -199,15 +201,159 @@ const allTagsJson = JSON.stringify(filters.tags);
     grid-column: 1/-1;
   }
 
+  /* Mobile filter toggle - hidden on desktop */
+  .filter-toggle {
+    display: none;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+  }
+
+  /* MOBILE RESPONSIVE */
   @media (max-width: 900px) {
-    .layout { grid-template-columns: 1fr; }
-    .sidebar { position: static; height: auto; border-right: none; border-bottom: 1px solid var(--rule); }
-    .main { padding: 2rem 1.5rem; }
+    .layout { 
+      grid-template-columns: 1fr;
+      display: block;
+    }
+
+    /* Filter toggle button - visible only on mobile */
+    .filter-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--bg-panel);
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      padding: 0.85rem 1.3rem;
+      cursor: pointer;
+      margin: 1.5rem 1.5rem 0;
+      transition: background 0.2s, border-color 0.2s;
+      position: sticky;
+      top: calc(var(--nav-h) + 1rem);
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-toggle:hover {
+      background: var(--stat-hover);
+      border-color: var(--muted);
+    }
+
+    .filter-toggle::before {
+      content: '☰';
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .filter-toggle.active::before {
+      content: '✕';
+    }
+
+    /* Sidebar becomes slide-out drawer on mobile */
+    .sidebar {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 320px;
+      background: var(--bg);
+      border-right: 1px solid var(--rule);
+      border-bottom: none;
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+      box-shadow: none;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Backdrop */
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar-backdrop.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Main content */
+    .main { 
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    .browse-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .sort-btns {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    /* Grid - single column on very small screens */
+    .grid {
+      grid-template-columns: 1fr;
+      border-left: none;
+    }
+
+    .empty {
+      padding: 3rem 1.5rem;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 500px) {
+    .filter-toggle {
+      margin: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.65rem;
+    }
+
+    .main {
+      padding: 1rem;
+    }
+
+    .sidebar {
+      width: 90%;
+      max-width: none;
+    }
   }
 </style>
 
 <div class="layout">
-  <aside class="sidebar">
+  <!-- Mobile filter toggle button -->
+  <button class="filter-toggle" id="filter-toggle" aria-label="Toggle filters">
+    Filters
+  </button>
+
+  <!-- Backdrop for mobile -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <aside class="sidebar" id="sidebar">
     <input class="search" type="text" placeholder="Search poems…" id="search" />
 
     <!-- Badge shown when arriving from the cloud page via ?term= -->
@@ -265,7 +411,6 @@ const allTagsJson = JSON.stringify(filters.tags);
       </div>
     </div>
 
-    <!-- Tags rendered client-side so show-more works without JS hydration -->
     <div class="filter-group">
       <div class="filter-heading" data-collapse="tag-body">Tags <span class="filter-arrow">&#9662;</span></div>
       <div class="filter-body" id="tag-body">
@@ -279,13 +424,13 @@ const allTagsJson = JSON.stringify(filters.tags);
 
   <main class="main">
     <div class="browse-header">
-      <div class="result-count" id="count">… <span>poems</span></div>
+      <div class="result-count" id="count">458 <span>poems</span></div>
       <div class="sort-btns">
         <button class="sort-btn active" data-sort="alpha">A–Z</button>
-        <button class="sort-btn" data-sort="atmosphere">By atmosphere</button>
-        <button class="sort-btn" data-sort="domain">By domain</button>
-        <button class="sort-btn" data-sort="crux">By crux</button>
-        <button class="sort-btn" data-sort="ground">By ground</button>
+        <button class="sort-btn" data-sort="atmosphere">By Atmosphere</button>
+        <button class="sort-btn" data-sort="domain">By Domain</button>
+        <button class="sort-btn" data-sort="crux">By Crux</button>
+        <button class="sort-btn" data-sort="ground">By Ground</button>
       </div>
     </div>
     <div class="grid" id="grid"></div>
@@ -293,21 +438,20 @@ const allTagsJson = JSON.stringify(filters.tags);
 </div>
 
 <script define:vars={{ poemsJson, allTagsJson, base }}>
-  const ALL      = JSON.parse(poemsJson);
+  const ALL = JSON.parse(poemsJson);
   const ALL_TAGS = JSON.parse(allTagsJson);
-  const TAG_PREVIEW = 15;
+  const TAG_PREVIEW = 10;
   let tagsExpanded = false;
+  let sortMode = 'alpha';
 
-  // ── Active filter state ────────────────────────────────────────────────────
+  const CAT_FIELD = {
+    domains: 'domains',
+    atmosphere: 'atmosphere',
+    ground: 'ground',
+    crux: 'crux'
+  };
+
   const params = new URLSearchParams(location.search);
-
-  // ?term= + ?cats= come from cloud.astro links (cross-category match)
-  // When set, a poem matches if the term appears in ANY of the listed cats.
-  let cloudTerm = params.get('term') || null;
-  let cloudCats = params.get('cats')
-    ? params.get('cats').split(',').filter(Boolean)
-    : null;
-
   let active = {
     domain:     params.get('domain')     || null,
     atmosphere: params.get('atmosphere') || null,
@@ -315,20 +459,53 @@ const allTagsJson = JSON.stringify(filters.tags);
     crux:       params.get('crux')       || null,
     tag:        params.get('tag')        || null,
   };
-  let sortMode = 'alpha';
+  let cloudTerm = params.get('term') || null;
+  let cloudCats = params.get('cats') ? params.get('cats').split(',') : null;
 
-  // Map from category key → the poem field that holds those values
-  const CAT_FIELD = {
-    domains:    'domains',
-    atmosphere: 'atmosphere',
-    ground:     'ground',
-    crux:       'crux',
-  };
+  // ── Mobile filter toggle ───────────────────────────────────────────────────
+  const toggleBtn = document.getElementById('filter-toggle');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const sidebar = document.getElementById('sidebar');
+
+  function toggleSidebar() {
+    const isOpen = sidebar.classList.contains('open');
+    
+    if (isOpen) {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      toggleBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      sidebar.classList.add('open');
+      backdrop.classList.add('visible');
+      toggleBtn.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', toggleSidebar);
+    
+    if (backdrop) {
+      backdrop.addEventListener('click', toggleSidebar);
+    }
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        toggleSidebar();
+      }
+    });
+  }
 
   // ── URL sync ───────────────────────────────────────────────────────────────
   function syncURL() {
     const p = new URLSearchParams();
-    Object.entries(active).forEach(([k, v]) => { if (v) p.set(k, v); });
+    if (active.domain)     p.set('domain', active.domain);
+    if (active.atmosphere) p.set('atmosphere', active.atmosphere);
+    if (active.ground)     p.set('ground', active.ground);
+    if (active.crux)       p.set('crux', active.crux);
+    if (active.tag)        p.set('tag', active.tag);
     if (cloudTerm) {
       p.set('term', cloudTerm);
       if (cloudCats) p.set('cats', cloudCats.join(','));
@@ -410,6 +587,11 @@ const allTagsJson = JSON.stringify(filters.tags);
     syncURL();
     updateClear();
     apply();
+
+    // Auto-close sidebar on mobile after selecting filter
+    if (window.innerWidth <= 900 && sidebar.classList.contains('open')) {
+      setTimeout(toggleSidebar, 150);
+    }
 
     if (type === 'tag') renderTags();
   }
@@ -575,6 +757,29 @@ const allTagsJson = JSON.stringify(filters.tags);
   .card-preview p {
     margin: 0;
     padding: 0;
+  }
+
+  /* Mobile card adjustments */
+  @media (max-width: 900px) {
+    .card {
+      padding: 2rem 1.5rem;
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .card {
+      padding: 1.5rem 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-preview {
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
   }
 </style>
 </Base>
