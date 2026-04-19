@@ -6,8 +6,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const allPoems = getAllPoemsMeta();
 ---
 <Base
-  title="Marks"
-  description="Your marked poems from Barking"
+  title="Bookmarks"
+  description="Your bookmarked poems from Barking"
 >
 <style>
   .bookmarks-container {
@@ -31,7 +31,18 @@ const allPoems = getAllPoemsMeta();
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
+    margin-bottom: 1rem;
+  }
+
+  .privacy-notice {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.6;
+    color: var(--muted);
     margin-bottom: 3rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid var(--rule);
+    background: var(--bg-panel);
   }
 
   .empty-state {
@@ -58,43 +69,42 @@ const allPoems = getAllPoemsMeta();
     list-style: none;
     margin: 0;
     padding: 0;
+    border-top: 1px solid var(--rule);
   }
 
   .bookmark-item {
     border-bottom: 1px solid var(--rule);
-    transition: background 0.15s;
-  }
-  .bookmark-item:first-child {
-    border-top: 1px solid var(--rule);
-  }
-  .bookmark-item:hover {
-    background: var(--stat-hover);
   }
 
   .bookmark-link {
     display: block;
-    padding: 1.2rem 1.5rem;
+    padding: 1.8rem 1.5rem;
     text-decoration: none;
     color: var(--ink);
+    transition: background 0.15s;
+  }
+  .bookmark-link:hover {
+    background: var(--stat-hover);
   }
 
   .bookmark-title {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 300;
-    margin-bottom: 0.5rem;
+    line-height: 1.3;
     transition: color 0.2s;
   }
-  .bookmark-item:hover .bookmark-title {
+  .bookmark-link:hover .bookmark-title {
     color: var(--accent);
   }
 
-  .bookmark-meta {
+  .bookmark-timestamp {
     font-family: 'Karla', sans-serif;
-    font-size: 0.65rem;
+    font-size: 0.62rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--muted);
+    color: var(--rule);
+    margin-top: 0.6rem;
   }
 
   .bookmark-actions {
@@ -103,6 +113,7 @@ const allPoems = getAllPoemsMeta();
     border-top: 1px solid var(--rule);
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .btn-ghost {
@@ -132,23 +143,30 @@ const allPoems = getAllPoemsMeta();
       font-size: 2.2rem;
     }
     .bookmark-link {
-      padding: 1rem;
+      padding: 1.5rem 1rem;
+    }
+    .privacy-notice {
+      font-size: 0.65rem;
+      padding: 0.9rem 1rem;
     }
   }
 </style>
 
 <div class="bookmarks-container">
-  <h1>Marks</h1>
+  <h1>Bookmarks</h1>
   <p class="subtitle" id="bookmark-count">Loading...</p>
+  <div class="privacy-notice">
+    Your bookmarks are stored locally on this device only. Nothing is collected, tracked, or sent to any server.
+  </div>
 
   <div id="bookmarks-content">
     <div class="empty-state">
-      Loading your marks...
+      Loading your bookmarks...
     </div>
   </div>
 
   <div class="bookmark-actions" id="bookmark-actions" style="display: none;">
-    <button class="btn-ghost" id="clear-all-btn">Clear all marks</button>
+    <button class="btn-ghost" id="clear-all-btn">Clear all bookmarks</button>
     <button class="btn-ghost" id="export-btn">Export as JSON</button>
   </div>
 </div>
@@ -175,6 +193,35 @@ const allPoems = getAllPoemsMeta();
     }
   }
 
+  function getBookmarkTimestamps() {
+    try {
+      const data = localStorage.getItem('barking-bookmark-timestamps');
+      if (!data) return {};
+      return JSON.parse(data);
+    } catch (e) {
+      return {};
+    }
+  }
+
+  function formatTimestamp(slug) {
+    const timestamps = getBookmarkTimestamps();
+    if (!timestamps[slug]) return null;
+    
+    const date = new Date(timestamps[slug]);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    
+    if (diffDays === 0) return 'Marked today';
+    if (diffDays === 1) return 'Marked yesterday';
+    if (diffDays < 7) return `Marked ${diffDays} days ago`;
+    if (diffDays < 30) return `Marked ${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) !== 1 ? 's' : ''} ago`;
+    
+    // Format as "Marked Jan 15"
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `Marked ${months[date.getMonth()]} ${date.getDate()}`;
+  }
+
   function renderBookmarks() {
     const bookmarkSlugs = getBookmarks();
     const countEl = document.getElementById('bookmark-count');
@@ -182,10 +229,10 @@ const allPoems = getAllPoemsMeta();
     const actionsEl = document.getElementById('bookmark-actions');
 
     if (bookmarkSlugs.length === 0) {
-      countEl.textContent = 'No marks yet';
+      countEl.textContent = 'No bookmarks yet';
       contentEl.innerHTML = `
         <div class="empty-state">
-          You haven't marked any poems yet. Click the "Mark" button at the end of any poem to mark it.<br><br>
+          You haven't bookmarked any poems yet. Bookmarks are stored locally on your device.<br><br>
           <a href="${base}/browse">Browse the collection →</a>
         </div>
       `;
@@ -193,7 +240,7 @@ const allPoems = getAllPoemsMeta();
       return;
     }
 
-    countEl.textContent = `${bookmarkSlugs.length} poem${bookmarkSlugs.length !== 1 ? 's' : ''} marked`;
+    countEl.textContent = `${bookmarkSlugs.length} poem${bookmarkSlugs.length !== 1 ? 's' : ''} bookmarked`;
 
     // Get poem details for bookmarked slugs
     const bookmarkedPoems = bookmarkSlugs
@@ -203,7 +250,7 @@ const allPoems = getAllPoemsMeta();
     if (bookmarkedPoems.length === 0) {
       contentEl.innerHTML = `
         <div class="empty-state">
-          No matching poems found. Your marks may reference deleted poems.
+          No matching poems found. Your bookmarks may reference deleted poems.
         </div>
       `;
       actionsEl.style.display = 'none';
@@ -213,16 +260,12 @@ const allPoems = getAllPoemsMeta();
     contentEl.innerHTML = `
       <ul class="bookmarks-list">
         ${bookmarkedPoems.map(poem => {
-          const meta = [...(poem.atmosphere || []), ...(poem.crux || []), ...(poem.domains || []).slice(0, 2)]
-            .filter(Boolean)
-            .slice(0, 3)
-            .join(' · ');
-          
+          const timestamp = formatTimestamp(poem.slug);
           return `
             <li class="bookmark-item">
               <a href="${base}/poem/${poem.slug}" class="bookmark-link">
                 <div class="bookmark-title">${poem.title}</div>
-                ${meta ? `<div class="bookmark-meta">${meta}</div>` : ''}
+                ${timestamp ? `<div class="bookmark-timestamp">${timestamp}</div>` : ''}
               </a>
             </li>
           `;
@@ -233,33 +276,37 @@ const allPoems = getAllPoemsMeta();
     actionsEl.style.display = 'flex';
   }
 
-  function clearAllBookmarks() {
-    if (confirm('Are you sure you want to clear all marks? This cannot be undone.')) {
+  // Clear all
+  document.getElementById('clear-all-btn').addEventListener('click', () => {
+    if (confirm('Are you sure you want to clear all bookmarks? This cannot be undone.')) {
       saveBookmarks([]);
+      try {
+        localStorage.removeItem('barking-bookmark-timestamps');
+      } catch (e) {
+        console.error('Failed to clear timestamps:', e);
+      }
       renderBookmarks();
     }
-  }
+  });
 
-  function exportBookmarks() {
+  // Export
+  document.getElementById('export-btn').addEventListener('click', () => {
     const bookmarks = getBookmarks();
-    const data = JSON.stringify(bookmarks, null, 2);
-    const blob = new Blob([data], { type: 'application/json' });
+    const timestamps = getBookmarkTimestamps();
+    const exportData = {
+      bookmarks,
+      timestamps,
+      exportDate: new Date().toISOString()
+    };
+    const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = 'barking-bookmarks.json';
+    a.download = `barking-bookmarks-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
-  }
+  });
 
-  // Initialize
   renderBookmarks();
-
-  // Event listeners
-  const clearBtn = document.getElementById('clear-all-btn');
-  const exportBtn = document.getElementById('export-btn');
-  
-  if (clearBtn) clearBtn.addEventListener('click', clearAllBookmarks);
-  if (exportBtn) exportBtn.addEventListener('click', exportBookmarks);
 </script>
 </Base>
