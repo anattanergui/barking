@@ -197,19 +197,15 @@ const schema = {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    z-index: 2000;
+    z-index: 9999;
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    pointer-events: none;
+    padding: 1rem;
     overflow-y: auto;
   }
   .send-modal.open {
     display: flex;
-    pointer-events: auto;
   }
 
   .send-panel {
@@ -218,10 +214,21 @@ const schema = {
     max-width: 460px;
     width: 100%;
     padding: 2.5rem;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    pointer-events: auto;
-    margin: auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
     position: relative;
+    margin: auto;
+    z-index: 10000;
+  }
+
+  @media (max-width: 600px) {
+    .send-modal {
+      padding: 1rem;
+    }
+    
+    .send-panel {
+      padding: 2rem 1.5rem;
+      max-width: 100%;
+    }
   }
 
   .send-header {
@@ -798,26 +805,14 @@ const schema = {
     nativeSendBtn.style.display = 'flex';
   }
 
-  // Track scroll position for modal
-  let scrollPosition = 0;
-
   // Open modal
   if (shareBtn && shareModal) {
     shareBtn.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       
-      // Save current scroll position
-      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-      
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollPosition}px`;
-      document.body.style.width = '100%';
-      
       shareModal.classList.add('open');
-      shareModal.scrollTop = 0;
+      document.body.style.overflow = 'hidden';
     });
   }
 
@@ -825,15 +820,7 @@ const schema = {
   function closeModal() {
     if (shareModal) {
       shareModal.classList.remove('open');
-      
-      // Restore body scroll
       document.body.style.overflow = '';
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.width = '';
-      
-      // Restore scroll position
-      window.scrollTo(0, scrollPosition);
     }
   }
 
