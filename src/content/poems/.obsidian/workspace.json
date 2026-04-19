@@ -4,63 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "314c6ea3f3546795",
+        "id": "c849dbc002584a0f",
         "type": "tabs",
         "children": [
           {
-            "id": "92508274cc25a180",
+            "id": "8b9d53d2d81ef21a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Profanity In Service.md",
+                "file": "One And Other.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Profanity In Service"
+              "title": "One And Other"
             }
           },
           {
-            "id": "95ecb9830579bcc9",
+            "id": "b91487652b1a71ef",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Invasion.md",
+                "file": "Middle.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Invasion"
-            }
-          },
-          {
-            "id": "accecc8df60e505d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Control.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Control"
-            }
-          },
-          {
-            "id": "9b1da760949248a4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "About Death.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "About Death"
+              "title": "Middle"
             }
           }
         ],
@@ -83,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byModifiedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -96,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "the invasi",
+                "query": "conceptual ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,12 +89,12 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -200,13 +172,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "The Invasion.md",
+                "file": "Middle.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of The Invasion"
+              "title": "Outline of Middle"
             }
           },
           {
@@ -240,16 +212,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "95ecb9830579bcc9",
+  "active": "b91487652b1a71ef",
   "lastOpenFiles": [
+    "Now.md",
+    "Middle.md",
+    "One And Other.md",
+    "Presence.md",
+    "About Death.md",
+    "Control.md",
+    "The Invasion.md",
+    "Profanity In Service.md",
     "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "Wonder.md",
     "About Health.md",
     "Misnomer.md",
-    "Profanity In Service.md",
     "Turn.md",
-    "About Death.md",
-    "Control.md",
     "Love.md",
     "About Freedom.md",
     "What Else.md",
@@ -263,11 +240,6 @@
     "Solitude.md",
     "Till Grave.md",
     "Fish, As Me.md",
-    "Reprieves.md",
-    "Awareness.md",
-    "In The First Place.md",
-    "The Grave.md",
-    "Unwritten.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

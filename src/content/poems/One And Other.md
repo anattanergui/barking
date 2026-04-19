@@ -9,6 +9,11 @@ tags:
   - two
   - one
   - other
+  - conceptual
+  - sustained
+  - another
+  - bind
+  - alone
 domain:
   - mediation
 crux:
@@ -19,7 +24,11 @@ ground:
   - analytic
 related:
   - "[[Umbilical Cord]]"
+  - "[[Middle]]"
+  - "[[Indivisibility]]"
 word-count: "92"
+description:
+  - Between one and other remains — indeterminate — a third, concept, or nothing
 ---
 
 # One And Other
