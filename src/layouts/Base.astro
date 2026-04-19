@@ -288,7 +288,7 @@ const resolvedSchema = schema ?? defaultSchema;
     cursor: pointer;
     padding: 0.5rem;
     position: relative;
-    z-index: 1001;
+    z-index: 1002;
     width: 32px;
     height: 32px;
     flex-shrink: 0;
@@ -348,17 +348,19 @@ const resolvedSchema = schema ?? defaultSchema;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 999;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
     opacity: 0;
     transition: opacity 0.3s;
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
+    pointer-events: none;
   }
 
   .nav-backdrop.visible {
     display: block;
     opacity: 1;
+    pointer-events: auto;
   }
 
   /* Mobile navigation styles */
@@ -385,7 +387,7 @@ const resolvedSchema = schema ?? defaultSchema;
       border-left: 1px solid var(--rule);
       transform: translateX(100%);
       transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 1000;
+      z-index: 1001;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
