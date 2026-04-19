@@ -1,6 +1,5 @@
 ---
 tags:
-  - love
   - pardon
   - recognition
   - all
@@ -13,7 +12,9 @@ tags:
   - violence
   - humans
   - place
-domain: love
+  - love
+domain:
+  - love
 crux: recognition
 atmosphere: unsparing
 ground: ontological

@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graces.md",
+                "file": "Love.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Graces"
+              "title": "Love"
             }
           }
         ],
@@ -69,7 +69,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "conceptual ",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,12 +103,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -186,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graces.md",
+                "file": "Love.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Graces"
+              "title": "Outline of Love"
             }
           },
           {
@@ -228,10 +228,13 @@
   },
   "active": "712f0192f69b0ac7",
   "lastOpenFiles": [
-    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
-    "Middle.md",
+    "An’al Haq.md",
     "One And Other.md",
+    "Middle.md",
+    "Love.md",
     "Graces.md",
+    "Untitled.md",
+    "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "Profanity In Service.md",
     "Now.md",
     "Presence.md",
@@ -242,7 +245,6 @@
     "About Health.md",
     "Misnomer.md",
     "Turn.md",
-    "Love.md",
     "About Freedom.md",
     "What Else.md",
     "Cost Of Space.md",
@@ -252,8 +254,6 @@
     "Without The Word.md",
     "The Word.md",
     "After.md",
-    "Solitude.md",
-    "Till Grave.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

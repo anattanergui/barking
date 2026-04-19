@@ -1,5 +1,4 @@
 ---
-title: An'al Haq
 tags:
   - hallaj
   - void
@@ -26,7 +25,7 @@ related:
   - "[[I Am That]]"
   - "[[not-Paradox]]"
   - "[[Identity]]"
-description: "Speaks to Al-Hallaj across centuries: why utter the unspeakable when nothing remains — and yet, tears, and O' Lord."
+description: To Al-Hallaj — why utter the unspeakable when nothing remains — yet, tears — O' Lord.
 ---
 # An’al Haq
 Was it the Middle Ages
