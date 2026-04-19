@@ -8,9 +8,9 @@ tags:
   - eggs
   - heaven
 related:
-  - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
-  - "[[Profanity In Service]]"
   - "[[Grace]]"
+  - "[[Alright]]"
+  - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
 domain:
   - ordinariness
 crux:
