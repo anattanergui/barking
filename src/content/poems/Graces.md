@@ -10,7 +10,7 @@ tags:
 related:
   - "[[Grace]]"
   - "[[Alright]]"
-  - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
+  - "[[Daily Bread]]"
 domain:
   - ordinariness
 crux:
