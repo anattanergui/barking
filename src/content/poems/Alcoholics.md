@@ -50,6 +50,10 @@ ground:
   - structural
 description: Alcoholics as unwilling seers of the self's instability — shamed for the insight, vowing to uphold what doesn't exist.
 word-count: "204"
+related:
+  - "[[The Addict]]"
+  - "[[The Brew]]"
+  - "[[The Mirror Sage]]"
 ---
 # Alcoholics 
 It’s easy to see 
