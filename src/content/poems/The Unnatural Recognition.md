@@ -9,24 +9,46 @@ tags:
   - unnatural
   - form
   - suffering
+  - practical
+  - purposes
+  - human
+  - animal
+  - language
+  - thought
+  - absence
+  - capacity
+  - state
+  - consequence
+  - recognition
+  - ordinary
+  - average
+  - living
+  - world
+  - impossible
+  - lasting
+  - death
+  - reflection
+  - self
+  - reduce
+  - deliver
+  - never
 domain:
   - consciousness
   - identification
 crux:
-  - tragic
-  - inescapability
+  - tragedy
 atmosphere:
   - austere
   - unflinching
 ground:
-  - nondual
   - axiomatic
 word-count: "168"
 related:
   - "[[Dis-identification]]"
   - "[[Misnomer]]"
-  - "[[Who Cares]]"
   - "[[Eternal]]"
+description:
+  - Recognition of split between awareness and form  is unnatural — and its end, for the living, impossible
 ---
 # The Unnatural Recognition
 For all practical purposes 
