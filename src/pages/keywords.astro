@@ -82,7 +82,7 @@ const totalPoems = poems.length;
 
   .search-wrap-kw {
     padding: 1rem 0;
-    margin-right: 2rem;
+    margin-right: 1.5rem;
     position: relative;
     flex-shrink: 0;
   }
@@ -112,12 +112,53 @@ const totalPoems = poems.length;
     pointer-events: none;
   }
 
+  /* ── SORT BUTTON ─────────────────────────────────────────────── */
+  .sort-wrap {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    margin-right: 2rem;
+    flex-shrink: 0;
+    border-right: 1px solid var(--rule);
+    padding-right: 1.5rem;
+  }
+
+  .sort-btn {
+    background: none;
+    border: 1px solid var(--search-border);
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .sort-btn:hover { color: var(--ink); border-color: var(--muted); }
+  .sort-btn.active { color: var(--ink); border-color: var(--muted); }
+
+  .sort-arrow {
+    font-size: 0.7rem;
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+
   /* ── JUMP BAR ────────────────────────────────────────────────── */
   .jump-bar {
     display: flex;
     align-items: center;
     gap: 0;
     flex: 1;
+    transition: opacity 0.2s;
+  }
+  .jump-bar.hidden {
+    opacity: 0.25;
+    pointer-events: none;
   }
 
   .jump-letter {
@@ -166,6 +207,17 @@ const totalPoems = poems.length;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
+  }
+
+  /* ── FLAT LIST (frequency sort) ──────────────────────────────── */
+  #kw-flat {
+    display: none;
+  }
+  #kw-flat.visible {
+    display: block;
+  }
+  #kw-index.hidden {
+    display: none;
   }
 
   /* ── KEYWORD ROWS ────────────────────────────────────────────── */
@@ -253,6 +305,7 @@ const totalPoems = poems.length;
     .poems-cell { padding: 1rem 1.5rem; }
     .kw-search { width: 160px; }
     .jump-letter { padding: 1rem 0.4rem; }
+    .sort-wrap { margin-right: 1rem; padding-right: 1rem; }
   }
 </style>
 
@@ -276,7 +329,15 @@ const totalPoems = poems.length;
       autocomplete="off"
     />
   </div>
-  <nav class="jump-bar" aria-label="Jump to letter">
+
+  <div class="sort-wrap">
+    <button class="sort-btn" id="sort-btn" aria-label="Change sort order">
+      <span id="sort-label">A – Z</span>
+      <span class="sort-arrow" id="sort-arrow">↕</span>
+    </button>
+  </div>
+
+  <nav class="jump-bar" id="jump-bar" aria-label="Jump to letter">
     {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map(l => (
       <a
         href={`#letter-${l}`}
@@ -287,6 +348,7 @@ const totalPoems = poems.length;
   </nav>
 </div>
 
+<!-- Alphabetical grouped view (default) -->
 <div id="kw-index">
   {grouped.map(group => (
     <div class="letter-group" id={`letter-${group.letter}`} data-letter-group={group.letter}>
@@ -297,7 +359,7 @@ const totalPoems = poems.length;
         </span>
       </div>
       {group.keywords.map(kw => (
-        <div class="keyword-row" data-keyword={kw.keyword.toLowerCase()}>
+        <div class="keyword-row" data-keyword={kw.keyword.toLowerCase()} data-count={kw.poems.length}>
           <div class="keyword-cell">
             <span class="keyword-name">{kw.keyword}</span>
             <span class="keyword-count">
@@ -318,32 +380,120 @@ const totalPoems = poems.length;
   ))}
 </div>
 
+<!-- Flat frequency-sorted view (injected by JS) -->
+<div id="kw-flat"></div>
+
 <div class="no-results" id="no-results">No keywords match your search.</div>
 
 <script>
-  const searchInput = document.getElementById('kw-search') as HTMLInputElement;
-  const noResults   = document.getElementById('no-results');
-  const rows        = document.querySelectorAll<HTMLElement>('.keyword-row');
-  const groups      = document.querySelectorAll<HTMLElement>('.letter-group');
+  // ── State ────────────────────────────────────────────────────────
+  // sort: 'alpha' | 'most' | 'least'
+  let sortMode: 'alpha' | 'most' | 'least' = 'alpha';
 
-  searchInput.addEventListener('input', () => {
+  const searchInput  = document.getElementById('kw-search')  as HTMLInputElement;
+  const noResults    = document.getElementById('no-results')  as HTMLElement;
+  const kwIndex      = document.getElementById('kw-index')    as HTMLElement;
+  const kwFlat       = document.getElementById('kw-flat')     as HTMLElement;
+  const sortBtn      = document.getElementById('sort-btn')    as HTMLButtonElement;
+  const sortLabel    = document.getElementById('sort-label')  as HTMLElement;
+  const sortArrow    = document.getElementById('sort-arrow')  as HTMLElement;
+  const jumpBar      = document.getElementById('jump-bar')    as HTMLElement;
+
+  // Collect all keyword rows from the alphabetical index (source of truth)
+  const allRows = Array.from(
+    document.querySelectorAll<HTMLElement>('#kw-index .keyword-row')
+  );
+
+  // ── Sort button cycling ──────────────────────────────────────────
+  const sortCycle: Array<'alpha' | 'most' | 'least'> = ['alpha', 'most', 'least'];
+  const sortMeta = {
+    alpha: { label: 'A – Z',   arrow: '↕',  active: false },
+    most:  { label: 'Most',    arrow: '↓',  active: true  },
+    least: { label: 'Least',   arrow: '↑',  active: true  },
+  };
+
+  function nextSort() {
+    const idx = sortCycle.indexOf(sortMode);
+    sortMode = sortCycle[(idx + 1) % sortCycle.length];
+    applySort();
+  }
+
+  function applySort() {
+    const meta = sortMeta[sortMode];
+    sortLabel.textContent = meta.label;
+    sortArrow.textContent = meta.arrow;
+    sortBtn.classList.toggle('active', meta.active);
+
+    if (sortMode === 'alpha') {
+      // Show grouped alphabetical view
+      kwIndex.classList.remove('hidden');
+      kwFlat.classList.remove('visible');
+      jumpBar.classList.remove('hidden');
+      kwFlat.innerHTML = '';
+    } else {
+      // Build flat sorted list
+      const sorted = [...allRows].sort((a, b) => {
+        const ca = parseInt(a.dataset.count || '0', 10);
+        const cb = parseInt(b.dataset.count || '0', 10);
+        return sortMode === 'most' ? cb - ca : ca - cb;
+      });
+
+      kwFlat.innerHTML = '';
+      sorted.forEach(row => {
+        // Clone so the original grouped view stays intact
+        kwFlat.appendChild(row.cloneNode(true));
+      });
+
+      kwIndex.classList.add('hidden');
+      kwFlat.classList.add('visible');
+      jumpBar.classList.add('hidden');
+    }
+
+    // Re-apply any active filter
+    applyFilter();
+  }
+
+  sortBtn.addEventListener('click', nextSort);
+
+  // ── Filter ───────────────────────────────────────────────────────
+  function applyFilter() {
     const q = searchInput.value.trim().toLowerCase();
-    let anyVisible = false;
 
-    rows.forEach(row => {
-      const kw = row.dataset.keyword || '';
-      const match = !q || kw.includes(q);
-      row.classList.toggle('hidden', !match);
-      if (match) anyVisible = true;
-    });
+    if (sortMode === 'alpha') {
+      // Filter inside grouped view
+      const rows   = document.querySelectorAll<HTMLElement>('#kw-index .keyword-row');
+      const groups = document.querySelectorAll<HTMLElement>('#kw-index .letter-group');
+      let anyVisible = false;
 
-    // Hide letter groups that have no visible rows
-    groups.forEach(group => {
-      const visibleRows = group.querySelectorAll('.keyword-row:not(.hidden)');
-      (group as HTMLElement).style.display = visibleRows.length ? '' : 'none';
-    });
+      rows.forEach(row => {
+        const kw = row.dataset.keyword || '';
+        const match = !q || kw.includes(q);
+        row.classList.toggle('hidden', !match);
+        if (match) anyVisible = true;
+      });
 
-    noResults!.classList.toggle('visible', !anyVisible);
-  });
+      groups.forEach(group => {
+        const visibleRows = group.querySelectorAll('.keyword-row:not(.hidden)');
+        group.style.display = visibleRows.length ? '' : 'none';
+      });
+
+      noResults!.classList.toggle('visible', !anyVisible);
+    } else {
+      // Filter inside flat view
+      const rows = document.querySelectorAll<HTMLElement>('#kw-flat .keyword-row');
+      let anyVisible = false;
+
+      rows.forEach(row => {
+        const kw = row.dataset.keyword || '';
+        const match = !q || kw.includes(q);
+        row.classList.toggle('hidden', !match);
+        if (match) anyVisible = true;
+      });
+
+      noResults!.classList.toggle('visible', !anyVisible);
+    }
+  }
+
+  searchInput.addEventListener('input', applyFilter);
 </script>
 </Base>
