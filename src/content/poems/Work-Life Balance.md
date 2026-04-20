@@ -25,7 +25,6 @@ crux:
   - sufficiency
 atmosphere:
   - understated
-  - anguished
 ground:
   - nondual
 description: Living is already work. Working to live is false.
