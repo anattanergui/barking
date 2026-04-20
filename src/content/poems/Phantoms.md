@@ -28,6 +28,7 @@ word-count: "35"
 related:
   - "[[Doer]]"
   - "[[For Fuck’s Sake]]"
+  - "[[Retrofitting]]"
 ---
 # Phantoms 
 Reasons are
