@@ -25,9 +25,9 @@ tags:
   - I
 domain:
   - divine
-  - curse
-crux:
   - atonement
+crux:
+  - evil
 atmosphere:
   - desolate
 ground:
