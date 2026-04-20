@@ -90,9 +90,23 @@
               "icon": "lucide-file",
               "title": "Presence"
             }
+          },
+          {
+            "id": "fefc28237a49e0b3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Flutter.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Flutter"
+            }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -227,13 +241,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Presence.md",
+                "file": "Flutter.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Presence"
+              "title": "Outline of Flutter"
             }
           },
           {
@@ -267,11 +281,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "e87ac2f51058b629",
+  "active": "fefc28237a49e0b3",
   "lastOpenFiles": [
+    "Stillness In Motion.md",
+    "Flutter.md",
+    "Undercurrent.md",
+    "The Shape Of Absence.md",
+    "Presence.md",
     "Dog.md",
     "Steadfast.md",
-    "Presence.md",
     "Now.md",
     "The Toll.md",
     "What.md",
@@ -291,10 +309,6 @@
     "About Health.md",
     "Misnomer.md",
     "Turn.md",
-    "About Freedom.md",
-    "What Else.md",
-    "Cost Of Space.md",
-    "Testament.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
