@@ -14,7 +14,7 @@ tags:
   - crashing
   - looking
   - body
-word-count: "59"
+word-count: "57"
 related:
   - "[[Atman]]"
   - "[[Beholding]]"
