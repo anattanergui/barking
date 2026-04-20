@@ -20,6 +20,8 @@ ground:
   - retrospective
 related:
   - "[[Spacetime]]"
+  - "[[Steadfast]]"
+  - "[[Sitting In Silence]]"
 word-count: "40"
 ---
 # Now

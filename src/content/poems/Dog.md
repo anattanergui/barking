@@ -21,7 +21,6 @@ ground:
   - presence
 description: A poem about presence, absence, and the quiet faithfulness of small things — tea, breath, words — that attend even when the self goes missing.
 related:
-  - "[[The Shape Of Absence]]"
   - "[[To Myself]]"
   - "[[Presence]]"
 ---
