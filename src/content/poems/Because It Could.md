@@ -15,23 +15,27 @@ domain:
   - creation
   - existence
 crux:
-  - aseity
+  - potentiality
+  - sufficiency
 atmosphere:
-  - declarative
-  - wonder
+  - affirmative
+  - expansive
 ground:
   - immanent
+  - ontological
   - observational
-word-count: "151"
+word-count: "152"
 related:
   - "[[For Fuck’s Sake]]"
   - "[[Doer]]"
-  - "[[Underbelly]]"
+  - "[[Phantoms]]"
+description:
+  - A poem — like life — exists because it could.  Making needs no reason beyond possibility itself
 ---
 
 # Because It Could
 A poem 
-
+Is
 Like work of art
 Piece of music
 Building, monument, rocket
@@ -93,5 +97,5 @@ Happened
 Because it could
 Because it did
 
-That’s why I write
-That’s why you read
+That’s why it's written
+That’s why it's read

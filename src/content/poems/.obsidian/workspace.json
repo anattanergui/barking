@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Phantoms.md",
+                "file": "Because It Could.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Phantoms"
+              "title": "Because It Could"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "poor so",
+                "query": "rocket",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,12 +103,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -186,13 +186,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Phantoms.md",
+                "file": "Because It Could.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Phantoms"
+              "title": "Outline of Because It Could"
             }
           },
           {
@@ -228,9 +228,9 @@
   },
   "active": "cfc38730acefbb5b",
   "lastOpenFiles": [
+    "Phantoms.md",
     "For Fuck’s Sake.md",
     "Barking Of Dogs.md",
-    "Phantoms.md",
     "Doer.md",
     "One And Other.md",
     "Middle.md",
