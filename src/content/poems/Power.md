@@ -26,8 +26,7 @@ ground:
 related:
   - "[[Machinery]]"
   - "[[The Howling]]"
-  - "[[The Myth Of Unaltered States]]"
-
+  - "[[Logos]]"
 word-count: "531"
 ---
 # Power
