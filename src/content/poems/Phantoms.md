@@ -16,7 +16,7 @@ domain:
   - causation
   - reason
 crux:
-  - epiphenomenon
+  - phantom
 atmosphere:
   - wry
   - clinical
