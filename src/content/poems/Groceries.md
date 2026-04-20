@@ -10,17 +10,19 @@ tags:
   - conceived
   - other
 domain:
-  - interdependence
-  - embodiment
+  - consciousness
+  - body
 crux:
-  - inseparability
+  - indivisibility
 atmosphere:
   - plain
 ground:
-  - correlational
+  - nondual
 word-count: "87"
 related:
   - "[[Indivisibility]]"
+  - "[[-ism]]"
+  - "[[Umbilical Cord]]"
 ---
 You cannot buy groceries
 With theories
