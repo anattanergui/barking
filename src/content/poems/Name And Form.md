@@ -42,22 +42,22 @@ Your body
 Is not yours
 Nor your body
 
-Only a sackful —
-Of fragments 
+Only a sack —
+Fragments
 Of the world
 
 These sounds, words
 Meanings —
 Whooshes of wind
-Sounds of the sea
+Sounds of sea
 Crashing
 
 How can any
-Of this be yours 
+Of it be yours
 When you are
 
-The eye
-Being 
+The seeing
+Being
 
 Names
 And forms
