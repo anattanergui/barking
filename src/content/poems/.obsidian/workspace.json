@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Groceries.md",
+                "file": "God Speaks.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Groceries"
+              "title": "God Speaks"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "grocer",
+                "query": "God Spea",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,7 +74,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -157,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Groceries.md",
+                "file": "God Speaks.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Groceries"
+              "title": "Outline of God Speaks"
             }
           },
           {
@@ -199,8 +200,9 @@
   },
   "active": "90b7f60d6c21d4aa",
   "lastOpenFiles": [
-    "Logos.md",
     "Groceries.md",
+    "Untitled.md",
+    "Logos.md",
     "The Shape Of Absence.md",
     "Power.md",
     "Kun.md",
@@ -224,7 +226,6 @@
     "Graces.md",
     "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "Profanity In Service.md",
-    "About Death.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

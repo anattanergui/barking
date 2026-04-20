@@ -11,19 +11,27 @@ tags:
   - witnesses
   - slaughter
   - cruelty
+  - uncurse
+  - unimaginable
+  - savagery
+  - barbarity
+  - genocide
+  - agony
+  - reckless
+  - sickness
+  - think
+  - stands
+  - you
+  - I
 domain:
-  - theodicy
+  - divine
   - curse
-  - suffering
 crux:
-  - inversion
+  - atonement
 atmosphere:
-  - stark
-  - anguished
+  - desolate
 ground:
-  - immanent
-  - theological
-  - prosopopoeic
+  - confessional
 description: only your eyes witness my affliction — what but death redeems me, uncurse you of the evil that's me.
 word-count: "51"
 related:
