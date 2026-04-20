@@ -57,7 +57,7 @@ Of this be yours
 When you are
 
 The eye
-Being —
+Being 
 
-At names
-Forms
+Names
+And forms
