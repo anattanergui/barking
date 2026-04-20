@@ -23,6 +23,8 @@ related:
   - "[[Indivisibility]]"
   - "[[-ism]]"
   - "[[Umbilical Cord]]"
+description:
+  - Consciousness without body cannot buy groceries,  breathe, or think — neither side exists more than the other.
 ---
 You cannot buy groceries
 With theories

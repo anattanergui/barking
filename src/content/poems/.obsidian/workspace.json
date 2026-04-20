@@ -15,7 +15,7 @@
               "state": {
                 "file": "Groceries.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Groceries"
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -200,10 +199,11 @@
   },
   "active": "90b7f60d6c21d4aa",
   "lastOpenFiles": [
+    "Logos.md",
+    "Groceries.md",
     "The Shape Of Absence.md",
     "Power.md",
     "Kun.md",
-    "Logos.md",
     "The Word.md",
     "One And Other.md",
     "Middle.md",
@@ -225,7 +225,6 @@
     "Fabi Ayyi Ala I Rabbikuma Tukazziban.md",
     "Profanity In Service.md",
     "About Death.md",
-    "Control.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

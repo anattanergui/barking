@@ -40,6 +40,8 @@ atmosphere:
   - inexorable
 ground:
   - nondual
+description:
+  - Logos — single, helpless, indestructible word — pours throuogh, permeates butchers and watchers
 ---
 # Logos
 Guards, watching
