@@ -22,6 +22,7 @@ ground:
   - surrendered
 related:
   - "[[Source]]"
+  - "[[Where]]"
 word-count: "25"
 ---
 # Surrender
