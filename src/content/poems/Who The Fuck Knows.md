@@ -104,7 +104,7 @@ atmosphere:
   - lucid
 ground:
   - antinomy
-  - groundless
+  - groundlessness
 description: Language contaminates every state it names — including the recognition that it does.
 ---
 # Who The Fuck Knows

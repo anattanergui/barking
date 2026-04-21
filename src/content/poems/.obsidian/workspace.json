@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Who The Fuck Knows.md",
+                "file": "No-Self.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Who The Fuck Knows"
+              "title": "No-Self"
             }
           }
         ],
@@ -93,8 +93,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -213,8 +212,9 @@
   },
   "active": "c85099fa121e6cb1",
   "lastOpenFiles": [
-    "Never Yours.md",
+    "Ineffable.md",
     "Who The Fuck Knows.md",
+    "Never Yours.md",
     "The Poor Sod.md",
     "About Death.md",
     "Because It Could.md",
@@ -238,7 +238,6 @@
     "Groceries.md",
     "Logos.md",
     "The Shape Of Absence.md",
-    "Power.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

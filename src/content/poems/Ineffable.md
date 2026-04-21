@@ -19,7 +19,7 @@ atmosphere:
   - sovereign
 ground:
   - apophatic
-  - groundless
+  - groundlessness
 related:
   - "[[Atman]]"
   - "[[Barking Of Dogs]]"

@@ -16,8 +16,8 @@ atmosphere:
   - bewildered
   - plain
 ground:
-  - groundless
   - phenomenological
+  - groundlessness
 word-count: "132"
 related:
   - "[[Becoming Unself]]"
