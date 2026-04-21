@@ -14,18 +14,20 @@ tags:
   - guru
   - soul
 domain:
-  - corruption
-  - spirituality
+  - commodification
+  - transmission
 crux:
   - complicity
 atmosphere:
-  - incandescent
+  - incendiary
 ground:
-  - prophetic
+  - disenchantment
 related:
   - "[[The Howling]]"
   - "[[Fuck The Dependable]]"
 word-count: "367"
+description:
+  - Truth sold, fire castrated — the lost lineage of raw, unruly spiritual transmission
 ---
 # The Lost Lineage
 Truth is not a democracy
