@@ -13,17 +13,20 @@ tags:
   - tantrum
   - constipated
 domain:
-  - purity
+  - propriety
+  - embodiment
 crux:
-  - reductio
+  - exposure
 atmosphere:
-  - deadpan
+  - suffocating
 ground:
-  - debunking
+  - subversion
 related:
   - "[[The Industry]]"
   - "[[The Forgetting Itself]]"
 word-count: "355"
+description:
+  - Why the fuck — propriety and the body that does not contain it
 ---
 # Why The Fuck
 Why profanity

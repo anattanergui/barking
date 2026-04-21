@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Kun.md",
+                "file": "Why The Fuck.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Kun"
+              "title": "Why The Fuck"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "kun",
+                "query": "why the fuck",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -198,6 +198,7 @@
   },
   "active": "abceed09c44b95cb",
   "lastOpenFiles": [
+    "Kun.md",
     "The Lost Lineage.md",
     "Never Yours.md",
     "Without.md",
@@ -223,7 +224,6 @@
     "Devotion.md",
     "Surrender.md",
     "A Million Words.md",
-    "As.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
