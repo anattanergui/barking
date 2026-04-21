@@ -29,7 +29,7 @@
               "state": {
                 "file": "Who The Fuck Knows.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Who The Fuck Knows"

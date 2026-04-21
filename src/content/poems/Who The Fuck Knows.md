@@ -92,8 +92,8 @@ tags:
 related:
   - "[[Barking Of Dogs]]"
   - "[[Those Who Know Speak]]"
+  - "[[Hall Of Mirrors]]"
 word-count: "464"
-
 domain:
   - language
   - hierarchy
