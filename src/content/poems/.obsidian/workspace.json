@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Why The Fuck.md",
+                "file": "Playthings.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Why The Fuck"
+              "title": "Playthings"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "why the fuck",
+                "query": "playthings",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -198,6 +198,7 @@
   },
   "active": "abceed09c44b95cb",
   "lastOpenFiles": [
+    "Why The Fuck.md",
     "Kun.md",
     "The Lost Lineage.md",
     "Never Yours.md",
@@ -223,7 +224,6 @@
     "Where.md",
     "Devotion.md",
     "Surrender.md",
-    "A Million Words.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

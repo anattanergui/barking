@@ -12,14 +12,14 @@ tags:
   - reveal
 domain:
   - desire
+  - recognition
 crux:
-  - lila
+  - reflexivity
 atmosphere:
   - wry
   - ease
 ground:
   - nondual
-  - tantric
 related:
   - "[[Miracle]]"
   - "[[I Am That]]"
