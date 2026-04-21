@@ -12,14 +12,14 @@ related:
   - "[[Asymmetrical Loss]]"
 domain:
   - grief
-  - constitution
+  - self
 crux:
-  - cessation
+  - dissolution
 atmosphere:
-  - grave
+  - stark
+  - still
 ground:
   - relational
-  - constitutive
 description: |
   Grief is not because the lost is no more — but because you, without the lost, are no more.
 ---

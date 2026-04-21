@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No-Self.md",
+                "file": "Without.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "No-Self"
+              "title": "Without"
             }
           }
         ],
@@ -212,6 +212,7 @@
   },
   "active": "c85099fa121e6cb1",
   "lastOpenFiles": [
+    "No-Self.md",
     "Ineffable.md",
     "Who The Fuck Knows.md",
     "Never Yours.md",
@@ -237,7 +238,6 @@
     "As.md",
     "Groceries.md",
     "Logos.md",
-    "The Shape Of Absence.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
