@@ -11,18 +11,20 @@ tags:
   - turn
   - world
 domain:
-  - nonduality
+  - threshold
 crux:
-  - recreation
+  - irreversibility
 atmosphere:
-  - austere
+  - stark
 ground:
-  - fana
+  - apophatic
 related:
   - "[[Dissolution]]"
   - "[[Without The Word]]"
   - "[[Logos]]"
 word-count: "46"
+description:
+  -  Cross the veil and the door vanishes — Kun, the world re-appears
 ---
 # Kun
 Beyond 
