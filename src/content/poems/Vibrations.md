@@ -41,7 +41,7 @@ related:
   - "[[Mortar]]"
   - "[[Power]]"
   - "[[Cobwebs]]"
-word-count: "83"
+word-count: "80"
 domain:
   - market
   - sound
@@ -58,7 +58,7 @@ ground:
 description:
   - Market, dead vibrations — harvested sound, invisible networks,  pushing forms apart to hold them together.
 ---
-# Dead Vibrations
+# Vibrations
 Family is
 The smallest structural unit
 Of society
@@ -70,8 +70,10 @@ That connects and coheres
 The unit
 Together
 
-In itself neither alive
-Nor dead
+In itself
+Neither living
+Nor dying
+
 The expanding product
 Sprawl 
 Extracting life
@@ -81,16 +83,17 @@ In a unit
 Harvested excretions
 Howls, shouts
 Sound’s capacity
-To reach — beyond sight
+To reach 
+Beyond sight
+
 The germ, force
 Organising principle 
 Of market
 
 From loudspeakers
 To networks — invisible
-Dead vibrations
-Occupying the entirety 
-Of space 
+Dead vibrations, occupying
+Every gap
 Between forms — pushing each 
 Further apart
 
