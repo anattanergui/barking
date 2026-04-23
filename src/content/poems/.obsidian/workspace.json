@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Plague"
             }
+          },
+          {
+            "id": "a7ce2255f256da75",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ether.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ether"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "ether",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -210,10 +225,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "67e9e9f1ec6755eb",
+  "active": "a7ce2255f256da75",
   "lastOpenFiles": [
-    "Untitled 1.md",
     "Untitled.md",
+    "Plague.md",
+    "Untitled 1.md",
     "Chasing.md",
     "Same Old Shit.md",
     "Extinction.md",
@@ -237,7 +253,6 @@
     "Never Yours.md",
     "Without.md",
     "No-Self.md",
-    "Ineffable.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

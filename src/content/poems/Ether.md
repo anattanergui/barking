@@ -17,6 +17,7 @@ tags:
 related:
   - "[[The Image Inside]]"
   - "[[Refutation]]"
+  - "[[Vibrations]]"
 domain:
   - affect
   - embodiment
