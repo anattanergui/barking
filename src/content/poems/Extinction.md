@@ -31,5 +31,5 @@ It’s not that
 I have lost it
 
 The will to live has died 
-Leaving me without
+Leaving me, without
 The will to live
