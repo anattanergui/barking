@@ -51,12 +51,12 @@ crux:
   - separation
 atmosphere:
   - diagnostic
-  - mordant
+  - disenchanted
 ground:
   - structural
   - materialist
-description: |
-  Dead vibrations occupy space between forms — pushing apart, holding together.
+description:
+  - Market, dead vibrations — harvested sound, invisible networks,  pushing forms apart to hold them together.
 ---
 # Dead Vibrations
 Family is
