@@ -698,10 +698,6 @@ const featuredPoolFinal = featuredPool.length > 0
             <span class="send-icon">💬</span>
             <span>WhatsApp</span>
           </a>
-          <button class="send-option" data-action="native" style="display: none;">
-            <span class="send-icon">↗</span>
-            <span>Share...</span>
-          </button>
         </div>
       </div>
     `;
@@ -752,7 +748,7 @@ const featuredPoolFinal = featuredPool.length > 0
       const twitterLink = sendDropdownEl.querySelector('[data-action="twitter"]');
       const facebookLink = sendDropdownEl.querySelector('[data-action="facebook"]');
       const whatsappLink = sendDropdownEl.querySelector('[data-action="whatsapp"]');
-      const nativeBtn = sendDropdownEl.querySelector('[data-action="native"]');
+      const nativeBtn = null;
 
       // Email link
       if (emailLink) {

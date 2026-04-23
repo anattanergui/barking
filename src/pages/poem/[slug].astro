@@ -486,10 +486,6 @@ const schema = {
             <span class="send-icon">💬</span>
             <span>WhatsApp</span>
           </a>
-          <button class="send-option" id="native-share" style="display: none;">
-            <span class="send-icon">↗</span>
-            <span>Share...</span>
-          </button>
         </div>
       </div>
     </div>
@@ -648,7 +644,6 @@ const schema = {
   const twitterSend = document.getElementById('twitter-share');
   const facebookSend = document.getElementById('facebook-share');
   const whatsappSend = document.getElementById('whatsapp-share');
-  const nativeSendBtn = document.getElementById('native-share');
   const copyFeedback = document.getElementById('copy-feedback');
 
   const shareText = `${title} — a poem from Barking by Anatta Nergui`;
@@ -678,9 +673,7 @@ const schema = {
   }
 
   // Check if native share is available (mobile devices)
-  if (nativeSendBtn && navigator.share) {
-    nativeSendBtn.style.display = 'flex';
-  }
+  // Native share removed — explicit options cover all platforms
 
   // Toggle dropdown
   if (shareBtn && shareDropdown) {
@@ -735,26 +728,6 @@ const schema = {
         }
         document.body.removeChild(textArea);
         if (shareDropdown) shareDropdown.classList.remove('open');
-      }
-    });
-  }
-
-  // Native share (mobile)
-  if (nativeSendBtn) {
-    nativeSendBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      try {
-        await navigator.share({
-          title: shareText,
-          text: shareText,
-          url: poemUrl
-        });
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          console.error('Send failed:', err);
-        }
       }
     });
   }
