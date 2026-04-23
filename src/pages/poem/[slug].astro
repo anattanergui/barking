@@ -478,6 +478,14 @@ const schema = {
             <span class="send-icon">𝕏</span>
             <span>Post on X</span>
           </a>
+          <a class="send-option" id="facebook-share" href="" target="_blank" rel="noopener noreferrer">
+            <span class="send-icon">f</span>
+            <span>Facebook</span>
+          </a>
+          <a class="send-option" id="whatsapp-share" href="" target="_blank" rel="noopener noreferrer">
+            <span class="send-icon">💬</span>
+            <span>WhatsApp</span>
+          </a>
           <button class="send-option" id="native-share" style="display: none;">
             <span class="send-icon">↗</span>
             <span>Share...</span>
@@ -638,6 +646,8 @@ const schema = {
   const copyLinkBtn = document.getElementById('copy-link');
   const emailSend = document.getElementById('email-share');
   const twitterSend = document.getElementById('twitter-share');
+  const facebookSend = document.getElementById('facebook-share');
+  const whatsappSend = document.getElementById('whatsapp-share');
   const nativeSendBtn = document.getElementById('native-share');
   const copyFeedback = document.getElementById('copy-feedback');
 
@@ -654,6 +664,17 @@ const schema = {
   if (twitterSend) {
     const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
     twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
+  }
+
+  // Facebook share
+  if (facebookSend) {
+    facebookSend.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(poemUrl)}`;
+  }
+
+  // WhatsApp share
+  if (whatsappSend) {
+    const waText = encodeURIComponent(`${title} — from Barking by Anatta Nergui\n${poemUrl}`);
+    whatsappSend.href = `https://wa.me/?text=${waText}`;
   }
 
   // Check if native share is available (mobile devices)
@@ -749,6 +770,22 @@ const schema = {
 
   if (twitterSend) {
     twitterSend.addEventListener('click', () => {
+      setTimeout(() => {
+        if (shareDropdown) shareDropdown.classList.remove('open');
+      }, 100);
+    });
+  }
+
+  if (facebookSend) {
+    facebookSend.addEventListener('click', () => {
+      setTimeout(() => {
+        if (shareDropdown) shareDropdown.classList.remove('open');
+      }, 100);
+    });
+  }
+
+  if (whatsappSend) {
+    whatsappSend.addEventListener('click', () => {
       setTimeout(() => {
         if (shareDropdown) shareDropdown.classList.remove('open');
       }, 100);
