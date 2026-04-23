@@ -27,8 +27,8 @@ description: Reasons are phantoms — friction and smoke between conceptual and 
 word-count: "35"
 related:
   - "[[Doer]]"
-  - "[[For Fuck’s Sake]]"
   - "[[Retrofitting]]"
+  - "[[Vibrations]]"
 ---
 # Phantoms 
 Reasons are
