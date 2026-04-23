@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Chasing.md",
+                "file": "Plague.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Chasing"
+              "title": "Plague"
             }
           }
         ],
@@ -212,8 +212,10 @@
   },
   "active": "67e9e9f1ec6755eb",
   "lastOpenFiles": [
-    "Same Old Shit.md",
+    "Untitled 1.md",
+    "Untitled.md",
     "Chasing.md",
+    "Same Old Shit.md",
     "Extinction.md",
     "In.md",
     "Before-After.md",
@@ -236,8 +238,6 @@
     "Without.md",
     "No-Self.md",
     "Ineffable.md",
-    "The Poor Sod.md",
-    "About Death.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

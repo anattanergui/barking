@@ -33,7 +33,7 @@ Be
 
 Amidst what befalls
 A vacant, inexpressible 
-Unimaginable 
+Unamused
 Sight 
 
 That has replaced 
