@@ -40,7 +40,7 @@ tags:
 related:
   - "[[Mortar]]"
   - "[[Power]]"
-  - "[[Who The Fuck Knows]]"
+  - "[[Cobwebs]]"
 word-count: "83"
 domain:
   - market
