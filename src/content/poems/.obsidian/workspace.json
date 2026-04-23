@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "extincti",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -74,8 +74,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -198,6 +197,8 @@
   },
   "active": "6195cc429b5ad282",
   "lastOpenFiles": [
+    "Because It Could.md",
+    "Extinction.md",
     "Phantoms.md",
     "Vibrations.md",
     "Who The Fuck Knows.md",
@@ -211,7 +212,6 @@
     "Ineffable.md",
     "The Poor Sod.md",
     "About Death.md",
-    "Because It Could.md",
     "For Fuck’s Sake.md",
     "Barking Of Dogs.md",
     "Doer.md",
@@ -223,7 +223,6 @@
     "God Speaks.md",
     "Work-Life Balance.md",
     "Name And Form.md",
-    "Where.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
