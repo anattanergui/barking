@@ -12,8 +12,7 @@ domain: appearance
 crux: obviousness
 atmosphere: austere
 ground: nondual
-description: |
-  A philosophical poem arguing that appearance and non-appearance are not separate — that confusion arises only from imagining otherwise. For readers drawn to non-dual philosophy, the nature of reality, and meditations on perception and emptiness.
+description:
 related:
   - "[[So Simple]]"
   - "[[No Path]]"
