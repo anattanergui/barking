@@ -39,8 +39,10 @@ Being the form
 Whose destiny it is 
 To be form
 
-Destiny — immanence
-Fate — transcendence
-Rooted
-In 
+Destiny — immanent
+Fate — transcendent
+Nothing, nowhere
+
+Without
+
 You  
