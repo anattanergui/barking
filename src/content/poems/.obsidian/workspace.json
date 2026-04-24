@@ -69,12 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Only As Human.md",
+                "file": "The World.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Only As Human"
+              "title": "The World"
             }
           }
         ],
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "never yours",
+                "query": "fish",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,7 +131,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -254,8 +255,8 @@
   },
   "active": "810a76d1e2d3f526",
   "lastOpenFiles": [
-    "Never Yours.md",
     "Only As Human.md",
+    "Never Yours.md",
     "You.md",
     "Destiny.md",
     "Exactly That.md",

@@ -12,8 +12,7 @@ tags:
   - universe
   - pond
   - contained
-word-count: "59"
-
+word-count: "57"
 domain:
   - world
   - consciousness
@@ -38,9 +37,11 @@ The world outside the universe
 Unless it’s dead 
 
 In either case 
-The world outside —
-Cannot and does not exist
-The only one that does
+The world outside 
+Cannot, does not exist
+
+The one —
+That does
 
 Is contained by 
 And within 
