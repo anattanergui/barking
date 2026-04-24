@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "What Returns.md",
+                "file": "Exactly That.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "What Returns"
+              "title": "Exactly That"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "what returns",
+                "query": "exactly that",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,6 +213,7 @@
   },
   "active": "d39f513b3583d109",
   "lastOpenFiles": [
+    "What Returns.md",
     "Inna Lillahi Wa Inna Ilayhi Raji'un.md",
     "Simultaneous.md",
     "Purgatory.md",
@@ -238,7 +239,6 @@
     "Of —.md",
     "That I Am.md",
     "Atman.md",
-    "Maya.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

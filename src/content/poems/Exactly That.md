@@ -17,6 +17,7 @@ description: |
 related:
   - "[[So Simple]]"
   - "[[No Path]]"
+  - "[[Impersonal]]"
 word-count: "83"
 ---
 # Exactly That
