@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The View From Nowhere.md",
+                "file": "No View From Nowhere.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The View From Nowhere"
+              "title": "No View From Nowhere"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -92,7 +93,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -209,10 +211,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "8dc5e7f20c28b4c2",
+  "active": "d39f513b3583d109",
   "lastOpenFiles": [
-    "The View From Nowhere.md",
     "Impersonal.md",
+    "No View From Nowhere.md",
     "Ether.md",
     "Untitled.md",
     "Plague.md",

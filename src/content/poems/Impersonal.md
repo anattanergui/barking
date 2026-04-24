@@ -17,7 +17,7 @@ tags:
   - rootedness
   - being
 related:
-  - "[[The View From Nowhere]]"
+  - "[[No View From Nowhere]]"
   - "[[This, Very Here]]"
   - "[[Assumption And Perception]]"
 domain:

@@ -55,7 +55,7 @@ ground:
   - immanent
 word-count: "115"
 ---
-# The View From Nowhere
+# No View From Nowhere
 There is not
 Has never been
 Will never be
