@@ -17,8 +17,8 @@ domain:
 crux:
   - revelation
 atmosphere:
-  - equanimity
   - oracular
+  - equanimous
 ground:
   - no-self
   - idealist

@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Simultaneous.md",
+                "file": "What Returns.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Simultaneous"
+              "title": "What Returns"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "simulta",
+                "query": "what returns",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,6 +213,8 @@
   },
   "active": "d39f513b3583d109",
   "lastOpenFiles": [
+    "Inna Lillahi Wa Inna Ilayhi Raji'un.md",
+    "Simultaneous.md",
     "Purgatory.md",
     "No Door.md",
     "Graces.md",
@@ -235,10 +237,8 @@
     "Equations.md",
     "Of —.md",
     "That I Am.md",
-    "Simultaneous.md",
     "Atman.md",
     "Maya.md",
-    "Because It Could.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

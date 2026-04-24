@@ -14,7 +14,7 @@ domain:
 crux:
   - coincidence
 atmosphere:
-  - equanimity
+  - equanimous
 ground:
   - nondual
 related:
