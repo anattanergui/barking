@@ -62,9 +62,23 @@
               "icon": "lucide-file",
               "title": "Never Yours"
             }
+          },
+          {
+            "id": "810a76d1e2d3f526",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Only As Human.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Only As Human"
+            }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -117,8 +131,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -239,10 +252,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "7e5c7fffbb929610",
+  "active": "810a76d1e2d3f526",
   "lastOpenFiles": [
+    "Never Yours.md",
+    "Only As Human.md",
     "You.md",
-    "Untitled.md",
     "Destiny.md",
     "Exactly That.md",
     "What Returns.md",
@@ -266,7 +280,6 @@
     "Before-After.md",
     "Unwritten.md",
     "Equations.md",
-    "Of —.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
