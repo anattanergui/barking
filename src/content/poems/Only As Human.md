@@ -14,7 +14,7 @@ tags:
   - human
 related:
   - "[[Proxy]]"
-  - "[[To Myself]]"
+  - "[[Till Grave]]"
   - "[[The Forgetting Itself]]"
 domain:
   - self
