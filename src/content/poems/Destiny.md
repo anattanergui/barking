@@ -62,7 +62,7 @@ And wished
 
 Destiny —
 Is not what happens
-Nor it is that which is in store
+Nor is it that which is in store
 It is 
 
 That, in one —
