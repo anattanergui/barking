@@ -13,9 +13,9 @@ tags:
   - only
   - human
 related:
-  - "[[The Forgetting Itself]]"
-  - "[[To Myself]]"
   - "[[Proxy]]"
+  - "[[To Myself]]"
+  - "[[The Forgetting Itself]]"
 domain:
   - self
 crux:
