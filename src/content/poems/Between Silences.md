@@ -18,9 +18,8 @@ atmosphere:
   - intimate
   - serene
 ground:
-  - immanence
-  - phenomenological
   - nondual
+  - immanent
 related:
   - "[[Silence]]"
 word-count: "45"

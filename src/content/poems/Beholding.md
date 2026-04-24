@@ -17,7 +17,7 @@ crux:
 atmosphere:
   - serene
 ground:
-  - immanence
+  - immanent
 related:
   - "[[Emptiness]]"
   - "[[That-Which-Perceives-Form]]"

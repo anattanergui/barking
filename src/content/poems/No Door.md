@@ -16,9 +16,9 @@ crux:
 atmosphere:
   - wry
 ground:
-  - immanence
+  - immanent
 description: |
-  A poem about the moment of arrival revealing that the seeker never moved — and that this is equally true of not seeking. For readers drawn to Zen koans, the paradox of spiritual seeking, and the discovery that inside and outside a door are the same place.
+  Arrival revealing that the seeker never moved — and that this is equally true of not seeking. 
 related:
   - "[[Equilibrium]]"
   - "[[No Path]]"

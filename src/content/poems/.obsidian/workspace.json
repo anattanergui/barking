@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No View From Nowhere.md",
+                "file": "Simultaneous.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "No View From Nowhere"
+              "title": "Simultaneous"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "simulta",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,12 +89,12 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5,
-    "collapsed": true
+    "width": 272.5
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -213,8 +213,16 @@
   },
   "active": "d39f513b3583d109",
   "lastOpenFiles": [
-    "Impersonal.md",
+    "Purgatory.md",
+    "No Door.md",
+    "Graces.md",
+    "Brink.md",
+    "Between Silences.md",
+    "Beholding.md",
+    "— ing —.md",
     "No View From Nowhere.md",
+    "Untitled 1.md",
+    "Impersonal.md",
     "Ether.md",
     "Untitled.md",
     "Plague.md",
@@ -231,14 +239,6 @@
     "Atman.md",
     "Maya.md",
     "Because It Could.md",
-    "Phantoms.md",
-    "Vibrations.md",
-    "Who The Fuck Knows.md",
-    "Playthings.md",
-    "Why The Fuck.md",
-    "Kun.md",
-    "The Lost Lineage.md",
-    "Never Yours.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

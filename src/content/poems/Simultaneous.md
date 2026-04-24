@@ -18,7 +18,7 @@ crux:
 atmosphere:
   - austere
 ground:
-  - immanence
+  - immanent
 description: Utter vacuity of not even being — and utter imperium of being — simultaneous
 word-count: "12"
 ---

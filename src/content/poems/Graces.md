@@ -18,7 +18,7 @@ crux:
 atmosphere:
   - reverent
 ground:
-  - immanence
+  - immanent
 word-count: "9"
 description:
   - Toast, buttered — fried eggs — hash — heaven

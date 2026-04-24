@@ -18,7 +18,7 @@ atmosphere:
   - wonder
 ground:
   - processual
-  - immanence
+  - immanent
 related:
   - "[[I Am-ing]]"
   - "[[Here-ward]]"

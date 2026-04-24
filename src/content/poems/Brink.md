@@ -7,7 +7,7 @@ crux:
 atmosphere:
   - taut
 ground:
-  - immanence
+  - immanent
 description:
   - Days and nights rushing toward infinity, held just short of collision — on time perpetually at the brink.
 word-count: "18"

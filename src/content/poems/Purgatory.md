@@ -18,7 +18,7 @@ crux:
 atmosphere:
   - weary
 ground:
-  - immanence
+  - immanent
 related:
   - "[[Quiet Desperation]]"
   - "[[Between Worlds]]"
