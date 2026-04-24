@@ -2,6 +2,30 @@
 tags:
   - fate
   - destiny
+  - period
+  - primary
+  - single
+  - irreproducible
+  - irreplaceable
+  - everything
+  - else
+  - begins
+  - above
+  - never
+  - applies
+  - looking
+  - outward
+  - inward
+  - seeing
+  - dissolution
+  - form
+  - dissolved
+  - being
+  - be
+  - immanent
+  - transcendent
+  - without
+  - you
 word-count: "64"
 related:
   - "[[Impersonal]]"
