@@ -32,7 +32,7 @@ atmosphere:
   - austere
 ground:
   - apophatic
-description: Destiny is not fortune or fate — it is that in you which would not be different, even if every wish came true.
+description: Destiny is not fortune or fate — it is that in you which would not be different, even if every wish came true
 word-count: "82"
 ---
 # Destiny
