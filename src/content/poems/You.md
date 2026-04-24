@@ -1,0 +1,46 @@
+---
+tags:
+  - fate
+  - destiny
+word-count: "63"
+related:
+  - "[[Impersonal]]"
+  - "[[No View From Nowhere]]"
+  - "[[The Divine]]"
+---
+# You
+The one
+Singular, irreplaceable 
+Irreproducible 
+You
+
+Is primary
+
+Period
+
+Everything else
+Begins
+From above
+Or never begins
+
+Fate
+Applies to you
+Looking outward
+Seeing the dissolution of form
+Re-applying upon yourself
+The fate
+Of being dissolved
+
+Destiny
+Applies to you
+Looking inward
+Seeing the form
+Being the form
+Whose destiny it is 
+To be form
+
+Destiny — immanence
+Fate — transcendence
+Rooted
+In 
+You  
