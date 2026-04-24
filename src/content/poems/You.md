@@ -2,7 +2,7 @@
 tags:
   - fate
   - destiny
-word-count: "63"
+word-count: "64"
 related:
   - "[[Impersonal]]"
   - "[[No View From Nowhere]]"
