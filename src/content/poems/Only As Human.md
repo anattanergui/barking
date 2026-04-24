@@ -26,6 +26,7 @@ ground:
   - nondual
 description:
   - The centre of a circle cannot ask — it only speaks as human.
+word-count: "38"
 ---
 # Only As Human
 How can the centre
