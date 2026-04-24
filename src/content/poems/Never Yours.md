@@ -46,5 +46,6 @@ But then passed away
 
 What could you get
 What could you have
-You were never yours
+You 
+Were never yours
 From the very first day  
