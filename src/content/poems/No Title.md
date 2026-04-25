@@ -24,7 +24,7 @@ word-count: "22"
 related:
   - "[[Translation]]"
   - "[[Intent]]"
-  - "[[Impersonal]]"
+  - "[[You]]"
 ---
 # No Title
 Unknown poet

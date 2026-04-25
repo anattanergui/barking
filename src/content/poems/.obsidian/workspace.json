@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "No Title.md",
+                "file": "Translation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "No Title"
+              "title": "Translation"
             }
           },
           {
@@ -283,8 +283,8 @@
   },
   "active": "d39f513b3583d109",
   "lastOpenFiles": [
-    "Translation.md",
     "No Title.md",
+    "Translation.md",
     "Intent.md",
     "Untitled.md",
     "You.md",

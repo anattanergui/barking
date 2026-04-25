@@ -13,8 +13,9 @@ tags:
   - smile
   - face
 related:
-  - "[[Found And Dropped]]"
   - "[[Dog]]"
+  - "[[Impersonal]]"
+  - "[[Found And Dropped]]"
 description: A vertical line and another — one horizontal line crossing off both
 word-count: "47"
 domain:
