@@ -30,10 +30,11 @@ domain:
 crux:
   - absence
 atmosphere:
-  - searching
+  - hushed
 ground:
   - no-self
 description: Intent without owner — hands and eyes searching, finding no me to hold
+word-count: "44"
 ---
 # Intent
 Intention
@@ -52,8 +53,8 @@ These hands, eyes
 Searching, not finding
 Me
 
-Not intention
-But intent
+Not intention —
+Intent
 
-That is the absence
+That's the absence
 Of me  
