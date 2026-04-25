@@ -31,6 +31,19 @@ related:
   - "[[Impersonal]]"
   - "[[No View From Nowhere]]"
   - "[[The Divine]]"
+domain:
+  - self
+  - fate
+  - destiny
+crux:
+  - primacy
+atmosphere:
+  - lapidary
+  - sovereign
+ground:
+  - ontological
+description: 
+  Fate looks outward and dissolves form. Destiny looks inward and is form. Neither, without you.
 ---
 # You
 The one
@@ -39,7 +52,6 @@ Irreproducible
 You
 
 Is primary
-
 Period
 
 Everything else
@@ -66,7 +78,5 @@ To be form
 Destiny — immanent
 Fate — transcendent
 Nothing, nowhere
-
 Without
-
 You  

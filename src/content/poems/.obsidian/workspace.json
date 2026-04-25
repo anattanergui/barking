@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Impersonal.md",
+                "file": "You.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Impersonal"
+              "title": "You"
             }
           },
           {
@@ -91,8 +91,7 @@
               "title": "More"
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -266,10 +265,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "8770811fb06ab75a",
+  "active": "8dc5e7f20c28b4c2",
   "lastOpenFiles": [
-    "Becoming Unself.md",
+    "Impersonal.md",
     "More.md",
+    "Becoming Unself.md",
     "The World.md",
     "Only As Human.md",
     "Never Yours.md",
@@ -287,7 +287,6 @@
     "Beholding.md",
     "— ing —.md",
     "No View From Nowhere.md",
-    "Impersonal.md",
     "Ether.md",
     "Plague.md",
     "Chasing.md",
