@@ -19,8 +19,8 @@ tags:
   - ground
   - basis
 related:
+  - "[[In]]"
   - "[[Grief]]"
-  - "[[Oblivion]]"
   - "[[Intent]]"
 word-count: "51"
 domain:
