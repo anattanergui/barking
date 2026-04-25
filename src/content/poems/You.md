@@ -28,22 +28,21 @@ tags:
   - you
 word-count: "64"
 related:
+  - "[[Integration]]"
   - "[[Impersonal]]"
   - "[[No View From Nowhere]]"
-  - "[[The Divine]]"
 domain:
   - self
   - fate
   - destiny
 crux:
-  - primacy
+  - nonduality
 atmosphere:
   - lapidary
   - sovereign
 ground:
-  - ontological
-description: 
-  Fate looks outward and dissolves form. Destiny looks inward and is form. Neither, without you.
+  - axiomatic
+description: Fate looks outward and dissolves form. Destiny looks inward and is form. Neither, without you.
 ---
 # You
 The one
