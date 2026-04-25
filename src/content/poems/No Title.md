@@ -23,8 +23,8 @@ description: I am. You are. That's all your wishes will ever be
 word-count: "22"
 related:
   - "[[Translation]]"
-  - "[[I Am That]]"
-  - "[[The Empty Instant]]"
+  - "[[Intent]]"
+  - "[[Impersonal]]"
 ---
 # No Title
 Unknown poet
