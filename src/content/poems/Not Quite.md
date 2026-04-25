@@ -21,7 +21,7 @@ tags:
 related:
   - "[[Grief]]"
   - "[[Oblivion]]"
-  - "[[What Else]]"
+  - "[[Intent]]"
 word-count: "51"
 domain:
   - fanaa
