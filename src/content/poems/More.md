@@ -20,7 +20,7 @@ tags:
 related:
   - "[[Dedication]]"
   - "[[Extinction]]"
-  - "[[No-Self]]"
+  - "[[The Last Idol]]"
 word-count: "32"
 domain:
   - self
