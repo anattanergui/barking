@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Translation.md",
+                "file": "Grief.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Translation"
+              "title": "Grief"
             }
           },
           {
@@ -138,7 +138,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "unknown poet",
+                "query": "wiring",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -283,8 +283,8 @@
   },
   "active": "d39f513b3583d109",
   "lastOpenFiles": [
-    "No Title.md",
     "Translation.md",
+    "No Title.md",
     "Intent.md",
     "Untitled.md",
     "You.md",

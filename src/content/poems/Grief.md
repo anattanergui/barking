@@ -9,7 +9,8 @@ tags:
   - wiring
   - living
   - knowing
-word-count: "37"
+  - fanaa
+word-count: "38"
 related:
   - "[[Equanimity]]"
   - "[[Dedication]]"
@@ -18,11 +19,12 @@ domain:
   - grief
   - reality
 crux:
-  - redefinition
+  - gnosis
 atmosphere:
-  - stark
+  - lucid
 ground:
-  - ontological
+  - apophatic
+  - gnostic
 description: Grief is not for the lost — but the living knowing the architecture of reality.
 ---
 
@@ -52,5 +54,6 @@ Knowing
 
 The architecture 
 The wiring
+Fanaa
 
 Of reality
