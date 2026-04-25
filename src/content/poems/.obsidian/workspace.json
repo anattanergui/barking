@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "In.md",
+                "file": "Maya.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "In"
+              "title": "Maya"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "unspeak",
+                "query": "obsc",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -241,6 +241,7 @@
   },
   "active": "1f2ec1b40dd13ff6",
   "lastOpenFiles": [
+    "In.md",
     "The Impossible Knowing.md",
     "No-Self Talk.md",
     "Company.md",
@@ -266,7 +267,6 @@
     "Inna Lillahi Wa Inna Ilayhi Raji'un.md",
     "Simultaneous.md",
     "Purgatory.md",
-    "No Door.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

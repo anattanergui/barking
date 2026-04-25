@@ -26,14 +26,16 @@ ground:
 description: Maya — insatiable, infinite, posing, showing, beholding herself.
 ---
 # Maya
-Insatiable, obscene
+Insatiable
+Obscene
+
 In itself absorbed
 Infinity
 
 In infinite 
-Shapes, poses
-Showing
+Shapes
 
+Posing, showing
 Beholding
 
 Herself
