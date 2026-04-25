@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Impossible Knowing.md",
+                "file": "In.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Impossible Knowing"
+              "title": "In"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wiring",
+                "query": "unspeak",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,7 +117,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -240,6 +241,7 @@
   },
   "active": "1f2ec1b40dd13ff6",
   "lastOpenFiles": [
+    "The Impossible Knowing.md",
     "No-Self Talk.md",
     "Company.md",
     "Logos.md",
@@ -265,7 +267,6 @@
     "Simultaneous.md",
     "Purgatory.md",
     "No Door.md",
-    "Graces.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

@@ -26,5 +26,6 @@ description: In absolute unknowing all becomes known — in utter unspeakability
 # In
 In absolute unknowing
 All becomes known
+
 In utter unspeakability
 All becomes speakable
