@@ -24,6 +24,7 @@ ground:
 related:
   - "[[Nonduality]]"
   - "[[Unknowable]]"
+  - "[[Assumption And Perception]]"
 word-count: "82"
 ---
 # The Impossible Knowing

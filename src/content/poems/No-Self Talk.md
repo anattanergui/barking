@@ -23,8 +23,9 @@ atmosphere:
 ground:
   - nondual
 related:
-  - "[[The Impossible Knowing]]"
+  - "[[Logos]]"
   - "[[The Word]]"
+  - "[[The Impossible Knowing]]"
 word-count: "74"
 description: No one out there, no one here — just talk talking to talk. All talk is no-self talk
 ---

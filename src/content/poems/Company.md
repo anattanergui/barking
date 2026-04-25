@@ -13,7 +13,7 @@ tags:
 related:
   - "[[Dog]]"
   - "[[Words]]"
-  - "[[Logos]]"
+  - "[[No-Self Talk]]"
 domain:
   - nothing
   - language

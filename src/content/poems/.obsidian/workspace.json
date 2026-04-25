@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dog.md",
+                "file": "The Impossible Knowing.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Dog"
+              "title": "The Impossible Knowing"
             }
           }
         ],
@@ -240,8 +240,10 @@
   },
   "active": "1f2ec1b40dd13ff6",
   "lastOpenFiles": [
+    "No-Self Talk.md",
     "Company.md",
     "Logos.md",
+    "Dog.md",
     "Not Quite.md",
     "Intent.md",
     "You.md",
@@ -264,8 +266,6 @@
     "Purgatory.md",
     "No Door.md",
     "Graces.md",
-    "Brink.md",
-    "Between Silences.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
