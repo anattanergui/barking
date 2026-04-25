@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Company.md",
+                "file": "Dog.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Company"
+              "title": "Dog"
             }
           }
         ],
@@ -240,8 +240,8 @@
   },
   "active": "1f2ec1b40dd13ff6",
   "lastOpenFiles": [
-    "Logos.md",
     "Company.md",
+    "Logos.md",
     "Not Quite.md",
     "Intent.md",
     "You.md",

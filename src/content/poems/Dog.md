@@ -14,11 +14,11 @@ domain:
   - companionship
   - writing
 crux:
-  - no-self
+  - fidelity
 atmosphere:
-  - quiet
+  - intimate
 ground:
-  - presence
+  - no-self
 description: A poem about presence, absence, and the quiet faithfulness of small things — tea, breath, words — that attend even when the self goes missing.
 related:
   - "[[To Myself]]"
