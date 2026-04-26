@@ -4,12 +4,79 @@ tags:
   - tracks
   - transgression
   - taboos
-  - mask-making
-  - tongue-biting
   - stoned
   - pathologised
   - pretending
   - hardwiring
+  - tongue
+  - mask
+  - making
+  - course
+  - domestication
+  - mind
+  - body
+  - birth
+  - death
+  - thou
+  - shalt
+  - not
+  - language
+  - shame
+  - reprisals
+  - boundaries
+  - derailed
+  - forbidden
+  - desires
+  - instincts
+  - seeking
+  - surface
+  - society
+  - therapies
+  - support
+  - groups
+  - guilt
+  - prisons
+  - taboo
+  - sex
+  - food
+  - digressions
+  - violence
+  - drugs
+  - revolting
+  - punished
+  - veils
+  - enforcements
+  - control
+  - strips
+  - bare
+  - order
+  - established
+  - sovereignty
+  - intoxicated
+  - accomplishment
+  - nothing
+  - finding
+  - seeing
+  - world
+  - heretical
+  - upholding
+  - promoting
+  - fictions
+  - deceptions
+  - self
+  - conceits
+  - partake
+  - interaction
+  - practice
+  - demonised
+  - medicated
+  - imprisoned
+  - hanged
+  - prosecuted
+  - tried
+  - living
+  - someone
+  - price
 domain:
   - domestication
   - no-self
@@ -25,6 +92,7 @@ ground:
   - apophatic
 related:
   - "[[Flyer’s Myth]]"
+  - "[[Career]]"
 word-count: "413"
 ---
 # The Accomplishment

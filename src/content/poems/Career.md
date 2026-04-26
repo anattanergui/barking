@@ -16,9 +16,9 @@ tags:
   - being
   - cog
 related:
+  - "[[The Toll]]"
   - "[[Quiet Desperation]]"
-  - "[[Disquiet]]"
-  - "[[Purgatory]]"
+  - "[[The Accomplishment]]"
 word-count: "24"
 domain:
   - labour
