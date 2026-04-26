@@ -11,21 +11,51 @@ tags:
   - imagination
   - boredom
   - solitude
+  - grant
+  - tangible
+  - incontrovertible
+  - unequalled
+  - damned
+  - eternally
+  - creature
+  - dream
+  - deepest
+  - gnawing
+  - dread
+  - nonexistence
+  - stage
+  - set
+  - signposted
+  - aloneness
+  - singular
+  - unrivalled
+  - visions
+  - rest
+  - slumber
+  - knowing
+  - alone
+  - bored
+  - escape
+  - narcissistic
+  - garndeur
+  - born
 domain:
-  - solipsism
+  - creation
+  - theodicy
 crux:
-  - narcissism
+  - solipsism 
 atmosphere:
   - mordant
+  - vertiginous
 ground:
-  - psychoanalytic
+  - omniscient
 related:
   - "[[Sweetheart]]"
   - "[[Wonder]]"
   - "[[This, Or That]]"
-style:
-  - interrogative
 word-count: "121"
+description:
+  - Free will to escape divine boredom — every heaven, every hell born of his narcissistic imagination
 ---
 # The God Complex
 Wouldn’t you grant 
