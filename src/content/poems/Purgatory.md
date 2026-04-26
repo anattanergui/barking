@@ -22,7 +22,7 @@ ground:
 related:
   - "[[Quiet Desperation]]"
   - "[[Between Worlds]]"
-word-count: "173"
+word-count: "174"
 description: |-
   Waiting is me — daily paid work, unpaid writing, and a self unchanged
   by distance or job
@@ -82,6 +82,7 @@ I wait to be there
 There
 I wait to be here
 
+Waiting
 Is me
 Me —
 Can’t stop the waiting

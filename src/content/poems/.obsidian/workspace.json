@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "Strange People"
             }
+          },
+          {
+            "id": "09028f751a85ddad",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Career.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Career"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -68,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "purga",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -210,11 +225,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "73c439c3d19df143",
+  "active": "09028f751a85ddad",
   "lastOpenFiles": [
-    "This, Very Here.md",
-    "Strange People.md",
+    "Disquiet.md",
+    "Career.md",
+    "Purgatory.md",
     "Not Quite.md",
+    "Strange People.md",
+    "This, Very Here.md",
     "Maya.md",
     "Intent.md",
     "You.md",
@@ -235,9 +253,6 @@
     "Devotion.md",
     "Impersonal.md",
     "Becoming Unself.md",
-    "Only As Human.md",
-    "Exactly That.md",
-    "What Returns.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
