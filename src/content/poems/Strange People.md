@@ -20,7 +20,7 @@ tags:
   - others
   - over
 domain:
-  - blindspot
+  - other
 crux:
   - asymmetry
 atmosphere:
