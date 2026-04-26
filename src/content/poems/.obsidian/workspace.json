@@ -64,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -238,10 +238,10 @@
       "bases:Create new base": false
     }
   },
-  "active": "9df9e53df2414d99",
+  "active": "41e42561d072aaf8",
   "lastOpenFiles": [
-    "Sovereignty.md",
     "A King.md",
+    "Sovereignty.md",
     "Democracy.md",
     "Chasing.md",
     "Tragedy.md",

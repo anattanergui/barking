@@ -28,7 +28,7 @@ tags:
   - servility
 domain:
   - sovereignty
-  - monarchy
+  - servility
 crux:
   - displacement
 atmosphere:
