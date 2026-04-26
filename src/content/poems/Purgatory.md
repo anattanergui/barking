@@ -9,10 +9,38 @@ tags:
   - here
   - there
   - paid
+  - morning
+  - tatty
+  - hoodie
+  - jeans
+  - wonder
+  - wait
+  - driving
+  - job
+  - mindless
+  - pointless
+  - writing
+  - unpaid
+  - pays
+  - loading
+  - stacking
+  - scanning
+  - pushing
+  - unloading
+  - go
+  - leave
+  - thoughts
+  - doubts
+  - hopes
+  - me
+  - river
+  - life
+  - passion
+  - worry
+  - time
+  - death
 domain:
-  - work
-  - waiting
-  - identity
+  - labour
 crux:
   - suspension
 atmosphere:

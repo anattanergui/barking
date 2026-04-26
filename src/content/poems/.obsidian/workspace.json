@@ -43,7 +43,7 @@
               "state": {
                 "file": "Career.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Career"
@@ -227,11 +227,11 @@
   },
   "active": "09028f751a85ddad",
   "lastOpenFiles": [
-    "Disquiet.md",
-    "Career.md",
     "Purgatory.md",
-    "Not Quite.md",
     "Strange People.md",
+    "Career.md",
+    "Disquiet.md",
+    "Not Quite.md",
     "This, Very Here.md",
     "Maya.md",
     "Intent.md",
