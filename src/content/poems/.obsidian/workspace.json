@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Birthday.md",
+                "file": "Democracy.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Birthday"
+              "title": "Democracy"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "grande",
+                "query": "democracy",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -212,8 +213,9 @@
   },
   "active": "a61af1380248b856",
   "lastOpenFiles": [
-    "About Freedom.md",
+    "Tragedy.md",
     "Birthday.md",
+    "About Freedom.md",
     "Without The Word.md",
     "Logos.md",
     "The God Complex.md",
@@ -224,7 +226,6 @@
     "A King.md",
     "Chasing.md",
     "Sovereignty.md",
-    "Tragedy.md",
     "Schmutz.md",
     "Same Old Shit.md",
     "Groups For Groups.md",

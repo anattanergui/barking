@@ -48,6 +48,7 @@ description: What actually governs - A demographic audit on democracy.
 related:
   - "[[First Philosophy]]"
   - "[[Groups For Groups]]"
+  - "[[A King]]"
 word-count: "83"
 ---
 # Democracy
