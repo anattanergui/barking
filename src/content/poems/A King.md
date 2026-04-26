@@ -20,12 +20,12 @@ tags:
   - defenders
   - decided
   - above
-  - proud
-  - abasement
   - symbol
   - displacement
   - sovereignty
   - authority
+  - defended
+  - servility
 domain:
   - sovereignty
   - monarchy
@@ -64,10 +64,10 @@ Have decided
 To situate
 Above themselves
 
-For their own 
-Proud abasement
-As a symbol 
-Displacement 
+As a symbol
+Of their 
+Defended servility
+A displacement 
 
 Of their own 
-Sovereignty  
+Sovereignty
