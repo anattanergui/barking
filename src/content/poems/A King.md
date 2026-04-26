@@ -32,7 +32,7 @@ domain:
 crux:
   - displacement
 atmosphere:
-  - forensic
+  - clinical
 ground:
   - structural
 description: A king answers to no one — because his subjects chose to place him above themselves
