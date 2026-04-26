@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Mirror.md",
+                "file": "Tragedy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Mirror"
+              "title": "Tragedy"
             }
           }
         ],
@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "democracy",
+                "query": "unfor",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -226,8 +227,8 @@
   },
   "active": "0450d244c7c11409",
   "lastOpenFiles": [
-    "A King.md",
     "Mirror.md",
+    "A King.md",
     "Democracy.md",
     "Tragedy.md",
     "Birthday.md",

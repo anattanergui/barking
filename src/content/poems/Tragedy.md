@@ -32,7 +32,7 @@ related:
   - "[[Schmutz]]"
   - "[[Chasing]]"
   - "[[Democracy]]"
-word-count: "34"
+word-count: "33"
 ---
 # Tragedy
 Money is probably 
@@ -41,7 +41,7 @@ Contradiction
 
 That one must 
 Simultaneously hold
-Each part of 
+Each end
 As true
 
 One does not 
