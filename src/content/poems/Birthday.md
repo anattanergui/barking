@@ -28,10 +28,10 @@ ground:
   - biological
 related:
   - "[[Definition]]"
-  - "[[About Freedom]]"
+  - "[[Who The Fuck Knows]]"
   - "[[The Unnatural Recognition]]"
 description:
-  - Anonymity is the creature's natural state - birthday marks when conscription began
+  - Anonymity is a creature's natural state - birthday marks when conscription began
 word-count: "27"
 ---
 # Birthday 

@@ -29,7 +29,7 @@
               "state": {
                 "file": "Birthday.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Birthday"
@@ -212,8 +212,9 @@
   },
   "active": "a61af1380248b856",
   "lastOpenFiles": [
-    "Without The Word.md",
+    "About Freedom.md",
     "Birthday.md",
+    "Without The Word.md",
     "Logos.md",
     "The God Complex.md",
     "This, Or That.md",
@@ -237,7 +238,6 @@
     "This, Very Here.md",
     "Maya.md",
     "Intent.md",
-    "You.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
