@@ -34,7 +34,7 @@ related:
   - "[[Democracy]]"
 word-count: "33"
 ---
-# Tragedy
+# Comma
 Money is probably 
 The most unfortunate, even tragic
 Contradiction 
