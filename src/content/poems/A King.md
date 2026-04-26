@@ -36,7 +36,7 @@ atmosphere:
 ground:
   - structural
 description: A king answers to no one — because his subjects chose to place him above themselves
-word-count: "57"
+word-count: "55"
 related:
   - "[[Sovereignty]]"
   - "[[First Philosophy]]"
@@ -60,8 +60,7 @@ To anyone —
 
 That all defenders
 Of his authority
-Have decided
-To situate
+Have situated
 Above themselves
 
 As a symbol
