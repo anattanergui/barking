@@ -79,16 +79,14 @@ tags:
   - price
 domain:
   - domestication
-  - no-self
+  - sovereignty
 crux:
-  - dissimulation
   - pyrrhic
+  - no-self
 atmosphere:
   - mordant
-  - bleak
 ground:
   - structural
-  - alienness
   - apophatic
 related:
   - "[[Flyer’s Myth]]"
