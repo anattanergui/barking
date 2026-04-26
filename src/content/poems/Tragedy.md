@@ -30,8 +30,8 @@ description:
   - "Money: one does not need it to live, and without it one does not live"
 related:
   - "[[Schmutz]]"
+  - "[[Chasing]]"
   - "[[Democracy]]"
-  - "[[Same Old Shit]]"
 word-count: "34"
 ---
 # Tragedy
