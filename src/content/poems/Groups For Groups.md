@@ -23,7 +23,7 @@ ground:
   - structural
 related:
   - "[[First Philosophy]]"
-
+  - "[[Democracy]]"
 word-count: "179"
 ---
 # Groups For Groups

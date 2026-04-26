@@ -22,35 +22,21 @@
             }
           },
           {
-            "id": "73c439c3d19df143",
+            "id": "41e42561d072aaf8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Strange People.md",
+                "file": "Democracy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Strange People"
-            }
-          },
-          {
-            "id": "09028f751a85ddad",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "The Accomplishment.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "The Accomplishment"
+              "title": "Democracy"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,8 +89,7 @@
               "title": "Bookmarks"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -225,14 +210,18 @@
       "bases:Create new base": false
     }
   },
-  "active": "09028f751a85ddad",
+  "active": "41e42561d072aaf8",
   "lastOpenFiles": [
+    "Groups For Groups.md",
+    "First Philosophy.md",
+    "Democracy.md",
+    "Not Quite.md",
+    "Strange People.md",
+    "The Accomplishment.md",
     "Career.md",
     "Quiet Desperation.md",
     "Purgatory.md",
-    "Strange People.md",
     "Disquiet.md",
-    "Not Quite.md",
     "This, Very Here.md",
     "Maya.md",
     "Intent.md",
@@ -249,10 +238,6 @@
     "The World.md",
     "More.md",
     "Translation.md",
-    "No Title.md",
-    "Integration.md",
-    "Devotion.md",
-    "Impersonal.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
