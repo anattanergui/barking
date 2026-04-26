@@ -30,11 +30,11 @@ domain:
   - sovereignty
   - monarchy
 crux:
-  - abdication
+  - displacement
 atmosphere:
-  - austere
+  - forensic
 ground:
-  - psychoanalytic
+  - structural
 description: A king answers to no one — because his subjects chose to place him above themselves
 word-count: "57"
 related:

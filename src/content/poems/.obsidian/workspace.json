@@ -43,7 +43,7 @@
               "state": {
                 "file": "A King.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "A King"
