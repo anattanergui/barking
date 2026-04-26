@@ -22,6 +22,7 @@ related:
 word-count: "24"
 domain:
   - labour
+  - discipline
 crux:
   - reduction
 atmosphere:
