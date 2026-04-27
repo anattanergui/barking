@@ -25,8 +25,8 @@ related:
   - "[[Assumption And Perception]]"
 ---
 
-
-Your View Has anything ever
+# Your View 
+Has anything ever
 Happened — 
 A second too soon
 Or an instant too late
