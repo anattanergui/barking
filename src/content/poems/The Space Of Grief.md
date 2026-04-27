@@ -1,25 +1,33 @@
 ---
 tags:
-  - grief
-  - death
-  - loved
-  - spouse
-  - son
+  - fill
+  - ourselves
   - others
-  - siblings
-  - friends
-  - imagine
-  - portions
-  - parts
-  - die
-  - more
-  - less
+  - loved
+  - distribute
+  - part
+  - shape
+  - role
+  - each
+  - filled
+  - distributed
+  - space
+  - us
+  - we
+  - other
+  - undivided
   - whole
-  - utility
-  - sight
-  - diminished
-  - lessened
-word-count: "177"
+  - death
+  - another
+  - especially
+  - largest
+  - empties
+  - frees
+  - returns
+  - own
+  - grief
+  - evacuating
+word-count: "74"
 related:
   - "[[Dedication]]"
   - "[[Grief]]"
@@ -28,55 +36,44 @@ domain:
   - death
   - grief
 crux:
-  - inversion
-  - liberation
+  - grief
 atmosphere:
-  - austere
   - unflinching
 ground:
   - structural
   - phenomenological
-description: Death of loved ones frees us by returning portions we gave away. Grief fills the space that could make us whole.
+description:
 ---
 # The Space Of Grief
-When we look
-Without sentimentalising
-We see 
-That the death of others —
-Especially of those closest to us
-Frees us
+We fill ourselves
+With others 
+Loved ones
 
-We become not less — but more
-By the death of our loved ones
-For there is no longer a part of us
-That has to be — someone or something —
-For the ones, now dead
+We distribute ourselves
+To others
+A part, shape, role
+For each
 
-And if we apply the same principle
-Upon ourselves
-We would see that the utility of our lives —
-In the sight of others
-We see as family, friends, loved ones
+What gets filled, distributed
+Is us — the space in us
+Of us
 
-Might be much less
-Than what we imagine
-That our loved ones, children, siblings or friends
-Would not be diminished, lessened
-And would in fact be made more
-After our death
+Without any single other
+We would be
+Undivided, whole
 
-It is as if
-We portion ourselves 
-And dish the parts out 
-To others around us 
-Portion for a son, for a spouse —
+Death of another
+Especially, of loved ones
+Empties, frees, returns
+The largest space
+To us
 
-And when they die 
-Rather than having that portion back
-Becoming more
-We fill the space — that could make us more
-With grief 
-Remaining less
-When their deaths — return to us
-More, to be
-Whole
+Death, our own
+Does the same
+To others
+
+Unless 
+Grief comes in
+Evacuating us
+
+From ourselves

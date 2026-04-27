@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Equanimity.md",
+                "file": "The Space Of Grief.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Equanimity"
+              "title": "The Space Of Grief"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "equanimity",
+                "query": "space of grief",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -198,6 +198,10 @@
   },
   "active": "9014fdf2690154bc",
   "lastOpenFiles": [
+    "Never Yours.md",
+    "No View From Nowhere.md",
+    "You.md",
+    "Equanimity.md",
     "Grief.md",
     "The First Cause.md",
     "Flesh.md",
@@ -220,10 +224,6 @@
     "About Freedom.md",
     "Without The Word.md",
     "Logos.md",
-    "Wonder.md",
-    "Not Quite.md",
-    "Chasing.md",
-    "Sovereignty.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
