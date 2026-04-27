@@ -29,7 +29,7 @@ word-count: "159"
 # Echoes In Silence
 What is love but echoes
 Of silent songs —
-Of Infinite aloneness —
+Of infinite aloneness —
 Rising in the boundless dark, where 
 Neither being nor non-being dwells —
 Crashing against the walls
@@ -40,7 +40,7 @@ Yield as bodies must, in time —
 Leaving no trace
 Of themselves
 The echoes 
-Or the Infinite
+Or the infinite
 
 How can I truly express
 My love for you, my love 
@@ -48,7 +48,7 @@ But by not expressing —
 By not being
 Between you and the presence —
 The majesty —
-Of the Infinite
+Of the infinite
 
 So that
 Love alone speaks
@@ -68,7 +68,7 @@ Or perhaps —
 What is love 
 But silent echoes —
 
-A collision of Infinite aloneness
+A collision of infinite aloneness
 Against the veil of imagined walls
 Separating it
 From itself
