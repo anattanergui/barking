@@ -15,14 +15,13 @@ tags:
   - force
   - relationship
 domain:
-  - sexuality
-  - causality
+  - sex
 crux:
-  - universality
+  - delusion
 atmosphere:
   - unabashed
 ground:
-  - reductionism
+  - reductive
 word-count: "79"
 related:
   - "[[One-Way]]"

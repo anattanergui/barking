@@ -12,9 +12,9 @@ tags:
 domain: animality
 crux: defiance
 atmosphere: caustic
-ground: reductionism
-description: |
-  A visceral dismantling of human dignity and pretension — from bloody birth through social conditioning to the grave — arriving at a raw demand to inhabit the body without shame. For readers drawn to anti-humanist thought, the body as truth, and the rejection of respectability politics.
+ground:
+  - reductive
+description:
 related:
   - "[[The Howling]]"
   - "[[Clothes]]"
