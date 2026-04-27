@@ -27,15 +27,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "One-Way.md",
+                "file": "Tragedy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "One-Way"
+              "title": "Tragedy"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -67,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "feather",
+                "query": "comma",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -210,12 +211,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "9014fdf2690154bc",
+  "active": "804a62bd9356e530",
   "lastOpenFiles": [
     "One-Way.md",
+    "Where.md",
     "Branded.md",
     "Found And Dropped.md",
-    "Where.md",
     "A Million Words.md",
     "Unless.md",
     "Never Yours.md",
@@ -237,7 +238,7 @@
     "Metaphysical Rot.md",
     "Purpose.md",
     "This, Or That.md",
-    "Comma.md",
+    "Tragedy.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
