@@ -10,7 +10,7 @@ atmosphere:
 ground:
   - epistemological
   - apophatic
-word-count: "130"
+word-count: "129"
 related:
   - "[[Those Who Know Speak]]"
   - "[[Awareness]]"
@@ -35,7 +35,7 @@ A thing
 Factual, objective or actual 
 Is another fingerprint
 
-Speaking then 
+Speaking 
 Is destined to fail
 From its first utterance
 If it’s meant to articulate

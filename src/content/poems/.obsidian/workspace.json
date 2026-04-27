@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Purpose.md",
+                "file": "The Broken Tool.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Purpose"
+              "title": "The Broken Tool"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "sunder",
+                "query": "broken too",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,7 +117,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -240,8 +241,9 @@
   },
   "active": "533cdd59f1e18a49",
   "lastOpenFiles": [
-    "This, Or That.md",
+    "Metaphysical Rot.md",
     "Purpose.md",
+    "This, Or That.md",
     "Be Yourself.md",
     "Comma.md",
     "Mirror.md",
@@ -265,7 +267,6 @@
     "Career.md",
     "Quiet Desperation.md",
     "Purgatory.md",
-    "Disquiet.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
