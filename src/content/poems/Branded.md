@@ -35,7 +35,6 @@ domain:
 crux:
   - dispossession
 atmosphere:
-  - indignant
   - oracular
 ground:
   - escathological
