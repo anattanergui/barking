@@ -10,15 +10,15 @@ tags:
   - finger
   - blame
 domain:
-  - capacity
-  - equivalence
+  - self
+  - agency
 crux:
   - indistinction
 atmosphere:
-  - austere
-  - unsparing
+  - equanimous
+  - unflinching
 ground:
-  - nondual
+  - universal
 related:
   - "[[Atman]]"
 word-count: "198"

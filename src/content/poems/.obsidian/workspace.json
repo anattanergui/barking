@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tragedy.md",
+                "file": "Demigods.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Tragedy"
+              "title": "Demigods"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "comma",
+                "query": "demi",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,6 +213,7 @@
   },
   "active": "804a62bd9356e530",
   "lastOpenFiles": [
+    "Tragedy.md",
     "One-Way.md",
     "Where.md",
     "Branded.md",
@@ -238,7 +239,6 @@
     "Metaphysical Rot.md",
     "Purpose.md",
     "This, Or That.md",
-    "Tragedy.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
