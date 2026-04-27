@@ -18,14 +18,12 @@ tags:
   - and
 domain:
   - money
-  - contradiction
 crux:
   - paradox
 atmosphere:
-  - austere
-  - elegiac
+  - wry
 ground:
-  - aphoristic
+  - contradiction
 description:
   - "Money: one does not need it to live, and without it one does not live"
 related:
