@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Your View.md",
+                "file": "The Addict.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Your View"
+              "title": "The Addict"
             }
           }
         ],
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "your view",
+                "query": "the addict",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -241,6 +241,8 @@
   },
   "active": "533cdd59f1e18a49",
   "lastOpenFiles": [
+    "Alcoholics.md",
+    "Your View.md",
     "The Still Point.md",
     "The Broken Tool.md",
     "Metaphysical Rot.md",
@@ -265,8 +267,6 @@
     "Groups For Groups.md",
     "First Philosophy.md",
     "Strange People.md",
-    "The Accomplishment.md",
-    "Career.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

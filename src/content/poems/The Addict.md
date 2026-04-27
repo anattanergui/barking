@@ -10,28 +10,52 @@ tags:
   - violence
   - reality
   - bones
+  - marrow
+  - zero
+  - absolutely
+  - respecting
+  - clear
+  - eyed
+  - guise
+  - attempt
+  - treat
+  - cure
+  - rid
+  - necessity
+  - presume
+  - inculcate
+  - empowerment
+  - words
+  - direct
+  - lived
+  - experience
+  - reframe
+  - absurdly
+  - cured
+  - powerlessness
+  - coexist
+  - contradiction
+  - perfroming
+  - against
+  - creating
+  - being
+  - operates
+  - immutable
+  - existence
+  - prescribing
 domain:
   - addiction
-  - control
+  - agency
 crux:
   - inversion
 atmosphere:
   - unflinching
-  - exacting
 ground:
+  - phenomenological
   - political
-  - existential
 related:
   - "[[War On Myself]]"
   - "[[The Forgetting Itself]]"
-style:
-  - rhetorical
-  - analytical
-  - argumentative
-energy:
-  - centripetal
-  - contracting
-  - isolating
 word-count: "167"
 ---
 # The Addict
@@ -46,8 +70,7 @@ Absolutely zero control
 That’s what any honest
 Clear-eyed, self-respecting addict knows
 
-Now —
-All those
+And all those
 Whoever they are, in whatever guise —
 Who attempt to cure, treat, or rid
 The addict of his addiction —
@@ -65,7 +88,7 @@ What the addict knows—
 From direct, lived experience
 In his bones and marrow —
 
-He must—
+He must
 To be cured —
 Absurdly reframe his powerlessness
 As agency
@@ -88,5 +111,6 @@ But violence
 And who, truly
 Operates from the undeniable
 Immutable reality of existence —
+
 The addict
 Or those prescribing control
