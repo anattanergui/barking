@@ -28,6 +28,8 @@ tags:
   - grief
   - evacuating
   - unless
+  - mourning
+  - shaped
 word-count: "74"
 related:
   - "[[Dedication]]"
@@ -37,7 +39,7 @@ domain:
   - grief
   - self
 crux:
-  - evacuation
+  - inversion
 atmosphere:
   - dispassionate
 ground:
