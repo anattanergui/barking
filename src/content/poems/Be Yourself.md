@@ -28,6 +28,7 @@ ground:
 related:
   - "[[Growing Up]]"
   - "[[The Space Of Grief]]"
+  - "[[No Me Nowhere]]"
 word-count: "120"
 description:
   - Losing me freed you from having to be anything for me. Take this freedom as the gift of sundering
@@ -64,4 +65,5 @@ As the gift of sundering
 
 Be yourself 
 And never again —
-Be anything for me
+Be anything
+For me
