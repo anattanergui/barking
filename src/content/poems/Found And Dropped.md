@@ -23,7 +23,7 @@ tags:
 # Found And Dropped
 Cupped among branches
 Shaded up high — few sticks, twigs
-Some fur and feathers
+Some fur, and feathers
 Secretions dried
 
 With found and dropped
