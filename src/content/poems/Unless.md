@@ -78,6 +78,7 @@ To others
 
 Unless 
 Grief comes in
-Evacuating us
+Shaped by mourning
 
+Evacuating us
 From ourselves
