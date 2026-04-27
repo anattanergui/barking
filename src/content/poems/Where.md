@@ -41,11 +41,11 @@ Certainty
 
 That there is but one
 Not two
-Not millions
+Not millions —
 
 Where but
 The centre 
-Singularity
+Singularity 
 
 Standing through you
 As me  
