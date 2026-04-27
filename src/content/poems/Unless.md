@@ -27,24 +27,26 @@ tags:
   - own
   - grief
   - evacuating
+  - unless
 word-count: "74"
 related:
   - "[[Dedication]]"
   - "[[Grief]]"
   - "[[Reprieves]]"
 domain:
-  - death
   - grief
+  - self
 crux:
-  - grief
+  - evacuation
 atmosphere:
-  - unflinching
+  - dispassionate
 ground:
-  - structural
   - phenomenological
+  - no-self
 description:
+  - Death of another, empties, frees, returns - to us - the space is us, of us to be undivided, whole
 ---
-# The Space Of Grief
+# Unless
 We fill ourselves
 With others 
 Loved ones
