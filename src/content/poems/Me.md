@@ -22,7 +22,7 @@ tags:
 related:
   - "[[Folding]]"
   - "[[No Me Nowhere]]"
-word-count: "59"
+word-count: "54"
 domain:
   - flux
 crux:
@@ -37,18 +37,17 @@ description: Different me wakes up, different me at night — keeps changing - k
 Different me wakes up
 Different me at night
 Different me goes out
-Different me comes back
+Different me back
+
 Different me 
-
-Keeps changing me
-What keeps changing me
+Keeps changing what
 Keeps changing, me
-Me, in me, or outside, me
 
+Me, in me, or outside, me
 Where does the first go
 When next comes, as me
+
 Not one, me stays
 Keeps leaving, me
-
 Which me, to be 
-Not finding, me  
+Not finding, me
