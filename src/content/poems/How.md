@@ -16,7 +16,7 @@ tags:
   - becoming
 related:
   - "[[Flesh]]"
-  - "[[The Howling]]"
+  - "[[About Health]]"
   - "[[The Naked Heresy]]"
 domain:
   - self-knowledge

@@ -108,7 +108,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -227,9 +228,10 @@
   },
   "active": "f3154aa188d3882a",
   "lastOpenFiles": [
+    "About Health.md",
+    "How.md",
     "The Naked Heresy.md",
     "Flesh.md",
-    "How.md",
     "Purpose.md",
     "Grief.md",
     "Equanimity.md",
@@ -252,7 +254,6 @@
     "The God Complex.md",
     "Be Yourself.md",
     "A King.md",
-    "Alcoholics.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
