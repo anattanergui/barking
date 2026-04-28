@@ -8,6 +8,8 @@ tags:
   - nothing
   - now
   - prior
+  - of
+  - not
 related:
   - "[[Lam Yalid Wa Lam Yulad]]"
   - "[[Absence Of Absence]]"
@@ -18,10 +20,9 @@ domain:
 crux:
   - plenum
 atmosphere:
-  - ruminative
+  - precise
 ground:
   - relational
-  - ontological
 description: |
   Absence requires prior presence — without it, absence is only presence of
 ---
