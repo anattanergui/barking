@@ -12,6 +12,13 @@ tags:
   - violence
   - attack
   - erase
+  - exist
+  - legitimises
+  - more
+  - circling
+  - closing
+  - violate
+  - itself
 related:
   - "[[First Philosophy]]"
   - "[[Sovereignty]]"
@@ -22,8 +29,7 @@ domain:
 crux:
   - illegitimacy
 atmosphere:
-  - incisive
-  - cold
+  - unflinching
 ground:
   - nominalist
 description: In whose name — collective, that does not exist attacks, violates, erases
