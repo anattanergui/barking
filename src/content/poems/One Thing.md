@@ -26,8 +26,8 @@ tags:
   - thing
 related:
   - "[[Logos]]"
+  - "[[Talking Shit]]"
   - "[[Why The Fuck]]"
-  - "[[Those Who Know Speak]]"
 domain:
   - language
 crux:
