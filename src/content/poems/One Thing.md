@@ -38,7 +38,7 @@ ground:
   - lucid
   - skeptical
 description: Truth cannot be spoken; justice is arbitrary; language is one thing worth defending
-word-count: "48"
+word-count: "47"
 ---
 # One Thing
 What is worth
