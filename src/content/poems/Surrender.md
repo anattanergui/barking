@@ -8,22 +8,25 @@ tags:
   - being
   - embrace
   - stone
+  - untouched
+  - unwavering
+  - tossed
+  - drop
 domain:
-  - surrender
-  - peace
+  - dissolution
 crux:
-  - embrace
+  - merger
 atmosphere:
-  - reverential
-  - still
-ground:
   - devotional
-  - nondual
+ground:
   - surrendered
 related:
   - "[[Source]]"
   - "[[Where]]"
+  - "[[Still Stillness]]"
 word-count: "25"
+description:
+  - I drop — in your being, your embrace - my being
 ---
 # Surrender
 Peace, O Peace
