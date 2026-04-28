@@ -9,22 +9,30 @@ tags:
   - world
   - time
   - blink
+  - longer
+  - life
+  - thousand
+  - hours
+  - few
+  - moments
+  - little
+  - much
+  - hollow
+  - empty
+  - known
+  - show
 domain:
-  - time
-  - instant
+  - timelessness
 crux:
-  - completeness
+  - sufficiency
 atmosphere:
-  - wondering
-  - expansive
+  - wonder
 ground:
-  - timeless
   - nondual
 related:
-  - "[[Emptiness]]"
   - "[[Now]]"
-  - "[[The Still Point]]"
   - "[[Atman]]"
+  - "[[Contentment]]"
 word-count: "62"
 ---
 # The Empty Instant
