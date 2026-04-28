@@ -1,17 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import { getAllPoems, getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
+import { getAllPoems, getAllPoemsMeta } from '../lib/poems.js';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const siteUrl = 'https://anattanergui.github.io/barking';
 
 const poems = getAllPoemsMeta();
-const filters = getFilterOptions(poems);
 const total = poems.length;
-const domainCount    = filters.domains.length;
-const atmosphereCount = filters.atmospheres.length;
-const cruxCount      = filters.cruxes.length;
-const groundCount    = filters.grounds ? filters.grounds.length : 0;
 
 // Search index: meta only, no content — keeps the client bundle lean.
 const searchIndex = poems.map(p => ({
@@ -453,40 +448,6 @@ const featuredPoolFinal = featuredPool.length > 0
     100% { opacity: 0; transform: translateX(-50%) translateY(10px); }
   }
 
-  /* ─── STATS ─────────────────────────────────────────────────── */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    border-bottom: 1px solid var(--rule);
-  }
-
-  .stat {
-    padding: 2rem 2.5rem;
-    border-right: 1px solid var(--rule);
-    text-decoration: none;
-    color: var(--ink);
-    transition: background 0.15s;
-    display: block;
-  }
-  .stat:last-child { border-right: none; }
-  .stat:hover { background: var(--stat-hover); }
-
-  .stat-num {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 2.6rem;
-    font-weight: 300;
-    display: block;
-    line-height: 1;
-  }
-
-  .stat-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.5rem;
-    display: block;
-  }
 
   /* ─── RESPONSIVE ────────────────────────────────────────────── */
   @media (max-width: 900px) {
@@ -497,11 +458,6 @@ const featuredPoolFinal = featuredPool.length > 0
       padding: 3rem 2rem 2.5rem; 
     }
     .hero-right { padding: 3rem 2rem; }
-    .stats { grid-template-columns: repeat(3, 1fr); }
-    .stat { padding: 1.5rem 1.2rem; }
-    .stat:nth-child(3) { border-right: none; }
-    .stat:nth-child(4) { border-top: 1px solid var(--rule); }
-    .stat:nth-child(5) { border-top: 1px solid var(--rule); }
     .search-wrap { max-width: 100%; }
     .hero-desc { max-width: 100%; }
     .hero-cta {
@@ -520,12 +476,6 @@ const featuredPoolFinal = featuredPool.length > 0
     }
     .hero-right {
       padding: 2rem 1.5rem;
-    }
-    .stat {
-      padding: 1.2rem 0.8rem;
-    }
-    .stat-num {
-      font-size: 2rem;
     }
     .send-panel {
       padding: 2rem 1.5rem;
@@ -573,28 +523,7 @@ const featuredPoolFinal = featuredPool.length > 0
   </div>
 </section>
 
-<div class="stats">
-  <a href={`${base}/cloud#domains`} class="stat">
-    <span class="stat-num">{domainCount}</span>
-    <span class="stat-label">Domains</span>
-  </a>
-  <a href={`${base}/cloud#atmosphere`} class="stat">
-    <span class="stat-num">{atmosphereCount}</span>
-    <span class="stat-label">Atmospheres</span>
-  </a>
-  <a href={`${base}/cloud#crux`} class="stat">
-    <span class="stat-num">{cruxCount}</span>
-    <span class="stat-label">Cruxes</span>
-  </a>
-  <a href={`${base}/cloud#ground`} class="stat">
-    <span class="stat-num">{groundCount}</span>
-    <span class="stat-label">Grounds</span>
-  </a>
-  <a href={`${base}/browse`} class="stat">
-    <span class="stat-num">{total}</span>
-    <span class="stat-label">Poems</span>
-  </a>
-</div>
+
 
 <!-- Copy feedback toast -->
 <div class="copy-feedback" id="copy-feedback">Link copied to clipboard</div>
