@@ -30,7 +30,7 @@ crux:
 atmosphere:
   - bewildered
 ground:
-  - immanent
+  - phenomenological
 description: Different me wakes up, different me at night — keeps changing - keeps leaving, me
 ---
 # Me 
