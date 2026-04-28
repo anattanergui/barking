@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "demi",
+                "query": "how",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -226,8 +227,10 @@
   },
   "active": "f3154aa188d3882a",
   "lastOpenFiles": [
-    "Purpose.md",
+    "The Naked Heresy.md",
+    "Flesh.md",
     "How.md",
+    "Purpose.md",
     "Grief.md",
     "Equanimity.md",
     "You.md",
@@ -244,14 +247,12 @@
     "Found And Dropped.md",
     "A Million Words.md",
     "The First Cause.md",
-    "Flesh.md",
     "Echoes In Silence.md",
     "The Addict.md",
     "The God Complex.md",
     "Be Yourself.md",
     "A King.md",
     "Alcoholics.md",
-    "Your View.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

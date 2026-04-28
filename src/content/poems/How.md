@@ -15,9 +15,9 @@ tags:
   - mad
   - becoming
 related:
-  - "[[Purpose]]"
+  - "[[Flesh]]"
   - "[[The Howling]]"
-  - "[[The Lost Lineage]]"
+  - "[[The Naked Heresy]]"
 domain:
   - self-knowledge
   - mind

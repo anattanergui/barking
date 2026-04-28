@@ -27,7 +27,7 @@ What is a human
 Is it not that slimy
 Writhing, bloody little body
 That has to be wrenched
-— through screaming pain —
+Through screaming pain —
 Out of an incredibly 
 Narrow, tearing opening
 
@@ -37,7 +37,7 @@ Lift its wobbling head
 On its own
 
 That mewling, babbling
-Drooling toddler —
+Drooling toddler 
 Child, organism —
 That needs to be clothed
 Spoon-fed
@@ -67,9 +67,9 @@ By whatever comes along
 
 Fuck respectability
 
-Be a human —
+Be a human 
 Slime
 Muck, blood and bile
 
-Cleaned up —
+Cleaned up 
 Or not
