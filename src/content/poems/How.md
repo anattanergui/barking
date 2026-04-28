@@ -27,8 +27,8 @@ atmosphere:
   - wry
 ground:
   - immanent
-description:
-  How can any one truly understand their own mind without going bonkers
+description: How can any one truly understand their own mind without going bonkers
+word-count: "24"
 ---
 # How
 How can anyone 
