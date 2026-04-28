@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "f3154aa188d3882a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "How.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "How"
+            }
+          },
+          {
             "id": "3a61a0310916cb94",
             "type": "leaf",
             "state": {
@@ -35,7 +49,8 @@
               "title": "Mirror"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -209,8 +224,11 @@
       "bases:Create new base": false
     }
   },
-  "active": "9014fdf2690154bc",
+  "active": "f3154aa188d3882a",
   "lastOpenFiles": [
+    "Purpose.md",
+    "How.md",
+    "Grief.md",
     "Equanimity.md",
     "You.md",
     "No View From Nowhere.md",
@@ -225,7 +243,6 @@
     "Branded.md",
     "Found And Dropped.md",
     "A Million Words.md",
-    "Grief.md",
     "The First Cause.md",
     "Flesh.md",
     "Echoes In Silence.md",
@@ -235,8 +252,6 @@
     "A King.md",
     "Alcoholics.md",
     "Your View.md",
-    "The Still Point.md",
-    "The Broken Tool.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
