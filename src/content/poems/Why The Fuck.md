@@ -70,7 +70,7 @@ Mature, sensible, responsible
 Educated, literate
 
 Purify 
-The words —
+The words 
 To lift yourself higher
 Farther from the gutter
 
@@ -91,7 +91,7 @@ Don’t contradict yourself
 Be thoughtful, be consistent 
 To prove you’ve arrived
 
-Wise people —
+Wise people 
 Refined, evolved, spiritually advanced people —
 They are contained 
 Controlled, measured
