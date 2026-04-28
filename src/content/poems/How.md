@@ -32,7 +32,7 @@ description:
 ---
 # How
 How can anyone 
-Ever understand their own mind
+Ever understand, their own mind
 Truly understand 
 Without ever, fully, going 
 Out of their mind
