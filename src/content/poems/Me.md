@@ -24,7 +24,6 @@ related:
   - "[[No Me Nowhere]]"
 word-count: "59"
 domain:
-  - seriality
   - flux
 crux:
   - unlocatability
