@@ -30,9 +30,9 @@ atmosphere:
 ground:
   - nondual
 related:
-  - "[[Now]]"
   - "[[Atman]]"
   - "[[Contentment]]"
+  - "[[Miracle]]"
 word-count: "62"
 ---
 # The Empty Instant
