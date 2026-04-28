@@ -44,8 +44,9 @@ related:
   - "[[Both Irrefutably]]"
   - "[[Machinery]]"
 domain:
-  - sovereignty
+  - rights
   - law
+  - sovereignty
 crux:
   - inversion
 atmosphere:
