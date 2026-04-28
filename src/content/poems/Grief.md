@@ -9,8 +9,7 @@ tags:
   - wiring
   - living
   - knowing
-  - fanaa
-word-count: "38"
+word-count: "37"
 related:
   - "[[Equanimity]]"
   - "[[Dedication]]"
@@ -54,6 +53,5 @@ Knowing
 
 The architecture 
 The wiring
-Fanaa
 
 Of reality
