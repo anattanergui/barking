@@ -42,7 +42,7 @@ tags:
 related:
   - "[[Sovereignty]]"
   - "[[Both Irrefutably]]"
-  - "[[Machinery]]"
+  - "[[Individual Consciousness]]"
 domain:
   - rights
   - law

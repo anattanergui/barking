@@ -22,35 +22,21 @@
             }
           },
           {
-            "id": "b91f393fef4fc8d1",
+            "id": "0167210475e7b522",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "In Whose Name.md",
+                "file": "Individual Consciousness.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "In Whose Name"
-            }
-          },
-          {
-            "id": "82f863bb718b8cdc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "On Rights.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "On Rights"
+              "title": "Individual Consciousness"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -82,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "hyen",
+                "query": "cobw",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -224,12 +211,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "82f863bb718b8cdc",
+  "active": "0167210475e7b522",
   "lastOpenFiles": [
-    "Machinery.md",
     "On Rights.md",
-    "In Whose Name.md",
+    "Vibrations.md",
+    "Cobwebs.md",
+    "Individual Consciousness.md",
     "Grief.md",
+    "In Whose Name.md",
+    "Machinery.md",
     "Of —.md",
     "The Empty Instant.md",
     "Miracle.md",
@@ -249,9 +239,6 @@
     "Equanimity.md",
     "You.md",
     "No View From Nowhere.md",
-    "Never Yours.md",
-    "Unless.md",
-    "Where.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
