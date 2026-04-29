@@ -83,8 +83,8 @@ Is any unique human capacity
 Not a consequence 
 Of being given the ability to 
 Make representations
-Of sounds 
-Images
+Of images
+Sounds
 
 And thereafter 
 Is the entire human project
