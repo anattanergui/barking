@@ -14,13 +14,9 @@ tags:
   - calf
   - struggling
   - stand
-  - legs
   - finding
   - bee
   - flower
-  - snail
-  - slithering
-  - concrete
   - fingernail
   - growing
   - accounting
@@ -49,7 +45,7 @@ related:
   - "[[Dog]]"
   - "[[Anomaly]]"
   - "[[Barking Of Dogs]]"
-word-count: "113"
+word-count: "105"
 description:
   - Is human creativity self-granted — or a consequence  of being besotted with representations
 domain:
@@ -66,14 +62,13 @@ The crafting of this sentence
 Recognition of the meaning
 Of these words —
 
-Are these activities, functions
-Capacities anymore ingenious
-Creative or advanced
+Are these activities — these capacities —
+More ingenious, more creative
+More advanced
 
 Than a newborn calf
-Struggling to stand upon its own legs
+Struggling to stand 
 Than a bee finding a flower
-A snail slithering across concrete
 Than a fingernail growing by itself
 
 Setting aside the accounting 
