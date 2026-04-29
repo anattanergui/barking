@@ -14,7 +14,7 @@ related:
   - "[[Genesis]]"
   - "[[Flutter]]"
   - "[[Vibrations]]"
-word-count: "12"
+word-count: "11"
 domain: transmission
 crux:
   - reception
@@ -34,4 +34,4 @@ Awaiting
 
 Reception
 Befalling
-On another  
+Another  
