@@ -79,6 +79,7 @@ Advancement —
 
 Is any of a creature’s capacity
 Self-granted, self-owned
+
 Is any unique human capacity 
 Not a consequence 
 Of being given the ability to 
