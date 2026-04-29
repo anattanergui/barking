@@ -28,8 +28,6 @@ tags:
   - advancement
   - creature
   - capacity
-  - self-granted
-  - self-owned
   - unique
   - human
   - consequence
@@ -41,6 +39,9 @@ tags:
   - project
   - besotted
   - unlike
+  - self
+  - granted
+  - owned
 related:
   - "[[Dog]]"
   - "[[Anomaly]]"
