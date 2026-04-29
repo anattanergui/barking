@@ -44,14 +44,12 @@ related:
 word-count: "80"
 domain:
   - market
-  - sound
-  - connection
+  - vibration
 crux:
-  - paradox
-  - separation
+  - inversion
 atmosphere:
   - diagnostic
-  - disenchanted
+  - austere
 ground:
   - structural
   - materialist
