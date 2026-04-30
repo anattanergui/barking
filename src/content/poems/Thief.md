@@ -21,7 +21,6 @@ ground:
 related:
   - "[[Asymmetrical Loss]]"
   - "[[Residues]]"
-  - "[[Equanimity]]"
   - "[[Dedication]]"
 word-count: "96"
 ---

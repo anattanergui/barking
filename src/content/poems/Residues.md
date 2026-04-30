@@ -20,6 +20,8 @@ ground:
   - embodied
 related:
   - "[[Where The Dead Once Lived]]"
+  - "[[Forgot]]"
+  - "[[Equanimity]]"
 word-count: "70"
 ---
 # Residues

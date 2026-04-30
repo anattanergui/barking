@@ -19,11 +19,10 @@ related:
   - "[[Left Coat]]"
 domain:
   - absence
-  - time
 crux:
-  - retroaction
+  - unknowing
 atmosphere:
-  - muted
+  - wonder
 ground:
   - unknowing
 description:
