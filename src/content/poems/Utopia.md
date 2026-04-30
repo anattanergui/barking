@@ -61,7 +61,7 @@ ground:
   - hypothetical
 description: What if people met without offloading grief or opinions — caritas, reverence of each other's unshakeable singularity
 ---
-# Caritas
+# Utopia
 How would it be
 If people met people 
 And never
