@@ -15,7 +15,7 @@
               "state": {
                 "file": "Leverage.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Leverage"

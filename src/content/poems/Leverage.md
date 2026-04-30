@@ -55,6 +55,8 @@ related:
   - "[[On Rights]]"
   - "[[What Medicine Tonight]]"
 word-count: "78"
+description:
+  - On what metric can any society be ranked civilised when controlling access to pain relief is structurally identical to crucifixion
 ---
 # Leverage
 Pain
