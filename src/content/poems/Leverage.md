@@ -74,7 +74,7 @@ Monetise
 
 Access to pain relief 
 On what metric
-Can any society be judged
+Can any society be ranked
 Civilised
 Or otherwise
 
