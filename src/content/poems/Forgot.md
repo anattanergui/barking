@@ -26,7 +26,7 @@ atmosphere:
 ground:
   - unknowing
 description:
-  - It forgot to happen
+  - It came - saying, it forgot - to happen
 word-count: "30"
 ---
 # Forgot
