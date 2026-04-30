@@ -107,7 +107,6 @@ Even meet
 People
 
 As beloved
-
 In caritas —
 Celebration
 
