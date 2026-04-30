@@ -24,6 +24,7 @@ ground:
 related:
   - "[[First Philosophy]]"
   - "[[Democracy]]"
+  - "[[Leverage]]"
 word-count: "179"
 ---
 # Groups For Groups
