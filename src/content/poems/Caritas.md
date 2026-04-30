@@ -48,8 +48,7 @@ related:
   - "[[Solitude]]"
   - "[[Whiskey]]"
   - "[[No View From Nowhere]]"
-word-count: "91"
-
+word-count: "90"
 domain:
   - encounter
 crux:
@@ -60,8 +59,7 @@ atmosphere:
 ground:
   - apophatic
   - hypothetical
-description: 
-  What if people met without offloading grief or opinions — caritas, reverence of each other's unshakeable singularity
+description: What if people met without offloading grief or opinions — caritas, reverence of each other's unshakeable singularity
 ---
 # Caritas
 How would it be
@@ -95,20 +93,31 @@ Were, could be
 Should be
 
 Being — becoming —
-Reliant, sufficient
-Unto themselves
 
-How would people
-Meet people
+Reliant
+Sufficient
+Unto — in —
 
-As beloved — in caritas —
+Themselves
+
+How would
+People
+Meet
+
+People
+
+As beloved
+In caritas —
 Celebration
-In labour — love —
+
+In labour
+Love —
 Laughter
 
-In love — reverence —
-Of their
-Unshakeable
+Reverence 
+Of their 
+
+Unshakeable —
 
 Singularity
   
