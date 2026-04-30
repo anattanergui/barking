@@ -31,7 +31,7 @@ tags:
 related:
   - "[[In Whose Name]]"
   - "[[One And Other]]"
-  - "[[Protector Parrots]]"
+  - "[[No View From Nowhere]]"
 domain:
   - coalition
 crux:
