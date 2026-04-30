@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Grey.md",
+                "file": "Leverage.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Grey"
+              "title": "Leverage"
             }
           }
         ],
@@ -55,7 +55,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byModifiedTime",
                 "autoReveal": true
               },
               "icon": "lucide-folder-closed",
@@ -212,21 +212,21 @@
   },
   "active": "6a6c49c911e1d399",
   "lastOpenFiles": [
-    "In Whose Name.md",
     "Grey.md",
-    "One And Other.md",
     "Groups For Groups.md",
-    "Democracy.md",
     "Leverage.md",
-    "Free Healthcare.md",
     "Befalling.md",
-    "Besotted.md",
     "Vibrations.md",
+    "Besotted.md",
+    "Individual Consciousness.md",
+    "On Rights.md",
+    "In Whose Name.md",
+    "One And Other.md",
+    "Democracy.md",
+    "Free Healthcare.md",
     "Flutter.md",
     "Genesis.md",
-    "Individual Consciousness.md",
     "Grief.md",
-    "On Rights.md",
     "Cobwebs.md",
     "Machinery.md",
     "Of —.md",

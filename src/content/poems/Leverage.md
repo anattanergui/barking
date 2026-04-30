@@ -89,7 +89,7 @@ By another means
 To see the pain
 As leverage
 To exert control
-Is the oldest evil
 
+Is the oldest evil
 The most reliable
 Business model  
