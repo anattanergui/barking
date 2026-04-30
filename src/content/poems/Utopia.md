@@ -48,7 +48,7 @@ related:
   - "[[Solitude]]"
   - "[[Whiskey]]"
   - "[[No View From Nowhere]]"
-word-count: "90"
+word-count: "91"
 domain:
   - encounter
 crux:
@@ -102,11 +102,12 @@ Themselves
 
 How would
 People
-Meet
+Even meet
 
 People
 
 As beloved
+
 In caritas —
 Celebration
 
