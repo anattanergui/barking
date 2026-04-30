@@ -44,7 +44,7 @@ domain:
   - pain
   - governance
 crux:
-  - diagnostic
+  - diagnosis
 atmosphere:
   - diagnostic
 ground:
