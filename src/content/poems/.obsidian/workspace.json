@@ -15,7 +15,7 @@
               "state": {
                 "file": "Leverage.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
               "title": "Leverage"
@@ -197,6 +197,7 @@
   },
   "active": "451c6a4c2e7e8e37",
   "lastOpenFiles": [
+    "Free Healthcare.md",
     "Leverage.md",
     "Befalling.md",
     "Besotted.md",
@@ -222,7 +223,6 @@
     "How.md",
     "Mirror.md",
     "About Health.md",
-    "The Naked Heresy.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
