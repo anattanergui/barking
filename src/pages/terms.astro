@@ -83,14 +83,27 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     line-height: 1;
   }
 
+  .terms-header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .terms-header-sub {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
   .terms-subtitle {
     font-size: 0.63rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--muted);
+    margin: 0;
   }
 
-  /* View toggle — lives in the header */
+  /* View toggle — under the title on the left */
   .view-toggle {
     display: flex;
     gap: 0;
@@ -536,25 +549,25 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
 
 <div class="terms-page">
 
-  <!-- Header: title + view toggle -->
+  <!-- Header: title + toggle left, legend right -->
   <div class="terms-header">
-    <div>
+    <div class="terms-header-left">
       <h1>Terms</h1>
-      <p class="terms-subtitle" id="terms-subtitle">Terms by frequency — click any term to browse poems</p>
+      <div class="terms-header-sub">
+        <div class="view-toggle">
+          <button class="toggle-btn active" id="btn-cloud">Cloud</button>
+          <button class="toggle-btn" id="btn-list">List</button>
+        </div>
+        <p class="terms-subtitle" id="terms-subtitle">Terms by frequency — click any term to browse poems</p>
+      </div>
     </div>
-    <div style="display:flex; align-items:center; gap:1.5rem;">
-      <div class="legend" id="cloud-legend">
-        {categories.map(({ key, label }) => (
-          <div class="legend-item">
-            <div class={`legend-dot ${key}`}></div>
-            {label}
-          </div>
-        ))}
-      </div>
-      <div class="view-toggle">
-        <button class="toggle-btn active" id="btn-cloud">Cloud</button>
-        <button class="toggle-btn" id="btn-list">List</button>
-      </div>
+    <div class="legend" id="cloud-legend">
+      {categories.map(({ key, label }) => (
+        <div class="legend-item">
+          <div class={`legend-dot ${key}`}></div>
+          {label}
+        </div>
+      ))}
     </div>
   </div>
 
