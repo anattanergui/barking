@@ -32,7 +32,8 @@ word-count: "49"
 Skyscrapers and rockets
 Sprawling roads and monster trucks
 Palaces, pyramids and monuments
-Symphonies and libraries filled with thoughts —
+Symphonies and libraries
+Filled with thoughts —
 Knowledge and histories
 
 The entirety of mankind's achievements 

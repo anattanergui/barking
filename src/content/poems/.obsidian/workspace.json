@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Only.md",
+                "file": "Miracle.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Only"
+              "title": "Miracle"
             }
           },
           {
@@ -110,7 +110,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "democ",
+                "query": "christ",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -131,7 +131,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -254,6 +255,7 @@
   },
   "active": "246f221f582f9d96",
   "lastOpenFiles": [
+    "Only.md",
     "Or, Is It.md",
     "None.md",
     "Wish.md",
@@ -261,7 +263,6 @@
     "Un —.md",
     "Yet.md",
     "You.md",
-    "Only.md",
     "Belonged.md",
     "Equilibrium.md",
     "Doer.md",
