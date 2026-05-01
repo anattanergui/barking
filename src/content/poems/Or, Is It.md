@@ -32,9 +32,9 @@ description:
   - You live, then die — never lived nor died — no you to know which
 word-count: "41"
 related:
-  - "[[You]]"
   - "[[Yet]]"
   - "[[Mind Alone]]"
+  - "[[The Speaking Pond]]"
 ---
 # Or, Is It
 You live
