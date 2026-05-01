@@ -1,0 +1,1084 @@
+---
+// src/pages/terms.astro
+import Base from '../layouts/Base.astro';
+import { getAllPoemsMeta } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const poems = getAllPoemsMeta();
+
+const categories = [
+  { key: 'ground',     label: 'ground',     param: 'ground' },
+  { key: 'domains',    label: 'domain',     param: 'domain' },
+  { key: 'crux',       label: 'crux',       param: 'crux' },
+  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
+];
+
+// ── Shared term map (used by both views) ─────────────────────────────────────
+const termMap = {};
+for (const poem of poems) {
+  for (const { key } of categories) {
+    for (const term of (poem[key] || [])) {
+      if (!termMap[term]) termMap[term] = { totalCount: 0, cats: {} };
+      termMap[term].totalCount++;
+      termMap[term].cats[key] = (termMap[term].cats[key] || 0) + 1;
+    }
+  }
+}
+
+// ── Cloud data ────────────────────────────────────────────────────────────────
+const allTerms = Object.entries(termMap)
+  .map(([term, { totalCount, cats }]) => {
+    const [dominantKey] = Object.entries(cats).sort((a, b) => b[1] - a[1])[0];
+    return { term, count: totalCount, key: dominantKey, cats };
+  })
+  .sort((a, b) => b.count - a.count);
+
+const cloudData = JSON.stringify({ terms: allTerms, base });
+const cloudDataB64 = Buffer.from(cloudData).toString('base64');
+
+// ── List data ─────────────────────────────────────────────────────────────────
+const taxonomyRaw = {};
+for (const { key } of categories) taxonomyRaw[key] = {};
+
+for (const poem of poems) {
+  for (const { key } of categories) {
+    for (const term of (poem[key] || [])) {
+      if (!taxonomyRaw[key][term]) taxonomyRaw[key][term] = [];
+      taxonomyRaw[key][term].push({ title: poem.title, slug: poem.slug });
+    }
+  }
+}
+
+const taxonomyArrays = {};
+for (const { key } of categories) {
+  taxonomyArrays[key] = Object.entries(taxonomyRaw[key])
+    .map(([term, termPoems]) => ({ term, poems: termPoems }))
+    .sort((a, b) => a.term.localeCompare(b.term));
+}
+
+const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64');
+---
+
+<Base title="Terms — Barking">
+
+<style>
+  /* ── PAGE HEADER ─────────────────────────────────────────────────────────── */
+  .terms-header {
+    padding: 2rem 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .terms-header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin: 0 0 0.2rem;
+    line-height: 1;
+  }
+
+  .terms-subtitle {
+    font-size: 0.63rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── LEGEND (cloud view only) ────────────────────────────────────────────── */
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 0.15rem;
+    flex-shrink: 0;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+  }
+  .legend-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.domains    { background: var(--color-domains,    #8ab4e0); }
+  .legend-dot.atmosphere { background: var(--color-atmosphere, #e08ab4); }
+  .legend-dot.ground     { background: var(--color-ground,     #8ae0b4); }
+  .legend-dot.crux       { background: var(--color-crux,       #e0cc8a); }
+
+  /* ── CONTROLS BAR ────────────────────────────────────────────────────────── */
+  .controls-bar {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.9rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+    flex-wrap: wrap;
+  }
+
+  /* View toggle */
+  .view-toggle {
+    display: flex;
+    gap: 0;
+    border: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .toggle-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: none;
+    color: var(--muted);
+    border: none;
+    border-right: 1px solid var(--rule);
+    padding: 0.45rem 1rem;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toggle-btn:last-child { border-right: none; }
+  .toggle-btn.active { background: var(--ink); color: var(--bg); }
+  .toggle-btn:not(.active):hover { background: var(--stat-hover); color: var(--ink); }
+
+  /* Category filter buttons */
+  .filter-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .filter-btn:hover             { border-color: var(--muted); color: var(--ink); }
+  .filter-btn.active-all        { border-color: var(--ink); color: var(--ink); }
+  .filter-btn.active-domains    { border-color: var(--color-domains,    #8ab4e0); color: var(--color-domains,    #8ab4e0); }
+  .filter-btn.active-atmosphere { border-color: var(--color-atmosphere, #e08ab4); color: var(--color-atmosphere, #e08ab4); }
+  .filter-btn.active-ground     { border-color: var(--color-ground,     #8ae0b4); color: var(--color-ground,     #8ae0b4); }
+  .filter-btn.active-crux       { border-color: var(--color-crux,       #e0cc8a); color: var(--color-crux,       #e0cc8a); }
+
+  /* Search — shown in list view only */
+  .list-search-wrap {
+    position: relative;
+    flex: 1;
+    max-width: 28rem;
+    display: none;
+  }
+  .list-search-wrap.visible { display: block; }
+  .list-search-icon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px; height: 12px;
+    color: var(--muted);
+    pointer-events: none;
+  }
+  #terms-search {
+    width: 100%;
+    background: var(--search-bg);
+    border: 1px solid var(--search-border);
+    color: var(--ink);
+    font-family: 'Karla', sans-serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    padding: 0.42rem 2rem 0.42rem 2.2rem;
+    outline: none;
+    transition: border-color 0.15s;
+    box-sizing: border-box;
+  }
+  #terms-search::placeholder { color: var(--muted); opacity: 0.7; }
+  #terms-search:focus { border-color: var(--muted); }
+  .search-clear {
+    position: absolute;
+    right: 0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.75rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s;
+    line-height: 1;
+    padding: 0;
+  }
+  .search-clear.visible { opacity: 1; pointer-events: auto; }
+  .search-clear:hover { color: var(--ink); }
+
+  .term-count-badge {
+    margin-left: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  /* ── CLOUD VIEW ──────────────────────────────────────────────────────────── */
+  #view-cloud {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+  }
+
+  #cloud-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  #cloud-svg:active { cursor: grabbing; }
+
+  .cloud-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  #cloud-tooltip {
+    position: fixed;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  #cloud-tooltip.visible { opacity: 1; }
+  #cloud-tooltip strong { color: var(--ink); font-weight: 600; }
+
+  .zoom-hint {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.35;
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+  }
+
+  /* ── LIST VIEW ───────────────────────────────────────────────────────────── */
+  #view-list {
+    display: none;
+    overflow-y: auto;
+  }
+
+  .lex-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin: 0 3rem 5rem;
+    margin-top: 2rem;
+  }
+
+  .cat-block {
+    background: var(--bg);
+    padding: 2.5rem 2.5rem 0;
+  }
+  .cat-block.collapsed { padding-bottom: 2.5rem; }
+
+  .cat-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.8rem;
+    padding-bottom: 0.7rem;
+  }
+  .cat-header.domains    { border-bottom: 1px solid #7a9bc9; }
+  .cat-header.atmosphere { border-bottom: 1px solid #c97a9b; }
+  .cat-header.ground     { border-bottom: 1px solid #7ac99b; }
+  .cat-header.crux       { border-bottom: 1px solid #c9b97a; }
+
+  .cat-header-left {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    flex-shrink: 0;
+    min-width: 0;
+  }
+  .cat-title {
+    font-size: 0.63rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .cat-title.domains    { color: #7a9bc9; }
+  .cat-title.atmosphere { color: #c97a9b; }
+  .cat-title.ground     { color: #7ac99b; }
+  .cat-title.crux       { color: #c9b97a; }
+
+  .cat-count {
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .cat-count.visible { opacity: 1; }
+
+  .cat-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+  .sort-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: 1px solid var(--rule);
+    padding: 0.2rem 0.55rem;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.7;
+    white-space: nowrap;
+  }
+  .sort-btn:hover  { color: var(--ink); border-color: var(--muted); }
+  .sort-btn.active { color: var(--ink); border-color: var(--ink); }
+
+  .ctrl-divider {
+    width: 1px; height: 1rem;
+    background: var(--rule);
+    flex-shrink: 0;
+  }
+  .collapse-btn {
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.15rem 0.25rem;
+    transition: color 0.15s;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+  }
+  .collapse-btn:hover { color: var(--ink); }
+  .collapse-btn .arrow {
+    display: inline-block;
+    font-size: 0.55rem;
+    transition: transform 0.2s;
+  }
+  .cat-block.collapsed .collapse-btn .arrow { transform: rotate(-90deg); }
+
+  .term-list { padding-bottom: 2.5rem; }
+  .cat-block.collapsed .term-list { display: none; }
+
+  /* ── PAGE LAYOUT ─────────────────────────────────────────────────────────── */
+  .terms-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--nav-h, 56px));
+    overflow: hidden;
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .terms-header { padding: 1.5rem 1.5rem 1rem; flex-direction: column; align-items: flex-start; }
+    .controls-bar { padding: 0.75rem 1.5rem; flex-wrap: wrap; }
+    .lex-grid { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
+  }
+</style>
+
+<!-- Global styles for list view's dynamically-injected HTML -->
+<style is:global>
+  .lex-term-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    cursor: pointer;
+    transition: padding 0.12s, background 0.12s;
+  }
+  .lex-term-row:hover { padding-left: 0.5rem; background: var(--bg-panel); }
+  .lex-term-row:hover .lex-term-name { color: var(--ink); }
+  .lex-term-row.lex-hidden,
+  .lex-term-row.lex-hidden + .lex-poem-list { display: none !important; }
+
+  .lex-term-name {
+    font-size: 0.88rem;
+    color: var(--muted);
+    letter-spacing: 0.03em;
+    transition: color 0.15s;
+  }
+  .lex-term-name mark {
+    background: none;
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .lex-term-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .lex-also {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    opacity: 0;
+    transition: opacity 0.15s;
+    white-space: nowrap;
+  }
+  .lex-term-row:hover .lex-also,
+  .lex-also.lex-also-search { opacity: 1; }
+
+  .lex-term-count {
+    font-size: 0.63rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .lex-browse-link {
+    font-size: 0.55rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    opacity: 0;
+    transition: opacity 0.15s;
+    border: 1px solid var(--rule);
+    padding: 0.15rem 0.4rem;
+  }
+  .lex-term-row:hover .lex-browse-link { opacity: 1; }
+  .lex-browse-link:hover { color: var(--ink); border-color: var(--ink); }
+
+  .lex-chevron {
+    font-size: 0.45rem;
+    color: var(--muted);
+    margin-left: 0.3rem;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+  .lex-term-row.open .lex-chevron { transform: rotate(90deg); }
+
+  .lex-poem-list {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.6rem 0 0.8rem 0.8rem;
+    background: var(--bg-panel);
+  }
+  .lex-poem-list.open { display: flex; }
+  .lex-poem-list a {
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    font-style: italic;
+    transition: color 0.15s;
+    display: block;
+  }
+  .lex-poem-list a:hover { color: var(--ink); }
+
+  .lex-no-results {
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    padding: 1.2rem 0 0.8rem;
+    opacity: 0.6;
+    display: none;
+  }
+  .lex-no-results.visible { display: block; }
+</style>
+
+<!-- Data payloads -->
+<div id="cloud-data" data-cloud={cloudDataB64} hidden></div>
+<div id="lex-data" data-taxonomy={taxonomyB64} data-base={base} hidden></div>
+<div id="cloud-tooltip"></div>
+
+<div class="terms-page">
+
+  <!-- Header -->
+  <div class="terms-header">
+    <div>
+      <h1>Terms</h1>
+      <p class="terms-subtitle" id="terms-subtitle">Terms by frequency — click any term to browse poems</p>
+    </div>
+    <div class="legend" id="cloud-legend">
+      {categories.map(({ key, label }) => (
+        <div class="legend-item">
+          <div class={`legend-dot ${key}`}></div>
+          {label}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Controls bar -->
+  <div class="controls-bar">
+    <!-- View toggle -->
+    <div class="view-toggle">
+      <button class="toggle-btn active" id="btn-cloud">Cloud</button>
+      <button class="toggle-btn" id="btn-list">List</button>
+    </div>
+
+    <!-- Category filters (shared) -->
+    {categories.map(({ key, label }) => (
+      <button class="filter-btn" data-filter={key}>{label}</button>
+    ))}
+    <button class="filter-btn active-all" data-filter="all">All</button>
+
+    <!-- Search (list view only) -->
+    <div class="list-search-wrap" id="list-search-wrap">
+      <svg class="list-search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="6.5" cy="6.5" r="4.5"/>
+        <line x1="10" y1="10" x2="14" y2="14"/>
+      </svg>
+      <input
+        id="terms-search"
+        type="search"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="search terms…"
+        aria-label="Search terms"
+      />
+      <button class="search-clear" id="search-clear" aria-label="Clear">✕</button>
+    </div>
+
+    <span class="term-count-badge" id="term-count-badge"></span>
+  </div>
+
+  <!-- Cloud view -->
+  <div id="view-cloud">
+    <svg id="cloud-svg"></svg>
+    <div class="cloud-loading" id="cloud-loading">Arranging terms…</div>
+    <div class="zoom-hint">Scroll to zoom · Drag to pan</div>
+  </div>
+
+  <!-- List view -->
+  <div id="view-list">
+    <div class="lex-grid">
+      {categories.map(({ key, label }) => (
+        <div class="cat-block" id={`block-${key}`} data-key={key}>
+          <div class={`cat-header ${key}`}>
+            <div class="cat-header-left">
+              <span class={`cat-title ${key}`}>{label}</span>
+              <span class="cat-count" id={`count-${key}`}></span>
+            </div>
+            <div class="cat-controls">
+              <button class="sort-btn active" data-key={key} data-sort="alpha">A–Z</button>
+              <button class="sort-btn" data-key={key} data-sort="freq">most used</button>
+              <div class="ctrl-divider"></div>
+              <button class="collapse-btn" data-key={key} title="Collapse / expand">
+                <span class="arrow">▾</span>
+              </button>
+            </div>
+          </div>
+          <div class="term-list" id={`list-${key}`}></div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+// ── Shared data ───────────────────────────────────────────────────────────────
+const cloudEl  = document.getElementById('cloud-data');
+const lexEl    = document.getElementById('lex-data');
+const { terms: allTerms, base } = JSON.parse(atob(cloudEl.dataset.cloud));
+const taxonomy = JSON.parse(atob(lexEl.dataset.taxonomy));
+
+// Cross-category map for list view
+const termCategories = {};
+for (const [cat, terms] of Object.entries(taxonomy)) {
+  for (const { term } of terms) {
+    if (!termCategories[term]) termCategories[term] = [];
+    termCategories[term].push(cat);
+  }
+}
+
+// ── View state ────────────────────────────────────────────────────────────────
+let currentView   = 'cloud';
+let activeFilter  = 'all';
+let currentQuery  = '';
+
+const viewCloud      = document.getElementById('view-cloud');
+const viewList       = document.getElementById('view-list');
+const btnCloud       = document.getElementById('btn-cloud');
+const btnList        = document.getElementById('btn-list');
+const legend         = document.getElementById('cloud-legend');
+const subtitle       = document.getElementById('terms-subtitle');
+const listSearchWrap = document.getElementById('list-search-wrap');
+const badge          = document.getElementById('term-count-badge');
+
+function switchView(view) {
+  currentView = view;
+  const isCloud = view === 'cloud';
+
+  viewCloud.style.display    = isCloud ? 'block' : 'none';
+  viewList.style.display     = isCloud ? 'none'  : 'block';
+  btnCloud.classList.toggle('active', isCloud);
+  btnList.classList.toggle('active', !isCloud);
+  legend.style.display       = isCloud ? 'flex'  : 'none';
+  listSearchWrap.classList.toggle('visible', !isCloud);
+  subtitle.textContent       = isCloud
+    ? 'Terms by frequency — click any term to browse poems'
+    : 'All terms — by category';
+
+  if (!isCloud) {
+    // Restore list view height (it's inside the flex container)
+    viewList.style.flex = '1';
+    updateListBadge();
+  } else {
+    updateCloudBadge();
+  }
+}
+
+document.getElementById('btn-cloud').addEventListener('click', () => switchView('cloud'));
+document.getElementById('btn-list').addEventListener('click', () => {
+  switchView('list');
+  if (!listRendered) { renderAllLists(); listRendered = true; }
+});
+
+// ── Category filter (shared between views) ────────────────────────────────────
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const f = btn.dataset.filter;
+    activeFilter = f;
+
+    // Update button states
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.className = 'filter-btn';
+    });
+    btn.classList.add(f === 'all' ? 'active-all' : `active-${f}`);
+
+    if (currentView === 'cloud') {
+      drawCloud(f, false);
+      setTimeout(() => fitView(600), 1200);
+    } else {
+      filterListByCategory(f);
+    }
+  });
+});
+
+// ── CLOUD VIEW ────────────────────────────────────────────────────────────────
+function getColors() {
+  const s = getComputedStyle(document.documentElement);
+  return {
+    domains:    s.getPropertyValue('--color-domains').trim()    || '#8ab4e0',
+    atmosphere: s.getPropertyValue('--color-atmosphere').trim() || '#e08ab4',
+    ground:     s.getPropertyValue('--color-ground').trim()     || '#8ae0b4',
+    crux:       s.getPropertyValue('--color-crux').trim()       || '#e0cc8a',
+  };
+}
+
+function updateCloudBadge() {
+  const visible = buildNodes(activeFilter);
+  badge.textContent = `${visible.length} term${visible.length !== 1 ? 's' : ''}`;
+}
+
+let simulation = null;
+let nodeData   = [];
+let cloudInited = false;
+
+function getFontScale(visibleTerms) {
+  const counts = visibleTerms.map(t => t.displayCount);
+  const minC = Math.min(...counts), maxC = Math.max(...counts);
+  return d3.scaleSqrt().domain([minC, maxC]).range([13, 48]).clamp(true);
+}
+
+function collideR(d) {
+  return (d.fontSize || 14) * d.term.length * 0.33 + 6;
+}
+
+function buildNodes(filter) {
+  const visible = allTerms
+    .map(t => {
+      const c = filter === 'all' ? t.count : (t.cats[filter] || 0);
+      return { ...t, displayCount: c, visible: c > 0 };
+    })
+    .filter(t => t.visible);
+  const fScale = getFontScale(visible);
+  visible.forEach(t => { t.fontSize = fScale(t.displayCount); });
+  return visible;
+}
+
+function drawCloud(filter, firstRun) {
+  const wrap  = document.querySelector('#view-cloud');
+  const svg   = d3.select('#cloud-svg');
+  const g     = svg.select('g').empty() ? svg.append('g') : svg.select('g');
+  const tipEl = document.getElementById('cloud-tooltip');
+  const loader = document.getElementById('cloud-loading');
+
+  const visible = buildNodes(filter);
+  badge.textContent = `${visible.length} term${visible.length !== 1 ? 's' : ''}`;
+
+  const W = wrap.offsetWidth, H = wrap.offsetHeight;
+  const cx = W / 2, cy = H / 2;
+
+  const posCache = new Map(nodeData.map(n => [n.term, { x: n.x, y: n.y, vx: n.vx || 0, vy: n.vy || 0 }]));
+
+  nodeData = visible.map(t => {
+    const cached = posCache.get(t.term);
+    return {
+      ...t,
+      x:  cached ? cached.x  : cx + (Math.random() - 0.5) * W * 0.5,
+      y:  cached ? cached.y  : cy + (Math.random() - 0.5) * H * 0.5,
+      vx: cached ? cached.vx : 0,
+      vy: cached ? cached.vy : 0,
+    };
+  });
+
+  const textSel = g.selectAll('text.cloud-node').data(nodeData, d => d.term);
+
+  textSel.exit().transition().duration(300).attr('opacity', 0).remove();
+
+  const entered = textSel.enter()
+    .append('text')
+    .attr('class', 'cloud-node')
+    .attr('text-anchor', 'middle')
+    .attr('dominant-baseline', 'middle')
+    .attr('cursor', 'pointer')
+    .attr('fill', d => getColors()[d.key] || '#888')
+    .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+    .attr('font-size', d => d.fontSize + 'px')
+    .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
+    .attr('opacity', 0)
+    .attr('x', d => d.x)
+    .attr('y', d => d.y)
+    .text(d => d.term);
+
+  entered.transition().duration(400).delay((d, i) => i * 4).attr('opacity', 1);
+
+  textSel.transition().duration(350)
+    .attr('font-size', d => d.fontSize + 'px')
+    .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
+    .attr('fill', d => getColors()[d.key] || '#888')
+    .attr('opacity', 1);
+
+  const allNodes = g.selectAll('text.cloud-node');
+
+  allNodes
+    .on('mouseenter', function(event, d) {
+      d3.select(this).transition().duration(120).attr('opacity', 1).style('text-decoration', 'underline');
+      allNodes.filter(n => n.term !== d.term).transition().duration(120).attr('opacity', 0.25);
+      const label = activeFilter !== 'all' ? activeFilter : d.key;
+      const count = activeFilter !== 'all' ? d.cats[activeFilter] : d.count;
+      tipEl.innerHTML = `<strong>${d.term}</strong> · ${count} poem${count !== 1 ? 's' : ''} · ${label}`;
+      tipEl.classList.add('visible');
+    })
+    .on('mousemove', event => {
+      tipEl.style.left = (event.clientX + 14) + 'px';
+      tipEl.style.top  = (event.clientY - 30) + 'px';
+    })
+    .on('mouseleave', function() {
+      d3.select(this).transition().duration(120).attr('opacity', 1).style('text-decoration', 'none');
+      allNodes.transition().duration(200).attr('opacity', 1);
+      tipEl.classList.remove('visible');
+    })
+    .on('click', (e, d) => {
+      const cat = activeFilter !== 'all' ? activeFilter : Object.keys(d.cats).join(',');
+      window.location.href = `${base}/browse?term=${encodeURIComponent(d.term)}&cats=${encodeURIComponent(cat)}`;
+    });
+
+  if (simulation) simulation.stop();
+
+  simulation = d3.forceSimulation(nodeData)
+    .force('x', d3.forceX(cx).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+    .force('y', d3.forceY(cy).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+    .force('collide', d3.forceCollide(collideR).strength(0.85).iterations(3))
+    .force('charge', d3.forceManyBody().strength(d => -d.fontSize * 1.5).distanceMax(200))
+    .alphaDecay(0.018)
+    .velocityDecay(0.4)
+    .on('tick', () => {
+      g.selectAll('text.cloud-node').attr('x', d => d.x).attr('y', d => d.y);
+    })
+    .on('end', () => {
+      loader.style.display = 'none';
+      if (firstRun) fitView(400);
+    });
+
+  loader.style.display = 'flex';
+  loader.textContent   = 'Arranging terms…';
+}
+
+const zoom = d3.zoom().scaleExtent([0.25, 4]).on('zoom', e => {
+  d3.select('#cloud-svg').select('g').attr('transform', e.transform);
+});
+
+function fitView(duration) {
+  const wrap = document.querySelector('#view-cloud');
+  const W = wrap.offsetWidth, H = wrap.offsetHeight;
+  if (!nodeData.length) return;
+  const xs = nodeData.map(d => d.x), ys = nodeData.map(d => d.y);
+  const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
+  const y0 = Math.min(...ys) - 40, y1 = Math.max(...ys) + 40;
+  const k  = Math.min(W / (x1 - x0), H / (y1 - y0), 1.2) * 0.85;
+  const tx = (W - k * (x0 + x1)) / 2;
+  const ty = (H - k * (y0 + y1)) / 2;
+  d3.select('#cloud-svg').transition().duration(duration)
+    .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+}
+
+new MutationObserver(mutations => {
+  for (const m of mutations) {
+    if (m.attributeName === 'class') {
+      const colors = getColors();
+      d3.select('#cloud-svg').selectAll('text.cloud-node')
+        .transition().duration(400)
+        .attr('fill', d => colors[d.key] || '#888');
+      break;
+    }
+  }
+}).observe(document.documentElement, { attributes: true });
+
+// ── LIST VIEW ─────────────────────────────────────────────────────────────────
+let listRendered = false;
+
+const listState = {};
+for (const key of Object.keys(taxonomy)) {
+  listState[key] = { sort: 'alpha', collapsed: false };
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function highlight(term, query) {
+  if (!query) return esc(term);
+  const idx = term.toLowerCase().indexOf(query.toLowerCase());
+  if (idx === -1) return esc(term);
+  return esc(term.slice(0, idx)) +
+    '<mark>' + esc(term.slice(idx, idx + query.length)) + '</mark>' +
+    esc(term.slice(idx + query.length));
+}
+
+function renderList(key) {
+  const container = document.getElementById(`list-${key}`);
+  if (!container) return;
+
+  const terms = [...taxonomy[key]];
+  if (listState[key].sort === 'alpha') {
+    terms.sort((a, b) => a.term.localeCompare(b.term));
+  } else {
+    terms.sort((a, b) => b.poems.length - a.poems.length || a.term.localeCompare(b.term));
+  }
+
+  container.innerHTML = terms.map(({ term, poems }) => {
+    const safeId    = `${key}-${term.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`;
+    const otherCats = (termCategories[term] || []).filter(c => c !== key);
+    const alsoHtml  = otherCats.length > 0
+      ? `<span class="lex-also">also in: ${otherCats.map(esc).join(' · ')}</span>`
+      : '';
+    const poemLinks = poems.map(p => `<a href="${base}/poem/${esc(p.slug)}">${esc(p.title)}</a>`).join('\n');
+
+    return `<div>
+  <div class="lex-term-row" data-id="${safeId}" data-term="${esc(term)}">
+    <span class="lex-term-name">${highlight(term, currentQuery)}</span>
+    <span class="lex-term-meta">
+      ${alsoHtml}
+      <a class="lex-browse-link" href="${base}/browse?term=${encodeURIComponent(term)}&cats=${key}" title="Filter in Browse" onclick="event.stopPropagation()">browse</a>
+      <span class="lex-term-count">${poems.length}</span>
+      <span class="lex-chevron">▶</span>
+    </span>
+  </div>
+  <div class="lex-poem-list" id="poems-${safeId}">${poemLinks}</div>
+</div>`;
+  }).join('');
+
+  container.querySelectorAll('.lex-term-row').forEach(row => {
+    row.addEventListener('click', () => {
+      const list = document.getElementById(`poems-${row.dataset.id}`);
+      if (!list) return;
+      list.classList.toggle('open');
+      row.classList.toggle('open');
+    });
+  });
+
+  let noRes = container.querySelector('.lex-no-results');
+  if (!noRes) {
+    noRes = document.createElement('p');
+    noRes.className = 'lex-no-results';
+    noRes.textContent = 'no matching terms';
+    container.appendChild(noRes);
+  }
+
+  applyListFilter(key);
+}
+
+function applyListFilter(key) {
+  const container = document.getElementById(`list-${key}`);
+  const countEl   = document.getElementById(`count-${key}`);
+  if (!container) return;
+
+  const q    = currentQuery.toLowerCase();
+  const rows = container.querySelectorAll('.lex-term-row');
+  const noRes = container.querySelector('.lex-no-results');
+  let visible = 0;
+
+  rows.forEach(row => {
+    const term    = row.dataset.term || '';
+    const matches = !q || term.toLowerCase().includes(q);
+    row.classList.toggle('lex-hidden', !matches);
+    const nameEl = row.querySelector('.lex-term-name');
+    if (nameEl) nameEl.innerHTML = highlight(term, currentQuery);
+    const alsoEl = row.querySelector('.lex-also');
+    if (alsoEl) alsoEl.classList.toggle('lex-also-search', !!q);
+    if (matches) visible++;
+  });
+
+  const total = rows.length;
+  if (q && countEl) {
+    countEl.textContent = `${visible} of ${total}`;
+    countEl.classList.toggle('visible', true);
+  } else if (countEl) {
+    countEl.classList.remove('visible');
+  }
+
+  if (noRes) noRes.classList.toggle('visible', q !== '' && visible === 0);
+}
+
+function filterListByCategory(filter) {
+  // Show/hide cat blocks based on filter
+  document.querySelectorAll('.cat-block').forEach(block => {
+    const key = block.dataset.key;
+    // map filter key to taxonomy key
+    const match = filter === 'all'
+      || key === filter
+      || (filter === 'domain' && key === 'domains');
+    block.style.display = match ? '' : 'none';
+  });
+  updateListBadge();
+}
+
+function updateListBadge() {
+  // Count total visible terms in list view
+  let total = 0;
+  document.querySelectorAll('.cat-block').forEach(block => {
+    if (block.style.display === 'none') return;
+    const key = block.dataset.key;
+    total += (taxonomy[key] || []).length;
+  });
+  badge.textContent = `${total} term${total !== 1 ? 's' : ''}`;
+}
+
+function renderAllLists() {
+  for (const key of Object.keys(taxonomy)) renderList(key);
+  filterListByCategory(activeFilter);
+}
+
+// List search
+const searchInput = document.getElementById('terms-search');
+const clearBtn    = document.getElementById('search-clear');
+
+searchInput.addEventListener('input', () => {
+  currentQuery = searchInput.value.trim();
+  clearBtn.classList.toggle('visible', currentQuery.length > 0);
+  for (const key of Object.keys(taxonomy)) renderList(key);
+});
+
+searchInput.addEventListener('keydown', e => { if (e.key === 'Escape') clearSearch(); });
+clearBtn.addEventListener('click', clearSearch);
+
+function clearSearch() {
+  searchInput.value = '';
+  currentQuery = '';
+  clearBtn.classList.remove('visible');
+  for (const key of Object.keys(taxonomy)) renderList(key);
+  searchInput.focus();
+}
+
+// List sort buttons
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key  = btn.dataset.key;
+    const sort = btn.dataset.sort;
+    if (listState[key].sort === sort) return;
+    listState[key].sort = sort;
+    document.querySelectorAll(`.sort-btn[data-key="${key}"]`).forEach(b => {
+      b.classList.toggle('active', b.dataset.sort === sort);
+    });
+    document.getElementById(`list-${key}`)
+      ?.querySelectorAll('.lex-poem-list.open, .lex-term-row.open')
+      .forEach(el => el.classList.remove('open'));
+    renderList(key);
+  });
+});
+
+// Collapse buttons
+document.querySelectorAll('.collapse-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const key   = btn.dataset.key;
+    const block = document.getElementById(`block-${key}`);
+    listState[key].collapsed = !listState[key].collapsed;
+    block.classList.toggle('collapsed', listState[key].collapsed);
+  });
+});
+
+// ── Init ──────────────────────────────────────────────────────────────────────
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  let n = 0;
+  function poll() { if (window.d3) { cb(); return; } if (++n < 100) requestAnimationFrame(poll); }
+  requestAnimationFrame(poll);
+}
+
+waitForD3(() => {
+  d3.select('#cloud-svg').call(zoom);
+
+  // Hash routing for initial category
+  const hash = location.hash.replace('#', '');
+  const initFilter = ['domains','atmosphere','ground','crux'].includes(hash) ? hash : 'ground';
+  activeFilter = initFilter;
+
+  // Set initial filter button active state
+  document.querySelectorAll('.filter-btn').forEach(b => {
+    b.className = 'filter-btn';
+  });
+  const initBtn = document.querySelector(`[data-filter="${initFilter}"]`);
+  if (initBtn) initBtn.classList.add(`active-${initFilter}`);
+
+  drawCloud(initFilter, true);
+  updateCloudBadge();
+});
+</script>
+</Base>
