@@ -193,12 +193,18 @@ const poemData = {
     position: relative;
   }
   .poem-card:hover { background: var(--stat-hover); }
-  .poem-card.wc-highlight {
-    outline: 1px solid var(--accent);
+
+  .band-clear {
+    margin-left: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
   }
-  .poem-card.wc-highlight .card-wc {
-    color: var(--accent);
-  }
+  .band-clear:hover { color: var(--ink); }
 
   .card-wc {
     font-family: 'Cormorant Garamond', Georgia, serif;
@@ -400,23 +406,46 @@ const poemData = {
     renderSorted();
   });
 
-  // ── ?wc= deep-link: highlight poems with a specific word count ─────────────
+  // ── ?wc= deep-link: show only poems with that exact word count ────────────
   const wcParam = new URLSearchParams(location.search).get('wc');
   if (wcParam) {
     const targetWc = parseInt(wcParam, 10);
     if (!isNaN(targetWc)) {
-      const allCards = document.querySelectorAll('#view-banded .poem-card');
-      let firstMatch = null;
-      allCards.forEach(card => {
-        const wcEl = card.querySelector('.card-wc');
-        if (wcEl && parseInt(wcEl.textContent, 10) === targetWc) {
-          card.classList.add('wc-highlight');
-          if (!firstMatch) firstMatch = card;
-        }
-      });
-      if (firstMatch) {
-        setTimeout(() => firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
-      }
+      const matches = poemData.sorted.filter(p => p.wordCount === targetWc);
+
+      // Hide normal views and controls
+      viewBanded.style.display = 'none';
+      viewSorted.style.display = 'none';
+      document.querySelector('.length-controls').style.display = 'none';
+
+      // Build a focused view
+      const focusDiv = document.createElement('div');
+      focusDiv.id = 'view-wc-filter';
+
+      const header = document.createElement('div');
+      header.className = 'band-header';
+      header.innerHTML = `
+        <span class="band-name">${targetWc} words</span>
+        <span class="band-desc">${matches.length} poem${matches.length !== 1 ? 's' : ''}</span>
+        <a href="${base}/length" class="band-clear">← all lengths</a>
+      `;
+      focusDiv.appendChild(header);
+
+      const grid = document.createElement('div');
+      grid.className = 'band-grid';
+      grid.innerHTML = matches.length
+        ? matches.map(p => {
+            const meta = [...(p.atmosphere||[]), ...(p.domains||[])].slice(0,3).join(' · ');
+            return `<a href="${base}/poem/${escHtml(p.slug)}" class="poem-card">
+              <span class="card-wc">${targetWc} words</span>
+              <span class="card-title">${escHtml(p.title)}</span>
+              ${meta ? `<span class="card-meta">${escHtml(meta)}</span>` : ''}
+            </a>`;
+          }).join('')
+        : `<p style="padding:2rem 3rem;color:var(--muted);font-style:italic;">No poems with exactly ${targetWc} words.</p>`;
+
+      focusDiv.appendChild(grid);
+      document.querySelector('.length-controls').insertAdjacentElement('afterend', focusDiv);
     }
   }
 </script>
