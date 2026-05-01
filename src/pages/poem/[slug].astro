@@ -24,6 +24,10 @@ const { title, atmosphere, crux, domains, ground, related, content, wordCount } 
 
 const description = poem.description || `${title} — a poem from Barking by Anatta Nergui`;
 
+// Word count: check if any other poem shares the same count
+const wordCountShared = wordCount > 0 &&
+  allPoems.some(p => p.slug !== poem.slug && p.wordCount === wordCount);
+
 // Convert markdown line breaks to HTML stanzas
 const stanzas = content.split(/\n{2,}/);
 const bodyHtml = stanzas
@@ -472,7 +476,10 @@ const schema = {
       {wordCount > 0 && (
         <div class="info-group">
           <span class="info-label">Words</span>
-          <div class="info-value">{wordCount}</div>
+          {wordCountShared
+            ? <a href={`${base}/length?wc=${wordCount}`} class="info-tag">{wordCount}</a>
+            : <div class="info-value">{wordCount}</div>
+          }
         </div>
       )}
     </div>

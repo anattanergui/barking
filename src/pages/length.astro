@@ -193,6 +193,12 @@ const poemData = {
     position: relative;
   }
   .poem-card:hover { background: var(--stat-hover); }
+  .poem-card.wc-highlight {
+    outline: 1px solid var(--accent);
+  }
+  .poem-card.wc-highlight .card-wc {
+    color: var(--accent);
+  }
 
   .card-wc {
     font-family: 'Cormorant Garamond', Georgia, serif;
@@ -393,5 +399,25 @@ const poemData = {
     sortAsc.classList.remove('active');
     renderSorted();
   });
+
+  // ── ?wc= deep-link: highlight poems with a specific word count ─────────────
+  const wcParam = new URLSearchParams(location.search).get('wc');
+  if (wcParam) {
+    const targetWc = parseInt(wcParam, 10);
+    if (!isNaN(targetWc)) {
+      const allCards = document.querySelectorAll('#view-banded .poem-card');
+      let firstMatch = null;
+      allCards.forEach(card => {
+        const wcEl = card.querySelector('.card-wc');
+        if (wcEl && parseInt(wcEl.textContent, 10) === targetWc) {
+          card.classList.add('wc-highlight');
+          if (!firstMatch) firstMatch = card;
+        }
+      });
+      if (firstMatch) {
+        setTimeout(() => firstMatch.scrollIntoView({ behavior: 'smooth', block: 'center' }), 150);
+      }
+    }
+  }
 </script>
 </Base>
