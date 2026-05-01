@@ -34,6 +34,7 @@ word-count: "41"
 related:
   - "[[You]]"
   - "[[Yet]]"
+  - "[[Mind Alone]]"
 ---
 # Or, Is It
 You live
