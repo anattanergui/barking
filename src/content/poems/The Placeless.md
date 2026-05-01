@@ -15,14 +15,13 @@ domain:
   - location
 crux:
   - absorption
-
 atmosphere:
   - reverent
 ground:
   - nondual
 related:
   - "[[The Last Nothing]]"
-
+  - "[[Or, Is It]]"
 word-count: "211"
 ---
 # The Placeless
