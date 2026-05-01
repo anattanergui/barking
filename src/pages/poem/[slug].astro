@@ -39,7 +39,6 @@ const relatedPoems = related
   .slice(0, 6);
 
 // ── JSON-LD schema ────────────────────────────────────────────────────────────
-// Plain text content for the schema (strip markdown headings)
 const plainText = content
   .split('\n')
   .filter(l => !l.startsWith('#'))
@@ -85,21 +84,15 @@ const schema = {
   <JsonLd slot="head" schema={schema} />
 
 <style>
-  .poem-layout {
-    display: grid;
-    grid-template-columns: 1fr 360px;
-    min-height: calc(100vh - var(--nav-h));
-  }
-
-  /* Reading column */
   .poem-col {
     padding: 5rem 6rem;
     max-width: 680px;
+    margin: 0 auto;
   }
 
   .back {
-    display: inline-flex; 
-    align-items: center; 
+    display: inline-flex;
+    align-items: center;
     gap: 0.4rem;
     font-size: 0.62rem;
     letter-spacing: 0.2em;
@@ -126,14 +119,10 @@ const schema = {
     line-height: 2.3;
     font-weight: 400;
   }
-  .poem-body :global(p) {
-    margin-bottom: 1.5rem;
-  }
-  .poem-body :global(p:last-child) {
-    margin-bottom: 0;
-  }
+  .poem-body :global(p) { margin-bottom: 1.5rem; }
+  .poem-body :global(p:last-child) { margin-bottom: 0; }
 
-  /* Action buttons after poem content */
+  /* ── Action bar ── */
   .poem-actions {
     margin-top: 3rem;
     padding-top: 2rem;
@@ -141,6 +130,7 @@ const schema = {
     display: flex;
     align-items: center;
     gap: 1rem;
+    position: relative;
   }
 
   .action-btn {
@@ -158,27 +148,22 @@ const schema = {
     align-items: center;
     gap: 0.45rem;
   }
-  .action-btn::before { 
-    font-size: 1rem; 
-    line-height: 1;
-  }
-  .bookmark-btn::before { 
-    content: '✒'; 
-  }
-  .bookmark-btn.bookmarked {
-    color: var(--ink);
-  }
-  .bookmark-btn.bookmarked::before { 
-    content: '✒'; 
-  }
-  .send-btn::before {
-    content: '↗';
-  }
-  .action-btn:hover { 
-    color: var(--ink); 
-  }
+  .action-btn:hover { color: var(--ink); }
 
-  /* Send dropdown - appears directly below the button */
+  .bookmark-btn::before { content: '✒'; font-size: 1rem; line-height: 1; }
+  .bookmark-btn.bookmarked { color: var(--ink); }
+  .send-btn::before { content: '↗'; font-size: 1rem; line-height: 1; }
+
+  .info-btn::before {
+    content: '↓';
+    font-size: 1rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.25s;
+  }
+  .info-btn.open::before { transform: rotate(180deg); }
+
+  /* ── Send dropdown ── */
   .send-dropdown {
     display: none;
     position: absolute;
@@ -191,10 +176,7 @@ const schema = {
     z-index: 1000;
     min-width: 200px;
   }
-  
-  .send-dropdown.open {
-    display: block;
-  }
+  .send-dropdown.open { display: block; }
 
   .send-option {
     display: flex;
@@ -215,14 +197,8 @@ const schema = {
     letter-spacing: 0.1em;
     text-transform: uppercase;
   }
-  
-  .send-option:last-child {
-    border-bottom: none;
-  }
-  
-  .send-option:hover {
-    background: var(--stat-hover);
-  }
+  .send-option:last-child { border-bottom: none; }
+  .send-option:hover { background: var(--stat-hover); }
 
   .send-icon {
     font-size: 1.1rem;
@@ -232,18 +208,134 @@ const schema = {
     flex-shrink: 0;
   }
 
-  /* Action buttons container needs position relative for dropdown */
-  .poem-actions {
+  /* ── Info panel (collapsed by default) ── */
+  .info-panel {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+  .info-panel.open {
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  .info-inner {
+    padding: 1.8rem 0 0.5rem;
+    border-top: 1px solid var(--rule);
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem 3rem;
+  }
+
+  .info-label {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .info-tag {
+    display: inline-block;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--tag-ink);
+    background: var(--tag-bg);
+    padding: 0.25rem 0.7rem;
+    text-decoration: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .info-tag:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  .info-value {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.85rem;
+    color: var(--ink);
+  }
+
+  /* ── Related poems ── */
+  .related-section {
     margin-top: 3rem;
     padding-top: 2rem;
     border-top: 1px solid var(--rule);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
   }
 
-  /* Copy feedback toast */
+  .related-label {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .related-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .related-link {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.82rem;
+    color: var(--ink);
+    background: var(--tag-bg);
+    text-decoration: none;
+    padding: 0.35rem 0.85rem;
+    display: inline-block;
+    line-height: 1.5;
+    transition: background 0.15s, color 0.15s;
+  }
+  .related-link:hover {
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  /* ── Next poem ── */
+  .next-poem {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .next-label {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: block;
+    margin-bottom: 0.6rem;
+  }
+
+  .next-link {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+  }
+  .next-link:hover { color: var(--accent); }
+
+  /* ── Copy toast ── */
   .copy-feedback {
     position: fixed;
     bottom: 2rem;
@@ -262,499 +354,264 @@ const schema = {
     pointer-events: none;
     transition: opacity 0.2s;
   }
-  .copy-feedback.show {
-    opacity: 1;
-  }
+  .copy-feedback.show { opacity: 1; }
 
-  /* Sidebar column */
-  .sidebar-col {
-    background: var(--bg-panel);
-    border-left: 1px solid var(--rule);
-    padding: 5rem 2.5rem;
-    overflow-y: auto;
-    max-height: calc(100vh - var(--nav-h));
-    position: sticky;
-    top: var(--nav-h);
-  }
-
-  .s-label {
-    display: block;
-    font-family: 'Karla', sans-serif;
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 0.8rem;
-    position: relative;
-    cursor: default;
-  }
-
-  .s-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .tag {
-    display: inline-block;
-    font-family: 'Karla', sans-serif;
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: var(--tag-ink);
-    background: var(--tag-bg);
-    padding: 0.3rem 0.8rem;
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-  }
-  .tag:hover {
-    background: var(--accent);
-    color: var(--paper);
-  }
-
-  .s-value {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.9rem;
-    color: var(--ink);
-    margin-bottom: 1.8rem;
-  }
-
-  .related-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .related-item {
-    margin-bottom: 0;
-  }
-  .related-item a {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 0.78rem;
-    color: var(--ink);
-    background: var(--tag-bg);
-    text-decoration: none;
-    transition: background 0.15s, color 0.15s;
-    display: inline-block;
-    padding: 0.4rem 0.9rem;
-    line-height: 1.4;
-  }
-  .related-item a:hover {
-    background: var(--accent);
-    color: var(--paper);
-  }
-
-  /* Adjacent poem navigation */
-  /* Next poem - appears in sidebar between nav and metadata */
-  .next-poem {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--rule);
-  }
-
-  .next-label {
-    font-family: 'Karla', sans-serif;
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: block;
-    margin-bottom: 0.8rem;
-  }
-
-  .next-link {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1.4;
-    text-decoration: none;
-    transition: color 0.2s;
-    display: block;
-  }
-
-  .next-link:hover {
-    color: var(--accent);
-  }
-
-  /* Mobile adjustments */
-  @media (max-width: 1100px) {
-    .poem-layout {
-      grid-template-columns: 1fr;
-    }
-
-    .sidebar-col {
-      position: static;
-      max-height: none;
-      border-left: none;
-      border-top: 1px solid var(--rule);
-      padding: 3rem 2rem;
-    }
-
-    .poem-col {
-      padding: 3rem 2rem;
-    }
-  }
-
+  /* ── Mobile ── */
   @media (max-width: 700px) {
-    .poem-col {
-      padding: 2.5rem 1.5rem;
-    }
-
-    .sidebar-col {
-      padding: 2.5rem 1.5rem;
-    }
-
-    .poem-title {
-      font-size: 2rem;
-      margin-bottom: 3rem;
-    }
-
-    .poem-body {
-      font-size: 1rem;
-      line-height: 2;
-    }
-
-    .action-btn {
-      font-size: 0.6rem;
-      padding: 0.6rem 1rem;
-    }
-
-    .nav-poem {
-      grid-template-columns: 1fr;
-      gap: 0.6rem;
-    }
+    .poem-col { padding: 2.5rem 1.5rem; }
+    .poem-title { font-size: 2rem; margin-bottom: 3rem; }
+    .poem-body { font-size: 1rem; line-height: 2; }
   }
 </style>
 
-<div class="poem-layout">
-  <div class="poem-col">
-    <a href={`${base}/browse`} class="back">
-      <span>←</span>
-      <span>Back to collection</span>
-    </a>
+<div class="poem-col">
+  <a href={`${base}/browse`} class="back">
+    <span>←</span>
+    <span>Back to collection</span>
+  </a>
 
-    <h1 class="poem-title">{title}</h1>
+  <h1 class="poem-title">{title}</h1>
 
-    <div class="poem-body" set:html={bodyHtml} />
+  <div class="poem-body" set:html={bodyHtml} />
 
-    <div class="poem-actions">
-      <button 
-        class="action-btn bookmark-btn" 
-        id="bookmark-btn"
-        aria-label="Mark this poem"
+  <!-- Action bar: Mark · Send · Info -->
+  <div class="poem-actions">
+    <button
+      class="action-btn bookmark-btn"
+      id="bookmark-btn"
+      aria-label="Mark this poem"
+    >
+      <span>Mark</span>
+    </button>
+
+    <div style="position: relative;">
+      <button
+        class="action-btn send-btn"
+        id="send-btn"
+        aria-label="Share this poem"
       >
-        <span>Mark</span>
+        <span>Send</span>
       </button>
-      <div style="position: relative;">
-        <button 
-          class="action-btn send-btn" 
-          id="send-btn"
-          aria-label="Share this poem"
-        >
-          <span>Send</span>
+      <div class="send-dropdown" id="send-dropdown">
+        <button class="send-option" id="copy-link">
+          <span class="send-icon">🔗</span>
+          <span>Copy Link</span>
         </button>
-        <div class="send-dropdown" id="send-dropdown">
-          <button class="send-option" id="copy-link">
-            <span class="send-icon">🔗</span>
-            <span>Copy Link</span>
-          </button>
-          <a class="send-option" id="email-share" href="">
-            <span class="send-icon">✉️</span>
-            <span>Email</span>
-          </a>
-          <a class="send-option" id="twitter-share" href="" target="_blank" rel="noopener noreferrer">
-            <span class="send-icon">𝕏</span>
-            <span>Post on X</span>
-          </a>
-          <a class="send-option" id="facebook-share" href="" target="_blank" rel="noopener noreferrer">
-            <span class="send-icon">f</span>
-            <span>Facebook</span>
-          </a>
-          <a class="send-option" id="whatsapp-share" href="" target="_blank" rel="noopener noreferrer">
-            <span class="send-icon">💬</span>
-            <span>WhatsApp</span>
-          </a>
-        </div>
+        <a class="send-option" id="email-share" href="">
+          <span class="send-icon">✉️</span>
+          <span>Email</span>
+        </a>
+        <a class="send-option" id="twitter-share" href="" target="_blank" rel="noopener noreferrer">
+          <span class="send-icon">𝕏</span>
+          <span>Post on X</span>
+        </a>
+        <a class="send-option" id="facebook-share" href="" target="_blank" rel="noopener noreferrer">
+          <span class="send-icon">f</span>
+          <span>Facebook</span>
+        </a>
+        <a class="send-option" id="whatsapp-share" href="" target="_blank" rel="noopener noreferrer">
+          <span class="send-icon">💬</span>
+          <span>WhatsApp</span>
+        </a>
       </div>
+    </div>
+
+    <button
+      class="action-btn info-btn"
+      id="info-btn"
+      aria-label="Show poem info"
+      aria-expanded="false"
+    >
+      <span>Info</span>
+    </button>
+  </div>
+
+  <!-- Collapsed metadata panel -->
+  <div class="info-panel" id="info-panel" aria-hidden="true">
+    <div class="info-inner">
+      {atmosphere.length > 0 && (
+        <div class="info-group">
+          <span class="info-label">Atmosphere</span>
+          <div class="info-tags">
+            {atmosphere.map(m => (
+              <a href={`${base}/browse?atmosphere=${encodeURIComponent(m)}`} class="info-tag">{m}</a>
+            ))}
+          </div>
+        </div>
+      )}
+      {crux.length > 0 && (
+        <div class="info-group">
+          <span class="info-label">Crux</span>
+          <div class="info-tags">
+            {crux.map(f => (
+              <a href={`${base}/browse?crux=${encodeURIComponent(f)}`} class="info-tag">{f}</a>
+            ))}
+          </div>
+        </div>
+      )}
+      {domains.length > 0 && (
+        <div class="info-group">
+          <span class="info-label">Domain</span>
+          <div class="info-tags">
+            {domains.map(t => (
+              <a href={`${base}/browse?domain=${encodeURIComponent(t)}`} class="info-tag">{t}</a>
+            ))}
+          </div>
+        </div>
+      )}
+      {ground.length > 0 && (
+        <div class="info-group">
+          <span class="info-label">Ground</span>
+          <div class="info-tags">
+            {ground.map(g => (
+              <a href={`${base}/browse?ground=${encodeURIComponent(g)}`} class="info-tag">{g}</a>
+            ))}
+          </div>
+        </div>
+      )}
+      {wordCount > 0 && (
+        <div class="info-group">
+          <span class="info-label">Words</span>
+          <div class="info-value">{wordCount}</div>
+        </div>
+      )}
     </div>
   </div>
 
-  <aside class="sidebar-col">
-    {atmosphere.length > 0 && (
-      <>
-        <span class="s-label">Atmosphere</span>
-        <div class="s-tags">
-          {atmosphere.map(m => (
-            <a href={`${base}/browse?atmosphere=${encodeURIComponent(m)}`} class="tag">{m}</a>
-          ))}
-        </div>
-      </>
-    )}
-
-    {crux.length > 0 && (
-      <>
-        <span class="s-label">Crux</span>
-        <div class="s-tags">
-          {crux.map(f => (
-            <a href={`${base}/browse?crux=${encodeURIComponent(f)}`} class="tag">{f}</a>
-          ))}
-        </div>
-      </>
-    )}
-
-    {wordCount > 0 && (
-      <>
-        <span class="s-label">Words</span>
-        <div class="s-value">{wordCount}</div>
-      </>
-    )}
-
-    {domains.length > 0 && (
-      <>
-        <span class="s-label">Domain</span>
-        <div class="s-tags">
-          {domains.map(t => (
-            <a href={`${base}/browse?domain=${encodeURIComponent(t)}`} class="tag">{t}</a>
-          ))}
-        </div>
-      </>
-    )}
-
-    {ground.length > 0 && (
-      <>
-        <span class="s-label">Ground</span>
-        <div class="s-tags">
-          {ground.map(g => (
-            <a href={`${base}/browse?ground=${encodeURIComponent(g)}`} class="tag">{g}</a>
-          ))}
-        </div>
-      </>
-    )}
-
-    {relatedPoems.length > 0 && (
-      <>
-        <span class="s-label" style="margin-top:1rem; display:block;">Related poems</span>
-        <ul class="related-list">
-          {relatedPoems.map(r => (
-            <li class="related-item">
-              <a href={`${base}/poem/${r.slug}`}>{r.title}</a>
-            </li>
-          ))}
-        </ul>
-      </>
-    )}
-
-    {nextPoem && (
-      <div class="next-poem">
-        <span class="next-label">Next poem</span>
-        <a href={`${base}/poem/${nextPoem.slug}`} class="next-link">{nextPoem.title}</a>
+  <!-- Related poems — always visible -->
+  {relatedPoems.length > 0 && (
+    <div class="related-section">
+      <span class="related-label">Related poems</span>
+      <div class="related-list">
+        {relatedPoems.map(r => (
+          <a href={`${base}/poem/${r.slug}`} class="related-link">{r.title}</a>
+        ))}
       </div>
-    )}
-  </aside>
+    </div>
+  )}
+
+  <!-- Next poem -->
+  {nextPoem && (
+    <div class="next-poem">
+      <span class="next-label">Next poem</span>
+      <a href={`${base}/poem/${nextPoem.slug}`} class="next-link">{nextPoem.title}</a>
+    </div>
+  )}
 </div>
 
 <!-- Copy feedback toast -->
 <div class="copy-feedback" id="copy-feedback">Link copied to clipboard</div>
 
 <script define:vars={{ slug: poem.slug, title: poem.title, poemUrl }}>
-  // Bookmark functionality with Safari localStorage fix
+  // ── Bookmarks ──────────────────────────────────────────────────────────────
   function getBookmarks() {
-    try {
-      const data = localStorage.getItem('barking-bookmarks');
-      if (!data) return [];
-      return JSON.parse(data);
-    } catch (e) {
-      console.error('Failed to read bookmarks:', e);
-      return [];
-    }
+    try { return JSON.parse(localStorage.getItem('barking-bookmarks') || '[]'); }
+    catch (e) { return []; }
   }
-
-  function saveBookmarks(bookmarks) {
-    try {
-      localStorage.setItem('barking-bookmarks', JSON.stringify(bookmarks));
-      return true;
-    } catch (e) {
-      console.error('Failed to save bookmarks:', e);
-      return false;
-    }
+  function saveBookmarks(b) {
+    try { localStorage.setItem('barking-bookmarks', JSON.stringify(b)); } catch (e) {}
   }
-
-  function isBookmarked(slug) {
-    return getBookmarks().includes(slug);
-  }
-
   function toggleBookmark(slug) {
-    const bookmarks = getBookmarks();
-    const idx = bookmarks.indexOf(slug);
-    if (idx > -1) {
-      bookmarks.splice(idx, 1);
-    } else {
-      bookmarks.push(slug);
-    }
-    saveBookmarks(bookmarks);
+    const b = getBookmarks(), idx = b.indexOf(slug);
+    if (idx > -1) b.splice(idx, 1); else b.push(slug);
+    saveBookmarks(b);
     return idx === -1;
   }
 
-  // Initialize bookmark button
   const bookmarkBtn = document.getElementById('bookmark-btn');
   if (bookmarkBtn) {
-    const bookmarked = isBookmarked(slug);
-    
-    if (bookmarked) {
+    if (getBookmarks().includes(slug)) {
       bookmarkBtn.classList.add('bookmarked');
       bookmarkBtn.querySelector('span').textContent = 'Marked';
       bookmarkBtn.setAttribute('aria-label', 'Remove mark');
     }
-
-    bookmarkBtn.addEventListener('click', function() {
-      const nowBookmarked = toggleBookmark(slug);
-      this.classList.toggle('bookmarked', nowBookmarked);
-      this.querySelector('span').textContent = nowBookmarked ? 'Marked' : 'Mark';
-      this.setAttribute('aria-label', nowBookmarked ? 'Remove mark' : 'Mark this poem');
+    bookmarkBtn.addEventListener('click', function () {
+      const now = toggleBookmark(slug);
+      this.classList.toggle('bookmarked', now);
+      this.querySelector('span').textContent = now ? 'Marked' : 'Mark';
+      this.setAttribute('aria-label', now ? 'Remove mark' : 'Mark this poem');
     });
   }
 
-  // Track reading history
+  // ── Reading history ────────────────────────────────────────────────────────
   try {
-    const history = JSON.parse(localStorage.getItem('barking-history') || '[]');
-    const filtered = history.filter(s => s !== slug);
-    filtered.unshift(slug);
-    localStorage.setItem('barking-history', JSON.stringify(filtered.slice(0, 50)));
-  } catch (e) {
-    console.error('Failed to save history:', e);
+    const h = JSON.parse(localStorage.getItem('barking-history') || '[]');
+    const f = h.filter(s => s !== slug);
+    f.unshift(slug);
+    localStorage.setItem('barking-history', JSON.stringify(f.slice(0, 50)));
+  } catch (e) {}
+
+  // ── Info panel toggle ──────────────────────────────────────────────────────
+  const infoBtn   = document.getElementById('info-btn');
+  const infoPanel = document.getElementById('info-panel');
+
+  if (infoBtn && infoPanel) {
+    infoBtn.addEventListener('click', () => {
+      const isOpen = infoPanel.classList.toggle('open');
+      infoBtn.classList.toggle('open', isOpen);
+      infoBtn.setAttribute('aria-expanded', String(isOpen));
+      infoPanel.setAttribute('aria-hidden', String(!isOpen));
+    });
   }
 
-  // Send functionality - dropdown instead of modal
-  const shareBtn = document.getElementById('send-btn');
+  // ── Send dropdown ──────────────────────────────────────────────────────────
+  const shareBtn      = document.getElementById('send-btn');
   const shareDropdown = document.getElementById('send-dropdown');
-  const copyLinkBtn = document.getElementById('copy-link');
-  const emailSend = document.getElementById('email-share');
-  const twitterSend = document.getElementById('twitter-share');
-  const facebookSend = document.getElementById('facebook-share');
-  const whatsappSend = document.getElementById('whatsapp-share');
-  const copyFeedback = document.getElementById('copy-feedback');
+  const copyLinkBtn   = document.getElementById('copy-link');
+  const emailSend     = document.getElementById('email-share');
+  const twitterSend   = document.getElementById('twitter-share');
+  const facebookSend  = document.getElementById('facebook-share');
+  const whatsappSend  = document.getElementById('whatsapp-share');
+  const copyFeedback  = document.getElementById('copy-feedback');
 
   const shareText = `${title} — a poem from Barking by Anatta Nergui`;
-  
-  // Email share
-  if (emailSend) {
-    const emailSubject = encodeURIComponent(shareText);
-    const emailBody = encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`);
-    emailSend.href = `mailto:?subject=${emailSubject}&body=${emailBody}`;
-  }
 
-  // Twitter/X share
-  if (twitterSend) {
-    const tweetText = encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`);
-    twitterSend.href = `https://twitter.com/intent/tweet?text=${tweetText}`;
-  }
+  if (emailSend) emailSend.href = `mailto:?subject=${encodeURIComponent(shareText)}&body=${encodeURIComponent(`I thought you might enjoy this poem:\n\n${title}\n\n${poemUrl}`)}`;
+  if (twitterSend) twitterSend.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(`"${title}" — from Barking by Anatta Nergui\n\n${poemUrl}`)}`;
+  if (facebookSend) facebookSend.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(poemUrl)}`;
+  if (whatsappSend) whatsappSend.href = `https://wa.me/?text=${encodeURIComponent(`${title} — from Barking by Anatta Nergui\n${poemUrl}`)}`;
 
-  // Facebook share
-  if (facebookSend) {
-    facebookSend.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(poemUrl)}`;
-  }
-
-  // WhatsApp share
-  if (whatsappSend) {
-    const waText = encodeURIComponent(`${title} — from Barking by Anatta Nergui\n${poemUrl}`);
-    whatsappSend.href = `https://wa.me/?text=${waText}`;
-  }
-
-  // Check if native share is available (mobile devices)
-  // Native share removed — explicit options cover all platforms
-
-  // Toggle dropdown
   if (shareBtn && shareDropdown) {
     shareBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       shareDropdown.classList.toggle('open');
     });
-
-    // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
-      if (!shareDropdown.contains(e.target) && e.target !== shareBtn) {
+      if (!shareDropdown.contains(e.target) && e.target !== shareBtn)
         shareDropdown.classList.remove('open');
-      }
     });
-
-    // Close on escape
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && shareDropdown.classList.contains('open')) {
-        shareDropdown.classList.remove('open');
-      }
+      if (e.key === 'Escape') shareDropdown.classList.remove('open');
     });
   }
 
-  // Copy link
   if (copyLinkBtn) {
     copyLinkBtn.addEventListener('click', async (e) => {
       e.preventDefault();
       e.stopPropagation();
       try {
         await navigator.clipboard.writeText(poemUrl);
-        if (copyFeedback) {
-          copyFeedback.classList.add('show');
-          setTimeout(() => copyFeedback.classList.remove('show'), 2000);
-        }
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      } catch (err) {
-        // Fallback for older browsers
-        const textArea = document.createElement('textarea');
-        textArea.value = poemUrl;
-        textArea.style.position = 'fixed';
-        textArea.style.left = '-999999px';
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-          document.execCommand('copy');
-          if (copyFeedback) {
-            copyFeedback.classList.add('show');
-            setTimeout(() => copyFeedback.classList.remove('show'), 2000);
-          }
-        } catch (err) {
-          console.error('Failed to copy:', err);
-        }
-        document.body.removeChild(textArea);
-        if (shareDropdown) shareDropdown.classList.remove('open');
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = poemUrl;
+        ta.style.cssText = 'position:fixed;left:-999999px';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch {}
+        document.body.removeChild(ta);
       }
+      if (copyFeedback) {
+        copyFeedback.classList.add('show');
+        setTimeout(() => copyFeedback.classList.remove('show'), 2000);
+      }
+      if (shareDropdown) shareDropdown.classList.remove('open');
     });
   }
 
-  // Close dropdown when clicking email or twitter links
-  if (emailSend) {
-    emailSend.addEventListener('click', () => {
-      setTimeout(() => {
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      }, 100);
+  [emailSend, twitterSend, facebookSend, whatsappSend].forEach(el => {
+    if (el) el.addEventListener('click', () => {
+      setTimeout(() => { if (shareDropdown) shareDropdown.classList.remove('open'); }, 100);
     });
-  }
-
-  if (twitterSend) {
-    twitterSend.addEventListener('click', () => {
-      setTimeout(() => {
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      }, 100);
-    });
-  }
-
-  if (facebookSend) {
-    facebookSend.addEventListener('click', () => {
-      setTimeout(() => {
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      }, 100);
-    });
-  }
-
-  if (whatsappSend) {
-    whatsappSend.addEventListener('click', () => {
-      setTimeout(() => {
-        if (shareDropdown) shareDropdown.classList.remove('open');
-      }, 100);
-    });
-  }
+  });
 </script>
 </Base>
