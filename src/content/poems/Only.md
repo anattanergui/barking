@@ -27,7 +27,7 @@ atmosphere:
 ground:
   - nondual
 description: I, you, you, I - only this, ever - been
-word-count: "29"
+word-count: "30"
 ---
 # Only
 I, you
@@ -42,7 +42,7 @@ However
 Whatever
 
 Only this 
-Ever said
+Is ever said
 
 Only this
 Ever known
