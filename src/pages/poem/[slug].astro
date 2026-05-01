@@ -22,15 +22,7 @@ export async function getStaticPaths() {
 const { poem, prevPoem, nextPoem, allPoems } = Astro.props;
 const { title, atmosphere, crux, domains, ground, related, content, wordCount } = poem;
 
-const metaParts = [
-  atmosphere.length > 0 ? atmosphere.join(', ') : null,
-  crux.length       > 0 ? crux.join(', ')       : null,
-  domains.length    > 0 ? domains.join(', ')     : null,
-].filter(Boolean);
-const generatedDescription = metaParts.length
-  ? `${title} — ${metaParts.join(' · ')}`
-  : `${title} — a poem`;
-const description = poem.description || generatedDescription;
+const description = poem.description || `${title} — a poem from Barking by Anatta Nergui`;
 
 // Convert markdown line breaks to HTML stanzas
 const stanzas = content.split(/\n{2,}/);
