@@ -21,8 +21,7 @@ ground:
   - nondual
 related:
   - "[[Invisible Ink]]"
-  - "[[The Addict]]"
-  - "[[For Fuck’s Sake]]"
+  - "[[Belonged]]"
 style:
   - declarative
   - apophatic
