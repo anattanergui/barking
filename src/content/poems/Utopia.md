@@ -106,7 +106,7 @@ Even meet
 
 People
 
-As beloved
+As — beloved
 In caritas —
 Celebration
 
