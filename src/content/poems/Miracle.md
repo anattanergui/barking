@@ -12,20 +12,18 @@ tags:
   - libraries
   - christmases
 domain:
-  - presence
-  - civilisation
-  - disproportion
+  - miracle
+  - perception
 crux:
-  - immanence
+  - now
 atmosphere:
-  - reverent
-  - still
+  - lucid
 ground:
-  - phenomenological
+  - apperceptive
 description: All of civilisation's achievements are nothing compared to the miracle contained in a single glance, right now.
 related:
-  - "[[Beholding]]"
-  - "[[The Divine]]"
+  - "[[The Empty Instant]]"
+  - "[[You]]"
 word-count: "49"
 ---
 # Miracle
