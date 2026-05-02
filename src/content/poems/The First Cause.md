@@ -26,6 +26,7 @@ word-count: "79"
 related:
   - "[[One-Way]]"
   - "[[Clothes]]"
+  - "[[Civilisation]]"
 ---
 # The First Cause
 Elephant —

@@ -20,8 +20,23 @@
               "icon": "lucide-file",
               "title": "Wish"
             }
+          },
+          {
+            "id": "46193254dd901233",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Civilisation.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Civilisation"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "wish",
+                "query": "tag:unabashed",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -196,15 +211,19 @@
       "bases:Create new base": false
     }
   },
-  "active": "ebb35b547471d6ce",
+  "active": "46193254dd901233",
   "lastOpenFiles": [
+    "Autopsy.md",
+    "Civilisation.md",
+    "The First Cause.md",
+    "Wish.md",
+    "One-Way.md",
     "Utopia.md",
     "Miracle.md",
     "Or, Is It.md",
     "None.md",
     "Belonged.md",
     "Only.md",
-    "Wish.md",
     "The Placeless.md",
     "Un —.md",
     "Yet.md",
@@ -220,10 +239,6 @@
     "Leverage.md",
     "Forgot.md",
     "Equanimity.md",
-    "Grief.md",
-    "Dedication.md",
-    "Thief.md",
-    "Residues.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
