@@ -9,6 +9,23 @@ tags:
   - naked
   - door
   - nude
+  - civility
+  - one
+  - way
+  - brands
+  - gap
+  - unclothed
+  - meaninglessly
+  - between
+  - never
+  - again
+  - walls
+  - desires
+  - structured
+  - imagination
+  - inhabited
+  - death
+  - planted
 domain:
   - civility
   - shame
@@ -24,6 +41,7 @@ related:
   - "[[Clothes]]"
   - "[[Autopsy]]"
   - "[[Branded]]"
+  - "[[Civilisation]]"
 word-count: "45"
 ---
 # One-Way
