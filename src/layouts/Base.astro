@@ -1,0 +1,472 @@
+---
+import '../styles/global.css';
+import JsonLd from '../components/JsonLd.astro';
+
+const {
+  title = '',
+  description = 'A poetry collection',
+  schema = null,
+} = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const siteTitle = 'Anatta Nergui';
+const pageTitle = title ? `${title} — ${siteTitle}` : siteTitle;
+
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+function isActive(href) {
+  if (href === `${base}/` || href === base) return currentPath === base || currentPath === `${base}/`;
+  return currentPath.startsWith(href);
+}
+
+// Default site-level schema if none provided by the page
+const defaultSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": siteTitle,
+  "description": description,
+  "url": Astro.site ? Astro.site.toString() : undefined,
+  "author": {
+    "@type": "Person",
+    "name": "Anatta Nergui"
+  }
+};
+
+const resolvedSchema = schema ?? defaultSchema;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta property="og:title"       content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type"        content="website" />
+  <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site).toString()} />
+  <meta property="og:image:alt" content="Barking — a poetry collection by Anatta Nergui" />
+  <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).toString()} />
+  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+  <title>{pageTitle}</title>
+  <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
+  <link rel="alternate" type="application/rss+xml" title="Barking" href={`${base}/rss.xml`} />
+  <JsonLd schema={resolvedSchema} />
+  <slot name="head" />
+
+  <!-- Apply saved theme before first paint to prevent flash -->
+  <script is:inline>
+    (function () {
+      var t = localStorage.getItem('barking-theme') || 'graphite';
+      document.documentElement.className = document.documentElement.className
+        .replace(/theme-\w+/g, '').trim() + ' theme-' + t;
+    })();
+  </script>
+</head>
+
+<body>
+  <nav aria-label="Site navigation">
+    <a href={`${base}/`} class="nav-brand">Anatta Nergui</a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="nav-toggle-icon"></span>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href={`${base}/`}          aria-current={isActive(`${base}/`)          ? 'page' : undefined}>Home</a>
+      <a href={`${base}/browse`}    aria-current={isActive(`${base}/browse`)    ? 'page' : undefined}>Browse</a>
+      <a href={`${base}/graph`}     aria-current={isActive(`${base}/graph`)     ? 'page' : undefined}>Graph</a>
+      <a href={`${base}/lexicon`}   aria-current={isActive(`${base}/lexicon`)   ? 'page' : undefined}>Lexicon</a>
+      <a href={`${base}/cloud`}     aria-current={isActive(`${base}/cloud`)     ? 'page' : undefined}>Cloud</a>
+      <a href={`${base}/length`}    aria-current={isActive(`${base}/length`)    ? 'page' : undefined}>Length</a>
+      <a href={`${base}/keywords`}  aria-current={isActive(`${base}/keywords`)  ? 'page' : undefined}>Index</a>
+      <a href={`${base}/bookmarks`} aria-current={isActive(`${base}/bookmarks`) ? 'page' : undefined}>Saved</a>
+      <a href={`${base}/about`}     aria-current={isActive(`${base}/about`)     ? 'page' : undefined}>About</a>
+    </div>
+  </nav>
+  <div class="nav-backdrop" id="nav-backdrop"></div>
+
+  <main class="main-content">
+    <slot />
+  </main>
+
+  <!-- Theme switcher — present on every page via Base.astro -->
+  <div class="theme-switcher" aria-label="Choose colour theme">
+    <button class="theme-dot" data-theme="ivory"    title="Warm ivory"></button>
+    <button class="theme-dot" data-theme="slate"    title="Charcoal slate"></button>
+    <button class="theme-dot" data-theme="graphite" title="Warm graphite"></button>
+  </div>
+
+  <!-- Mobile nav toggle script -->
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    const navBackdrop = document.getElementById('nav-backdrop');
+
+    if (navToggle && navLinks && navBackdrop) {
+      function toggleNav() {
+        const isOpen = navLinks.classList.contains('open');
+        
+        if (isOpen) {
+          navLinks.classList.remove('open');
+          navBackdrop.classList.remove('visible');
+          navToggle.classList.remove('active');
+          navToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        } else {
+          navLinks.classList.add('open');
+          navBackdrop.classList.add('visible');
+          navToggle.classList.add('active');
+          navToggle.setAttribute('aria-expanded', 'true');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      navToggle.addEventListener('click', toggleNav);
+      navBackdrop.addEventListener('click', toggleNav);
+
+      // Close on nav link click - small delay to allow navigation
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          if (navLinks.classList.contains('open')) {
+            // Let the navigation happen, then close after a brief moment
+            setTimeout(() => {
+              navLinks.classList.remove('open');
+              navBackdrop.classList.remove('visible');
+              navToggle.classList.remove('active');
+              navToggle.setAttribute('aria-expanded', 'false');
+              document.body.style.overflow = '';
+            }, 100);
+          }
+        });
+      });
+
+      // Close on escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+          toggleNav();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+
+<style is:global>
+  /* ─── THEME VARIABLES ───────────────────────────────────────────────────── */
+
+  html.theme-ivory {
+    --bg:            #d8d4cd;
+    --bg-panel:      #cdc9c2;
+    --ink:           #1e1c18;
+    --muted:         #6e6a62;
+    --rule:          #b8b4ad;
+    --accent:        #2e2c28;
+    --tag-bg:        #c8c4bc;
+    --tag-ink:       #3e3c38;
+    --btn-bg:        #1e1c18;
+    --btn-ink:       #d8d4cd;
+    --stat-hover:    #c8c4bc;
+    --search-bg:     #cdc9c2;
+    --search-border: #a8a49c;
+    --paper:         #d8d4cd;
+    --paper-warm:    #cdc9c2;
+    /* Cloud term colours — darker/richer for light background */
+    --color-domains:    #2d5f9e;
+    --color-atmosphere: #9e2d5f;
+    --color-ground:     #1e7a4a;
+    --color-crux:       #7a5a10;
+  }
+
+  html.theme-slate {
+    --bg:            #18191c;
+    --bg-panel:      #1f2024;
+    --ink:           #e8e6e0;
+    --muted:         #888580;
+    --rule:          #2e2f33;
+    --accent:        #c8b89a;
+    --tag-bg:        #2a2b2f;
+    --tag-ink:       #a09890;
+    --btn-bg:        #e8e6e0;
+    --btn-ink:       #18191c;
+    --stat-hover:    #1f2024;
+    --search-bg:     #1f2024;
+    --search-border: #3a3b40;
+    --paper:         #18191c;
+    --paper-warm:    #1f2024;
+    /* Cloud term colours — cool-toned brights for blue-grey slate */
+    --color-domains:    #6ab2f0;
+    --color-atmosphere: #f07aaa;
+    --color-ground:     #6ae0aa;
+    --color-crux:       #f0d070;
+  }
+
+  html.theme-graphite {
+    --bg:            #1c1a16;
+    --bg-panel:      #221f1a;
+    --ink:           #e2ddd4;
+    --muted:         #857e72;
+    --rule:          #302c25;
+    --accent:        #c4aa84;
+    --tag-bg:        #2a2620;
+    --tag-ink:       #a09078;
+    --btn-bg:        #e2ddd4;
+    --btn-ink:       #1c1a16;
+    --stat-hover:    #221f1a;
+    --search-bg:     #221f1a;
+    --search-border: #3a3630;
+    --paper:         #1c1a16;
+    --paper-warm:    #221f1a;
+    /* Cloud term colours — warm-toned brights for brown-black graphite */
+    --color-domains:    #90c4d8;
+    --color-atmosphere: #d890b0;
+    --color-ground:     #90d8a8;
+    --color-crux:       #d8b870;
+  }
+
+  /* ─── BASE ──────────────────────────────────────────────────────────────── */
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    transition: background 0.3s, color 0.3s;
+  }
+
+  nav {
+    background: var(--bg);
+    border-bottom-color: var(--rule);
+    transition: background 0.3s;
+  }
+
+  /* ─── NAV ACTIVE STATE ───────────────────────────────────────────────────── */
+  .nav-links a[aria-current="page"] {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  .main-content {
+    padding-top: var(--nav-h);
+  }
+
+  /* ─── THEME SWITCHER ─────────────────────────────────────────────────────── */
+  .theme-switcher {
+    position: fixed;
+    bottom: 1.8rem;
+    right: 1.8rem;
+    display: flex;
+    gap: 0.6rem;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 0.55rem 0.75rem;
+    border-radius: 99px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .theme-dot {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+    padding: 0;
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+  }
+  .theme-dot:hover {
+    transform: scale(1.25);
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+  .theme-dot.active {
+    border-color: #fff;
+    box-shadow: 0 0 0 1.5px rgba(255, 255, 255, 0.35);
+    transform: scale(1.2);
+  }
+  .theme-dot[data-theme="ivory"]    { background: #d8d4cd; }
+  .theme-dot[data-theme="slate"]    { background: #18191c; }
+  .theme-dot[data-theme="graphite"] { background: #3a3228; }
+
+  /* ─── MOBILE NAVIGATION ──────────────────────────────────────────────── */
+  
+  /* Hamburger toggle button - hidden on desktop */
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1002;
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .nav-toggle-icon,
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 4px;
+  }
+
+  .nav-toggle-icon {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .nav-toggle-icon::before,
+  .nav-toggle-icon::after {
+    content: '';
+  }
+
+  .nav-toggle-icon::before {
+    top: -8px;
+  }
+
+  .nav-toggle-icon::after {
+    top: 8px;
+  }
+
+  /* Animated hamburger to X */
+  .nav-toggle.active .nav-toggle-icon {
+    background: transparent;
+  }
+
+  .nav-toggle.active .nav-toggle-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .nav-toggle.active .nav-toggle-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /* Navigation backdrop */
+  .nav-backdrop {
+    display: none;
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+  }
+
+  .nav-backdrop.visible {
+    display: block;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile navigation styles */
+  @media (max-width: 900px) {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1002;
+    }
+
+    .nav-toggle {
+      display: block;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: var(--nav-h);
+      right: 0;
+      bottom: 0;
+      width: 75%;
+      max-width: 280px;
+      background: var(--bg);
+      border-left: 1px solid var(--rule);
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1001;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0;
+      gap: 0;
+      box-shadow: none;
+    }
+
+    .nav-links.open {
+      transform: translateX(0);
+      box-shadow: -4px 0 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .nav-links a {
+      padding: 1rem 2rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      border-bottom: 1px solid var(--rule);
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-links a:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .nav-links a:hover {
+      background: var(--stat-hover);
+    }
+
+    .nav-links a[aria-current="page"] {
+      background: var(--ink);
+      color: var(--bg);
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .nav-brand {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 500px) {
+    nav {
+      padding: 0 1rem;
+    }
+
+    .nav-brand {
+      font-size: 0.7rem;
+    }
+
+    .nav-links {
+      width: 85%;
+      max-width: none;
+    }
+  }
+</style>
+
+<script>
+  // Runs on every page via Base.astro
+  const themes = ['ivory', 'slate', 'graphite'];
+  const dots   = document.querySelectorAll('.theme-dot');
+
+  function applyTheme(theme) {
+    themes.forEach(t => document.documentElement.classList.remove('theme-' + t));
+    document.documentElement.classList.add('theme-' + theme);
+    dots.forEach(d => d.classList.toggle('active', d.dataset.theme === theme));
+    localStorage.setItem('barking-theme', theme);
+  }
+
+  const current = localStorage.getItem('barking-theme') || 'graphite';
+  dots.forEach(d => {
+    d.classList.toggle('active', d.dataset.theme === current);
+    d.addEventListener('click', () => applyTheme(d.dataset.theme));
+  });
+</script>

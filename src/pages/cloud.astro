@@ -1,0 +1,490 @@
+---
+// src/pages/cloud.astro
+import Base from '../layouts/Base.astro';
+import { getAllPoemsMeta } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const poems = getAllPoemsMeta();
+
+const categories = [
+  { key: 'ground',     label: 'ground',     param: 'ground' },
+  { key: 'domains',    label: 'domain',     param: 'domain' },
+  { key: 'crux',       label: 'crux',       param: 'crux' },
+  { key: 'atmosphere', label: 'atmosphere', param: 'atmosphere' },
+];
+
+const termMap = {};
+for (const poem of poems) {
+  for (const { key } of categories) {
+    const terms = poem[key] || [];
+    for (const term of terms) {
+      if (!termMap[term]) termMap[term] = { totalCount: 0, cats: {} };
+      termMap[term].totalCount++;
+      termMap[term].cats[key] = (termMap[term].cats[key] || 0) + 1;
+    }
+  }
+}
+
+const allTerms = Object.entries(termMap)
+  .map(([term, { totalCount, cats }]) => {
+    const [dominantKey] = Object.entries(cats).sort((a, b) => b[1] - a[1])[0];
+    return { term, count: totalCount, key: dominantKey, cats };
+  })
+  .sort((a, b) => b.count - a.count);
+
+const cloudData = JSON.stringify({ terms: allTerms, base });
+const cloudDataB64 = Buffer.from(cloudData).toString('base64');
+---
+
+<Base title="Cloud — Barking">
+<style>
+  .cloud-page {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - var(--nav-h, 56px));
+    overflow: hidden;
+  }
+
+  .cloud-header {
+    padding: 2rem 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.2rem;
+  }
+
+  .cloud-header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin: 0 0 0.2rem;
+    line-height: 1;
+  }
+
+  .cloud-subtitle {
+    font-size: 0.63rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .legend {
+    display: flex;
+    gap: 1.5rem;
+    padding-bottom: 0.15rem;
+    flex-shrink: 0;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+  }
+  .legend-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .legend-dot.domains    { background: var(--color-domains,    #8ab4e0); }
+  .legend-dot.atmosphere { background: var(--color-atmosphere, #e08ab4); }
+  .legend-dot.ground     { background: var(--color-ground,     #8ae0b4); }
+  .legend-dot.crux       { background: var(--color-crux,       #e0cc8a); }
+
+  .filter-bar {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.9rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+    align-items: center;
+  }
+
+  .filter-btn {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.85rem;
+    border: 1px solid var(--rule);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .filter-btn:hover             { border-color: var(--muted); color: var(--ink); }
+  .filter-btn.active-all        { border-color: var(--ink);                   color: var(--ink); }
+  .filter-btn.active-domains    { border-color: var(--color-domains,    #8ab4e0); color: var(--color-domains,    #8ab4e0); }
+  .filter-btn.active-atmosphere { border-color: var(--color-atmosphere, #e08ab4); color: var(--color-atmosphere, #e08ab4); }
+  .filter-btn.active-ground     { border-color: var(--color-ground,     #8ae0b4); color: var(--color-ground,     #8ae0b4); }
+  .filter-btn.active-crux       { border-color: var(--color-crux,       #e0cc8a); color: var(--color-crux,       #e0cc8a); }
+
+  .term-count-badge {
+    margin-left: auto;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  .cloud-canvas-wrap {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cloud-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  #cloud-svg:active { cursor: grabbing; }
+
+  .cloud-loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--muted);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  #cloud-tooltip {
+    position: fixed;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.5rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.12s;
+    z-index: 100;
+    white-space: nowrap;
+  }
+  #cloud-tooltip.visible { opacity: 1; }
+  #cloud-tooltip strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  .zoom-hint {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.35;
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+  }
+
+  @media (max-width: 768px) {
+    .cloud-header { padding: 1.5rem 1.5rem 1rem; flex-direction: column; gap: 1rem; align-items: flex-start; }
+    .filter-bar   { padding: 0.75rem 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+
+<div id="cloud-data" data-cloud={cloudDataB64} hidden></div>
+
+<div class="cloud-page">
+
+  <div class="cloud-header">
+    <div>
+      <h1>Cloud</h1>
+      <p class="cloud-subtitle">Terms by frequency — click any term to browse poems</p>
+    </div>
+    <div class="legend">
+      {categories.map(({ key, label }) => (
+        <div class="legend-item">
+          <div class={`legend-dot ${key}`}></div>
+          {label}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    {categories.map(({ key, label }) => (
+      <button class="filter-btn" data-filter={key}>{label}</button>
+    ))}
+    <button class="filter-btn" data-filter="all">All</button>
+    <span class="term-count-badge" id="term-count-badge"></span>
+  </div>
+
+  <div class="cloud-canvas-wrap">
+    <svg id="cloud-svg"></svg>
+    <div class="cloud-loading" id="cloud-loading">Arranging terms…</div>
+    <div class="zoom-hint">Scroll to zoom · Drag to pan</div>
+  </div>
+
+</div>
+
+<div id="cloud-tooltip"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+const _el = document.getElementById('cloud-data');
+const { terms: allTerms, base } = JSON.parse(atob(_el.dataset.cloud));
+
+function getColors() {
+  const s = getComputedStyle(document.documentElement);
+  return {
+    domains:    s.getPropertyValue('--color-domains').trim()    || '#8ab4e0',
+    atmosphere: s.getPropertyValue('--color-atmosphere').trim() || '#e08ab4',
+    ground:     s.getPropertyValue('--color-ground').trim()     || '#8ae0b4',
+    crux:       s.getPropertyValue('--color-crux').trim()       || '#e0cc8a',
+  };
+}
+
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  let n = 0;
+  function poll() { if (window.d3) { cb(); return; } if (++n < 100) requestAnimationFrame(poll); }
+  requestAnimationFrame(poll);
+}
+waitForD3(initCloud);
+
+function initCloud() {
+  const wrap   = document.querySelector('.cloud-canvas-wrap');
+  const svg    = d3.select('#cloud-svg');
+  const g      = svg.append('g');
+  const tipEl  = document.getElementById('cloud-tooltip');
+  const badge  = document.getElementById('term-count-badge');
+  const loader = document.getElementById('cloud-loading');
+
+  let activeFilter = 'all';
+  let simulation   = null;
+  let nodeData     = [];
+
+  // ── Zoom & pan ──────────────────────────────────────────────────────────────
+  const zoom = d3.zoom()
+    .scaleExtent([0.25, 4])
+    .on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
+
+  // ── Font size scale ─────────────────────────────────────────────────────────
+  function getFontScale(visibleTerms) {
+    const counts = visibleTerms.map(t => t.displayCount);
+    const minC   = Math.min(...counts);
+    const maxC   = Math.max(...counts);
+    // Use sqrt scale so huge outliers don't dominate
+    return d3.scaleSqrt().domain([minC, maxC]).range([13, 48]).clamp(true);
+  }
+
+  // ── Collision radius (based on approximate text width) ──────────────────────
+  function collideR(d) {
+    return (d.fontSize || 14) * d.term.length * 0.33 + 6;
+  }
+
+  // ── Prepare node data for a given filter ────────────────────────────────────
+  function buildNodes(filter) {
+    const visible = allTerms
+      .map(t => {
+        const c = filter === 'all' ? t.count : (t.cats[filter] || 0);
+        return { ...t, displayCount: c, visible: c > 0 };
+      })
+      .filter(t => t.visible);
+
+    const fScale = getFontScale(visible);
+    visible.forEach(t => { t.fontSize = fScale(t.displayCount); });
+    return visible;
+  }
+
+  // ── Draw / redraw ────────────────────────────────────────────────────────────
+  function draw(filter, firstRun) {
+    activeFilter = filter;
+    const visible = buildNodes(filter);
+
+    badge.textContent = `${visible.length} term${visible.length !== 1 ? 's' : ''}`;
+
+    const W  = wrap.offsetWidth;
+    const H  = wrap.offsetHeight;
+    const cx = W / 2, cy = H / 2;
+
+    // On re-filter, preserve positions of terms that were already placed
+    const posCache = new Map(nodeData.map(n => [n.term, { x: n.x, y: n.y, vx: n.vx || 0, vy: n.vy || 0 }]));
+
+    nodeData = visible.map(t => {
+      const cached = posCache.get(t.term);
+      return {
+        ...t,
+        x:  cached ? cached.x  : cx + (Math.random() - 0.5) * W * 0.5,
+        y:  cached ? cached.y  : cy + (Math.random() - 0.5) * H * 0.5,
+        vx: cached ? cached.vx : 0,
+        vy: cached ? cached.vy : 0,
+      };
+    });
+
+    // ── Bind text nodes ──────────────────────────────────────────────────────
+    const textSel = g.selectAll('text.cloud-node')
+      .data(nodeData, d => d.term);
+
+    // EXIT
+    textSel.exit()
+      .transition().duration(300)
+      .attr('opacity', 0)
+      .remove();
+
+    // ENTER
+    const entered = textSel.enter()
+      .append('text')
+      .attr('class', 'cloud-node')
+      .attr('text-anchor', 'middle')
+      .attr('dominant-baseline', 'middle')
+      .attr('cursor', 'pointer')
+      .attr('fill', d => getColors()[d.key] || '#888')
+      .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+      .attr('font-size', d => d.fontSize + 'px')
+      .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
+      .attr('opacity', 0)
+      .attr('x', d => d.x)
+      .attr('y', d => d.y)
+      .text(d => d.term);
+
+    entered.transition().duration(400).delay((d, i) => i * 4).attr('opacity', 1);
+
+    // UPDATE
+    textSel
+      .transition().duration(350)
+      .attr('font-size', d => d.fontSize + 'px')
+      .attr('font-weight', d => d.fontSize < 18 ? '500' : '300')
+      .attr('fill', d => getColors()[d.key] || '#888')
+      .attr('opacity', 1);
+
+    const allNodes = g.selectAll('text.cloud-node');
+
+    // ── Events ───────────────────────────────────────────────────────────────
+    allNodes
+      .on('mouseenter', function(event, d) {
+        d3.select(this)
+          .transition().duration(120)
+          .attr('opacity', 1)
+          .style('text-decoration', 'underline');
+
+        // Dim others slightly
+        allNodes.filter(n => n.term !== d.term)
+          .transition().duration(120).attr('opacity', 0.25);
+
+        const label = activeFilter !== 'all' ? activeFilter : d.key;
+        const count = activeFilter !== 'all' ? d.cats[activeFilter] : d.count;
+        tipEl.innerHTML = `<strong>${d.term}</strong> · ${count} poem${count !== 1 ? 's' : ''} · ${label}`;
+        tipEl.classList.add('visible');
+      })
+      .on('mousemove', event => {
+        tipEl.style.left = (event.clientX + 14) + 'px';
+        tipEl.style.top  = (event.clientY - 30) + 'px';
+      })
+      .on('mouseleave', function() {
+        d3.select(this).transition().duration(120).attr('opacity', 1).style('text-decoration', 'none');
+        allNodes.transition().duration(200).attr('opacity', 1);
+        tipEl.classList.remove('visible');
+      })
+      .on('click', (e, d) => {
+        const cat = activeFilter !== 'all' ? activeFilter : Object.keys(d.cats).join(',');
+        window.location.href = `${base}/browse?term=${encodeURIComponent(d.term)}&cats=${encodeURIComponent(cat)}`;
+      });
+
+    // ── Force simulation ─────────────────────────────────────────────────────
+    if (simulation) simulation.stop();
+
+    simulation = d3.forceSimulation(nodeData)
+      // Pull everything toward centre, weighted by font size (bigger = closer in)
+      .force('x', d3.forceX(cx).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+      .force('y', d3.forceY(cy).strength(d => 0.03 + (d.fontSize / 48) * 0.08))
+      // Collision: terms don't overlap
+      .force('collide', d3.forceCollide(collideR).strength(0.85).iterations(3))
+      // Slight repulsion between all nodes for spacing
+      .force('charge', d3.forceManyBody().strength(d => -d.fontSize * 1.5).distanceMax(200))
+      .alphaDecay(0.018)
+      .velocityDecay(0.4)
+      .on('tick', () => {
+        g.selectAll('text.cloud-node')
+          .attr('x', d => d.x)
+          .attr('y', d => d.y);
+      })
+      .on('end', () => {
+        loader.style.display = 'none';
+        // Auto-fit after first settle
+        if (firstRun) fitView(400);
+      });
+
+    loader.style.display = 'flex';
+    loader.textContent   = 'Arranging terms…';
+  }
+
+  // ── Fit all nodes into view ──────────────────────────────────────────────────
+  function fitView(duration) {
+    const W = wrap.offsetWidth, H = wrap.offsetHeight;
+    if (!nodeData.length) return;
+    const xs = nodeData.map(d => d.x), ys = nodeData.map(d => d.y);
+    const x0 = Math.min(...xs) - 60, x1 = Math.max(...xs) + 60;
+    const y0 = Math.min(...ys) - 40, y1 = Math.max(...ys) + 40;
+    const k  = Math.min(W / (x1 - x0), H / (y1 - y0), 1.2) * 0.85;
+    const tx = (W - k * (x0 + x1)) / 2;
+    const ty = (H - k * (y0 + y1)) / 2;
+    svg.transition().duration(duration)
+      .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+
+  // ── Filter buttons ───────────────────────────────────────────────────────────
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.filter-btn').forEach(b => { b.className = 'filter-btn'; });
+      btn.classList.add(f === 'all' ? 'active-all' : `active-${f}`);
+      draw(f, false);
+      // Re-fit after simulation settles
+      setTimeout(() => fitView(600), 1200);
+    });
+  });
+
+  // ── Hash routing ─────────────────────────────────────────────────────────────
+  const hash = location.hash.replace('#', '');
+  const initialFilter = ['domains','atmosphere','ground','crux'].includes(hash) ? hash : 'ground';
+  if (initialFilter !== 'all') {
+    const btn = document.querySelector(`[data-filter="${initialFilter}"]`);
+    if (btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => { b.className = 'filter-btn'; });
+      btn.classList.add(`active-${initialFilter}`);
+    }
+  }
+
+  // ── Recolour nodes when theme changes ────────────────────────────────────────
+  function recolour() {
+    const colors = getColors();
+    g.selectAll('text.cloud-node')
+      .transition().duration(400)
+      .attr('fill', d => colors[d.key] || '#888');
+  }
+
+  // Watch for theme class changes on <html>
+  new MutationObserver(mutations => {
+    for (const m of mutations) {
+      if (m.attributeName === 'class') { recolour(); break; }
+    }
+  }).observe(document.documentElement, { attributes: true });
+
+  // ── Initial draw ─────────────────────────────────────────────────────────────
+  draw(initialFilter, true);
+}
+</script>
+</Base>

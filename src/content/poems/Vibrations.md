@@ -1,0 +1,101 @@
+---
+tags:
+  - family
+  - unit
+  - society
+  - tribe
+  - nation
+  - market
+  - tissue
+  - connects
+  - coheres
+  - together
+  - alive
+  - dead
+  - neither
+  - expanding
+  - product
+  - sprawl
+  - extracting
+  - life
+  - organism
+  - excretions
+  - harvested
+  - howls
+  - shouts
+  - sound
+  - sight
+  - germ
+  - force
+  - principle
+  - organising
+  - loudspeakers
+  - networks
+  - invisible
+  - vibrations
+  - space
+  - forms
+  - apart
+  - hold
+related:
+  - "[[Mortar]]"
+  - "[[Power]]"
+  - "[[Cobwebs]]"
+word-count: "80"
+domain:
+  - market
+  - vibration
+crux:
+  - inversion
+atmosphere:
+  - diagnostic
+  - austere
+ground:
+  - structural
+  - materialist
+description:
+  - Market, dead vibrations — harvested sound, invisible networks,  pushing forms apart to hold them together.
+---
+# Vibrations
+Family is
+The smallest structural unit
+Of society
+Tribe, or nation
+
+Market is
+The tissue —
+That connects and coheres
+The unit
+Together
+
+In itself
+Neither living
+Nor dying
+
+The expanding product
+Sprawl 
+Extracting life
+From each organism
+In a unit
+
+Harvested excretions
+Howls, shouts
+Sound’s capacity
+To reach 
+Beyond sight
+
+The germ, force
+Organising principle 
+Of market
+
+From loudspeakers
+To networks — invisible
+Dead vibrations, occupying
+Every gap
+Between forms — pushing each 
+Further apart
+
+In order
+To hold each
+Together
+ 

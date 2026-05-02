@@ -1,0 +1,785 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoemsMeta, getFilterOptions } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const poems = getAllPoemsMeta();
+const filters = getFilterOptions(poems);
+
+const poemsJson = JSON.stringify(poems.map(p => ({
+  slug:       p.slug,
+  title:      p.title,
+  atmosphere: p.atmosphere,
+  crux:       p.crux,
+  ground:     p.ground,
+  domains:    p.domains,
+  tags:       p.tags,
+  preview:    p.preview,
+})));
+
+// All tags (untruncated) — client-side JS handles show-more
+const allTagsJson = JSON.stringify(filters.tags);
+---
+<Base title="Browse">
+<style>
+  .layout {
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    min-height: calc(100vh - var(--nav-h));
+  }
+
+  /* Sidebar */
+  .sidebar {
+    border-right: 1px solid var(--rule);
+    padding: 2.5rem 1.8rem;
+    position: sticky;
+    top: var(--nav-h);
+    height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+  }
+
+  .search {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.85rem;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s;
+  }
+  .search:focus { border-color: var(--ink); }
+  .search::placeholder { color: var(--muted); }
+
+  .filter-group { margin-bottom: 2rem; }
+  .filter-heading {
+    font-size: 0.62rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+  }
+  .filter-heading:hover { color: var(--ink); }
+  .filter-arrow {
+    font-size: 0.55rem;
+    transition: transform 0.2s;
+    color: var(--muted);
+  }
+  .filter-heading.collapsed .filter-arrow { transform: rotate(-90deg); }
+  .filter-body.collapsed { display: none; }
+
+  .filter-btn {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; padding: 0.4rem 0;
+    font-size: 0.84rem;
+    color: var(--muted);
+    cursor: pointer;
+    background: none; border: none;
+    font-family: 'Karla', sans-serif;
+    text-align: left;
+    transition: color 0.15s;
+    letter-spacing: 0.01em;
+  }
+  .filter-btn:hover { color: var(--ink); }
+  .filter-btn.active { color: var(--ink); font-weight: 400; }
+  .filter-btn.active .filter-name::before { content: '— '; color: var(--accent); }
+  .filter-count { font-size: 0.7rem; color: var(--rule); }
+
+  /* Tags show-more */
+  .filter-btn.tag-hidden { display: none; }
+  .show-more-btn {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    cursor: pointer;
+    background: none; border: none;
+    font-family: 'Karla', sans-serif;
+    margin-top: 0.4rem;
+    padding: 0;
+  }
+
+  .clear-all {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    cursor: pointer;
+    background: none; border: none;
+    font-family: 'Karla', sans-serif;
+    margin-top: 0.5rem;
+    display: none;
+  }
+  .clear-all.visible { display: block; }
+
+  /* Cloud term badge — shown when arriving from cloud page */
+  .term-badge {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--rule);
+  }
+  .term-badge.visible { display: flex; }
+  .term-badge-label { color: var(--ink); font-size: 0.8rem; letter-spacing: 0.05em; text-transform: none; }
+  .term-badge-clear {
+    margin-left: auto;
+    cursor: pointer;
+    background: none; border: none;
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1;
+    padding: 0;
+  }
+  .term-badge-clear:hover { color: var(--ink); }
+
+  /* Main area */
+  .main { padding: 2.5rem 3.5rem; }
+
+  .browse-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--rule);
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .result-count {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+  }
+  .result-count span { font-family: 'Karla', sans-serif; font-size: 0.85rem; color: var(--muted); }
+
+  .sort-btns { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+  .sort-btn {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    background: none; border: none;
+    font-family: 'Karla', sans-serif;
+    transition: color 0.2s;
+    padding-bottom: 2px;
+  }
+  .sort-btn.active {
+    color: var(--ink);
+    border-bottom: 1px solid var(--ink);
+  }
+
+  /* Poem grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    border-left: 1px solid var(--rule);
+    border-top: 1px solid var(--rule);
+  }
+
+  .empty {
+    padding: 4rem;
+    color: var(--muted);
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    grid-column: 1/-1;
+  }
+
+  /* Mobile filter toggle - hidden on desktop */
+  .filter-toggle {
+    display: none;
+  }
+
+  .sidebar-backdrop {
+    display: none;
+  }
+
+  /* MOBILE RESPONSIVE */
+  @media (max-width: 900px) {
+    .layout { 
+      grid-template-columns: 1fr;
+      display: block;
+    }
+
+    /* Filter toggle button - visible only on mobile */
+    .filter-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--bg-panel);
+      color: var(--ink);
+      border: 1px solid var(--rule);
+      padding: 0.85rem 1.3rem;
+      cursor: pointer;
+      margin: 1.5rem 1.5rem 0;
+      transition: background 0.2s, border-color 0.2s;
+      position: sticky;
+      top: calc(var(--nav-h) + 1rem);
+      z-index: 100;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .filter-toggle:hover {
+      background: var(--stat-hover);
+      border-color: var(--muted);
+    }
+
+    .filter-toggle::before {
+      content: '☰';
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    .filter-toggle.active::before {
+      content: '✕';
+    }
+
+    /* Sidebar becomes slide-out drawer on mobile */
+    .sidebar {
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      bottom: 0;
+      width: 85%;
+      max-width: 320px;
+      background: var(--bg);
+      border-right: 1px solid var(--rule);
+      border-bottom: none;
+      z-index: 1000;
+      transform: translateX(-100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      height: calc(100vh - var(--nav-h));
+      overflow-y: auto;
+      box-shadow: none;
+    }
+
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 4px 0 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Backdrop */
+    .sidebar-backdrop {
+      display: none;
+      position: fixed;
+      top: var(--nav-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .sidebar-backdrop.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    /* Main content */
+    .main { 
+      padding: 1.5rem;
+      width: 100%;
+    }
+
+    .browse-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+
+    .sort-btns {
+      width: 100%;
+      justify-content: flex-start;
+    }
+
+    /* Grid - single column on very small screens */
+    .grid {
+      grid-template-columns: 1fr;
+      border-left: none;
+    }
+
+    .empty {
+      padding: 3rem 1.5rem;
+    }
+  }
+
+  /* Very small screens */
+  @media (max-width: 500px) {
+    .filter-toggle {
+      margin: 1rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.65rem;
+    }
+
+    .main {
+      padding: 1rem;
+    }
+
+    .sidebar {
+      width: 90%;
+      max-width: none;
+    }
+  }
+</style>
+
+<div class="layout">
+  <!-- Mobile filter toggle button -->
+  <button class="filter-toggle" id="filter-toggle" aria-label="Toggle filters">
+    Filters
+  </button>
+
+  <!-- Backdrop for mobile -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <input class="search" type="text" placeholder="Search poems…" id="search" />
+
+    <!-- Badge shown when arriving from the cloud page via ?term= -->
+    <div class="term-badge" id="term-badge">
+      <span>Cloud term: </span>
+      <span class="term-badge-label" id="term-badge-label"></span>
+      <button class="term-badge-clear" id="term-badge-clear" title="Clear">✕</button>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="domain-body">Domain <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="domain-body">
+        {filters.domains.map(([val, count]) => (
+          <button class="filter-btn" data-type="domain" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="atmosphere-body">Atmosphere <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="atmosphere-body">
+        {filters.atmospheres.map(([val, count]) => (
+          <button class="filter-btn" data-type="atmosphere" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="ground-body">Ground <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="ground-body">
+        {filters.grounds.map(([val, count]) => (
+          <button class="filter-btn" data-type="ground" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="crux-body">Crux <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="crux-body">
+        {filters.cruxes.map(([val, count]) => (
+          <button class="filter-btn" data-type="crux" data-val={val}>
+            <span class="filter-name">{val}</span>
+            <span class="filter-count">{count}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-group">
+      <div class="filter-heading" data-collapse="tag-body">Tags <span class="filter-arrow">&#9662;</span></div>
+      <div class="filter-body" id="tag-body">
+        <div id="tag-list"></div>
+        <button class="show-more-btn" id="show-more-tags" style="display:none"></button>
+      </div>
+    </div>
+
+    <button class="clear-all" id="clear-all">Clear all filters</button>
+  </aside>
+
+  <main class="main">
+    <div class="browse-header">
+      <div class="result-count" id="count">458 <span>poems</span></div>
+      <div class="sort-btns">
+        <button class="sort-btn active" data-sort="alpha">A–Z</button>
+        <button class="sort-btn" data-sort="atmosphere">By Atmosphere</button>
+        <button class="sort-btn" data-sort="domain">By Domain</button>
+        <button class="sort-btn" data-sort="crux">By Crux</button>
+        <button class="sort-btn" data-sort="ground">By Ground</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </main>
+</div>
+
+<script define:vars={{ poemsJson, allTagsJson, base }}>
+  const ALL = JSON.parse(poemsJson);
+  const ALL_TAGS = JSON.parse(allTagsJson);
+  const TAG_PREVIEW = 10;
+  let tagsExpanded = false;
+  let sortMode = 'alpha';
+
+  const CAT_FIELD = {
+    domains: 'domains',
+    atmosphere: 'atmosphere',
+    ground: 'ground',
+    crux: 'crux'
+  };
+
+  const params = new URLSearchParams(location.search);
+  let active = {
+    domain:     params.get('domain')     || null,
+    atmosphere: params.get('atmosphere') || null,
+    ground:     params.get('ground')     || null,
+    crux:       params.get('crux')       || null,
+    tag:        params.get('tag')        || null,
+  };
+  let cloudTerm = params.get('term') || null;
+  let cloudCats = params.get('cats') ? params.get('cats').split(',') : null;
+
+  // ── Mobile filter toggle ───────────────────────────────────────────────────
+  const toggleBtn = document.getElementById('filter-toggle');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  const sidebar = document.getElementById('sidebar');
+
+  function toggleSidebar() {
+    const isOpen = sidebar.classList.contains('open');
+    
+    if (isOpen) {
+      sidebar.classList.remove('open');
+      backdrop.classList.remove('visible');
+      toggleBtn.classList.remove('active');
+      document.body.style.overflow = '';
+    } else {
+      sidebar.classList.add('open');
+      backdrop.classList.add('visible');
+      toggleBtn.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  if (toggleBtn && sidebar) {
+    toggleBtn.addEventListener('click', toggleSidebar);
+    
+    if (backdrop) {
+      backdrop.addEventListener('click', toggleSidebar);
+    }
+
+    // Close on escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && sidebar.classList.contains('open')) {
+        toggleSidebar();
+      }
+    });
+  }
+
+  // ── URL sync ───────────────────────────────────────────────────────────────
+  function syncURL() {
+    const p = new URLSearchParams();
+    if (active.domain)     p.set('domain', active.domain);
+    if (active.atmosphere) p.set('atmosphere', active.atmosphere);
+    if (active.ground)     p.set('ground', active.ground);
+    if (active.crux)       p.set('crux', active.crux);
+    if (active.tag)        p.set('tag', active.tag);
+    if (cloudTerm) {
+      p.set('term', cloudTerm);
+      if (cloudCats) p.set('cats', cloudCats.join(','));
+    }
+    const qs = p.toString();
+    history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
+  }
+
+  // ── Cloud term badge ───────────────────────────────────────────────────────
+  function updateTermBadge() {
+    const badge = document.getElementById('term-badge');
+    const label = document.getElementById('term-badge-label');
+    if (cloudTerm) {
+      label.textContent = cloudTerm;
+      badge.classList.add('visible');
+    } else {
+      badge.classList.remove('visible');
+    }
+  }
+
+  document.getElementById('term-badge-clear').addEventListener('click', () => {
+    cloudTerm = null;
+    cloudCats = null;
+    syncURL();
+    updateTermBadge();
+    updateClear();
+    apply();
+  });
+
+  // ── Render tag list ────────────────────────────────────────────────────────
+  function renderTags() {
+    const visible = tagsExpanded ? ALL_TAGS : ALL_TAGS.slice(0, TAG_PREVIEW);
+    const tagList = document.getElementById('tag-list');
+    tagList.innerHTML = visible.map(([val, count]) => `
+      <button
+        class="filter-btn${active.tag === val ? ' active' : ''}"
+        data-type="tag"
+        data-val="${val.replace(/"/g, '&quot;')}"
+      >
+        <span class="filter-name">${active.tag === val ? '— ' : ''}${val}</span>
+        <span class="filter-count">${count}</span>
+      </button>
+    `).join('');
+
+    tagList.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleFilterClick(btn));
+    });
+
+    const showMoreBtn = document.getElementById('show-more-tags');
+    if (ALL_TAGS.length > TAG_PREVIEW) {
+      showMoreBtn.style.display = 'block';
+      showMoreBtn.textContent = tagsExpanded
+        ? `Show fewer`
+        : `+${ALL_TAGS.length - TAG_PREVIEW} more`;
+    } else {
+      showMoreBtn.style.display = 'none';
+    }
+  }
+
+  // ── Filter click handler ───────────────────────────────────────────────────
+  function handleFilterClick(btn) {
+    const type = btn.dataset.type;
+    const val  = btn.dataset.val;
+
+    if (active[type] === val) {
+      active[type] = null;
+      btn.classList.remove('active');
+    } else {
+      document.querySelectorAll(`[data-type="${type}"]`).forEach(b => b.classList.remove('active'));
+      active[type] = val;
+      btn.classList.add('active');
+    }
+
+    // Clicking a sidebar filter clears any cloud term override
+    cloudTerm = null;
+    cloudCats = null;
+    updateTermBadge();
+
+    syncURL();
+    updateClear();
+    apply();
+
+    // Auto-close sidebar on mobile after selecting filter
+    if (window.innerWidth <= 900 && sidebar.classList.contains('open')) {
+      setTimeout(toggleSidebar, 150);
+    }
+
+    if (type === 'tag') renderTags();
+  }
+
+  // ── Main filter + search ───────────────────────────────────────────────────
+  function apply() {
+    const q = document.getElementById('search').value.toLowerCase();
+    let list = ALL.filter(p => {
+      // Standard per-category filters (from sidebar clicks or single ?param= links)
+      if (active.domain     && !p.domains.includes(active.domain))         return false;
+      if (active.atmosphere && !p.atmosphere.includes(active.atmosphere))   return false;
+      if (active.ground     && !(p.ground||[]).includes(active.ground))      return false;
+      if (active.crux       && !p.crux.includes(active.crux))               return false;
+      if (active.tag        && !p.tags.includes(active.tag))                 return false;
+
+      // Cross-category cloud term filter: poem must contain the term in
+      // at least one of the categories it was tagged with in the cloud.
+      if (cloudTerm && cloudCats) {
+        const termLower = cloudTerm.toLowerCase();
+        const matchesAny = cloudCats.some(cat => {
+          const field = CAT_FIELD[cat];
+          if (!field) return false;
+          const values = p[field] || [];
+          return values.some(v => v.toLowerCase() === termLower);
+        });
+        if (!matchesAny) return false;
+      }
+
+      if (q && !p.title.toLowerCase().includes(q) && !p.preview.toLowerCase().includes(q)) return false;
+      return true;
+    });
+
+    if (sortMode === 'alpha')           list.sort((a, b) => a.title.localeCompare(b.title));
+    else if (sortMode === 'atmosphere') list.sort((a, b) => (a.atmosphere[0] || '').localeCompare(b.atmosphere[0] || ''));
+    else if (sortMode === 'domain')     list.sort((a, b) => (a.domains[0]    || '').localeCompare(b.domains[0]    || ''));
+    else if (sortMode === 'crux')       list.sort((a, b) => (a.crux[0]       || '').localeCompare(b.crux[0]       || ''));
+    else if (sortMode === 'ground')     list.sort((a, b) => ((a.ground||[])[0]|| '').localeCompare((b.ground||[])[0]|| ''));
+
+    document.getElementById('count').innerHTML =
+      `${list.length} <span>poem${list.length !== 1 ? 's' : ''}</span>`;
+
+    const grid = document.getElementById('grid');
+    if (list.length === 0) {
+      grid.innerHTML = '<div class="empty">No poems match these filters.</div>';
+      return;
+    }
+
+    grid.innerHTML = list.map(p => {
+      const previewHtml = p.preview
+        .split('\n')
+        .filter(l => l.trim())
+        .slice(0, 4)
+        .map(l => `<p>${l}</p>`)
+        .join('');
+      return `
+        <a href="${base}/poem/${p.slug}" class="card">
+          <div class="card-title">${p.title}</div>
+          <div class="card-preview">${previewHtml}</div>
+        </a>
+      `;
+    }).join('');
+  }
+
+  // ── Static filter buttons ──────────────────────────────────────────────────
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const type = btn.dataset.type;
+    if (active[type] === btn.dataset.val) btn.classList.add('active');
+    btn.addEventListener('click', () => handleFilterClick(btn));
+  });
+
+  // ── Sort buttons ───────────────────────────────────────────────────────────
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      sortMode = btn.dataset.sort;
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      apply();
+    });
+  });
+
+  // ── Search ─────────────────────────────────────────────────────────────────
+  const searchEl = document.getElementById('search');
+  searchEl.addEventListener('input', apply);
+  searchEl.addEventListener('keydown', e => {
+    if (e.key === 'Tab') searchEl.blur();
+  });
+
+  // ── Clear all ──────────────────────────────────────────────────────────────
+  function updateClear() {
+    const hasActive = Object.values(active).some(Boolean) || !!cloudTerm;
+    document.getElementById('clear-all').classList.toggle('visible', hasActive);
+  }
+
+  document.getElementById('clear-all').addEventListener('click', () => {
+    active = { domain: null, atmosphere: null, ground: null, crux: null, tag: null };
+    cloudTerm = null;
+    cloudCats = null;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('search').value = '';
+    syncURL();
+    updateClear();
+    updateTermBadge();
+    renderTags();
+    apply();
+  });
+
+  // ── Show more tags ─────────────────────────────────────────────────────────
+  document.getElementById('show-more-tags').addEventListener('click', () => {
+    tagsExpanded = !tagsExpanded;
+    renderTags();
+  });
+
+  // ── Init ───────────────────────────────────────────────────────────────────
+  renderTags();
+  updateClear();
+  updateTermBadge();
+  apply();
+
+  // ── Collapsible filter sections ────────────────────────────────────────────
+  document.querySelectorAll('.filter-heading[data-collapse]').forEach(heading => {
+    heading.addEventListener('click', () => {
+      const bodyId = heading.dataset.collapse;
+      const body   = document.getElementById(bodyId);
+      if (!body) return;
+      const collapsed = body.classList.toggle('collapsed');
+      heading.classList.toggle('collapsed', collapsed);
+    });
+  });
+</script>
+
+<style is:global>
+  .card {
+    padding: 2.5rem 2rem;
+    border-bottom: 1px solid var(--rule);
+    border-right: 1px solid var(--rule);
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .card:hover { background: var(--paper-warm); }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .card-preview {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 0.78rem;
+    line-height: 2;
+    color: var(--muted);
+    font-style: italic;
+  }
+  .card-preview p {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Mobile card adjustments */
+  @media (max-width: 900px) {
+    .card {
+      padding: 2rem 1.5rem;
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .card {
+      padding: 1.5rem 1rem;
+    }
+
+    .card-title {
+      font-size: 1rem;
+    }
+
+    .card-preview {
+      font-size: 0.75rem;
+      line-height: 1.8;
+    }
+  }
+</style>
+</Base>

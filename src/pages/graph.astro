@@ -1,0 +1,1528 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAllPoems } from '../lib/poems.js';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/,'');
+
+const poems = getAllPoems();
+
+// ── Nodes ────────────────────────────────────────────────────────────────────
+const nodes = poems.map(p => ({
+  id:         p.slug,
+  label:      p.title,
+  domains:    p.domains    || [],
+  atmosphere: p.atmosphere || [],
+  tags:       p.tags       || [],
+  crux:       p.crux       || [],
+  ground:     p.ground     || [],
+  related:    p.related    || [],
+  preview:    p.preview    || '',
+}));
+
+// ── Edges: shared values across all fields, max 10 per node ──────────────────
+const FIELDS = ['domains','atmosphere','tags','crux','ground'];
+const edgeMap = new Map();
+const degree  = new Map(nodes.map(n => [n.id, 0]));
+
+function addEdge(slugA, slugB, field, value) {
+  if ((degree.get(slugA)||0) >= 10 || (degree.get(slugB)||0) >= 10) return;
+  const key = [slugA, slugB].sort().join('||');
+  if (!edgeMap.has(key)) {
+    edgeMap.set(key, { source: slugA, target: slugB, fields: new Set(), values: [] });
+    degree.set(slugA, (degree.get(slugA)||0) + 1);
+    degree.set(slugB, (degree.get(slugB)||0) + 1);
+  }
+  const e = edgeMap.get(key);
+  e.fields.add(field);
+  e.values.push(value);
+}
+
+for (let i = 0; i < nodes.length; i++) {
+  const a = nodes[i];
+  for (let j = i + 1; j < nodes.length; j++) {
+    const b = nodes[j];
+    FIELDS.forEach(f => {
+      (a[f] || []).forEach(v => {
+        if ((b[f] || []).includes(v)) addEdge(a.id, b.id, f, v);
+      });
+    });
+  }
+  (a.related || []).forEach(ref => {
+    const target = nodes.find(n =>
+      n.id === ref ||
+      n.label.toLowerCase() === ref.toLowerCase() ||
+      n.id === ref.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')
+    );
+    if (target && target.id !== a.id) addEdge(a.id, target.id, 'related', ref);
+  });
+}
+
+const edges = [...edgeMap.values()].map(e => ({
+  source: e.source, target: e.target,
+  fields: [...e.fields], values: e.values,
+}));
+
+// ── Hub index ────────────────────────────────────────────────────────────────
+const hubIndex = {};
+
+nodes.forEach(n => {
+  FIELDS.forEach(f => {
+    (n[f] || []).forEach(v => {
+      const key = `${f}::${v}`;
+      if (!hubIndex[key]) hubIndex[key] = { field: f, value: v, poems: [] };
+      hubIndex[key].poems.push(n.id);
+    });
+  });
+});
+
+const hubsByField = {};
+FIELDS.forEach(f => { hubsByField[f] = []; });
+Object.values(hubIndex).forEach(h => {
+  if (h.poems.length >= 1 && hubsByField[h.field]) {
+    hubsByField[h.field].push(h);
+  }
+});
+// Sort by poem count descending (richest hubs first)
+FIELDS.forEach(f => {
+  hubsByField[f].sort((a, b) => b.poems.length - a.poems.length);
+});
+
+const graphData = JSON.stringify({ nodes, edges, hubsByField });
+const graphDataB64 = Buffer.from(graphData).toString('base64');
+---
+
+<Base title="Graph — Barking">
+<style>
+  .graph-page {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    height: calc(100vh - var(--nav-h, 56px));
+    overflow: hidden;
+  }
+
+  .sidebar {
+    border-right: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--bg);
+  }
+
+  .sidebar-head {
+    padding: 1.6rem 1.4rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .sidebar-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--ink);
+    margin: 0 0 0.15rem;
+    line-height: 1;
+  }
+  .sidebar-sub {
+    font-size: 0.57rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .mode-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .mode-tab {
+    flex: 1;
+    padding: 0.7rem 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.63rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s;
+  }
+  .mode-tab:hover  { color: var(--ink); }
+  .mode-tab.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  .sidebar-panel {
+    flex: 1;
+    overflow-y: auto;
+    display: none;
+    flex-direction: column;
+  }
+  .sidebar-panel.active { display: flex; }
+
+  /* ── Hub sort bar ── */
+  .hub-sort-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+    padding: 0 1.4rem;
+  }
+  .hub-sort-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-right: 0.6rem;
+    flex-shrink: 0;
+  }
+  .hub-sort-btn {
+    font-size: 0.55rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.55rem 0.5rem;
+    font-family: 'Karla', sans-serif;
+    transition: color 0.15s;
+    border-bottom: 1.5px solid transparent;
+    margin-bottom: -1px;
+  }
+  .hub-sort-btn:hover { color: var(--ink); }
+  .hub-sort-btn.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ── Intersection mode bar ── */
+  .intersect-bar {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.4rem;
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+    background: var(--bg-panel);
+  }
+  .intersect-bar.visible { display: flex; }
+  .intersect-label {
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    flex: 1;
+    line-height: 1.5;
+  }
+  .intersect-label strong {
+    color: var(--ink);
+    font-weight: 600;
+    font-style: normal;
+  }
+  .intersect-clear {
+    font-size: 0.6rem;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 0.3rem;
+    font-family: 'Karla', sans-serif;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.15s;
+    flex-shrink: 0;
+  }
+  .intersect-clear:hover { color: var(--ink); }
+
+  .accordion-item {
+    border-bottom: 1px solid var(--rule);
+    flex-shrink: 0;
+  }
+  .accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.75rem 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    transition: color 0.15s, background 0.15s;
+  }
+  .accordion-trigger:hover { color: var(--ink); background: var(--stat-hover); }
+  .accordion-trigger.open  { color: var(--ink); }
+
+  .accordion-trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .field-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .fd-domains    { background: #7c9e87; }
+  .fd-atmosphere { background: #a07080; }
+  .fd-tags       { background: #7088a0; }
+  .fd-crux       { background: #a09060; }
+  .fd-ground     { background: #a08050; }
+
+  .accordion-arrow {
+    font-size: 0.6rem;
+    transition: transform 0.2s;
+    color: var(--muted);
+  }
+  .accordion-trigger.open .accordion-arrow { transform: rotate(180deg); }
+
+  .accordion-body {
+    display: none;
+    flex-direction: column;
+    padding: 0.3rem 0 0.5rem;
+    background: var(--bg-panel);
+  }
+  .accordion-body.open { display: flex; }
+
+  .accordion-search {
+    margin: 0.4rem 1rem 0.5rem;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.75rem;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .accordion-search:focus { border-color: var(--muted); }
+  .accordion-search::placeholder { color: var(--muted); opacity: 0.6; }
+
+  /* ── Value list: chips mode ── */
+  .value-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 220px;
+    overflow-y: auto;
+  }
+  .value-list.chips-mode {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0.3rem 1rem 0.6rem;
+    max-height: 180px;
+  }
+
+  /* Row mode (alphabetical) */
+  .value-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.32rem 1.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.78rem;
+    color: var(--muted);
+    text-align: left;
+    transition: background 0.1s, color 0.1s;
+  }
+  .value-btn:hover  { background: var(--stat-hover); color: var(--ink); }
+  .value-btn.active { background: var(--stat-hover); color: var(--ink); font-weight: 500; }
+  .value-btn.intersect-second {
+    background: var(--stat-hover);
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  /* Chip mode */
+  .value-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.22rem 0.55rem;
+    border: 1px solid var(--rule);
+    background: none;
+    cursor: pointer;
+    font-family: 'Karla', sans-serif;
+    color: var(--muted);
+    transition: background 0.1s, color 0.1s, border-color 0.1s;
+    white-space: nowrap;
+    line-height: 1;
+  }
+  .value-chip:hover  { background: var(--stat-hover); color: var(--ink); border-color: var(--muted); }
+  .value-chip.active { background: var(--stat-hover); color: var(--ink); border-color: var(--ink); }
+  .value-chip.intersect-second {
+    border-style: dashed;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .chip-label { font-size: 0.72rem; }
+  .chip-count {
+    font-size: 0.58rem;
+    opacity: 0.55;
+  }
+
+  .value-count {
+    font-size: 0.62rem;
+    color: var(--rule);
+    flex-shrink: 0;
+  }
+
+  /* ── Hover preview strip ── */
+  .hub-preview {
+    display: none;
+    flex-direction: column;
+    gap: 0.1rem;
+    padding: 0.4rem 1rem 0.5rem;
+    border-top: 1px solid var(--rule);
+    max-height: 90px;
+    overflow-y: auto;
+  }
+  .hub-preview.visible { display: flex; }
+  .hub-preview-title {
+    font-size: 0.54rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    margin-bottom: 0.2rem;
+    flex-shrink: 0;
+  }
+  .hub-preview-poem {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.8rem;
+    color: var(--muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .local-panel-inner {
+    padding: 1rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+  }
+  .local-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .poem-search {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+    font-family: 'Karla', sans-serif;
+    border: 1px solid var(--rule);
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  .poem-search:focus { border-color: var(--muted); }
+  .poem-search::placeholder { color: var(--muted); }
+
+  .poem-results { display: flex; flex-direction: column; gap: 0.1rem; overflow-y: auto; flex: 1; }
+  .poem-result-btn {
+    display: block;
+    width: 100%;
+    padding: 0.4rem 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.88rem;
+    color: var(--muted);
+    text-align: left;
+    border-radius: 2px;
+    transition: background 0.1s, color 0.1s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .poem-result-btn:hover  { background: var(--stat-hover); color: var(--ink); }
+  .poem-result-btn.active { background: var(--stat-hover); color: var(--ink); }
+
+  .sidebar-info {
+    flex-shrink: 0;
+    border-top: 1px solid var(--rule);
+    padding: 0.9rem 1.4rem;
+    min-height: 72px;
+  }
+  .info-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin: 0 0 0.15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .info-meta {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    line-height: 1.6;
+  }
+  .info-open {
+    display: inline-block;
+    margin-top: 0.45rem;
+    font-family: 'Karla', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .info-open:hover { color: var(--ink); border-color: var(--ink); }
+  .info-empty {
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-style: italic;
+    font-family: 'Libre Baskerville', Georgia, serif;
+  }
+  .info-hint {
+    margin-top: 0.35rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.6;
+    font-family: 'Karla', sans-serif;
+  }
+
+  .canvas-wrap {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-panel);
+  }
+  #graph-svg { width: 100%; height: 100%; display: block; }
+
+  .graph-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    pointer-events: none;
+  }
+  .empty-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 300;
+    color: var(--ink);
+    opacity: 0.3;
+  }
+  .empty-hint {
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    opacity: 0.4;
+    font-family: 'Karla', sans-serif;
+  }
+
+  #tooltip {
+    position: absolute;
+    pointer-events: none;
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 0.6rem 0.8rem;
+    max-width: 200px;
+    z-index: 20;
+    display: none;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  }
+  .tt-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    margin-bottom: 0.1rem;
+    line-height: 1.2;
+  }
+  .tt-via {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+  }
+  .tt-intersect {
+    margin-top: 0.25rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: 'Karla', sans-serif;
+    color: var(--ink);
+    opacity: 0.7;
+    font-style: italic;
+  }
+
+  .graph-hint {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    font-size: 0.57rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0.45;
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  /* ── Overview canvas overlay label ── */
+  .overview-label {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Karla', sans-serif;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 700px) {
+    .graph-page { grid-template-columns: 1fr; grid-template-rows: 45vh 1fr; }
+    .sidebar { height: 45vh; border-right: none; border-bottom: 1px solid var(--rule); }
+  }
+</style>
+
+<div id="graph-data" data-graph={graphDataB64} data-base={base} hidden></div>
+
+<div class="graph-page">
+
+  <aside class="sidebar">
+    <div class="sidebar-head">
+      <h1 class="sidebar-title">Graph</h1>
+      <div class="sidebar-sub">Connection map</div>
+    </div>
+
+    <div class="mode-tabs">
+      <button class="mode-tab active" data-mode="hub">Hub view</button>
+      <button class="mode-tab"        data-mode="local">Local view</button>
+    </div>
+
+    <!-- Hub panel -->
+    <div class="sidebar-panel active" id="panel-hub">
+
+      <!-- Sort + view controls -->
+      <div class="hub-sort-bar">
+        <button class="hub-sort-btn active" data-sort="count">Most poems</button>
+        <button class="hub-sort-btn"        data-sort="alpha">A–Z</button>
+        <button class="hub-sort-btn"        data-sort="chips" title="Toggle chip/list view" style="margin-left:auto">Chips</button>
+      </div>
+
+      <!-- Intersection status bar -->
+      <div class="intersect-bar" id="intersect-bar">
+        <span class="intersect-label" id="intersect-label">Shift-click a second term</span>
+        <button class="intersect-clear" id="intersect-clear">✕ clear</button>
+      </div>
+
+      {[
+        { key: 'domains',    label: 'Domain'     },
+        { key: 'atmosphere', label: 'Atmosphere' },
+        { key: 'ground',     label: 'Ground'     },
+        { key: 'crux',       label: 'Crux'       },
+        { key: 'tags',       label: 'Tags'       },
+      ].map(({ key, label }) => (
+        <div class="accordion-item" data-field={key}>
+          <button class="accordion-trigger" data-field={key}>
+            <span class="accordion-trigger-left">
+              <span class={`field-dot fd-${key}`}></span>
+              {label}
+            </span>
+            <span class="accordion-arrow">▾</span>
+          </button>
+          <div class="accordion-body">
+            <input
+              class="accordion-search"
+              type="text"
+              placeholder={`Filter ${label.toLowerCase()}…`}
+              autocomplete="off"
+              data-field={key}
+            />
+            <div class="value-list" data-field={key}></div>
+            <!-- Hover preview strip (shown on hover before click) -->
+            <div class="hub-preview" id={`preview-${key}`}>
+              <div class="hub-preview-title">In this hub</div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Local panel -->
+    <div class="sidebar-panel" id="panel-local">
+      <div class="local-panel-inner">
+        <div class="local-label">Search poems</div>
+        <input
+          class="poem-search"
+          type="text"
+          id="poem-search"
+          placeholder="Type a title…"
+          autocomplete="off"
+        />
+        <div class="poem-results" id="poem-results"></div>
+      </div>
+    </div>
+
+    <div class="sidebar-info" id="sidebar-info">
+      <div class="info-empty">Open a hub or search for a poem</div>
+    </div>
+  </aside>
+
+  <div class="canvas-wrap" id="canvas-wrap">
+    <svg id="graph-svg"></svg>
+    <div class="graph-empty" id="graph-empty">
+      <div class="empty-title">Choose a starting point</div>
+      <div class="empty-hint" id="empty-hint">Hub view — expand a field and pick a term</div>
+    </div>
+    <div class="overview-label" id="overview-label" style="display:none">Overview — click any hub to explore</div>
+    <div id="tooltip">
+      <div class="tt-title"     id="tt-title"></div>
+      <div class="tt-via"       id="tt-via"></div>
+      <div class="tt-intersect" id="tt-intersect" style="display:none"></div>
+    </div>
+    <div class="graph-hint" id="graph-hint" style="display:none">
+      Scroll to zoom · Drag to pan · Click node to open poem<br>
+      Shift-click hub term to find intersections
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script>
+
+const _el      = document.getElementById('graph-data');
+const base     = _el.dataset.base;
+const graphData = atob(_el.dataset.graph);
+
+const FIELD_KEYS = ['domains','atmosphere','ground','crux','tags'];
+
+function waitForD3(cb) {
+  if (window.d3) { cb(); return; }
+  let attempts = 0;
+  function poll() {
+    if (window.d3) { cb(); return; }
+    if (++attempts < 100) requestAnimationFrame(poll);
+  }
+  requestAnimationFrame(poll);
+}
+waitForD3(init);
+
+function init() {
+
+const { nodes, edges, hubsByField } = JSON.parse(graphData);
+const nodeById = new Map(nodes.map(n => [n.id, n]));
+
+const adj = new Map();
+edges.forEach(e => {
+  if (!adj.has(e.source)) adj.set(e.source, []);
+  if (!adj.has(e.target)) adj.set(e.target, []);
+  adj.get(e.source).push({ slug: e.target, fields: e.fields, values: e.values });
+  adj.get(e.target).push({ slug: e.source, fields: e.fields, values: e.values });
+});
+
+const COLORS = {
+  domains: '#7c9e87', atmosphere: '#a07080', tags: '#7088a0',
+  crux: '#a09060', ground: '#a08050', related: '#888',
+};
+const edgeColor = fields => COLORS[fields[0]] || '#888';
+
+const wrap = document.getElementById('canvas-wrap');
+const svg  = d3.select('#graph-svg');
+const g    = svg.append('g');
+const zoom = d3.zoom().scaleExtent([0.1, 5])
+  .on('zoom', e => g.attr('transform', e.transform));
+svg.call(zoom);
+
+let simulation      = null;
+let currentMode     = 'hub';
+let activeKey       = null;        // first selected hub key  "field::value"
+let intersectKey    = null;        // second selected hub key (intersection mode)
+let activePoemSlug  = null;
+let sortMode        = 'count';     // 'count' | 'alpha'
+let chipsMode       = false;
+
+// ── Max poem count for chip sizing ───────────────────────────────────────────
+const globalMax = Math.max(1, ...FIELD_KEYS.flatMap(f =>
+  (hubsByField[f] || []).map(h => h.poems.length)
+));
+
+// ── Render value list ─────────────────────────────────────────────────────────
+FIELD_KEYS.forEach(field => {
+  renderValueList(field, hubsByField[field] || [], '');
+});
+
+function getSortedHubs(field, filter) {
+  const q      = filter.toLowerCase();
+  const hubs   = hubsByField[field] || [];
+  const filtered = q ? hubs.filter(h => h.value.toLowerCase().includes(q)) : hubs.slice();
+  if (sortMode === 'alpha') {
+    filtered.sort((a, b) => a.value.localeCompare(b.value));
+  } else {
+    filtered.sort((a, b) => b.poems.length - a.poems.length);
+  }
+  return filtered;
+}
+
+function renderValueList(field, _ignored, filter) {
+  const list = document.querySelector(`.value-list[data-field="${field}"]`);
+  if (!list) return;
+
+  const hubs = getSortedHubs(field, filter);
+
+  if (chipsMode) {
+    list.classList.add('chips-mode');
+    list.innerHTML = hubs.map(h => {
+      const key      = field + '::' + h.value;
+      const isActive = activeKey === key;
+      const isSecond = intersectKey === key;
+      // Font size scaled by poem count
+      const minPx = 10, maxPx = 15;
+      const frac  = Math.sqrt(h.poems.length / globalMax);
+      const fs    = (minPx + frac * (maxPx - minPx)).toFixed(1);
+      return `<button
+        class="value-chip${isActive ? ' active' : ''}${isSecond ? ' intersect-second' : ''}"
+        data-field="${field}"
+        data-value="${h.value.replace(/"/g, '&quot;')}"
+        style="font-size:${fs}px"
+        title="${h.value} (${h.poems.length} poem${h.poems.length !== 1 ? 's' : ''})"
+      ><span class="chip-label">${h.value}</span><span class="chip-count">${h.poems.length}</span></button>`;
+    }).join('');
+  } else {
+    list.classList.remove('chips-mode');
+    list.innerHTML = hubs.map(h => {
+      const key      = field + '::' + h.value;
+      const isActive = activeKey === key;
+      const isSecond = intersectKey === key;
+      return `<button
+        class="value-btn${isActive ? ' active' : ''}${isSecond ? ' intersect-second' : ''}"
+        data-field="${field}"
+        data-value="${h.value.replace(/"/g, '&quot;')}"
+      ><span>${h.value}</span><span class="value-count">${h.poems.length}</span></button>`;
+    }).join('');
+  }
+
+  // Attach click events
+  list.querySelectorAll('.value-btn, .value-chip').forEach(btn => {
+    // Hover preview (before click)
+    btn.addEventListener('mouseenter', () => {
+      const f   = btn.dataset.field;
+      const v   = btn.dataset.value;
+      const hub = (hubsByField[f] || []).find(h => h.value === v);
+      if (!hub) return;
+      showHubPreview(f, hub);
+    });
+    btn.addEventListener('mouseleave', () => {
+      hideHubPreview(field);
+    });
+
+    btn.addEventListener('click', e => {
+      const f = btn.dataset.field;
+      const v = btn.dataset.value;
+      const key = f + '::' + v;
+      const hub = (hubsByField[f] || []).find(h => h.value === v);
+      if (!hub) return;
+
+      if (e.shiftKey && activeKey && activeKey !== key) {
+        // Intersection mode: second selection
+        intersectKey = key;
+        updateIntersectBar();
+        FIELD_KEYS.forEach(fk => {
+          const inp = document.querySelector(`.accordion-search[data-field="${fk}"]`);
+          renderValueList(fk, null, inp?.value || '');
+        });
+        const [f1, v1] = activeKey.split('::');
+        const hub1 = (hubsByField[f1] || []).find(h => h.value === v1);
+        const hub2 = hub;
+        if (hub1 && hub2) drawIntersection(f1, hub1, f, hub2);
+      } else {
+        // Normal first selection
+        intersectKey = null;
+        activeKey    = key;
+        updateIntersectBar();
+        FIELD_KEYS.forEach(fk => {
+          const inp = document.querySelector(`.accordion-search[data-field="${fk}"]`);
+          renderValueList(fk, null, inp?.value || '');
+        });
+        drawHub(f, hub);
+      }
+    });
+  });
+}
+
+// ── Hover preview strip ───────────────────────────────────────────────────────
+function showHubPreview(field, hub) {
+  const el = document.getElementById(`preview-${field}`);
+  if (!el) return;
+  const poems = hub.poems.map(id => nodeById.get(id)).filter(Boolean);
+  el.innerHTML = `<div class="hub-preview-title">In this hub (${poems.length})</div>` +
+    poems.slice(0, 6).map(p =>
+      `<div class="hub-preview-poem">${p.label}</div>`
+    ).join('') +
+    (poems.length > 6 ? `<div class="hub-preview-poem" style="opacity:0.4">+ ${poems.length - 6} more</div>` : '');
+  el.classList.add('visible');
+}
+function hideHubPreview(field) {
+  const el = document.getElementById(`preview-${field}`);
+  if (el) el.classList.remove('visible');
+}
+
+// ── Intersection bar ──────────────────────────────────────────────────────────
+function updateIntersectBar() {
+  const bar   = document.getElementById('intersect-bar');
+  const label = document.getElementById('intersect-label');
+  if (activeKey && !intersectKey) {
+    bar.classList.add('visible');
+    const [, v] = activeKey.split('::');
+    label.innerHTML = `<strong>${v}</strong> selected — shift-click another to intersect`;
+  } else if (activeKey && intersectKey) {
+    bar.classList.add('visible');
+    const [, v1] = activeKey.split('::');
+    const [, v2] = intersectKey.split('::');
+    label.innerHTML = `<strong>${v1}</strong> ∩ <strong>${v2}</strong>`;
+  } else {
+    bar.classList.remove('visible');
+  }
+}
+
+document.getElementById('intersect-clear').addEventListener('click', () => {
+  activeKey    = null;
+  intersectKey = null;
+  updateIntersectBar();
+  FIELD_KEYS.forEach(fk => {
+    const inp = document.querySelector(`.accordion-search[data-field="${fk}"]`);
+    renderValueList(fk, null, inp?.value || '');
+  });
+  clearGraph();
+});
+
+// ── Sort controls ─────────────────────────────────────────────────────────────
+document.querySelectorAll('.hub-sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (btn.dataset.sort === 'chips') {
+      chipsMode = !chipsMode;
+      btn.classList.toggle('active', chipsMode);
+    } else {
+      sortMode = btn.dataset.sort;
+      document.querySelectorAll('.hub-sort-btn[data-sort="count"], .hub-sort-btn[data-sort="alpha"]')
+        .forEach(b => b.classList.toggle('active', b === btn));
+    }
+    FIELD_KEYS.forEach(fk => {
+      const inp = document.querySelector(`.accordion-search[data-field="${fk}"]`);
+      renderValueList(fk, null, inp?.value || '');
+    });
+  });
+});
+
+// ── Accordion open/close ──────────────────────────────────────────────────────
+document.querySelectorAll('.accordion-trigger').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const body   = btn.nextElementSibling;
+    const isOpen = body.classList.contains('open');
+    document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+    document.querySelectorAll('.accordion-trigger').forEach(b => b.classList.remove('open'));
+    if (!isOpen) {
+      body.classList.add('open');
+      btn.classList.add('open');
+    }
+  });
+});
+
+// ── Accordion search ──────────────────────────────────────────────────────────
+document.querySelectorAll('.accordion-search').forEach(input => {
+  input.addEventListener('input', () => {
+    renderValueList(input.dataset.field, null, input.value);
+  });
+  input.addEventListener('click', e => e.stopPropagation());
+});
+
+// ── Mode tabs ─────────────────────────────────────────────────────────────────
+document.querySelectorAll('.mode-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    currentMode = btn.dataset.mode;
+    document.querySelectorAll('.mode-tab').forEach(b => b.classList.toggle('active', b === btn));
+    document.getElementById('panel-hub').classList.toggle('active',   currentMode === 'hub');
+    document.getElementById('panel-local').classList.toggle('active', currentMode === 'local');
+    clearGraph();
+    document.getElementById('empty-hint').textContent =
+      currentMode === 'hub'
+        ? 'Hub view — expand a field and pick a term'
+        : 'Local view — search and select a poem';
+    if (currentMode === 'hub') drawOverview();
+  });
+});
+
+// ── Poem search (local panel) ─────────────────────────────────────────────────
+document.getElementById('poem-search').addEventListener('input', e => {
+  const q  = e.target.value.trim().toLowerCase();
+  const el = document.getElementById('poem-results');
+  if (!q) { el.innerHTML = ''; return; }
+  const matches = nodes.filter(n => n.label.toLowerCase().includes(q)).slice(0, 14);
+  el.innerHTML = matches.map(n =>
+    `<button class="poem-result-btn${activePoemSlug === n.id ? ' active' : ''}" data-slug="${n.id}">${n.label}</button>`
+  ).join('');
+  el.querySelectorAll('.poem-result-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      activePoemSlug = btn.dataset.slug;
+      el.querySelectorAll('.poem-result-btn').forEach(b => b.classList.toggle('active', b === btn));
+      drawLocal(btn.dataset.slug);
+    });
+  });
+});
+
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function clearGraph() {
+  if (simulation) { simulation.stop(); simulation = null; }
+  g.selectAll('*').remove();
+  document.getElementById('graph-empty').style.display = 'flex';
+  document.getElementById('graph-hint').style.display  = 'none';
+  document.getElementById('overview-label').style.display = 'none';
+  setInfo(null);
+}
+
+function showCanvas(isOverview) {
+  document.getElementById('graph-empty').style.display = 'none';
+  document.getElementById('graph-hint').style.display  = isOverview ? 'none' : 'block';
+  document.getElementById('overview-label').style.display = isOverview ? 'block' : 'none';
+}
+
+function resetZoom(duration = 350) {
+  svg.transition().duration(duration).call(zoom.transform, d3.zoomIdentity);
+}
+
+function setInfo(node, via) {
+  const el = document.getElementById('sidebar-info');
+  if (!node) {
+    el.innerHTML = '<div class="info-empty">Open a hub or search for a poem</div>' +
+      (currentMode === 'hub' ? '<div class="info-hint">Shift-click a second term to find intersections</div>' : '');
+    return;
+  }
+  const meta = [
+    ...(node.atmosphere || []).slice(0, 2),
+    ...(node.domains    || []).slice(0, 2),
+    ...(node.ground     || []).slice(0, 1),
+  ].filter(Boolean).join(' · ');
+  el.innerHTML = `
+    <div class="info-title">${node.label}</div>
+    ${meta ? `<div class="info-meta">${meta}</div>` : ''}
+    ${via  ? `<div class="info-meta" style="margin-top:.2rem">via ${via}</div>` : ''}
+    <a href="${base}/poem/${node.id}" class="info-open">Open poem →</a>
+  `;
+}
+
+// ── Overview: show all field-hubs as a constellation ─────────────────────────
+function drawOverview() {
+  if (simulation) simulation.stop();
+  g.selectAll('*').remove();
+  showCanvas(true);
+  resetZoom(0);
+
+  const W  = wrap.offsetWidth;
+  const H  = wrap.offsetHeight;
+  const cx = W / 2, cy = H / 2;
+
+  // Build field-level summary nodes
+  const fieldNodes = FIELD_KEYS.map((f, i) => {
+    const hubs = hubsByField[f] || [];
+    const totalPoems = new Set(hubs.flatMap(h => h.poems)).size;
+    return {
+      id: f,
+      label: f.charAt(0).toUpperCase() + f.slice(1),
+      count: hubs.length,
+      poems: totalPoems,
+      color: COLORS[f] || '#888',
+      x: cx + Math.cos((i / FIELD_KEYS.length) * 2 * Math.PI - Math.PI / 2) * Math.min(W, H) * 0.28,
+      y: cy + Math.sin((i / FIELD_KEYS.length) * 2 * Math.PI - Math.PI / 2) * Math.min(W, H) * 0.28,
+    };
+  });
+
+  const maxPoems = Math.max(...fieldNodes.map(n => n.poems), 1);
+  const rScale   = d => 14 + (d.poems / maxPoems) * 28;
+
+  // Draw subtle lines between all field nodes
+  for (let i = 0; i < fieldNodes.length; i++) {
+    for (let j = i + 1; j < fieldNodes.length; j++) {
+      g.append('line')
+        .attr('x1', fieldNodes[i].x).attr('y1', fieldNodes[i].y)
+        .attr('x2', fieldNodes[j].x).attr('y2', fieldNodes[j].y)
+        .attr('stroke', 'var(--rule)').attr('stroke-width', 0.5).attr('stroke-opacity', 0.4);
+    }
+  }
+
+  // Draw field nodes
+  const nodeGs = g.append('g').selectAll('g').data(fieldNodes).join('g')
+    .attr('transform', d => `translate(${d.x},${d.y})`)
+    .style('cursor', 'pointer');
+
+  nodeGs.append('circle')
+    .attr('r', rScale)
+    .attr('fill', d => d.color)
+    .attr('fill-opacity', 0.08)
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', 1.2);
+
+  nodeGs.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', '-0.2em')
+    .attr('font-size', '11px')
+    .attr('font-family', 'Karla, sans-serif')
+    .attr('letter-spacing', '0.1em')
+    .attr('fill', d => d.color)
+    .text(d => d.label.toUpperCase());
+
+  nodeGs.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', '1em')
+    .attr('font-size', '10px')
+    .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+    .attr('fill', 'var(--muted)')
+    .text(d => `${d.count} terms · ${d.poems} poems`);
+
+  // Hover: highlight and show top terms
+  nodeGs
+    .on('mouseover', function(event, d) {
+      d3.select(this).select('circle')
+        .attr('fill-opacity', 0.18)
+        .attr('r', rScale(d) + 4);
+      // Show top 3 hubs in tooltip
+      const topHubs = (hubsByField[d.id] || []).slice(0, 3).map(h => h.value).join(', ');
+      tipTitle.textContent = d.label;
+      tipVia.textContent   = topHubs ? `Top: ${topHubs}` : '';
+      tipEl.style.display  = 'block';
+      moveTip(event);
+    })
+    .on('mousemove', moveTip)
+    .on('mouseout', function(event, d) {
+      d3.select(this).select('circle')
+        .attr('fill-opacity', 0.08)
+        .attr('r', rScale(d));
+      hideTip();
+    })
+    .on('click', (e, d) => {
+      // Open the accordion for this field
+      const trigger = document.querySelector(`.accordion-trigger[data-field="${d.id}"]`);
+      if (trigger) {
+        // Switch to the hub panel and open the accordion
+        document.querySelectorAll('.mode-tab').forEach(b => b.classList.remove('active'));
+        document.querySelector('.mode-tab[data-mode="hub"]').classList.add('active');
+        document.getElementById('panel-hub').classList.add('active');
+        document.getElementById('panel-local').classList.remove('active');
+        currentMode = 'hub';
+        // Open the accordion
+        document.querySelectorAll('.accordion-body').forEach(b => b.classList.remove('open'));
+        document.querySelectorAll('.accordion-trigger').forEach(b => b.classList.remove('open'));
+        const body = trigger.nextElementSibling;
+        body.classList.add('open');
+        trigger.classList.add('open');
+        trigger.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    });
+}
+
+// ── Hub view ──────────────────────────────────────────────────────────────────
+function drawHub(field, hub) {
+  if (simulation) simulation.stop();
+  g.selectAll('*').remove();
+  showCanvas(false);
+  resetZoom();
+
+  const W  = wrap.offsetWidth;
+  const H  = wrap.offsetHeight;
+  const cx = W / 2, cy = H / 2;
+  const spokes = hub.poems.map(id => nodeById.get(id)).filter(Boolean);
+  const n      = spokes.length;
+  const R      = Math.min(W, H) * (n > 24 ? 0.43 : n > 12 ? 0.38 : 0.32);
+  const color  = COLORS[field] || '#888';
+
+  const spokeData = spokes.map((p, i) => ({
+    poem: p,
+    x: cx + R * Math.cos((i / n) * 2 * Math.PI - Math.PI / 2),
+    y: cy + R * Math.sin((i / n) * 2 * Math.PI - Math.PI / 2),
+  }));
+  const spokeById = new Map(spokeData.map(s => [s.poem.id, s]));
+
+  g.append('g').selectAll('line').data(spokeData).join('line')
+    .attr('x1', cx).attr('y1', cy)
+    .attr('x2', d => d.x).attr('y2', d => d.y)
+    .attr('stroke', color).attr('stroke-width', 1).attr('stroke-opacity', 0.2);
+
+  const crossEdges = [];
+  spokes.forEach(p => {
+    (adj.get(p.id) || []).forEach(e => {
+      if (spokeById.has(e.slug) && p.id < e.slug)
+        crossEdges.push({ sx: spokeById.get(p.id), tx: spokeById.get(e.slug), fields: e.fields });
+    });
+  });
+  g.append('g').selectAll('line').data(crossEdges).join('line')
+    .attr('x1', d => d.sx.x).attr('y1', d => d.sx.y)
+    .attr('x2', d => d.tx.x).attr('y2', d => d.tx.y)
+    .attr('stroke', d => edgeColor(d.fields))
+    .attr('stroke-width', 0.8).attr('stroke-opacity', 0.18)
+    .attr('stroke-dasharray', '3 3');
+
+  const hubG = g.append('g').attr('transform', `translate(${cx},${cy})`);
+  hubG.append('circle').attr('r', 22)
+    .attr('fill', color).attr('fill-opacity', 0.1)
+    .attr('stroke', color).attr('stroke-width', 1.5);
+  hubG.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
+    .attr('font-size', '11px').attr('font-family', 'Karla, sans-serif')
+    .attr('letter-spacing', '0.06em').attr('fill', color)
+    .text(hub.value);
+
+  const nodeGs = g.append('g').selectAll('g').data(spokeData).join('g')
+    .style('cursor', 'pointer');
+
+  nodeGs.append('circle')
+    .attr('cx', d => d.x).attr('cy', d => d.y)
+    .attr('r', 5).attr('fill', 'var(--bg-panel)')
+    .attr('stroke', color).attr('stroke-width', 1);
+
+  nodeGs.append('text')
+    .attr('x', d => d.x).attr('y', d => d.y - 10)
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '10px')
+    .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+    .attr('fill', 'var(--muted)')
+    .text(d => d.poem.label.length > 20 ? d.poem.label.slice(0, 18) + '…' : d.poem.label);
+
+  nodeGs
+    .on('mouseover', function(event, d) {
+      d3.select(this).select('circle').attr('r', 8).attr('fill', color).attr('fill-opacity', 0.25);
+      showTip(event, d.poem, `${field}: ${hub.value}`);
+      setInfo(d.poem, `${field}: ${hub.value}`);
+    })
+    .on('mousemove', moveTip)
+    .on('mouseout', function() {
+      d3.select(this).select('circle').attr('r', 5).attr('fill', 'var(--bg-panel)').attr('fill-opacity', 1);
+      hideTip();
+    })
+    .on('click', (e, d) => { window.location.href = `${base}/poem/${d.poem.id}`; });
+
+  // Info: show hub summary
+  const infoEl = document.getElementById('sidebar-info');
+  infoEl.innerHTML = `
+    <div class="info-title">${hub.value}</div>
+    <div class="info-meta">${field} · ${n} poem${n !== 1 ? 's' : ''}</div>
+    <div class="info-hint">Shift-click another term to intersect</div>
+  `;
+}
+
+// ── Intersection view ─────────────────────────────────────────────────────────
+function drawIntersection(field1, hub1, field2, hub2) {
+  if (simulation) simulation.stop();
+  g.selectAll('*').remove();
+  showCanvas(false);
+  resetZoom();
+
+  const W  = wrap.offsetWidth;
+  const H  = wrap.offsetHeight;
+  const cx = W / 2, cy = H / 2;
+
+  const set1   = new Set(hub1.poems);
+  const set2   = new Set(hub2.poems);
+  const shared = hub1.poems.filter(id => set2.has(id));
+  const only1  = hub1.poems.filter(id => !set2.has(id));
+  const only2  = hub2.poems.filter(id => !set1.has(id));
+
+  const color1 = COLORS[field1] || '#888';
+  const color2 = COLORS[field2] || '#888';
+
+  // Two hub nodes, offset left/right
+  const hub1x = cx - Math.min(W * 0.2, 160);
+  const hub2x = cx + Math.min(W * 0.2, 160);
+  const hubY  = cy;
+
+  // Positions: shared in middle column, only1 left, only2 right
+  function layoutPoems(ids, centerX, spread) {
+    const poems = ids.map(id => nodeById.get(id)).filter(Boolean);
+    const n = poems.length;
+    return poems.map((p, i) => {
+      const angle = (i / Math.max(n, 1)) * 2 * Math.PI - Math.PI / 2;
+      return {
+        poem: p,
+        x: centerX + spread * Math.cos(angle),
+        y: hubY   + spread * Math.sin(angle),
+      };
+    });
+  }
+
+  const spreadShared = Math.min(H * 0.25, 120);
+  const spreadOnly   = Math.min(H * 0.3, 140);
+
+  const sharedData = layoutPoems(shared,  cx,    spreadShared);
+  const only1Data  = layoutPoems(only1,   hub1x, spreadOnly);
+  const only2Data  = layoutPoems(only2,   hub2x, spreadOnly);
+
+  // Draw connector between hubs
+  g.append('line')
+    .attr('x1', hub1x).attr('y1', hubY)
+    .attr('x2', hub2x).attr('y2', hubY)
+    .attr('stroke', 'var(--rule)').attr('stroke-width', 1).attr('stroke-dasharray', '4 4').attr('stroke-opacity', 0.4);
+
+  // Draw spokes
+  function drawSpokes(data, hx, hy, color) {
+    g.append('g').selectAll('line').data(data).join('line')
+      .attr('x1', hx).attr('y1', hy)
+      .attr('x2', d => d.x).attr('y2', d => d.y)
+      .attr('stroke', color).attr('stroke-width', 0.8).attr('stroke-opacity', 0.25);
+  }
+  // Shared poems connect to both hubs
+  sharedData.forEach(d => {
+    g.append('line')
+      .attr('x1', hub1x).attr('y1', hubY)
+      .attr('x2', d.x).attr('y2', d.y)
+      .attr('stroke', color1).attr('stroke-width', 0.8).attr('stroke-opacity', 0.3);
+    g.append('line')
+      .attr('x1', hub2x).attr('y1', hubY)
+      .attr('x2', d.x).attr('y2', d.y)
+      .attr('stroke', color2).attr('stroke-width', 0.8).attr('stroke-opacity', 0.3);
+  });
+  drawSpokes(only1Data, hub1x, hubY, color1);
+  drawSpokes(only2Data, hub2x, hubY, color2);
+
+  // Hub circles
+  function drawHubCircle(x, y, color, label) {
+    const hg = g.append('g').attr('transform', `translate(${x},${y})`);
+    hg.append('circle').attr('r', 24)
+      .attr('fill', color).attr('fill-opacity', 0.1)
+      .attr('stroke', color).attr('stroke-width', 1.5);
+    hg.append('text').attr('text-anchor', 'middle').attr('dy', '0.35em')
+      .attr('font-size', '11px').attr('font-family', 'Karla, sans-serif')
+      .attr('letter-spacing', '0.06em').attr('fill', color)
+      .text(label);
+  }
+  drawHubCircle(hub1x, hubY, color1, hub1.value);
+  drawHubCircle(hub2x, hubY, color2, hub2.value);
+
+  // Intersection label
+  if (shared.length > 0) {
+    g.append('text')
+      .attr('x', cx).attr('y', cy - spreadShared - 20)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', '9px')
+      .attr('font-family', 'Karla, sans-serif')
+      .attr('letter-spacing', '0.14em')
+      .attr('fill', 'var(--muted)')
+      .attr('text-transform', 'uppercase')
+      .text(`${shared.length} shared poem${shared.length !== 1 ? 's' : ''}`);
+  }
+
+  // Draw poem nodes
+  function drawPoemNodes(data, color, isShared) {
+    const ngs = g.append('g').selectAll('g').data(data).join('g').style('cursor', 'pointer');
+    ngs.append('circle')
+      .attr('cx', d => d.x).attr('cy', d => d.y)
+      .attr('r', isShared ? 7 : 5)
+      .attr('fill', isShared ? color1 : 'var(--bg-panel)')
+      .attr('fill-opacity', isShared ? 0.22 : 1)
+      .attr('stroke', isShared ? 'var(--ink)' : color)
+      .attr('stroke-width', isShared ? 1.5 : 1);
+    if (isShared) {
+      // Second ring for intersection nodes
+      ngs.append('circle')
+        .attr('cx', d => d.x).attr('cy', d => d.y)
+        .attr('r', 4)
+        .attr('fill', color2)
+        .attr('fill-opacity', 0.35)
+        .attr('stroke', 'none');
+    }
+    ngs.append('text')
+      .attr('x', d => d.x).attr('y', d => d.y - 11)
+      .attr('text-anchor', 'middle')
+      .attr('font-size', isShared ? '10.5px' : '9.5px')
+      .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+      .attr('fill', isShared ? 'var(--ink)' : 'var(--muted)')
+      .text(d => d.poem.label.length > 18 ? d.poem.label.slice(0, 16) + '…' : d.poem.label);
+
+    ngs
+      .on('mouseover', function(event, d) {
+        d3.select(this).select('circle').attr('r', (isShared ? 7 : 5) + 3).attr('fill-opacity', 0.4);
+        const via = isShared
+          ? `${hub1.value} ∩ ${hub2.value}`
+          : `${color === color1 ? hub1.value : hub2.value} only`;
+        showTip(event, d.poem, via, isShared);
+        setInfo(d.poem, via);
+      })
+      .on('mousemove', moveTip)
+      .on('mouseout', function(event, d) {
+        d3.select(this).select('circle').attr('r', isShared ? 7 : 5).attr('fill-opacity', isShared ? 0.22 : 1);
+        hideTip();
+      })
+      .on('click', (e, d) => { window.location.href = `${base}/poem/${d.poem.id}`; });
+  }
+
+  drawPoemNodes(sharedData, color1, true);
+  drawPoemNodes(only1Data,  color1, false);
+  drawPoemNodes(only2Data,  color2, false);
+
+  // Info panel: intersection summary
+  const infoEl = document.getElementById('sidebar-info');
+  infoEl.innerHTML = `
+    <div class="info-title" style="font-size:0.88rem">${hub1.value} ∩ ${hub2.value}</div>
+    <div class="info-meta">${shared.length} shared · ${only1.length + only2.length} unique</div>
+    <div class="info-hint">Click any poem node to open it</div>
+  `;
+}
+
+// ── Local view ────────────────────────────────────────────────────────────────
+function drawLocal(slug) {
+  if (simulation) simulation.stop();
+  g.selectAll('*').remove();
+  showCanvas(false);
+  resetZoom();
+
+  const center = nodeById.get(slug);
+  if (!center) return;
+  setInfo(center);
+
+  const neighbours = (adj.get(slug) || [])
+    .map(e => ({ node: nodeById.get(e.slug), fields: e.fields, values: e.values }))
+    .filter(e => e.node);
+
+  const simNodes = [
+    { id: center.id, label: center.label, r: 13, isCenter: true, data: center },
+    ...neighbours.map(e => ({ id: e.node.id, label: e.node.label, r: 6, isCenter: false, data: e.node }))
+  ];
+  const simLinks = neighbours.map(e => ({
+    source: center.id, target: e.node.id, fields: e.fields, values: e.values,
+  }));
+
+  const W = wrap.offsetWidth, H = wrap.offsetHeight;
+
+  simulation = d3.forceSimulation(simNodes)
+    .force('link',    d3.forceLink(simLinks).id(d => d.id).distance(155).strength(0.85))
+    .force('charge',  d3.forceManyBody().strength(-700))
+    .force('center',  d3.forceCenter(W / 2, H / 2))
+    .force('collide', d3.forceCollide(d => d.r + 26))
+    .alphaDecay(0.035);
+
+  const linkSel = g.append('g').selectAll('line').data(simLinks).join('line')
+    .attr('stroke', d => edgeColor(d.fields))
+    .attr('stroke-width', 1.2).attr('stroke-opacity', 0.45);
+
+  const eLabelSel = g.append('g').selectAll('text').data(simLinks).join('text')
+    .attr('text-anchor', 'middle')
+    .attr('font-size', '9px').attr('font-family', 'Karla, sans-serif')
+    .attr('fill', 'var(--muted)').attr('pointer-events', 'none').attr('opacity', 0)
+    .text(d => d.fields.join(' · '));
+
+  const nodeGs = g.append('g').selectAll('g').data(simNodes).join('g')
+    .style('cursor', d => d.isCenter ? 'default' : 'pointer');
+
+  nodeGs.append('circle')
+    .attr('r', d => d.r)
+    .attr('fill',   d => d.isCenter ? 'var(--ink)' : 'var(--bg-panel)')
+    .attr('stroke', d => d.isCenter ? 'none' : 'var(--rule)')
+    .attr('stroke-width', 1);
+
+  nodeGs.append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dy', d => -(d.r + 6) + 'px')
+    .attr('font-size', d => d.isCenter ? '12px' : '10px')
+    .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+    .attr('fill', d => d.isCenter ? 'var(--ink)' : 'var(--muted)')
+    .text(d => d.label.length > 22 ? d.label.slice(0, 20) + '…' : d.label);
+
+  nodeGs.call(d3.drag()
+    .on('start', (ev, d) => { if (!ev.active) simulation.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+    .on('drag',  (ev, d) => { d.fx = ev.x; d.fy = ev.y; })
+    .on('end',   (ev, d) => { if (!ev.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+  );
+
+  nodeGs.filter(d => !d.isCenter)
+    .on('mouseover', function(event, d) {
+      const conn = simLinks.find(l => {
+        const s = typeof l.source === 'object' ? l.source.id : l.source;
+        const t = typeof l.target === 'object' ? l.target.id : l.target;
+        return s === d.id || t === d.id;
+      });
+      const col = conn ? edgeColor(conn.fields) : '#888';
+      d3.select(this).select('circle').attr('fill', col).attr('fill-opacity', 0.25).attr('r', d.r + 3);
+      eLabelSel.attr('opacity', l => {
+        const s = typeof l.source === 'object' ? l.source.id : l.source;
+        const t = typeof l.target === 'object' ? l.target.id : l.target;
+        return (s === d.id || t === d.id) ? 0.75 : 0;
+      });
+      showTip(event, d.data, conn ? conn.fields.join(' · ') : '');
+      setInfo(d.data, conn ? conn.fields.join(' · ') : '');
+    })
+    .on('mousemove', moveTip)
+    .on('mouseout', function(event, d) {
+      d3.select(this).select('circle').attr('fill', 'var(--bg-panel)').attr('fill-opacity', 1).attr('r', d.r);
+      eLabelSel.attr('opacity', 0);
+      hideTip();
+    })
+    .on('click', (e, d) => { window.location.href = `${base}/poem/${d.data.id}`; });
+
+  simulation.on('tick', () => {
+    linkSel
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    eLabelSel
+      .attr('x', d => (d.source.x + d.target.x) / 2)
+      .attr('y', d => (d.source.y + d.target.y) / 2 - 5);
+    nodeGs.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+}
+
+// ── Tooltip ───────────────────────────────────────────────────────────────────
+const tipEl         = document.getElementById('tooltip');
+const tipTitle      = document.getElementById('tt-title');
+const tipVia        = document.getElementById('tt-via');
+const tipIntersect  = document.getElementById('tt-intersect');
+
+function showTip(event, poem, via, isIntersection) {
+  tipTitle.textContent = poem.label;
+  tipVia.textContent   = via ? `via ${via}` : '';
+  if (isIntersection) {
+    tipIntersect.textContent = '✦ in both hubs';
+    tipIntersect.style.display = 'block';
+  } else {
+    tipIntersect.style.display = 'none';
+  }
+  tipEl.style.display  = 'block';
+  moveTip(event);
+}
+function moveTip(event) {
+  const rect = wrap.getBoundingClientRect();
+  let x = event.clientX - rect.left + 14;
+  let y = event.clientY - rect.top  + 14;
+  if (x + 210 > wrap.offsetWidth)  x -= 224;
+  if (y + 80  > wrap.offsetHeight) y -= 88;
+  tipEl.style.left = x + 'px';
+  tipEl.style.top  = y + 'px';
+}
+function hideTip() { tipEl.style.display = 'none'; }
+
+// ── Draw overview on initial hub-view load ────────────────────────────────────
+drawOverview();
+
+} // end init()
+</script>
+</Base>
