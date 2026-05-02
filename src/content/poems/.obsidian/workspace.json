@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Branded.md",
+                "file": "Wish.md",
                 "mode": "source",
-                "source": true
+                "source": false
               },
               "icon": "lucide-file",
-              "title": "Branded"
+              "title": "Wish"
             }
           },
           {
@@ -49,7 +49,8 @@
               "title": "Due Diligence"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -223,7 +224,7 @@
       "bases:Create new base": false
     }
   },
-  "active": "ebb35b547471d6ce",
+  "active": "bfd7f02fafa03832",
   "lastOpenFiles": [
     "Wish.md",
     "Fortune.md",
