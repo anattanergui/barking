@@ -22,6 +22,7 @@ ground:
 related:
   - "[[The Last Nothing]]"
   - "[[Or, Is It]]"
+  - "[[Fortune]]"
 word-count: "211"
 ---
 # The Placeless

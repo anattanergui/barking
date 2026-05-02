@@ -18,8 +18,8 @@ tags:
 word-count: "44"
 related:
   - "[[Confidant]]"
-  - "[[Solitude]]"
   - "[[None]]"
+  - "[[Solitude]]"
 domain:
   - self
   - other
