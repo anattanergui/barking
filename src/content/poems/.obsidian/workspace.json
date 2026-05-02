@@ -4,52 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "fdb8e7daa1580860",
+        "id": "6fd5de5f0b8bf12a",
         "type": "tabs",
         "children": [
           {
-            "id": "ebb35b547471d6ce",
+            "id": "44c6ed6b70e5f33b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "The Placeless.md",
+                "file": "Wish.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "The Placeless"
+              "title": "Wish"
             }
           },
           {
-            "id": "bfd7f02fafa03832",
+            "id": "b6ede5974111d3ba",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Fortune.md",
+                "file": "Known.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Fortune"
-            }
-          },
-          {
-            "id": "46193254dd901233",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Due Diligence.md",
-                "mode": "source",
-                "source": true
-              },
-              "icon": "lucide-file",
-              "title": "Due Diligence"
+              "title": "Known"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -223,15 +210,17 @@
       "bases:Create new base": false
     }
   },
-  "active": "ebb35b547471d6ce",
+  "active": "b6ede5974111d3ba",
   "lastOpenFiles": [
     "Wish.md",
-    "None.md",
-    "Fortune.md",
+    "Known.md",
     "Branded.md",
+    "The Placeless.md",
+    "Due Diligence.md",
+    "Fortune.md",
+    "None.md",
     "The Holy Ghost.md",
     "The Gap.md",
-    "Due Diligence.md",
     "Proxy.md",
     "Civilisation.md",
     "Autopsy.md",
@@ -242,7 +231,6 @@
     "Or, Is It.md",
     "Belonged.md",
     "Only.md",
-    "The Placeless.md",
     "Un —.md",
     "Yet.md",
     "You.md",
@@ -250,7 +238,6 @@
     "Doer.md",
     "Equivalence.md",
     "Here-ward.md",
-    "It.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
