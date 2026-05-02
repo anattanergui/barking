@@ -28,6 +28,7 @@ domain:
   - appearance
   - awareness
 crux:
+  - knowability
   - unknowability
 atmosphere:
   - austere
