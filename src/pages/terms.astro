@@ -430,12 +430,51 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     overflow: hidden;
   }
 
+  #view-list {
+    flex: 1;
+    overflow: hidden;
+    display: none;
+  }
+
+  .list-body {
+    display: flex;
+    height: 100%;
+  }
+
+  #lex-grid-wrap {
+    flex: 1;
+    overflow-y: auto;
+    min-width: 0;
+  }
+
+  /* ── SIDE CLOUD PANEL ────────────────────────────────────────────────────── */
+  .side-cloud {
+    width: 42%;
+    flex-shrink: 0;
+    border-left: 1px solid var(--rule);
+    background: var(--bg-panel);
+    position: relative;
+    overflow: hidden;
+    display: none; /* shown by JS when a single category is filtered */
+  }
+
+  .side-cloud.visible { display: block; }
+
+  #side-cloud-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+  }
+  #side-cloud-svg:active { cursor: grabbing; }
+
   /* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
   @media (max-width: 900px) {
     .terms-header { padding: 1.5rem 1.5rem 1rem; flex-direction: column; align-items: flex-start; }
     .controls-bar { padding: 0.65rem 1.5rem; flex-wrap: wrap; }
     .lex-grid { grid-template-columns: 1fr; margin: 0 1.5rem 3rem; }
     .legend { display: none; }
+    .side-cloud { display: none !important; }
   }
 </style>
 
@@ -607,26 +646,35 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
 
   <!-- List view -->
   <div id="view-list">
-    <div class="lex-grid">
-      {categories.map(({ key, label }) => (
-        <div class="cat-block" id={`block-${key}`} data-key={key}>
-          <div class={`cat-header ${key}`}>
-            <div class="cat-header-left">
-              <span class={`cat-title ${key}`}>{label}</span>
-              <span class="cat-count" id={`count-${key}`}></span>
+    <div class="list-body">
+      <!-- Left: term lists -->
+      <div class="lex-grid" id="lex-grid-wrap">
+        {categories.map(({ key, label }) => (
+          <div class="cat-block" id={`block-${key}`} data-key={key}>
+            <div class={`cat-header ${key}`}>
+              <div class="cat-header-left">
+                <span class={`cat-title ${key}`}>{label}</span>
+                <span class="cat-count" id={`count-${key}`}></span>
+              </div>
+              <div class="cat-controls">
+                <button class="sort-btn active" data-key={key} data-sort="alpha">A–Z</button>
+                <button class="sort-btn" data-key={key} data-sort="freq">most used</button>
+                <div class="ctrl-divider"></div>
+                <button class="collapse-btn" data-key={key} title="Collapse / expand">
+                  <span class="arrow">▾</span>
+                </button>
+              </div>
             </div>
-            <div class="cat-controls">
-              <button class="sort-btn active" data-key={key} data-sort="alpha">A–Z</button>
-              <button class="sort-btn" data-key={key} data-sort="freq">most used</button>
-              <div class="ctrl-divider"></div>
-              <button class="collapse-btn" data-key={key} title="Collapse / expand">
-                <span class="arrow">▾</span>
-              </button>
-            </div>
+            <div class="term-list" id={`list-${key}`}></div>
           </div>
-          <div class="term-list" id={`list-${key}`}></div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <!-- Right: mini cloud (shown when a single category is filtered) -->
+      <div class="side-cloud" id="side-cloud">
+        <svg id="side-cloud-svg"></svg>
+        <div class="cloud-loading" id="side-cloud-loading">Arranging terms…</div>
+        <div class="zoom-hint">Scroll to zoom · Drag to pan</div>
+      </div>
     </div>
   </div>
 
@@ -690,6 +738,9 @@ document.getElementById('btn-cloud').addEventListener('click', () => switchView(
 document.getElementById('btn-list').addEventListener('click', () => {
   switchView('list');
   if (!listRendered) { renderAllLists(); listRendered = true; }
+  // Show side cloud if a single category is already active
+  if (activeFilter !== 'all') drawSideCloud(activeFilter);
+  else hideSideCloud();
 });
 
 // ── Category filter (shared between views) ────────────────────────────────────
@@ -990,16 +1041,137 @@ function applyListFilter(key) {
   if (noRes) noRes.classList.toggle('visible', q !== '' && visible === 0);
 }
 
+let sideSimulation = null;
+let sideZoom = null;
+
+function drawSideCloud(filter) {
+  const panel   = document.getElementById('side-cloud');
+  const svgEl   = document.getElementById('side-cloud-svg');
+  const loader  = document.getElementById('side-cloud-loading');
+  const tipEl   = document.getElementById('cloud-tooltip');
+
+  panel.classList.add('visible');
+  if (loader) { loader.style.display = 'flex'; loader.textContent = 'Arranging terms…'; }
+
+  const svg = d3.select('#side-cloud-svg');
+  svg.selectAll('*').remove();
+  const g = svg.append('g');
+
+  if (!sideZoom) {
+    sideZoom = d3.zoom().scaleExtent([0.2, 4]).on('zoom', e => {
+      d3.select('#side-cloud-svg g').attr('transform', e.transform);
+    });
+  }
+  svg.call(sideZoom).call(sideZoom.transform, d3.zoomIdentity);
+
+  const wrap = panel;
+  const W = wrap.offsetWidth, H = wrap.offsetHeight;
+  const cx = W / 2, cy = H / 2;
+
+  const visible = allTerms
+    .map(t => {
+      const c = t.cats[filter] || 0;
+      return { ...t, displayCount: c };
+    })
+    .filter(t => t.displayCount > 0);
+
+  if (!visible.length) {
+    if (loader) loader.style.display = 'none';
+    return;
+  }
+
+  const counts = visible.map(t => t.displayCount);
+  const fScale = d3.scaleSqrt()
+    .domain([Math.min(...counts), Math.max(...counts)])
+    .range([11, 36]).clamp(true);
+  visible.forEach(t => { t.fontSize = fScale(t.displayCount); });
+
+  const nodes = visible.map(t => ({
+    ...t,
+    x: cx + (Math.random() - 0.5) * W * 0.5,
+    y: cy + (Math.random() - 0.5) * H * 0.5,
+  }));
+
+  const texts = g.selectAll('text').data(nodes, d => d.term)
+    .enter().append('text')
+    .attr('text-anchor', 'middle')
+    .attr('dominant-baseline', 'middle')
+    .attr('cursor', 'pointer')
+    .attr('fill', d => getColors()[d.key] || '#888')
+    .attr('font-family', 'Cormorant Garamond, Georgia, serif')
+    .attr('font-size', d => d.fontSize + 'px')
+    .attr('font-weight', d => d.fontSize < 16 ? '500' : '300')
+    .attr('opacity', 0)
+    .attr('x', d => d.x)
+    .attr('y', d => d.y)
+    .text(d => d.term)
+    .on('mouseenter', function(event, d) {
+      d3.select(this).style('text-decoration', 'underline');
+      tipEl.innerHTML = `<strong>${d.term}</strong> · ${d.displayCount} poem${d.displayCount !== 1 ? 's' : ''}`;
+      tipEl.classList.add('visible');
+    })
+    .on('mousemove', event => {
+      tipEl.style.left = (event.clientX + 14) + 'px';
+      tipEl.style.top  = (event.clientY - 30) + 'px';
+    })
+    .on('mouseleave', function() {
+      d3.select(this).style('text-decoration', 'none');
+      tipEl.classList.remove('visible');
+    })
+    .on('click', (e, d) => {
+      window.location.href = `${base}/browse?term=${encodeURIComponent(d.term)}&cats=${filter}`;
+    });
+
+  texts.transition().duration(400).delay((d, i) => i * 3).attr('opacity', 1);
+
+  if (sideSimulation) sideSimulation.stop();
+
+  sideSimulation = d3.forceSimulation(nodes)
+    .force('x', d3.forceX(cx).strength(0.04))
+    .force('y', d3.forceY(cy).strength(0.04))
+    .force('collide', d3.forceCollide(d => d.fontSize * d.term.length * 0.3 + 4).strength(0.85).iterations(3))
+    .force('charge', d3.forceManyBody().strength(d => -d.fontSize * 1.2).distanceMax(150))
+    .alphaDecay(0.02)
+    .velocityDecay(0.4)
+    .on('tick', () => { g.selectAll('text').attr('x', d => d.x).attr('y', d => d.y); })
+    .on('end', () => {
+      if (loader) loader.style.display = 'none';
+      // Fit
+      const xs = nodes.map(d => d.x), ys = nodes.map(d => d.y);
+      const x0 = Math.min(...xs) - 40, x1 = Math.max(...xs) + 40;
+      const y0 = Math.min(...ys) - 30, y1 = Math.max(...ys) + 30;
+      const k  = Math.min(W / (x1 - x0), H / (y1 - y0), 1.2) * 0.85;
+      const tx = (W - k * (x0 + x1)) / 2;
+      const ty = (H - k * (y0 + y1)) / 2;
+      svg.transition().duration(400)
+        .call(sideZoom.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+    });
+}
+
+function hideSideCloud() {
+  const panel = document.getElementById('side-cloud');
+  panel.classList.remove('visible');
+  if (sideSimulation) { sideSimulation.stop(); sideSimulation = null; }
+  d3.select('#side-cloud-svg').selectAll('*').remove();
+}
+
 function filterListByCategory(filter) {
   // Show/hide cat blocks based on filter
   document.querySelectorAll('.cat-block').forEach(block => {
     const key = block.dataset.key;
-    // map filter key to taxonomy key
     const match = filter === 'all'
       || key === filter
       || (filter === 'domain' && key === 'domains');
     block.style.display = match ? '' : 'none';
   });
+
+  // Show side cloud for single category, hide for All
+  if (filter === 'all') {
+    hideSideCloud();
+  } else {
+    drawSideCloud(filter);
+  }
+
   updateListBadge();
 }
 
