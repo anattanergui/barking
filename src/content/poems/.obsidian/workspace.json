@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Civilisation.md",
+                "file": "Due Diligence.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
-              "title": "Civilisation"
+              "title": "Due Diligence"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:unabashed",
+                "query": "proxy",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -213,8 +213,9 @@
   },
   "active": "46193254dd901233",
   "lastOpenFiles": [
-    "Autopsy.md",
+    "Proxy.md",
     "Civilisation.md",
+    "Autopsy.md",
     "The First Cause.md",
     "Wish.md",
     "One-Way.md",
@@ -238,7 +239,6 @@
     "Groups For Groups.md",
     "Leverage.md",
     "Forgot.md",
-    "Equanimity.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

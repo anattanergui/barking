@@ -24,7 +24,7 @@ atmosphere:
   - equanimous
 ground:
   - nondual
-description: Just thought to check, be sure. Allah, Cat, Anatta — same question, same silence.
+description: Just thought to check, be sure.
 word-count: "44"
 ---
 # Due Diligence
