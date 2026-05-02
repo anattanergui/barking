@@ -430,10 +430,18 @@ const taxonomyB64 = Buffer.from(JSON.stringify(taxonomyArrays)).toString('base64
     overflow: hidden;
   }
 
+  #view-cloud {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 0;
+    display: none;
+  }
+
   #view-list {
     flex: 1;
     overflow: hidden;
-    display: none;
+    display: flex;
   }
 
   .list-body {
@@ -715,32 +723,41 @@ function switchView(view) {
   currentView = view;
   const isCloud = view === 'cloud';
 
-  viewCloud.style.display    = isCloud ? 'block' : 'none';
-  viewList.style.display     = isCloud ? 'none'  : 'block';
+  viewCloud.style.display    = isCloud ? 'flex' : 'none';
+  viewList.style.display     = isCloud ? 'none' : 'flex';
   btnCloud.classList.toggle('active', isCloud);
   btnList.classList.toggle('active', !isCloud);
-  legend.style.display       = isCloud ? 'flex'  : 'none';
+  legend.style.display       = isCloud ? 'flex' : 'none';
   listSearchWrap.classList.toggle('visible', !isCloud);
   subtitle.textContent       = isCloud
     ? 'Terms by frequency — click any term to browse poems'
     : 'All terms — by category';
 
   if (!isCloud) {
-    // Restore list view height (it's inside the flex container)
-    viewList.style.flex = '1';
     updateListBadge();
+    if (activeFilter !== 'all') drawSideCloud(activeFilter);
+    else hideSideCloud();
   } else {
     updateCloudBadge();
+    hideSideCloud();
   }
 }
 
-document.getElementById('btn-cloud').addEventListener('click', () => switchView('cloud'));
+let cloudInited = false;
+document.getElementById('btn-cloud').addEventListener('click', () => {
+  switchView('cloud');
+  if (!cloudInited) {
+    drawCloud(activeFilter, true);
+    setTimeout(() => fitView(600), 1200);
+    cloudInited = true;
+  } else {
+    drawCloud(activeFilter, false);
+    setTimeout(() => fitView(600), 1200);
+  }
+});
 document.getElementById('btn-list').addEventListener('click', () => {
   switchView('list');
   if (!listRendered) { renderAllLists(); listRendered = true; }
-  // Show side cloud if a single category is already active
-  if (activeFilter !== 'all') drawSideCloud(activeFilter);
-  else hideSideCloud();
 });
 
 // ── Category filter (shared between views) ────────────────────────────────────
@@ -782,8 +799,6 @@ function updateCloudBadge() {
 
 let simulation = null;
 let nodeData   = [];
-let cloudInited = false;
-
 function getFontScale(visibleTerms) {
   const counts = visibleTerms.map(t => t.displayCount);
   const minC = Math.min(...counts), maxC = Math.max(...counts);
@@ -1262,8 +1277,11 @@ waitForD3(() => {
   const initBtn = document.querySelector(`[data-filter="${initFilter}"]`);
   if (initBtn) initBtn.classList.add(`active-${initFilter}`);
 
-  drawCloud(initFilter, true);
-  updateCloudBadge();
+  // Default to list view
+  switchView('list');
+  renderAllLists();
+  listRendered = true;
+  filterListByCategory(initFilter);
 });
 </script>
 </Base>
