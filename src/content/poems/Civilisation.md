@@ -105,10 +105,10 @@ atmosphere:
   - forensic
   - disenchanted
 ground:
-  - structuralist
+  - structural
   - genealogical
-description: 
-  Civilisation conjures the individual and itself simultaneously — replacing community with shame and curtains
+description: Civilisation conjures the individual and itself simultaneously — replacing community with shame and curtains
+word-count: "196"
 ---
 # Civilisation
 The myth
