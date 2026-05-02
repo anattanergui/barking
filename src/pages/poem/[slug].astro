@@ -154,8 +154,8 @@ const schema = {
   }
   .action-btn:hover { color: var(--ink); }
 
-  .bookmark-btn::before { content: '✒'; font-size: 1rem; line-height: 1; }
-  .bookmark-btn.bookmarked { color: var(--ink); }
+  .save-btn-icon::before { content: '↓'; font-size: 1rem; line-height: 1; }
+  .save-btn-icon.saved { color: var(--ink); }
   .send-btn::before { content: '↗'; font-size: 1rem; line-height: 1; }
 
   .info-btn::before {
@@ -381,11 +381,11 @@ const schema = {
   <!-- Action bar: Mark · Send · Info -->
   <div class="poem-actions">
     <button
-      class="action-btn bookmark-btn"
+      class="action-btn save-btn-icon"
       id="bookmark-btn"
-      aria-label="Mark this poem"
+      aria-label="Save this poem"
     >
-      <span>Mark</span>
+      <span>Save</span>
     </button>
 
     <div style="position: relative;">
@@ -529,14 +529,14 @@ const schema = {
   if (bookmarkBtn) {
     if (getBookmarks().includes(slug)) {
       bookmarkBtn.classList.add('bookmarked');
-      bookmarkBtn.querySelector('span').textContent = 'Marked';
-      bookmarkBtn.setAttribute('aria-label', 'Remove mark');
+      bookmarkBtn.querySelector('span').textContent = 'Saved';
+      bookmarkBtn.setAttribute('aria-label', 'Remove save');
     }
     bookmarkBtn.addEventListener('click', function () {
       const now = toggleBookmark(slug);
       this.classList.toggle('bookmarked', now);
-      this.querySelector('span').textContent = now ? 'Marked' : 'Mark';
-      this.setAttribute('aria-label', now ? 'Remove mark' : 'Mark this poem');
+      this.querySelector('span').textContent = now ? 'Saved' : 'Save';
+      this.setAttribute('aria-label', now ? 'Remove save' : 'Save this poem');
     });
   }
 

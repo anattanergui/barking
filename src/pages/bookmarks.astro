@@ -6,8 +6,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const allPoems = getAllPoemsMeta();
 ---
 <Base
-  title="Bookmarks"
-  description="Your bookmarked poems from Barking"
+  title="Saved"
+  description="Your saved poems from Barking"
 >
 <style>
   .bookmarks-container {
@@ -98,7 +98,7 @@ const allPoems = getAllPoemsMeta();
     color: var(--accent);
   }
 
-  .bookmark-timestamp {
+  .saved-timestamp {
     font-family: 'Karla', sans-serif;
     font-size: 0.62rem;
     letter-spacing: 0.15em;
@@ -153,7 +153,7 @@ const allPoems = getAllPoemsMeta();
 </style>
 
 <div class="bookmarks-container">
-  <h1>Bookmarks</h1>
+  <h1>Saved</h1>
   <p class="subtitle" id="bookmark-count">Loading...</p>
   <div class="privacy-notice">
     Your bookmarks are stored locally on this device only. Nothing is collected, tracked, or sent to any server.
@@ -166,7 +166,7 @@ const allPoems = getAllPoemsMeta();
   </div>
 
   <div class="bookmark-actions" id="bookmark-actions" style="display: none;">
-    <button class="btn-ghost" id="clear-all-btn">Clear all bookmarks</button>
+    <button class="btn-ghost" id="clear-all-btn">Clear all saved poems</button>
     <button class="btn-ghost" id="export-btn">Export as JSON</button>
   </div>
 </div>
@@ -212,14 +212,14 @@ const allPoems = getAllPoemsMeta();
     const diffMs = now - date;
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
     
-    if (diffDays === 0) return 'Marked today';
-    if (diffDays === 1) return 'Marked yesterday';
-    if (diffDays < 7) return `Marked ${diffDays} days ago`;
+    if (diffDays === 0) return 'Saved today';
+    if (diffDays === 1) return 'Saved yesterday';
+    if (diffDays < 7) return `Saved ${diffDays} days ago`;
     if (diffDays < 30) return `Marked ${Math.floor(diffDays / 7)} week${Math.floor(diffDays / 7) !== 1 ? 's' : ''} ago`;
     
     // Format as "Marked Jan 15"
     const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    return `Marked ${months[date.getMonth()]} ${date.getDate()}`;
+    return `Saved ${months[date.getMonth()]} ${date.getDate()}`;
   }
 
   function renderBookmarks() {
@@ -229,10 +229,10 @@ const allPoems = getAllPoemsMeta();
     const actionsEl = document.getElementById('bookmark-actions');
 
     if (bookmarkSlugs.length === 0) {
-      countEl.textContent = 'No bookmarks yet';
+      countEl.textContent = 'No saved poems yet';
       contentEl.innerHTML = `
         <div class="empty-state">
-          You haven't bookmarked any poems yet. Bookmarks are stored locally on your device.<br><br>
+          You haven't saved any poems yet. Saves are stored locally on your device.<br><br>
           <a href="${base}/browse">Browse the collection →</a>
         </div>
       `;
@@ -240,7 +240,7 @@ const allPoems = getAllPoemsMeta();
       return;
     }
 
-    countEl.textContent = `${bookmarkSlugs.length} poem${bookmarkSlugs.length !== 1 ? 's' : ''} bookmarked`;
+    countEl.textContent = `${bookmarkSlugs.length} saved poem${bookmarkSlugs.length !== 1 ? 's' : ''}`;
 
     // Get poem details for bookmarked slugs
     const bookmarkedPoems = bookmarkSlugs
@@ -265,7 +265,7 @@ const allPoems = getAllPoemsMeta();
             <li class="bookmark-item">
               <a href="${base}/poem/${poem.slug}" class="bookmark-link">
                 <div class="bookmark-title">${poem.title}</div>
-                ${timestamp ? `<div class="bookmark-timestamp">${timestamp}</div>` : ''}
+                ${timestamp ? `<div class="saved-timestamp">${timestamp}</div>` : ''}
               </a>
             </li>
           `;
@@ -278,7 +278,7 @@ const allPoems = getAllPoemsMeta();
 
   // Clear all
   document.getElementById('clear-all-btn').addEventListener('click', () => {
-    if (confirm('Are you sure you want to clear all bookmarks? This cannot be undone.')) {
+    if (confirm('Are you sure you want to clear all saved poems? This cannot be undone.')) {
       saveBookmarks([]);
       try {
         localStorage.removeItem('barking-bookmark-timestamps');
@@ -302,7 +302,7 @@ const allPoems = getAllPoemsMeta();
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `barking-bookmarks-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `barking-saved-${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
   });
