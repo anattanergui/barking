@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Known.md",
+                "file": "Three Bed House.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Known"
+              "title": "Three Bed House"
             }
           }
         ],
@@ -68,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "proxy",
+                "query": "three bed house",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -89,7 +89,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -212,8 +213,9 @@
   },
   "active": "b6ede5974111d3ba",
   "lastOpenFiles": [
-    "Wish.md",
+    "Severed.md",
     "Known.md",
+    "Wish.md",
     "Branded.md",
     "The Placeless.md",
     "Due Diligence.md",
@@ -237,7 +239,6 @@
     "Equilibrium.md",
     "Doer.md",
     "Equivalence.md",
-    "Here-ward.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
