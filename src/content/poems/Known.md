@@ -21,9 +21,9 @@ tags:
   - without
   - be
 related:
-  - "[[Awareness]]"
   - "[[It]]"
   - "[[Not]]"
+  - "[[Awareness]]"
 domain:
   - appearance
   - awareness
