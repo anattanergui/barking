@@ -36,12 +36,12 @@ atmosphere:
 ground:
   - nondual
 description: Awareness is known - universe, stars, appearances — never known
-word-count: "58"
+word-count: "60"
 ---
 # Known
 Awareness is
 
-That’s all that will ever be known
+That is all that will ever be known
 Nothing more will ever be known
 
 Universe, time, stars
@@ -62,6 +62,6 @@ They will be
 Known
 
 Awareness is
-That’s all that will ever be known
+That is all that will ever be known
 Nothing more
 Will ever be known  
