@@ -4,39 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6fd5de5f0b8bf12a",
+        "id": "411a49304ba60494",
         "type": "tabs",
         "children": [
           {
-            "id": "44c6ed6b70e5f33b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Wish.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Wish"
-            }
-          },
-          {
-            "id": "b6ede5974111d3ba",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Before-After.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Before-After"
-            }
-          },
-          {
-            "id": "3e9ce7f5c2e8bada",
+            "id": "6d07495d3bacf7f2",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -49,8 +21,7 @@
               "title": "Boredom"
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -224,21 +195,21 @@
       "bases:Create new base": false
     }
   },
-  "active": "3e9ce7f5c2e8bada",
+  "active": "6d07495d3bacf7f2",
   "lastOpenFiles": [
-    "Before-After.md",
     "Boredom.md",
+    "Before-After.md",
+    "The Holy Ghost.md",
+    "Branded.md",
     "Wish.md",
-    "One-Way.md",
+    "The Placeless.md",
     "Three Bed House.md",
+    "One-Way.md",
     "Severed.md",
     "Known.md",
-    "Branded.md",
-    "The Placeless.md",
     "Due Diligence.md",
     "Fortune.md",
     "None.md",
-    "The Holy Ghost.md",
     "The Gap.md",
     "Proxy.md",
     "Civilisation.md",

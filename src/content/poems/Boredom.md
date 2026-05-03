@@ -20,18 +20,18 @@ related:
   - "[[Genesis]]"
   - "[[The First Cause]]"
   - "[[And Called It Love]]"
-word-count: "23"
+word-count: "34"
 domain:
   - boredom
-  - being
+  - aloneness
 crux:
-  - origin
+  - revaluation
 atmosphere:
   - stark
 ground:
   - aphoristic
 description:
-  - Boredom, the first cause — utterly vacant, absolutely pointless, unbearably nothing
+  - Boredom is a euphemism for aloneness — the first cause
 ---
 # Boredom
 Boredom is when
@@ -43,6 +43,14 @@ Utterly vacant
 Absolutely pointless
 Unbearably nothing
 
-That is
+Sickness
+That must move
+Generate
+Be seen
+
+Boredom is
+A euphemism 
+For aloneness
+
 Genesis
-The first cause  
+The first cause
