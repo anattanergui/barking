@@ -51,6 +51,7 @@ atmosphere:
 ground:
   - awareness
 description: Inside, people - their worlds - outside, people — in worlds, their own
+word-count: "54"
 ---
 # Worlds
 Flux
