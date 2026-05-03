@@ -38,8 +38,9 @@ tags:
   - in
   - own
 related:
-  - "[[Still Stillness]]"
   - "[[Consciousness]]"
+  - "[[Stillness In Motion]]"
+  - "[[Still Stillness]]"
   - "[[Wedge]]"
 domain:
   - consciousness
