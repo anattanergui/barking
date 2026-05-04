@@ -22,6 +22,7 @@ ground:
   - self-inquiry
 related:
   - "[[Awareness]]"
+  - "[[Re-incarnation]]"
 word-count: "38"
 ---
 # Two Deaths

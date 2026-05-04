@@ -14,6 +14,7 @@ tags:
 related:
   - "[[Death]]"
   - "[[The Sightless Eye]]"
+  - "[[Re-incarnation]]"
 word-count: "57"
 domain:
   - death

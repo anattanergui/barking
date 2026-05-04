@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Held.md",
+                "file": "Re-incarnation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Held"
+              "title": "Re-incarnation"
             }
           }
         ],
@@ -227,10 +227,13 @@
   },
   "active": "3263cebaff5bfc51",
   "lastOpenFiles": [
+    "About Death.md",
     "Re-incarnation.md",
+    "Two Deaths.md",
+    "Held.md",
+    "Worlds.md",
     "Who Cares.md",
     "Till Grave.md",
-    "Worlds.md",
     "Boredom.md",
     "In The First Place.md",
     "Before-After.md",
@@ -250,9 +253,6 @@
     "Civilisation.md",
     "Autopsy.md",
     "The First Cause.md",
-    "Utopia.md",
-    "Miracle.md",
-    "Or, Is It.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
