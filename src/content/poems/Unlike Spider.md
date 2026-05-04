@@ -31,10 +31,9 @@ tags:
   - complicit
   - conceited
 related:
-  - "[[Cobwebs]]"
   - "[[Democracy]]"
-  - "[[A King]]"
-  - "[[Abbatoir]]"
+  - "[[Vanity]]"
+  - "[[Cobwebs]]"
 word-count: "60"
 domain:
   - institutions
