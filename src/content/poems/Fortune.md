@@ -27,6 +27,7 @@ related:
   - "[[You]]"
   - "[[Miracle]]"
   - "[[Godhead]]"
+  - "[[Fabi Ayyi Ala I Rabbikuma Tukazziban]]"
 word-count: "19"
 ---
 # Fortune 

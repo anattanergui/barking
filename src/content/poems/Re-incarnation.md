@@ -37,6 +37,7 @@ related:
   - "[[In The First Place]]"
   - "[[Till Grave]]"
   - "[[Dis-identification]]"
+  - "[[Fortune]]"
 word-count: "69"
 domain:
   - consciousness
