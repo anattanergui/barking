@@ -14,7 +14,7 @@ tags:
   - hidden
   - gift
   - special
-word-count: "89"
+word-count: "88"
 domain:
   - grace
   - thought
@@ -52,7 +52,7 @@ By themselves
 About anything 
 Whatsoever —
 
-And thus to find 
+And to find 
 To know with absolute certainty
 Without intermediaries 
 The answer —

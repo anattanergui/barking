@@ -25,7 +25,7 @@ related:
   - "[[Nonduality]]"
   - "[[The Divine]]"
   - "[[Identity]]"
-word-count: "133"
+word-count: "129"
 ---
 # Godhead
 God — whatever name we give it —
@@ -33,7 +33,7 @@ Is necessary
 Absolutely necessary
 Existentially and philosophically
 Necessary 
-Not essential, but necessary —
+Not essential, but necessary 
 
 A construct —
 Born of self-awareness 
@@ -43,24 +43,23 @@ Necessary for the human
 For the existence, sustenance, experience
 Of self-awareness itself
 
-And yet —
-The self aware being
+Yet, the self aware being
 The human
 Is inescapably, irrefutably
-The only means —
+The only means 
 Through, in, and by which
 God — by whatever name —
 Can ever come to exist
 Can ever be known
 
-Thus the man who bows to God
+The man who bows to God
 Is, in truth, bowing to himself
 For in the act of worship
 Man sets aside — forgets — 
 Ignores and denies
 His own Godhead
 
-And if he did not
+If he did not
 If he neither denied
 Nor forgot —
 He would bow

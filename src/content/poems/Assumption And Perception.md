@@ -24,39 +24,48 @@ ground:
   - ontological
 related:
   - "[[On Objectification]]"
-
-word-count: "122"
+  - "[[Equations]]"
+  - "[[Unasleep]]"
+word-count: "100"
 ---
 # Assumption And Perception
 What we call objects
-Are but objectifications
+Are only objectifications
 Of the subject
 
-We cannot see, nor call, an object
-Subject
-We assume, we experience
-Ourselves as the subject —
-And thus everything we observe
+We cannot see the subject
+Nor call, an object, subject
+
+We assume
+We experience ourselves
+As the subject
+So everything observed
 Becomes objectified
 
-Yet we also see ourselves
-In a mirror, as object —
-Still, we cannot conceive of ourselves
-As object, despite the senses’ evidence
-That we ourselves are but objects
+Despite senses' evidence
+Seeing an object
+In the mirror 
+We cannot conceive
+Ourselves as object 
 
-Yet even the image — ourselves — 
-Reflected in the mirror
-Requires a subject
-What we behold as object 
-Is but subject’s own reflection —
-The objectification of itself
+The image —  the object — 
+In the mirror requiires 
+A subject — 
+The beheld object is
+The subject's own reflection — 
+Objectification
+Of itself
 
-And so each of us 
-Persists in assuming ourselves as subject —
+Each of us
+Persists in assuming
+Ourselves as subject 
 Seeing others as objects
 Ourselves as objects
-Yet ever assuming the role of subject
 
-And between assumption and perception
+Ever assuming
+The role of subject
+
+Between assumption
+And perception
+
 Life flows
