@@ -15,7 +15,7 @@
               "state": {
                 "file": "Assumption And Perception.md",
                 "mode": "source",
-                "source": false
+                "source": true
               },
               "icon": "lucide-file",
               "title": "Assumption And Perception"
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "assumption and",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,

@@ -14,20 +14,19 @@ domain:
   - perception
   - assumption
 crux:
-  - subjectivity
-  - irreducibility
+  - self
 atmosphere:
-  - methodical
-  - vertiginous
+  - lucid
 ground:
-  - phenomenological
-  - ontological
+  - awareness
 related:
   - "[[On Objectification]]"
   - "[[No Me Nowhere]]"
   - "[[Becoming Unself]]"
   - "[[Unasleep]]"
 word-count: "100"
+description:
+  - Between assumption and perception, life flows — objects, mirrors, subjects.
 ---
 # Assumption And Perception
 What we call objects
@@ -60,6 +59,7 @@ Of itself
 Each of us persists
 In assuming 
 Ourselves as subject 
+
 In seeing 
 Others as objects
 Ourselves as objects
