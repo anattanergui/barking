@@ -53,8 +53,8 @@ A spider
 That keeps getting stuck
 Caught, trapped
 In its own silk
-
 Keeps weaving
+
 Around its own legs
 Might be called
 Deficient
@@ -65,9 +65,10 @@ What might humans
 Constructing, propping up
 Reifying 
 Institutions — while being caught
-Trapped, and crushed
-By them, be called
+Trapped
 
+And crushed by them
+Be called
 Given that humans
 Unlike spider
 Can see the trap
