@@ -51,7 +51,7 @@ description: Money flows downward like water — concentrating wealth. Once seen
 Money 
 Like a drop of water 
 On top of a mountain flows
-Downwards, to become 
+Downward, to become 
 A tiny stream
 
 Naturally moving toward
