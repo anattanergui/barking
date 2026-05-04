@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Secured.md",
+                "file": "Interaction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Secured"
+              "title": "Interaction"
             }
           }
         ],
@@ -212,8 +212,8 @@
   },
   "active": "cbd035b575483d45",
   "lastOpenFiles": [
-    "Assumption And Perception.md",
     "Secured.md",
+    "Assumption And Perception.md",
     "Strange People.md",
     "Absence Of Absence.md",
     "Intent.md",

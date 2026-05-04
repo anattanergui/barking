@@ -27,9 +27,9 @@ description: |2-
     now filtering every AI and human interaction through medicalisation.
 related:
   - "[[Machinery]]"
-  - "[[Protector Parrots]]"
   - "[[The Industry]]"
   - "[[Sacrament]]"
+  - "[[Secured]]"
 ---
 
 # Interaction
