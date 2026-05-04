@@ -24,7 +24,8 @@ ground:
   - ontological
 related:
   - "[[On Objectification]]"
-  - "[[Equations]]"
+  - "[[No Me Nowhere]]"
+  - "[[Becoming Unself]]"
   - "[[Unasleep]]"
 word-count: "100"
 ---
@@ -49,21 +50,21 @@ We cannot conceive
 Ourselves as object 
 
 The image —  the object — 
-In the mirror requiires 
+In the mirror requires 
 A subject — 
 The beheld object is
 The subject's own reflection — 
 Objectification
 Of itself
 
-Each of us
-Persists in assuming
+Each of us persists
+In assuming 
 Ourselves as subject 
-Seeing others as objects
+In seeing 
+Others as objects
 Ourselves as objects
-
-Ever assuming
-The role of subject
+Still assuming
+Ourselves a subject
 
 Between assumption
 And perception
