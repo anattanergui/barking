@@ -10,6 +10,11 @@ tags:
   - love
   - woe
   - avail
+  - rush
+  - taken
+  - echoing
+  - born
+  - never
 word-count: "37"
 domain:
   - narration
@@ -22,6 +27,8 @@ ground:
   - no-self
 related:
   - "[[Illusory Self]]"
+  - "[[It-Not]]"
+  - "[[Re-incarnation]]"
 ---
 # Held
 Of the wind, the rush
