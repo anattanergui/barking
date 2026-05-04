@@ -22,6 +22,7 @@ ground:
   - experiential
 related:
   - "[[Pavement Sutra]]"
+  - "[[Re-incarnation]]"
 word-count: "278"
 description: Who has ever taken a single step without a body — who cares if the universe isn't real.
 ---
