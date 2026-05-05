@@ -34,7 +34,7 @@ atmosphere:
   - lucid
 ground:
   - apperceptive
-description: All of civilisation's achievements are nothing compared to the miracle contained in a single glance, right now.
+description: Achievements are nothing compared to the miracle contained in a single glance, right now
 related:
   - "[[The Empty Instant]]"
   - "[[You]]"
