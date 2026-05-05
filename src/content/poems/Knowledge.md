@@ -55,15 +55,15 @@ Body
 Movement
 Consciousness
 Of 
-
 Knowledge —
+
 Knowledge is
 A rock 
 Nowhere
 With no one
 To know
-
 Making it
+
 No rock —
 But absurdity
 
