@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Knowledge.md",
+                "file": "Miracle.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Knowledge"
+              "title": "Miracle"
             }
           },
           {
@@ -96,7 +96,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "trucks",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -117,11 +117,13 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
-    "width": 272.5
+    "width": 272.5,
+    "collapsed": true
   },
   "right": {
     "id": "1dfe35f67b3ddaf7",
@@ -240,8 +242,8 @@
   },
   "active": "1162e57b2f810b8e",
   "lastOpenFiles": [
-    "Conduct.md",
     "Knowledge.md",
+    "Conduct.md",
     "Secured.md",
     "Constitution.md",
     "Unlike Spider.md",

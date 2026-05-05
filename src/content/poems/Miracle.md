@@ -11,6 +11,20 @@ tags:
   - rockets
   - libraries
   - christmases
+  - trucks
+  - knowledge
+  - filled
+  - entirety
+  - achievements
+  - movies
+  - make-belief
+  - inventions
+  - nothing
+  - compared
+  - single
+  - right
+  - now
+  - within
 domain:
   - miracle
   - perception
@@ -24,6 +38,7 @@ description: All of civilisation's achievements are nothing compared to the mira
 related:
   - "[[The Empty Instant]]"
   - "[[You]]"
+  - "[[Knowledge]]"
 word-count: "49"
 ---
 # Miracle
