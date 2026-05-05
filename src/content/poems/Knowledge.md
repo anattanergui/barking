@@ -28,6 +28,7 @@ tags:
 related:
   - "[[Conduct]]"
   - "[[Atman]]"
+  - "[[Lam Yalid Wa Lam Yulad]]"
 word-count: "38"
 domain:
   - knowledge
