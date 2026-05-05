@@ -4,7 +4,7 @@ tags:
   - scraps
   - pieces
   - paper
-  - clean
+  - clear
   - throw
   - away
   - notebooks
@@ -48,7 +48,7 @@ related:
 Old scraps
 Pieces of paper 
 Notebooks, copies 
-So easy to clean
+So easy to clear
 Throw away 
 
 Rubbish bins
