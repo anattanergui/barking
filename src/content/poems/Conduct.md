@@ -64,9 +64,10 @@ tags:
   - locked
 word-count: "123"
 related:
+  - "[[Machinery]]"
+  - "[[Power]]"
   - "[[Protector Parrots]]"
   - "[[Unlike Spider]]"
-  - "[[Power]]"
   - "[[An’al Haq]]"
 ground:
   - sovereign
