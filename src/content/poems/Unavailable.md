@@ -27,20 +27,28 @@ tags:
   - if
   - next
   - day
-  - arrives
   - reincarnation
   - hope
-  - believing
   - which
   - people
   - live
   - lives
   - memory
+  - returns
+  - belief
+  - often
+  - looking
+  - past
+  - incarnated
+  - unavailable
+  - beauty
+  - reverence
 related:
   - "[[Miracle]]"
   - "[[Fortune]]"
   - "[[Graces]]"
   - "[[The Divine]]"
+  - "[[What]]"
 word-count: "85"
 domain:
   - perception
