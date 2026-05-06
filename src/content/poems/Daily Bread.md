@@ -22,7 +22,7 @@ ground:
 related:
   - "[[Decree]]"
   - "[[Positive Thinking]]"
-  - "[[Unavailable]]"
+  - "[[Transience]]"
 word-count: "143"
 ---
 # Daily Bread

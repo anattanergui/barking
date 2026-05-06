@@ -55,16 +55,18 @@ related:
 word-count: "85"
 domain:
   - perception
-  - presence
+  - transience
 crux:
-  - incarnation
+  - foreclosure
 atmosphere:
   - measured
+  - elegiac
 ground:
-  - lucid
-description: What is not available to senses does not exist — most people live in memory of reincarnation
+  - phenomenological
+description:
+  - Not available to senses does not exist — hope for its return shuts out grief, beauty and reverence
 ---
-# Unavailable
+# Transience
 Sometimes
 Perhaps often times
 It takes a long time 
