@@ -49,7 +49,7 @@ related:
   - "[[Graces]]"
   - "[[The Divine]]"
   - "[[Undercurrent]]"
-word-count: "85"
+word-count: "81"
 domain:
   - perception
   - presence
@@ -90,7 +90,6 @@ Reincarnation
 
 Of a memory
 In the hope of which
-With belief in which
 Most people
 Most of the time
 Live their lives
