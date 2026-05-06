@@ -54,15 +54,14 @@ related:
   - "[[Undercurrent]]"
 word-count: "85"
 domain:
-  - perception
   - transience
+  - anticipation
 crux:
-  - foreclosure
+  - preclusion
 atmosphere:
-  - measured
-  - elegiac
+  - diagnostic
 ground:
-  - phenomenological
+  - lucid
 description:
   - Not available to senses does not exist — hope for its return shuts out grief, beauty and reverence
 ---
