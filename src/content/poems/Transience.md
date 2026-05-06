@@ -45,7 +45,7 @@ tags:
   - reverence
   - shut
   - out
-  - grief
+  - death
 related:
   - "[[Undercurrent]]"
   - "[[Utopia]]"
@@ -101,8 +101,8 @@ Looking past
 The incarnated
 
 Shut out
-From grief
-Unavailable 
+From death
 
+Unavailable 
 To beauty
 Reverence 
