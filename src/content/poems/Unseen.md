@@ -15,6 +15,7 @@ tags:
   - speechless
 domain:
   - logos
+  - breath
 crux:
   - apophasis
 atmosphere:
@@ -26,6 +27,7 @@ related:
   - "[[Logos]]"
   - "[[A Million Words]]"
   - "[[Word]]"
+  - "[[Heretics]]"
 ---
 # Unseen 
 Circling, the word 
