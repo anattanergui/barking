@@ -43,13 +43,16 @@ tags:
   - unavailable
   - beauty
   - reverence
+  - shut
+  - out
+  - grief
 related:
   - "[[Miracle]]"
   - "[[Fortune]]"
   - "[[Graces]]"
   - "[[The Divine]]"
   - "[[Undercurrent]]"
-word-count: "81"
+word-count: "85"
 domain:
   - perception
   - presence
@@ -98,6 +101,9 @@ So often
 Looking past
 The incarnated
 
+Shut out
+From grief
 Unavailable 
+
 To beauty
 Reverence 
