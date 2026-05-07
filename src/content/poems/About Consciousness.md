@@ -10,7 +10,7 @@ tags:
   - is
   - full
   - stop
-word-count: "38"
+word-count: "37"
 domain:
   - consciousness
   - experience
@@ -29,8 +29,8 @@ related:
 It can never be 
 Experientially verified
 That consciousness 
-Is true, real, timeless
-The subject, not an object
+Is true, real, timeless, subject
+Not an object
 Or that it exists
 
 Like present moment
