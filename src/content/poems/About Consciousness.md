@@ -16,7 +16,7 @@ domain:
 crux:
   - irrefutability
 atmosphere:
-  - declarative
+  - lapidary
 ground:
   - axiomatic
 related:
