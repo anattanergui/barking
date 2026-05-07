@@ -10,13 +10,13 @@ tags:
   - is
   - full
   - stop
-word-count: "16"
+word-count: "14"
 domain:
   - consciousness
 crux:
   - irrefutability
 atmosphere:
-  - lapidary
+  - declarative
 ground:
   - axiomatic
 related:
@@ -30,5 +30,3 @@ The absence of which
 Is incoherent 
 And experientially
 Impossible
-
-Full stop
