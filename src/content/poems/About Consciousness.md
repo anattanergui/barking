@@ -13,6 +13,7 @@ tags:
 word-count: "38"
 domain:
   - consciousness
+  - experience
 crux:
   - irrefutability
 atmosphere:
