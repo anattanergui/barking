@@ -10,7 +10,7 @@ tags:
   - is
   - full
   - stop
-word-count: "14"
+word-count: "38"
 domain:
   - consciousness
 crux:
@@ -25,6 +25,14 @@ related:
   - "[[Equations]]"
 ---
 # About Consciousness
+It can never be 
+Experientially verified
+That consciousness 
+Is true, real, timeless
+The subject, not an object
+Or that it exists
+
+Like present moment
 Consciousness is that
 The absence of which
 Is incoherent 
