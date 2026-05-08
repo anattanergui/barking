@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Attention.md",
+                "file": "Cobwebs.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Attention"
+              "title": "Cobwebs"
             }
           },
           {
@@ -78,7 +78,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "cobwe",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -99,7 +99,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -222,6 +223,7 @@
   },
   "active": "a0b8bf1d7dad98c4",
   "lastOpenFiles": [
+    "Attention.md",
     "Another Meeting.md",
     "Machinery.md",
     "Power.md",
@@ -247,7 +249,6 @@
     "Miracle.md",
     "Unlike Spider.md",
     "What.md",
-    "Fortune.md",
     "Untitled.base",
     "Untitled.canvas"
   ]

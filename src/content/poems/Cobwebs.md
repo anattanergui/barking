@@ -5,21 +5,24 @@ tags:
   - institutions
   - cobwebs
   - spiders
-  - mind
   - dead
+  - head
 domain:
-  - internalisation
+  - tradition
+  - institution
 crux:
-  - infestation
+  - predation
 atmosphere:
   - deadpan
 ground:
-  - internalist
+  - vitalist
 related:
   - "[[Power]]"
   - "[[Hollow King]]"
-  - "[[Strays]]"
+  - "[[Unlike Spider]]"
 word-count: "18"
+description:
+  - Traditions and institutions - dead, that live as cobwebs, big hairy spiders, in the head
 ---
 # Cobwebs
 Traditions and Institutions
@@ -29,4 +32,4 @@ That live
 As cobwebs 
 With big, hairy spiders
 
-In the mind
+In the head
