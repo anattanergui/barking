@@ -16,6 +16,7 @@ related:
   - "[[Dedication]]"
   - "[[Where The Dead Once Lived]]"
   - "[[Wish]]"
+  - "[[Atman]]"
 domain:
   - grief
   - mortality
