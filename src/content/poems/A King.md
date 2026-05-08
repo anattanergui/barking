@@ -40,6 +40,7 @@ word-count: "55"
 related:
   - "[[Sovereignty]]"
   - "[[First Philosophy]]"
+  - "[[Elegy To Life]]"
 ---
 # A King 
 Who appraises
