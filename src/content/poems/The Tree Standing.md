@@ -34,16 +34,17 @@ tags:
   - words
   - rising
 domain:
-  - verticality
-  - cognition
+  - thought
+  - scale
 crux:
-  - isomorphism
+  - revaluation
+  - ascent
 atmosphere:
   - lapidary
-  - declarative
 ground:
   - cosmological
-description: Thought strikes like lightning — vertical axis of mind, insight, revelation, written in words descending.
+description:
+  - Thought strikes vertically — descending like lightning, rising in words
 word-count: "52"
 related:
   - "[[An’al Haq]]"
