@@ -43,7 +43,7 @@ ground:
   - cosmological
 description:
   - Thought strikes vertically — descending like lightning, rising in words
-word-count: "46"
+word-count: "48"
 related:
   - "[[An’al Haq]]"
 ---
@@ -78,6 +78,9 @@ Of ant
 
 Mind 
 Deepens
+
+Soul
+Ascends
 
 Revelation
 Falls
