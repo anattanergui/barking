@@ -106,7 +106,7 @@ A repeat
 Seeing — not
 Looking
 Not touching — sensing
-Not listning
+Not listening
 Words uttered, hollowed
 Of emotion
 Steps taken
