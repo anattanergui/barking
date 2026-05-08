@@ -7,6 +7,9 @@ tags:
   - spiders
   - dead
   - head
+  - live
+  - hairy
+  - big
 domain:
   - tradition
   - institution
