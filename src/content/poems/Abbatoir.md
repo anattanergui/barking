@@ -23,6 +23,7 @@ ground:
 related:
   - "[[No Other]]"
   - "[[Autopsy]]"
+  - "[[Elegy To Life]]"
 word-count: "153"
 ---
 # Abbatoir

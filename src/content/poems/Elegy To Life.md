@@ -68,10 +68,10 @@ tags:
   - give
   - way
 related:
-  - "[[Three Bed House]]"
-  - "[[Connection Myth]]"
   - "[[Autopsy]]"
   - "[[Abbatoir]]"
+  - "[[The Howling]]"
+  - "[[Three Bed House]]"
 domain:
   - dead
   - presence
