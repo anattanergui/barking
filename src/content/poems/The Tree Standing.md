@@ -45,7 +45,7 @@ ground:
   - cosmological
 description:
   - Thought strikes vertically — descending like lightning, rising in words
-word-count: "52"
+word-count: "46"
 related:
   - "[[An’al Haq]]"
 ---
@@ -74,15 +74,12 @@ Beyond
 Extended
 Vertical
 
-The horizontal, a view
-From the axis
-Of an ant
+Horizontal — view —
+From axis
+Of ant
 
 Mind 
 Deepens
-
-Insight
-Penetrates
 
 Revelation
 Falls
