@@ -1,53 +1,59 @@
 ---
 tags:
-  - different
   - me
-  - wakes
-  - goes
-  - out
-  - comes
-  - back
-  - changing
-  - keeps
-  - outside
-  - first
-  - go
-  - next
-  - stays
-  - leaving
-  - not
-  - which
-  - where
-  - finding
+  - my
+  - penguin
+  - frame
+  - before
+  - teddy
+  - bear
+  - body
+  - stay
+  - beside
+  - lover
+  - mouth
+  - hands
+  - image
+  - be
+  - as
+  - is
 related:
-  - "[[Folding]]"
-  - "[[No Me Nowhere]]"
-word-count: "54"
+  - "[[Different Me]]"
+  - "[[Solitude]]"
+  - "[[Consciousness]]"
 domain:
-  - flux
+  - self
+  - intimacy
 crux:
-  - unlocatability
+  - inseparability
 atmosphere:
-  - bewildered
+  - tender
 ground:
-  - phenomenological
-description: Different me wakes up, different me at night — keeps changing - keeps leaving, me
+  - nondual
+description: My lover is me — no mouth, no hands, no body, no image to be - as me
+word-count: "44"
 ---
-# Me 
-Different me wakes up
-Different me at night
-Different me goes out
-Different me back
+# Me
+My penguin 
+Is me
+It has no image 
+To frame
+Before me
 
-Different me 
-Keeps changing what
-Keeps changing, me
+My teddy bear
+Is me
+It has no body
+To stay
+Beside me
 
-Me, in me, or outside, me
-Where does the first go
-When next comes, as me
+My lover
+Is me
 
-Not one, me stays
-Keeps leaving, me
-Which me, to be 
-Not finding, me
+It has no mouth
+No hands
+No body
+No image
+
+To be
+As me
+  

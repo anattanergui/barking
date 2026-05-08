@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "They"
             }
+          },
+          {
+            "id": "f8b3e929dad63bea",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Me.md",
+                "mode": "source",
+                "source": true
+              },
+              "icon": "lucide-file",
+              "title": "Me"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -210,10 +224,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "76628394df29869d",
+  "active": "f8b3e929dad63bea",
   "lastOpenFiles": [
-    "The Naked Heresy.md",
+    "Solitude.md",
+    "Me.md",
+    "Different Me.md",
     "They.md",
+    "The Naked Heresy.md",
     "Impersonal.md",
     "You.md",
     "Cobwebs.md",
@@ -235,9 +252,6 @@
     "About Consciousness.md",
     "Abbatoir.md",
     "Three Bed House.md",
-    "Utopia.md",
-    "Undercurrent.md",
-    "Unseen.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
