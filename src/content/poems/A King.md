@@ -10,7 +10,6 @@ tags:
   - competency
   - mental
   - feedback
-  - 360-degree
   - workload
   - assessment
   - public
@@ -26,6 +25,7 @@ tags:
   - authority
   - defended
   - servility
+  - degree
 domain:
   - sovereignty
   - servility
@@ -49,7 +49,7 @@ His activities
 For professional development
 Quality improvement
 Mental competency
-360-degree feedback
+360 degree feedback
 Workload assessment
 
 Or is he 
