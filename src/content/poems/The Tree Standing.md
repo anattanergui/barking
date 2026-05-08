@@ -26,8 +26,6 @@ tags:
   - ant
   - mind
   - deepens
-  - insight
-  - penetrates
   - revelation
   - falls
   - lands
