@@ -16,9 +16,9 @@ ground:
   - praxis
 description: " Write — but expect neither to be read nor understood."
 related:
-  - "[[Because It Could]]"
   - "[[For Fuck’s Sake]]"
   - "[[To Myself]]"
+  - "[[Meaning]]"
 ---
 
 # Epigram
