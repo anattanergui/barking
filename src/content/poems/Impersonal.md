@@ -26,9 +26,10 @@ domain:
 crux:
   - redefinition
 atmosphere:
-  - exacting
+  - corrective
+  - precise
 ground:
-  - immanent
+  - etymological
 description:
   - Impersonal refers to physical, material source of a person — not the abstract or ethereal
 word-count: "32"
