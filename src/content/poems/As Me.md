@@ -15,6 +15,7 @@ tags:
 related:
   - "[[Dedication]]"
   - "[[Where The Dead Once Lived]]"
+  - "[[Wish]]"
 domain:
   - grief
   - mortality
