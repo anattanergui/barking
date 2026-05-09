@@ -101,6 +101,7 @@ related:
   - "[[Suicide]]"
   - "[[Individual Consciousness]]"
   - "[[About Consciousness]]"
+  - "[[I Am-ing]]"
 ---
 # About The Individual
 Individual is sovereign 
@@ -175,7 +176,7 @@ Remains worthless
 
 No side can benefit from it
 No side can lay a claim on it
-No side own is, or can exercise it
+No side owns it, or can exercise it
 
 Individual sovereignty then
 Based on the ground that his experience 
@@ -228,7 +229,8 @@ Or for awareness, or for both at once
 Its not-happening is the one impossibility 
 
 And simultaneously — inexorably —
-For consciousness to not be — for individual consciousness 
+For consciousness to not be 
+For individual consciousness 
 To not be — is impossible
 
 Sovereignty undeniable 
