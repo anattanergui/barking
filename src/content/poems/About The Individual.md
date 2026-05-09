@@ -100,7 +100,7 @@ related:
   - "[[Both Irrefutably]]"
   - "[[Suicide]]"
   - "[[Individual Consciousness]]"
-  - "[[Worth Of An Hour]]"
+  - "[[About Consciousness]]"
 ---
 # About The Individual
 Individual is sovereign 
