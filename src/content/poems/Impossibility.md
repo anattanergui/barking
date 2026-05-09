@@ -9,7 +9,6 @@ tags:
   - creation
   - non-existent
   - founded
-
 domain:
   - cosmogony
 crux:
@@ -18,11 +17,10 @@ atmosphere:
   - austere
 ground:
   - atemporality
-description: >
-  A poem arguing that all explanations of creation — scientific, religious, mythic — fail at the root because they operate within time, and time itself has no ultimate existence. For readers exploring the limits of human knowledge, the nature of reality, and why every origin story is already a category error.
+description:
 related:
   - "[[Equations]]"
-
+  - "[[About The Individual]]"
 type: poem
 word-count: "86"
 ---

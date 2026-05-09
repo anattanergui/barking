@@ -22,9 +22,8 @@ ground:
   - apperceptive
   - nondual
 related:
-  - "[[Worth]]"
   - "[[The Invasion]]"
-
+  - "[[About The Individual]]"
 type: poem
 word-count: "284"
 ---
