@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "World.md",
+                "file": "Abbatoir.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "World"
+              "title": "Abbatoir"
             }
           },
           {
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "marriage",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +88,8 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -211,14 +212,14 @@
   },
   "active": "e0112a8d5512e3cb",
   "lastOpenFiles": [
+    "Mortar.md",
+    "World.md",
     "Variable Ratio.md",
     "Genesis.md",
     "Elegy To Life.md",
     "Abbatoir.md",
-    "Mortar.md",
     "Repulsion.md",
     "Two-gatherness.md",
-    "World.md",
     "Absence Of Absence.md",
     "Worlds.md",
     "Barking.md",

@@ -10,6 +10,59 @@ tags:
   - gospel
   - sex
   - dogma
+  - marriage
+  - not
+  - possible
+  - truly
+  - truth
+  - essence
+  - reality
+  - another
+  - affection
+  - eye
+  - contact
+  - conversation
+  - understanding
+  - sympathy
+  - patience
+  - compassion
+  - after
+  - abbatoir
+  - everything
+  - exist
+  - once
+  - two
+  - between
+  - singles
+  - never
+  - ever
+  - theoretically
+  - practically
+  - physically
+  - mentally
+  - emotionally
+  - spiritually
+  - essentially
+  - made
+  - concept
+  - ceremony
+  - institution
+  - idea
+  - proposes
+  - must
+  - falsehood
+  - unnatural
+  - deluded
+  - narrative
+  - violent
+  - most
+  - concocted
+  - faith
+  - spread
+  - creed
+  - practiced
+  - possiible
+  - god
 domain:
   - marriage
 crux:
@@ -37,7 +90,7 @@ To another
 
 Affection dies after marriage
 Sex dies, conversation dies, eye contact dies
-Real interest, empathy, understanding dies
+Real interest, sympathy, understanding dies
 Even patience, even compassion dies
 After marriage
 
