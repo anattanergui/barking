@@ -39,10 +39,10 @@ domain:
   - conditioning
   - intimacy
 crux:
-  - symmetry
+  - equivalence
 atmosphere:
-  - unflinching
-  - bleak
+  - clinical
+  - unsparing
 ground:
   - structural
 description: |
