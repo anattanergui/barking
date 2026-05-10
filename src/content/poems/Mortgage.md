@@ -30,7 +30,7 @@ word-count: "20"
 description:
   -  Institutions as ego-conjured simulacra — a mortgage on persons  and children, into servitude
 ---
-Mortgage
+# Mortgage
 Institutions are
 Proxies — simulacra —
 Ego conjures
