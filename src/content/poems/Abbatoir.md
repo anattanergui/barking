@@ -69,6 +69,7 @@ crux:
   - sacralization
 atmosphere:
   - mordant
+  - bleak
 ground:
   - axiomatic
   - individualist
