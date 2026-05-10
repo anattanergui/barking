@@ -18,6 +18,8 @@ ground:
   - ontological
 related:
   - "[[Human Condition]]"
+  - "[[Variable Ratio]]"
+  - "[[Elegy To Life]]"
 style:
   - apophatic
   - declarative

@@ -20,6 +20,7 @@ ground:
 related:
   - "[[Mortar]]"
   - "[[Ghosted Self]]"
+  - "[[Variable Ratio]]"
 word-count: "81"
 ---
 # Two-gatherness
