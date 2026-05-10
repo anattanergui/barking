@@ -17,10 +17,10 @@ tags:
   - world
 word-count: "19"
 domain:
-  - self
   - language
+  - world
 crux:
-  - dissolution
+  - absence
 atmosphere:
   - austere
 ground:

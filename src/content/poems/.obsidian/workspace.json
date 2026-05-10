@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Absence Of Absence.md",
+                "file": "World.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Absence Of Absence"
+              "title": "World"
             }
           }
         ]
@@ -197,6 +197,7 @@
   },
   "active": "e0112a8d5512e3cb",
   "lastOpenFiles": [
+    "Absence Of Absence.md",
     "World.md",
     "Worlds.md",
     "Barking.md",
@@ -224,7 +225,6 @@
     "Wish.md",
     "Solitude.md",
     "The Naked Heresy.md",
-    "You.md",
     "Untitled.base",
     "Untitled.canvas"
   ]
