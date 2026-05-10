@@ -22,6 +22,20 @@
             }
           },
           {
+            "id": "a649b12ae3b257d1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Mortgage.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Mortgage"
+            }
+          },
+          {
             "id": "b60f0dc3dcb71638",
             "type": "leaf",
             "state": {
@@ -49,7 +63,8 @@
               "title": "Time"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -223,11 +238,14 @@
       "bases:Create new base": false
     }
   },
-  "active": "e0112a8d5512e3cb",
+  "active": "a649b12ae3b257d1",
   "lastOpenFiles": [
+    "Unlike Spider.md",
+    "Vanity.md",
+    "Mortgage.md",
+    "Abbatoir.md",
     "Time.md",
     "Variable Ratio.md",
-    "Abbatoir.md",
     "Mortar.md",
     "World.md",
     "Genesis.md",
@@ -245,12 +263,9 @@
     "Impossibility.md",
     "Individual Consciousness.md",
     "Vibrations.md",
-    "Vanity.md",
     "Machinery.md",
     "Cobwebs.md",
     "Impersonal.md",
-    "They.md",
-    "Different Me.md",
     "Untitled 1",
     "Untitled",
     "Untitled.base",
