@@ -46,12 +46,21 @@ const resolvedSchema = schema ?? defaultSchema;
   <meta property="og:image" content={new URL(`${base}/og-image.jpg`, Astro.site).toString()} />
   <meta property="og:image:alt" content="Barking — a poetry collection by Anatta Nergui" />
   <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site).toString()} />
-  <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site).toString()} />
+  <link rel="canonical" href={`https://anattanergui.com${Astro.url.pathname.replace(/^\/barking/, '') || '/'}`} />
+  <meta http-equiv="refresh" content={`0; url=https://anattanergui.com${Astro.url.pathname.replace(/^\/barking/, '') || '/'}`} />
   <title>{pageTitle}</title>
   <link rel="icon" type="image/png" href={`${base}/favicon.png`} />
   <link rel="alternate" type="application/rss+xml" title="Barking" href={`${base}/rss.xml`} />
   <JsonLd schema={resolvedSchema} />
   <slot name="head" />
+
+  <!-- Redirect to new domain — runs before anything else to avoid flash -->
+  <script is:inline>
+    (function () {
+      var path = window.location.pathname.replace(/^\/barking/, '') || '/';
+      window.location.replace('https://anattanergui.com' + path + window.location.search + window.location.hash);
+    })();
+  </script>
 
   <!-- Apply saved theme before first paint to prevent flash -->
   <script is:inline>
